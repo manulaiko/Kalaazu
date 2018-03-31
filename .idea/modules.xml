@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/CMS/CMS.iml" filepath="$PROJECT_DIR$/CMS/CMS.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DataBase/DataBase.iml" filepath="$PROJECT_DIR$/DataBase/DataBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Emulator/Emulator.iml" filepath="$PROJECT_DIR$/Emulator/Emulator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kalaazu.iml" filepath="$PROJECT_DIR$/Kalaazu.iml" />
     </modules>
   </component>
