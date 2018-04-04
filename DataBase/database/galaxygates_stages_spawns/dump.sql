@@ -1,0 +1,1 @@
+-- Initial dump for the `galaxygates_stages_spawns` table.

@@ -1,0 +1,1 @@
+-- Initial dump for the `accounts_configurations_accounts_items` table.

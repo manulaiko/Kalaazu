@@ -1,0 +1,1 @@
+-- Relations for the `oauth_access_tokens` table

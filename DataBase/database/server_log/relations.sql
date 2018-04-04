@@ -1,0 +1,1 @@
+-- Relations for the `server_logs` table.

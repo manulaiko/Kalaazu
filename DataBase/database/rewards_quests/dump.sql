@@ -1,0 +1,1 @@
+-- Initial dump for the `rewards_quests` table.

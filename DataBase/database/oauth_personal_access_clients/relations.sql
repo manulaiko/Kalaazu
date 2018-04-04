@@ -1,0 +1,1 @@
+-- Relations for the `oauth_personal_access_clients` table

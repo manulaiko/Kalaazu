@@ -1,0 +1,1 @@
+-- Intial dump for the `clans_news` table.

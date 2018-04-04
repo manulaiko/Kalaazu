@@ -1,0 +1,1 @@
+-- Initial dump for the `accounts_clans_roles` table.

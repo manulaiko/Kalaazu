@@ -1,0 +1,1 @@
+-- Initial dump for the `galaxygates_gg_waves` table.

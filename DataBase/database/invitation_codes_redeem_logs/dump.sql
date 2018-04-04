@@ -1,0 +1,1 @@
+-- Initial dump for the `invitation_codes_redeem_logs` table.

@@ -1,0 +1,1 @@
+-- Initial dump for the `trade_items` table.

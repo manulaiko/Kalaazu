@@ -1,0 +1,1 @@
+-- Initial dumo for the `clans` table.

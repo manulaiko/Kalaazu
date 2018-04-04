@@ -1,0 +1,1 @@
+-- Relations for the `oauth_refresh_tokens` table

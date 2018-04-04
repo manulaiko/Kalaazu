@@ -1,0 +1,1 @@
+-- Initial dump for the `vouchers_redeem_logs` table.

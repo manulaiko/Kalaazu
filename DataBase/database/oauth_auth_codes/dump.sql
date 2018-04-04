@@ -1,0 +1,1 @@
+-- Initial dump for the `oauth_auth_codes` table

@@ -1,0 +1,25 @@
+-- Initial dump for the `ranks` table.
+--
+INSERT INTO `ranks` (`id`, `name`, `percentaje`, `is_public`) VALUES
+(1,  'Basic Space Pilot', 20.00, 1),
+(2,  'Space Pilot',       12.39, 1),
+(3,  'Chief Space Pilot', 10.00, 1),
+(4,  'Basic Sergeant',    9.00,  1),
+(5,  'Sergeant',          8.00,  1),
+(6,  'Chief Sergeant',    7.00,  1),
+(7,  'Basic Lieutenant',  6.00,  1),
+(8,  'Lieutenant',        5.00,  1),
+(9,  'Chief Lieutenant',  4.50,  1),
+(10, 'Basic Captain',     4.00,  1),
+(11, 'Captain',           3.50,  1),
+(12, 'Chief Captain',     3.00,  1),
+(13, 'Basic Major',       2.50,  1),
+(14, 'Major',             2.00,  1),
+(15, 'Chief Major',       1.50,  1),
+(16, 'Basic Colonel',     1.00,  1),
+(17, 'Colonel',           0.50,  1),
+(18, 'Chief Colonel',     0.10,  1),
+(19, 'Basic General',     0.01,  1),
+(20, 'General',           0.00,  1),
+(21, 'Administrator',     0.00,  0),
+(22, 'Wanted',            0.00,  0);

@@ -1,0 +1,1 @@
+-- Relations for the `news` table.
