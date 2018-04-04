@@ -4,9 +4,9 @@
 --
 CREATE TABLE `accounts_ships` (
     `id`          int   NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id` int   NULL     DEFAULT NULL,
-    `ships_id`    int   NULL     DEFAULT NULL,
-    `maps_id`     int   NULL     DEFAULT NULL,
+    `accounts_id` int   NOT NULL,
+    `ships_id`    int   NOT NULL,
+    `maps_id`     int   NOT NULL,
     `position`    point NOT NULL                COMMENT 'Position on map.',
     `health`      int   NOT NULL DEFAULT 0      COMMENT 'Health points.',
     `shield`      int   NOT NULL DEFAULT 0      COMMENT 'Shield points.',

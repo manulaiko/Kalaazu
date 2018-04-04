@@ -4,7 +4,7 @@
 --
 CREATE TABLE `trade_items` (
     `id`          int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`    int NULL     DEFAULT NULL,
+    `items_id`    int NOT NULL,
     `accounts_id` int NULL     DEFAULT NULL,
     `price`       int NOT NULL DEFAULT 0,
     `category`    int NOT NULL DEFAULT 0,

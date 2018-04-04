@@ -4,8 +4,8 @@
 --
 CREATE TABLE `accounts_banks_logs` (
     `id`                int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `from_accounts_id`  int       NULL     DEFAULT NULL,
-    `to_accounts_id`    int       NULL     DEFAULT NULL,
+    `from_accounts_id`  int       NOT NULL,
+    `to_accounts_id`    int       NOT NULL,
     `date`              timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `type`              int       NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
     `amount`            int       NOT NULL DEFAULT 0                  COMMENT 'Amount of currency logged.',

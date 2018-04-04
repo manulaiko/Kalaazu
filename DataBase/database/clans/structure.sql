@@ -4,7 +4,7 @@
 --
 CREATE TABLE `clans` (
     `id`                 int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`        int          NULL     DEFAULT NULL,
+    `accounts_id`        int          NOT NULL,
     `tag`                varchar(4)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `name`               varchar(255) NOT NULL DEFAULT '',
     `description`        text         NOT NULL,

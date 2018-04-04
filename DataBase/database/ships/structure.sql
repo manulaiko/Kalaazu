@@ -4,7 +4,7 @@
 --
 CREATE TABLE `ships` (
     `id`         int  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`   int  NULL     DEFAULT NULL,
+    `items_id`   int  NOT NULL,
     `health`     int  NOT NULL DEFAULT 0      COMMENT 'Health points',
     `speed`      int  NOT NULL DEFAULT 0      COMMENT 'Base speed.',
     `cargo`      int  NOT NULL DEFAULT 100    COMMENT 'Cargo space.',

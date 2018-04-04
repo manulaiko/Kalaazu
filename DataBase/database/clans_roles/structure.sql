@@ -5,7 +5,7 @@
 CREATE TABLE `clans_roles` (
     `id`       int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`     varchar(255) NOT NULL DEFAULT '',
-    `clans_id` int          NULL,
+    `clans_id` int          NOT NULL,
     `priority` int          NOT NULL DEFAULT 1,
     `right_1`  bit(1)       NOT NULL DEFAULT 0,
     `right_2`  bit(1)       NOT NULL DEFAULT 0,

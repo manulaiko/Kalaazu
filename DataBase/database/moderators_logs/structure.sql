@@ -4,7 +4,7 @@
 --
 CREATE TABLE `moderators_logs` (
     `id`            int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `moderators_id` int          NULL     DEFAULT NULL,
+    `moderators_id` int          NOT NULL,
     `date`          timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `type`          varchar(255) NOT NULL DEFAULT '',
     `text`          text         NOT NULL,

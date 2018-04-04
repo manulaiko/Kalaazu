@@ -4,10 +4,10 @@
 --
 CREATE TABLE `maps_portals` (
     `id`              int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `levels_id`       int    NULL     DEFAULT NULL,
-    `maps_id`         int    NULL     DEFAULT NULL,
+    `levels_id`       int    NOT NULL DEFAULT 1,
+    `maps_id`         int    NOT NULL,
     `position`        point  NOT NULL                COMMENT 'Position on map.',
-    `target_maps_id`  int    NULL     DEFAULT NULL,
+    `target_maps_id`  int    NOT NULL,
     `target_position` point  NOT NULL                COMMENT 'Position where the account will be spawned after using the portal.',
     `is_visible`      bit(1) NOT NULL DEFAULT 1,
     `is_working`      bit(1) NOT NULL DEFAULT 1,

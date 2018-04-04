@@ -4,8 +4,8 @@
 --
 CREATE TABLE `clans_news` (
     `id`          int       NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `accounts_id` int       NULL     DEFAULT NULL              COMMENT 'Author.',
-    `clans_id`    int       NULL     DEFAULT NULL,
+    `accounts_id` int       NOT NULL                           COMMENT 'Author.',
+    `clans_id`    int       NOT NULL,
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Creation date.',
     `text`        text      NOT NULL                           COMMENT 'News content.',
 

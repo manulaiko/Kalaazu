@@ -4,9 +4,9 @@
 --
 CREATE TABLE `accounts_hangars` (
     `id`                         int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`                int          NULL     DEFAULT NULL,
-    `accounts_ships_id`          int          NULL     DEFAULT NULL,
-    `accounts_configurations_id` int          NULL     DEFAULT NULL,
+    `accounts_id`                int          NOT NULL,
+    `accounts_ships_id`          int          NULL     DEFAULT NULL   COMMENT 'Ship available in the hangar.',
+    `accounts_configurations_id` int          NULL     DEFAULT NULL   COMMENT 'Equipped configuration.',
     `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
 

@@ -5,37 +5,38 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_banks/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/relations.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/relations.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_configurations/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skills/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_skills/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_applications/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_applications/relations.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_messages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_messages/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_messages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_messages/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_news/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_news/dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_diplomacies/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_diplomacies/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_news/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_news/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/factions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/factions/dump.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/factions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/factions/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_stages/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/invitation_codes/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/levels/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/maps/relations.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/moderators/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/moderators_logs/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/rewards/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_vouchers/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/rewards_vouchers/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/techfactory_items/dump.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/ships/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/ships/structure.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/trade_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/trade_items/structure.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -67,18 +68,42 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_unlocks/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/skylab_modules/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/stats/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_costs/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_drones/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_items/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/trade_items/structure.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/users/dump.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/users/relations.sql">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
@@ -86,28 +111,8 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/dump.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/relations.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/structure.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/dump.sql">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/relations.sql">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -139,57 +144,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/LICENSE" />
-        <option value="$PROJECT_DIR$/doc/Module Architecture.md" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/941c8faa-2116-4c81-bde1-970c291baf28/console.sql" />
-        <option value="$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/users/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/users/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_drones/dump.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_drones/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_pets/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_drones/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_pets/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_banks/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_skills/relations.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_techfactories/relations.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans/dump.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans_applications/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans_messages/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans_news/dump.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/factions/dump.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/factions/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/galaxygates_stages/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/invitation_codes/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/items/dump.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/items/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/levels/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/maps/relations.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/rewards/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/rewards_vouchers/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/techfactory_items/dump.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_banks/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_messages/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_diplomacies/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_news/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/factions/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/moderators/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/moderators_logs/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/ships/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/trade_items/structure.sql" />
       </list>
     </option>
   </component>
@@ -222,6 +227,195 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_banks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_banks_logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_clans_roles" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_configurations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_configurations_accounts_items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_drones" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_galaxygates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_hangars" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_pets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_ranking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_ships" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_skills" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_skylab" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_techfactories" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_techfactory_items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_applications" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_banks" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_banks_logs" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_battlestations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_battlestations_items" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_diplomacies" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_messages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_news" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
@@ -689,169 +883,222 @@
     <MESSAGE value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
     <MESSAGE value="Create `accounts_ranking`&#10;&#10;Moved rank points from `accounts` to their own table for&#10;extensibility proposes." />
     <MESSAGE value="Create `accounts_drones`&#10;&#10;The `accounts_drones` table contains the drones of an account, this&#10;way it's possible to keep track of a drone level.&#10;&#10;This commit also improves the configuration items by identifying if an&#10;item is equipped in a drone or a pet, if none of both is set, it's&#10;assumed it's equipped in the ship. Also fixes relations of&#10;`accounts_pets` -&gt; `levels` and column values." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create `accounts_drones`&#10;&#10;The `accounts_drones` table contains the drones of an account, this&#10;way it's possible to keep track of a drone level.&#10;&#10;This commit also improves the configuration items by identifying if an&#10;item is equipped in a drone or a pet, if none of both is set, it's&#10;assumed it's equipped in the ship. Also fixes relations of&#10;`accounts_pets` -&gt; `levels` and column values." />
+    <MESSAGE value="Fix typos&#10;&#10;Fixed all typos that the IDE was complaining about!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typos&#10;&#10;Fixed all typos that the IDE was complaining about!" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_quests/dump.sql">
+    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/collectables/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_quests/relations.sql">
+    <entry file="file://$PROJECT_DIR$/DataBase/database/factions/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="46" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/dump.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="55" selection-start-line="6" selection-start-column="55" selection-end-line="6" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/dump.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_spawns/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_stages/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/galaxygates_waves/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/invitation_codes/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/invitation_codes_redeem_logs/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/items/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/levels/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/maps/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="53" lean-forward="true" selection-start-line="7" selection-start-column="32" selection-end-line="7" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/maps_npcs/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/maps_portals/dump.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/moderators/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="36" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/moderators_logs/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/news/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/npcs/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/quests/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="48" selection-start-line="7" selection-start-column="48" selection-end-line="7" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/ranks/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_collectables/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_galaxygates/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_npcs/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_quests/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_ships/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_ships/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_ships/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_vouchers/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_vouchers/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/rewards_vouchers/structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="46" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/server_log/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/server_log/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/server_log/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/ships/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/ships/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/ships/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_levels/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_levels/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_levels/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_skills/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_skills/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="80" selection-start-line="9" selection-start-column="80" selection-end-line="9" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_unlocks/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_unlocks/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_unlocks/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skylab_modules/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/skylab_modules/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/skylab_modules/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/stats/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/stats/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/stats/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_costs/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_costs/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_costs/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_drones/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_drones/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_drones/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_items/dump.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="64" selection-start-line="6" selection-start-column="64" selection-end-line="6" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_items/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/techfactory_items/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/trade_items/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/trade_items/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/trade_items/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/users/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/users/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/users/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/relations.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/dump.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/structure.sql">

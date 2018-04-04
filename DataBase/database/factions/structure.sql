@@ -8,9 +8,9 @@ CREATE TABLE `factions` (
     `tag`                varchar(3)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `description`        text         NOT NULL,
     `is_public`          bit(1)       NOT NULL DEFAULT 1,
-    `low_maps_id`        int          NULL     DEFAULT NULL,
+    `low_maps_id`        int          NOT NULL,
     `low_maps_position`  point        NOT NULL                COMMENT 'Starting position on map.',
-    `high_maps_id`       int          NULL     DEFAULT NULL,
+    `high_maps_id`       int          NOT NULL,
     `high_maps_position` point        NOT NULL                COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)

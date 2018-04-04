@@ -4,8 +4,8 @@
 --
 CREATE TABLE `accounts_galaxygates` (
     `id`             int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id` int    NULL     DEFAULT NULL,
-    `accounts_id`    int    NULL     DEFAULT NULL,
+    `galaxygates_id` int    NOT NULL,
+    `accounts_id`    int    NOT NULL,
     `parts`          int    NOT NULL DEFAULT 0      COMMENT 'Collected parts.',
     `lifes`          int    NOT NULL DEFAULT -1     COMMENT 'Available lives (-1 not build yet)',
     `wave`           int    NOT NULL DEFAULT -1     COMMENT 'Current wave.',

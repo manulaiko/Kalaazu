@@ -4,7 +4,7 @@
 --
 CREATE TABLE `accounts_banks` (
     `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id` int          NULL     DEFAULT NULL,
+    `accounts_id` int          NOT NULL,
     `credits`     bigint       NOT NULL DEFAULT 0      COMMENT 'Credits available in the bank.',
     `uridium`     bigint       NOT NULL DEFAULT 0      COMMENT 'Uridium available in the bank.',
     `tax_credits` decimal(5,2) NOT NULL DEFAULT 5.0    COMMENT 'Tax rate for credits.',

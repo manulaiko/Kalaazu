@@ -4,8 +4,8 @@
 --
 CREATE TABLE `galaxygates_stages_spawns` (
     `id`                    int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_stages_id` int NULL     DEFAULT NULL,
-    `galaxygates_spawns_id` int NULL     DEFAULT NULL,
+    `galaxygates_stages_id` int NOT NULL,
+    `galaxygates_spawns_id` int NOT NULL,
 
     CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';

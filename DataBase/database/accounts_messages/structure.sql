@@ -4,9 +4,9 @@
 --
 CREATE TABLE `accounts_messages` (
     `id`               int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `from_accounts_id` int          NULL     DEFAULT NULL,
+    `from_accounts_id` int          NOT NULL,
     `from_status`      int          NOT NULL DEFAULT 1                  COMMENT '0 = unread, 1 = read, 2 = deleted.',
-    `to_accounts_id`   int          NULL     DEFAULT NULL,
+    `to_accounts_id`   int          NOT NULL,
     `to_status`        int          NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `title`            varchar(255) NOT NULL,
