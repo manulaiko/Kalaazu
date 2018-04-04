@@ -1,6 +1,6 @@
 -- Quest conditions table.
 --
--- Quests' conditions.
+-- Quest's conditions.
 --
 CREATE TABLE `quests_conditions` (
     `id`                   int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
@@ -10,7 +10,7 @@ CREATE TABLE `quests_conditions` (
     `value`                varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Quests\' conditions.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Quest''s conditions.';
 
 CREATE INDEX `quests_conditions_quests_conditions_id_idx` ON `quests_conditions` (`quests_conditions_id`);
 CREATE INDEX `quests_conditions_quests_id_idx` ON `quests_conditions` (`quests_id`);

@@ -3,7 +3,7 @@
 -- Portals on map.
 --
 CREATE TABLE `maps_portals` (
-    `id`              int    NOT NULL AUTO_INCREMENT COMMENT 'Primery Key.',
+    `id`              int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `levels_id`       int    NULL     DEFAULT NULL,
     `maps_id`         int    NULL     DEFAULT NULL,
     `position`        point  NOT NULL                COMMENT 'Position on map.',

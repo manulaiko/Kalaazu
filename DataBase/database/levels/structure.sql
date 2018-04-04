@@ -11,6 +11,6 @@ CREATE TABLE `levels` (
     `shield`  decimal(5,2) NOT NULL DEFAULT 0.0    COMMENT 'Shield bonus applied to an item at this level.',
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server\'s levels.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s levels.';
 
 CREATE  UNIQUE INDEX `levels_account_idx` ON `levels` (`account`);

@@ -11,6 +11,6 @@ CREATE TABLE `rewards` (
     `comment`     varchar(255)  NULL     DEFAULT NULL   COMMENT 'Comment of the reward.',
 
     CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'All rewards available so there\'s no need of JSON.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'All rewards available so there''s no need of JSON.';
 
 CREATE INDEX `rewards_items_id` ON `rewards` (`items_id`);

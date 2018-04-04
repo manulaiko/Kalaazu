@@ -6,7 +6,7 @@ CREATE TABLE `clans_messages` (
     `id`               int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
     `clans_id`         int          NOT NULL                            COMMENT 'Clan where the message was created',
     `from_accounts_id` int          NOT NULL                            COMMENT 'Author of the message.',
-    `to_accounts_id`   int          NULL     DEFAULT NULL               COMMENT 'Destinatary of the message, if null, everyone',
+    `to_accounts_id`   int          NULL     DEFAULT NULL               COMMENT 'Destination of the message, if null, everyone',
     `subject`          varchar(255) NOT NULL DEFAULT '',
     `text`             text         NOT NULL,
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,

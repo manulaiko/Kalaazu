@@ -1,4 +1,4 @@
--- GalayGates to Waves table.
+-- GalaxyGates to Waves table.
 --
 -- Many to many relations for galaxygates and galaxygates_waves.
 --

@@ -1,6 +1,6 @@
 -- Accounts table.
 --
--- Ingame accounts.
+-- In-game accounts.
 --
 CREATE TABLE `accounts` (
     `id`                   int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',

@@ -1,1 +1,1 @@
--- Initial dumo for the `clans` table.
+-- Initial dump for the `clans` table.

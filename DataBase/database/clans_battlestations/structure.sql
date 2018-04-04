@@ -1,4 +1,4 @@
--- Clan battel stations table.
+-- Clan battle stations table.
 --
 -- Clan CBS.
 --

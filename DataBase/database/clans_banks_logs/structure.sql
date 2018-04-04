@@ -13,7 +13,7 @@ CREATE TABLE `clans_banks_logs` (
     `currency`         int       NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from clan\'s bank.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from clan''s bank.';
 
 CREATE INDEX `clans_banks_logs_clans_banks_id_idx` ON `clans_banks_logs` (`clans_banks_id`);
 CREATE INDEX `clans_banks_logs_from_accounts_id_idx` ON `clans_banks_logs` (`from_accounts_id`);

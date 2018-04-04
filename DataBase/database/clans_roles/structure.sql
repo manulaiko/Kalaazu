@@ -22,7 +22,7 @@ CREATE TABLE `clans_roles` (
     `right_13` bit(1)       NOT NULL DEFAULT 0,
 
     CONSTRAINT `clans_rights_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan\'s permissions clans_roles.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s permissions clans_roles.';
 
 CREATE INDEX `clans_roles_clans_id_idx` ON `clans_roles` (`clans_id`);
 CREATE INDEX `clans_roles_name_idx` ON `clans_roles` (`name`);

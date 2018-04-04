@@ -14,7 +14,7 @@ CREATE TABLE `factions` (
     `high_maps_position` point        NOT NULL                COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server\'s factions.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s factions.';
 
 CREATE UNIQUE INDEX `factions_name_idx` ON `factions` (`name`);
 CREATE UNIQUE INDEX `factions_tag_idx` ON `factions` (`tag`);

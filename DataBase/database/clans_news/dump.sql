@@ -1,1 +1,1 @@
--- Intial dump for the `clans_news` table.
+-- Initial dump for the `clans_news` table.

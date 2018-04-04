@@ -13,7 +13,7 @@ CREATE TABLE `accounts_banks_logs` (
     `accounts_banks_id` int       NULL     DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from account\'s bank';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from account''s bank';
 
 CREATE INDEX `accounts_banks_logs_from_accounts_id_idx` ON `accounts_banks_logs` (`from_accounts_id`);
 CREATE INDEX `accounts_banks_logs_to_accounts_id_idx` ON `accounts_banks_logs` (`to_accounts_id`);

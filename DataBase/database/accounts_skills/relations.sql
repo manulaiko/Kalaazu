@@ -1,6 +1,6 @@
 -- Relations for the `accounts_skills` table.
 --
--- A skill belogns to an account.
+-- A skill belongs to an account.
 -- A skill is a skill.
 -- A skill has a level.
 

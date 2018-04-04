@@ -1,4 +1,4 @@
--- GalayGates to GGSpins table.
+-- GalaxyGates to GGSpins table.
 --
 -- Many to many relations for galaxygates and galaxygates_spins.
 --

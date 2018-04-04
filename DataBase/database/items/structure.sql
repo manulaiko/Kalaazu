@@ -14,4 +14,4 @@ CREATE TABLE `items` (
     `is_buyable`  bit(1)       NOT NULL DEFAULT 1      COMMENT 'Buyable in shop',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server\'s items.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s items.';

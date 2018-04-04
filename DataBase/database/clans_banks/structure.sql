@@ -11,6 +11,6 @@ CREATE TABLE `clans_banks` (
     `tax_uridium` decimal(5,2) NOT NULL DEFAULT '0.0'  COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan\'s internal bank.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s internal bank.';
 
 CREATE UNIQUE INDEX `clans_bank_clans_id_idx` ON `clans_banks` (`clans_id`);
