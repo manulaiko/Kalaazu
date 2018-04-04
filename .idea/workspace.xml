@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items.">
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -34,21 +35,21 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/structure.sql">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="119">
-              <caret line="7" column="65" lean-forward="true" selection-end-line="11" />
+              <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/dump.sql">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/dump.sql">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/relations.sql">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/relations.sql">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
@@ -72,6 +73,7 @@
         <option value="$PROJECT_DIR$/doc/Module Architecture.md" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/941c8faa-2116-4c81-bde1-970c291baf28/console.sql" />
         <option value="$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" />
       </list>
     </option>
   </component>
@@ -99,19 +101,6 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
-              <item name="sql" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts_configurations_accounts_items" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -125,7 +114,7 @@
     <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.annotationProcessors" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -204,7 +193,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.6551724" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.25757575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.25757575" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.25757575" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -224,10 +213,13 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <MESSAGE value="Create LICENSE and README" />
     <MESSAGE value="Document module architecture&#10;&#10;Provide a short and simple documentation of what the different modules&#10;do and how they interact between them." />
     <MESSAGE value="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items." />
+    <MESSAGE value="Actually import BlackEye's database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Actually import BlackEye's database" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -274,16 +266,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/dump.sql">
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/dump.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/relations.sql">
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/relations.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/sql/accounts_configurations_accounts_items/structure.sql">
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
-          <caret line="7" column="65" lean-forward="true" selection-end-line="11" />
+          <caret line="7" column="45" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
         </state>
       </provider>
     </entry>
