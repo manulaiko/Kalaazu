@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/users/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/users/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/users/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/users/structure.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -62,13 +63,40 @@
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/accounts/structure.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
+            <state relative-caret-position="357">
+              <caret line="21" selection-start-line="21" selection-end-line="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="31" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="relations.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="42" selection-start-column="42" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/accounts/relations.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
@@ -115,6 +143,9 @@
         <option value="$PROJECT_DIR$/DataBase/database/users/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/users/relations.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql" />
       </list>
     </option>
   </component>
@@ -160,6 +191,13 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="accounts_ranking" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
               <item name="users" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -178,14 +216,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/doc/uml" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/DataBase/database" />
       <recent name="$PROJECT_DIR$/CMS" />
       <recent name="$PROJECT_DIR$/DataBase" />
       <recent name="$PROJECT_DIR$/Emulator" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc/uml" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -281,7 +320,8 @@
     <MESSAGE value="Actually import BlackEye's database" />
     <MESSAGE value="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items." />
     <MESSAGE value="Delete OAuth tables&#10;&#10;There's no need of an API." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delete OAuth tables&#10;&#10;There's no need of an API." />
+    <MESSAGE value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
+    <option name="LAST_COMMIT_MESSAGE" value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -358,17 +398,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts/structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="103" selection-start-line="26" selection-start-column="103" selection-end-line="26" selection-end-column="103" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/accounts/relations.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" selection-start-column="42" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="31" selection-start-line="4" selection-start-column="14" selection-end-line="4" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="33" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
         </state>
       </provider>
     </entry>
