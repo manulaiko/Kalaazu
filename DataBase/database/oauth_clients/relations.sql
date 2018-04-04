@@ -1,1 +1,0 @@
--- Relations for the `oauth_clients` table

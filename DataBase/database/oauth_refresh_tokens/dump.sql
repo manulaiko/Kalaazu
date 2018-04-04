@@ -1,1 +1,0 @@
--- Initial dump for the `oauth_refresh_tokens` table
