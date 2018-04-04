@@ -4,8 +4,8 @@
 --
 CREATE TABLE `accounts_pets` (
     `id`                         int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`                int          NULL     DEFAULT NULL,
-    `levels_id`                  int          NULL     DEFAULT NULL,
+    `accounts_id`                int          NOT NULL,
+    `levels_id`                  int          NOT NULL DEFAULT 1,
     `name`                       varchar(255) NOT NULL DEFAULT '',
     `experience`                 int          NOT NULL DEFAULT 0,
     `fuel`                       int          NOT NULL DEFAULT 0,
@@ -20,6 +20,6 @@ CREATE TABLE `accounts_pets` (
     `slots_gears_available`      int          NOT NULL,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
-) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account\'s PETs.';
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s PETs.';
 
 CREATE  UNIQUE INDEX `accounts_pets_accounts_id_idx` ON `accounts_pets` (`accounts_id`);

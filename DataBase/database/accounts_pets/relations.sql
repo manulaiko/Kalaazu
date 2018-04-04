@@ -7,4 +7,4 @@ ALTER TABLE `accounts_pets` ADD CONSTRAINT `accounts_pets_accounts` FOREIGN KEY 
     REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_pets` ADD CONSTRAINT `accounts_pets_levels` FOREIGN KEY `accounts_pets_levels` (`levels_id`)
-    REFERENCES `accounts` (`id`);
+    REFERENCES `levels` (`id`);
