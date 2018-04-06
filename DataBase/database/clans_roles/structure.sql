@@ -9,7 +9,7 @@ CREATE TABLE `clans_roles` (
     `clans_roles_id` int          NULL     DEFAULT NULL   COMMENT 'Parent role.',
     `priority`       int          NOT NULL DEFAULT 1,
 
-    CONSTRAINT `clans_rights_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s roles.';
 
 CREATE INDEX `clans_roles_clans_id_idx` ON `clans_roles` (`clans_id`);

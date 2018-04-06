@@ -687,7 +687,7 @@ CREATE TABLE `clans_roles` (
     `clans_roles_id` int          NULL     DEFAULT NULL   COMMENT 'Parent role.',
     `priority`       int          NOT NULL DEFAULT 1,
 
-    CONSTRAINT `clans_rights_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s roles.';
 
 CREATE INDEX `clans_roles_clans_id_idx` ON `clans_roles` (`clans_id`);
@@ -703,7 +703,7 @@ CREATE TABLE `clans_roles_permissions` (
     `id`             int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `clans_roles_id` int    NOT NULL,
     `permissions_id` int    NOT NULL,
-    `enabled`        bit(1) NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited'
+    `enabled`        bit(1) NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan roles'' permissions';
@@ -881,11 +881,11 @@ CREATE UNIQUE INDEX `factions_tag_idx` ON `factions` (`tag`);
 
 -- Initial dump for the `factions` table.
 --
-INSERT INTO `factions` (`id`, `name`, `tag`, `is_public`, `description`, `low_maps_position`, `high_maps_position`) VALUES
-(1, 'Mars Mining Operations',        'mmo', 1, 'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!',                                            point(1000, 1000),  point(1000, 6000)),
-(2, 'Earth Industries Corporations', 'eic', 1, 'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!',                            point(19000, 1000), point(10700, 1000)),
-(3, 'Venus Resources Unlimited',     'vru', 1, 'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!', point(19000, 1300), point(19000, 6000)),
-(4, 'Admins and Mods',               'aam', 0, 'Secret faction for Admins and Mods >:)',                                                                                                                                                                                                                                                                                                                point(1000, 1000),  point(1000, 1000));
+INSERT INTO `factions` (`id`, `name`, `tag`, `is_public`, `description`, `low_maps_id`, `low_maps_position`, `high_maps_id`, `high_maps_position`) VALUES
+(1, 'Mars Mining Operations',        'mmo', 1, 'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!',                                            1,  point(1000, 1000),  20, point(1000, 6000)),
+(2, 'Earth Industries Corporations', 'eic', 1, 'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!',                            5,  point(19000, 1000), 24, point(10700, 1000)),
+(3, 'Venus Resources Unlimited',     'vru', 1, 'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!', 9,  point(19000, 1300), 28, point(19000, 6000)),
+(4, 'Admins and Mods',               'aam', 0, 'Secret faction for Admins and Mods >:)',                                                                                                                                                                                                                                                                                                                92, point(1000, 1000),  92, point(1000, 1000));
 
 -- GalaxyGates table.
 --
@@ -3634,7 +3634,8 @@ INSERT INTO `permissions` (`id`, `name`, `category`) VALUES
 (10, 'create_news',         'clan'),
 (11, 'manage_modules',      'clan'),
 (12, 'manage_deflector',    'clan'),
-(13, 'build_station',       'clan'),
+(13, 'build_station',       'clan');
+
 -- Quest table.
 --
 -- In game quests.

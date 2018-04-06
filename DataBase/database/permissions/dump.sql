@@ -13,4 +13,4 @@ INSERT INTO `permissions` (`id`, `name`, `category`) VALUES
 (10, 'create_news',         'clan'),
 (11, 'manage_modules',      'clan'),
 (12, 'manage_deflector',    'clan'),
-(13, 'build_station',       'clan'),
+(13, 'build_station',       'clan');
