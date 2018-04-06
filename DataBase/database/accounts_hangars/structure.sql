@@ -3,12 +3,13 @@
 -- Hangars bough by an account.
 --
 CREATE TABLE `accounts_hangars` (
-    `id`                         int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`                         int          NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `accounts_id`                int          NOT NULL,
-    `accounts_ships_id`          int          NULL     DEFAULT NULL   COMMENT 'Ship available in the hangar.',
-    `accounts_configurations_id` int          NULL     DEFAULT NULL   COMMENT 'Equipped configuration.',
-    `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `accounts_ships_id`          int          NULL     DEFAULT NULL              COMMENT 'Ship available in the hangar.',
+    `accounts_configurations_id` int          NULL     DEFAULT NULL              COMMENT 'Equipped configuration.',
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
+    `priority`                   int          NULL     DEFAULT -1                COMMENT 'Order priority, null = not ordered.',
+    `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Hangars bough by an account.';
