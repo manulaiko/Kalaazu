@@ -285,15 +285,15 @@
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/doc/uml" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/DataBase/database" />
       <recent name="$PROJECT_DIR$/CMS" />
       <recent name="$PROJECT_DIR$/DataBase" />
       <recent name="$PROJECT_DIR$/Emulator" />
       <recent name="$PROJECT_DIR$" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/doc/uml" />
     </key>
   </component>
   <component name="RunDashboard">
