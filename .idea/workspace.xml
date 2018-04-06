@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/dump.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/relations.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/structure.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans/structure.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,13 +39,45 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/clans/structure.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="117" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
+            <state relative-caret-position="119">
+              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/dump.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="50" selection-start-column="50" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/relations.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="32" lean-forward="true" selection-start-column="22" selection-end-column="47" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/structure.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -53,11 +87,13 @@
       <find>\'</find>
       <find>items</find>
       <find>accounts_history</find>
+      <find>clans_banks</find>
     </findStrings>
     <replaceStrings>
       <replace>''</replace>
       <replace>quests</replace>
       <replace>accounts_destroys</replace>
+      <replace>clans_battlestations_logs</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -73,9 +109,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_messages/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" />
@@ -124,6 +157,9 @@
         <option value="$PROJECT_DIR$/DataBase/database/items/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/clans/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/dump.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/relations.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/structure.sql" />
       </list>
     </option>
   </component>
@@ -132,7 +168,9 @@
     <option name="width" value="620" />
     <option name="height" value="474" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -156,6 +194,20 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_battlestations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+              <item name="clans_battlestations_logs" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
@@ -326,21 +378,10 @@
     <MESSAGE value="Add ranking stats" />
     <MESSAGE value="Create `accounts_destroys` table&#10;&#10;This table contains the ship destroy history of an account." />
     <MESSAGE value="Add `priority` column.&#10;&#10;This column indicates the order priority of the hangar." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `priority` column.&#10;&#10;This column indicates the order priority of the hangar." />
+    <MESSAGE value="Add information columns" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add information columns" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_items/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/clans_diplomacies/structure.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -579,8 +620,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/clans/structure.sql">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/dump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="50" selection-start-column="50" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/relations.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="32" lean-forward="true" selection-start-column="22" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
-          <caret line="12" column="117" selection-start-line="12" selection-start-column="117" selection-end-line="12" selection-end-column="117" />
+          <caret line="12" column="77" selection-start-line="12" selection-start-column="77" selection-end-line="12" selection-end-column="77" />
         </state>
       </provider>
     </entry>
