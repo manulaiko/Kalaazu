@@ -1,10 +1,10 @@
--- BlackEye database v2.1.1
+-- Kalaazu database v3.0.0
 -- 
 -- @author Manulaiko <manulaiko@gmail.com>
 
-DROP DATABASE IF EXISTS `blackeye`;
-CREATE DATABASE `blackeye`;
-USE `blackeye`;
+DROP DATABASE IF EXISTS `kalaazu`;
+CREATE DATABASE `kalaazu`;
+USE `kalaazu`;
 
 -- Accounts table.
 --

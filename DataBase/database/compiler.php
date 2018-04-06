@@ -5,13 +5,13 @@
  * @author Manulaiko <manulaiko@gmail.com>
  */
 
-$header = "-- BlackEye database v2.1.1
+$header = "-- Kalaazu database v3.0.0
 -- 
 -- @author Manulaiko <manulaiko@gmail.com>
 
-DROP DATABASE IF EXISTS `blackeye`;
-CREATE DATABASE `blackeye`;
-USE `blackeye`;\n";
+DROP DATABASE IF EXISTS `kalaazu`;
+CREATE DATABASE `kalaazu`;
+USE `kalaazu`;\n";
 $sql = "";
 $rel = "";
 $dir = scandir(".");
