@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_quests/dump.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_quests/relations.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_quests/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_destroys/dump.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_destroys/relations.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/DataBase/database/accounts_destroys/structure.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -40,24 +39,6 @@
   <component name="FileEditorManager">
     <leaf>
       <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/events/dump.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="31" lean-forward="true" selection-start-column="25" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/events/structure.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_history/dump.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state>
@@ -69,8 +50,44 @@
       <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
+            <state relative-caret-position="204">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="dump.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/dump.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="42" selection-start-column="25" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/relations.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="34" selection-start-column="22" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/structure.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/DataBase/database/ships/structure.sql">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -93,7 +110,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="true">
+      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_quests/structure.sql">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
@@ -107,32 +124,18 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="relations.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_history/relations.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" lean-forward="true" selection-start-column="22" selection-end-column="38" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="structure.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_history/structure.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="63" selection-start-line="5" selection-start-column="63" selection-end-line="5" selection-end-column="63" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>\'</find>
+      <find>items</find>
+      <find>accounts_history</find>
     </findStrings>
     <replaceStrings>
       <replace>''</replace>
+      <replace>quests</replace>
+      <replace>accounts_destroys</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -148,9 +151,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" />
@@ -195,10 +195,13 @@
         <option value="$PROJECT_DIR$/DataBase/database/accounts_history/dump.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_history/relations.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_history/structure.sql" />
-        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_quests/dump.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_quests/relations.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/accounts_quests/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_destroys/dump.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_destroys/relations.sql" />
+        <option value="$PROJECT_DIR$/DataBase/database/accounts_destroys/structure.sql" />
       </list>
     </option>
   </component>
@@ -231,27 +234,6 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="DataBase" type="462c0819:PsiDirectoryNode" />
               <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts_quests" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="accounts_ranking" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="DataBase" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="quests" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -346,7 +328,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.6546875" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" weight="0.26136363" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.26136363" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.25757575" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -411,22 +393,11 @@
     <MESSAGE value="Add role inheritance&#10;&#10;Now roles can extend other roles." />
     <MESSAGE value="Create events table&#10;&#10;This table contains the events that can be handled by the server." />
     <MESSAGE value="Create `accounts_history` table&#10;&#10;This table contains all the history events of an account." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create `accounts_history` table&#10;&#10;This table contains all the history events of an account." />
+    <MESSAGE value="Create `accounts_quests` table&#10;&#10;This table contains the quest history of an account." />
+    <MESSAGE value="Add ranking stats" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add ranking stats" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/clans_ranking/dump.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="25" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/clans_ranking/relations.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -534,13 +505,6 @@
         <state relative-caret-position="-663" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/ships/structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -629,13 +593,6 @@
     <entry file="file://$PROJECT_DIR$/DataBase/database/quests/structure.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="101" selection-start-line="8" selection-start-column="101" selection-end-line="8" selection-end-column="101" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_quests/dump.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -654,6 +611,41 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
           <caret line="9" column="118" selection-start-line="9" selection-start-column="118" selection-end-line="9" selection-end-column="118" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/dump.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="42" selection-start-column="25" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/relations.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="34" selection-start-column="22" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/ships/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/DataBase/database/accounts_destroys/structure.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
