@@ -1,1 +1,0 @@
--- Initial dump for the `stats` table.
