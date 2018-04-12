@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles_permissions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/clans_roles_permissions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/factions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/factions/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/permissions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/DataBase/database/permissions/dump.sql" afterDir="false" />
-    </list>
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -361,7 +354,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Actually import BlackEye's database" />
     <MESSAGE value="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items." />
     <MESSAGE value="Delete OAuth tables&#10;&#10;There's no need of an API." />
     <MESSAGE value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
@@ -386,7 +378,8 @@
     <MESSAGE value="Rename `stats` table to `key_value`&#10;&#10;Renamed the table." />
     <MESSAGE value="Compile database&#10;&#10;Compiled all the tables into dump.sql." />
     <MESSAGE value="Rename database&#10;&#10;Database renamed from BlackEye to Kalaazu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename database&#10;&#10;Database renamed from BlackEye to Kalaazu" />
+    <MESSAGE value="Fix typos." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix typos." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/DataBase/database/skilltree_levels/structure.sql">
