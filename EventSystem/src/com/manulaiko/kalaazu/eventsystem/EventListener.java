@@ -1,6 +1,5 @@
 package com.manulaiko.kalaazu.eventsystem;
 
-import lombok.Data;
 import lombok.NonNull;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -18,27 +17,7 @@ import org.greenrobot.eventbus.ThreadMode;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Data
 public abstract class EventListener {
-    /**
-     * The event manager of this listener.
-     */
-    private EventManager manager;
-
-    /**
-     * Subscribes the event listener.
-     */
-    public void subscribe() {
-        this.manager.subscribe(this);
-    }
-
-    /**
-     * Unsubscribes the event listener.
-     */
-    public void unsubscribe() {
-        this.manager.unsubscribe(this);
-    }
-
     /**
      * Listens for published events.
      *

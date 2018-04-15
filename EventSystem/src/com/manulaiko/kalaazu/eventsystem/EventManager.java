@@ -103,7 +103,6 @@ public class EventManager {
      * @param listener Listener to subscribe.
      */
     public void subscribe(@NonNull EventListener listener) {
-        listener.manager(this);
         this.bus.register(listener);
     }
 
@@ -113,7 +112,6 @@ public class EventManager {
      * @param listener Listener to unsubscribe.
      */
     public void unsubscribe(@NonNull EventListener listener) {
-        listener.manager(this);
         this.bus.unregister(listener);
     }
 }
