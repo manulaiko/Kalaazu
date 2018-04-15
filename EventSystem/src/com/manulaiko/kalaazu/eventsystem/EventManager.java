@@ -93,7 +93,7 @@ public class EventManager {
      *
      * @param event Event to publish.
      */
-    public void publish(@NonNull Event event) {
+    public void publish(@NonNull Object event) {
         this.bus.post(event);
     }
 
