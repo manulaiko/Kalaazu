@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>10</x>
+      <y>90</y>
+      <w>410</w>
+      <h>380</h>
+    </coordinates>
+    <panel_attributes>eventsystem::EventManager
+--
+-config: Configuration
+--
++initialize(): boolean
++publish(event: Event)
++subscribe(listener: EventListener)
++unsubscribe(listener: EventListener)
++config(config: Configuration): EventManager
++config(): Configuration
+{innerclass
+Configuration
+--
+-logExceptions: boolean
+-logNoSubscribers: boolean
+-sendNoSubscriberEvents: boolean
+-sendExceptionEvents: boolean
+--
++logExceptions(flag: boolean): Configuration
++logExceptions(): boolean
++logNoSubscribers(flag: boolean): Configuration
++logNoSubscribers(): boolean
++sendNoSubscriberEvents(flag: boolean): Configuration
++sendNoSubscriberEvents(): boolean
++sendExceptionEvents(flag: boolean): Configuration
++sendExceptionEvents(): boolean
+innerclass}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>520</x>
+      <y>90</y>
+      <w>350</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>/eventsystem::EventListener/
+--
+-manager: EventManager
+--
++subscribe()
++unsubscribe()
++onEvent(event: Event)
++manager(manager: EventManager): EventListener
++manager(): EventManager</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>310</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>/Event/</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>690</x>
+      <y>220</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>150</y>
+      <w>130</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>110.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>
