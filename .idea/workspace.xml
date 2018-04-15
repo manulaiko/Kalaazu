@@ -1,273 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/DataBase.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_banks_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_banks_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_clans_roles/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_clans_roles/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_clans_roles/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_clans_roles/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations_accounts_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations_accounts_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_configurations_accounts_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_configurations_accounts_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_destroys/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_destroys/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_destroys/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_destroys/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_destroys/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_destroys/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_drones/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_drones/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_drones/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_drones/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_drones/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_drones/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_galaxygates/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_galaxygates/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_galaxygates/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_galaxygates/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_hangars/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_hangars/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_hangars/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_hangars/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_hangars/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_hangars/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_history/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_history/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_history/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_history/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_history/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_history/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_messages/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_messages/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_messages/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_messages/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_messages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_messages/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_pets/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_pets/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_pets/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_pets/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_pets/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_pets/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_quests/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_quests/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_quests/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_quests/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_quests/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_quests/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ranking/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ranking/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ranking/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ranking/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ranking/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ranking/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ships/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ships/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ships/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ships/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_ships/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_ships/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skills/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skills/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skills/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skills/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skills/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skills/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skylab/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skylab/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skylab/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skylab/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_skylab/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_skylab/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactories/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactories/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactories/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactories/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactory_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactory_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/accounts_techfactory_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/accounts_techfactory_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_applications/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_applications/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_applications/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_applications/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_applications/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_applications/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_banks_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_banks_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_battlestations_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_battlestations_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_diplomacies/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_diplomacies/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_diplomacies/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_diplomacies/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_diplomacies/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_diplomacies/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_messages/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_messages/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_messages/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_messages/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_messages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_messages/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_news/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_news/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_news/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_news/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_news/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_news/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_ranking/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_ranking/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_ranking/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_ranking/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_ranking/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_ranking/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles_permissions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles_permissions/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles_permissions/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles_permissions/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/clans_roles_permissions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/clans_roles_permissions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/collectables/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/collectables/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/collectables/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/collectables/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/collectables/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/collectables/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/compiler.php" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/compiler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/events/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/events/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/events/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/events/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/events/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/events/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/factions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/factions/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/factions/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/factions/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/factions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/factions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_spins/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_spins/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_spins/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_spins/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_waves/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_waves/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_gg_waves/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_gg_waves/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_probabilities/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_probabilities/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_probabilities/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spawns/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spawns/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spawns/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spawns/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spawns/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spawns/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spins/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spins/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spins/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spins/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_spins/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages_spawns/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages_spawns/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_stages_spawns/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_waves/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_waves/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_waves/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_waves/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/galaxygates_waves/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/galaxygates_waves/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes_redeem_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes_redeem_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes_redeem_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes_redeem_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/invitation_codes_redeem_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/invitation_codes_redeem_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/key_value/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/key_value/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/key_value/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/key_value/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/key_value/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/key_value/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels_upgrades/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels_upgrades/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels_upgrades/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels_upgrades/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/levels_upgrades/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_npcs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_npcs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_npcs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_npcs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_npcs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_npcs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_portals/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_portals/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_portals/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_portals/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_portals/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_portals/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_stations/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_stations/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_stations/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_stations/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/maps_stations/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/maps_stations/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/moderators_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/moderators_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/news/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/news/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/news/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/news/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/news/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/news/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/npcs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/npcs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/npcs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/npcs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/npcs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/npcs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/permissions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/permissions/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/permissions/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/permissions/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/permissions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/permissions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests_conditions/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests_conditions/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests_conditions/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests_conditions/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/quests_conditions/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/quests_conditions/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ranks/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ranks/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ranks/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ranks/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ranks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ranks/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_collectables/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_collectables/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_collectables/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_collectables/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_collectables/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_collectables/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_galaxygates/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_galaxygates/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_galaxygates/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_galaxygates/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_galaxygates/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_galaxygates/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_npcs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_npcs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_npcs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_npcs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_npcs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_npcs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_quests/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_quests/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_quests/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_quests/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_quests/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_quests/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_ships/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_ships/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_ships/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_ships/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_ships/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_ships/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_vouchers/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_vouchers/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_vouchers/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_vouchers/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/rewards_vouchers/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/rewards_vouchers/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/server_log/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/server_log/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/server_log/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/server_log/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/server_log/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/server_log/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ships/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ships/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ships/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ships/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/ships/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/ships/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_levels/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_levels/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_levels/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_levels/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_levels/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_levels/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_skills/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_skills/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_skills/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_skills/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_skills/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_skills/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_unlocks/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_unlocks/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_unlocks/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_unlocks/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skilltree_unlocks/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skilltree_unlocks/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skylab_modules/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skylab_modules/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skylab_modules/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skylab_modules/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/skylab_modules/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/skylab_modules/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_costs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_costs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_costs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_costs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_costs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_costs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_drones/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_drones/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_drones/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_drones/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_drones/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_drones/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/techfactory_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/techfactory_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/trade_items/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/trade_items/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/trade_items/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/trade_items/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/trade_items/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/trade_items/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/users/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/users/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/users/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/users/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/users/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/users/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/dump.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers_redeem_logs/dump.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/relations.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers_redeem_logs/relations.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/database/vouchers_redeem_logs/structure.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/database/vouchers_redeem_logs/structure.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/Classes.md" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/Classes.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/Package structure.md" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/Package structure.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/uml/Classes.png" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/uml/Classes.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/uml/Classes.uxf" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/uml/Classes.uxf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/uml/Package structure.png" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/uml/Package structure.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DataBase/doc/uml/Package structure.uxf" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/doc/uml/Package structure.uxf" afterDir="false" />
-    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -299,17 +34,7 @@
     <favorites_list name="Kalaazu" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="modules.xml" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -317,12 +42,14 @@
       <find>items</find>
       <find>accounts_history</find>
       <find>clans_banks</find>
+      <find>DataBase</find>
     </findStrings>
     <replaceStrings>
       <replace>''</replace>
       <replace>quests</replace>
       <replace>accounts_destroys</replace>
       <replace>clans_battlestations_logs</replace>
+      <replace>Persistence</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -417,7 +144,7 @@
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+              <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
@@ -515,7 +242,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -527,7 +253,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291536" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.47648904" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.26136363" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.26136363" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.25757575" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -611,7 +337,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Create 'accounts_configurations_accounts_items'&#10;&#10;An account can contain many configurations, and each configuration&#10;can contain many items." />
     <MESSAGE value="Delete OAuth tables&#10;&#10;There's no need of an API." />
     <MESSAGE value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
     <MESSAGE value="Create `accounts_ranking`&#10;&#10;Moved rank points from `accounts` to their own table for&#10;extensibility proposes." />
@@ -636,7 +361,8 @@
     <MESSAGE value="Compile database&#10;&#10;Compiled all the tables into dump.sql." />
     <MESSAGE value="Rename database&#10;&#10;Database renamed from BlackEye to Kalaazu" />
     <MESSAGE value="Fix typos." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix typos." />
+    <MESSAGE value="Rename DataBase module to Persistence." />
+    <option name="LAST_COMMIT_MESSAGE" value="Rename DataBase module to Persistence." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Persistence/database/skilltree_levels/structure.sql">
@@ -910,8 +636,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.idea/modules.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="55" selection-start-line="7" selection-start-column="55" selection-end-line="7" selection-end-column="55" />
+        <state relative-caret-position="170">
+          <caret line="10" column="10" lean-forward="true" selection-start-line="10" selection-start-column="10" selection-end-line="10" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4753">
+          <caret line="269" column="11" lean-forward="true" selection-start-line="269" selection-start-column="11" selection-end-line="269" selection-end-column="11" />
         </state>
       </provider>
     </entry>
@@ -932,7 +665,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
