@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/CMS/CMS.iml" filepath="$PROJECT_DIR$/CMS/CMS.iml" />
       <module fileurl="file://$PROJECT_DIR$/Emulator/Emulator.iml" filepath="$PROJECT_DIR$/Emulator/Emulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/EventSystem/EventSystem.iml" filepath="$PROJECT_DIR$/EventSystem/EventSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kalaazu.iml" filepath="$PROJECT_DIR$/Kalaazu.iml" />
       <module fileurl="file://$PROJECT_DIR$/Persistence/Persistence.iml" filepath="$PROJECT_DIR$/Persistence/Persistence.iml" />
     </modules>
