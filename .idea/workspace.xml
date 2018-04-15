@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Create Event interface">
+      <change afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Kalaazu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kalaazu.iml" afterDir="false" />
     </list>
-    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -38,20 +40,34 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java">
+      <file leaf-file-name="EventManager.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="42" selection-start-line="8" selection-start-column="42" selection-end-line="8" selection-end-column="42" />
+            <state relative-caret-position="1764">
+              <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#3300#3301#0" expanded="true" />
+                <element signature="e#3336#3337#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventManager.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
+      <file leaf-file-name="EventListener.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+            <state relative-caret-position="255">
+              <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#481#482#0" expanded="true" />
+                <element signature="e#525#526#0" expanded="true" />
+                <element signature="e#614#615#0" expanded="true" />
+                <element signature="e#660#661#0" expanded="true" />
+                <element signature="e#834#835#0" expanded="true" />
+                <element signature="e#853#854#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,7 +112,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/DataBase/database/galaxygates_probabilities/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/galaxygates_spins/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/galaxygates_stages_spawns/structure.sql" />
         <option value="$PROJECT_DIR$/DataBase/database/levels_upgrades/structure.sql" />
@@ -147,6 +162,7 @@
         <option value="$PROJECT_DIR$/.idea/modules.xml" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" />
+        <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java" />
       </list>
     </option>
   </component>
@@ -179,6 +195,19 @@
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="uml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -187,6 +216,11 @@
               <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="eventsystem" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -203,7 +237,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MariaDB" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/EventSystem/lib" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
@@ -296,9 +330,9 @@
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.47648904" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4984326" visible="true" weight="0.2659091" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4968652" weight="0.2659091" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
-      <window_info id="Structure" order="1" sideWeight="0.5015674" side_tool="true" weight="0.25757575" />
+      <window_info id="Structure" order="1" sideWeight="0.5031348" side_tool="true" weight="0.2659091" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="3" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32954547" />
@@ -380,7 +414,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Create `accounts_drones`&#10;&#10;The `accounts_drones` table contains the drones of an account, this&#10;way it's possible to keep track of a drone level.&#10;&#10;This commit also improves the configuration items by identifying if an&#10;item is equipped in a drone or a pet, if none of both is set, it's&#10;assumed it's equipped in the ship. Also fixes relations of&#10;`accounts_pets` -&gt; `levels` and column values." />
     <MESSAGE value="Fix typos&#10;&#10;Fixed all typos that the IDE was complaining about!" />
     <MESSAGE value="Fix nullable columns" />
     <MESSAGE value="Improve clan roles&#10;&#10;Now permissions are saved in another table so it's possible to use&#10;the in another role system like moderation." />
@@ -405,7 +438,8 @@
     <MESSAGE value="Import EventBus library" />
     <MESSAGE value="Import slf4j" />
     <MESSAGE value="Create Event interface" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create Event interface" />
+    <MESSAGE value="Import lombok" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import lombok" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Persistence/database/skilltree_levels/structure.sql">
@@ -698,10 +732,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
+    <entry file="file://$PROJECT_DIR$/EventSystem/doc/Classes.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/EventSystem/lib/eventbus-3.1.1.jar!/org/greenrobot/eventbus/EventBusBuilder.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2226">
+          <caret line="144" column="20" selection-start-line="144" selection-start-column="20" selection-end-line="144" selection-end-column="20" />
+          <folding>
+            <element signature="e#4962#4963#0" expanded="true" />
+            <element signature="e#5003#5004#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/jdk-10/lib/src.zip!/java.base/java/util/EventListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
-          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <caret line="31" column="17" selection-start-line="31" selection-start-column="17" selection-end-line="31" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/doc/uml/Classes.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1764">
+          <caret line="115" column="31" selection-start-line="115" selection-start-column="31" selection-end-line="115" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#3300#3301#0" expanded="true" />
+            <element signature="e#3336#3337#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#481#482#0" expanded="true" />
+            <element signature="e#525#526#0" expanded="true" />
+            <element signature="e#614#615#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
+            <element signature="e#834#835#0" expanded="true" />
+            <element signature="e#853#854#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -722,7 +806,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
