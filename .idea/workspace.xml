@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -145,6 +147,17 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="EventSystem" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="lib" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -154,9 +167,13 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="Downloaded.Files.Path.Enabled" value="true" />
+    <property name="Repository.Attach.JavaDocs" value="true" />
+    <property name="Repository.Attach.Sources" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="MariaDB" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/EventSystem/lib" />
+    <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.SQL" />
@@ -332,7 +349,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Delete OAuth tables&#10;&#10;There's no need of an API." />
     <MESSAGE value="Delete `users`.`accounts_id`&#10;&#10;Add `last_login` to `accounts` to replace the usage of&#10;`users`.`accounts_id`, this way it's possible to keep a log of all&#10;account's last usage and simplify insert to `users`." />
     <MESSAGE value="Create `accounts_ranking`&#10;&#10;Moved rank points from `accounts` to their own table for&#10;extensibility proposes." />
     <MESSAGE value="Create `accounts_drones`&#10;&#10;The `accounts_drones` table contains the drones of an account, this&#10;way it's possible to keep track of a drone level.&#10;&#10;This commit also improves the configuration items by identifying if an&#10;item is equipped in a drone or a pet, if none of both is set, it's&#10;assumed it's equipped in the ship. Also fixes relations of&#10;`accounts_pets` -&gt; `levels` and column values." />
@@ -357,7 +373,8 @@
     <MESSAGE value="Rename database&#10;&#10;Database renamed from BlackEye to Kalaazu" />
     <MESSAGE value="Fix typos." />
     <MESSAGE value="Rename DataBase module to Persistence." />
-    <option name="LAST_COMMIT_MESSAGE" value="Rename DataBase module to Persistence." />
+    <MESSAGE value="Import EventBus library" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import EventBus library" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Persistence/database/skilltree_levels/structure.sql">
@@ -660,7 +677,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
