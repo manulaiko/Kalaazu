@@ -19,10 +19,10 @@ package com.manulaiko.kalaazu.eventsystem;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class EventManagerBuilder {
-    /**
-     * Building instance.
-     */
-    private EventManager _instance = new EventManager();
+    private boolean logSubscriberExceptions = true;
+    private boolean logNoSubscriberMessages = true;
+    private boolean sendNoSubscriberEvent;
+    private boolean sendSubscriberExceptionEvent;
 
     /**
      * Initializes the instance and returns it.
@@ -30,34 +30,29 @@ public class EventManagerBuilder {
      * @return Build instance.
      */
     public EventManager build() {
-        this._instance.initialize();
-
-        return this._instance;
+        return new EventManager(
+                this.logSubscriberExceptions,
+                this.logNoSubscriberMessages,
+                this.sendNoSubscriberEvent,
+                this.sendSubscriberExceptionEvent
+        );
     }
 
     //<editor-fold desc="Setters" defaultState="collapsed">
-    public EventManagerBuilder setLogSubscriberExceptions(boolean logSubscriberExceptions) {
-        this._instance.setLogSubscriberExceptions(logSubscriberExceptions);
-
-        return this;
+    public void setLogSubscriberExceptions(boolean logSubscriberExceptions) {
+        this.logSubscriberExceptions = logSubscriberExceptions;
     }
 
-    public EventManagerBuilder setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
-        this._instance.setLogNoSubscriberMessages(logNoSubscriberMessages);
-
-        return this;
+    public void setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
+        this.logNoSubscriberMessages = logNoSubscriberMessages;
     }
 
-    public EventManagerBuilder setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
-        this._instance.setSendNoSubscriberEvent(sendNoSubscriberEvent);
-
-        return this;
+    public void setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
+        this.sendNoSubscriberEvent = sendNoSubscriberEvent;
     }
 
-    public EventManagerBuilder setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
-        this._instance.setSendSubscriberExceptionEvent(sendSubscriberExceptionEvent);
-
-        return this;
+    public void setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
+        this.sendSubscriberExceptionEvent = sendSubscriberExceptionEvent;
     }
     //</editor-fold>
 }

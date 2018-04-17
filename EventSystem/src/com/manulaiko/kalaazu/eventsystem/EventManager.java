@@ -31,19 +31,6 @@ import org.greenrobot.eventbus.EventBus;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class EventManager {
-    ////////////////////////////////
-    // Start configuration values //
-    ////////////////////////////////
-
-    private boolean logSubscriberExceptions;
-    private boolean logNoSubscriberMessages;
-    private boolean sendNoSubscriberEvent;
-    private boolean sendSubscriberExceptionEvent;
-
-    //////////////////////////////
-    // End configuration values //
-    //////////////////////////////
-
     /**
      * Event bus.
      *
@@ -64,37 +51,11 @@ public class EventManager {
             boolean logSubscriberExceptions,boolean logNoSubscriberMessages,
             boolean sendNoSubscriberEvent, boolean sendSubscriberExceptionEvent
     ) {
-        this.logSubscriberExceptions      = logSubscriberExceptions;
-        this.logNoSubscriberMessages      = logNoSubscriberMessages;
-        this.sendNoSubscriberEvent        = sendNoSubscriberEvent;
-        this.sendSubscriberExceptionEvent = sendSubscriberExceptionEvent;
-    }
-
-    /**
-     * Builder constructor.
-     *
-     * Only the builder should use this constructor.
-     */
-    EventManager() {
-        // empty
-    }
-
-    /**
-     * Initializes the event manager.
-     *
-     * It will build the default event bus.
-     */
-    public void initialize() {
-        if (this.bus != null) {
-            return;
-        }
-
-        // Don't install the bus in order to force the use of this facade.
         this.bus = EventBus.builder()
-                           .logNoSubscriberMessages(this.logNoSubscriberMessages)
-                           .logSubscriberExceptions(this.logSubscriberExceptions)
-                           .sendNoSubscriberEvent(this.sendNoSubscriberEvent)
-                           .sendSubscriberExceptionEvent(this.sendSubscriberExceptionEvent)
+                           .logNoSubscriberMessages(logNoSubscriberMessages)
+                           .logSubscriberExceptions(logSubscriberExceptions)
+                           .sendNoSubscriberEvent(sendNoSubscriberEvent)
+                           .sendSubscriberExceptionEvent(sendSubscriberExceptionEvent)
                            .build();
     }
 
@@ -126,38 +87,4 @@ public class EventManager {
     public void unsubscribe(EventListener listener) {
         this.bus.unregister(listener);
     }
-
-    //<editor-fold desc="Getters and Setters">
-    public boolean isLogSubscriberExceptions() {
-        return logSubscriberExceptions;
-    }
-
-    public void setLogSubscriberExceptions(boolean logSubscriberExceptions) {
-        this.logSubscriberExceptions = logSubscriberExceptions;
-    }
-
-    public boolean isLogNoSubscriberMessages() {
-        return logNoSubscriberMessages;
-    }
-
-    public void setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
-        this.logNoSubscriberMessages = logNoSubscriberMessages;
-    }
-
-    public boolean isSendNoSubscriberEvent() {
-        return sendNoSubscriberEvent;
-    }
-
-    public void setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
-        this.sendNoSubscriberEvent = sendNoSubscriberEvent;
-    }
-
-    public boolean isSendSubscriberExceptionEvent() {
-        return sendSubscriberExceptionEvent;
-    }
-
-    public void setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
-        this.sendSubscriberExceptionEvent = sendSubscriberExceptionEvent;
-    }
-    //</editor-fold>
 }
