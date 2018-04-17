@@ -1,7 +1,5 @@
 package com.manulaiko.kalaazu.eventsystem;
 
-import lombok.Builder;
-import lombok.NonNull;
 import org.greenrobot.eventbus.EventBus;
 
 /**
@@ -13,11 +11,11 @@ import org.greenrobot.eventbus.EventBus;
  * To instantiate the class you need to use the builder class:
  *
  * ```java
- * EventManager manager = EventManager.builder()
- *                                    .logExceptions(true)
- *                                    //...
- *                                    .build();
- * manager.initialize();
+ * EventManagerBuilder builder = new EventManagerBuilder();
+ *
+ * EventManager manager = builder.logExceptions(true)
+ *                               // ...
+ *                               .build();
  * ```
  *
  * A list of the possible build options is available at
@@ -62,7 +60,6 @@ public class EventManager {
      * @param sendNoSubscriberEvent        Send event when an event has no subscriber.
      * @param sendSubscriberExceptionEvent Send event when an exception occurs.
      */
-    @Builder
     public EventManager(
             boolean logSubscriberExceptions,boolean logNoSubscriberMessages,
             boolean sendNoSubscriberEvent, boolean sendSubscriberExceptionEvent
@@ -74,11 +71,24 @@ public class EventManager {
     }
 
     /**
+     * Builder constructor.
+     *
+     * Only the builder should use this constructor.
+     */
+    EventManager() {
+        // empty
+    }
+
+    /**
      * Initializes the event manager.
      *
      * It will build the default event bus.
      */
     public void initialize() {
+        if (this.bus != null) {
+            return;
+        }
+
         // Don't install the bus in order to force the use of this facade.
         this.bus = EventBus.builder()
                            .logNoSubscriberMessages(this.logNoSubscriberMessages)
@@ -93,7 +103,7 @@ public class EventManager {
      *
      * @param event Event to publish.
      */
-    public void publish(@NonNull Object event) {
+    public void publish(Object event) {
         this.bus.post(event);
     }
 
@@ -102,7 +112,9 @@ public class EventManager {
      *
      * @param listener Listener to subscribe.
      */
-    public void subscribe(@NonNull EventListener listener) {
+    public void subscribe(EventListener listener) {
+        listener.initialize();
+
         this.bus.register(listener);
     }
 
@@ -111,7 +123,41 @@ public class EventManager {
      *
      * @param listener Listener to unsubscribe.
      */
-    public void unsubscribe(@NonNull EventListener listener) {
+    public void unsubscribe(EventListener listener) {
         this.bus.unregister(listener);
     }
+
+    //<editor-fold desc="Getters and Setters">
+    public boolean isLogSubscriberExceptions() {
+        return logSubscriberExceptions;
+    }
+
+    public void setLogSubscriberExceptions(boolean logSubscriberExceptions) {
+        this.logSubscriberExceptions = logSubscriberExceptions;
+    }
+
+    public boolean isLogNoSubscriberMessages() {
+        return logNoSubscriberMessages;
+    }
+
+    public void setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
+        this.logNoSubscriberMessages = logNoSubscriberMessages;
+    }
+
+    public boolean isSendNoSubscriberEvent() {
+        return sendNoSubscriberEvent;
+    }
+
+    public void setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
+        this.sendNoSubscriberEvent = sendNoSubscriberEvent;
+    }
+
+    public boolean isSendSubscriberExceptionEvent() {
+        return sendSubscriberExceptionEvent;
+    }
+
+    public void setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
+        this.sendSubscriberExceptionEvent = sendSubscriberExceptionEvent;
+    }
+    //</editor-fold>
 }
