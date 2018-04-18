@@ -1,93 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
-  <zoom_level>7</zoom_level>
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
       <x>0</x>
-      <y>140</y>
-      <w>371</w>
-      <h>350</h>
+      <y>272</y>
+      <w>424</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>persistence::Persistence
 --
--config: Configuration
+-eventManager: EventManager
+-database: Database
 --
-+Persistence()
 +initialize(): boolean
 +&lt;T extends Entity&gt;find(id: int): T
 +&lt;T extends Entity&gt;find(query: String): List&lt;T&gt;
-+config(): Config
-+config(config: Configuration): Persistence
-{innerclass
-Configuration
---
--host: String
--port: int
--username: String
--password: String
--name: String
--eventManager: eventsystem::EventManager
---
-+Configuration()
-+host(host: String): Configuration
-+host(): String
-+port(port: int): Configuration
-+port(): int
-+username(username: String): Configuration
-+username(): String
-+password(password: String): Configuration
-+password(): String
-+name(name: String): Configuration
-+name(): String
-+eventManager(eventManager: eventsystem::EventManager): Configuration
-+eventManager(): eventsystem::EventManager
-innerclass}</panel_attributes>
++publish(event: eventsystem::Event)</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>448</x>
-      <y>119</y>
-      <w>420</w>
-      <h>105</h>
+      <x>504</x>
+      <y>184</y>
+      <w>424</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>persistence.eventsystem::EventListener
 --
--handlers: Map&lt;Class, Handler&gt;
--eventManager: eventsystem::EventManager
 --
-+initialize(): boolean
-+handlers(handlers: Map&lt;&gt;): EventListener
-+handlers(): Map&lt;&gt;
-+eventManager(eventManager: eventsystem::EventManager): EventListener
-+eventManager(): eventsystem::EventManager</panel_attributes>
++initialize(): boolean</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>455</x>
-      <y>252</y>
-      <w>364</w>
-      <h>77</h>
-    </coordinates>
-    <panel_attributes>persistence.eventsystem::EventPublisher
---
--eventManager: eventsystem::EventManager
---
-+&lt;T extends eventsystem::Event&gt;publish(event: T)
-+eventManager(eventManager: eventsystem::EventManager): EventPublisher
-+eventManager(): eventsystem::EventManager</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>455</x>
-      <y>371</y>
-      <w>252</w>
-      <h>231</h>
+      <x>512</x>
+      <y>408</y>
+      <w>288</w>
+      <h>264</h>
     </coordinates>
     <panel_attributes>persistence.database::Database
 --
@@ -102,87 +54,113 @@ innerclass}</panel_attributes>
 +&lt;T extends Entity&gt;find(query: String): List&lt;T&gt;
 +save(entity: Entity): Optional&lt;Integer&gt;
 +delete(entity: Entity): boolean
-+host(host: String): Configuration
-+host(): String
-+port(port: int): Configuration
-+port(): int
-+username(username: String): Configuration
-+username(): String
-+password(password: String): Configuration
-+password(): String
-+name(name: String): Configuration
-+name(): String</panel_attributes>
++setHost(host: String): Configuration
++getHost(): String
++setPort(port: int): Configuration
++getPort(): int
++setUsername(username: String): Configuration
++getUsername(): String
++setPassword(password: String): Configuration
++getPassword(): String
++setName(name: String): Configuration
++getName(): String</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>364</x>
-      <y>196</y>
-      <w>98</w>
-      <h>21</h>
+      <x>416</x>
+      <y>208</y>
+      <w>104</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>110.0;10.0;10.0;80.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>364</x>
-      <y>301</y>
-      <w>105</w>
-      <h>21</h>
+      <x>416</x>
+      <y>368</y>
+      <w>112</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>364</x>
-      <y>413</y>
-      <w>105</w>
-      <h>21</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+    <additional_attributes>120.0;120.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
-      <y>14</y>
-      <w>322</w>
-      <h>63</h>
+      <x>504</x>
+      <y>280</y>
+      <w>368</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>/persistence.eventsystem::Handler/
 --
 -database: persistence.database::Database
 --
-+database(database: persistence.database::Database): Handler
-+database(): persistence.database::Database</panel_attributes>
++setDatabase(database: persistence.database::Database): Handler
++getDatabase(): persistence.database::Database</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>70</y>
-      <w>21</w>
-      <h>63</h>
+      <x>680</x>
+      <y>224</y>
+      <w>24</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>700</x>
-      <y>42</y>
-      <w>259</w>
-      <h>448</h>
+      <x>680</x>
+      <y>344</y>
+      <w>24</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;-</panel_attributes>
-    <additional_attributes>10.0;620.0;350.0;620.0;350.0;10.0;170.0;10.0</additional_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>8</x>
+      <y>8</y>
+      <w>416</w>
+      <h>200</h>
+    </coordinates>
+    <panel_attributes>PersistenceBuilder
+--
+-host: String
+-port: int
+-username: String
+-password: String
+-name: String
+-eventManager: eventsystem::EventManager
+--
++build(): Persistence
++setHost(host: String): PersistenceBuilder
++setPort(port: int): PersistenceBuilder
++setUsername(username: String): PersistenceBuilder
++setPassword(password: String): PersistenceBuilder
++setName(name: String): PersistenceBuilder
++setEventManager(eventManager: eventsystem::EventManager): PersistenceBuilder</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>208</x>
+      <y>200</y>
+      <w>24</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>

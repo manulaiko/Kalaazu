@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Delit lombok&#10;&#10;Once it works properly in jdk10, I'll add it back.">
-      <change afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Handler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/src/module-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/EventManagerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventSystem/EventSystem.iml" beforeDir="false" afterPath="$PROJECT_DIR$/EventSystem/EventSystem.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kalaazu.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Kalaazu.iml" afterDir="false" />
     </list>
+    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -49,78 +37,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="EventManager.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="EventManager.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
-              <folding>
-                <element signature="n#!!doc;n#isLogSubscriberExceptions#0;n#EventManager#0" />
-                <element signature="method#setSendSubscriberExceptionEvent#0;class#EventManager#0" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="module-info.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/module-info.java">
+      <file leaf-file-name="EventManagerBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestListener.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="77" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TestEvent.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestEvent.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="2" lean-forward="true" selection-start-line="4" selection-start-column="2" selection-end-line="4" selection-end-column="2" />
-              <folding>
-                <element signature="e#198#199#0" expanded="true" />
-                <element signature="e#228#229#0" expanded="true" />
-                <element signature="e#274#275#0" expanded="true" />
-                <element signature="e#312#313#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EventListener.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="523">
-              <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Handler.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Handler.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Event.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
+            <state relative-caret-position="166">
+              <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -211,14 +141,14 @@
         <option value="$PROJECT_DIR$/EventSystem/test/TestInstance.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/TestEvent.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/module-info.java" />
-        <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java" />
         <option value="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/EventManagerTest.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java" />
-        <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" />
         <option value="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestEvent.java" />
-        <option value="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Handler.java" />
         <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java" />
+        <option value="$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java" />
+        <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java" />
+        <option value="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java" />
       </list>
     </option>
   </component>
@@ -437,9 +367,6 @@
     </recent_temporary>
   </component>
   <component name="TestHistory">
-    <history-entry file="EventManagerTest_publish - 2018.04.17 at 18h 47m 45s.xml">
-      <configuration name="EventManagerTest.publish" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EventManagerTest_publish - 2018.04.17 at 18h 51m 02s.xml">
       <configuration name="EventManagerTest.publish" configurationId="JUnit" />
     </history-entry>
@@ -467,10 +394,12 @@
     <history-entry file="EventManagerTest - 2018.04.17 at 18h 56m 21s.xml">
       <configuration name="EventManagerTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EventManagerTest - 2018.04.17 at 20h 17m 13s.xml">
+      <configuration name="EventManagerTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -481,9 +410,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291536" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3291536" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.47648904" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.47648904" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4968652" visible="true" weight="0.27954546" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4968652" visible="true" weight="0.27954546" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
       <window_info id="Structure" order="1" sideWeight="0.5031348" side_tool="true" weight="0.2659091" />
@@ -567,11 +496,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Add diplomacy expire date." />
-    <MESSAGE value="Add role inheritance&#10;&#10;Now roles can extend other roles." />
-    <MESSAGE value="Create events table&#10;&#10;This table contains the events that can be handled by the server." />
-    <MESSAGE value="Create `accounts_history` table&#10;&#10;This table contains all the history events of an account." />
-    <MESSAGE value="Create `accounts_quests` table&#10;&#10;This table contains the quest history of an account." />
     <MESSAGE value="Add ranking stats" />
     <MESSAGE value="Create `accounts_destroys` table&#10;&#10;This table contains the ship destroy history of an account." />
     <MESSAGE value="Add `priority` column.&#10;&#10;This column indicates the order priority of the hangar." />
@@ -592,11 +516,16 @@
     <MESSAGE value="Simplify event listener" />
     <MESSAGE value="Even more simple!&#10;&#10;I'm starting to think this is unnecessary." />
     <MESSAGE value="Delit lombok&#10;&#10;Once it works properly in jdk10, I'll add it back." />
-    <option name="LAST_COMMIT_MESSAGE" value="Delit lombok&#10;&#10;Once it works properly in jdk10, I'll add it back." />
+    <MESSAGE value="Create Event and Handler interfaces" />
+    <MESSAGE value="Improve event listener&#10;&#10;Instead of letting the listeners define how to handle the events&#10;we now force the use of event handlers to reduce boilerplate." />
+    <MESSAGE value="Create EventManager builder&#10;&#10;And minor things." />
+    <MESSAGE value="Create tests" />
+    <MESSAGE value="Simplify builder" />
+    <option name="LAST_COMMIT_MESSAGE" value="Simplify builder" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -892,45 +821,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/EventManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="217">
-          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="880">
-          <caret line="59" column="20" selection-start-line="59" selection-start-column="20" selection-end-line="59" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="117" column="8" selection-start-line="117" selection-start-column="8" selection-end-line="117" selection-end-column="8" />
-          <folding>
-            <element signature="n#!!doc;n#isLogSubscriberExceptions#0;n#EventManager#0" />
-            <element signature="method#setSendSubscriberExceptionEvent#0;class#EventManager#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="77" selection-start-line="13" selection-start-column="77" selection-end-line="13" selection-end-column="77" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Event.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -938,10 +828,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/TestListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="38" lean-forward="true" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="901">
+          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/Handler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="31" selection-start-line="10" selection-start-column="31" selection-end-line="10" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/manulaiko/kalaazu/eventsystem/EventManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -958,13 +872,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventListener.java">
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/module-info.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="523">
-          <caret line="54" column="36" lean-forward="true" selection-start-line="54" selection-start-column="36" selection-end-line="54" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="51">
+          <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="23" column="41" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="57" column="57" selection-start-line="57" selection-start-column="57" selection-end-line="57" selection-end-column="57" />
         </state>
       </provider>
     </entry>
