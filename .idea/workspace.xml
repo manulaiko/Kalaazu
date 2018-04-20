@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Generate database mapping">
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Fix">
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/PersistenceBuilder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Vector2Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/lib/jndi-1.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/lib/jndi-1.2.1.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/module-info.java" afterDir="false" />
     </list>
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -204,7 +201,7 @@
       <find>DataBase</find>
       <find>org.junit.jupiter.api.</find>
       <find>com.badlogic.gdx.math.</find>
-      <find />
+      <find>schema = &quot;kalaazu&quot;, catalog = &quot;&quot;)</find>
       <find>java.sql.Timestamp</find>
       <find>Timestamp</find>
       <find>float</find>
@@ -215,7 +212,7 @@
       <replace>accounts_destroys</replace>
       <replace>clans_battlestations_logs</replace>
       <replace>Persistence</replace>
-      <replace />
+      <replace>schema = &quot;kalaazu&quot;)</replace>
       <replace>java.util.Date</replace>
       <replace>Date</replace>
       <replace>double</replace>
@@ -570,7 +567,7 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.3289855" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.3289855" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.3289855" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.6086956" />
@@ -578,7 +575,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3291536" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291536" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.475" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.47391304" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
       <window_info id="Designer" order="2" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.25072464" visible="true" weight="0.2931818" />
@@ -665,7 +662,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Rename `stats` table to `key_value`&#10;&#10;Renamed the table and added index." />
     <MESSAGE value="Rename `stats` table to `key_value`&#10;&#10;Renamed the table." />
     <MESSAGE value="Compile database&#10;&#10;Compiled all the tables into dump.sql." />
     <MESSAGE value="Rename database&#10;&#10;Database renamed from BlackEye to Kalaazu" />
@@ -690,7 +686,8 @@
     <MESSAGE value="Import jndi, clean up libraries" />
     <MESSAGE value="Generate database mapping" />
     <MESSAGE value="Fix builder methods" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix builder methods" />
+    <MESSAGE value="Fix multiple 'javax.annotation.xa' definition&#10;&#10;Idk why 'jboss-transaction-api' has it." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix multiple 'javax.annotation.xa' definition&#10;&#10;Idk why 'jboss-transaction-api' has it." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
