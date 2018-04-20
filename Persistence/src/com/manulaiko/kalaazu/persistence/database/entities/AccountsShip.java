@@ -1,5 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import com.manulaiko.kalaazu.math.Vector2;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -17,6 +20,8 @@ public class AccountsShip {
     private int shipsId;
 
     private int mapsId;
+
+    private Vector2 position;
 
     private int health;
 
@@ -72,6 +77,16 @@ public class AccountsShip {
 
     public void setMapsId(int mapsId) {
         this.mapsId = mapsId;
+    }
+
+    @Type(type = "point")
+    @Column(name = "position")
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
     }
 
     @Basic

@@ -38,9 +38,9 @@ public class Clan {
 
     private Collection<ClansBattlestationsLog> clansBattlestationsLogsById;
 
-    private Collection<ClansDiplomacie> clansDiplomaciesById;
+    private Collection<ClansDiplomacy> clansDiplomaciesById;
 
-    private Collection<ClansDiplomacie> clansDiplomaciesById_0;
+    private Collection<ClansDiplomacy> clansDiplomaciesById_0;
 
     private Collection<ClansMessage> clansMessagesById;
 
@@ -219,23 +219,23 @@ public class Clan {
     }
 
     @OneToMany(mappedBy = "clansByFromClansId")
-    public Collection<ClansDiplomacie> getClansDiplomaciesById() {
+    public Collection<ClansDiplomacy> getClansDiplomaciesById() {
         return clansDiplomaciesById;
     }
 
     public void setClansDiplomaciesById(
-            Collection<ClansDiplomacie> clansDiplomaciesById
+            Collection<ClansDiplomacy> clansDiplomaciesById
     ) {
         this.clansDiplomaciesById = clansDiplomaciesById;
     }
 
     @OneToMany(mappedBy = "clansByToClansId")
-    public Collection<ClansDiplomacie> getClansDiplomaciesById_0() {
+    public Collection<ClansDiplomacy> getClansDiplomaciesById_0() {
         return clansDiplomaciesById_0;
     }
 
     public void setClansDiplomaciesById_0(
-            Collection<ClansDiplomacie> clansDiplomaciesById_0
+            Collection<ClansDiplomacy> clansDiplomaciesById_0
     ) {
         this.clansDiplomaciesById_0 = clansDiplomaciesById_0;
     }

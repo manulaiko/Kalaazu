@@ -1,5 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import com.manulaiko.kalaazu.math.Vector2;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -22,7 +25,11 @@ public class Faction {
 
     private int lowMapsId;
 
+    private Vector2 lowMapsPosition;
+
     private int highMapsId;
+
+    private Vector2 highMapsPosition;
 
     private Collection<Account> accountsById;
 
@@ -96,6 +103,16 @@ public class Faction {
         this.lowMapsId = lowMapsId;
     }
 
+    @Type(type = "point")
+    @Column(name = "low_maps_position")
+    public Vector2 getLowMapsPosition() {
+        return lowMapsPosition;
+    }
+
+    public void setLowMapsPosition(Vector2 lowMapsPosition) {
+        this.lowMapsPosition = lowMapsPosition;
+    }
+
     @Basic
     @Column(name = "high_maps_id")
     public int getHighMapsId() {
@@ -104,6 +121,16 @@ public class Faction {
 
     public void setHighMapsId(int highMapsId) {
         this.highMapsId = highMapsId;
+    }
+
+    @Type(type = "point")
+    @Column(name = "high_maps_position")
+    public Vector2 getHighMapsPosition() {
+        return highMapsPosition;
+    }
+
+    public void setHighMapsPosition(Vector2 highMapsPosition) {
+        this.highMapsPosition = highMapsPosition;
     }
 
     @Override

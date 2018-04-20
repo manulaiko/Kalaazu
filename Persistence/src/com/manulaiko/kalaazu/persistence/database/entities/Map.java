@@ -1,5 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import com.manulaiko.kalaazu.math.Vector2;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
@@ -15,6 +18,8 @@ public class Map {
     private String name;
 
     private Integer factionsId;
+
+    private Vector2 limits;
 
     private boolean isPvp;
 
@@ -68,6 +73,16 @@ public class Map {
 
     public void setFactionsId(Integer factionsId) {
         this.factionsId = factionsId;
+    }
+
+    @Type(type = "point")
+    @Column(name = "limits")
+    public Vector2 getLimits() {
+        return limits;
+    }
+
+    public void setLimits(Vector2 limits) {
+        this.limits = limits;
     }
 
     @Basic

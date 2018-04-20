@@ -1,5 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import com.manulaiko.kalaazu.math.Vector2;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -15,7 +18,11 @@ public class MapsPortal {
 
     private int mapsId;
 
+    private Vector2 position;
+
     private int targetMapsId;
+
+    private Vector2 targetPosition;
 
     private boolean isVisible;
 
@@ -57,6 +64,16 @@ public class MapsPortal {
         this.mapsId = mapsId;
     }
 
+    @Type(type = "point")
+    @Column(name = "position")
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
+    }
+
     @Basic
     @Column(name = "target_maps_id")
     public int getTargetMapsId() {
@@ -65,6 +82,16 @@ public class MapsPortal {
 
     public void setTargetMapsId(int targetMapsId) {
         this.targetMapsId = targetMapsId;
+    }
+
+    @Type(type = "point")
+    @Column(name = "target_position")
+    public Vector2 getTargetPosition() {
+        return targetPosition;
+    }
+
+    public void setTargetPosition(Vector2 targetPosition) {
+        this.targetPosition = targetPosition;
     }
 
     @Basic

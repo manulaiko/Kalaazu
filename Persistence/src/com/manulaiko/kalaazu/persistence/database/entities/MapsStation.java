@@ -1,5 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import com.manulaiko.kalaazu.math.Vector2;
+import org.hibernate.annotations.Type;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -12,6 +15,8 @@ public class MapsStation {
     private int id;
 
     private Integer mapsId;
+
+    private Vector2 position;
 
     private Integer factionsId;
 
@@ -37,6 +42,16 @@ public class MapsStation {
 
     public void setMapsId(Integer mapsId) {
         this.mapsId = mapsId;
+    }
+
+    @Type(type = "point")
+    @Column(name = "position")
+    public Vector2 getPosition() {
+        return position;
+    }
+
+    public void setPosition(Vector2 position) {
+        this.position = position;
     }
 
     @Basic

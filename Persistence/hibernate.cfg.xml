@@ -34,7 +34,7 @@
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestation"/>
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestationsItem"/>
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestationsLog"/>
-        <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansDiplomacie"/>
+        <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansDiplomacy"/>
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansMessage"/>
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansNew"/>
         <mapping class="com.manulaiko.kalaazu.persistence.database.entities.ClansRanking"/>
