@@ -39,20 +39,28 @@ public class EventManagerBuilder {
     }
 
     //<editor-fold desc="Setters" defaultState="collapsed">
-    public void setLogSubscriberExceptions(boolean logSubscriberExceptions) {
+    public EventManagerBuilder setLogSubscriberExceptions(boolean logSubscriberExceptions) {
         this.logSubscriberExceptions = logSubscriberExceptions;
+
+        return this;
     }
 
-    public void setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
+    public EventManagerBuilder setLogNoSubscriberMessages(boolean logNoSubscriberMessages) {
         this.logNoSubscriberMessages = logNoSubscriberMessages;
+
+        return this;
     }
 
-    public void setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
+    public EventManagerBuilder setSendNoSubscriberEvent(boolean sendNoSubscriberEvent) {
         this.sendNoSubscriberEvent = sendNoSubscriberEvent;
+
+        return this;
     }
 
-    public void setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
+    public EventManagerBuilder setSendSubscriberExceptionEvent(boolean sendSubscriberExceptionEvent) {
         this.sendSubscriberExceptionEvent = sendSubscriberExceptionEvent;
+
+        return this;
     }
     //</editor-fold>
 }
