@@ -1,6 +1,6 @@
-module com.manulaiko.kalaazu.persistence {
+module Persistence {
     requires com.manulaiko.kalaazu;
-    requires hibernate.jpa;
+    requires java.sql;
     requires hibernate.core;
-    requires jndi;
+    requires hibernate.jpa;
 }

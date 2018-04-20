@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Generate database mapping">
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/PersistenceBuilder.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Vector2Type.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/EventSystem/src/com/manulaiko/kalaazu/eventsystem/EventManagerBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/lib/jboss-transaction-api_1.2_spec-1.0.1.Final.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/lib/jndi-1.2.1.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/lib/jndi-1.2.1.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/module-info.java" afterDir="false" />
     </list>
+    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -54,38 +54,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Database.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Database.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-71">
-              <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/Map.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="11" column="2" lean-forward="true" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="maps" pinned="false" current-in-tab="false">
-        <entry file="das://941c8faa-2116-4c81-bde1-970c291baf28/schema/kalaazu/table/maps">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Table.class" pinned="false" current-in-tab="false">
-        <entry file="jar://$PROJECT_DIR$/Persistence/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar!/javax/persistence/Table.class">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+            <state relative-caret-position="252">
+              <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -94,7 +70,7 @@
         <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Vector2Type.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="782">
-              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1049#1050#0" expanded="true" />
@@ -106,11 +82,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AccountsShip.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="AccountsShip.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/AccountsShip.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+            <state relative-caret-position="102">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
@@ -119,7 +95,7 @@
         <entry file="file://$PROJECT_DIR$/src/com/manulaiko/kalaazu/math/Vector2.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="442">
-              <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+              <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
               <folding>
                 <element signature="e#3716#3717#0" expanded="true" />
                 <element signature="e#3756#3757#0" expanded="true" />
@@ -228,7 +204,7 @@
       <find>DataBase</find>
       <find>org.junit.jupiter.api.</find>
       <find>com.badlogic.gdx.math.</find>
-      <find>schema = &quot;kalaazu&quot;, catalog = &quot;&quot;)</find>
+      <find />
       <find>java.sql.Timestamp</find>
       <find>Timestamp</find>
       <find>float</find>
@@ -239,7 +215,7 @@
       <replace>accounts_destroys</replace>
       <replace>clans_battlestations_logs</replace>
       <replace>Persistence</replace>
-      <replace>schema = &quot;kalaazu&quot;)</replace>
+      <replace />
       <replace>java.util.Date</replace>
       <replace>Date</replace>
       <replace>double</replace>
@@ -354,6 +330,19 @@
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="Persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -398,7 +387,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Persistence/lib" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -578,11 +567,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="-27" width="1366" height="795" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.3289855" />
+      <window_info anchor="bottom" id="Messages" order="7" visible="true" weight="0.3289855" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Java Enterprise" order="7" weight="0.3289855" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.6086956" />
@@ -592,9 +580,8 @@
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3291536" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.475" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
-      <window_info anchor="bottom" id="Database Console" order="8" weight="0.3289855" />
       <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.25072464" weight="0.2931818" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.25072464" visible="true" weight="0.2931818" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3291536" />
@@ -603,6 +590,7 @@
       <window_info id="UI Designer" order="3" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39968652" />
       <window_info id="Favorites" order="4" side_tool="true" weight="0.32954547" />
+      <window_info anchor="bottom" id="Database Console" order="8" weight="0.3289855" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -677,7 +665,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Create `clans_battlestations_logs` table&#10;&#10;This table contains the log history of a clan's CBS" />
     <MESSAGE value="Rename `stats` table to `key_value`&#10;&#10;Renamed the table and added index." />
     <MESSAGE value="Rename `stats` table to `key_value`&#10;&#10;Renamed the table." />
     <MESSAGE value="Compile database&#10;&#10;Compiled all the tables into dump.sql." />
@@ -702,7 +689,8 @@
     <MESSAGE value="Create 'math' package&#10;&#10;Actually I stole the code from libgdx huehuehue" />
     <MESSAGE value="Import jndi, clean up libraries" />
     <MESSAGE value="Generate database mapping" />
-    <option name="LAST_COMMIT_MESSAGE" value="Generate database mapping" />
+    <MESSAGE value="Fix builder methods" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix builder methods" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1105,13 +1093,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-71">
-          <caret line="7" column="39" selection-start-line="7" selection-start-column="39" selection-end-line="7" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/manulaiko/kalaazu/math/Vector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
@@ -1134,7 +1115,7 @@
     <entry file="file://$PROJECT_DIR$/src/com/manulaiko/kalaazu/math/Vector2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
-          <caret line="40" column="7" lean-forward="true" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
+          <caret line="40" column="7" selection-start-line="40" selection-start-column="7" selection-end-line="40" selection-end-column="7" />
           <folding>
             <element signature="e#3716#3717#0" expanded="true" />
             <element signature="e#3756#3757#0" expanded="true" />
@@ -1187,10 +1168,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/AccountsShip.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Vector2Type.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="782">
-          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1049#1050#0" expanded="true" />
@@ -1201,10 +1189,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/AccountsShip.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        <state relative-caret-position="252">
+          <caret line="26" column="32" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1260,7 +1251,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>CMS</last-edited>
+          <last-edited>Persistence</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1284,7 +1275,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>lib</last-edited>
+          <last-edited>Persistence</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
