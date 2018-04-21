@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "levels", schema = "kalaazu")
 public class Level {
     private int id;
 
@@ -39,8 +37,6 @@ public class Level {
 
     private Collection<SkilltreeLevel> skilltreeLevelsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -49,8 +45,6 @@ public class Level {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "account")
     public long getAccount() {
         return account;
     }
@@ -59,8 +53,6 @@ public class Level {
         this.account = account;
     }
 
-    @Basic
-    @Column(name = "drone")
     public int getDrone() {
         return drone;
     }
@@ -69,8 +61,6 @@ public class Level {
         this.drone = drone;
     }
 
-    @Basic
-    @Column(name = "pet")
     public int getPet() {
         return pet;
     }
@@ -79,8 +69,6 @@ public class Level {
         this.pet = pet;
     }
 
-    @Basic
-    @Column(name = "damage")
     public BigDecimal getDamage() {
         return damage;
     }
@@ -89,8 +77,6 @@ public class Level {
         this.damage = damage;
     }
 
-    @Basic
-    @Column(name = "shield")
     public BigDecimal getShield() {
         return shield;
     }
@@ -122,7 +108,6 @@ public class Level {
         return Objects.hash(id, account, drone, pet, damage, shield);
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }
@@ -131,7 +116,6 @@ public class Level {
         this.accountsById = accountsById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<AccountsDrone> getAccountsDronesById() {
         return accountsDronesById;
     }
@@ -142,7 +126,6 @@ public class Level {
         this.accountsDronesById = accountsDronesById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<AccountsItem> getAccountsItemsById() {
         return accountsItemsById;
     }
@@ -153,7 +136,6 @@ public class Level {
         this.accountsItemsById = accountsItemsById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<AccountsPet> getAccountsPetsById() {
         return accountsPetsById;
     }
@@ -164,7 +146,6 @@ public class Level {
         this.accountsPetsById = accountsPetsById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<AccountsSkylab> getAccountsSkylabsById() {
         return accountsSkylabsById;
     }
@@ -175,7 +156,6 @@ public class Level {
         this.accountsSkylabsById = accountsSkylabsById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<LevelsUpgrade> getLevelsUpgradesById() {
         return levelsUpgradesById;
     }
@@ -186,7 +166,6 @@ public class Level {
         this.levelsUpgradesById = levelsUpgradesById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<Quest> getQuestsById() {
         return questsById;
     }
@@ -195,7 +174,6 @@ public class Level {
         this.questsById = questsById;
     }
 
-    @OneToMany(mappedBy = "levelsByLevelsId")
     public Collection<SkilltreeLevel> getSkilltreeLevelsById() {
         return skilltreeLevelsById;
     }

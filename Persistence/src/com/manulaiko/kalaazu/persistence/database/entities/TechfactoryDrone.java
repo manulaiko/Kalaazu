@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "techfactory_drones", schema = "kalaazu")
 public class TechfactoryDrone {
     private int id;
 
@@ -24,8 +22,6 @@ public class TechfactoryDrone {
 
     private BigDecimal factor;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class TechfactoryDrone {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -44,8 +38,6 @@ public class TechfactoryDrone {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -54,8 +46,6 @@ public class TechfactoryDrone {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "time")
     public int getTime() {
         return time;
     }
@@ -64,8 +54,6 @@ public class TechfactoryDrone {
         this.time = time;
     }
 
-    @Basic
-    @Column(name = "parts")
     public byte getParts() {
         return parts;
     }
@@ -74,8 +62,6 @@ public class TechfactoryDrone {
         this.parts = parts;
     }
 
-    @Basic
-    @Column(name = "price")
     public int getPrice() {
         return price;
     }
@@ -84,8 +70,6 @@ public class TechfactoryDrone {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "factor")
     public BigDecimal getFactor() {
         return factor;
     }

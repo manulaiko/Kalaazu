@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_pets", schema = "kalaazu")
 public class AccountsPet {
     private int id;
 
@@ -46,8 +44,6 @@ public class AccountsPet {
 
     private Level levelsByLevelsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -56,8 +52,6 @@ public class AccountsPet {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -66,8 +60,6 @@ public class AccountsPet {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -76,8 +68,6 @@ public class AccountsPet {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -86,8 +76,6 @@ public class AccountsPet {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "experience")
     public int getExperience() {
         return experience;
     }
@@ -96,8 +84,6 @@ public class AccountsPet {
         this.experience = experience;
     }
 
-    @Basic
-    @Column(name = "fuel")
     public int getFuel() {
         return fuel;
     }
@@ -106,8 +92,6 @@ public class AccountsPet {
         this.fuel = fuel;
     }
 
-    @Basic
-    @Column(name = "health")
     public int getHealth() {
         return health;
     }
@@ -116,8 +100,6 @@ public class AccountsPet {
         this.health = health;
     }
 
-    @Basic
-    @Column(name = "slots_lasers_total")
     public int getSlotsLasersTotal() {
         return slotsLasersTotal;
     }
@@ -126,8 +108,6 @@ public class AccountsPet {
         this.slotsLasersTotal = slotsLasersTotal;
     }
 
-    @Basic
-    @Column(name = "slots_lasers_available")
     public int getSlotsLasersAvailable() {
         return slotsLasersAvailable;
     }
@@ -136,8 +116,6 @@ public class AccountsPet {
         this.slotsLasersAvailable = slotsLasersAvailable;
     }
 
-    @Basic
-    @Column(name = "slots_generators_total")
     public int getSlotsGeneratorsTotal() {
         return slotsGeneratorsTotal;
     }
@@ -146,8 +124,6 @@ public class AccountsPet {
         this.slotsGeneratorsTotal = slotsGeneratorsTotal;
     }
 
-    @Basic
-    @Column(name = "slots_generators_available")
     public int getSlotsGeneratorsAvailable() {
         return slotsGeneratorsAvailable;
     }
@@ -156,8 +132,6 @@ public class AccountsPet {
         this.slotsGeneratorsAvailable = slotsGeneratorsAvailable;
     }
 
-    @Basic
-    @Column(name = "slots_protocols_total")
     public int getSlotsProtocolsTotal() {
         return slotsProtocolsTotal;
     }
@@ -166,8 +140,6 @@ public class AccountsPet {
         this.slotsProtocolsTotal = slotsProtocolsTotal;
     }
 
-    @Basic
-    @Column(name = "slots_protocols_available")
     public int getSlotsProtocolsAvailable() {
         return slotsProtocolsAvailable;
     }
@@ -176,8 +148,6 @@ public class AccountsPet {
         this.slotsProtocolsAvailable = slotsProtocolsAvailable;
     }
 
-    @Basic
-    @Column(name = "slots_gears_total")
     public int getSlotsGearsTotal() {
         return slotsGearsTotal;
     }
@@ -186,8 +156,6 @@ public class AccountsPet {
         this.slotsGearsTotal = slotsGearsTotal;
     }
 
-    @Basic
-    @Column(name = "slots_gears_available")
     public int getSlotsGearsAvailable() {
         return slotsGearsAvailable;
     }
@@ -231,7 +199,6 @@ public class AccountsPet {
         );
     }
 
-    @OneToMany(mappedBy = "accountsPetsByAccountsPetsId")
     public Collection<AccountsConfigurationsAccountsItem> getAccountsConfigurationsAccountsItemsById() {
         return accountsConfigurationsAccountsItemsById;
     }
@@ -242,8 +209,6 @@ public class AccountsPet {
         this.accountsConfigurationsAccountsItemsById = accountsConfigurationsAccountsItemsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -252,8 +217,6 @@ public class AccountsPet {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     public Level getLevelsByLevelsId() {
         return levelsByLevelsId;
     }

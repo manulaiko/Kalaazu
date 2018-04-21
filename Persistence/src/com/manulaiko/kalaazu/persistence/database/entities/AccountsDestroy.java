@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_destroys", schema = "kalaazu")
 public class AccountsDestroy {
     private int id;
 
@@ -21,8 +19,6 @@ public class AccountsDestroy {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class AccountsDestroy {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -41,8 +35,6 @@ public class AccountsDestroy {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "ships_id")
     public int getShipsId() {
         return shipsId;
     }
@@ -51,8 +43,6 @@ public class AccountsDestroy {
         this.shipsId = shipsId;
     }
 
-    @Basic
-    @Column(name = "points")
     public int getPoints() {
         return points;
     }
@@ -61,8 +51,6 @@ public class AccountsDestroy {
         this.points = points;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -93,8 +81,6 @@ public class AccountsDestroy {
         return Objects.hash(id, accountsId, shipsId, points, amount);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

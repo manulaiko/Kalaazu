@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "skilltree_skills", schema = "kalaazu")
 public class SkilltreeSkill {
     private int id;
 
@@ -31,8 +29,6 @@ public class SkilltreeSkill {
 
     private Collection<SkilltreeLevel> skilltreeLevelsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -41,8 +37,6 @@ public class SkilltreeSkill {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -51,8 +45,6 @@ public class SkilltreeSkill {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -61,8 +53,6 @@ public class SkilltreeSkill {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "category")
     public byte getCategory() {
         return category;
     }
@@ -71,8 +61,6 @@ public class SkilltreeSkill {
         this.category = category;
     }
 
-    @Basic
-    @Column(name = "is_advanced")
     public boolean isAdvanced() {
         return isAdvanced;
     }
@@ -81,8 +69,6 @@ public class SkilltreeSkill {
         isAdvanced = advanced;
     }
 
-    @Basic
-    @Column(name = "bonus_type")
     public String getBonusType() {
         return bonusType;
     }
@@ -91,8 +77,6 @@ public class SkilltreeSkill {
         this.bonusType = bonusType;
     }
 
-    @Basic
-    @Column(name = "bonus_amount")
     public int getBonusAmount() {
         return bonusAmount;
     }
@@ -101,8 +85,6 @@ public class SkilltreeSkill {
         this.bonusAmount = bonusAmount;
     }
 
-    @Basic
-    @Column(name = "bonus_factor")
     public BigDecimal getBonusFactor() {
         return bonusFactor;
     }
@@ -136,7 +118,6 @@ public class SkilltreeSkill {
         return Objects.hash(id, name, description, category, isAdvanced, bonusType, bonusAmount, bonusFactor);
     }
 
-    @OneToMany(mappedBy = "skilltreeSkillsBySkilltreeSkillsId")
     public Collection<AccountsSkill> getAccountsSkillsById() {
         return accountsSkillsById;
     }
@@ -147,7 +128,6 @@ public class SkilltreeSkill {
         this.accountsSkillsById = accountsSkillsById;
     }
 
-    @OneToMany(mappedBy = "skilltreeSkillsBySkilltreeSkillsId")
     public Collection<SkilltreeLevel> getSkilltreeLevelsById() {
         return skilltreeLevelsById;
     }

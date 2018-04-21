@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "quests_conditions", schema = "kalaazu")
 public class QuestsCondition {
     private int id;
 
@@ -26,8 +24,6 @@ public class QuestsCondition {
 
     private Quest questsByQuestsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -36,8 +32,6 @@ public class QuestsCondition {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "quests_conditions_id")
     public Integer getQuestsConditionsId() {
         return questsConditionsId;
     }
@@ -46,8 +40,6 @@ public class QuestsCondition {
         this.questsConditionsId = questsConditionsId;
     }
 
-    @Basic
-    @Column(name = "quests_id")
     public int getQuestsId() {
         return questsId;
     }
@@ -56,8 +48,6 @@ public class QuestsCondition {
         this.questsId = questsId;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -66,8 +56,6 @@ public class QuestsCondition {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "value")
     public String getValue() {
         return value;
     }
@@ -98,8 +86,6 @@ public class QuestsCondition {
         return Objects.hash(id, questsConditionsId, questsId, type, value);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "quests_conditions_id", referencedColumnName = "id")
     public QuestsCondition getQuestsConditionsByQuestsConditionsId() {
         return questsConditionsByQuestsConditionsId;
     }
@@ -110,7 +96,6 @@ public class QuestsCondition {
         this.questsConditionsByQuestsConditionsId = questsConditionsByQuestsConditionsId;
     }
 
-    @OneToMany(mappedBy = "questsConditionsByQuestsConditionsId")
     public Collection<QuestsCondition> getQuestsConditionsById() {
         return questsConditionsById;
     }
@@ -121,8 +106,6 @@ public class QuestsCondition {
         this.questsConditionsById = questsConditionsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "quests_id", referencedColumnName = "id", nullable = false)
     public Quest getQuestsByQuestsId() {
         return questsByQuestsId;
     }

@@ -1,13 +1,9 @@
 package com.manulaiko.kalaazu.persistence.database;
 
-import org.hibernate.HibernateException;
-import org.hibernate.Metamodel;
-import org.hibernate.query.Query;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.cfg.Configuration;
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
+import com.manulaiko.kalaazu.persistence.database.entities.Map;
+import org.sql2o.Sql2o;
 
-import javax.persistence.metamodel.EntityType;
 
 /**
  * Database class.
@@ -27,25 +23,13 @@ public class Database {
           .setHost("localhost")
           .initialize();
 
-        try (Session session = db.getSession()) {
-            System.out.println("querying all the managed entities...");
-            final Metamodel metamodel = session.getSessionFactory()
-                                               .getMetamodel();
-            for (EntityType<?> entityType : metamodel.getEntities()) {
-                final String entityName = entityType.getName();
-                final Query  query      = session.createQuery("from " + entityName);
-                System.out.println("executing: " + query.getQueryString());
-                for (Object o : query.list()) {
-                    System.out.println("  " + o);
-                }
-            }
-        }
+        db.find(1, Map.class);
     }
 
     /**
      * Session factory.
      */
-    private SessionFactory sessionFactory;
+    private Sql2o sql2o;
 
     /**
      * Server host.
@@ -72,29 +56,63 @@ public class Database {
      */
     private String database;
 
+    /**
+     * Initialzes the connection with the database.
+     */
     public void initialize() {
-        if (this.sessionFactory != null) {
+        if (this.sql2o != null) {
             return;
         }
 
         try {
-            Configuration configuration = new Configuration();
-            String url           = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
+            var url = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
 
-            configuration.setProperty("hibernate.connection.url", url);
-            configuration.setProperty("hibernate.connection.username", this.getUsername());
-            configuration.setProperty("hibernate.connection.password", this.getPassword());
-
-            configuration.configure();
-
-            sessionFactory = configuration.buildSessionFactory();
+            this.sql2o = new Sql2o(
+                    url,
+                    this.getUsername(),
+                    this.getPassword()
+            );
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
     }
 
-    public Session getSession() throws HibernateException {
-        return sessionFactory.openSession();
+    /**
+     * Finds a record in the database.
+     *
+     * @param id    Record id.
+     * @param clazz Entity class.
+     *
+     * @return Record from the database.
+     */
+    public <T extends Entity> T find(int id, Class<T> clazz) {
+        try (var connection = this.sql2o.open()) {
+            var table = this.parseTable(clazz);
+
+            return connection.createQuery("SELECT * FROM "+ table +" WHERE id=:id")
+                    .addParameter("id", id)
+                    .executeAndFetch(clazz)
+                    .get(0);
+        }
+    }
+
+    /**
+     * Parses a class name to a table name.
+     *
+     * @param clazz Class to parse.
+     *
+     * @return Table name for clazz
+     */
+    private String parseTable(Class clazz) {
+        var name = clazz.getSimpleName()
+                        .replaceAll("([A-Z]+)","\\_$1")
+                        .toLowerCase();
+
+        if (name.endsWith("y")) {
+            return name.substring(0, name.length() - 1) + "ies";
+        }
+
+        return name + "s";
     }
 
     //<editor-fold desc="Getters and setters">

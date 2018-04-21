@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Arrays;
 import java.util.Collection;
@@ -9,8 +9,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "users", schema = "kalaazu")
 public class User {
     private int id;
 
@@ -34,8 +32,6 @@ public class User {
 
     private InvitationCode invitationCodesByInvitationCodesId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -44,8 +40,6 @@ public class User {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -54,8 +48,6 @@ public class User {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "invitation_codes_id")
     public Integer getInvitationCodesId() {
         return invitationCodesId;
     }
@@ -64,8 +56,6 @@ public class User {
         this.invitationCodesId = invitationCodesId;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -74,8 +64,6 @@ public class User {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "password")
     public String getPassword() {
         return password;
     }
@@ -84,8 +72,6 @@ public class User {
         this.password = password;
     }
 
-    @Basic
-    @Column(name = "email")
     public String getEmail() {
         return email;
     }
@@ -94,8 +80,6 @@ public class User {
         this.email = email;
     }
 
-    @Basic
-    @Column(name = "email_verification_code")
     public String getEmailVerificationCode() {
         return emailVerificationCode;
     }
@@ -104,8 +88,6 @@ public class User {
         this.emailVerificationCode = emailVerificationCode;
     }
 
-    @Basic
-    @Column(name = "email_verification_date")
     public Date getEmailVerificationDate() {
         return emailVerificationDate;
     }
@@ -114,8 +96,6 @@ public class User {
         this.emailVerificationDate = emailVerificationDate;
     }
 
-    @Basic
-    @Column(name = "ip")
     public byte[] getIp() {
         return ip;
     }
@@ -154,7 +134,6 @@ public class User {
         return result;
     }
 
-    @OneToMany(mappedBy = "usersByUsersId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }
@@ -163,8 +142,6 @@ public class User {
         this.accountsById = accountsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id")
     public InvitationCode getInvitationCodesByInvitationCodesId() {
         return invitationCodesByInvitationCodesId;
     }

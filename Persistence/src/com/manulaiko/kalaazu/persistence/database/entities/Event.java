@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "events", schema = "kalaazu")
 public class Event {
     private int id;
 
@@ -20,8 +18,6 @@ public class Event {
 
     private Date endDate;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class Event {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -40,8 +34,6 @@ public class Event {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -50,8 +42,6 @@ public class Event {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "start_date")
     public Date getStartDate() {
         return startDate;
     }
@@ -60,8 +50,6 @@ public class Event {
         this.startDate = startDate;
     }
 
-    @Basic
-    @Column(name = "end_date")
     public Date getEndDate() {
         return endDate;
     }

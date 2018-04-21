@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_diplomacies", schema = "kalaazu")
 public class ClansDiplomacy {
     private int id;
 
@@ -28,8 +26,6 @@ public class ClansDiplomacy {
 
     private Clan clansByToClansId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -38,8 +34,6 @@ public class ClansDiplomacy {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "from_clans_id")
     public int getFromClansId() {
         return fromClansId;
     }
@@ -48,8 +42,6 @@ public class ClansDiplomacy {
         this.fromClansId = fromClansId;
     }
 
-    @Basic
-    @Column(name = "to_clans_id")
     public int getToClansId() {
         return toClansId;
     }
@@ -58,8 +50,6 @@ public class ClansDiplomacy {
         this.toClansId = toClansId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -68,8 +58,6 @@ public class ClansDiplomacy {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "expires")
     public Date getExpires() {
         return expires;
     }
@@ -78,8 +66,6 @@ public class ClansDiplomacy {
         this.expires = expires;
     }
 
-    @Basic
-    @Column(name = "status")
     public int getStatus() {
         return status;
     }
@@ -88,8 +74,6 @@ public class ClansDiplomacy {
         this.status = status;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -122,8 +106,6 @@ public class ClansDiplomacy {
         return Objects.hash(id, fromClansId, toClansId, date, expires, status, type);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "from_clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByFromClansId() {
         return clansByFromClansId;
     }
@@ -132,8 +114,6 @@ public class ClansDiplomacy {
         this.clansByFromClansId = clansByFromClansId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "to_clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByToClansId() {
         return clansByToClansId;
     }

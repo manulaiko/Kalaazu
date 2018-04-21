@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_galaxygates", schema = "kalaazu")
 public class AccountsGalaxygate {
     private int id;
 
@@ -29,8 +27,6 @@ public class AccountsGalaxygate {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -39,8 +35,6 @@ public class AccountsGalaxygate {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "galaxygates_id")
     public int getGalaxygatesId() {
         return galaxygatesId;
     }
@@ -49,8 +43,6 @@ public class AccountsGalaxygate {
         this.galaxygatesId = galaxygatesId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -59,8 +51,6 @@ public class AccountsGalaxygate {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "parts")
     public int getParts() {
         return parts;
     }
@@ -69,8 +59,6 @@ public class AccountsGalaxygate {
         this.parts = parts;
     }
 
-    @Basic
-    @Column(name = "lifes")
     public int getLifes() {
         return lifes;
     }
@@ -79,8 +67,6 @@ public class AccountsGalaxygate {
         this.lifes = lifes;
     }
 
-    @Basic
-    @Column(name = "wave")
     public int getWave() {
         return wave;
     }
@@ -89,8 +75,6 @@ public class AccountsGalaxygate {
         this.wave = wave;
     }
 
-    @Basic
-    @Column(name = "times")
     public int getTimes() {
         return times;
     }
@@ -99,8 +83,6 @@ public class AccountsGalaxygate {
         this.times = times;
     }
 
-    @Basic
-    @Column(name = "is_completed")
     public boolean isCompleted() {
         return isCompleted;
     }
@@ -134,8 +116,6 @@ public class AccountsGalaxygate {
         return Objects.hash(id, galaxygatesId, accountsId, parts, lifes, wave, times, isCompleted);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
     public Galaxygate getGalaxygatesByGalaxygatesId() {
         return galaxygatesByGalaxygatesId;
     }
@@ -146,8 +126,6 @@ public class AccountsGalaxygate {
         this.galaxygatesByGalaxygatesId = galaxygatesByGalaxygatesId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

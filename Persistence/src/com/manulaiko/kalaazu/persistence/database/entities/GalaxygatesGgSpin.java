@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_gg_spins", schema = "kalaazu")
 public class GalaxygatesGgSpin {
     private int id;
 
@@ -19,8 +17,6 @@ public class GalaxygatesGgSpin {
 
     private GalaxygatesSpin galaxygatesSpinsByGalaxygatesSpinsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,8 +25,6 @@ public class GalaxygatesGgSpin {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "galaxygates_id")
     public int getGalaxygatesId() {
         return galaxygatesId;
     }
@@ -39,8 +33,6 @@ public class GalaxygatesGgSpin {
         this.galaxygatesId = galaxygatesId;
     }
 
-    @Basic
-    @Column(name = "galaxygates_spins_id")
     public int getGalaxygatesSpinsId() {
         return galaxygatesSpinsId;
     }
@@ -69,8 +61,6 @@ public class GalaxygatesGgSpin {
         return Objects.hash(id, galaxygatesId, galaxygatesSpinsId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
     public Galaxygate getGalaxygatesByGalaxygatesId() {
         return galaxygatesByGalaxygatesId;
     }
@@ -81,8 +71,6 @@ public class GalaxygatesGgSpin {
         this.galaxygatesByGalaxygatesId = galaxygatesByGalaxygatesId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_spins_id", referencedColumnName = "id", nullable = false)
     public GalaxygatesSpin getGalaxygatesSpinsByGalaxygatesSpinsId() {
         return galaxygatesSpinsByGalaxygatesSpinsId;
     }

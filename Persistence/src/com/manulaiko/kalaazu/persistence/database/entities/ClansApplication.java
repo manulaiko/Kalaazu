@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_applications", schema = "kalaazu")
 public class ClansApplication {
     private int id;
 
@@ -24,8 +22,6 @@ public class ClansApplication {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class ClansApplication {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -44,8 +38,6 @@ public class ClansApplication {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -54,8 +46,6 @@ public class ClansApplication {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -64,8 +54,6 @@ public class ClansApplication {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -96,8 +84,6 @@ public class ClansApplication {
         return Objects.hash(id, clansId, accountsId, date, text);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -106,8 +92,6 @@ public class ClansApplication {
         this.clansByClansId = clansByClansId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_spins", schema = "kalaazu")
 public class GalaxygatesSpin {
     private int id;
 
@@ -25,8 +23,6 @@ public class GalaxygatesSpin {
 
     private Item itemsByItemsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -35,8 +31,6 @@ public class GalaxygatesSpin {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -45,8 +39,6 @@ public class GalaxygatesSpin {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "probability")
     public BigDecimal getProbability() {
         return probability;
     }
@@ -55,8 +47,6 @@ public class GalaxygatesSpin {
         this.probability = probability;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -65,8 +55,6 @@ public class GalaxygatesSpin {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -97,7 +85,6 @@ public class GalaxygatesSpin {
         return Objects.hash(id, type, probability, itemsId, amount);
     }
 
-    @OneToMany(mappedBy = "galaxygatesSpinsByGalaxygatesSpinsId")
     public Collection<GalaxygatesGgSpin> getGalaxygatesGgSpinsById() {
         return galaxygatesGgSpinsById;
     }
@@ -108,8 +95,6 @@ public class GalaxygatesSpin {
         this.galaxygatesGgSpinsById = galaxygatesGgSpinsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }

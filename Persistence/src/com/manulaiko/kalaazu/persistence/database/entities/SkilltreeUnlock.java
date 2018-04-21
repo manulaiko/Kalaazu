@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "skilltree_unlocks", schema = "kalaazu")
 public class SkilltreeUnlock {
     private int id;
 
@@ -19,8 +17,6 @@ public class SkilltreeUnlock {
 
     private SkilltreeLevel skilltreeLevelsByRequiredSkilltreeLevelsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,8 +25,6 @@ public class SkilltreeUnlock {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "upgrade_skilltree_levels_id")
     public int getUpgradeSkilltreeLevelsId() {
         return upgradeSkilltreeLevelsId;
     }
@@ -39,8 +33,6 @@ public class SkilltreeUnlock {
         this.upgradeSkilltreeLevelsId = upgradeSkilltreeLevelsId;
     }
 
-    @Basic
-    @Column(name = "required_skilltree_levels_id")
     public int getRequiredSkilltreeLevelsId() {
         return requiredSkilltreeLevelsId;
     }
@@ -69,8 +61,6 @@ public class SkilltreeUnlock {
         return Objects.hash(id, upgradeSkilltreeLevelsId, requiredSkilltreeLevelsId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "upgrade_skilltree_levels_id", referencedColumnName = "id", nullable = false)
     public SkilltreeLevel getSkilltreeLevelsByUpgradeSkilltreeLevelsId() {
         return skilltreeLevelsByUpgradeSkilltreeLevelsId;
     }
@@ -81,8 +71,6 @@ public class SkilltreeUnlock {
         this.skilltreeLevelsByUpgradeSkilltreeLevelsId = skilltreeLevelsByUpgradeSkilltreeLevelsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "required_skilltree_levels_id", referencedColumnName = "id", nullable = false)
     public SkilltreeLevel getSkilltreeLevelsByRequiredSkilltreeLevelsId() {
         return skilltreeLevelsByRequiredSkilltreeLevelsId;
     }

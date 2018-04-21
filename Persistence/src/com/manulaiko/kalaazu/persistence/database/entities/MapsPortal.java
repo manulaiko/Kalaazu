@@ -1,16 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "maps_portals", schema = "kalaazu")
 public class MapsPortal {
     private int id;
 
@@ -34,8 +30,6 @@ public class MapsPortal {
 
     private Map mapsByTargetMapsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -44,8 +38,6 @@ public class MapsPortal {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -54,8 +46,6 @@ public class MapsPortal {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "maps_id")
     public int getMapsId() {
         return mapsId;
     }
@@ -64,8 +54,6 @@ public class MapsPortal {
         this.mapsId = mapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "position")
     public Vector2 getPosition() {
         return position;
     }
@@ -74,8 +62,6 @@ public class MapsPortal {
         this.position = position;
     }
 
-    @Basic
-    @Column(name = "target_maps_id")
     public int getTargetMapsId() {
         return targetMapsId;
     }
@@ -84,8 +70,6 @@ public class MapsPortal {
         this.targetMapsId = targetMapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "target_position")
     public Vector2 getTargetPosition() {
         return targetPosition;
     }
@@ -94,8 +78,6 @@ public class MapsPortal {
         this.targetPosition = targetPosition;
     }
 
-    @Basic
-    @Column(name = "is_visible")
     public boolean isVisible() {
         return isVisible;
     }
@@ -104,8 +86,6 @@ public class MapsPortal {
         isVisible = visible;
     }
 
-    @Basic
-    @Column(name = "is_working")
     public boolean isWorking() {
         return isWorking;
     }
@@ -114,8 +94,6 @@ public class MapsPortal {
         isWorking = working;
     }
 
-    @Basic
-    @Column(name = "gfx")
     public int getGfx() {
         return gfx;
     }
@@ -148,8 +126,6 @@ public class MapsPortal {
         return Objects.hash(id, levelsId, mapsId, targetMapsId, isVisible, isWorking, gfx);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByMapsId() {
         return mapsByMapsId;
     }
@@ -158,8 +134,6 @@ public class MapsPortal {
         this.mapsByMapsId = mapsByMapsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "target_maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByTargetMapsId() {
         return mapsByTargetMapsId;
     }

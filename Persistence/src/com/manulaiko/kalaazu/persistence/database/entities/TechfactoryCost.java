@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "techfactory_costs", schema = "kalaazu")
 public class TechfactoryCost {
     private int id;
 
@@ -21,8 +19,6 @@ public class TechfactoryCost {
 
     private Item itemsByItemsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class TechfactoryCost {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "techfactory_items_id")
     public int getTechfactoryItemsId() {
         return techfactoryItemsId;
     }
@@ -41,8 +35,6 @@ public class TechfactoryCost {
         this.techfactoryItemsId = techfactoryItemsId;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -51,8 +43,6 @@ public class TechfactoryCost {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -82,8 +72,6 @@ public class TechfactoryCost {
         return Objects.hash(id, techfactoryItemsId, itemsId, amount);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "techfactory_items_id", referencedColumnName = "id", nullable = false)
     public TechfactoryItem getTechfactoryItemsByTechfactoryItemsId() {
         return techfactoryItemsByTechfactoryItemsId;
     }
@@ -94,8 +82,6 @@ public class TechfactoryCost {
         this.techfactoryItemsByTechfactoryItemsId = techfactoryItemsByTechfactoryItemsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }

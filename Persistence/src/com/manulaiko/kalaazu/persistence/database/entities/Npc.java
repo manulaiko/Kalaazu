@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "npcs", schema = "kalaazu")
 public class Npc {
     private int id;
 
@@ -35,8 +33,6 @@ public class Npc {
 
     private Collection<RewardsNpc> rewardsNpcsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -45,8 +41,6 @@ public class Npc {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -55,8 +49,6 @@ public class Npc {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "health")
     public int getHealth() {
         return health;
     }
@@ -65,8 +57,6 @@ public class Npc {
         this.health = health;
     }
 
-    @Basic
-    @Column(name = "shield")
     public int getShield() {
         return shield;
     }
@@ -75,8 +65,6 @@ public class Npc {
         this.shield = shield;
     }
 
-    @Basic
-    @Column(name = "shield_absorption")
     public BigDecimal getShieldAbsorption() {
         return shieldAbsorption;
     }
@@ -85,8 +73,6 @@ public class Npc {
         this.shieldAbsorption = shieldAbsorption;
     }
 
-    @Basic
-    @Column(name = "damage")
     public int getDamage() {
         return damage;
     }
@@ -95,8 +81,6 @@ public class Npc {
         this.damage = damage;
     }
 
-    @Basic
-    @Column(name = "speed")
     public int getSpeed() {
         return speed;
     }
@@ -105,8 +89,6 @@ public class Npc {
         this.speed = speed;
     }
 
-    @Basic
-    @Column(name = "gfx")
     public int getGfx() {
         return gfx;
     }
@@ -115,8 +97,6 @@ public class Npc {
         this.gfx = gfx;
     }
 
-    @Basic
-    @Column(name = "ai")
     public int getAi() {
         return ai;
     }
@@ -151,7 +131,6 @@ public class Npc {
         return Objects.hash(id, name, health, shield, shieldAbsorption, damage, speed, gfx, ai);
     }
 
-    @OneToMany(mappedBy = "npcsByNpcsId")
     public Collection<GalaxygatesSpawn> getGalaxygatesSpawnsById() {
         return galaxygatesSpawnsById;
     }
@@ -162,7 +141,6 @@ public class Npc {
         this.galaxygatesSpawnsById = galaxygatesSpawnsById;
     }
 
-    @OneToMany(mappedBy = "npcsByNpcsId")
     public Collection<MapsNpc> getMapsNpcsById() {
         return mapsNpcsById;
     }
@@ -171,7 +149,6 @@ public class Npc {
         this.mapsNpcsById = mapsNpcsById;
     }
 
-    @OneToMany(mappedBy = "npcsByNpcsId")
     public Collection<RewardsNpc> getRewardsNpcsById() {
         return rewardsNpcsById;
     }

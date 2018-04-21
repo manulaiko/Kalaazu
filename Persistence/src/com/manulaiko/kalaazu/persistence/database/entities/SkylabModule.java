@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "skylab_modules", schema = "kalaazu")
 public class SkylabModule {
     private int id;
 
@@ -33,8 +31,6 @@ public class SkylabModule {
 
     private Collection<AccountsSkylab> accountsSkylabsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -43,8 +39,6 @@ public class SkylabModule {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -53,8 +47,6 @@ public class SkylabModule {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "production_factor")
     public BigDecimal getProductionFactor() {
         return productionFactor;
     }
@@ -63,8 +55,6 @@ public class SkylabModule {
         this.productionFactor = productionFactor;
     }
 
-    @Basic
-    @Column(name = "production_base")
     public int getProductionBase() {
         return productionBase;
     }
@@ -73,8 +63,6 @@ public class SkylabModule {
         this.productionBase = productionBase;
     }
 
-    @Basic
-    @Column(name = "storage_factor")
     public BigDecimal getStorageFactor() {
         return storageFactor;
     }
@@ -83,8 +71,6 @@ public class SkylabModule {
         this.storageFactor = storageFactor;
     }
 
-    @Basic
-    @Column(name = "storage_base")
     public int getStorageBase() {
         return storageBase;
     }
@@ -93,8 +79,6 @@ public class SkylabModule {
         this.storageBase = storageBase;
     }
 
-    @Basic
-    @Column(name = "upgrade_factor")
     public BigDecimal getUpgradeFactor() {
         return upgradeFactor;
     }
@@ -103,8 +87,6 @@ public class SkylabModule {
         this.upgradeFactor = upgradeFactor;
     }
 
-    @Basic
-    @Column(name = "upgrade_base")
     public int getUpgradeBase() {
         return upgradeBase;
     }
@@ -113,8 +95,6 @@ public class SkylabModule {
         this.upgradeBase = upgradeBase;
     }
 
-    @Basic
-    @Column(name = "energy_factor")
     public BigDecimal getEnergyFactor() {
         return energyFactor;
     }
@@ -123,8 +103,6 @@ public class SkylabModule {
         this.energyFactor = energyFactor;
     }
 
-    @Basic
-    @Column(name = "energy_base")
     public int getEnergyBase() {
         return energyBase;
     }
@@ -162,7 +140,6 @@ public class SkylabModule {
         );
     }
 
-    @OneToMany(mappedBy = "skylabModulesBySkylabModulesId")
     public Collection<AccountsSkylab> getAccountsSkylabsById() {
         return accountsSkylabsById;
     }

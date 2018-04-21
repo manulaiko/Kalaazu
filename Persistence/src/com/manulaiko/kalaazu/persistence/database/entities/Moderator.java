@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "moderators", schema = "kalaazu")
 public class Moderator {
     private int id;
 
@@ -23,8 +21,6 @@ public class Moderator {
 
     private Collection<ModeratorsLog> moderatorsLogsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -33,8 +29,6 @@ public class Moderator {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -43,8 +37,6 @@ public class Moderator {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -53,8 +45,6 @@ public class Moderator {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -84,8 +74,6 @@ public class Moderator {
         return Objects.hash(id, accountsId, type, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -94,7 +82,6 @@ public class Moderator {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @OneToMany(mappedBy = "moderatorsByModeratorsId")
     public Collection<ModeratorsLog> getModeratorsLogsById() {
         return moderatorsLogsById;
     }

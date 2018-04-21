@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_ranking", schema = "kalaazu")
 public class ClansRanking {
     private int id;
 
@@ -19,8 +17,6 @@ public class ClansRanking {
 
     private Clan clansByClansId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,8 +25,6 @@ public class ClansRanking {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -39,8 +33,6 @@ public class ClansRanking {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "points")
     public int getPoints() {
         return points;
     }
@@ -49,8 +41,6 @@ public class ClansRanking {
         this.points = points;
     }
 
-    @Basic
-    @Column(name = "best_points")
     public int getBestPoints() {
         return bestPoints;
     }
@@ -80,8 +70,6 @@ public class ClansRanking {
         return Objects.hash(id, clansId, points, bestPoints);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }

@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_history", schema = "kalaazu")
 public class AccountsHistory {
     private int id;
 
@@ -24,8 +22,6 @@ public class AccountsHistory {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class AccountsHistory {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -44,8 +38,6 @@ public class AccountsHistory {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -54,8 +46,6 @@ public class AccountsHistory {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "message")
     public String getMessage() {
         return message;
     }
@@ -64,8 +54,6 @@ public class AccountsHistory {
         this.message = message;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -74,8 +62,6 @@ public class AccountsHistory {
         this.amount = amount;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -107,8 +93,6 @@ public class AccountsHistory {
         return Objects.hash(id, accountsId, type, message, amount, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

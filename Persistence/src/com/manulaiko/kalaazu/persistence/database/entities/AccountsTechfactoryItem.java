@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_techfactory_items", schema = "kalaazu")
 public class AccountsTechfactoryItem {
     private int id;
 
@@ -24,8 +22,6 @@ public class AccountsTechfactoryItem {
 
     private TechfactoryItem techfactoryItemsByTechfactoryItemsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class AccountsTechfactoryItem {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -44,8 +38,6 @@ public class AccountsTechfactoryItem {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "techfactory_items_id")
     public int getTechfactoryItemsId() {
         return techfactoryItemsId;
     }
@@ -54,8 +46,6 @@ public class AccountsTechfactoryItem {
         this.techfactoryItemsId = techfactoryItemsId;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -64,8 +54,6 @@ public class AccountsTechfactoryItem {
         this.amount = amount;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -96,8 +84,6 @@ public class AccountsTechfactoryItem {
         return Objects.hash(id, accountsId, techfactoryItemsId, amount, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -106,8 +92,6 @@ public class AccountsTechfactoryItem {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "techfactory_items_id", referencedColumnName = "id", nullable = false)
     public TechfactoryItem getTechfactoryItemsByTechfactoryItemsId() {
         return techfactoryItemsByTechfactoryItemsId;
     }

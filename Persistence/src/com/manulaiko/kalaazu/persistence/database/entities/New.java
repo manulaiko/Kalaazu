@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "news", schema = "kalaazu")
 public class New {
     private int id;
 
@@ -22,8 +20,6 @@ public class New {
 
     private String text;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -32,8 +28,6 @@ public class New {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -42,8 +36,6 @@ public class New {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "image")
     public String getImage() {
         return image;
     }
@@ -52,8 +44,6 @@ public class New {
         this.image = image;
     }
 
-    @Basic
-    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -62,8 +52,6 @@ public class New {
         this.title = title;
     }
 
-    @Basic
-    @Column(name = "teaser")
     public String getTeaser() {
         return teaser;
     }
@@ -72,8 +60,6 @@ public class New {
         this.teaser = teaser;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }

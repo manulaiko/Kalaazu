@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_items", schema = "kalaazu")
 public class AccountsItem {
     private int id;
 
@@ -33,8 +31,6 @@ public class AccountsItem {
 
     private Collection<ClansBattlestationsItem> clansBattlestationsItemsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -43,8 +39,6 @@ public class AccountsItem {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -53,8 +47,6 @@ public class AccountsItem {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -63,8 +55,6 @@ public class AccountsItem {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -73,8 +63,6 @@ public class AccountsItem {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -83,8 +71,6 @@ public class AccountsItem {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -116,7 +102,6 @@ public class AccountsItem {
         return Objects.hash(id, itemsId, accountsId, levelsId, date, amount);
     }
 
-    @OneToMany(mappedBy = "accountsItemsByAccountsItemsId")
     public Collection<AccountsConfigurationsAccountsItem> getAccountsConfigurationsAccountsItemsById() {
         return accountsConfigurationsAccountsItemsById;
     }
@@ -127,8 +112,6 @@ public class AccountsItem {
         this.accountsConfigurationsAccountsItemsById = accountsConfigurationsAccountsItemsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }
@@ -137,8 +120,6 @@ public class AccountsItem {
         this.itemsByItemsId = itemsByItemsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -147,8 +128,6 @@ public class AccountsItem {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     public Level getLevelsByLevelsId() {
         return levelsByLevelsId;
     }
@@ -157,7 +136,6 @@ public class AccountsItem {
         this.levelsByLevelsId = levelsByLevelsId;
     }
 
-    @OneToMany(mappedBy = "accountsItemsByAccountsItemsId")
     public Collection<ClansBattlestationsItem> getClansBattlestationsItemsById() {
         return clansBattlestationsItemsById;
     }

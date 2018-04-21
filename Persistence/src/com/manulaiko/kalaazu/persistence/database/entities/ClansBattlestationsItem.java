@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_battlestations_items", schema = "kalaazu")
 public class ClansBattlestationsItem {
     private int id;
 
@@ -24,8 +22,6 @@ public class ClansBattlestationsItem {
 
     private AccountsItem accountsItemsByAccountsItemsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class ClansBattlestationsItem {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_battlestations_id")
     public int getClansBattlestationsId() {
         return clansBattlestationsId;
     }
@@ -44,8 +38,6 @@ public class ClansBattlestationsItem {
         this.clansBattlestationsId = clansBattlestationsId;
     }
 
-    @Basic
-    @Column(name = "accounts_items_id")
     public int getAccountsItemsId() {
         return accountsItemsId;
     }
@@ -54,8 +46,6 @@ public class ClansBattlestationsItem {
         this.accountsItemsId = accountsItemsId;
     }
 
-    @Basic
-    @Column(name = "slot")
     public byte getSlot() {
         return slot;
     }
@@ -64,8 +54,6 @@ public class ClansBattlestationsItem {
         this.slot = slot;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -96,8 +84,6 @@ public class ClansBattlestationsItem {
         return Objects.hash(id, clansBattlestationsId, accountsItemsId, slot, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_battlestations_id", referencedColumnName = "id", nullable = false)
     public ClansBattlestation getClansBattlestationsByClansBattlestationsId() {
         return clansBattlestationsByClansBattlestationsId;
     }
@@ -108,8 +94,6 @@ public class ClansBattlestationsItem {
         this.clansBattlestationsByClansBattlestationsId = clansBattlestationsByClansBattlestationsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_items_id", referencedColumnName = "id", nullable = false)
     public AccountsItem getAccountsItemsByAccountsItemsId() {
         return accountsItemsByAccountsItemsId;
     }

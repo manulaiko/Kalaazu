@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "levels_upgrades", schema = "kalaazu")
 public class LevelsUpgrade {
     private int id;
 
@@ -21,8 +19,6 @@ public class LevelsUpgrade {
 
     private Level levelsByLevelsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class LevelsUpgrade {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -41,8 +35,6 @@ public class LevelsUpgrade {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "probability")
     public byte getProbability() {
         return probability;
     }
@@ -51,8 +43,6 @@ public class LevelsUpgrade {
         this.probability = probability;
     }
 
-    @Basic
-    @Column(name = "credits")
     public int getCredits() {
         return credits;
     }
@@ -61,8 +51,6 @@ public class LevelsUpgrade {
         this.credits = credits;
     }
 
-    @Basic
-    @Column(name = "uridium")
     public int getUridium() {
         return uridium;
     }
@@ -93,8 +81,6 @@ public class LevelsUpgrade {
         return Objects.hash(id, levelsId, probability, credits, uridium);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     public Level getLevelsByLevelsId() {
         return levelsByLevelsId;
     }

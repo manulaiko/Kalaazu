@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "items", schema = "kalaazu")
 public class Item {
     private int id;
 
@@ -40,8 +38,6 @@ public class Item {
 
     private Collection<TradeItem> tradeItemsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -50,8 +46,6 @@ public class Item {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -60,8 +54,6 @@ public class Item {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "category")
     public String getCategory() {
         return category;
     }
@@ -70,8 +62,6 @@ public class Item {
         this.category = category;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -80,8 +70,6 @@ public class Item {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "price")
     public int getPrice() {
         return price;
     }
@@ -90,8 +78,6 @@ public class Item {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -100,8 +86,6 @@ public class Item {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "is_elite")
     public boolean isElite() {
         return isElite;
     }
@@ -110,8 +94,6 @@ public class Item {
         isElite = elite;
     }
 
-    @Basic
-    @Column(name = "is_event")
     public boolean isEvent() {
         return isEvent;
     }
@@ -120,8 +102,6 @@ public class Item {
         isEvent = event;
     }
 
-    @Basic
-    @Column(name = "is_buyable")
     public boolean isBuyable() {
         return isBuyable;
     }
@@ -156,7 +136,6 @@ public class Item {
         return Objects.hash(id, name, category, description, price, type, isElite, isEvent, isBuyable);
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<AccountsItem> getAccountsItemsById() {
         return accountsItemsById;
     }
@@ -167,7 +146,6 @@ public class Item {
         this.accountsItemsById = accountsItemsById;
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<GalaxygatesSpin> getGalaxygatesSpinsById() {
         return galaxygatesSpinsById;
     }
@@ -178,7 +156,6 @@ public class Item {
         this.galaxygatesSpinsById = galaxygatesSpinsById;
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<Reward> getRewardsById() {
         return rewardsById;
     }
@@ -187,7 +164,6 @@ public class Item {
         this.rewardsById = rewardsById;
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<Ship> getShipsById() {
         return shipsById;
     }
@@ -196,7 +172,6 @@ public class Item {
         this.shipsById = shipsById;
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<TechfactoryCost> getTechfactoryCostsById() {
         return techfactoryCostsById;
     }
@@ -207,7 +182,6 @@ public class Item {
         this.techfactoryCostsById = techfactoryCostsById;
     }
 
-    @OneToMany(mappedBy = "itemsByItemsId")
     public Collection<TradeItem> getTradeItemsById() {
         return tradeItemsById;
     }

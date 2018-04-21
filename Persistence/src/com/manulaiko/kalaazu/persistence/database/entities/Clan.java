@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans", schema = "kalaazu")
 public class Clan {
     private int id;
 
@@ -50,8 +48,6 @@ public class Clan {
 
     private Collection<ClansRole> clansRolesById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -60,8 +56,6 @@ public class Clan {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -70,8 +64,6 @@ public class Clan {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "factions_id")
     public Integer getFactionsId() {
         return factionsId;
     }
@@ -80,8 +72,6 @@ public class Clan {
         this.factionsId = factionsId;
     }
 
-    @Basic
-    @Column(name = "tag")
     public String getTag() {
         return tag;
     }
@@ -90,8 +80,6 @@ public class Clan {
         this.tag = tag;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -100,8 +88,6 @@ public class Clan {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -110,8 +96,6 @@ public class Clan {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "logo")
     public String getLogo() {
         return logo;
     }
@@ -120,8 +104,6 @@ public class Clan {
         this.logo = logo;
     }
 
-    @Basic
-    @Column(name = "status")
     public int getStatus() {
         return status;
     }
@@ -155,7 +137,6 @@ public class Clan {
         return Objects.hash(id, accountsId, factionsId, tag, name, description, logo, status);
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }
@@ -164,8 +145,6 @@ public class Clan {
         this.accountsById = accountsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -174,7 +153,6 @@ public class Clan {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansApplication> getClansApplicationsById() {
         return clansApplicationsById;
     }
@@ -185,7 +163,6 @@ public class Clan {
         this.clansApplicationsById = clansApplicationsById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansBank> getClansBanksById() {
         return clansBanksById;
     }
@@ -196,7 +173,6 @@ public class Clan {
         this.clansBanksById = clansBanksById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansBattlestation> getClansBattlestationsById() {
         return clansBattlestationsById;
     }
@@ -207,7 +183,6 @@ public class Clan {
         this.clansBattlestationsById = clansBattlestationsById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansBattlestationsLog> getClansBattlestationsLogsById() {
         return clansBattlestationsLogsById;
     }
@@ -218,7 +193,6 @@ public class Clan {
         this.clansBattlestationsLogsById = clansBattlestationsLogsById;
     }
 
-    @OneToMany(mappedBy = "clansByFromClansId")
     public Collection<ClansDiplomacy> getClansDiplomaciesById() {
         return clansDiplomaciesById;
     }
@@ -229,7 +203,6 @@ public class Clan {
         this.clansDiplomaciesById = clansDiplomaciesById;
     }
 
-    @OneToMany(mappedBy = "clansByToClansId")
     public Collection<ClansDiplomacy> getClansDiplomaciesById_0() {
         return clansDiplomaciesById_0;
     }
@@ -240,7 +213,6 @@ public class Clan {
         this.clansDiplomaciesById_0 = clansDiplomaciesById_0;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansMessage> getClansMessagesById() {
         return clansMessagesById;
     }
@@ -251,7 +223,6 @@ public class Clan {
         this.clansMessagesById = clansMessagesById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansNew> getClansNewsById() {
         return clansNewsById;
     }
@@ -262,7 +233,6 @@ public class Clan {
         this.clansNewsById = clansNewsById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansRanking> getClansRankingsById() {
         return clansRankingsById;
     }
@@ -273,7 +243,6 @@ public class Clan {
         this.clansRankingsById = clansRankingsById;
     }
 
-    @OneToMany(mappedBy = "clansByClansId")
     public Collection<ClansRole> getClansRolesById() {
         return clansRolesById;
     }

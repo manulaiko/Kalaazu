@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_techfactories", schema = "kalaazu")
-public class AccountsTechfactorie {
+public class AccountsTechfactory {
     private int id;
 
     private int accountsId;
@@ -21,8 +19,6 @@ public class AccountsTechfactorie {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class AccountsTechfactorie {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -41,8 +35,6 @@ public class AccountsTechfactorie {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "slot_unlock_price")
     public int getSlotUnlockPrice() {
         return slotUnlockPrice;
     }
@@ -51,8 +43,6 @@ public class AccountsTechfactorie {
         this.slotUnlockPrice = slotUnlockPrice;
     }
 
-    @Basic
-    @Column(name = "slot_unlock_factor")
     public int getSlotUnlockFactor() {
         return slotUnlockFactor;
     }
@@ -61,8 +51,6 @@ public class AccountsTechfactorie {
         this.slotUnlockFactor = slotUnlockFactor;
     }
 
-    @Basic
-    @Column(name = "slots")
     public byte getSlots() {
         return slots;
     }
@@ -79,7 +67,7 @@ public class AccountsTechfactorie {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        AccountsTechfactorie that = (AccountsTechfactorie) o;
+        AccountsTechfactory that = (AccountsTechfactory) o;
         return id == that.id &&
                accountsId == that.accountsId &&
                slotUnlockPrice == that.slotUnlockPrice &&
@@ -93,8 +81,6 @@ public class AccountsTechfactorie {
         return Objects.hash(id, accountsId, slotUnlockPrice, slotUnlockFactor, slots);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

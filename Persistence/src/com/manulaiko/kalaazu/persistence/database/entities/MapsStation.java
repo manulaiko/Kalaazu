@@ -1,16 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "maps_stations", schema = "kalaazu")
 public class MapsStation {
     private int id;
 
@@ -24,8 +20,6 @@ public class MapsStation {
 
     private Faction factionsByFactionsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +28,6 @@ public class MapsStation {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "maps_id")
     public Integer getMapsId() {
         return mapsId;
     }
@@ -44,8 +36,6 @@ public class MapsStation {
         this.mapsId = mapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "position")
     public Vector2 getPosition() {
         return position;
     }
@@ -54,8 +44,6 @@ public class MapsStation {
         this.position = position;
     }
 
-    @Basic
-    @Column(name = "factions_id")
     public Integer getFactionsId() {
         return factionsId;
     }
@@ -84,8 +72,6 @@ public class MapsStation {
         return Objects.hash(id, mapsId, factionsId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "maps_id", referencedColumnName = "id")
     public Map getMapsByMapsId() {
         return mapsByMapsId;
     }
@@ -94,8 +80,6 @@ public class MapsStation {
         this.mapsByMapsId = mapsByMapsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "factions_id", referencedColumnName = "id")
     public Faction getFactionsByFactionsId() {
         return factionsByFactionsId;
     }

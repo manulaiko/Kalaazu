@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Arrays;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "invitation_codes_redeem_logs", schema = "kalaazu")
 public class InvitationCodesRedeemLog {
     private int id;
 
@@ -21,8 +19,6 @@ public class InvitationCodesRedeemLog {
 
     private InvitationCode invitationCodesByInvitationCodesId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class InvitationCodesRedeemLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "invitation_codes_id")
     public int getInvitationCodesId() {
         return invitationCodesId;
     }
@@ -41,8 +35,6 @@ public class InvitationCodesRedeemLog {
         this.invitationCodesId = invitationCodesId;
     }
 
-    @Basic
-    @Column(name = "ip")
     public byte[] getIp() {
         return ip;
     }
@@ -51,8 +43,6 @@ public class InvitationCodesRedeemLog {
         this.ip = ip;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -84,8 +74,6 @@ public class InvitationCodesRedeemLog {
         return result;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id", nullable = false)
     public InvitationCode getInvitationCodesByInvitationCodesId() {
         return invitationCodesByInvitationCodesId;
     }

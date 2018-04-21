@@ -2,12 +2,6 @@ package com.manulaiko.kalaazu.persistence.database;
 
 import com.manulaiko.kalaazu.math.Vector2;
 
-import org.hibernate.HibernateException;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
-import org.hibernate.engine.spi.SharedSessionContractImplementor;
-import org.hibernate.usertype.UserType;
-
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.Serializable;
@@ -26,37 +20,28 @@ import java.sql.Types;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@TypeDefs({
-        @TypeDef(name = "point", typeClass = com.manulaiko.kalaazu.math.Vector2.class)
-})
-public class Vector2Type implements UserType {
-    @Override
+public class Vector2Type {
     public int[] sqlTypes() {
         return new int[]{
                 Types.BINARY
         };
     }
 
-    @Override
     public Class returnedClass() {
         return Vector2.class;
     }
 
-    @Override
-    public boolean equals(Object o, Object o1) throws HibernateException {
+    public boolean equals(Object o, Object o1) {
         return o.equals(o1);
     }
 
-    @Override
-    public int hashCode(Object o) throws HibernateException {
+    public int hashCode(Object o) {
         return o.hashCode();
     }
 
-    @Override
     public Object nullSafeGet(
-            ResultSet rs, String[] names,
-            SharedSessionContractImplementor sharedSessionContractImplementor, Object o
-    ) throws HibernateException, SQLException {
+            ResultSet rs, String[] names
+    ) throws SQLException {
         var in = new ByteArrayInputStream(rs.getBytes(names[0]));
         if (in.available() == 25) {
             // The WKB format says it's 21 bytes,
@@ -79,14 +64,14 @@ public class Vector2Type implements UserType {
             in.read(xBytes);
             in.read(yBytes);
         } catch (Exception e) {
-            throw new HibernateException("Can't parse point column!", e);
+            throw new RuntimeException("Can't parse point column!", e);
         }
 
         var type = ByteBuffer.wrap(typeBytes)
                              .order(order);
 
         if (type.getInt() != 1) {
-            throw new HibernateException("Not a point!");
+            throw new RuntimeException("Not a point!");
         }
 
         var x = ByteBuffer.wrap(xBytes)
@@ -97,11 +82,9 @@ public class Vector2Type implements UserType {
         return new Vector2((float) x.getDouble(), (float) y.getDouble());
     }
 
-    @Override
     public void nullSafeSet(
-            PreparedStatement stmt, Object value, int index,
-            SharedSessionContractImplementor sharedSessionContractImplementor
-    ) throws HibernateException, SQLException {
+            PreparedStatement stmt, Object value, int index
+    ) throws RuntimeException, SQLException {
         if (value == null) {
             stmt.setNull(index, Types.BINARY);
             return;
@@ -137,12 +120,11 @@ public class Vector2Type implements UserType {
 
             stmt.setBytes(index, out.toByteArray());
         } catch (Exception e) {
-            throw new HibernateException("Couldn't write point!", e);
+            throw new RuntimeException("Couldn't write point!", e);
         }
     }
 
-    @Override
-    public Object deepCopy(Object value) throws HibernateException {
+    public Object deepCopy(Object value) {
         if (value == null) {
             return null;
         }
@@ -153,13 +135,11 @@ public class Vector2Type implements UserType {
         return new Vector2((Vector2) value);
     }
 
-    @Override
     public boolean isMutable() {
         return true;
     }
 
-    @Override
-    public Serializable disassemble(Object value) throws HibernateException {
+    public Serializable disassemble(Object value) {
         if (!(value instanceof Vector2)) {
             throw new UnsupportedOperationException("can't convert " + value.getClass());
         }
@@ -167,13 +147,11 @@ public class Vector2Type implements UserType {
         return new Vector2((Vector2) value);
     }
 
-    @Override
-    public Object assemble(Serializable serializable, Object o) throws HibernateException {
+    public Object assemble(Serializable serializable, Object o) {
         return serializable;
     }
 
-    @Override
-    public Object replace(Object o, Object o1, Object o2) throws HibernateException {
+    public Object replace(Object o, Object o1, Object o2) {
         return o;
     }
 }

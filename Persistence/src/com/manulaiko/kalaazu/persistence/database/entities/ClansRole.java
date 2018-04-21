@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_roles", schema = "kalaazu")
 public class ClansRole {
     private int id;
 
@@ -26,8 +24,6 @@ public class ClansRole {
 
     private Collection<ClansRolesPermission> clansRolesPermissionsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -36,8 +32,6 @@ public class ClansRole {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -46,8 +40,6 @@ public class ClansRole {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -56,8 +48,6 @@ public class ClansRole {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "clans_roles_id")
     public Integer getClansRolesId() {
         return clansRolesId;
     }
@@ -66,8 +56,6 @@ public class ClansRole {
         this.clansRolesId = clansRolesId;
     }
 
-    @Basic
-    @Column(name = "priority")
     public int getPriority() {
         return priority;
     }
@@ -98,7 +86,6 @@ public class ClansRole {
         return Objects.hash(id, name, clansId, clansRolesId, priority);
     }
 
-    @OneToMany(mappedBy = "clansRolesByClansRolesId")
     public Collection<AccountsClansRole> getAccountsClansRolesById() {
         return accountsClansRolesById;
     }
@@ -109,8 +96,6 @@ public class ClansRole {
         this.accountsClansRolesById = accountsClansRolesById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -119,7 +104,6 @@ public class ClansRole {
         this.clansByClansId = clansByClansId;
     }
 
-    @OneToMany(mappedBy = "clansRolesByClansRolesId")
     public Collection<ClansRolesPermission> getClansRolesPermissionsById() {
         return clansRolesPermissionsById;
     }

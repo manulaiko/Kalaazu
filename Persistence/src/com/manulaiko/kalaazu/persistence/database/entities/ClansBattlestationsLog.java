@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_battlestations_logs", schema = "kalaazu")
 public class ClansBattlestationsLog {
     private int id;
 
@@ -24,8 +22,6 @@ public class ClansBattlestationsLog {
 
     private ClansBattlestation clansBattlestationsByClansBattlestationsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class ClansBattlestationsLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -44,8 +38,6 @@ public class ClansBattlestationsLog {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "clans_battlestations_id")
     public int getClansBattlestationsId() {
         return clansBattlestationsId;
     }
@@ -54,8 +46,6 @@ public class ClansBattlestationsLog {
         this.clansBattlestationsId = clansBattlestationsId;
     }
 
-    @Basic
-    @Column(name = "message")
     public String getMessage() {
         return message;
     }
@@ -64,8 +54,6 @@ public class ClansBattlestationsLog {
         this.message = message;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -96,8 +84,6 @@ public class ClansBattlestationsLog {
         return Objects.hash(id, clansId, clansBattlestationsId, message, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -106,8 +92,6 @@ public class ClansBattlestationsLog {
         this.clansByClansId = clansByClansId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_battlestations_id", referencedColumnName = "id", nullable = false)
     public ClansBattlestation getClansBattlestationsByClansBattlestationsId() {
         return clansBattlestationsByClansBattlestationsId;
     }

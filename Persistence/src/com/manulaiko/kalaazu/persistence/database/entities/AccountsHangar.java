@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_hangars", schema = "kalaazu")
 public class AccountsHangar {
     private int id;
 
@@ -33,8 +31,6 @@ public class AccountsHangar {
 
     private AccountsShip accountsShipsByAccountsShipsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -43,8 +39,6 @@ public class AccountsHangar {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -53,8 +47,6 @@ public class AccountsHangar {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "accounts_ships_id")
     public Integer getAccountsShipsId() {
         return accountsShipsId;
     }
@@ -63,8 +55,6 @@ public class AccountsHangar {
         this.accountsShipsId = accountsShipsId;
     }
 
-    @Basic
-    @Column(name = "accounts_configurations_id")
     public Integer getAccountsConfigurationsId() {
         return accountsConfigurationsId;
     }
@@ -73,8 +63,6 @@ public class AccountsHangar {
         this.accountsConfigurationsId = accountsConfigurationsId;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -83,8 +71,6 @@ public class AccountsHangar {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "priority")
     public Integer getPriority() {
         return priority;
     }
@@ -93,8 +79,6 @@ public class AccountsHangar {
         this.priority = priority;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -127,7 +111,6 @@ public class AccountsHangar {
         return Objects.hash(id, accountsId, accountsShipsId, accountsConfigurationsId, name, priority, date);
     }
 
-    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }
@@ -136,7 +119,6 @@ public class AccountsHangar {
         this.accountsById = accountsById;
     }
 
-    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId")
     public Collection<AccountsConfiguration> getAccountsConfigurationsById() {
         return accountsConfigurationsById;
     }
@@ -147,8 +129,6 @@ public class AccountsHangar {
         this.accountsConfigurationsById = accountsConfigurationsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -157,8 +137,6 @@ public class AccountsHangar {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_ships_id", referencedColumnName = "id")
     public AccountsShip getAccountsShipsByAccountsShipsId() {
         return accountsShipsByAccountsShipsId;
     }

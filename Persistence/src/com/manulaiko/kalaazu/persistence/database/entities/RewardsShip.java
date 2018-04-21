@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "rewards_ships", schema = "kalaazu")
 public class RewardsShip {
     private int id;
 
@@ -19,8 +17,6 @@ public class RewardsShip {
 
     private Reward rewardsByRewardsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,8 +25,6 @@ public class RewardsShip {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "ships_id")
     public int getShipsId() {
         return shipsId;
     }
@@ -39,8 +33,6 @@ public class RewardsShip {
         this.shipsId = shipsId;
     }
 
-    @Basic
-    @Column(name = "rewards_id")
     public int getRewardsId() {
         return rewardsId;
     }
@@ -69,8 +61,6 @@ public class RewardsShip {
         return Objects.hash(id, shipsId, rewardsId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "ships_id", referencedColumnName = "id", nullable = false)
     public Ship getShipsByShipsId() {
         return shipsByShipsId;
     }
@@ -79,8 +69,6 @@ public class RewardsShip {
         this.shipsByShipsId = shipsByShipsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "rewards_id", referencedColumnName = "id", nullable = false)
     public Reward getRewardsByRewardsId() {
         return rewardsByRewardsId;
     }

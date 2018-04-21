@@ -1,20 +1,16 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "key_value", schema = "kalaazu")
 public class KeyValue {
     private String key;
 
     private String value;
 
-    @Id
-    @Column(name = "key")
     public String getKey() {
         return key;
     }
@@ -23,8 +19,6 @@ public class KeyValue {
         this.key = key;
     }
 
-    @Basic
-    @Column(name = "value")
     public String getValue() {
         return value;
     }

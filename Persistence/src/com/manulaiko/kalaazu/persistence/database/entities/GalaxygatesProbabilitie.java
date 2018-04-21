@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_probabilities", schema = "kalaazu")
 public class GalaxygatesProbabilitie {
     private int id;
 
@@ -20,8 +18,6 @@ public class GalaxygatesProbabilitie {
 
     private Galaxygate galaxygatesByGalaxygatesId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class GalaxygatesProbabilitie {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "galaxygates_id")
     public int getGalaxygatesId() {
         return galaxygatesId;
     }
@@ -40,8 +34,6 @@ public class GalaxygatesProbabilitie {
         this.galaxygatesId = galaxygatesId;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -50,8 +42,6 @@ public class GalaxygatesProbabilitie {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "probability")
     public BigDecimal getProbability() {
         return probability;
     }
@@ -81,8 +71,6 @@ public class GalaxygatesProbabilitie {
         return Objects.hash(id, galaxygatesId, type, probability);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
     public Galaxygate getGalaxygatesByGalaxygatesId() {
         return galaxygatesByGalaxygatesId;
     }

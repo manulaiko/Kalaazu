@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "quests", schema = "kalaazu")
 public class Quest {
     private int id;
 
@@ -34,8 +32,6 @@ public class Quest {
 
     private Collection<RewardsQuest> rewardsQuestsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -44,8 +40,6 @@ public class Quest {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -54,8 +48,6 @@ public class Quest {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "quests_id")
     public Integer getQuestsId() {
         return questsId;
     }
@@ -64,8 +56,6 @@ public class Quest {
         this.questsId = questsId;
     }
 
-    @Basic
-    @Column(name = "factions_id")
     public Integer getFactionsId() {
         return factionsId;
     }
@@ -74,8 +64,6 @@ public class Quest {
         this.factionsId = factionsId;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -106,7 +94,6 @@ public class Quest {
         return Objects.hash(id, levelsId, questsId, factionsId, name);
     }
 
-    @OneToMany(mappedBy = "questsByQuestsId")
     public Collection<AccountsQuest> getAccountsQuestsById() {
         return accountsQuestsById;
     }
@@ -117,8 +104,6 @@ public class Quest {
         this.accountsQuestsById = accountsQuestsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     public Level getLevelsByLevelsId() {
         return levelsByLevelsId;
     }
@@ -127,8 +112,6 @@ public class Quest {
         this.levelsByLevelsId = levelsByLevelsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "quests_id", referencedColumnName = "id")
     public Quest getQuestsByQuestsId() {
         return questsByQuestsId;
     }
@@ -137,7 +120,6 @@ public class Quest {
         this.questsByQuestsId = questsByQuestsId;
     }
 
-    @OneToMany(mappedBy = "questsByQuestsId")
     public Collection<Quest> getQuestsById() {
         return questsById;
     }
@@ -146,8 +128,6 @@ public class Quest {
         this.questsById = questsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "factions_id", referencedColumnName = "id")
     public Faction getFactionsByFactionsId() {
         return factionsByFactionsId;
     }
@@ -156,7 +136,6 @@ public class Quest {
         this.factionsByFactionsId = factionsByFactionsId;
     }
 
-    @OneToMany(mappedBy = "questsByQuestsId")
     public Collection<QuestsCondition> getQuestsConditionsById() {
         return questsConditionsById;
     }
@@ -167,7 +146,6 @@ public class Quest {
         this.questsConditionsById = questsConditionsById;
     }
 
-    @OneToMany(mappedBy = "questsByQuestsId")
     public Collection<RewardsQuest> getRewardsQuestsById() {
         return rewardsQuestsById;
     }

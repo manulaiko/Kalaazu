@@ -1,26 +1,18 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_clans_roles", schema = "kalaazu")
 public class AccountsClansRole {
     private int id;
-
     private int accountsId;
-
     private int clansRolesId;
 
     private Account accountsByAccountsId;
-
     private ClansRole clansRolesByClansRolesId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -29,8 +21,6 @@ public class AccountsClansRole {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -39,8 +29,6 @@ public class AccountsClansRole {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "clans_roles_id")
     public int getClansRolesId() {
         return clansRolesId;
     }
@@ -69,8 +57,6 @@ public class AccountsClansRole {
         return Objects.hash(id, accountsId, clansRolesId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -79,8 +65,6 @@ public class AccountsClansRole {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_roles_id", referencedColumnName = "id", nullable = false)
     public ClansRole getClansRolesByClansRolesId() {
         return clansRolesByClansRolesId;
     }

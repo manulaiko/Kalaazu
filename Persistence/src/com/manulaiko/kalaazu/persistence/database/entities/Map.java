@@ -1,21 +1,22 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
 /**
+ * Map entity.
+ * ===========
+ *
+ * Represents a row from the `maps` table.
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "maps", schema = "kalaazu")
-public class Map {
-    private int id;
+public class Map implements Entity {
+    private int     id;
 
-    private String name;
+    private String  name;
 
     private Integer factionsId;
 
@@ -25,28 +26,26 @@ public class Map {
 
     private boolean isStarter;
 
-    private Collection<AccountsShip> accountsShipsById;
+    private Collection<AccountsShip>       accountsShipsById;
 
     private Collection<ClansBattlestation> clansBattlestationsById;
 
-    private Collection<Faction> factionsById;
+    private Collection<Faction>            factionsById;
 
-    private Collection<Faction> factionsById_0;
+    private Collection<Faction>            factionsById_0;
 
-    private Collection<GalaxygatesWave> galaxygatesWavesById;
+    private Collection<GalaxygatesWave>    galaxygatesWavesById;
 
-    private Faction factionsByFactionsId;
+    private Faction                        factionsByFactionsId;
 
-    private Collection<MapsNpc> mapsNpcsById;
+    private Collection<MapsNpc>            mapsNpcsById;
 
-    private Collection<MapsPortal> mapsPortalsById;
+    private Collection<MapsPortal>         mapsPortalsById;
 
-    private Collection<MapsPortal> mapsPortalsById_0;
+    private Collection<MapsPortal>         mapsPortalsById_0;
 
-    private Collection<MapsStation> mapsStationsById;
+    private Collection<MapsStation>        mapsStationsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -55,8 +54,6 @@ public class Map {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -65,8 +62,6 @@ public class Map {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "factions_id")
     public Integer getFactionsId() {
         return factionsId;
     }
@@ -75,8 +70,6 @@ public class Map {
         this.factionsId = factionsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "limits")
     public Vector2 getLimits() {
         return limits;
     }
@@ -85,8 +78,6 @@ public class Map {
         this.limits = limits;
     }
 
-    @Basic
-    @Column(name = "is_pvp")
     public boolean isPvp() {
         return isPvp;
     }
@@ -95,8 +86,6 @@ public class Map {
         isPvp = pvp;
     }
 
-    @Basic
-    @Column(name = "is_starter")
     public boolean isStarter() {
         return isStarter;
     }
@@ -127,7 +116,6 @@ public class Map {
         return Objects.hash(id, name, factionsId, isPvp, isStarter);
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<AccountsShip> getAccountsShipsById() {
         return accountsShipsById;
     }
@@ -138,7 +126,6 @@ public class Map {
         this.accountsShipsById = accountsShipsById;
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<ClansBattlestation> getClansBattlestationsById() {
         return clansBattlestationsById;
     }
@@ -149,7 +136,6 @@ public class Map {
         this.clansBattlestationsById = clansBattlestationsById;
     }
 
-    @OneToMany(mappedBy = "mapsByLowMapsId")
     public Collection<Faction> getFactionsById() {
         return factionsById;
     }
@@ -158,7 +144,6 @@ public class Map {
         this.factionsById = factionsById;
     }
 
-    @OneToMany(mappedBy = "mapsByHighMapsId")
     public Collection<Faction> getFactionsById_0() {
         return factionsById_0;
     }
@@ -169,7 +154,6 @@ public class Map {
         this.factionsById_0 = factionsById_0;
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<GalaxygatesWave> getGalaxygatesWavesById() {
         return galaxygatesWavesById;
     }
@@ -180,8 +164,6 @@ public class Map {
         this.galaxygatesWavesById = galaxygatesWavesById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "factions_id", referencedColumnName = "id")
     public Faction getFactionsByFactionsId() {
         return factionsByFactionsId;
     }
@@ -190,7 +172,6 @@ public class Map {
         this.factionsByFactionsId = factionsByFactionsId;
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<MapsNpc> getMapsNpcsById() {
         return mapsNpcsById;
     }
@@ -199,7 +180,6 @@ public class Map {
         this.mapsNpcsById = mapsNpcsById;
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<MapsPortal> getMapsPortalsById() {
         return mapsPortalsById;
     }
@@ -210,7 +190,6 @@ public class Map {
         this.mapsPortalsById = mapsPortalsById;
     }
 
-    @OneToMany(mappedBy = "mapsByTargetMapsId")
     public Collection<MapsPortal> getMapsPortalsById_0() {
         return mapsPortalsById_0;
     }
@@ -221,7 +200,6 @@ public class Map {
         this.mapsPortalsById_0 = mapsPortalsById_0;
     }
 
-    @OneToMany(mappedBy = "mapsByMapsId")
     public Collection<MapsStation> getMapsStationsById() {
         return mapsStationsById;
     }

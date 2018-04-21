@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "moderators_logs", schema = "kalaazu")
 public class ModeratorsLog {
     private int id;
 
@@ -22,8 +20,6 @@ public class ModeratorsLog {
 
     private Moderator moderatorsByModeratorsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -32,8 +28,6 @@ public class ModeratorsLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "moderators_id")
     public int getModeratorsId() {
         return moderatorsId;
     }
@@ -42,8 +36,6 @@ public class ModeratorsLog {
         this.moderatorsId = moderatorsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -52,8 +44,6 @@ public class ModeratorsLog {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -62,8 +52,6 @@ public class ModeratorsLog {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -94,8 +82,6 @@ public class ModeratorsLog {
         return Objects.hash(id, moderatorsId, date, type, text);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "moderators_id", referencedColumnName = "id", nullable = false)
     public Moderator getModeratorsByModeratorsId() {
         return moderatorsByModeratorsId;
     }

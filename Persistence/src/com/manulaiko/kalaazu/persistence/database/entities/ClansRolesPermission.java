@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_roles_permissions", schema = "kalaazu")
 public class ClansRolesPermission {
     private int id;
 
@@ -21,8 +19,6 @@ public class ClansRolesPermission {
 
     private Permission permissionsByPermissionsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class ClansRolesPermission {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_roles_id")
     public int getClansRolesId() {
         return clansRolesId;
     }
@@ -41,8 +35,6 @@ public class ClansRolesPermission {
         this.clansRolesId = clansRolesId;
     }
 
-    @Basic
-    @Column(name = "permissions_id")
     public int getPermissionsId() {
         return permissionsId;
     }
@@ -51,8 +43,6 @@ public class ClansRolesPermission {
         this.permissionsId = permissionsId;
     }
 
-    @Basic
-    @Column(name = "enabled")
     public Boolean getEnabled() {
         return enabled;
     }
@@ -82,8 +72,6 @@ public class ClansRolesPermission {
         return Objects.hash(id, clansRolesId, permissionsId, enabled);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_roles_id", referencedColumnName = "id", nullable = false)
     public ClansRole getClansRolesByClansRolesId() {
         return clansRolesByClansRolesId;
     }
@@ -94,8 +82,6 @@ public class ClansRolesPermission {
         this.clansRolesByClansRolesId = clansRolesByClansRolesId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "permissions_id", referencedColumnName = "id", nullable = false)
     public Permission getPermissionsByPermissionsId() {
         return permissionsByPermissionsId;
     }

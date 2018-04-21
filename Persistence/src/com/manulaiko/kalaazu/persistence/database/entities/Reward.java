@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "rewards", schema = "kalaazu")
 public class Reward {
     private int id;
 
@@ -37,8 +35,6 @@ public class Reward {
 
     private Collection<RewardsVoucher> rewardsVouchersById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -47,8 +43,6 @@ public class Reward {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -57,8 +51,6 @@ public class Reward {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -67,8 +59,6 @@ public class Reward {
         this.amount = amount;
     }
 
-    @Basic
-    @Column(name = "reward")
     public BigDecimal getReward() {
         return reward;
     }
@@ -77,8 +67,6 @@ public class Reward {
         this.reward = reward;
     }
 
-    @Basic
-    @Column(name = "probability")
     public BigDecimal getProbability() {
         return probability;
     }
@@ -87,8 +75,6 @@ public class Reward {
         this.probability = probability;
     }
 
-    @Basic
-    @Column(name = "comment")
     public String getComment() {
         return comment;
     }
@@ -120,8 +106,6 @@ public class Reward {
         return Objects.hash(id, itemsId, amount, reward, probability, comment);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }
@@ -130,7 +114,6 @@ public class Reward {
         this.itemsByItemsId = itemsByItemsId;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsCollectable> getRewardsCollectablesById() {
         return rewardsCollectablesById;
     }
@@ -141,7 +124,6 @@ public class Reward {
         this.rewardsCollectablesById = rewardsCollectablesById;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsGalaxygate> getRewardsGalaxygatesById() {
         return rewardsGalaxygatesById;
     }
@@ -152,7 +134,6 @@ public class Reward {
         this.rewardsGalaxygatesById = rewardsGalaxygatesById;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsNpc> getRewardsNpcsById() {
         return rewardsNpcsById;
     }
@@ -163,7 +144,6 @@ public class Reward {
         this.rewardsNpcsById = rewardsNpcsById;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsQuest> getRewardsQuestsById() {
         return rewardsQuestsById;
     }
@@ -174,7 +154,6 @@ public class Reward {
         this.rewardsQuestsById = rewardsQuestsById;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsShip> getRewardsShipsById() {
         return rewardsShipsById;
     }
@@ -185,7 +164,6 @@ public class Reward {
         this.rewardsShipsById = rewardsShipsById;
     }
 
-    @OneToMany(mappedBy = "rewardsByRewardsId")
     public Collection<RewardsVoucher> getRewardsVouchersById() {
         return rewardsVouchersById;
     }

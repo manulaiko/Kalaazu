@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "ships", schema = "kalaazu")
 public class Ship {
     private int id;
 
@@ -40,8 +38,6 @@ public class Ship {
 
     private Item itemsByItemsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -50,8 +46,6 @@ public class Ship {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -60,8 +54,6 @@ public class Ship {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "health")
     public int getHealth() {
         return health;
     }
@@ -70,8 +62,6 @@ public class Ship {
         this.health = health;
     }
 
-    @Basic
-    @Column(name = "speed")
     public int getSpeed() {
         return speed;
     }
@@ -80,8 +70,6 @@ public class Ship {
         this.speed = speed;
     }
 
-    @Basic
-    @Column(name = "cargo")
     public int getCargo() {
         return cargo;
     }
@@ -90,8 +78,6 @@ public class Ship {
         this.cargo = cargo;
     }
 
-    @Basic
-    @Column(name = "batteries")
     public int getBatteries() {
         return batteries;
     }
@@ -100,8 +86,6 @@ public class Ship {
         this.batteries = batteries;
     }
 
-    @Basic
-    @Column(name = "rockets")
     public int getRockets() {
         return rockets;
     }
@@ -110,8 +94,6 @@ public class Ship {
         this.rockets = rockets;
     }
 
-    @Basic
-    @Column(name = "lasers")
     public int getLasers() {
         return lasers;
     }
@@ -120,8 +102,6 @@ public class Ship {
         this.lasers = lasers;
     }
 
-    @Basic
-    @Column(name = "hellstorms")
     public int getHellstorms() {
         return hellstorms;
     }
@@ -130,8 +110,6 @@ public class Ship {
         this.hellstorms = hellstorms;
     }
 
-    @Basic
-    @Column(name = "generators")
     public int getGenerators() {
         return generators;
     }
@@ -140,8 +118,6 @@ public class Ship {
         this.generators = generators;
     }
 
-    @Basic
-    @Column(name = "extras")
     public int getExtras() {
         return extras;
     }
@@ -150,8 +126,6 @@ public class Ship {
         this.extras = extras;
     }
 
-    @Basic
-    @Column(name = "gfx")
     public int getGfx() {
         return gfx;
     }
@@ -192,7 +166,6 @@ public class Ship {
         );
     }
 
-    @OneToMany(mappedBy = "shipsByShipsId")
     public Collection<AccountsShip> getAccountsShipsById() {
         return accountsShipsById;
     }
@@ -203,7 +176,6 @@ public class Ship {
         this.accountsShipsById = accountsShipsById;
     }
 
-    @OneToMany(mappedBy = "shipsByShipsId")
     public Collection<RewardsShip> getRewardsShipsById() {
         return rewardsShipsById;
     }
@@ -214,8 +186,6 @@ public class Ship {
         this.rewardsShipsById = rewardsShipsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }

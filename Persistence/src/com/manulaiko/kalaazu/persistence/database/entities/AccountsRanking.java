@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_rankings", schema = "kalaazu")
 public class AccountsRanking {
     private int id;
 
@@ -27,8 +25,6 @@ public class AccountsRanking {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -37,8 +33,6 @@ public class AccountsRanking {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -47,8 +41,6 @@ public class AccountsRanking {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "points")
     public int getPoints() {
         return points;
     }
@@ -57,8 +49,6 @@ public class AccountsRanking {
         this.points = points;
     }
 
-    @Basic
-    @Column(name = "best_points")
     public int getBestPoints() {
         return bestPoints;
     }
@@ -67,8 +57,6 @@ public class AccountsRanking {
         this.bestPoints = bestPoints;
     }
 
-    @Basic
-    @Column(name = "destroyed_allies")
     public int getDestroyedAllies() {
         return destroyedAllies;
     }
@@ -77,8 +65,6 @@ public class AccountsRanking {
         this.destroyedAllies = destroyedAllies;
     }
 
-    @Basic
-    @Column(name = "destroyed_phoenix")
     public int getDestroyedPhoenix() {
         return destroyedPhoenix;
     }
@@ -87,8 +73,6 @@ public class AccountsRanking {
         this.destroyedPhoenix = destroyedPhoenix;
     }
 
-    @Basic
-    @Column(name = "destroyed_times")
     public int getDestroyedTimes() {
         return destroyedTimes;
     }
@@ -97,8 +81,6 @@ public class AccountsRanking {
         this.destroyedTimes = destroyedTimes;
     }
 
-    @Basic
-    @Column(name = "destroyed_radiation")
     public int getDestroyedRadiation() {
         return destroyedRadiation;
     }
@@ -134,8 +116,6 @@ public class AccountsRanking {
         );
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

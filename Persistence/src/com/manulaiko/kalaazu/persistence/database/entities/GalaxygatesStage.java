@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_stages", schema = "kalaazu")
 public class GalaxygatesStage {
     private int id;
 
@@ -20,8 +18,6 @@ public class GalaxygatesStage {
 
     private Collection<GalaxygatesStagesSpawn> galaxygatesStagesSpawnsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class GalaxygatesStage {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "galaxygates_waves_id")
     public int getGalaxygatesWavesId() {
         return galaxygatesWavesId;
     }
@@ -40,8 +34,6 @@ public class GalaxygatesStage {
         this.galaxygatesWavesId = galaxygatesWavesId;
     }
 
-    @Basic
-    @Column(name = "comment")
     public String getComment() {
         return comment;
     }
@@ -70,8 +62,6 @@ public class GalaxygatesStage {
         return Objects.hash(id, galaxygatesWavesId, comment);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
     public GalaxygatesWave getGalaxygatesWavesByGalaxygatesWavesId() {
         return galaxygatesWavesByGalaxygatesWavesId;
     }
@@ -82,7 +72,6 @@ public class GalaxygatesStage {
         this.galaxygatesWavesByGalaxygatesWavesId = galaxygatesWavesByGalaxygatesWavesId;
     }
 
-    @OneToMany(mappedBy = "galaxygatesStagesByGalaxygatesStagesId")
     public Collection<GalaxygatesStagesSpawn> getGalaxygatesStagesSpawnsById() {
         return galaxygatesStagesSpawnsById;
     }

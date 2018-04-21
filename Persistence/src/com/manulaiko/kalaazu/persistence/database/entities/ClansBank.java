@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_banks", schema = "kalaazu")
 public class ClansBank {
     private int id;
 
@@ -27,8 +25,6 @@ public class ClansBank {
 
     private Collection<ClansBanksLog> clansBanksLogsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -37,8 +33,6 @@ public class ClansBank {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -47,8 +41,6 @@ public class ClansBank {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "credits")
     public long getCredits() {
         return credits;
     }
@@ -57,8 +49,6 @@ public class ClansBank {
         this.credits = credits;
     }
 
-    @Basic
-    @Column(name = "uridium")
     public long getUridium() {
         return uridium;
     }
@@ -67,8 +57,6 @@ public class ClansBank {
         this.uridium = uridium;
     }
 
-    @Basic
-    @Column(name = "tax_credits")
     public BigDecimal getTaxCredits() {
         return taxCredits;
     }
@@ -77,8 +65,6 @@ public class ClansBank {
         this.taxCredits = taxCredits;
     }
 
-    @Basic
-    @Column(name = "tax_uridium")
     public BigDecimal getTaxUridium() {
         return taxUridium;
     }
@@ -110,8 +96,6 @@ public class ClansBank {
         return Objects.hash(id, clansId, credits, uridium, taxCredits, taxUridium);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -120,7 +104,6 @@ public class ClansBank {
         this.clansByClansId = clansByClansId;
     }
 
-    @OneToMany(mappedBy = "clansBanksByClansBanksId")
     public Collection<ClansBanksLog> getClansBanksLogsById() {
         return clansBanksLogsById;
     }

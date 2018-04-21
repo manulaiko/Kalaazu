@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.math.BigDecimal;
 import java.util.Collection;
 import java.util.Objects;
@@ -8,8 +8,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "ranks", schema = "kalaazu")
 public class Rank {
     private int id;
 
@@ -21,8 +19,6 @@ public class Rank {
 
     private Collection<Account> accountsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -31,8 +27,6 @@ public class Rank {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -41,8 +35,6 @@ public class Rank {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "percentaje")
     public BigDecimal getPercentaje() {
         return percentaje;
     }
@@ -51,8 +43,6 @@ public class Rank {
         this.percentaje = percentaje;
     }
 
-    @Basic
-    @Column(name = "is_public")
     public boolean isPublic() {
         return isPublic;
     }
@@ -82,7 +72,6 @@ public class Rank {
         return Objects.hash(id, name, percentaje, isPublic);
     }
 
-    @OneToMany(mappedBy = "ranksByRanksId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }

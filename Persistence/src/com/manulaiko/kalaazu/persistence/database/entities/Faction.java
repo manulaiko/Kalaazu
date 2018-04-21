@@ -1,17 +1,13 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "factions", schema = "kalaazu")
 public class Faction {
     private int id;
 
@@ -43,8 +39,6 @@ public class Faction {
 
     private Collection<Quest> questsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -53,8 +47,6 @@ public class Faction {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -63,8 +55,6 @@ public class Faction {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "tag")
     public String getTag() {
         return tag;
     }
@@ -73,8 +63,6 @@ public class Faction {
         this.tag = tag;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -83,8 +71,6 @@ public class Faction {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "is_public")
     public boolean isPublic() {
         return isPublic;
     }
@@ -93,8 +79,6 @@ public class Faction {
         isPublic = aPublic;
     }
 
-    @Basic
-    @Column(name = "low_maps_id")
     public int getLowMapsId() {
         return lowMapsId;
     }
@@ -103,8 +87,6 @@ public class Faction {
         this.lowMapsId = lowMapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "low_maps_position")
     public Vector2 getLowMapsPosition() {
         return lowMapsPosition;
     }
@@ -113,8 +95,6 @@ public class Faction {
         this.lowMapsPosition = lowMapsPosition;
     }
 
-    @Basic
-    @Column(name = "high_maps_id")
     public int getHighMapsId() {
         return highMapsId;
     }
@@ -123,8 +103,6 @@ public class Faction {
         this.highMapsId = highMapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "high_maps_position")
     public Vector2 getHighMapsPosition() {
         return highMapsPosition;
     }
@@ -157,7 +135,6 @@ public class Faction {
         return Objects.hash(id, name, tag, description, isPublic, lowMapsId, highMapsId);
     }
 
-    @OneToMany(mappedBy = "factionsByFactionsId")
     public Collection<Account> getAccountsById() {
         return accountsById;
     }
@@ -166,8 +143,6 @@ public class Faction {
         this.accountsById = accountsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "low_maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByLowMapsId() {
         return mapsByLowMapsId;
     }
@@ -176,8 +151,6 @@ public class Faction {
         this.mapsByLowMapsId = mapsByLowMapsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "high_maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByHighMapsId() {
         return mapsByHighMapsId;
     }
@@ -186,7 +159,6 @@ public class Faction {
         this.mapsByHighMapsId = mapsByHighMapsId;
     }
 
-    @OneToMany(mappedBy = "factionsByFactionsId")
     public Collection<Map> getMapsById() {
         return mapsById;
     }
@@ -195,7 +167,6 @@ public class Faction {
         this.mapsById = mapsById;
     }
 
-    @OneToMany(mappedBy = "factionsByFactionsId")
     public Collection<MapsStation> getMapsStationsById() {
         return mapsStationsById;
     }
@@ -206,7 +177,6 @@ public class Faction {
         this.mapsStationsById = mapsStationsById;
     }
 
-    @OneToMany(mappedBy = "factionsByFactionsId")
     public Collection<Quest> getQuestsById() {
         return questsById;
     }

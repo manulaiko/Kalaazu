@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "techfactory_items", schema = "kalaazu")
 public class TechfactoryItem {
     private int id;
 
@@ -32,8 +30,6 @@ public class TechfactoryItem {
 
     private Collection<TechfactoryCost> techfactoryCostsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -42,8 +38,6 @@ public class TechfactoryItem {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -52,8 +46,6 @@ public class TechfactoryItem {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "description")
     public String getDescription() {
         return description;
     }
@@ -62,8 +54,6 @@ public class TechfactoryItem {
         this.description = description;
     }
 
-    @Basic
-    @Column(name = "effect")
     public String getEffect() {
         return effect;
     }
@@ -72,8 +62,6 @@ public class TechfactoryItem {
         this.effect = effect;
     }
 
-    @Basic
-    @Column(name = "duration")
     public int getDuration() {
         return duration;
     }
@@ -82,8 +70,6 @@ public class TechfactoryItem {
         this.duration = duration;
     }
 
-    @Basic
-    @Column(name = "cooldown")
     public int getCooldown() {
         return cooldown;
     }
@@ -92,8 +78,6 @@ public class TechfactoryItem {
         this.cooldown = cooldown;
     }
 
-    @Basic
-    @Column(name = "time")
     public int getTime() {
         return time;
     }
@@ -102,8 +86,6 @@ public class TechfactoryItem {
         this.time = time;
     }
 
-    @Basic
-    @Column(name = "instant_production")
     public int getInstantProduction() {
         return instantProduction;
     }
@@ -112,8 +94,6 @@ public class TechfactoryItem {
         this.instantProduction = instantProduction;
     }
 
-    @Basic
-    @Column(name = "free_production")
     public int getFreeProduction() {
         return freeProduction;
     }
@@ -148,7 +128,6 @@ public class TechfactoryItem {
         return Objects.hash(id, name, description, effect, duration, cooldown, time, instantProduction, freeProduction);
     }
 
-    @OneToMany(mappedBy = "techfactoryItemsByTechfactoryItemsId")
     public Collection<AccountsTechfactoryItem> getAccountsTechfactoryItemsById() {
         return accountsTechfactoryItemsById;
     }
@@ -159,7 +138,6 @@ public class TechfactoryItem {
         this.accountsTechfactoryItemsById = accountsTechfactoryItemsById;
     }
 
-    @OneToMany(mappedBy = "techfactoryItemsByTechfactoryItemsId")
     public Collection<TechfactoryCost> getTechfactoryCostsById() {
         return techfactoryCostsById;
     }

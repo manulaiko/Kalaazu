@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_quests", schema = "kalaazu")
 public class AccountsQuest {
     private int id;
 
@@ -24,8 +22,6 @@ public class AccountsQuest {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -34,8 +30,6 @@ public class AccountsQuest {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "quests_id")
     public int getQuestsId() {
         return questsId;
     }
@@ -44,8 +38,6 @@ public class AccountsQuest {
         this.questsId = questsId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -54,8 +46,6 @@ public class AccountsQuest {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "completed")
     public boolean isCompleted() {
         return completed;
     }
@@ -64,8 +54,6 @@ public class AccountsQuest {
         this.completed = completed;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -96,8 +84,6 @@ public class AccountsQuest {
         return Objects.hash(id, questsId, accountsId, completed, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "quests_id", referencedColumnName = "id", nullable = false)
     public Quest getQuestsByQuestsId() {
         return questsByQuestsId;
     }
@@ -106,8 +92,6 @@ public class AccountsQuest {
         this.questsByQuestsId = questsByQuestsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

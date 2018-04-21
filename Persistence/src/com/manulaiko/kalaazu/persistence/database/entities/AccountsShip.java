@@ -1,17 +1,13 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_ships", schema = "kalaazu")
 public class AccountsShip {
     private int id;
 
@@ -39,8 +35,6 @@ public class AccountsShip {
 
     private Map mapsByMapsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -49,8 +43,6 @@ public class AccountsShip {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -59,8 +51,6 @@ public class AccountsShip {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "ships_id")
     public int getShipsId() {
         return shipsId;
     }
@@ -69,8 +59,6 @@ public class AccountsShip {
         this.shipsId = shipsId;
     }
 
-    @Basic
-    @Column(name = "maps_id")
     public int getMapsId() {
         return mapsId;
     }
@@ -79,8 +67,6 @@ public class AccountsShip {
         this.mapsId = mapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "position")
     public Vector2 getPosition() {
         return position;
     }
@@ -89,8 +75,6 @@ public class AccountsShip {
         this.position = position;
     }
 
-    @Basic
-    @Column(name = "health")
     public int getHealth() {
         return health;
     }
@@ -99,8 +83,6 @@ public class AccountsShip {
         this.health = health;
     }
 
-    @Basic
-    @Column(name = "shield")
     public int getShield() {
         return shield;
     }
@@ -109,8 +91,6 @@ public class AccountsShip {
         this.shield = shield;
     }
 
-    @Basic
-    @Column(name = "nanohull")
     public int getNanohull() {
         return nanohull;
     }
@@ -119,8 +99,6 @@ public class AccountsShip {
         this.nanohull = nanohull;
     }
 
-    @Basic
-    @Column(name = "gfx")
     public int getGfx() {
         return gfx;
     }
@@ -154,7 +132,6 @@ public class AccountsShip {
         return Objects.hash(id, accountsId, shipsId, mapsId, health, shield, nanohull, gfx);
     }
 
-    @OneToMany(mappedBy = "accountsShipsByAccountsShipsId")
     public Collection<AccountsHangar> getAccountsHangarsById() {
         return accountsHangarsById;
     }
@@ -165,8 +142,6 @@ public class AccountsShip {
         this.accountsHangarsById = accountsHangarsById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -175,8 +150,6 @@ public class AccountsShip {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "ships_id", referencedColumnName = "id", nullable = false)
     public Ship getShipsByShipsId() {
         return shipsByShipsId;
     }
@@ -185,8 +158,6 @@ public class AccountsShip {
         this.shipsByShipsId = shipsByShipsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByMapsId() {
         return mapsByMapsId;
     }

@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "collectables", schema = "kalaazu")
 public class Collectable {
     private int id;
 
@@ -20,8 +18,6 @@ public class Collectable {
 
     private Collection<RewardsCollectable> rewardsCollectablesById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class Collectable {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "gfx")
     public int getGfx() {
         return gfx;
     }
@@ -40,8 +34,6 @@ public class Collectable {
         this.gfx = gfx;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -50,8 +42,6 @@ public class Collectable {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -81,7 +71,6 @@ public class Collectable {
         return Objects.hash(id, gfx, type, name);
     }
 
-    @OneToMany(mappedBy = "collectablesByCollectablesId")
     public Collection<RewardsCollectable> getRewardsCollectablesById() {
         return rewardsCollectablesById;
     }

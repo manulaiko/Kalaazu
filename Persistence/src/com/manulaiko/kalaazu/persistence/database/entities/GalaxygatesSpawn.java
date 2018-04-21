@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_spawns", schema = "kalaazu")
 public class GalaxygatesSpawn {
     private int id;
 
@@ -20,8 +18,6 @@ public class GalaxygatesSpawn {
 
     private Collection<GalaxygatesStagesSpawn> galaxygatesStagesSpawnsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class GalaxygatesSpawn {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "npcs_id")
     public int getNpcsId() {
         return npcsId;
     }
@@ -40,8 +34,6 @@ public class GalaxygatesSpawn {
         this.npcsId = npcsId;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -70,8 +62,6 @@ public class GalaxygatesSpawn {
         return Objects.hash(id, npcsId, amount);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "npcs_id", referencedColumnName = "id", nullable = false)
     public Npc getNpcsByNpcsId() {
         return npcsByNpcsId;
     }
@@ -80,7 +70,6 @@ public class GalaxygatesSpawn {
         this.npcsByNpcsId = npcsByNpcsId;
     }
 
-    @OneToMany(mappedBy = "galaxygatesSpawnsByGalaxygatesSpawnsId")
     public Collection<GalaxygatesStagesSpawn> getGalaxygatesStagesSpawnsById() {
         return galaxygatesStagesSpawnsById;
     }

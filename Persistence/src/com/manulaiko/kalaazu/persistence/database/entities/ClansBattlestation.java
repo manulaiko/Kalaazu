@@ -1,9 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import org.hibernate.annotations.Type;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.Collection;
 import java.util.Objects;
@@ -11,8 +9,6 @@ import java.util.Objects;
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_battlestations", schema = "kalaazu")
 public class ClansBattlestation {
     private int id;
 
@@ -34,8 +30,6 @@ public class ClansBattlestation {
 
     private Collection<ClansBattlestationsLog> clansBattlestationsLogsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -44,8 +38,6 @@ public class ClansBattlestation {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public Integer getClansId() {
         return clansId;
     }
@@ -54,8 +46,6 @@ public class ClansBattlestation {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "maps_id")
     public int getMapsId() {
         return mapsId;
     }
@@ -64,8 +54,6 @@ public class ClansBattlestation {
         this.mapsId = mapsId;
     }
 
-    @Type(type = "point")
-    @Column(name = "position")
     public Vector2 getPosition() {
         return position;
     }
@@ -74,8 +62,6 @@ public class ClansBattlestation {
         this.position = position;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -84,8 +70,6 @@ public class ClansBattlestation {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -116,8 +100,6 @@ public class ClansBattlestation {
         return Objects.hash(id, clansId, mapsId, name, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id")
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -126,8 +108,6 @@ public class ClansBattlestation {
         this.clansByClansId = clansByClansId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByMapsId() {
         return mapsByMapsId;
     }
@@ -136,7 +116,6 @@ public class ClansBattlestation {
         this.mapsByMapsId = mapsByMapsId;
     }
 
-    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId")
     public Collection<ClansBattlestationsItem> getClansBattlestationsItemsById() {
         return clansBattlestationsItemsById;
     }
@@ -147,7 +126,6 @@ public class ClansBattlestation {
         this.clansBattlestationsItemsById = clansBattlestationsItemsById;
     }
 
-    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId")
     public Collection<ClansBattlestationsLog> getClansBattlestationsLogsById() {
         return clansBattlestationsLogsById;
     }

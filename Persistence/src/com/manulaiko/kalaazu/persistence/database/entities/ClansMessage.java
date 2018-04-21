@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_messages", schema = "kalaazu")
 public class ClansMessage {
     private int id;
 
@@ -30,8 +28,6 @@ public class ClansMessage {
 
     private Account accountsByToAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -40,8 +36,6 @@ public class ClansMessage {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_id")
     public int getClansId() {
         return clansId;
     }
@@ -50,8 +44,6 @@ public class ClansMessage {
         this.clansId = clansId;
     }
 
-    @Basic
-    @Column(name = "from_accounts_id")
     public int getFromAccountsId() {
         return fromAccountsId;
     }
@@ -60,8 +52,6 @@ public class ClansMessage {
         this.fromAccountsId = fromAccountsId;
     }
 
-    @Basic
-    @Column(name = "to_accounts_id")
     public Integer getToAccountsId() {
         return toAccountsId;
     }
@@ -70,8 +60,6 @@ public class ClansMessage {
         this.toAccountsId = toAccountsId;
     }
 
-    @Basic
-    @Column(name = "subject")
     public String getSubject() {
         return subject;
     }
@@ -80,8 +68,6 @@ public class ClansMessage {
         this.subject = subject;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -90,8 +76,6 @@ public class ClansMessage {
         this.text = text;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -124,8 +108,6 @@ public class ClansMessage {
         return Objects.hash(id, clansId, fromAccountsId, toAccountsId, subject, text, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     public Clan getClansByClansId() {
         return clansByClansId;
     }
@@ -134,8 +116,6 @@ public class ClansMessage {
         this.clansByClansId = clansByClansId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByFromAccountsId() {
         return accountsByFromAccountsId;
     }
@@ -144,8 +124,6 @@ public class ClansMessage {
         this.accountsByFromAccountsId = accountsByFromAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "to_accounts_id", referencedColumnName = "id")
     public Account getAccountsByToAccountsId() {
         return accountsByToAccountsId;
     }

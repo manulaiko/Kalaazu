@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "vouchers_redeem_logs", schema = "kalaazu")
 public class VouchersRedeemLog {
     private int id;
 
@@ -22,8 +20,6 @@ public class VouchersRedeemLog {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -32,8 +28,6 @@ public class VouchersRedeemLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "vouchers_id")
     public int getVouchersId() {
         return vouchersId;
     }
@@ -42,8 +36,6 @@ public class VouchersRedeemLog {
         this.vouchersId = vouchersId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -52,8 +44,6 @@ public class VouchersRedeemLog {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -83,8 +73,6 @@ public class VouchersRedeemLog {
         return Objects.hash(id, vouchersId, accountsId, date);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "vouchers_id", referencedColumnName = "id", nullable = false)
     public Voucher getVouchersByVouchersId() {
         return vouchersByVouchersId;
     }
@@ -93,8 +81,6 @@ public class VouchersRedeemLog {
         this.vouchersByVouchersId = vouchersByVouchersId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

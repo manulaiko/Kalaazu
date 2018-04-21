@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "permissions", schema = "kalaazu")
 public class Permission {
     private int id;
 
@@ -18,8 +16,6 @@ public class Permission {
 
     private Collection<ClansRolesPermission> clansRolesPermissionsById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -28,8 +24,6 @@ public class Permission {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -38,8 +32,6 @@ public class Permission {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "category")
     public String getCategory() {
         return category;
     }
@@ -68,7 +60,6 @@ public class Permission {
         return Objects.hash(id, name, category);
     }
 
-    @OneToMany(mappedBy = "permissionsByPermissionsId")
     public Collection<ClansRolesPermission> getClansRolesPermissionsById() {
         return clansRolesPermissionsById;
     }

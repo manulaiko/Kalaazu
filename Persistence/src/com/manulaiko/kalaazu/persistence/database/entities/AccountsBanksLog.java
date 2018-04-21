@@ -1,39 +1,25 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_banks_logs", schema = "kalaazu")
 public class AccountsBanksLog {
     private int id;
-
     private int fromAccountsId;
-
     private int toAccountsId;
-
     private Date date;
-
     private int type;
-
     private int amount;
-
     private int currency;
-
-    private Integer accountsBanksId;
+    private int accountsBanksId;
 
     private Account accountsByFromAccountsId;
-
     private Account accountsByToAccountsId;
-
     private AccountsBank accountsBanksByAccountsBanksId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -42,8 +28,6 @@ public class AccountsBanksLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "from_accounts_id")
     public int getFromAccountsId() {
         return fromAccountsId;
     }
@@ -52,8 +36,6 @@ public class AccountsBanksLog {
         this.fromAccountsId = fromAccountsId;
     }
 
-    @Basic
-    @Column(name = "to_accounts_id")
     public int getToAccountsId() {
         return toAccountsId;
     }
@@ -62,8 +44,6 @@ public class AccountsBanksLog {
         this.toAccountsId = toAccountsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -72,8 +52,6 @@ public class AccountsBanksLog {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -82,8 +60,6 @@ public class AccountsBanksLog {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -92,8 +68,6 @@ public class AccountsBanksLog {
         this.amount = amount;
     }
 
-    @Basic
-    @Column(name = "currency")
     public int getCurrency() {
         return currency;
     }
@@ -102,8 +76,6 @@ public class AccountsBanksLog {
         this.currency = currency;
     }
 
-    @Basic
-    @Column(name = "accounts_banks_id")
     public Integer getAccountsBanksId() {
         return accountsBanksId;
     }
@@ -137,8 +109,6 @@ public class AccountsBanksLog {
         return Objects.hash(id, fromAccountsId, toAccountsId, date, type, amount, currency, accountsBanksId);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByFromAccountsId() {
         return accountsByFromAccountsId;
     }
@@ -147,8 +117,6 @@ public class AccountsBanksLog {
         this.accountsByFromAccountsId = accountsByFromAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByToAccountsId() {
         return accountsByToAccountsId;
     }
@@ -157,8 +125,6 @@ public class AccountsBanksLog {
         this.accountsByToAccountsId = accountsByToAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_banks_id", referencedColumnName = "id")
     public AccountsBank getAccountsBanksByAccountsBanksId() {
         return accountsBanksByAccountsBanksId;
     }

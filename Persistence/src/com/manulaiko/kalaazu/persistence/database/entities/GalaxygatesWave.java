@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates_waves", schema = "kalaazu")
 public class GalaxygatesWave {
     private int id;
 
@@ -26,8 +24,6 @@ public class GalaxygatesWave {
 
     private Map mapsByMapsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -36,8 +32,6 @@ public class GalaxygatesWave {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "maps_id")
     public int getMapsId() {
         return mapsId;
     }
@@ -46,8 +40,6 @@ public class GalaxygatesWave {
         this.mapsId = mapsId;
     }
 
-    @Basic
-    @Column(name = "seconds")
     public int getSeconds() {
         return seconds;
     }
@@ -56,8 +48,6 @@ public class GalaxygatesWave {
         this.seconds = seconds;
     }
 
-    @Basic
-    @Column(name = "npcs")
     public int getNpcs() {
         return npcs;
     }
@@ -87,7 +77,6 @@ public class GalaxygatesWave {
         return Objects.hash(id, mapsId, seconds, npcs);
     }
 
-    @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId")
     public Collection<Galaxygate> getGalaxygatesById() {
         return galaxygatesById;
     }
@@ -98,7 +87,6 @@ public class GalaxygatesWave {
         this.galaxygatesById = galaxygatesById;
     }
 
-    @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId")
     public Collection<GalaxygatesGgWaves> getGalaxygatesGgWavesById() {
         return galaxygatesGgWavesById;
     }
@@ -109,7 +97,6 @@ public class GalaxygatesWave {
         this.galaxygatesGgWavesById = galaxygatesGgWavesById;
     }
 
-    @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId")
     public Collection<GalaxygatesStage> getGalaxygatesStagesById() {
         return galaxygatesStagesById;
     }
@@ -120,8 +107,6 @@ public class GalaxygatesWave {
         this.galaxygatesStagesById = galaxygatesStagesById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     public Map getMapsByMapsId() {
         return mapsByMapsId;
     }

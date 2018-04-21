@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_skylabs", schema = "kalaazu")
 public class AccountsSkylab {
     private int id;
 
@@ -28,8 +26,6 @@ public class AccountsSkylab {
 
     private Level levelsByLevelsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -38,8 +34,6 @@ public class AccountsSkylab {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public int getAccountsId() {
         return accountsId;
     }
@@ -48,8 +42,6 @@ public class AccountsSkylab {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "skylab_modules_id")
     public int getSkylabModulesId() {
         return skylabModulesId;
     }
@@ -58,8 +50,6 @@ public class AccountsSkylab {
         this.skylabModulesId = skylabModulesId;
     }
 
-    @Basic
-    @Column(name = "levels_id")
     public int getLevelsId() {
         return levelsId;
     }
@@ -68,8 +58,6 @@ public class AccountsSkylab {
         this.levelsId = levelsId;
     }
 
-    @Basic
-    @Column(name = "space")
     public int getSpace() {
         return space;
     }
@@ -78,8 +66,6 @@ public class AccountsSkylab {
         this.space = space;
     }
 
-    @Basic
-    @Column(name = "upgrade")
     public Date getUpgrade() {
         return upgrade;
     }
@@ -111,8 +97,6 @@ public class AccountsSkylab {
         return Objects.hash(id, accountsId, skylabModulesId, levelsId, space, upgrade);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }
@@ -121,8 +105,6 @@ public class AccountsSkylab {
         this.accountsByAccountsId = accountsByAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "skylab_modules_id", referencedColumnName = "id", nullable = false)
     public SkylabModule getSkylabModulesBySkylabModulesId() {
         return skylabModulesBySkylabModulesId;
     }
@@ -133,8 +115,6 @@ public class AccountsSkylab {
         this.skylabModulesBySkylabModulesId = skylabModulesBySkylabModulesId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     public Level getLevelsByLevelsId() {
         return levelsByLevelsId;
     }

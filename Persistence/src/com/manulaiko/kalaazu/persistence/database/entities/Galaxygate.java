@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Collection;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "galaxygates", schema = "kalaazu")
 public class Galaxygate {
     private int id;
 
@@ -30,8 +28,6 @@ public class Galaxygate {
 
     private Collection<RewardsGalaxygate> rewardsGalaxygatesById;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -40,8 +36,6 @@ public class Galaxygate {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "name")
     public String getName() {
         return name;
     }
@@ -50,8 +44,6 @@ public class Galaxygate {
         this.name = name;
     }
 
-    @Basic
-    @Column(name = "galaxygates_waves_id")
     public Integer getGalaxygatesWavesId() {
         return galaxygatesWavesId;
     }
@@ -60,8 +52,6 @@ public class Galaxygate {
         this.galaxygatesWavesId = galaxygatesWavesId;
     }
 
-    @Basic
-    @Column(name = "parts")
     public int getParts() {
         return parts;
     }
@@ -91,7 +81,6 @@ public class Galaxygate {
         return Objects.hash(id, name, galaxygatesWavesId, parts);
     }
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     public Collection<AccountsGalaxygate> getAccountsGalaxygatesById() {
         return accountsGalaxygatesById;
     }
@@ -102,8 +91,6 @@ public class Galaxygate {
         this.accountsGalaxygatesById = accountsGalaxygatesById;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id")
     public GalaxygatesWave getGalaxygatesWavesByGalaxygatesWavesId() {
         return galaxygatesWavesByGalaxygatesWavesId;
     }
@@ -114,7 +101,6 @@ public class Galaxygate {
         this.galaxygatesWavesByGalaxygatesWavesId = galaxygatesWavesByGalaxygatesWavesId;
     }
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     public Collection<GalaxygatesGgSpin> getGalaxygatesGgSpinsById() {
         return galaxygatesGgSpinsById;
     }
@@ -125,7 +111,6 @@ public class Galaxygate {
         this.galaxygatesGgSpinsById = galaxygatesGgSpinsById;
     }
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     public Collection<GalaxygatesGgWaves> getGalaxygatesGgWavesById() {
         return galaxygatesGgWavesById;
     }
@@ -136,7 +121,6 @@ public class Galaxygate {
         this.galaxygatesGgWavesById = galaxygatesGgWavesById;
     }
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     public Collection<GalaxygatesProbabilitie> getGalaxygatesProbabilitiesById() {
         return galaxygatesProbabilitiesById;
     }
@@ -147,7 +131,6 @@ public class Galaxygate {
         this.galaxygatesProbabilitiesById = galaxygatesProbabilitiesById;
     }
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     public Collection<RewardsGalaxygate> getRewardsGalaxygatesById() {
         return rewardsGalaxygatesById;
     }

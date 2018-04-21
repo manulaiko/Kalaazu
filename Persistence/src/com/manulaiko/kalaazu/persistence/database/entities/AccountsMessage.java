@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "accounts_messages", schema = "kalaazu")
 public class AccountsMessage {
     private int id;
 
@@ -30,8 +28,6 @@ public class AccountsMessage {
 
     private Account accountsByToAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -40,8 +36,6 @@ public class AccountsMessage {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "from_accounts_id")
     public int getFromAccountsId() {
         return fromAccountsId;
     }
@@ -50,8 +44,6 @@ public class AccountsMessage {
         this.fromAccountsId = fromAccountsId;
     }
 
-    @Basic
-    @Column(name = "from_status")
     public int getFromStatus() {
         return fromStatus;
     }
@@ -60,8 +52,6 @@ public class AccountsMessage {
         this.fromStatus = fromStatus;
     }
 
-    @Basic
-    @Column(name = "to_accounts_id")
     public int getToAccountsId() {
         return toAccountsId;
     }
@@ -70,8 +60,6 @@ public class AccountsMessage {
         this.toAccountsId = toAccountsId;
     }
 
-    @Basic
-    @Column(name = "to_status")
     public int getToStatus() {
         return toStatus;
     }
@@ -80,8 +68,6 @@ public class AccountsMessage {
         this.toStatus = toStatus;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -90,8 +76,6 @@ public class AccountsMessage {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "title")
     public String getTitle() {
         return title;
     }
@@ -100,8 +84,6 @@ public class AccountsMessage {
         this.title = title;
     }
 
-    @Basic
-    @Column(name = "text")
     public String getText() {
         return text;
     }
@@ -135,8 +117,6 @@ public class AccountsMessage {
         return Objects.hash(id, fromAccountsId, fromStatus, toAccountsId, toStatus, date, title, text);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByFromAccountsId() {
         return accountsByFromAccountsId;
     }
@@ -145,8 +125,6 @@ public class AccountsMessage {
         this.accountsByFromAccountsId = accountsByFromAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByToAccountsId() {
         return accountsByToAccountsId;
     }

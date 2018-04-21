@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "clans_banks_logs", schema = "kalaazu")
 public class ClansBanksLog {
     private int id;
 
@@ -32,8 +30,6 @@ public class ClansBanksLog {
 
     private Account accountsByToAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -42,8 +38,6 @@ public class ClansBanksLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "clans_banks_id")
     public int getClansBanksId() {
         return clansBanksId;
     }
@@ -52,8 +46,6 @@ public class ClansBanksLog {
         this.clansBanksId = clansBanksId;
     }
 
-    @Basic
-    @Column(name = "from_accounts_id")
     public int getFromAccountsId() {
         return fromAccountsId;
     }
@@ -62,8 +54,6 @@ public class ClansBanksLog {
         this.fromAccountsId = fromAccountsId;
     }
 
-    @Basic
-    @Column(name = "to_accounts_id")
     public int getToAccountsId() {
         return toAccountsId;
     }
@@ -72,8 +62,6 @@ public class ClansBanksLog {
         this.toAccountsId = toAccountsId;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -82,8 +70,6 @@ public class ClansBanksLog {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "type")
     public int getType() {
         return type;
     }
@@ -92,8 +78,6 @@ public class ClansBanksLog {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "amount")
     public int getAmount() {
         return amount;
     }
@@ -102,8 +86,6 @@ public class ClansBanksLog {
         this.amount = amount;
     }
 
-    @Basic
-    @Column(name = "currency")
     public int getCurrency() {
         return currency;
     }
@@ -137,8 +119,6 @@ public class ClansBanksLog {
         return Objects.hash(id, clansBanksId, fromAccountsId, toAccountsId, date, type, amount, currency);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "clans_banks_id", referencedColumnName = "id", nullable = false)
     public ClansBank getClansBanksByClansBanksId() {
         return clansBanksByClansBanksId;
     }
@@ -149,8 +129,6 @@ public class ClansBanksLog {
         this.clansBanksByClansBanksId = clansBanksByClansBanksId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByFromAccountsId() {
         return accountsByFromAccountsId;
     }
@@ -159,8 +137,6 @@ public class ClansBanksLog {
         this.accountsByFromAccountsId = accountsByFromAccountsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     public Account getAccountsByToAccountsId() {
         return accountsByToAccountsId;
     }

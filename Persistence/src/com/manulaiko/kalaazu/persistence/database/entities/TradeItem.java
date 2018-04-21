@@ -1,13 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "trade_items", schema = "kalaazu")
 public class TradeItem {
     private int id;
 
@@ -23,8 +21,6 @@ public class TradeItem {
 
     private Account accountsByAccountsId;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -33,8 +29,6 @@ public class TradeItem {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "items_id")
     public int getItemsId() {
         return itemsId;
     }
@@ -43,8 +37,6 @@ public class TradeItem {
         this.itemsId = itemsId;
     }
 
-    @Basic
-    @Column(name = "accounts_id")
     public Integer getAccountsId() {
         return accountsId;
     }
@@ -53,8 +45,6 @@ public class TradeItem {
         this.accountsId = accountsId;
     }
 
-    @Basic
-    @Column(name = "price")
     public int getPrice() {
         return price;
     }
@@ -63,8 +53,6 @@ public class TradeItem {
         this.price = price;
     }
 
-    @Basic
-    @Column(name = "category")
     public int getCategory() {
         return category;
     }
@@ -95,8 +83,6 @@ public class TradeItem {
         return Objects.hash(id, itemsId, accountsId, price, category);
     }
 
-    @ManyToOne
-    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     public Item getItemsByItemsId() {
         return itemsByItemsId;
     }
@@ -105,8 +91,6 @@ public class TradeItem {
         this.itemsByItemsId = itemsByItemsId;
     }
 
-    @ManyToOne
-    @JoinColumn(name = "accounts_id", referencedColumnName = "id")
     public Account getAccountsByAccountsId() {
         return accountsByAccountsId;
     }

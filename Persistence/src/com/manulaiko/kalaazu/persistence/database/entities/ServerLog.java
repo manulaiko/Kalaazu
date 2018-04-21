@@ -1,14 +1,12 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import javax.persistence.*;
+
 import java.util.Date;
 import java.util.Objects;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Entity
-@Table(name = "server_logs", schema = "kalaazu")
 public class ServerLog {
     private int id;
 
@@ -20,8 +18,6 @@ public class ServerLog {
 
     private String context;
 
-    @Id
-    @Column(name = "id")
     public int getId() {
         return id;
     }
@@ -30,8 +26,6 @@ public class ServerLog {
         this.id = id;
     }
 
-    @Basic
-    @Column(name = "date")
     public Date getDate() {
         return date;
     }
@@ -40,8 +34,6 @@ public class ServerLog {
         this.date = date;
     }
 
-    @Basic
-    @Column(name = "level")
     public String getLevel() {
         return level;
     }
@@ -50,8 +42,6 @@ public class ServerLog {
         this.level = level;
     }
 
-    @Basic
-    @Column(name = "type")
     public String getType() {
         return type;
     }
@@ -60,8 +50,6 @@ public class ServerLog {
         this.type = type;
     }
 
-    @Basic
-    @Column(name = "context")
     public String getContext() {
         return context;
     }
