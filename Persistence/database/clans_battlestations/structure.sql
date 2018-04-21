@@ -7,7 +7,7 @@ CREATE TABLE `clans_battlestations` (
     `clans_id` int          NULL     DEFAULT NULL   COMMENT 'Owner of the CBS.',
     `maps_id`  int          NOT NULL                COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
-    `position` point        NOT NULL                COMMENT 'Position on map.',
+    `position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
     `date`     timestamp    NULL     DEFAULT NULL   COMMENT 'Date when the CBS was build.',
 
     CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)

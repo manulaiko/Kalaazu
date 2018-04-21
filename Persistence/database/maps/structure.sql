@@ -8,7 +8,7 @@ CREATE TABLE `maps` (
     `factions_id`  int          NULL     DEFAULT NULL,
     `is_pvp`       bit(1)       NOT NULL DEFAULT 0,
     `is_starter`   bit(1)       NOT NULL DEFAULT 0,
-    `limits`       point        NOT NULL,
+    `limits`       varchar(15)  NOT NULL DEFAULT '20800,12800',
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'In game maps.';
