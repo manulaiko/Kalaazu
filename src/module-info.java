@@ -1,3 +1,3 @@
-module com.manulaiko.kalaazu {
+module kalaazu {
     exports com.manulaiko.kalaazu.math;
 }
