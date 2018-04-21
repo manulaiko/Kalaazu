@@ -78,8 +78,8 @@ public class Database {
         }
 
         try {
-            var configuration = new Configuration();
-            var url           = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
+            Configuration configuration = new Configuration();
+            String url           = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
 
             configuration.setProperty("hibernate.connection.url", url);
             configuration.setProperty("hibernate.connection.username", this.getUsername());
