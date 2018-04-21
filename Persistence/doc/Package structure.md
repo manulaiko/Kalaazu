@@ -13,7 +13,7 @@ There are 3 public packages that can be accessed by other modules:
 
  * `com.manulaiko.kalaazu.persistence`.
  * `com.manulaiko.kalaazu.persistence.eventsystem.events`.
- * `com.manulaiko.kalaazu.persistence.database.entities`.
+ * `entities`.
 
 Persistence
 -----------

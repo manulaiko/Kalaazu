@@ -1,0 +1,15 @@
+package com.manulaiko.kalaazu.persistence.database.entities.accounts;
+
+import com.manulaiko.kalaazu.persistence.database.entities.accounts.generated.GeneratedAccountsManagerImpl;
+
+/**
+ * The default implementation for the manager of every {@link
+ * com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts} entity.
+ * <p>
+ * This file is safe to edit. It will not be overwritten by the code generator.
+ * 
+ * @author manulaiko
+ */
+public final class AccountsManagerImpl 
+extends GeneratedAccountsManagerImpl 
+implements AccountsManager {}

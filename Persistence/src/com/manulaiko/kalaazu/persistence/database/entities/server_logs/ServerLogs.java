@@ -1,0 +1,13 @@
+package com.manulaiko.kalaazu.persistence.database.entities.server_logs;
+
+import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated.GeneratedServerLogs;
+
+/**
+ * The main interface for entities of the {@code server_logs}-table in the
+ * database.
+ * <p>
+ * This file is safe to edit. It will not be overwritten by the code generator.
+ * 
+ * @author manulaiko
+ */
+public interface ServerLogs extends GeneratedServerLogs {}

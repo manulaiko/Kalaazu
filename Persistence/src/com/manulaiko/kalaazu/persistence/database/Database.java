@@ -1,8 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database;
 
-import com.manulaiko.kalaazu.persistence.database.entities.Entity;
-import com.manulaiko.kalaazu.persistence.database.entities.Map;
-import org.sql2o.Sql2o;
+import com.manulaiko.kalaazu.persistence.database.generated.KalaazuApplication;
+import com.manulaiko.kalaazu.persistence.database.generated.KalaazuApplicationBuilder;
+import entities.Entity;
+import com.speedment.runtime.core.manager.Manager;
+
+import java.util.Optional;
 
 
 /**
@@ -22,14 +25,12 @@ public class Database {
           .setPort(3306)
           .setHost("localhost")
           .initialize();
-
-        db.find(1, Map.class);
     }
 
     /**
-     * Session factory.
+     * Speedment db instance.
      */
-    private Sql2o sql2o;
+    private KalaazuApplication db;
 
     /**
      * Server host.
@@ -60,18 +61,18 @@ public class Database {
      * Initialzes the connection with the database.
      */
     public void initialize() {
-        if (this.sql2o != null) {
+        if (this.db != null) {
             return;
         }
 
         try {
-            var url = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
+            var url     = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
+            var builder = new KalaazuApplicationBuilder();
 
-            this.sql2o = new Sql2o(
-                    url,
-                    this.getUsername(),
-                    this.getPassword()
-            );
+            this.db = builder.withConnectionUrl(url)
+                             .withUsername(this.getUsername())
+                             .withPassword(this.getPassword())
+                             .build();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
@@ -85,15 +86,11 @@ public class Database {
      *
      * @return Record from the database.
      */
-    public <T extends Entity> T find(int id, Class<T> clazz) {
-        try (var connection = this.sql2o.open()) {
-            var table = this.parseTable(clazz);
-
-            return connection.createQuery("SELECT * FROM "+ table +" WHERE id=:id")
-                    .addParameter("id", id)
-                    .executeAndFetch(clazz)
-                    .get(0);
-        }
+    public <T extends Entity> Optional<T> find(int id, Class<? extends Manager<T>> clazz) {
+        return this.db.getOrThrow(clazz)
+                      .stream()
+                      .filter(t -> t.getId() == id)
+                      .findFirst();
     }
 
     /**
@@ -105,7 +102,7 @@ public class Database {
      */
     private String parseTable(Class clazz) {
         var name = clazz.getSimpleName()
-                        .replaceAll("([A-Z]+)","\\_$1")
+                        .replaceAll("([A-Z]+)", "\\_$1")
                         .toLowerCase();
 
         if (name.endsWith("y")) {

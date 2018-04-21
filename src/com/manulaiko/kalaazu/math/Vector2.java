@@ -64,6 +64,18 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         set(v);
     }
 
+    /**
+     * Constructs a vector from its string representation.
+     *
+     * @param s String representation.
+     */
+    public Vector2(String s) {
+        var coordinates = s.split(",");
+
+        this.x = Float.parseFloat(coordinates[0]);
+        this.y = Float.parseFloat(coordinates[1]);
+    }
+
     @Override
     public Vector2 cpy() {
         return new Vector2(this);
@@ -314,7 +326,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      */
     @Override
     public String toString() {
-        return "(" + x + "," + y + ")";
+        return x + "," + y;
     }
 
     /**

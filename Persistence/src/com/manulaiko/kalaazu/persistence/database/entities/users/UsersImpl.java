@@ -1,0 +1,15 @@
+package com.manulaiko.kalaazu.persistence.database.entities.users;
+
+import com.manulaiko.kalaazu.persistence.database.entities.users.generated.GeneratedUsersImpl;
+
+/**
+ * The default implementation of the {@link
+ * com.manulaiko.kalaazu.persistence.database.entities.users.Users}-interface.
+ * <p>
+ * This file is safe to edit. It will not be overwritten by the code generator.
+ * 
+ * @author manulaiko
+ */
+public final class UsersImpl 
+extends GeneratedUsersImpl 
+implements Users {}
