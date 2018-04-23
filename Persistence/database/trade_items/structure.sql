@@ -3,11 +3,11 @@
 -- Trade items.
 --
 CREATE TABLE `trade_items` (
-    `id`          int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`    int NOT NULL,
-    `accounts_id` int NULL     DEFAULT NULL,
-    `price`       int NOT NULL DEFAULT 0,
-    `category`    int NOT NULL DEFAULT 0,
+    `id`          smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `items_id`    smallint NOT NULL,
+    `accounts_id` int      NULL     DEFAULT NULL,
+    `price`       int      NOT NULL DEFAULT 0,
+    `category`    tinyint  NOT NULL DEFAULT 0,
 
     CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Trade items.';

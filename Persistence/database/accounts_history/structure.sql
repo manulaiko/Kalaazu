@@ -5,7 +5,7 @@
 CREATE TABLE `accounts_history` (
     `id`          int       NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `accounts_id` int       NOT NULL,
-    `type`        int       NOT NULL DEFAULT 0                 COMMENT 'Event type.',
+    `type`        tinyint   NOT NULL DEFAULT 0                 COMMENT 'Event type.',
     `message`     text      NOT NULL                           COMMENT 'Event message.',
     `amount`      int       NOT NULL DEFAULT 0                 COMMENT 'For currency related events, the amount of currency.',
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the event occurred.',

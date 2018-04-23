@@ -8,7 +8,7 @@ CREATE TABLE `accounts_hangars` (
     `accounts_ships_id`          int          NULL     DEFAULT NULL              COMMENT 'Ship available in the hangar.',
     `accounts_configurations_id` int          NULL     DEFAULT NULL              COMMENT 'Equipped configuration.',
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
-    `priority`                   int          NULL     DEFAULT -1                COMMENT 'Order priority, null = not ordered.',
+    `priority`                   tinyint      NULL     DEFAULT -1                COMMENT 'Order priority, null = not ordered.',
     `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)

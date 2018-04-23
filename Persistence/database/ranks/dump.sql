@@ -20,6 +20,6 @@ INSERT INTO `ranks` (`id`, `name`, `percentaje`, `is_public`) VALUES
 (17, 'Colonel',           0.50,  1),
 (18, 'Chief Colonel',     0.10,  1),
 (19, 'Basic General',     0.01,  1),
-(20, 'General',           0.00,  1),
+(20, 'General',           0.00,  0),
 (21, 'Administrator',     0.00,  0),
 (22, 'Wanted',            0.00,  0);

@@ -3,9 +3,9 @@
 -- Map collectables.
 --
 CREATE TABLE `collectables` (
-    `id`      int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `gfx`     int          NOT NULL DEFAULT 0,
-    `type`    int          NOT NULL DEFAULT 0      COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
+    `id`      tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `gfx`     tinyint      NOT NULL DEFAULT 0,
+    `type`    tinyint      NOT NULL DEFAULT 0      COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
     `name`    varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)

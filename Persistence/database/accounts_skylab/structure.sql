@@ -5,8 +5,8 @@
 CREATE TABLE `accounts_skylabs` (
     `id`                int       NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id`       int       NOT NULL                COMMENT 'Account ID.',
-    `skylab_modules_id` int       NOT NULL                COMMENT 'Module ID.',
-    `levels_id`         int       NOT NULL DEFAULT 1      COMMENT 'Module level.',
+    `skylab_modules_id` tinyint   NOT NULL                COMMENT 'Module ID.',
+    `levels_id`         tinyint   NOT NULL DEFAULT 1      COMMENT 'Module level.',
     `space`             int       NOT NULL DEFAULT 0      COMMENT 'Used space.',
     `upgrade`           timestamp NULL     DEFAULT NULL   COMMENT 'Date when this module started upgrading.',
 

@@ -3,9 +3,9 @@
 -- Stage spawn for each stage.
 --
 CREATE TABLE `galaxygates_spawns` (
-    `id`      int  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `npcs_id` int  NOT NULL                COMMENT 'NPC to spawn.',
-    `amount`  int  NOT NULL DEFAULT 20     COMMENT 'Amount of NPCs to spawn.',
+    `id`      int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `npcs_id` tinyint NOT NULL                COMMENT 'NPC to spawn.',
+    `amount`  tinyint NOT NULL DEFAULT 20     COMMENT 'Amount of NPCs to spawn.',
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Stage spawn for each stage.';

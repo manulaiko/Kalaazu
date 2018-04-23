@@ -3,9 +3,9 @@
 -- Clan CBS.
 --
 CREATE TABLE `clans_battlestations` (
-    `id`       int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`       tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `clans_id` int          NULL     DEFAULT NULL   COMMENT 'Owner of the CBS.',
-    `maps_id`  int          NOT NULL                COMMENT 'Map of the CBS.',
+    `maps_id`  tinyint      NOT NULL                COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
     `position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
     `date`     timestamp    NULL     DEFAULT NULL   COMMENT 'Date when the CBS was build.',

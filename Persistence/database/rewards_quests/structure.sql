@@ -3,9 +3,9 @@
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_quests` (
-    `id`         int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `quests_id`  int NOT NULL                COMMENT 'Quest ID.',
-    `rewards_id` int NOT NULL                COMMENT 'Reward to award.',
+    `id`         smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `quests_id`  smallint NOT NULL                COMMENT 'Quest ID.',
+    `rewards_id` smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';

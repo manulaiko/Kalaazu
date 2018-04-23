@@ -7,7 +7,7 @@ CREATE TABLE `clans_roles` (
     `name`           varchar(255) NOT NULL,
     `clans_id`       int          NOT NULL,
     `clans_roles_id` int          NULL     DEFAULT NULL   COMMENT 'Parent role.',
-    `priority`       int          NOT NULL DEFAULT 1,
+    `priority`       tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s roles.';

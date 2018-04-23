@@ -8,8 +8,8 @@ CREATE TABLE `clans_diplomacies` (
     `to_clans_id`   int       NOT NULL                           COMMENT 'Clan that receives the request.',
     `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Diplomacy creation date.',
     `expires`       timestamp NULL     DEFAULT NULL              COMMENT 'Date when the diplomacy expires.',
-    `status`        int       NOT NULL DEFAULT 0                 COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
-    `type`          int       NOT NULL DEFAULT 1                 COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
+    `status`        tinyint   NOT NULL DEFAULT 0                 COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
+    `type`          tinyint   NOT NULL DEFAULT 1                 COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Diplomacy table for clans.';

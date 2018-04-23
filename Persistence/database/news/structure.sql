@@ -3,7 +3,7 @@
 -- Server news.
 --
 CREATE TABLE `news` (
-    `id`     int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`     smallint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `image`  varchar(255) NOT NULL DEFAULT '',
     `title`  varchar(255) NOT NULL DEFAULT '',

@@ -5,7 +5,7 @@
 CREATE TABLE `users` (
     `id`                      int           NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `date`                    timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the user registered.',
-    `invitation_codes_id`     int           NULL     DEFAULT NULL              COMMENT 'Invitation code used to register',
+    `invitation_codes_id`     smallint      NULL     DEFAULT NULL              COMMENT 'Invitation code used to register',
     `name`                    varchar(255)  NOT NULL DEFAULT ''                COMMENT 'User name.',
     `password`                varchar(40)   NOT NULL DEFAULT ''                COMMENT 'Password hash (sha1).',
     `email`                   varchar(255)  NOT NULL DEFAULT ''                COMMENT 'User email.',

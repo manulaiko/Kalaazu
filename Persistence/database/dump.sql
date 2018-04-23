@@ -14,18 +14,18 @@ CREATE TABLE `accounts` (
     `id`                   int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
     `users_id`             int          NOT NULL                            COMMENT 'Account''s owner.',
     `session_id`           varchar(32)  NOT NULL                            COMMENT 'Session ID.',
-    `levels_id`            int          NOT NULL DEFAULT 1                  COMMENT 'Current level.',
-    `factions_id`          int          NULL     DEFAULT NULL               COMMENT 'Faction that the account belongs to.',
+    `levels_id`            tinyint      NOT NULL DEFAULT 1                  COMMENT 'Current level.',
+    `factions_id`          tinyint      NULL     DEFAULT NULL               COMMENT 'Faction that the account belongs to.',
     `accounts_hangars_id`  int          NULL     DEFAULT NULL               COMMENT 'Active hangar.',
     `clans_id`             int          NULL     DEFAULT NULL,
-    `ranks_id`             int          NOT NULL DEFAULT 1,
+    `ranks_id`             tinyint      NOT NULL DEFAULT 1,
     `name`                 varchar(255) NOT NULL DEFAULT ''                 COMMENT 'In game name.',
     `ban_date`             timestamp    NULL     DEFAULT NULL               COMMENT 'Ban expiration date.',
     `premium_date`         timestamp    NULL     DEFAULT NULL               COMMENT 'Premium expiration date.',
     `date`                 timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `last_login`           timestamp    NULL     DEFAULT NULL               COMMENT 'Last login date.',
-    `skill_points_total`   int          NOT NULL DEFAULT 0                  COMMENT 'Total skill points available.',
-    `skill_points_free`    int          NOT NULL DEFAULT 0                  COMMENT 'Free skill points available.',
+    `skill_points_total`   smallint     NOT NULL DEFAULT 0                  COMMENT 'Total skill points available.',
+    `skill_points_free`    smallint     NOT NULL DEFAULT 0                  COMMENT 'Free skill points available.',
 
     CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'In game accounts.';
@@ -42,12 +42,12 @@ CREATE INDEX `accounts_clans_id_idx` ON `accounts` (`clans_id`);
 -- Account's internal bank.
 --
 CREATE TABLE `accounts_banks` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id` int          NOT NULL,
-    `credits`     bigint       NOT NULL DEFAULT 0      COMMENT 'Credits available in the bank.',
-    `uridium`     bigint       NOT NULL DEFAULT 0      COMMENT 'Uridium available in the bank.',
-    `tax_credits` decimal(5,2) NOT NULL DEFAULT 5.0    COMMENT 'Tax rate for credits.',
-    `tax_uridium` decimal(5,2) NOT NULL DEFAULT 0.0    COMMENT 'Tax rate for uridium.',
+    `id`          int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `accounts_id` int     NOT NULL,
+    `credits`     bigint  NOT NULL DEFAULT 0      COMMENT 'Credits available in the bank.',
+    `uridium`     bigint  NOT NULL DEFAULT 0      COMMENT 'Uridium available in the bank.',
+    `tax_credits` tinyint NOT NULL DEFAULT 5      COMMENT 'Tax rate for credits.',
+    `tax_uridium` tinyint NOT NULL DEFAULT 0      COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s internal bank.';
@@ -65,9 +65,9 @@ CREATE TABLE `accounts_banks_logs` (
     `from_accounts_id`  int       NOT NULL,
     `to_accounts_id`    int       NOT NULL,
     `date`              timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `type`              int       NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
+    `type`              tinyint   NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
     `amount`            int       NOT NULL DEFAULT 0                  COMMENT 'Amount of currency logged.',
-    `currency`          int       NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
+    `currency`          tinyint   NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
     `accounts_banks_id` int       NULL     DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
@@ -102,8 +102,11 @@ CREATE INDEX `accounts_clans_roles_clans_roles_id_idx` ON `accounts_clans_roles`
 CREATE TABLE `accounts_configurations` (
     `id`                  int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_hangars_id` int          NOT NULL,
-    `configuration_id`    int          NOT NULL DEFAULT 1      COMMENT 'Configuration ID (1 or 2 (or 3)).',
+    `configuration_id`    tinyint      NOT NULL DEFAULT 1      COMMENT 'Configuration ID (1 or 2 (or 3)).',
     `name`                varchar(255) NOT NULL DEFAULT '',
+    `shield`              int          NOT NULL DEFAULT 0      COMMENT 'Shield available in the configuration.',
+    `speed`               smallint     NOT NULL DEFAULT 0      COMMENT 'Speed available in the configuration.',
+    `damage`              int          NOT NULL DEFAULT 0      COMMENT 'Damage available in the configuration.',
 
     CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Configurations of the accounts.';
@@ -133,11 +136,11 @@ CREATE TABLE `accounts_configurations_accounts_items` (
 -- Account's destroy history.
 --
 CREATE TABLE `accounts_destroys` (
-    `id`          int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id` int NOT NULL,
-    `ships_id`    int NOT NULL,
-    `points`      int NOT NULL DEFAULT 0      COMMENT 'Rank points received for destroying this ship.',
-    `amount`      int NOT NULL DEFAULT 0      COMMENT 'Times this ship has been destroyed',
+    `id`          int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `accounts_id` int      NOT NULL,
+    `ships_id`    tinyint  NOT NULL,
+    `points`      smallint NOT NULL DEFAULT 0      COMMENT 'Rank points received for destroying this ship.',
+    `amount`      smallint NOT NULL DEFAULT 0      COMMENT 'Times this ship has been destroyed',
 
     CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s destroy history.';
@@ -153,8 +156,8 @@ CREATE UNIQUE INDEX `accounts_destroys_accounts_id_idx` ON `accounts_destroys` (
 CREATE TABLE `accounts_drones` (
     `id`          int       NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id` int       NOT NULL,
-    `levels_id`   int       NOT NULL DEFAULT 1,
-    `experience`  int       NOT NULL DEFAULT 0,
+    `levels_id`   tinyint   NOT NULL DEFAULT 1,
+    `experience`  smallint  NOT NULL DEFAULT 0,
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
@@ -169,14 +172,13 @@ CREATE  UNIQUE INDEX `accounts_drones_accounts_id_idx` ON `accounts_drones` (`ac
 -- Account's build galaxygates.
 --
 CREATE TABLE `accounts_galaxygates` (
-    `id`             int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id` int    NOT NULL,
-    `accounts_id`    int    NOT NULL,
-    `parts`          int    NOT NULL DEFAULT 0      COMMENT 'Collected parts.',
-    `lifes`          int    NOT NULL DEFAULT -1     COMMENT 'Available lives (-1 not build yet)',
-    `wave`           int    NOT NULL DEFAULT -1     COMMENT 'Current wave.',
-    `times`          int    NOT NULL DEFAULT 0      COMMENT 'Times this gate was completed.',
-    `is_completed`   bit(1) NOT NULL DEFAULT 0,
+    `id`             int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint  NOT NULL,
+    `accounts_id`    int      NOT NULL,
+    `parts`          tinyint  NOT NULL DEFAULT 0      COMMENT 'Collected parts.',
+    `lifes`          tinyint  NOT NULL DEFAULT -1     COMMENT 'Available lives (-1 not build yet)',
+    `wave`           tinyint  NOT NULL DEFAULT -1     COMMENT 'Current wave.',
+    `times`          smallint NOT NULL DEFAULT 0      COMMENT 'Times this gate was completed.',
 
     CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s build galaxygates.';
@@ -196,7 +198,7 @@ CREATE TABLE `accounts_hangars` (
     `accounts_ships_id`          int          NULL     DEFAULT NULL              COMMENT 'Ship available in the hangar.',
     `accounts_configurations_id` int          NULL     DEFAULT NULL              COMMENT 'Equipped configuration.',
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
-    `priority`                   int          NULL     DEFAULT -1                COMMENT 'Order priority, null = not ordered.',
+    `priority`                   tinyint      NULL     DEFAULT -1                COMMENT 'Order priority, null = not ordered.',
     `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
@@ -214,7 +216,7 @@ CREATE INDEX `accounts_hangars_accounts_ships_id_idx` ON `accounts_hangars` (`ac
 CREATE TABLE `accounts_history` (
     `id`          int       NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `accounts_id` int       NOT NULL,
-    `type`        int       NOT NULL DEFAULT 0                 COMMENT 'Event type.',
+    `type`        tinyint   NOT NULL DEFAULT 0                 COMMENT 'Event type.',
     `message`     text      NOT NULL                           COMMENT 'Event message.',
     `amount`      int       NOT NULL DEFAULT 0                 COMMENT 'For currency related events, the amount of currency.',
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the event occurred.',
@@ -232,11 +234,11 @@ CREATE UNIQUE INDEX `accounts_history_accounts_id_idx` ON `accounts_history` (`a
 --
 CREATE TABLE `accounts_items` (
     `id`          int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `items_id`    int       NOT NULL,
+    `items_id`    smallint  NOT NULL,
     `accounts_id` int       NOT NULL,
-    `levels_id`   int       NOT NULL DEFAULT 1,
+    `levels_id`   tinyint   NOT NULL DEFAULT 1,
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `amount`      int       NOT NULL DEFAULT 1                  COMMENT 'Amount of items bough (for stackable items).',
+    `amount`      bigint    NOT NULL DEFAULT 1                  COMMENT 'Amount of items bough (for stackable items).',
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Items bough by an account.';
@@ -254,9 +256,9 @@ CREATE INDEX `accounts_items_levels_id_idx` ON `accounts_items` (`levels_id`);
 CREATE TABLE `accounts_messages` (
     `id`               int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
     `from_accounts_id` int          NOT NULL,
-    `from_status`      int          NOT NULL DEFAULT 1                  COMMENT '0 = unread, 1 = read, 2 = deleted.',
+    `from_status`      tinyint      NOT NULL DEFAULT 1                  COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `to_accounts_id`   int          NOT NULL,
-    `to_status`        int          NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',
+    `to_status`        tinyint      NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `title`            varchar(255) NOT NULL,
     `text`             text         NOT NULL,
@@ -276,19 +278,19 @@ CREATE INDEX `accounts_messages_to_accounts_id_idx` ON `accounts_messages` (`to_
 CREATE TABLE `accounts_pets` (
     `id`                         int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id`                int          NOT NULL,
-    `levels_id`                  int          NOT NULL DEFAULT 1,
+    `levels_id`                  tinyint      NOT NULL DEFAULT 1,
     `name`                       varchar(255) NOT NULL DEFAULT '',
     `experience`                 int          NOT NULL DEFAULT 0,
     `fuel`                       int          NOT NULL DEFAULT 0,
     `health`                     int          NOT NULL DEFAULT 0,
-    `slots_lasers_total`         int          NOT NULL,
-    `slots_lasers_available`     int          NOT NULL,
-    `slots_generators_total`     int          NOT NULL,
-    `slots_generators_available` int          NOT NULL,
-    `slots_protocols_total`      int          NOT NULL,
-    `slots_protocols_available`  int          NOT NULL,
-    `slots_gears_total`          int          NOT NULL,
-    `slots_gears_available`      int          NOT NULL,
+    `slots_lasers_total`         tinyint      NOT NULL,
+    `slots_lasers_available`     tinyint      NOT NULL,
+    `slots_generators_total`     tinyint      NOT NULL,
+    `slots_generators_available` tinyint      NOT NULL,
+    `slots_protocols_total`      tinyint      NOT NULL,
+    `slots_protocols_available`  tinyint      NOT NULL,
+    `slots_gears_total`          tinyint      NOT NULL,
+    `slots_gears_available`      tinyint      NOT NULL,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s PETs.';
@@ -303,9 +305,9 @@ CREATE  UNIQUE INDEX `accounts_pets_accounts_id_idx` ON `accounts_pets` (`accoun
 --
 CREATE TABLE `accounts_quests` (
     `id`          int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `quests_id`   int       NOT NULL,
+    `quests_id`   smallint  NOT NULL,
     `accounts_id` int       NOT NULL,
-    `completed`   bit(1)    NOT NULL DEFAULT 0                  COMMENT 'Whether the quest has been completed or not.',
+    `completed`   boolean   NOT NULL DEFAULT 0                  COMMENT 'Whether the quest has been completed or not.',
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Date when the quest was accepted/completed.',
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
@@ -321,14 +323,14 @@ CREATE INDEX `accounts_quests_accounts_id_idx` ON `accounts_quests` (`accounts_i
 -- Account ranking.
 --
 CREATE TABLE `accounts_rankings` (
-    `id`                  int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`         int NOT NULL                COMMENT 'Account ID.',
-    `points`              int NOT NULL DEFAULT 0      COMMENT 'Points in the ranking.',
-    `best_points`         int NOT NULL DEFAULT 0      COMMENT 'Biggest amount of rank points ever achieved.',
-    `destroyed_allies`    int NOT NULL DEFAULT 0      COMMENT 'Destroyed allies.',
-    `destroyed_phoenix`   int NOT NULL DEFAULT 0      COMMENT 'Destroyed phoenix.',
-    `destroyed_times`     int NOT NULL DEFAULT 0      COMMENT 'Amount of times the account has been destroyed.',
-    `destroyed_radiation` int NOT NULL DEFAULT 0      COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
+    `id`                  int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `accounts_id`         int      NOT NULL                COMMENT 'Account ID.',
+    `points`              int      NOT NULL DEFAULT 0      COMMENT 'Points in the ranking.',
+    `best_points`         int      NOT NULL DEFAULT 0      COMMENT 'Biggest amount of rank points ever achieved.',
+    `destroyed_allies`    smallint NOT NULL DEFAULT 0      COMMENT 'Destroyed allies.',
+    `destroyed_phoenix`   smallint NOT NULL DEFAULT 0      COMMENT 'Destroyed phoenix.',
+    `destroyed_times`     smallint NOT NULL DEFAULT 0      COMMENT 'Amount of times the account has been destroyed.',
+    `destroyed_radiation` smallint NOT NULL DEFAULT 0      COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
 
     CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account ranking.';
@@ -344,13 +346,12 @@ CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx` ON `accounts_rankings` (`
 CREATE TABLE `accounts_ships` (
     `id`          int         NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id` int         NOT NULL,
-    `ships_id`    int         NOT NULL,
-    `maps_id`     int         NOT NULL,
+    `ships_id`    tinyint     NOT NULL,
+    `maps_id`     tinyint     NOT NULL,
     `position`    varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
     `health`      int         NOT NULL DEFAULT 0      COMMENT 'Health points.',
-    `shield`      int         NOT NULL DEFAULT 0      COMMENT 'Shield points.',
     `nanohull`    int         NOT NULL DEFAULT 0      COMMENT 'Nanohull points.',
-    `gfx`         int         NOT NULL DEFAULT 0      COMMENT 'Ship graphic (for WIZ-X).',
+    `gfx`         tinyint     NOT NULL DEFAULT 0      COMMENT 'Ship graphic (for WIZ-X).',
 
     CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Ships bough by an account.';
@@ -366,10 +367,10 @@ CREATE INDEX `accounts_ships_maps_id_idx` ON `accounts_ships` (`maps_id`);
 -- Skilltree for the account.
 --
 CREATE TABLE `accounts_skills` (
-    `id`                  int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`         int NOT NULL                COMMENT 'Account ID.',
-    `skilltree_skills_id` int NOT NULL                COMMENT 'Skill ID.',
-    `skilltree_levels_id` int NOT NULL                COMMENT 'Skill level.',
+    `id`                  int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `accounts_id`         int      NOT NULL                COMMENT 'Account ID.',
+    `skilltree_skills_id` tinyint  NOT NULL                COMMENT 'Skill ID.',
+    `skilltree_levels_id` smallint NOT NULL                COMMENT 'Skill level.',
 
     CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Skilltree for the account.';
@@ -385,8 +386,8 @@ CREATE INDEX `accounts_skills_accounts_id_idx` ON `accounts_skills` (`accounts_i
 CREATE TABLE `accounts_skylabs` (
     `id`                int       NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id`       int       NOT NULL                COMMENT 'Account ID.',
-    `skylab_modules_id` int       NOT NULL                COMMENT 'Module ID.',
-    `levels_id`         int       NOT NULL DEFAULT 1      COMMENT 'Module level.',
+    `skylab_modules_id` tinyint   NOT NULL                COMMENT 'Module ID.',
+    `levels_id`         tinyint   NOT NULL DEFAULT 1      COMMENT 'Module level.',
     `space`             int       NOT NULL DEFAULT 0      COMMENT 'Used space.',
     `upgrade`           timestamp NULL     DEFAULT NULL   COMMENT 'Date when this module started upgrading.',
 
@@ -403,11 +404,11 @@ CREATE INDEX `accounts_skylabs_skylab_modules_id_idx` ON `accounts_skylabs` (`sk
 -- Nanotech factory items.
 --
 CREATE TABLE `accounts_techfactories` (
-    `id`                 int        NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `accounts_id`        int        NOT NULL                COMMENT 'Account ID.',
-    `slot_unlock_price`  int        NOT NULL DEFAULT 50000  COMMENT 'Price for unlocking a slot.',
-    `slot_unlock_factor` int        NOT NULL DEFAULT 2      COMMENT 'Factor for unlocking a slot.',
-    `slots`              tinyint(1) NOT NULL DEFAULT 1      COMMENT 'Unlocked slots.',
+    `id`                 int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `accounts_id`        int     NOT NULL                COMMENT 'Account ID.',
+    `slot_unlock_price`  int     NOT NULL DEFAULT 50000  COMMENT 'Price for unlocking a slot.',
+    `slot_unlock_factor` tinyint NOT NULL DEFAULT 2      COMMENT 'Factor for unlocking a slot.',
+    `slots`              tinyint NOT NULL DEFAULT 1      COMMENT 'Unlocked slots.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Nanotech factory items.';
@@ -421,8 +422,8 @@ CREATE TABLE `accounts_techfactories` (
 CREATE TABLE `accounts_techfactory_items` (
     `id`                   int       NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id`          int       NOT NULL                COMMENT 'Account ID.',
-    `techfactory_items_id` int       NOT NULL                COMMENT 'Item ID.',
-    `amount`               int       NOT NULL DEFAULT 1      COMMENT 'Amount of build items.',
+    `techfactory_items_id` tinyint   NOT NULL                COMMENT 'Item ID.',
+    `amount`               smallint  NOT NULL DEFAULT 1      COMMENT 'Amount of build items.',
     `date`                 timestamp NULL     DEFAULT NULL   COMMENT 'Date when the item started building.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
@@ -440,12 +441,12 @@ CREATE INDEX `accounts_techfactory_items_techfactory_items_id_idx` ON `accounts_
 CREATE TABLE `clans` (
     `id`                 int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `accounts_id`        int          NOT NULL                COMMENT 'Owner ID',
-    `factions_id`        int          NULL     DEFAULT NULL   COMMENT 'Clan affiliation faction.',
+    `factions_id`        tinyint      NULL     DEFAULT NULL   COMMENT 'Clan affiliation faction.',
     `tag`                varchar(4)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `name`               varchar(255) NOT NULL DEFAULT '',
     `description`        text         NOT NULL,
     `logo`               varchar(255) NOT NULL DEFAULT '',
-    `status`             int          NOT NULL DEFAULT 0      COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
+    `status`             tinyint      NOT NULL DEFAULT 0      COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Server clans.';
@@ -480,12 +481,12 @@ CREATE INDEX `clans_applications_accounts_id_idx` ON `clans_applications` (`acco
 -- Clan's internal bank.
 --
 CREATE TABLE `clans_banks` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `clans_id`    int          NOT NULL,
-    `credits`     bigint       NOT NULL DEFAULT 0      COMMENT 'Credits available in the bank.',
-    `uridium`     bigint       NOT NULL DEFAULT 0      COMMENT 'Uridium available in the bank.',
-    `tax_credits` decimal(5,2) NOT NULL DEFAULT 5.0    COMMENT 'Tax rate for credits.',
-    `tax_uridium` decimal(5,2) NOT NULL DEFAULT 0.0    COMMENT 'Tax rate for uridium.',
+    `id`          int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `clans_id`    int     NOT NULL,
+    `credits`     bigint  NOT NULL DEFAULT 0      COMMENT 'Credits available in the bank.',
+    `uridium`     bigint  NOT NULL DEFAULT 0      COMMENT 'Uridium available in the bank.',
+    `tax_credits` tinyint NOT NULL DEFAULT 5.0    COMMENT 'Tax rate for credits.',
+    `tax_uridium` tinyint NOT NULL DEFAULT 0.0    COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s internal bank.';
@@ -504,9 +505,9 @@ CREATE TABLE `clans_banks_logs` (
     `from_accounts_id` int       NOT NULL                            COMMENT 'Account that made the log.',
     `to_accounts_id`   int       NOT NULL,
     `date`             timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `type`             int       NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
+    `type`             tinyint   NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
     `amount`           int       NOT NULL DEFAULT 0                  COMMENT 'Amount of currency logged.',
-    `currency`         int       NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
+    `currency`         tinyint   NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from clan''s bank.';
@@ -522,9 +523,9 @@ CREATE INDEX `clans_banks_logs_to_accounts_id_idx` ON `clans_banks_logs` (`to_ac
 -- Clan CBS.
 --
 CREATE TABLE `clans_battlestations` (
-    `id`       int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`       tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `clans_id` int          NULL     DEFAULT NULL   COMMENT 'Owner of the CBS.',
-    `maps_id`  int          NOT NULL                COMMENT 'Map of the CBS.',
+    `maps_id`  tinyint      NOT NULL                COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
     `position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
     `date`     timestamp    NULL     DEFAULT NULL   COMMENT 'Date when the CBS was build.',
@@ -564,11 +565,11 @@ INSERT INTO `clans_battlestations`(`id`, `name`, `maps_id`, `position`) VALUES
 -- Items equipped in the CBS.
 --
 CREATE TABLE `clans_battlestations_items` (
-    `id`                      int        NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `clans_battlestations_id` int        NOT NULL                           COMMENT 'CBS where item is equipped.',
-    `accounts_items_id`       int        NOT NULL                           COMMENT 'Equipped item.',
-    `slot`                    tinyint(1) NOT NULL DEFAULT 1                 COMMENT 'Position where the item is equipped (A = 9, B = 10).',
-    `date`                    timestamp  NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the item was equipped.',
+    `id`                      int       NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
+    `clans_battlestations_id` tinyint   NOT NULL                           COMMENT 'CBS where item is equipped.',
+    `accounts_items_id`       int       NOT NULL                           COMMENT 'Equipped item.',
+    `slot`                    tinyint   NOT NULL DEFAULT 1                 COMMENT 'Position where the item is equipped (A = 9, B = 10).',
+    `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the item was equipped.',
 
     CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Items equipped in the CBS.';
@@ -585,7 +586,7 @@ CREATE INDEX `clans_battlestations_items_accounts_items_id_idx` ON `clans_battle
 CREATE TABLE `clans_battlestations_logs` (
     `id`                      int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
     `clans_id`                int       NOT NULL,
-    `clans_battlestations_id` int       NOT NULL,
+    `clans_battlestations_id` tinyint   NOT NULL,
     `message`                 text      NOT NULL,
     `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -607,8 +608,8 @@ CREATE TABLE `clans_diplomacies` (
     `to_clans_id`   int       NOT NULL                           COMMENT 'Clan that receives the request.',
     `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Diplomacy creation date.',
     `expires`       timestamp NULL     DEFAULT NULL              COMMENT 'Date when the diplomacy expires.',
-    `status`        int       NOT NULL DEFAULT 0                 COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
-    `type`          int       NOT NULL DEFAULT 1                 COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
+    `status`        tinyint   NOT NULL DEFAULT 0                 COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
+    `type`          tinyint   NOT NULL DEFAULT 1                 COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Diplomacy table for clans.';
@@ -685,7 +686,7 @@ CREATE TABLE `clans_roles` (
     `name`           varchar(255) NOT NULL,
     `clans_id`       int          NOT NULL,
     `clans_roles_id` int          NULL     DEFAULT NULL   COMMENT 'Parent role.',
-    `priority`       int          NOT NULL DEFAULT 1,
+    `priority`       tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan''s roles.';
@@ -700,10 +701,10 @@ CREATE INDEX `clans_roles_name_idx` ON `clans_roles` (`name`);
 -- Clan roles' permissions
 --
 CREATE TABLE `clans_roles_permissions` (
-    `id`             int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `clans_roles_id` int    NOT NULL,
-    `permissions_id` int    NOT NULL,
-    `enabled`        bit(1) NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
+    `id`             int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `clans_roles_id` int     NOT NULL,
+    `permissions_id` tinyint NOT NULL,
+    `enabled`        boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan roles'' permissions';
@@ -718,9 +719,9 @@ CREATE INDEX `clans_roles_permissions_permissions_id_idx` ON `clans_roles_permis
 -- Map collectables.
 --
 CREATE TABLE `collectables` (
-    `id`      int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `gfx`     int          NOT NULL DEFAULT 0,
-    `type`    int          NOT NULL DEFAULT 0      COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
+    `id`      tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `gfx`     tinyint      NOT NULL DEFAULT 0,
+    `type`    tinyint      NOT NULL DEFAULT 0      COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
     `name`    varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
@@ -863,14 +864,14 @@ CREATE TABLE `events` (
 -- Contains server's factions.
 --
 CREATE TABLE `factions` (
-    `id`                 int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`                 tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`               varchar(255) NOT NULL DEFAULT '',
     `tag`                varchar(3)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `description`        text         NOT NULL,
-    `is_public`          bit(1)       NOT NULL DEFAULT 1,
-    `low_maps_id`        int          NOT NULL,
+    `is_public`          boolean      NOT NULL DEFAULT 1,
+    `low_maps_id`        tinyint      NOT NULL,
     `low_maps_position`  varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
-    `high_maps_id`       int          NOT NULL,
+    `high_maps_id`       tinyint      NOT NULL,
     `high_maps_position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
@@ -892,10 +893,10 @@ INSERT INTO `factions` (`id`, `name`, `tag`, `is_public`, `description`, `low_ma
 -- Galaxy gates from the server.
 --
 CREATE TABLE `galaxygates` (
-    `id`                   int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`                   tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`                 varchar(255) NOT NULL DEFAULT 'GG-A',
-    `galaxygates_waves_id` int          NULL     DEFAULT NULL   COMMENT 'Starting wave.',
-    `parts`                int          NOT NULL DEFAULT 0      COMMENT 'Necessary parts to build the gate.',
+    `galaxygates_waves_id` tinyint      NULL     DEFAULT NULL   COMMENT 'Starting wave.',
+    `parts`                tinyint      NOT NULL DEFAULT 0      COMMENT 'Necessary parts to build the gate.',
 
     CONSTRAINT `galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Galaxy gates from the server.';
@@ -919,9 +920,9 @@ INSERT INTO `galaxygates` (`id`, `name`, `galaxygates_waves_id`, `parts`) VALUES
 -- Many to many relations for galaxygates and galaxygates_spins.
 --
 CREATE TABLE `galaxygates_gg_spins` (
-    `id`                   int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id`       int NOT NULL,
-    `galaxygates_spins_id` int NOT NULL,
+    `id`                   smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id`       tinyint  NOT NULL,
+    `galaxygates_spins_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
@@ -1181,9 +1182,9 @@ INSERT INTO `galaxygates_gg_spins` (`id`, `galaxygates_id`, `galaxygates_spins_i
 -- Many to many relations for galaxygates and galaxygates_waves.
 --
 CREATE TABLE `galaxygates_gg_waves` (
-    `id`                   int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id`       int NOT NULL,
-    `galaxygates_waves_id` int NOT NULL,
+    `id`                   smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id`       tinyint  NOT NULL,
+    `galaxygates_waves_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
@@ -1198,10 +1199,10 @@ CREATE INDEX `galaxygates_gg_waves_galaxygates_waves_id_idx` ON `galaxygates_gg_
 -- Spin probabilities for the galaxy gates.
 --
 CREATE TABLE `galaxygates_probabilities` (
-    `id`             int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id` int          NOT NULL                COMMENT 'The galaxy gate.',
-    `type`           int          NOT NULL DEFAULT 0      COMMENT '1 = ammo, 2 = resource, 3 = voucher, 4 = logfile, 5 = part, 6 = special.',
-    `probability`    decimal(5,2) NOT NULL DEFAULT 100.00 COMMENT 'Probability of awarding one spin of this type.',
+    `id`             tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint NOT NULL                COMMENT 'The galaxy gate.',
+    `type`           tinyint NOT NULL DEFAULT 0      COMMENT '1 = ammo, 2 = resource, 3 = voucher, 4 = logfile, 5 = part, 6 = special.',
+    `probability`    float   NOT NULL DEFAULT 100.00 COMMENT 'Probability of awarding one spin of this type.',
 
     CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Spin probabilities for the galaxy gates.';
@@ -1274,9 +1275,9 @@ INSERT INTO `galaxygates_probabilities` (`id`, `galaxygates_id`, `type`, `probab
 -- Stage spawn for each stage.
 --
 CREATE TABLE `galaxygates_spawns` (
-    `id`      int  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `npcs_id` int  NOT NULL                COMMENT 'NPC to spawn.',
-    `amount`  int  NOT NULL DEFAULT 20     COMMENT 'Amount of NPCs to spawn.',
+    `id`      int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `npcs_id` tinyint NOT NULL                COMMENT 'NPC to spawn.',
+    `amount`  tinyint NOT NULL DEFAULT 20     COMMENT 'Amount of NPCs to spawn.',
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Stage spawn for each stage.';
@@ -1290,11 +1291,11 @@ CREATE INDEX `galaxygates_spawns_npcs_id_idx` ON `galaxygates_spawns` (`npcs_id`
 -- Spins from the galaxy gate.
 --
 CREATE TABLE `galaxygates_spins` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `type`        varchar(255) NOT NULL DEFAULT 'ammo' COMMENT 'Type from `galaxygates_probabilities`',
-    `probability` decimal(5,2) NOT NULL DEFAULT '0.0',
-    `items_id`    int          NOT NULL,
-    `amount`      int          NOT NULL DEFAULT 1,
+    `id`          tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `type`        tinyint  NOT NULL DEFAULT 1      COMMENT 'Type from `galaxygates_probabilities`',
+    `probability` float    NOT NULL DEFAULT '0.0',
+    `items_id`    smallint NOT NULL,
+    `amount`      smallint NOT NULL DEFAULT 1,
 
     CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Spins from the galaxy gate.';
@@ -1326,7 +1327,7 @@ INSERT INTO `galaxygates_spins` (`id`, `type`, `probability`, `items_id`, `amoun
 (20, 3, 50.00,  7,   2),
 (21, 4, 99.99,  229, 1),
 (22, 4, 0.01,   229, 100),
-(23, 6, 100.00, 1,   100000),
+(23, 6, 100.00, 1,   30000),
 (24, 5, 33.33,  282, 1),
 (25, 5, 33.33,  283, 1),
 (26, 5, 33.33,  284, 1),
@@ -1343,9 +1344,9 @@ INSERT INTO `galaxygates_spins` (`id`, `type`, `probability`, `items_id`, `amoun
 -- Spawn stage for each wave.
 --
 CREATE TABLE `galaxygates_stages` (
-    `id`                   int  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_waves_id` int  NOT NULL                COMMENT 'Wave this stage belongs to',
-    `comment`              text          DEFAULT NULL   COMMENT 'Just so this isn''t that empty',
+    `id`                   int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_waves_id` tinyint NOT NULL                COMMENT 'Wave this stage belongs to',
+    `comment`              text    NULL DEFAULT NULL       COMMENT 'Just so this isn''t that empty',
 
     CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Spawn stage for each wave.';
@@ -1376,10 +1377,10 @@ CREATE INDEX `galaxygates_stages_spawns_galaxygates_spawns_id_idx` ON `galaxygat
 -- Waves of the galaxy gate.
 --
 CREATE TABLE `galaxygates_waves` (
-    `id`      int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `maps_id` int NOT NULL                COMMENT 'Map',
-    `seconds` int NOT NULL DEFAULT 120    COMMENT 'Seconds to wait between stages',
-    `npcs`    int NOT NULL DEFAULT 5      COMMENT 'NPCS that the user must destroy to spawn next stage',
+    `id`      tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `maps_id` tinyint NOT NULL                COMMENT 'Map',
+    `seconds` tinyint NOT NULL DEFAULT 120    COMMENT 'Seconds to wait between stages',
+    `npcs`    tinyint NOT NULL DEFAULT 5      COMMENT 'NPCS that the user must destroy to spawn next stage',
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Waves of the galaxy gate.';
@@ -1393,9 +1394,9 @@ CREATE INDEX `galaxygates_waves_maps_id_idx` ON `galaxygates_waves` (`maps_id`);
 -- Contains the invitation codes that can be used for registering.
 --
 CREATE TABLE `invitation_codes` (
-    `id`    int           NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`    smallint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `code`  varchar(255)  NOT NULL DEFAULT ''     COMMENT 'The invitation code.',
-    `limit` int           NOT NULL DEFAULT 1      COMMENT 'Amount of times the code can be used.',
+    `limit` tinyint       NOT NULL DEFAULT 1      COMMENT 'Amount of times the code can be used.',
 
     CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains the invitation codes that can be used for registering.';
@@ -2413,7 +2414,7 @@ INSERT INTO `invitation_codes` (`id`, `code`, `limit`) VALUES
 --
 CREATE TABLE `invitation_codes_redeem_logs` (
     `id`                  int           NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `invitation_codes_id` int           NOT NULL                           COMMENT 'Invitation code ID.',
+    `invitation_codes_id` smallint      NOT NULL                           COMMENT 'Invitation code ID.',
     `ip`                  varbinary(16) NOT NULL                           COMMENT 'IP that redeemed the code.',
     `date`                timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the code was redeemed.',
 
@@ -2427,15 +2428,15 @@ CREATE TABLE `invitation_codes_redeem_logs` (
 -- Contains server's items.
 --
 CREATE TABLE `items` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`          smallint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT '',
     `category`    varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL                COMMENT 'Shop description.',
     `price`       int          NOT NULL DEFAULT 0,
     `type`        varchar(255) NOT NULL DEFAULT '',
-    `is_elite`    bit(1)       NOT NULL DEFAULT 0,
-    `is_event`    bit(1)       NOT NULL DEFAULT 0      COMMENT 'Event item.',
-    `is_buyable`  bit(1)       NOT NULL DEFAULT 1      COMMENT 'Buyable in shop',
+    `is_elite`    boolean      NOT NULL DEFAULT 0,
+    `is_event`    boolean      NOT NULL DEFAULT 0      COMMENT 'Event item.',
+    `is_buyable`  boolean      NOT NULL DEFAULT 1      COMMENT 'Buyable in shop',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s items.';
@@ -2754,12 +2755,12 @@ CREATE TABLE `key_value` (
 -- Contains server's levels.
 --
 CREATE TABLE `levels` (
-    `id`      int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `account` bigint       NOT NULL DEFAULT 0      COMMENT 'Experience needed for an account to reach this level.',
-    `drone`   int          NOT NULL DEFAULT -1     COMMENT 'Experience needed for a drone to reach this level',
-    `pet`     int          NOT NULL DEFAULT -1     COMMENT 'Experience needed for a PET to reach this level.',
-    `damage`  decimal(5,2) NOT NULL DEFAULT 0.0    COMMENT 'Damage bonus applied for an item at this level.',
-    `shield`  decimal(5,2) NOT NULL DEFAULT 0.0    COMMENT 'Shield bonus applied to an item at this level.',
+    `id`      tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `account` bigint   NOT NULL DEFAULT 0      COMMENT 'Experience needed for an account to reach this level.',
+    `drone`   smallint NOT NULL DEFAULT -1     COMMENT 'Experience needed for a drone to reach this level',
+    `pet`     int      NOT NULL DEFAULT -1     COMMENT 'Experience needed for a PET to reach this level.',
+    `damage`  float    NOT NULL DEFAULT 0.0    COMMENT 'Damage bonus applied for an item at this level.',
+    `shield`  float    NOT NULL DEFAULT 0.0    COMMENT 'Shield bonus applied to an item at this level.',
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s levels.';
@@ -2815,11 +2816,11 @@ INSERT INTO `levels` (`id`, `account`, `drone`, `pet`, `damage`, `shield`) VALUE
 -- Contains the upgrade costs for each level.
 --
 CREATE TABLE `levels_upgrades` (
-    `id`          int        NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `levels_id`   int        NOT NULL                COMMENT 'The upgrade level.',
-    `probability` tinyint(3) NOT NULL DEFAULT 5      COMMENT 'Probability level.',
-    `credits`     int        NOT NULL DEFAULT 0      COMMENT 'Credits needed to upgrade to this level with given probability.',
-    `uridium`     int        NOT NULL DEFAULT 0      COMMENT 'Uridium needed to upgrade to this level with given probability.',
+    `id`          int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `levels_id`   tinyint  NOT NULL                COMMENT 'The upgrade level.',
+    `probability` tinyint  NOT NULL DEFAULT 5      COMMENT 'Probability level.',
+    `credits`     int      NOT NULL DEFAULT 0      COMMENT 'Credits needed to upgrade to this level with given probability.',
+    `uridium`     smallint NOT NULL DEFAULT 0      COMMENT 'Uridium needed to upgrade to this level with given probability.',
 
     CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains the upgrade costs for each level.';
@@ -3133,11 +3134,11 @@ INSERT INTO `levels_upgrades`(`id`, `levels_id`, `probability`, `credits`, `urid
 -- In game maps.
 --
 CREATE TABLE `maps` (
-    `id`           int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`           tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`         varchar(255) NOT NULL DEFAULT ''     COMMENT 'Map name.',
-    `factions_id`  int          NULL     DEFAULT NULL,
-    `is_pvp`       bit(1)       NOT NULL DEFAULT 0,
-    `is_starter`   bit(1)       NOT NULL DEFAULT 0,
+    `factions_id`  tinyint      NULL     DEFAULT NULL,
+    `is_pvp`       boolean      NOT NULL DEFAULT 0,
+    `is_starter`   boolean      NOT NULL DEFAULT 0,
     `limits`       varchar(15)  NOT NULL DEFAULT '20800,12800',
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
@@ -3187,10 +3188,10 @@ INSERT INTO `maps` (`id`, `name`, `factions_id`, `is_pvp`, `is_starter`) VALUES
 -- Many to many relation table.
 --
 CREATE TABLE `maps_npcs` (
-    `id`      int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `maps_id` int NOT NULL                COMMENT 'Map ID.',
-    `npcs_id` int NOT NULL                COMMENT 'NPC ID.',
-    `amount`  int NOT NULL DEFAULT 0      COMMENT 'Amount of NPCs on map',
+    `id`      tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `maps_id` tinyint NOT NULL                COMMENT 'Map ID.',
+    `npcs_id` tinyint NOT NULL                COMMENT 'NPC ID.',
+    `amount`  tinyint NOT NULL DEFAULT 0      COMMENT 'Amount of NPCs on map',
 
     CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relation table.';
@@ -3289,15 +3290,15 @@ INSERT INTO `maps_npcs`(`id`, `maps_id`, `npcs_id`, `amount`) VALUES
 -- Portals on map.
 --
 CREATE TABLE `maps_portals` (
-    `id`              int         NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `levels_id`       int         NOT NULL DEFAULT 1,
-    `maps_id`         int         NOT NULL,
+    `id`              tinyint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `levels_id`       tinyint     NOT NULL DEFAULT 1,
+    `maps_id`         tinyint     NOT NULL,
     `position`        varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
-    `target_maps_id`  int         NOT NULL,
+    `target_maps_id`  tinyint     NOT NULL,
     `target_position` varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position where the account will be spawned after using the portal.',
-    `is_visible`      bit(1)      NOT NULL DEFAULT 1,
-    `is_working`      bit(1)      NOT NULL DEFAULT 1,
-    `gfx`             int         NOT NULL DEFAULT 1,
+    `is_visible`      boolean     NOT NULL DEFAULT 1,
+    `is_working`      boolean     NOT NULL DEFAULT 1,
+    `gfx`             tinyint     NOT NULL DEFAULT 1,
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Portals on map.';
@@ -3421,10 +3422,10 @@ INSERT INTO `maps_portals` (`maps_id`, `position`, `target_position`, `target_ma
 -- Stations on map.
 --
 CREATE TABLE `maps_stations` (
-    `id`          int         NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`          tinyint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `position`    varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
-    `maps_id`     int         NULL     DEFAULT NULL,
-    `factions_id` int         NULL     DEFAULT NULL,
+    `maps_id`     tinyint     NULL     DEFAULT NULL,
+    `factions_id` tinyint     NULL     DEFAULT NULL,
 
     CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Stations on map.';
@@ -3447,9 +3448,9 @@ INSERT INTO `maps_stations` (`id`, `position`, `maps_id`, `factions_id`) VALUES
 -- Server moderators.
 --
 CREATE TABLE `moderators` (
-    `id`          int       NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
+    `id`          tinyint   NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `accounts_id` int       NOT NULL,
-    `type`        int       NOT NULL DEFAULT 1                 COMMENT '1 = Chat moderator, 2 = Game moderator, 3 = Chat administrator, 4 = Game administrator, 5 = Global moderator, 6 = Global administrator.',
+    `type`        tinyint   NOT NULL DEFAULT 1                 COMMENT '1 = Chat moderator, 2 = Game moderator, 3 = Chat administrator, 4 = Game administrator, 5 = Global moderator, 6 = Global administrator.',
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the account become a moderator.',
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
@@ -3465,7 +3466,7 @@ CREATE INDEX `moderators_accounts_id_idx` ON `moderators` (`accounts_id`);
 --
 CREATE TABLE `moderators_logs` (
     `id`            int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `moderators_id` int          NOT NULL,
+    `moderators_id` tinyint      NOT NULL,
     `date`          timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `type`          varchar(255) NOT NULL DEFAULT '',
     `text`          text         NOT NULL,
@@ -3483,7 +3484,7 @@ CREATE INDEX `moderators_logs_type_idx` ON `moderators_logs` (`type`);
 -- Server news.
 --
 CREATE TABLE `news` (
-    `id`     int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`     smallint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `image`  varchar(255) NOT NULL DEFAULT '',
     `title`  varchar(255) NOT NULL DEFAULT '',
@@ -3503,15 +3504,15 @@ CREATE INDEX `news_date` ON `news` (`date`);
 -- Server NPCs.
 --
 CREATE TABLE `npcs` (
-    `id`                int          NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
+    `id`                tinyint      NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `name`              varchar(255) NOT NULL DEFAULT '-=[Streuner]=-',
     `health`            int          NOT NULL DEFAULT 0,
     `shield`            int          NOT NULL DEFAULT 0,
-    `shield_absorption` decimal(5,2) NOT NULL DEFAULT 0.0,
+    `shield_absorption` tinyint      NOT NULL DEFAULT 0.0,
     `damage`            int          NOT NULL DEFAULT 0,
-    `speed`             int          NOT NULL DEFAULT 0,
-    `gfx`               int          NOT NULL DEFAULT 0,
-    `ai`                int          NOT NULL DEFAULT 1,
+    `speed`             smallint     NOT NULL DEFAULT 0,
+    `gfx`               tinyint      NOT NULL DEFAULT 0,
+    `ai`                tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Server NPCS.';
@@ -3523,93 +3524,93 @@ CREATE INDEX `npcs_gfx` ON `npcs` (`gfx`);
 
 
 INSERT INTO `npcs` (`id`, `name`, `health`, `shield`, `shield_absorption`, `damage`, `speed`, `gfx`, `ai`) VALUES
-(1,  '-=[Streuner]=-',            800,      400,      80.00, 15,     0, 84,  1),
-(2,  '-=[Lordakia]=-',            2000,     2000,     80.00, 90,     0, 71,  2),
-(3,  '-=[Saimon]=-',              6000,     3000,     80.00, 175,    0, 75,  2),
-(4,  '-=[Mordon]=-',              20000,    10000,    80.00, 350,    0, 73,  2),
-(5,  '-=[Devolarium]=-',          100000,   100000,   80.00, 1050,   0, 72,  2),
-(6,  '-=[Sibelon]=-',             200000,   200000,   80.00, 2625,   0, 74,  2),
-(7,  '-=[Sibelonit]=-',           40000,    40000,    80.00, 875,    0, 76,  2),
-(8,  '-=[Lordakium]=-',           300000,   200000,   80.00, 3375,   0, 77,  2),
-(9,  '-=[Kristallin]=-',          50000,    40000,    80.00, 1050,   0, 78,  2),
-(10, '-=[Kristallon]=-',          400000,   300000,   80.00, 4375,   0, 79,  1),
-(11, '-=[Protegit]=-',            50000,    40000,    80.00, 1312,   0, 81,  2),
-(12, '-=[Cubikon]=-',             1600000,  1200000,  80.00, 0,      0, 80,  1),
-(13, '-=[StreuneR]=-',            20000,    10000,    80.00, 425,    0, 85,  1),
-(14, '-=[demaNer]=-',             400000,   300000,   80.00, 3750,   0, 11,  2),
-(15, '..::{Boss Streuner}::..',   3200,     1600,     80.00, 110,    0, 23,  1),
-(16, '..::{Boss Lordakia}::..',   8000,     8000,     80.00, 322,    0, 24,  2),
-(17, '..::{Boss Saimon}::..',     24000,    12000,    80.00, 660,    0, 25,  2),
-(18, '..::{Boss Mordon}::..',     80000,    40000,    80.00, 1400,   0, 31,  2),
-(19, '..::{Boss Devolarium}::..', 400000,   400000,   80.00, 4375,   0, 26,  2),
-(20, '..::{Boss Sibelon}::..',    800000,   800000,   80.00, 10725,  0, 46,  2),
-(21, '..::{Boss Sibelonit}::..',  160000,   160000,   80.00, 3762,   0, 27,  2),
-(22, '..::{Boss Lordakium}::..',  1200000,  800000,   80.00, 13000,  0, 28,  1),
-(23, '..::{Boss Kristallin}::..', 200000,   160000,   80.00, 4150,   0, 29,  2),
-(24, '..::{Boss Kristallon}::..', 1600000,  1200000,  80.00, 17500,  0, 35,  1),
-(25, '..::{Boss StreuneR}::..',   80000,    40000,    80.00, 1750,   0, 34,  1),
-(26, '<-o(Uber Streuner)o->',     6400,     3200,     80.00, 220,    0, 23,  1),
-(27, '<-o(Uber Lordakia)o->',     16000,    16000,    80.00, 644,    0, 24,  2),
-(28, '<-o(Uber Saimon)o->',       48000,    24000,    80.00, 1320,   0, 25,  2),
-(29, '<-o(Uber Mordon)o->',       160000,   80000,    80.00, 2800,   0, 31,  2),
-(30, '<-o(Uber Devolarium)o->',   800000,   800000,   80.00, 8750,   0, 26,  2),
-(31, '<-o(Uber Sibelon)o->',      1600000,  1600000,  80.00, 21550,  0, 46,  2),
-(32, '<-o(Uber Sibelonit)o->',    320000,   320000,   80.00, 7524,   0, 27,  2),
-(33, '<-o(Uber Lordakium)o->',    2400000,  1600000,  80.00, 26000,  0, 28,  1),
-(34, '<-o(Uber Kristallin)o->',   400000,   320000,   80.00, 8300,   0, 42,  2),
-(35, '<-o(Uber Kristallon)o->',   3200000,  2400000,  80.00, 37500,  0, 45,  1),
-(36, '<-o(Uber StreuneR)o->',     160000,   80000,    80.00, 3500,   0, 34,  1),
-(37, '-=[Interceptor]=-',         60000,    40000,    80.00, 425,    0, 111, 2),
-(38, '-=[Barracuda]=-',           180000,   100000,   80.00, 5250,   0, 112, 2),
-(39, '-=[Saboteur]=-',            200000,   150000,   80.00, 3500,   0, 113, 2),
-(40, '-=[Annihilator]=-',         300000,   200000,   80.00, 13000,  0, 114, 2),
-(41, '-=[Battleray]=-',           500000,   400000,   80.00, 8500,   0, 115, 2),
-(42, '-=[Corsair]=-',             200000,   120000,   80.00, 7000,   0, 91,  2),
-(43, '-=[Outcast]=-',             150000,   80000,    80.00, 4400,   0, 92,  2),
-(44, '-=[Marauder]=-',            100000,   60000,    80.00, 4000,   0, 93,  2),
-(45, '-=[Vagrant]=-',             40000,    40000,    80.00, 2200,   0, 94,  2),
-(46, '-=[Convict]=-',             400000,   200000,   80.00, 10750,  0, 95,  2),
-(47, '-=[Hooligan]=-',            250000,   200000,   80.00, 8000,   0, 96,  2),
-(48, '-=[Ravager]=-',             300000,   200000,   80.00, 9500,   0, 97,  2),
-(49, '-=[Century Falcon]=-',      4000000,  3000000,  80.00, 22000,  0, 90,  2),
-(50, '-=[Infernal]=-',            60000,    50000,    80.00, 475,    0, 100, 2),
-(51, '-=[Scorcher]=-',            200000,   200000,   80.00, 1250,   0, 99,  2),
-(52, '-=[Melter]=-',              1000,     0,        80.00, 10,     0, 102, 1),
-(53, '-=[Devourer]=-',            1000,     0,        80.00, 10,     0, 105, 1),
-(54, '-=[Emperor Kristallon]=-',  1000,     0,        80.00, 10,     0, 122, 1),
-(55, '-=[Emperor Lordakium]=-',   1000,     0,        80.00, 10,     0, 123, 1),
-(56, '-=[Emperor Sibelon]=-',     1000,     0,        80.00, 10,     0, 124, 1),
-(57, '<=<Icy>=>',                 100000,   80000,    80.00, 750,    0, 103, 2),
-(58, '-=[Ice Meteoroid]=-',       1600000,  1200000,  80.00, 0,      0, 101, 2),
-(59, '-=[Super Ice Metroid]=-',   3200000,  2400000,  80.00, 0,      0, 33,  1),
-(60, '<==<Kucurbium>==>',         5000000,  5000000,  80.00, 22500,  0, 82,  2),
-(61, '<==<Boss Kucurbium>==>',    20000000, 20000000, 80.00, 55000,  0, 83,  2),
-(62, '-=[Minion]=-',              1000,     0,        80.00, 10,     0, 117, 1),
-(63, '-=[Hitac 2.0]=-',           1000,     0,        80.00, 10,     0, 116, 1),
-(64, '-=[Binarybot]=-',           800000,   1200000,  80.00, 10000,  0, 104, 2),
-(65, '-=[Santabot]=-',            1000,     0,        80.00, 10,     0, 32,  1),
-(66, '-=[Carnivalbot]=-',         1000,     0,        80.00, 20,     0, 48,  1),
-(67, '-=[Refreebot]=-',           1000,     0,        80.00, 20,     0, 89,  1),
-(68, '-=[Lordakia]=-',            2000,     2000,     80.00, 40,     0, 106, 2),
-(69, '-=[Solarburst]=-',          1000,     0,        80.00, 10,     0, 107, 1),
-(70, '-=[Twist]=-',               1000,     0,        80.00, 10,     0, 119, 1),
-(71, '..::{Boss Twist}::..',      1000,     0,        80.00, 10,     0, 118, 1),
-(72, '-=[Turkey]=-',              1000,     0,        80.00, 10,     0, 120, 1),
-(73, '-=[Snowman]=-',             1000,     0,        80.00, 10,     0, 121, 1),
-(74, '-=[Mine Car]=-',            1000,     0,        80.00, 10,     0, 125, 1),
-(75, '-=[Havok]=-',               50000,    50000,    80.00, 700,    0, 108, 2),
-(76, 'UFO',                       3200000,  2400000,  80.00, 122500, 0, 20,  2),
-(77, 'mini UFO',                  400000,   300000,   80.00, 4500,   0, 21,  2),
-(78, '-=[Spaceball]=-',           0,        0,        80.00, 0,      0, 442, 1),
-(79, '-=[Spaceball]=-',           0,        0,        80.00, 0,      0, 443, 1),
-(80, '-=[Spaceball]=-',           0,        0,        80.00, 0,      0, 444, 1);
+(1,  '-=[Streuner]=-',            800,      400,      80, 15,     0, 84,  1),
+(2,  '-=[Lordakia]=-',            2000,     2000,     80, 90,     0, 71,  2),
+(3,  '-=[Saimon]=-',              6000,     3000,     80, 175,    0, 75,  2),
+(4,  '-=[Mordon]=-',              20000,    10000,    80, 350,    0, 73,  2),
+(5,  '-=[Devolarium]=-',          100000,   100000,   80, 1050,   0, 72,  2),
+(6,  '-=[Sibelon]=-',             200000,   200000,   80, 2625,   0, 74,  2),
+(7,  '-=[Sibelonit]=-',           40000,    40000,    80, 875,    0, 76,  2),
+(8,  '-=[Lordakium]=-',           300000,   200000,   80, 3375,   0, 77,  2),
+(9,  '-=[Kristallin]=-',          50000,    40000,    80, 1050,   0, 78,  2),
+(10, '-=[Kristallon]=-',          400000,   300000,   80, 4375,   0, 79,  1),
+(11, '-=[Protegit]=-',            50000,    40000,    80, 1312,   0, 81,  2),
+(12, '-=[Cubikon]=-',             1600000,  1200000,  80, 0,      0, 80,  1),
+(13, '-=[StreuneR]=-',            20000,    10000,    80, 425,    0, 85,  1),
+(14, '-=[demaNer]=-',             400000,   300000,   80, 3750,   0, 11,  2),
+(15, '..::{Boss Streuner}::..',   3200,     1600,     80, 110,    0, 23,  1),
+(16, '..::{Boss Lordakia}::..',   8000,     8000,     80, 322,    0, 24,  2),
+(17, '..::{Boss Saimon}::..',     24000,    12000,    80, 660,    0, 25,  2),
+(18, '..::{Boss Mordon}::..',     80000,    40000,    80, 1400,   0, 31,  2),
+(19, '..::{Boss Devolarium}::..', 400000,   400000,   80, 4375,   0, 26,  2),
+(20, '..::{Boss Sibelon}::..',    800000,   800000,   80, 10725,  0, 46,  2),
+(21, '..::{Boss Sibelonit}::..',  160000,   160000,   80, 3762,   0, 27,  2),
+(22, '..::{Boss Lordakium}::..',  1200000,  800000,   80, 13000,  0, 28,  1),
+(23, '..::{Boss Kristallin}::..', 200000,   160000,   80, 4150,   0, 29,  2),
+(24, '..::{Boss Kristallon}::..', 1600000,  1200000,  80, 17500,  0, 35,  1),
+(25, '..::{Boss StreuneR}::..',   80000,    40000,    80, 1750,   0, 34,  1),
+(26, '<-o(Uber Streuner)o->',     6400,     3200,     80, 220,    0, 23,  1),
+(27, '<-o(Uber Lordakia)o->',     16000,    16000,    80, 644,    0, 24,  2),
+(28, '<-o(Uber Saimon)o->',       48000,    24000,    80, 1320,   0, 25,  2),
+(29, '<-o(Uber Mordon)o->',       160000,   80000,    80, 2800,   0, 31,  2),
+(30, '<-o(Uber Devolarium)o->',   800000,   800000,   80, 8750,   0, 26,  2),
+(31, '<-o(Uber Sibelon)o->',      1600000,  1600000,  80, 21550,  0, 46,  2),
+(32, '<-o(Uber Sibelonit)o->',    320000,   320000,   80, 7524,   0, 27,  2),
+(33, '<-o(Uber Lordakium)o->',    2400000,  1600000,  80, 26000,  0, 28,  1),
+(34, '<-o(Uber Kristallin)o->',   400000,   320000,   80, 8300,   0, 42,  2),
+(35, '<-o(Uber Kristallon)o->',   3200000,  2400000,  80, 37500,  0, 45,  1),
+(36, '<-o(Uber StreuneR)o->',     160000,   80000,    80, 3500,   0, 34,  1),
+(37, '-=[Interceptor]=-',         60000,    40000,    80, 425,    0, 111, 2),
+(38, '-=[Barracuda]=-',           180000,   100000,   80, 5250,   0, 112, 2),
+(39, '-=[Saboteur]=-',            200000,   150000,   80, 3500,   0, 113, 2),
+(40, '-=[Annihilator]=-',         300000,   200000,   80, 13000,  0, 114, 2),
+(41, '-=[Battleray]=-',           500000,   400000,   80, 8500,   0, 115, 2),
+(42, '-=[Corsair]=-',             200000,   120000,   80, 7000,   0, 91,  2),
+(43, '-=[Outcast]=-',             150000,   80000,    80, 4400,   0, 92,  2),
+(44, '-=[Marauder]=-',            100000,   60000,    80, 4000,   0, 93,  2),
+(45, '-=[Vagrant]=-',             40000,    40000,    80, 2200,   0, 94,  2),
+(46, '-=[Convict]=-',             400000,   200000,   80, 10750,  0, 95,  2),
+(47, '-=[Hooligan]=-',            250000,   200000,   80, 8000,   0, 96,  2),
+(48, '-=[Ravager]=-',             300000,   200000,   80, 9500,   0, 97,  2),
+(49, '-=[Century Falcon]=-',      4000000,  3000000,  80, 22000,  0, 90,  2),
+(50, '-=[Infernal]=-',            60000,    50000,    80, 475,    0, 100, 2),
+(51, '-=[Scorcher]=-',            200000,   200000,   80, 1250,   0, 99,  2),
+(52, '-=[Melter]=-',              1000,     0,        80, 10,     0, 102, 1),
+(53, '-=[Devourer]=-',            1000,     0,        80, 10,     0, 105, 1),
+(54, '-=[Emperor Kristallon]=-',  1000,     0,        80, 10,     0, 122, 1),
+(55, '-=[Emperor Lordakium]=-',   1000,     0,        80, 10,     0, 123, 1),
+(56, '-=[Emperor Sibelon]=-',     1000,     0,        80, 10,     0, 124, 1),
+(57, '<=<Icy>=>',                 100000,   80000,    80, 750,    0, 103, 2),
+(58, '-=[Ice Meteoroid]=-',       1600000,  1200000,  80, 0,      0, 101, 2),
+(59, '-=[Super Ice Metroid]=-',   3200000,  2400000,  80, 0,      0, 33,  1),
+(60, '<==<Kucurbium>==>',         5000000,  5000000,  80, 22500,  0, 82,  2),
+(61, '<==<Boss Kucurbium>==>',    20000000, 20000000, 80, 55000,  0, 83,  2),
+(62, '-=[Minion]=-',              1000,     0,        80, 10,     0, 117, 1),
+(63, '-=[Hitac 2.0]=-',           1000,     0,        80, 10,     0, 116, 1),
+(64, '-=[Binarybot]=-',           800000,   1200000,  80, 10000,  0, 104, 2),
+(65, '-=[Santabot]=-',            1000,     0,        80, 10,     0, 32,  1),
+(66, '-=[Carnivalbot]=-',         1000,     0,        80, 20,     0, 48,  1),
+(67, '-=[Refreebot]=-',           1000,     0,        80, 20,     0, 89,  1),
+(68, '-=[Lordakia]=-',            2000,     2000,     80, 40,     0, 106, 2),
+(69, '-=[Solarburst]=-',          1000,     0,        80, 10,     0, 107, 1),
+(70, '-=[Twist]=-',               1000,     0,        80, 10,     0, 119, 1),
+(71, '..::{Boss Twist}::..',      1000,     0,        80, 10,     0, 118, 1),
+(72, '-=[Turkey]=-',              1000,     0,        80, 10,     0, 120, 1),
+(73, '-=[Snowman]=-',             1000,     0,        80, 10,     0, 121, 1),
+(74, '-=[Mine Car]=-',            1000,     0,        80, 10,     0, 125, 1),
+(75, '-=[Havok]=-',               50000,    50000,    80, 700,    0, 108, 2),
+(76, 'UFO',                       3200000,  2400000,  80, 122500, 0, 20,  2),
+(77, 'mini UFO',                  400000,   300000,   80, 4500,   0, 21,  2),
+(78, '-=[Spaceball]=-',           0,        0,        80, 0,      0, 442, 1),
+(79, '-=[Spaceball]=-',           0,        0,        80, 0,      0, 443, 1),
+(80, '-=[Spaceball]=-',           0,        0,        80, 0,      0, 444, 1);
 
 -- Permission's table.
 --
 -- Server permissions.
 --
 CREATE TABLE `permissions` (
-    `id`       int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`       tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`     varchar(255) NOT NULL,
     `category` varchar(255) NOT NULL,
 
@@ -3641,10 +3642,10 @@ INSERT INTO `permissions` (`id`, `name`, `category`) VALUES
 -- In game quests.
 --
 CREATE TABLE `quests` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `levels_id`   int          NOT NULL DEFAULT 1      COMMENT 'Level required to unlock this quest.',
-    `quests_id`   int          NULL     DEFAULT NULL   COMMENT 'Quest required to complete in order to unlock this quest.',
-    `factions_id` int          NULL     DEFAULT NULL   COMMENT 'Faction required to unlock this quest.',
+    `id`          smallint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `levels_id`   tinyint      NOT NULL DEFAULT 1      COMMENT 'Level required to unlock this quest.',
+    `quests_id`   smallint     NULL     DEFAULT NULL   COMMENT 'Quest required to complete in order to unlock this quest.',
+    `factions_id` tinyint      NULL     DEFAULT NULL   COMMENT 'Faction required to unlock this quest.',
     `name`        varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_pk` PRIMARY KEY (`id`)
@@ -3663,8 +3664,8 @@ CREATE INDEX `quests_quests_id` ON `quests` (`quests_id`);
 CREATE TABLE `quests_conditions` (
     `id`                   int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `quests_conditions_id` int          NULL     DEFAULT NULL   COMMENT 'Condition needed to unlock this condition.',
-    `quests_id`            int          NOT NULL,
-    `type`                 int          NOT NULL DEFAULT 1      COMMENT '1 = collect, 2 = destroy, 3 = travel, 4 = one of, 5 = in order, 6 = accomplish before, 7 = on map',
+    `quests_id`            smallint     NOT NULL,
+    `type`                 tinyint      NOT NULL DEFAULT 1      COMMENT '1 = collect, 2 = destroy, 3 = travel, 4 = one of, 5 = in order, 6 = accomplish before, 7 = on map',
     `value`                varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
@@ -3680,10 +3681,10 @@ CREATE INDEX `quests_conditions_quests_id_idx` ON `quests_conditions` (`quests_i
 -- Contains the rank system.
 --
 CREATE TABLE `ranks` (
-    `id`         int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`         tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`       varchar(255) NOT NULL DEFAULT '',
-    `percentaje` decimal(5,2) NOT NULL DEFAULT 0.0,
-    `is_public`  bit(1)       NOT NULL DEFAULT 1,
+    `percentaje` float        NOT NULL DEFAULT 0.0,
+    `is_public`  boolean      NOT NULL DEFAULT 1,
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains the rank system.';
@@ -3710,7 +3711,7 @@ INSERT INTO `ranks` (`id`, `name`, `percentaje`, `is_public`) VALUES
 (17, 'Colonel',           0.50,  1),
 (18, 'Chief Colonel',     0.10,  1),
 (19, 'Basic General',     0.01,  1),
-(20, 'General',           0.00,  1),
+(20, 'General',           0.00,  0),
 (21, 'Administrator',     0.00,  0),
 (22, 'Wanted',            0.00,  0);
 
@@ -3719,11 +3720,10 @@ INSERT INTO `ranks` (`id`, `name`, `percentaje`, `is_public`) VALUES
 -- All rewards available so there's no need of JSON.
 --
 CREATE TABLE `rewards` (
-    `id`          int           NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`    int           NOT NULL                COMMENT 'Item to award.',
+    `id`          smallint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `items_id`    smallint      NOT NULL                COMMENT 'Item to award.',
     `amount`      int           NOT NULL                COMMENT 'Amount of items to award.',
-    `reward`      decimal(4, 3) NOT NULL DEFAULT 1.000  COMMENT 'Percentage of the amount to award (for decimal rewards).',
-    `probability` decimal(5, 2) NOT NULL DEFAULT 100.00 COMMENT 'Probability of awarding this item',
+    `probability` float         NOT NULL DEFAULT 100.00 COMMENT 'Probability of awarding this item',
     `comment`     varchar(255)  NULL     DEFAULT NULL   COMMENT 'Comment of the reward.',
 
     CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
@@ -4877,9 +4877,9 @@ INSERT INTO `rewards`(`id`, `items_id`, `amount`, `probability`, `comment`) VALU
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_collectables` (
-    `id`              int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `collectables_id` int NOT NULL                COMMENT 'Collectable ID.',
-    `rewards_id`      int NOT NULL                COMMENT 'Reward to award.',
+    `id`              smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `collectables_id` tinyint  NOT NULL                COMMENT 'Collectable ID.',
+    `rewards_id`      smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_collectables_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -5740,9 +5740,9 @@ INSERT INTO `rewards_collectables`(`id`, `collectables_id`, `rewards_id`) VALUES
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_galaxygates` (
-    `id`             int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id` int NOT NULL                COMMENT 'GalaxyGate ID.',
-    `rewards_id`     int NOT NULL                COMMENT 'Reward to award.',
+    `id`             tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint  NOT NULL                COMMENT 'GalaxyGate ID.',
+    `rewards_id`     smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -5826,9 +5826,9 @@ INSERT INTO `rewards_galaxygates`(`id`, `galaxygates_id`, `rewards_id`) VALUES
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_npcs` (
-    `id`         int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `npcs_id`    int NOT NULL                COMMENT 'NPC ID.',
-    `rewards_id` int NOT NULL                COMMENT 'Reward to award.',
+    `id`         smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `npcs_id`    tinyint  NOT NULL                COMMENT 'NPC ID.',
+    `rewards_id` smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -6043,9 +6043,9 @@ INSERT INTO `rewards_npcs`(`id`, `npcs_id`, `rewards_id`) VALUES
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_quests` (
-    `id`         int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `quests_id`  int NOT NULL                COMMENT 'Quest ID.',
-    `rewards_id` int NOT NULL                COMMENT 'Reward to award.',
+    `id`         smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `quests_id`  smallint NOT NULL                COMMENT 'Quest ID.',
+    `rewards_id` smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -6060,9 +6060,9 @@ CREATE INDEX `rewards_quests_rewards_id_idx` ON `rewards_quests` (`rewards_id`);
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_ships` (
-    `id`         int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `ships_id`   int NOT NULL                COMMENT 'Ship ID.',
-    `rewards_id` int NOT NULL                COMMENT 'Reward to award.',
+    `id`         tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `ships_id`   tinyint  NOT NULL                COMMENT 'Ship ID.',
+    `rewards_id` smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -6105,9 +6105,9 @@ INSERT INTO `rewards_ships`(`id`, `ships_id`, `rewards_id`) VALUES
 -- Many to many relations table.
 --
 CREATE TABLE `rewards_vouchers` (
-    `id`          int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `vouchers_id` int NOT NULL                COMMENT 'Voucher ID.',
-    `rewards_id`  int NOT NULL                COMMENT 'Reward to award.',
+    `id`          smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `vouchers_id` smallint NOT NULL                COMMENT 'Voucher ID.',
+    `rewards_id`  smallint NOT NULL                COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_vouchers_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations.';
@@ -6140,18 +6140,18 @@ CREATE INDEX `server_logs_level_idx` ON `server_logs` (`level`);
 -- Ships table.
 --
 CREATE TABLE `ships` (
-    `id`         int  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`   int  NOT NULL,
-    `health`     int  NOT NULL DEFAULT 0      COMMENT 'Health points',
-    `speed`      int  NOT NULL DEFAULT 0      COMMENT 'Base speed.',
-    `cargo`      int  NOT NULL DEFAULT 100    COMMENT 'Cargo space.',
-    `batteries`  int  NOT NULL DEFAULT 1000   COMMENT 'Batteries space.',
-    `rockets`    int  NOT NULL DEFAULT 100    COMMENT 'Rockets space.',
-    `lasers`     int  NOT NULL DEFAULT 1      COMMENT 'Laser slots.',
-    `hellstorms` int  NOT NULL DEFAULT 1      COMMENT 'Laser slots.',
-    `generators` int  NOT NULL DEFAULT 1      COMMENT 'Generator slots.',
-    `extras`     int  NOT NULL DEFAULT 1      COMMENT 'Extras slots.',
-    `gfx`        int  NOT NULL DEFAULT 0,
+    `id`         tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `items_id`   smallint NOT NULL,
+    `health`     int      NOT NULL DEFAULT 0      COMMENT 'Health points',
+    `speed`      smallint NOT NULL DEFAULT 0      COMMENT 'Base speed.',
+    `cargo`      smallint NOT NULL DEFAULT 100    COMMENT 'Cargo space.',
+    `batteries`  smallint NOT NULL DEFAULT 1000   COMMENT 'Batteries space.',
+    `rockets`    smallint NOT NULL DEFAULT 100    COMMENT 'Rockets space.',
+    `lasers`     tinyint  NOT NULL DEFAULT 1      COMMENT 'Laser slots.',
+    `hellstorms` tinyint  NOT NULL DEFAULT 1      COMMENT 'Laser slots.',
+    `generators` tinyint  NOT NULL DEFAULT 1      COMMENT 'Generator slots.',
+    `extras`     tinyint  NOT NULL DEFAULT 1      COMMENT 'Extras slots.',
+    `gfx`        tinyint  NOT NULL DEFAULT 0,
 
     CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Ships table.';
@@ -6181,12 +6181,12 @@ INSERT INTO `ships` (`id`, `items_id`, `health`, `speed`, `cargo`, `batteries`, 
 -- Levels a skill can reach.
 --
 CREATE TABLE `skilltree_levels` (
-    `id`                  int        NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `skilltree_skills_id` int        NOT NULL                COMMENT 'The skill.',
-    `levels_id`           int        NOT NULL                COMMENT 'Level to upgrade the skill.',
-    `credits`             int        NOT NULL DEFAULT 10000  COMMENT 'Credits needed to upgrade this skill.',
-    `seprom`              int        NOT NULL DEFAULT 0      COMMENT 'Seprom needed to upgrade this skill.',
-    `points`              tinyint(1) NOT NULL DEFAULT 1      COMMENT 'Research points needed to upgrade this skill.',
+    `id`                  smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `skilltree_skills_id` tinyint  NOT NULL                COMMENT 'The skill.',
+    `levels_id`           tinyint  NOT NULL                COMMENT 'Level to upgrade the skill.',
+    `credits`             int      NOT NULL DEFAULT 10000  COMMENT 'Credits needed to upgrade this skill.',
+    `seprom`              smallint NOT NULL DEFAULT 0      COMMENT 'Seprom needed to upgrade this skill.',
+    `points`              tinyint  NOT NULL DEFAULT 1      COMMENT 'Research points needed to upgrade this skill.',
 
     CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Levels a skill can reach.';
@@ -6198,14 +6198,14 @@ CREATE TABLE `skilltree_levels` (
 -- The available skills.
 --
 CREATE TABLE `skilltree_skills` (
-    `id`           int           NOT NULL AUTO_INCREMENT   COMMENT 'Primary Key.',
-    `name`         varchar(255)  NOT NULL DEFAULT ''       COMMENT 'Skill name.',
-    `description`  text          NOT NULL                  COMMENT 'Skill description.',
-    `category`     tinyint(1)    NOT NULL DEFAULT 1        COMMENT '1 = blue, 2 = purple, 3 = red.',
-    `is_advanced`  bit(1)        NOT NULL DEFAULT 0        COMMENT 'Whether it''s an advanced skill or not.',
-    `bonus_type`   varchar(255)  NOT NULL DEFAULT 'health' COMMENT 'Type of bonus the skill awards.',
-    `bonus_amount` int           NOT NULL DEFAULT 0        COMMENT 'Amount of bonus the skill awards.',
-    `bonus_factor` decimal(5, 2) NOT NULL DEFAULT 2.00     COMMENT 'Factor the bonus increases with each upgrade.',
+    `id`           tinyint      NOT NULL AUTO_INCREMENT   COMMENT 'Primary Key.',
+    `name`         varchar(255) NOT NULL DEFAULT ''       COMMENT 'Skill name.',
+    `description`  text         NOT NULL                  COMMENT 'Skill description.',
+    `category`     tinyint      NOT NULL DEFAULT 1        COMMENT '1 = blue, 2 = purple, 3 = red.',
+    `is_advanced`  boolean      NOT NULL DEFAULT 0        COMMENT 'Whether it''s an advanced skill or not.',
+    `bonus_type`   varchar(255) NOT NULL DEFAULT 'health' COMMENT 'Type of bonus the skill awards.',
+    `bonus_amount` int          NOT NULL DEFAULT 0        COMMENT 'Amount of bonus the skill awards.',
+    `bonus_factor` tinyint      NOT NULL DEFAULT 2        COMMENT 'Factor the bonus increases with each upgrade.',
 
     CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'The available skills.';
@@ -6222,9 +6222,9 @@ CREATE INDEX `skilltree_skills_bonus_type_idx` ON `skilltree_skills` (`bonus_typ
 -- Requisites needed to unlock a skill upgrade.
 --
 CREATE TABLE `skilltree_unlocks` (
-    `id`                           int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `upgrade_skilltree_levels_id`  int NOT NULL                COMMENT 'Skill to upgrade.',
-    `required_skilltree_levels_id` int NOT NULL                COMMENT 'Required skill level to upgrade.',
+    `id`                           smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `upgrade_skilltree_levels_id`  smallint NOT NULL                COMMENT 'Skill to upgrade.',
+    `required_skilltree_levels_id` smallint NOT NULL                COMMENT 'Required skill level to upgrade.',
 
     CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Requisites needed to unlock a skill upgrade.';
@@ -6239,16 +6239,16 @@ CREATE INDEX `skilltree_unlocks_required_skilltree_levels_id_idx` ON `skilltree_
 -- Different skylab modules.
 --
 CREATE TABLE `skylab_modules` (
-    `id`                int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`                tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`              varchar(255) NOT NULL DEFAULT ''     COMMENT 'Module name.',
-    `production_factor` decimal(5,2) NOT NULL DEFAULT 20.00  COMMENT 'Production factor.',
-    `production_base`   int          NOT NULL DEFAULT 1000   COMMENT 'Production base.',
-    `storage_factor`    decimal(5,2) NOT NULL DEFAULT 50.00  COMMENT 'Storage factor.',
-    `storage_base`      int          NOT NULL DEFAULT 20000  COMMENT 'Storage base.',
-    `upgrade_factor`    decimal(5,2) NOT NULL DEFAULT 35.00  COMMENT 'Upgrade costs factor.',
-    `upgrade_base`      int          NOT NULL DEFAULT 5000   COMMENT 'Upgrade costs base.',
-    `energy_factor`     decimal(5,2) NOT NULL DEFAULT 10.00  COMMENT 'Energy consumption factor.',
-    `energy_base`       int          NOT NULL DEFAULT 10     COMMENT 'Energy consumption base.',
+    `production_factor` tinyint      NOT NULL DEFAULT 20     COMMENT 'Production factor.',
+    `production_base`   smallint     NOT NULL DEFAULT 1000   COMMENT 'Production base.',
+    `storage_factor`    smallint     NOT NULL DEFAULT 50     COMMENT 'Storage factor.',
+    `storage_base`      smallint     NOT NULL DEFAULT 20000  COMMENT 'Storage base.',
+    `upgrade_factor`    tinyint      NOT NULL DEFAULT 35     COMMENT 'Upgrade costs factor.',
+    `upgrade_base`      smallint     NOT NULL DEFAULT 5000   COMMENT 'Upgrade costs base.',
+    `energy_factor`     tinyint      NOT NULL DEFAULT 10     COMMENT 'Energy consumption factor.',
+    `energy_base`       tinyint      NOT NULL DEFAULT 10     COMMENT 'Energy consumption base.',
 
     CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Different skylab modules.';
@@ -6258,27 +6258,27 @@ CREATE INDEX `skylab_modules_name_idx` ON `skylab_modules` (`name`);
 -- Initial dump for the `skylab_modules` table.
 
 INSERT INTO `skylab_modules`(`id`, `name`, `production_factor`, `production_base`, `storage_factor`, `storage_base`, `upgrade_factor`, `upgrade_base`, `energy_factor`, `energy_base`) VALUES
-(1,  'Prometium Collector', 20.00, 1000, 50.00, 10000, 35.00, 5000,  10.00, 10),
-(2,  'Endurium Collector',  20.00, 1000, 50.00, 10000, 35.00, 5000,  10.00, 10),
-(3,  'Terbium Collector',   20.00, 1000, 50.00, 10000, 35.00, 5000,  10.00, 10),
-(4,  'Basic Module',        0,     0,    0,     0,     30.00, 10000, 5.00,  20),
-(5,  'Solar Module',        20.00, 150,  20.00, 150,   20.00, 6000,  10.00, 10),
-(6,  'Storage Module',      0,     0,    0,     0,     27.50, 10000, 10.00, 10),
-(7,  'Prometid Refinery',   10.00, 100,  50.00, 1000,  40.00, 10000, 10.00, 15),
-(8,  'Duranium Refinery',   10.00, 100,  50.00, 1000,  40.00, 10000, 10.00, 15),
-(9,  'Xenomit Refinery',    10.00, 100,  50.00, 1000,  40.00, 10000, 10.00, 15),
-(10, 'Promerium Refinery',  7.50,  100,  25.00, 1000,  35.00, 5000,  10.00, 10),
-(11, 'Seprom Refinery',     20.00, 10,   50.00, 100,   35.00, 5000,  10.00, 10);
+(1,  'Prometium Collector', 20, 1000, 50, 10000, 35, 5000,  10, 10),
+(2,  'Endurium Collector',  20, 1000, 50, 10000, 35, 5000,  10, 10),
+(3,  'Terbium Collector',   20, 1000, 50, 10000, 35, 5000,  10, 10),
+(4,  'Basic Module',        0,  0,    0,  0,     30, 10000, 5,  20),
+(5,  'Solar Module',        20, 150,  20, 150,   20, 6000,  10, 10),
+(6,  'Storage Module',      0,  0,    0,  0,     27, 10000, 10, 10),
+(7,  'Prometid Refinery',   10, 100,  50, 1000,  40, 10000, 10, 15),
+(8,  'Duranium Refinery',   10, 100,  50, 1000,  40, 10000, 10, 15),
+(9,  'Xenomit Refinery',    10, 100,  50, 1000,  40, 10000, 10, 15),
+(10, 'Promerium Refinery',  7,  100,  25, 1000,  35, 5000,  10, 10),
+(11, 'Seprom Refinery',     20, 10,   50, 100,   35, 5000,  10, 10);
 
 -- Nanotech Factory costs table.
 --
 -- Item production costs.
 --
 CREATE TABLE `techfactory_costs` (
-    `id`                   int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `techfactory_items_id` int NOT NULL                COMMENT 'Techfactory Item ID.',
-    `items_id`             int NOT NULL                COMMENT 'Cost item ID.',
-    `amount`               int NOT NULL                COMMENT 'Amount of items to build the techfactory item.',
+    `id`                   tinyint  NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `techfactory_items_id` tinyint  NOT NULL                COMMENT 'Techfactory Item ID.',
+    `items_id`             smallint NOT NULL                COMMENT 'Cost item ID.',
+    `amount`               int      NOT NULL                COMMENT 'Amount of items to build the techfactory item.',
 
     CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Item production costs.';
@@ -6305,13 +6305,13 @@ INSERT INTO `techfactory_costs`(`id`, `techfactory_items_id`, `items_id`, `amoun
 -- Drones that can be build in the tech factory.
 --
 CREATE TABLE `techfactory_drones` (
-    `id`          int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`          tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL                COMMENT 'Drone name.',
     `description` text         NOT NULL                COMMENT 'Drone description.',
-    `time`        int          NOT NULL DEFAULT 0      COMMENT 'Seconds it takes to produce the drone.',
-    `parts`       tinyint(3)   NOT NULL DEFAULT 45     COMMENT 'Necessary parts to build the drone.',
+    `time`        tinyint      NOT NULL DEFAULT 0      COMMENT 'Seconds it takes to produce the drone.',
+    `parts`       tinyint      NOT NULL DEFAULT 45     COMMENT 'Necessary parts to build the drone.',
     `price`       int          NOT NULL                COMMENT 'Price for producing the drone.',
-    `factor`      decimal(5,2) NOT NULL DEFAULT 5.00   COMMENT 'Factor the price reduces with each new part.',
+    `factor`      tinyint      NOT NULL DEFAULT 5.00   COMMENT 'Factor the price reduces with each new part.',
 
     CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Drones that can be build in the tech factory.';
@@ -6321,23 +6321,23 @@ CREATE INDEX `techfactory_drones_name_idx` ON `techfactory_drones` (`name`);
 -- Initial dump for the `techfactory_drones` table.
 
 INSERT INTO `techfactory_drones`(`id`, `name`, `description`, `time`, `parts`, `price`, `factor`) VALUES
-(1, 'Apis', 'Every now and then you can find sections of the Apis drone blueprints in pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each part of the blueprints you find reduces the price of instantly building the drone.', 0, 45, 1100000, 5.00),
-(2, 'Zeus', 'Occasionally you can find sections of the Zeus drone blueprints in the pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each piece of the blueprints that you find reduces the price of instantly building the drone.', 0, 45, 1500000, 5.00);
+(1, 'Apis', 'Every now and then you can find sections of the Apis drone blueprints in pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each part of the blueprints you find reduces the price of instantly building the drone.',     0, 45, 1100000, 5),
+(2, 'Zeus', 'Occasionally you can find sections of the Zeus drone blueprints in the pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each piece of the blueprints that you find reduces the price of instantly building the drone.', 0, 45, 1500000, 5);
 
 -- Nanotech Factory items table.
 --
 -- Items that can be build in the tech factory.
 --
 CREATE TABLE `techfactory_items` (
-    `id`                 int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`                 tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`               varchar(255) NOT NULL                COMMENT 'Item name.',
     `description`        text         NOT NULL                COMMENT 'Item description.',
     `effect`             text         NOT NULL                COMMENT 'Effect description.',
-    `duration`           int          NOT NULL DEFAULT 900    COMMENT 'Seconds the effect is active.',
-    `cooldown`           int          NOT NULL DEFAULT 900    COMMENT 'Seconds the effect takes to cooldown.',
+    `duration`           smallint     NOT NULL DEFAULT 900    COMMENT 'Seconds the effect is active.',
+    `cooldown`           smallint     NOT NULL DEFAULT 900    COMMENT 'Seconds the effect takes to cooldown.',
     `time`               int          NOT NULL                COMMENT 'Seconds it takes to produce the item.',
-    `instant_production` int          NOT NULL                COMMENT 'Instant production costs.',
-    `free_production`    int          NOT NULL                COMMENT 'Free production costs.',
+    `free_production`    smallint     NOT NULL                COMMENT 'Free production costs.',
+    `instant_production` smallint     NOT NULL                COMMENT 'Instant production costs.',
 
     CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Items that can be build in the tech factory.';
@@ -6347,22 +6347,22 @@ CREATE INDEX `techfactory_items_name_idx` ON `techfactory_items` (`name`);
 -- Initial dump for the `techfactory_items` table.
 
 INSERT INTO `techfactory_items`(`id`, `name`, `description`, `effect`, `duration`, `cooldown`, `time`, `instant_production`, `free_production`) VALUES
-(1, 'Energy leech', 'The energy leech transforms 10% of the laser damage you cause into HP and transfers it back to your ship.', 'Transforms 10% of laser damage into HP and transfers it back to your ship', 900, 900, 43200, 3125, 6500),
-(2, 'Chain impulse', 'An energy pulse which locks onto one target and then onto up to seven other enemies, thereby causing a chain reaction of shield damage to each and every one.', 'Can inflict up to 10,000 damage on a maximum of 7 targets', 0, 60, 21600, 900, 1800),
-(3, 'Precision targeter', 'The precision targeter is a highly accurate targeting system that increases the hit ratio of normal rockets by 100% for a certain time.', '100% hit ratio', 900, 300, 7200, 250, 500),
-(4, 'Backup shields', 'The backup shields will bring your ship''s shields back up immediately.', '75,000 shield strength', 0, 120, 43200, 1400, 2800),
-(5, 'Battle repair bot', 'When the battle repair bot is activated, it repairs 10,000 HP per second. It can be used even in the toughest battle situations.', '10,000 HP', 10, 120, 43200, 1400, 2800);
+(1, 'Energy leech',       'The energy leech transforms 10% of the laser damage you cause into HP and transfers it back to your ship.',                                                     'Transforms 10% of laser damage into HP and transfers it back to your ship', 900, 900, 43200, 3125, 6500),
+(2, 'Chain impulse',      'An energy pulse which locks onto one target and then onto up to seven other enemies, thereby causing a chain reaction of shield damage to each and every one.', 'Can inflict up to 10,000 damage on a maximum of 7 targets',                 0,   60,  21600, 900,  1800),
+(3, 'Precision targeter', 'The precision targeter is a highly accurate targeting system that increases the hit ratio of normal rockets by 100% for a certain time.',                       '100% hit ratio',                                                            900, 300, 7200,  250,  500),
+(4, 'Backup shields',     'The backup shields will bring your ship''s shields back up immediately.',                                                                                       '75,000 shield strength',                                                    0,   120, 43200, 1400, 2800),
+(5, 'Battle repair bot',  'When the battle repair bot is activated, it repairs 10,000 HP per second. It can be used even in the toughest battle situations.',                              '10,000 HP',                                                                 10,  120, 43200, 1400, 2800);
 
 -- Trade items table.
 --
 -- Trade items.
 --
 CREATE TABLE `trade_items` (
-    `id`          int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `items_id`    int NOT NULL,
-    `accounts_id` int NULL     DEFAULT NULL,
-    `price`       int NOT NULL DEFAULT 0,
-    `category`    int NOT NULL DEFAULT 0,
+    `id`          smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `items_id`    smallint NOT NULL,
+    `accounts_id` int      NULL     DEFAULT NULL,
+    `price`       int      NOT NULL DEFAULT 0,
+    `category`    tinyint  NOT NULL DEFAULT 0,
 
     CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Trade items.';
@@ -6380,7 +6380,7 @@ CREATE INDEX `trade_items_category_idx` ON `trade_items` (`category`);
 CREATE TABLE `users` (
     `id`                      int           NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `date`                    timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the user registered.',
-    `invitation_codes_id`     int           NULL     DEFAULT NULL              COMMENT 'Invitation code used to register',
+    `invitation_codes_id`     smallint      NULL     DEFAULT NULL              COMMENT 'Invitation code used to register',
     `name`                    varchar(255)  NOT NULL DEFAULT ''                COMMENT 'User name.',
     `password`                varchar(40)   NOT NULL DEFAULT ''                COMMENT 'Password hash (sha1).',
     `email`                   varchar(255)  NOT NULL DEFAULT ''                COMMENT 'User email.',
@@ -6402,9 +6402,9 @@ CREATE UNIQUE INDEX `users_email_verification_code_idx` ON `users` (`email_verif
 -- Voucher codes.
 --
 CREATE TABLE `vouchers` (
-    `id`      int         NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`      smallint    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `code`    varchar(32) NOT NULL DEFAULT '',
-    `limit`   int         NOT NULL DEFAULT 1,
+    `limit`   tinyint     NOT NULL DEFAULT 1,
 
     CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Voucher codes.';
@@ -6419,7 +6419,7 @@ CREATE UNIQUE INDEX `vouchers_code_idx` ON `vouchers` (`code`);
 --
 CREATE TABLE `vouchers_redeem_logs` (
     `id`          int        NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `vouchers_id` int        NOT NULL                           COMMENT 'Voucher code ID.',
+    `vouchers_id` smallint   NOT NULL                           COMMENT 'Voucher code ID.',
     `accounts_id` int        NOT NULL                           COMMENT 'Account that redeemed the voucher.',
     `date`        timestamp  NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the voucher was redeemed.',
 

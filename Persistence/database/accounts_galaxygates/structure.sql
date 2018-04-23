@@ -3,14 +3,13 @@
 -- Account's build galaxygates.
 --
 CREATE TABLE `accounts_galaxygates` (
-    `id`             int    NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id` int    NOT NULL,
-    `accounts_id`    int    NOT NULL,
-    `parts`          int    NOT NULL DEFAULT 0      COMMENT 'Collected parts.',
-    `lifes`          int    NOT NULL DEFAULT -1     COMMENT 'Available lives (-1 not build yet)',
-    `wave`           int    NOT NULL DEFAULT -1     COMMENT 'Current wave.',
-    `times`          int    NOT NULL DEFAULT 0      COMMENT 'Times this gate was completed.',
-    `is_completed`   bit(1) NOT NULL DEFAULT 0,
+    `id`             int      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint  NOT NULL,
+    `accounts_id`    int      NOT NULL,
+    `parts`          tinyint  NOT NULL DEFAULT 0      COMMENT 'Collected parts.',
+    `lifes`          tinyint  NOT NULL DEFAULT -1     COMMENT 'Available lives (-1 not build yet)',
+    `wave`           tinyint  NOT NULL DEFAULT -1     COMMENT 'Current wave.',
+    `times`          smallint NOT NULL DEFAULT 0      COMMENT 'Times this gate was completed.',
 
     CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Account''s build galaxygates.';

@@ -4,7 +4,7 @@
 --
 CREATE TABLE `invitation_codes_redeem_logs` (
     `id`                  int           NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `invitation_codes_id` int           NOT NULL                           COMMENT 'Invitation code ID.',
+    `invitation_codes_id` smallint      NOT NULL                           COMMENT 'Invitation code ID.',
     `ip`                  varbinary(16) NOT NULL                           COMMENT 'IP that redeemed the code.',
     `date`                timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the code was redeemed.',
 

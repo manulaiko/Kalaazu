@@ -4,7 +4,7 @@
 --
 CREATE TABLE `vouchers_redeem_logs` (
     `id`          int        NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `vouchers_id` int        NOT NULL                           COMMENT 'Voucher code ID.',
+    `vouchers_id` smallint   NOT NULL                           COMMENT 'Voucher code ID.',
     `accounts_id` int        NOT NULL                           COMMENT 'Account that redeemed the voucher.',
     `date`        timestamp  NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the voucher was redeemed.',
 

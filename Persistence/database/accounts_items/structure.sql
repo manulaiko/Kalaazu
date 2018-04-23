@@ -4,11 +4,11 @@
 --
 CREATE TABLE `accounts_items` (
     `id`          int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `items_id`    int       NOT NULL,
+    `items_id`    smallint  NOT NULL,
     `accounts_id` int       NOT NULL,
-    `levels_id`   int       NOT NULL DEFAULT 1,
+    `levels_id`   tinyint   NOT NULL DEFAULT 1,
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `amount`      int       NOT NULL DEFAULT 1                  COMMENT 'Amount of items bough (for stackable items).',
+    `amount`      bigint    NOT NULL DEFAULT 1                  COMMENT 'Amount of items bough (for stackable items).',
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Items bough by an account.';

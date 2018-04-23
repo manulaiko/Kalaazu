@@ -3,9 +3,9 @@
 -- Many to many relations for galaxygates and galaxygates_spins.
 --
 CREATE TABLE `galaxygates_gg_spins` (
-    `id`                   int NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `galaxygates_id`       int NOT NULL,
-    `galaxygates_spins_id` int NOT NULL,
+    `id`                   smallint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `galaxygates_id`       tinyint  NOT NULL,
+    `galaxygates_spins_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';

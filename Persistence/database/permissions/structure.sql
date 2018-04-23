@@ -3,7 +3,7 @@
 -- Server permissions.
 --
 CREATE TABLE `permissions` (
-    `id`       int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `id`       tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`     varchar(255) NOT NULL,
     `category` varchar(255) NOT NULL,
 
