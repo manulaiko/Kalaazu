@@ -3449,15 +3449,16 @@ INSERT INTO `maps_stations` (`id`, `position`, `maps_id`, `factions_id`) VALUES
 -- Server moderators.
 --
 CREATE TABLE `moderators` (
-    `id`          tinyint   NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
-    `accounts_id` int       NOT NULL,
-    `type`        tinyint   NOT NULL DEFAULT 0                 COMMENT '0 = Chat moderator, 1 = Game moderator, 2 = Chat administrator, 3 = Game administrator, 4 = Global moderator, 5 = Global administrator.',
-    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the account become a moderator.',
+    `id`                  tinyint   NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
+    `accounts_id`         int       NOT NULL,
+    `moderators_roles_id` tinyint   NOT NULL DEFAULT 1                 COMMENT 'Moderator role.',
+    `date`                timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the account become a moderator.',
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Server moderators.';
 
 CREATE INDEX `moderators_accounts_id_idx` ON `moderators` (`accounts_id`);
+CREATE INDEX `moderators_moderators_roles_id_idx` ON `moderators` (`moderators_roles_id`);
 
 -- Initial dump for the `moderators` table.
 
@@ -3479,6 +3480,65 @@ CREATE INDEX `moderators_logs_moderators_id_idx` ON `moderators_logs` (`moderato
 CREATE INDEX `moderators_logs_type_idx` ON `moderators_logs` (`type`);
 
 -- Initial dump for the `moderators_logs` table.
+
+-- Moderator's roles table.
+--
+-- Moderator's permissions roles.
+--
+CREATE TABLE `moderators_roles` (
+    `id`                  tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `name`                varchar(255) NOT NULL,
+    `moderators_roles_id` tinyint      NULL     DEFAULT NULL   COMMENT 'Parent role.',
+    `priority`            tinyint      NOT NULL DEFAULT 1,
+
+    CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Moderator''s roles.';
+
+CREATE INDEX `moderators_roles_name_idx` ON `moderators_roles` (`name`);
+
+-- Initial dump for the `moderators_roles` table.
+
+INSERT INTO `moderators_roles`(`id`, `name`, `moderators_roles_id`, `priority`) VALUES
+(1, 'Chat moderator',       NULL, 0),
+(2, 'Chat administrator',   1,    1),
+(3, 'Game moderator',       NULL, 2),
+(4, 'Game administrator',   3,    3),
+(5, 'Global moderator',     NULL, 4),
+(6, 'Global administrator', 5,    5);
+-- Moderator roles' permissions.
+--
+-- Moderator roles' permissions
+--
+CREATE TABLE `moderators_roles_permissions` (
+    `id`                  tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `moderators_roles_id` tinyint NOT NULL,
+    `permissions_id`      tinyint NOT NULL,
+    `enabled`             boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
+
+    CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
+) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Moderator roles'' permissions';
+
+CREATE INDEX `moderators_roles_permissions_moderators_roles_id_idx` ON `moderators_roles_permissions` (`moderators_roles_id`);
+CREATE INDEX `moderators_roles_permissions_permissions_id_idx` ON `moderators_roles_permissions` (`permissions_id`);
+
+-- Initial dump for the `moderators_roles_permissions` table.
+
+INSERT INTO `moderators_roles_permissions`(`id`, `moderators_roles_id`, `permissions_id`, `enabled`) VALUES
+(1,  1, 14, true),
+(2,  2, 14, null),
+(3,  2, 15, true),
+(4,  3, 16, true),
+(5,  4, 16, null),
+(6,  4, 17, true),
+(7,  5, 14, true),
+(8,  5, 16, true),
+(9,  5, 18, true),
+(10, 6, 14, null),
+(11, 6, 16, null),
+(12, 6, 18, null),
+(13, 6, 14, true),
+(14, 6, 16, true),
+(15, 6, 18, true);
 
 -- News table.
 --
@@ -3636,7 +3696,13 @@ INSERT INTO `permissions` (`id`, `name`, `category`) VALUES
 (10, 'create_news',         'clan'),
 (11, 'manage_modules',      'clan'),
 (12, 'manage_deflector',    'clan'),
-(13, 'build_station',       'clan');
+(13, 'build_station',       'clan'),
+(14, 'chat_kick',           'moderator'),
+(15, 'chat_ban',            'moderator'),
+(16, 'game_kick',           'moderator'),
+(17, 'game_ban',            'moderator'),
+(18, 'read_database',       'moderator'),
+(19, 'write_database',      'moderator');
 
 -- Quest table.
 --
@@ -6965,9 +7031,13 @@ ALTER TABLE `maps_stations` ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY 
 -- Relations for the `moderators` table.
 --
 -- A moderator has an account.
+-- A moderator has a role.
 
 ALTER TABLE `moderators` ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
     REFERENCES `accounts` (`id`);
+    
+ALTER TABLE `moderators` ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
+    REFERENCES `moderators_roles` (`id`);
 
 -- Relations for the `moderators_logs` table.
 --
@@ -6975,6 +7045,19 @@ ALTER TABLE `moderators` ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moder
 
 ALTER TABLE `moderators_logs` ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
     REFERENCES `moderators` (`id`);
+
+-- Relations for the `moderators_roles` table.
+
+-- Relations for the `moderators_roles_permissions` table.
+--
+-- A role permission belongs to a moderator.
+-- A role permission is a permission
+
+ALTER TABLE `moderators_roles_permissions` ADD CONSTRAINT `moderators_roles_permissions_moderators_roles` FOREIGN KEY `moderators_roles_permissions_moderators_roles` (`moderators_roles_id`)
+    REFERENCES `moderators_roles` (`id`);
+
+ALTER TABLE `moderators_roles_permissions` ADD CONSTRAINT `moderators_roles_permissions_permissions` FOREIGN KEY `moderators_roles_permissions_permissions` (`permissions_id`)
+    REFERENCES `permissions` (`id`);
 
 -- Relations for the `news` table.
 
