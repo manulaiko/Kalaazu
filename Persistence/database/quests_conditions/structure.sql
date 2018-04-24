@@ -6,7 +6,7 @@ CREATE TABLE `quests_conditions` (
     `id`                   int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `quests_conditions_id` int          NULL     DEFAULT NULL   COMMENT 'Condition needed to unlock this condition.',
     `quests_id`            smallint     NOT NULL,
-    `type`                 tinyint      NOT NULL DEFAULT 1      COMMENT '1 = collect, 2 = destroy, 3 = travel, 4 = one of, 5 = in order, 6 = accomplish before, 7 = on map',
+    `type`                 tinyint      NOT NULL DEFAULT 0      COMMENT '0 = collect, 1 = destroy, 2 = travel, 3 = one of, 4 = in order, 5 = accomplish before, 6 = on map',
     `value`                varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)

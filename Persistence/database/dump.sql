@@ -65,9 +65,9 @@ CREATE TABLE `accounts_banks_logs` (
     `from_accounts_id`  int       NOT NULL,
     `to_accounts_id`    int       NOT NULL,
     `date`              timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `type`              tinyint   NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
+    `type`              tinyint   NOT NULL DEFAULT 0                  COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
     `amount`            int       NOT NULL DEFAULT 0                  COMMENT 'Amount of currency logged.',
-    `currency`          tinyint   NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
+    `currency`          tinyint   NOT NULL DEFAULT 0                  COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
     `accounts_banks_id` int       NULL     DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
@@ -505,9 +505,9 @@ CREATE TABLE `clans_banks_logs` (
     `from_accounts_id` int       NOT NULL                            COMMENT 'Account that made the log.',
     `to_accounts_id`   int       NOT NULL,
     `date`             timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `type`             tinyint   NOT NULL DEFAULT 1                  COMMENT 'Log type. 1 = withdraw, 2 = deposit, 3 = donation.',
+    `type`             tinyint   NOT NULL DEFAULT 0                  COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
     `amount`           int       NOT NULL DEFAULT 0                  COMMENT 'Amount of currency logged.',
-    `currency`         tinyint   NOT NULL DEFAULT 1                  COMMENT 'Currency of the amount. 1 = credits, 2 = uridium.',
+    `currency`         tinyint   NOT NULL DEFAULT 0                  COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Logs from clan''s bank.';
@@ -626,9 +626,10 @@ CREATE INDEX `clans_diplomacies_to_clans_id_idx` ON `clans_diplomacies` (`to_cla
 CREATE TABLE `clans_messages` (
     `id`               int          NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
     `clans_id`         int          NOT NULL                            COMMENT 'Clan where the message was created',
-    `from_accounts_id` int          NOT NULL                            COMMENT 'Author of the message.',
-    `to_accounts_id`   int          NULL     DEFAULT NULL               COMMENT 'Destination of the message, if null, everyone',
-    `subject`          varchar(255) NOT NULL DEFAULT '',
+    `from_accounts_id` int          NOT NULL,
+    `from_status`      tinyint      NOT NULL DEFAULT 1                  COMMENT '0 = unread, 1 = read, 2 = deleted.',
+    `to_accounts_id`   int          NULL     DEFAULT NULL,
+    `to_status`        tinyint      NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',   `subject`          varchar(255) NOT NULL DEFAULT '',
     `text`             text         NOT NULL,
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -1201,7 +1202,7 @@ CREATE INDEX `galaxygates_gg_waves_galaxygates_waves_id_idx` ON `galaxygates_gg_
 CREATE TABLE `galaxygates_probabilities` (
     `id`             tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `galaxygates_id` tinyint NOT NULL                COMMENT 'The galaxy gate.',
-    `type`           tinyint NOT NULL DEFAULT 0      COMMENT '1 = ammo, 2 = resource, 3 = voucher, 4 = logfile, 5 = part, 6 = special.',
+    `type`           tinyint NOT NULL DEFAULT 0      COMMENT '0 = ammo, 1 = resource, 2 = voucher, 3 = logfile, 4 = part, 5 = special.',
     `probability`    float   NOT NULL DEFAULT 100.00 COMMENT 'Probability of awarding one spin of this type.',
 
     CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
@@ -3149,39 +3150,39 @@ CREATE  UNIQUE INDEX `maps_name_idx` ON `maps` (`name`);
 -- Initial dump for the `maps` table.
 
 INSERT INTO `maps` (`id`, `name`, `factions_id`, `is_pvp`, `is_starter`) VALUES
-('1',  '1-1', '1',  false, true),
-('2',  '1-2', '1',  false, true),
-('3',  '1-3', '1',  false, false),
-('4',  '1-4', '1',  false, false),
-('5',  '2-1', '2',  false, true),
-('6',  '2-2', '2',  false, true),
-('7',  '2-3', '2',  false, false),
-('8',  '2-4', '2',  false, false),
-('9',  '3-1', '3',  false, true),
-('10', '3-2', '3',  false, true),
-('11', '3-3', '3',  false, false),
-('12', '3-4', '3',  false, false),
-('13', '4-1', '1',  true,  false),
-('14', '4-2', '2',  true,  false),
-('15', '4-3', '3',  true,  false),
-('16', '4-4', NULL, true,  false),
-('17', '1-5', '1',  false, false),
-('18', '1-6', '1',  false, false),
-('19', '1-7', '1',  false, false),
-('20', '1-8', '1',  false, false),
-('21', '2-5', '2',  false, false),
-('22', '2-6', '2',  false, false),
-('23', '2-7', '2',  false, false),
-('24', '2-8', '2',  false, false),
-('25', '3-5', '3',  false, false),
-('26', '3-6', '3',  false, false),
-('27', '3-7', '3',  false, false),
-('28', '3-8', '3',  false, false),
-('29', '4-5', NULL, true,  false),
-('52', '???', NULL, false, false),
-('91', '5-1', NULL, false, false),
-('92', '5-2', NULL, false, false),
-('93', '5-3', NULL, false, false);
+(1,  '1-1', 1,    false, true),
+(2,  '1-2', 1,    false, true),
+(3,  '1-3', 1,    false, false),
+(4,  '1-4', 1,    false, false),
+(5,  '2-1', 2,    false, true),
+(6,  '2-2', 2,    false, true),
+(7,  '2-3', 2,    false, false),
+(8,  '2-4', 2,    false, false),
+(9,  '3-1', 3,    false, true),
+(10, '3-2', 3,    false, true),
+(11, '3-3', 3,    false, false),
+(12, '3-4', 3,    false, false),
+(13, '4-1', 1,    true,  false),
+(14, '4-2', 2,    true,  false),
+(15, '4-3', 3,    true,  false),
+(16, '4-4', NULL, true,  false),
+(17, '1-5', 1,    false, false),
+(18, '1-6', 1,    false, false),
+(19, '1-7', 1,    false, false),
+(20, '1-8', 1,    false, false),
+(21, '2-5', 2,    false, false),
+(22, '2-6', 2,    false, false),
+(23, '2-7', 2,    false, false),
+(24, '2-8', 2,    false, false),
+(25, '3-5', 3,    false, false),
+(26, '3-6', 3,    false, false),
+(27, '3-7', 3,    false, false),
+(28, '3-8', 3,    false, false),
+(29, '4-5', NULL, true,  false),
+(52, '???', NULL, false, false),
+(91, '5-1', NULL, false, false),
+(92, '5-2', NULL, false, false),
+(93, '5-3', NULL, false, false);
 
 -- Map's NPCs table.
 --
@@ -3450,7 +3451,7 @@ INSERT INTO `maps_stations` (`id`, `position`, `maps_id`, `factions_id`) VALUES
 CREATE TABLE `moderators` (
     `id`          tinyint   NOT NULL AUTO_INCREMENT            COMMENT 'Primary Key.',
     `accounts_id` int       NOT NULL,
-    `type`        tinyint   NOT NULL DEFAULT 1                 COMMENT '1 = Chat moderator, 2 = Game moderator, 3 = Chat administrator, 4 = Game administrator, 5 = Global moderator, 6 = Global administrator.',
+    `type`        tinyint   NOT NULL DEFAULT 0                 COMMENT '0 = Chat moderator, 1 = Game moderator, 2 = Chat administrator, 3 = Game administrator, 4 = Global moderator, 5 = Global administrator.',
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'Date when the account become a moderator.',
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
@@ -3665,7 +3666,7 @@ CREATE TABLE `quests_conditions` (
     `id`                   int          NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `quests_conditions_id` int          NULL     DEFAULT NULL   COMMENT 'Condition needed to unlock this condition.',
     `quests_id`            smallint     NOT NULL,
-    `type`                 tinyint      NOT NULL DEFAULT 1      COMMENT '1 = collect, 2 = destroy, 3 = travel, 4 = one of, 5 = in order, 6 = accomplish before, 7 = on map',
+    `type`                 tinyint      NOT NULL DEFAULT 0      COMMENT '0 = collect, 1 = destroy, 2 = travel, 3 = one of, 4 = in order, 5 = accomplish before, 6 = on map',
     `value`                varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
@@ -6201,7 +6202,7 @@ CREATE TABLE `skilltree_skills` (
     `id`           tinyint      NOT NULL AUTO_INCREMENT   COMMENT 'Primary Key.',
     `name`         varchar(255) NOT NULL DEFAULT ''       COMMENT 'Skill name.',
     `description`  text         NOT NULL                  COMMENT 'Skill description.',
-    `category`     tinyint      NOT NULL DEFAULT 1        COMMENT '1 = blue, 2 = purple, 3 = red.',
+    `type`         tinyint      NOT NULL DEFAULT 1        COMMENT '0 = blue, 1 = purple, 2 = red.',
     `is_advanced`  boolean      NOT NULL DEFAULT 0        COMMENT 'Whether it''s an advanced skill or not.',
     `bonus_type`   varchar(255) NOT NULL DEFAULT 'health' COMMENT 'Type of bonus the skill awards.',
     `bonus_amount` int          NOT NULL DEFAULT 0        COMMENT 'Amount of bonus the skill awards.',
@@ -6211,7 +6212,7 @@ CREATE TABLE `skilltree_skills` (
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'The available skills.';
 
 CREATE INDEX `skilltree_skills_name_idx` ON `skilltree_skills` (`name`);
-CREATE INDEX `skilltree_skills_category_idx` ON `skilltree_skills` (`category`);
+CREATE INDEX `skilltree_skills_type_idx` ON `skilltree_skills` (`type`);
 CREATE INDEX `skilltree_skills_is_advanced_idx` ON `skilltree_skills` (`is_advanced`);
 CREATE INDEX `skilltree_skills_bonus_type_idx` ON `skilltree_skills` (`bonus_type`);
 
@@ -6362,14 +6363,14 @@ CREATE TABLE `trade_items` (
     `items_id`    smallint NOT NULL,
     `accounts_id` int      NULL     DEFAULT NULL,
     `price`       int      NOT NULL DEFAULT 0,
-    `category`    tinyint  NOT NULL DEFAULT 0,
+    `type`        tinyint  NOT NULL DEFAULT 0      COMMENT '0 = hourly, 1 = daily, 3 = weekly',
 
     CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Trade items.';
 
 CREATE INDEX `trade_items_items_id_idx` ON `trade_items` (`items_id`);
 CREATE INDEX `trade_items_accounts_id_idx` ON `trade_items` (`accounts_id`);
-CREATE INDEX `trade_items_category_idx` ON `trade_items` (`category`);
+CREATE INDEX `trade_items_type_idx` ON `trade_items` (`type`);
 
 -- Initial dump for the `trade_items` table.
 
