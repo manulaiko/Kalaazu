@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_rede
  * com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class InvitationCodesRedeemLogsImpl 
-extends GeneratedInvitationCodesRedeemLogsImpl 
-implements InvitationCodesRedeemLogs {}
+public final class InvitationCodesRedeemLogsImpl
+        extends GeneratedInvitationCodesRedeemLogsImpl
+        implements InvitationCodesRedeemLogs {
+}

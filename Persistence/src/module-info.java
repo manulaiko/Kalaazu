@@ -1,8 +1,8 @@
 module kalaazu.persistence {
     exports com.manulaiko.kalaazu.persistence;
-    exports entities;
 
     requires kalaazu;
+    requires org.mariadb.jdbc;
     requires java.sql;
     requires speedment;
 }

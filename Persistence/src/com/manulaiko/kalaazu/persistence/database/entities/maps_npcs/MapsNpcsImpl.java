@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.maps_npcs.generated.G
  * com.manulaiko.kalaazu.persistence.database.entities.maps_npcs.MapsNpcs}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class MapsNpcsImpl 
-extends GeneratedMapsNpcsImpl 
-implements MapsNpcs {}
+public final class MapsNpcsImpl
+        extends GeneratedMapsNpcsImpl
+        implements MapsNpcs {
+}

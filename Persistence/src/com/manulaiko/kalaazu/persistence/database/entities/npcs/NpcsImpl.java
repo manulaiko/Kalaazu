@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.npcs.generated.Genera
  * com.manulaiko.kalaazu.persistence.database.entities.npcs.Npcs}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class NpcsImpl 
-extends GeneratedNpcsImpl 
-implements Npcs {}
+public final class NpcsImpl
+        extends GeneratedNpcsImpl
+        implements Npcs {
+}

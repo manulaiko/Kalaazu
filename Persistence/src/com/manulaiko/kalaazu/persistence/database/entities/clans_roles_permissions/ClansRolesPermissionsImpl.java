@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissio
  * com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissions.ClansRolesPermissions}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ClansRolesPermissionsImpl 
-extends GeneratedClansRolesPermissionsImpl 
-implements ClansRolesPermissions {}
+public final class ClansRolesPermissionsImpl
+        extends GeneratedClansRolesPermissionsImpl
+        implements ClansRolesPermissions {
+}

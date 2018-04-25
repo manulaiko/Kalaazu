@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.gen
  * com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.SkilltreeUnlocks}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class SkilltreeUnlocksImpl 
-extends GeneratedSkilltreeUnlocksImpl 
-implements SkilltreeUnlocks {}
+public final class SkilltreeUnlocksImpl
+        extends GeneratedSkilltreeUnlocksImpl
+        implements SkilltreeUnlocks {
+}

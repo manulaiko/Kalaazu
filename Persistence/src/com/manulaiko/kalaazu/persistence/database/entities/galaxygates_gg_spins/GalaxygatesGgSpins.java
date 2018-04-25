@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.
  * the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesGgSpins extends GeneratedGalaxygatesGgSpins {}
+public interface GalaxygatesGgSpins extends GeneratedGalaxygatesGgSpins {
+}

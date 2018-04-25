@@ -1,8 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database;
 
-import com.manulaiko.kalaazu.persistence.database.generated.KalaazuApplication;
-import com.manulaiko.kalaazu.persistence.database.generated.KalaazuApplicationBuilder;
-import entities.Entity;
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.speedment.runtime.core.manager.Manager;
 
 import java.util.Optional;
@@ -17,20 +15,10 @@ import java.util.Optional;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class Database {
-    public static void main(final String[] args) {
-        Database db = new Database();
-        db.setDatabase("kalaazu")
-          .setUsername("manulaiko")
-          .setPassword("")
-          .setPort(3306)
-          .setHost("localhost")
-          .initialize();
-    }
-
     /**
      * Speedment db instance.
      */
-    private KalaazuApplication db;
+    public KalaazuApplication db;
 
     /**
      * Server host.
@@ -58,7 +46,7 @@ public class Database {
     private String database;
 
     /**
-     * Initialzes the connection with the database.
+     * Initializes the connection with the database.
      */
     public void initialize() {
         if (this.db != null) {

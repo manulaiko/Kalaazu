@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_history.gene
  * com.manulaiko.kalaazu.persistence.database.entities.accounts_history.AccountsHistory}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsHistoryImpl 
-extends GeneratedAccountsHistoryImpl 
-implements AccountsHistory {}
+public final class AccountsHistoryImpl
+        extends GeneratedAccountsHistoryImpl
+        implements AccountsHistory {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.gene
  * com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.InvitationCodes}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class InvitationCodesImpl 
-extends GeneratedInvitationCodesImpl 
-implements InvitationCodes {}
+public final class InvitationCodesImpl
+        extends GeneratedInvitationCodesImpl
+        implements InvitationCodes {
+}

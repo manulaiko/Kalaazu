@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.news.generated.Genera
  * com.manulaiko.kalaazu.persistence.database.entities.news.News} entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class NewsManagerImpl 
-extends GeneratedNewsManagerImpl 
-implements NewsManager {}
+public final class NewsManagerImpl
+        extends GeneratedNewsManagerImpl
+        implements NewsManager {
+}

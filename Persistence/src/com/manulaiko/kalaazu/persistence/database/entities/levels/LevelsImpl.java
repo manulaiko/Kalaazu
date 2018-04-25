@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.levels.generated.Gene
  * com.manulaiko.kalaazu.persistence.database.entities.levels.Levels}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class LevelsImpl 
-extends GeneratedLevelsImpl 
-implements Levels {}
+public final class LevelsImpl
+        extends GeneratedLevelsImpl
+        implements Levels {
+}

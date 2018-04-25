@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissio
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ClansRolesPermissionsManagerImpl 
-extends GeneratedClansRolesPermissionsManagerImpl 
-implements ClansRolesPermissionsManager {}
+public final class ClansRolesPermissionsManagerImpl
+        extends GeneratedClansRolesPermissionsManagerImpl
+        implements ClansRolesPermissionsManager {
+}

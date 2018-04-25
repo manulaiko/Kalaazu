@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.gen
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class TechfactoryItemsManagerImpl 
-extends GeneratedTechfactoryItemsManagerImpl 
-implements TechfactoryItemsManager {}
+public final class TechfactoryItemsManagerImpl
+        extends GeneratedTechfactoryItemsManagerImpl
+        implements TechfactoryItemsManager {
+}

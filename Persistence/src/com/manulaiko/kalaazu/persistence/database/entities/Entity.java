@@ -4,13 +4,15 @@ package com.manulaiko.kalaazu.persistence.database.entities;
  * Entity interface.
  * =================
  *
- * Groups all entities under a common name.
+ * Base interface for all entities.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface Entity {
     /**
-     * Returns entity ID.
+     * Returns the entity ID.
+     *
+     * @return Entity ID.
      */
     int getId();
 }

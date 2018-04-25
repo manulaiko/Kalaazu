@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_configuratio
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsConfigurationsAccountsItemsManagerImpl 
-extends GeneratedAccountsConfigurationsAccountsItemsManagerImpl 
-implements AccountsConfigurationsAccountsItemsManager {}
+public final class AccountsConfigurationsAccountsItemsManagerImpl
+        extends GeneratedAccountsConfigurationsAccountsItemsManagerImpl
+        implements AccountsConfigurationsAccountsItemsManager {
+}

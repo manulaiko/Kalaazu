@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_techfactorie
  * com.manulaiko.kalaazu.persistence.database.entities.accounts_techfactories.AccountsTechfactories}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsTechfactoriesImpl 
-extends GeneratedAccountsTechfactoriesImpl 
-implements AccountsTechfactories {}
+public final class AccountsTechfactoriesImpl
+        extends GeneratedAccountsTechfactoriesImpl
+        implements AccountsTechfactories {
+}

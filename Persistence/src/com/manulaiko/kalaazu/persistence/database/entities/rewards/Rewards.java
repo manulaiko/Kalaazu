@@ -6,7 +6,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards.generated.Gen
  * The main interface for entities of the {@code rewards}-table in the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Rewards extends GeneratedRewards {}
+public interface Rewards extends GeneratedRewards {
+}

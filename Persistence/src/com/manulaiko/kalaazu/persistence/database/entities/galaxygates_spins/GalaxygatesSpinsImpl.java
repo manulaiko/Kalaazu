@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spins.gen
  * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spins.GalaxygatesSpins}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class GalaxygatesSpinsImpl 
-extends GeneratedGalaxygatesSpinsImpl 
-implements GalaxygatesSpins {}
+public final class GalaxygatesSpinsImpl
+        extends GeneratedGalaxygatesSpinsImpl
+        implements GalaxygatesSpins {
+}

@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.maps_portals.generate
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.maps_portals.MapsPortals} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.maps_portals.MapsPortals}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class MapsPortalsSqlAdapter extends GeneratedMapsPortalsSqlAdapter {}
+public class MapsPortalsSqlAdapter extends GeneratedMapsPortalsSqlAdapter {
+}

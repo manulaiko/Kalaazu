@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.permissions.generated
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class PermissionsSqlAdapter extends GeneratedPermissionsSqlAdapter {}
+public class PermissionsSqlAdapter extends GeneratedPermissionsSqlAdapter {
+}

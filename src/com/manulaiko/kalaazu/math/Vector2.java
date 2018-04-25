@@ -70,10 +70,29 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * @param s String representation.
      */
     public Vector2(String s) {
-        var coordinates = s.split(",");
+        String[] coordinates = s.split(",");
 
         this.x = Float.parseFloat(coordinates[0]);
         this.y = Float.parseFloat(coordinates[1]);
+    }
+
+    /**
+     * Constructs a vector from a packed long.
+     *
+     * @param l Packed long.
+     */
+    public Vector2(Long l) {
+        this.x = (float)(l >> 32);
+        this.y = (float)(l.intValue());
+    }
+
+    /**
+     * Packs the vector in a long.
+     *
+     * @return Vector as long.
+     */
+    public long toLong() {
+        return ((long)this.x << 32) | ((int)this.y & 0xffffffffL);
     }
 
     @Override

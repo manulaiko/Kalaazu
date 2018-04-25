@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.factions.generated.Ge
 
 /**
  * The main interface for the manager of every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.factions.Factions} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.factions.Factions}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface FactionsManager extends GeneratedFactionsManager {}
+public interface FactionsManager extends GeneratedFactionsManager {
+}

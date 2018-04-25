@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.g
  * the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates {}
+public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates {
+}

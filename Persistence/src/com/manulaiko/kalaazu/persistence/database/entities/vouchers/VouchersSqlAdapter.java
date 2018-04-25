@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.Ge
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.vouchers.Vouchers} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.vouchers.Vouchers}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class VouchersSqlAdapter extends GeneratedVouchersSqlAdapter {}
+public class VouchersSqlAdapter extends GeneratedVouchersSqlAdapter {
+}

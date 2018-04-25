@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.moderators.generated.
  * com.manulaiko.kalaazu.persistence.database.entities.moderators.Moderators}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ModeratorsImpl 
-extends GeneratedModeratorsImpl 
-implements Moderators {}
+public final class ModeratorsImpl
+        extends GeneratedModeratorsImpl
+        implements Moderators {
+}

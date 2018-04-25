@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.collectables.generate
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.collectables.Collectables} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.collectables.Collectables}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class CollectablesSqlAdapter extends GeneratedCollectablesSqlAdapter {}
+public class CollectablesSqlAdapter extends GeneratedCollectablesSqlAdapter {
+}

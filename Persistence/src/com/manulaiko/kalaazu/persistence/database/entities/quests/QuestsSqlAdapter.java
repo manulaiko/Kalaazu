@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.quests.generated.Gene
  * com.manulaiko.kalaazu.persistence.database.entities.quests.Quests} entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class QuestsSqlAdapter extends GeneratedQuestsSqlAdapter {}
+public class QuestsSqlAdapter extends GeneratedQuestsSqlAdapter {
+}

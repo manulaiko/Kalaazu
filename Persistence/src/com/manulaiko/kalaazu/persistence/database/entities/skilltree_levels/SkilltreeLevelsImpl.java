@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels.gene
  * com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels.SkilltreeLevels}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class SkilltreeLevelsImpl 
-extends GeneratedSkilltreeLevelsImpl 
-implements SkilltreeLevels {}
+public final class SkilltreeLevelsImpl
+        extends GeneratedSkilltreeLevelsImpl
+        implements SkilltreeLevels {
+}

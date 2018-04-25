@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.ranks.generated.Gener
  * com.manulaiko.kalaazu.persistence.database.entities.ranks.Ranks}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class RanksImpl 
-extends GeneratedRanksImpl 
-implements Ranks {}
+public final class RanksImpl
+        extends GeneratedRanksImpl
+        implements Ranks {
+}

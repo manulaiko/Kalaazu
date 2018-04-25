@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.
  * com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.AccountsClansRoles}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsClansRolesImpl 
-extends GeneratedAccountsClansRolesImpl 
-implements AccountsClansRoles {}
+public final class AccountsClansRolesImpl
+        extends GeneratedAccountsClansRolesImpl
+        implements AccountsClansRoles {
+}

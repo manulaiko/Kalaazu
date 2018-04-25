@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.key_value.generated.G
  * com.manulaiko.kalaazu.persistence.database.entities.key_value.KeyValue}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class KeyValueImpl 
-extends GeneratedKeyValueImpl 
-implements KeyValue {}
+public final class KeyValueImpl
+        extends GeneratedKeyValueImpl
+        implements KeyValue {
+}

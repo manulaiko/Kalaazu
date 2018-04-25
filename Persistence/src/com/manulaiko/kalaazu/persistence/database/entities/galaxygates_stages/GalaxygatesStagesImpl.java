@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.ge
  * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class GalaxygatesStagesImpl 
-extends GeneratedGalaxygatesStagesImpl 
-implements GalaxygatesStages {}
+public final class GalaxygatesStagesImpl
+        extends GeneratedGalaxygatesStagesImpl
+        implements GalaxygatesStages {
+}

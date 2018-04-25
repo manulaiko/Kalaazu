@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated
  * database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ServerLogs extends GeneratedServerLogs {}
+public interface ServerLogs extends GeneratedServerLogs {
+}

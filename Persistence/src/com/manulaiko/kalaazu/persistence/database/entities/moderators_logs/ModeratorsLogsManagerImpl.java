@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.moderators_logs.gener
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ModeratorsLogsManagerImpl 
-extends GeneratedModeratorsLogsManagerImpl 
-implements ModeratorsLogsManager {}
+public final class ModeratorsLogsManagerImpl
+        extends GeneratedModeratorsLogsManagerImpl
+        implements ModeratorsLogsManager {
+}

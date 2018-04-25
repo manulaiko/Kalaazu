@@ -8,7 +8,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_quests.genera
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class RewardsQuestsSqlAdapter extends GeneratedRewardsQuestsSqlAdapter {}
+public class RewardsQuestsSqlAdapter extends GeneratedRewardsQuestsSqlAdapter {
+}

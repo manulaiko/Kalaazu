@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.
  * com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ClansBattlestationsImpl 
-extends GeneratedClansBattlestationsImpl 
-implements ClansBattlestations {}
+public final class ClansBattlestationsImpl
+        extends GeneratedClansBattlestationsImpl
+        implements ClansBattlestations {
+}

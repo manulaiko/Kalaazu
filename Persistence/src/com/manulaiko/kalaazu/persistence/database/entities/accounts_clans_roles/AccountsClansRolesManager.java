@@ -8,7 +8,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsClansRolesManager extends GeneratedAccountsClansRolesManager {}
+public interface AccountsClansRolesManager extends GeneratedAccountsClansRolesManager {
+}

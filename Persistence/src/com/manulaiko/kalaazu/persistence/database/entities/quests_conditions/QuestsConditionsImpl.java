@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.quests_conditions.gen
  * com.manulaiko.kalaazu.persistence.database.entities.quests_conditions.QuestsConditions}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class QuestsConditionsImpl 
-extends GeneratedQuestsConditionsImpl 
-implements QuestsConditions {}
+public final class QuestsConditionsImpl
+        extends GeneratedQuestsConditionsImpl
+        implements QuestsConditions {
+}

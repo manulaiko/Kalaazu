@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.
  * the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs {}
+public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs {
+}

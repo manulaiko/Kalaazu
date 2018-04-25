@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_rankings.gen
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsRankingsManagerImpl 
-extends GeneratedAccountsRankingsManagerImpl 
-implements AccountsRankingsManager {}
+public final class AccountsRankingsManagerImpl
+        extends GeneratedAccountsRankingsManagerImpl
+        implements AccountsRankingsManager {
+}

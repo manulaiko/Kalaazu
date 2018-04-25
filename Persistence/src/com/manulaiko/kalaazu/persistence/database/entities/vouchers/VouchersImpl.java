@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.Ge
  * com.manulaiko.kalaazu.persistence.database.entities.vouchers.Vouchers}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class VouchersImpl 
-extends GeneratedVouchersImpl 
-implements Vouchers {}
+public final class VouchersImpl
+        extends GeneratedVouchersImpl
+        implements Vouchers {
+}

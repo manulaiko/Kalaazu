@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated
  * database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TradeItems extends GeneratedTradeItems {}
+public interface TradeItems extends GeneratedTradeItems {
+}

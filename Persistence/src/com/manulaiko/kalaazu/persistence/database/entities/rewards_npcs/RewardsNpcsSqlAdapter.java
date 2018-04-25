@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.generate
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.RewardsNpcs} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.RewardsNpcs}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class RewardsNpcsSqlAdapter extends GeneratedRewardsNpcsSqlAdapter {}
+public class RewardsNpcsSqlAdapter extends GeneratedRewardsNpcsSqlAdapter {
+}

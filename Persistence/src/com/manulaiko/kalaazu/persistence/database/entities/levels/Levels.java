@@ -6,7 +6,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.levels.generated.Gene
  * The main interface for entities of the {@code levels}-table in the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Levels extends GeneratedLevels {}
+public interface Levels extends GeneratedLevels {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.collectables.generate
  * com.manulaiko.kalaazu.persistence.database.entities.collectables.Collectables}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class CollectablesImpl 
-extends GeneratedCollectablesImpl 
-implements Collectables {}
+public final class CollectablesImpl
+        extends GeneratedCollectablesImpl
+        implements Collectables {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_messages.genera
  * com.manulaiko.kalaazu.persistence.database.entities.clans_messages.ClansMessages}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ClansMessagesImpl 
-extends GeneratedClansMessagesImpl 
-implements ClansMessages {}
+public final class ClansMessagesImpl
+        extends GeneratedClansMessagesImpl
+        implements ClansMessages {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabili
  * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class GalaxygatesProbabilitiesImpl 
-extends GeneratedGalaxygatesProbabilitiesImpl 
-implements GalaxygatesProbabilities {}
+public final class GalaxygatesProbabilitiesImpl
+        extends GeneratedGalaxygatesProbabilitiesImpl
+        implements GalaxygatesProbabilities {
+}

@@ -4,10 +4,12 @@ import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated
 
 /**
  * The SqlAdapter for every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.server_logs.ServerLogs} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.server_logs.ServerLogs}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public class ServerLogsSqlAdapter extends GeneratedServerLogsSqlAdapter {}
+public class ServerLogsSqlAdapter extends GeneratedServerLogsSqlAdapter {
+}

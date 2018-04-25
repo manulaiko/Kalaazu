@@ -4,12 +4,14 @@ import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated
 
 /**
  * The default implementation for the manager of every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.trade_items.TradeItems} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.trade_items.TradeItems}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class TradeItemsManagerImpl 
-extends GeneratedTradeItemsManagerImpl 
-implements TradeItemsManager {}
+public final class TradeItemsManagerImpl
+        extends GeneratedTradeItemsManagerImpl
+        implements TradeItemsManager {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_galaxygates.
  * com.manulaiko.kalaazu.persistence.database.entities.accounts_galaxygates.AccountsGalaxygates}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsGalaxygatesImpl 
-extends GeneratedAccountsGalaxygatesImpl 
-implements AccountsGalaxygates {}
+public final class AccountsGalaxygatesImpl
+        extends GeneratedAccountsGalaxygatesImpl
+        implements AccountsGalaxygates {
+}

@@ -8,9 +8,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.g
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class RewardsGalaxygatesManagerImpl 
-extends GeneratedRewardsGalaxygatesManagerImpl 
-implements RewardsGalaxygatesManager {}
+public final class RewardsGalaxygatesManagerImpl
+        extends GeneratedRewardsGalaxygatesManagerImpl
+        implements RewardsGalaxygatesManager {
+}

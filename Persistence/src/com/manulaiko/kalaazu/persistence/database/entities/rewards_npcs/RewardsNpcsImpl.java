@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.generate
  * com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.RewardsNpcs}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class RewardsNpcsImpl 
-extends GeneratedRewardsNpcsImpl 
-implements RewardsNpcs {}
+public final class RewardsNpcsImpl
+        extends GeneratedRewardsNpcsImpl
+        implements RewardsNpcs {
+}

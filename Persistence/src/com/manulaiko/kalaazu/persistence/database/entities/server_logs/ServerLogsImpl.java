@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated
  * com.manulaiko.kalaazu.persistence.database.entities.server_logs.ServerLogs}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ServerLogsImpl 
-extends GeneratedServerLogsImpl 
-implements ServerLogs {}
+public final class ServerLogsImpl
+        extends GeneratedServerLogsImpl
+        implements ServerLogs {
+}

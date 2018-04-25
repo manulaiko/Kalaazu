@@ -8,7 +8,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.ge
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TechfactoryDronesManager extends GeneratedTechfactoryDronesManager {}
+public interface TechfactoryDronesManager extends GeneratedTechfactoryDronesManager {
+}

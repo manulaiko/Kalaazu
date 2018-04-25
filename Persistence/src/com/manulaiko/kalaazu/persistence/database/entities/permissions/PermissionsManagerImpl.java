@@ -4,12 +4,14 @@ import com.manulaiko.kalaazu.persistence.database.entities.permissions.generated
 
 /**
  * The default implementation for the manager of every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions} entity.
+ * com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions}
+ * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class PermissionsManagerImpl 
-extends GeneratedPermissionsManagerImpl 
-implements PermissionsManager {}
+public final class PermissionsManagerImpl
+        extends GeneratedPermissionsManagerImpl
+        implements PermissionsManager {
+}

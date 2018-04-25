@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_ranking.generat
  * com.manulaiko.kalaazu.persistence.database.entities.clans_ranking.ClansRanking}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class ClansRankingImpl 
-extends GeneratedClansRankingImpl 
-implements ClansRanking {}
+public final class ClansRankingImpl
+        extends GeneratedClansRankingImpl
+        implements ClansRanking {
+}

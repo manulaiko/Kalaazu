@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_messages.gen
  * com.manulaiko.kalaazu.persistence.database.entities.accounts_messages.AccountsMessages}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class AccountsMessagesImpl 
-extends GeneratedAccountsMessagesImpl 
-implements AccountsMessages {}
+public final class AccountsMessagesImpl
+        extends GeneratedAccountsMessagesImpl
+        implements AccountsMessages {
+}

@@ -7,7 +7,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_rede
  * invitation_codes_redeem_logs}-table in the database.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface InvitationCodesRedeemLogs extends GeneratedInvitationCodesRedeemLogs {}
+public interface InvitationCodesRedeemLogs extends GeneratedInvitationCodesRedeemLogs {
+}

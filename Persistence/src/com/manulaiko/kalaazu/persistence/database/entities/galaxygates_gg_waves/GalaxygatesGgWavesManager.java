@@ -8,7 +8,8 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesGgWavesManager extends GeneratedGalaxygatesGgWavesManager {}
+public interface GalaxygatesGgWavesManager extends GeneratedGalaxygatesGgWavesManager {
+}

@@ -7,9 +7,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.gen
  * com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.TechfactoryItems}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
- * 
- * @author manulaiko
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
  */
-public final class TechfactoryItemsImpl 
-extends GeneratedTechfactoryItemsImpl 
-implements TechfactoryItems {}
+public final class TechfactoryItemsImpl
+        extends GeneratedTechfactoryItemsImpl
+        implements TechfactoryItems {
+}
