@@ -7,7 +7,7 @@ CREATE TABLE `accounts_ships` (
     `accounts_id` int         NOT NULL,
     `ships_id`    tinyint     NOT NULL,
     `maps_id`     tinyint     NOT NULL,
-    `position`    varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
+    `position`    bigint      NOT NULL DEFAULT 0      COMMENT 'Position on map.',
     `health`      int         NOT NULL DEFAULT 0      COMMENT 'Health points.',
     `nanohull`    int         NOT NULL DEFAULT 0      COMMENT 'Nanohull points.',
     `gfx`         tinyint     NOT NULL DEFAULT 0      COMMENT 'Ship graphic (for WIZ-X).',

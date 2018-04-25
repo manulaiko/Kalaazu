@@ -6,7 +6,7 @@ CREATE TABLE `clans_roles_permissions` (
     `id`             int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `clans_roles_id` int     NOT NULL,
     `permissions_id` tinyint NOT NULL,
-    `enabled`        boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
+    `is_enabled`     boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan roles'' permissions';

@@ -7,11 +7,11 @@ CREATE TABLE `factions` (
     `name`               varchar(255) NOT NULL DEFAULT '',
     `tag`                varchar(3)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `description`        text         NOT NULL,
-    `is_public`          boolean      NOT NULL DEFAULT 1,
+    `is_public`          boolean      NOT NULL DEFAULT true,
     `low_maps_id`        tinyint      NOT NULL,
-    `low_maps_position`  varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
+    `low_maps_position`  bigint       NOT NULL DEFAULT 0      COMMENT 'Starting position on map.',
     `high_maps_id`       tinyint      NOT NULL,
-    `high_maps_position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
+    `high_maps_position` bigint       NOT NULL DEFAULT 0      COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s factions.';

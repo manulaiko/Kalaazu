@@ -7,7 +7,7 @@ CREATE TABLE `skilltree_skills` (
     `name`         varchar(255) NOT NULL DEFAULT ''       COMMENT 'Skill name.',
     `description`  text         NOT NULL                  COMMENT 'Skill description.',
     `type`         tinyint      NOT NULL DEFAULT 1        COMMENT '0 = blue, 1 = purple, 2 = red.',
-    `is_advanced`  boolean      NOT NULL DEFAULT 0        COMMENT 'Whether it''s an advanced skill or not.',
+    `is_advanced`  boolean      NOT NULL DEFAULT false    COMMENT 'Whether it''s an advanced skill or not.',
     `bonus_type`   varchar(255) NOT NULL DEFAULT 'health' COMMENT 'Type of bonus the skill awards.',
     `bonus_amount` int          NOT NULL DEFAULT 0        COMMENT 'Amount of bonus the skill awards.',
     `bonus_factor` tinyint      NOT NULL DEFAULT 2        COMMENT 'Factor the bonus increases with each upgrade.',

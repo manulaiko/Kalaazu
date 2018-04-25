@@ -1,6 +1,6 @@
 -- Initial dump for the `moderators_roles_permissions` table.
 
-INSERT INTO `moderators_roles_permissions`(`id`, `moderators_roles_id`, `permissions_id`, `enabled`) VALUES
+INSERT INTO `moderators_roles_permissions`(`id`, `moderators_roles_id`, `permissions_id`, `is_enabled`) VALUES
 (1,  1, 14, true),
 (2,  2, 14, null),
 (3,  2, 15, true),

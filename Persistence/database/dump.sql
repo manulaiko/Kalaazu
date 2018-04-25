@@ -304,11 +304,11 @@ CREATE  UNIQUE INDEX `accounts_pets_accounts_id_idx` ON `accounts_pets` (`accoun
 -- Quest status of the account.
 --
 CREATE TABLE `accounts_quests` (
-    `id`          int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
-    `quests_id`   smallint  NOT NULL,
-    `accounts_id` int       NOT NULL,
-    `completed`   boolean   NOT NULL DEFAULT 0                  COMMENT 'Whether the quest has been completed or not.',
-    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Date when the quest was accepted/completed.',
+    `id`           int       NOT NULL AUTO_INCREMENT             COMMENT 'Primary Key.',
+    `quests_id`    smallint  NOT NULL,
+    `accounts_id`  int       NOT NULL,
+    `is_completed` boolean   NOT NULL DEFAULT false              COMMENT 'Whether the quest has been completed or not.',
+    `date`         timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP  COMMENT 'Date when the quest was accepted/completed.',
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Quest status of the account.';
@@ -348,7 +348,7 @@ CREATE TABLE `accounts_ships` (
     `accounts_id` int         NOT NULL,
     `ships_id`    tinyint     NOT NULL,
     `maps_id`     tinyint     NOT NULL,
-    `position`    varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
+    `position`    bigint      NOT NULL DEFAULT 0      COMMENT 'Position on map.',
     `health`      int         NOT NULL DEFAULT 0      COMMENT 'Health points.',
     `nanohull`    int         NOT NULL DEFAULT 0      COMMENT 'Nanohull points.',
     `gfx`         tinyint     NOT NULL DEFAULT 0      COMMENT 'Ship graphic (for WIZ-X).',
@@ -527,7 +527,7 @@ CREATE TABLE `clans_battlestations` (
     `clans_id` int          NULL     DEFAULT NULL   COMMENT 'Owner of the CBS.',
     `maps_id`  tinyint      NOT NULL                COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
-    `position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
+    `position` bigint       NOT NULL DEFAULT 0      COMMENT 'Position on map.',
     `date`     timestamp    NULL     DEFAULT NULL   COMMENT 'Date when the CBS was build.',
 
     CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)
@@ -539,26 +539,26 @@ CREATE INDEX `clans_battlestations_maps_id_idx` ON `clans_battlestations` (`maps
 -- Initial dump for the `clans_battlestations` table.
 
 INSERT INTO `clans_battlestations`(`id`, `name`, `maps_id`, `position`) VALUES
-(1,  'Aries',   3,  point(10500, 2500)),
-(2,  'Balzar',  4,  point(4400, 9000)),
-(3,  'Fornax',  7,  point(10500, 2500)),
-(4,  'Gemini',  8,  point(16200, 8500)),
-(5,  'Keppler', 11, point(10500, 2500)),
-(6,  'Lynx',    12, point(4400, 9000)),
-(7,  'Volan',   13, point(10000, 5500)),
-(8,  'Wican',   14, point(11500, 6000)),
-(9,  'Xenitor', 15, point(8750, 6000)),
-(10, 'Yukian',  16, point(9000, 6000)),
-(11, 'Cetus',   17, point(17200, 2500)),
-(12, 'Equlus',  18, point(10000, 7200)),
-(13, 'Draco',   19, point(10000, 6200)),
-(14, 'Hydra',   21, point(10500, 9000)),
-(15, 'Indus',   22, point(8800, 6400)),
-(16, 'Julius',  23, point(10500, 5800)),
-(17, 'Mensa',   25, point(10700, 9000)),
-(18, 'Nashira', 26, point(9800, 8200)),
-(19, 'Orion',   27, point(10500, 4600)),
-(20, 'Zerpan',  29, point(12000, 5600));
+(1,  'Aries',   3,  45097156610500),
+(2,  'Balzar',  4,  18897856111400),
+(3,  'Fornax',  7,  45097156610500),
+(4,  'Gemini',  8,  69578470203700),
+(5,  'Keppler', 11, 45097156610500),
+(6,  'Lynx',    12, 18897856111400),
+(7,  'Volan',   13, 42949672965500),
+(8,  'Wican',   14, 49392123910000),
+(9,  'Xenitor', 15, 37580963846000),
+(10, 'Yukian',  16, 38654705670000),
+(11, 'Cetus',   17, 73873437493700),
+(12, 'Equlus',  18, 42949672967200),
+(13, 'Draco',   19, 42949672966200),
+(14, 'Hydra',   21, 45097156617000),
+(15, 'Indus',   22, 37795712211200),
+(16, 'Julius',  23, 45097156613800),
+(17, 'Mensa',   25, 45956150076200),
+(18, 'Nashira', 26, 42090679509000),
+(19, 'Orion',   27, 45097156612600),
+(20, 'Zerpan',  29, 51539607557600);
 
 -- Clan battlestations' items table.
 --
@@ -629,7 +629,8 @@ CREATE TABLE `clans_messages` (
     `from_accounts_id` int          NOT NULL,
     `from_status`      tinyint      NOT NULL DEFAULT 1                  COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `to_accounts_id`   int          NULL     DEFAULT NULL,
-    `to_status`        tinyint      NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',   `subject`          varchar(255) NOT NULL DEFAULT '',
+    `to_status`        tinyint      NOT NULL DEFAULT 0                  COMMENT '0 = unread, 1 = read, 2 = unread.',
+    `title`            varchar(255) NOT NULL DEFAULT '',
     `text`             text         NOT NULL,
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
@@ -705,7 +706,7 @@ CREATE TABLE `clans_roles_permissions` (
     `id`             int     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `clans_roles_id` int     NOT NULL,
     `permissions_id` tinyint NOT NULL,
-    `enabled`        boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
+    `is_enabled`     boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Clan roles'' permissions';
@@ -869,11 +870,11 @@ CREATE TABLE `factions` (
     `name`               varchar(255) NOT NULL DEFAULT '',
     `tag`                varchar(3)   NOT NULL DEFAULT ''     COMMENT 'Name abbreviation.',
     `description`        text         NOT NULL,
-    `is_public`          boolean      NOT NULL DEFAULT 1,
+    `is_public`          boolean      NOT NULL DEFAULT true,
     `low_maps_id`        tinyint      NOT NULL,
-    `low_maps_position`  varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
+    `low_maps_position`  bigint       NOT NULL DEFAULT 0      COMMENT 'Starting position on map.',
     `high_maps_id`       tinyint      NOT NULL,
-    `high_maps_position` varchar(15)  NOT NULL DEFAULT '0,0'  COMMENT 'Starting position on map.',
+    `high_maps_position` bigint       NOT NULL DEFAULT 0      COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s factions.';
@@ -884,10 +885,10 @@ CREATE UNIQUE INDEX `factions_tag_idx` ON `factions` (`tag`);
 -- Initial dump for the `factions` table.
 --
 INSERT INTO `factions` (`id`, `name`, `tag`, `is_public`, `description`, `low_maps_id`, `low_maps_position`, `high_maps_id`, `high_maps_position`) VALUES
-(1, 'Mars Mining Operations',        'mmo', 1, 'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!',                                            1,  '1000,1000',  20, '1000,6000'),
-(2, 'Earth Industries Corporations', 'eic', 1, 'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!',                            5,  '19000,1000', 24, '10700,1000'),
-(3, 'Venus Resources Unlimited',     'vru', 1, 'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!', 9,  '19000,1300', 28, '19000,6000'),
-(4, 'Admins and Mods',               'aam', 0, 'Secret faction for Admins and Mods >:)',                                                                                                                                                                                                                                                                                                                92, '1000,1000',  92, '1000,1000');
+(1, 'Mars Mining Operations',        'mmo', 1, 'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!',                                            1,  4294967297000,  20, 4294967302000),
+(2, 'Earth Industries Corporations', 'eic', 1, 'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!',                            5,  81604378625000, 24, 45956150068200),
+(3, 'Venus Resources Unlimited',     'vru', 1, 'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!', 9,  81604378625300, 28, 81604378630000),
+(4, 'Admins and Mods',               'aam', 0, 'Secret faction for Admins and Mods >:)',                                                                                                                                                                                                                                                                                                                92, 4294967297000,  92, 4294967297000);
 
 -- GalaxyGates table.
 --
@@ -2435,9 +2436,9 @@ CREATE TABLE `items` (
     `description` text         NOT NULL                COMMENT 'Shop description.',
     `price`       int          NOT NULL DEFAULT 0,
     `type`        varchar(255) NOT NULL DEFAULT '',
-    `is_elite`    boolean      NOT NULL DEFAULT 0,
-    `is_event`    boolean      NOT NULL DEFAULT 0      COMMENT 'Event item.',
-    `is_buyable`  boolean      NOT NULL DEFAULT 1      COMMENT 'Buyable in shop',
+    `is_elite`    boolean      NOT NULL DEFAULT false,
+    `is_event`    boolean      NOT NULL DEFAULT false  COMMENT 'Event item.',
+    `is_buyable`  boolean      NOT NULL DEFAULT true   COMMENT 'Buyable in shop',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s items.';
@@ -3138,9 +3139,9 @@ CREATE TABLE `maps` (
     `id`           tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`         varchar(255) NOT NULL DEFAULT ''     COMMENT 'Map name.',
     `factions_id`  tinyint      NULL     DEFAULT NULL,
-    `is_pvp`       boolean      NOT NULL DEFAULT 0,
-    `is_starter`   boolean      NOT NULL DEFAULT 0,
-    `limits`       varchar(15)  NOT NULL DEFAULT '20800,12800',
+    `is_pvp`       boolean      NOT NULL DEFAULT false,
+    `is_starter`   boolean      NOT NULL DEFAULT false,
+    `limits`       bigint       NOT NULL DEFAULT 89335319769600,
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'In game maps.';
@@ -3149,40 +3150,40 @@ CREATE  UNIQUE INDEX `maps_name_idx` ON `maps` (`name`);
 
 -- Initial dump for the `maps` table.
 
-INSERT INTO `maps` (`id`, `name`, `factions_id`, `is_pvp`, `is_starter`) VALUES
-(1,  '1-1', 1,    false, true),
-(2,  '1-2', 1,    false, true),
-(3,  '1-3', 1,    false, false),
-(4,  '1-4', 1,    false, false),
-(5,  '2-1', 2,    false, true),
-(6,  '2-2', 2,    false, true),
-(7,  '2-3', 2,    false, false),
-(8,  '2-4', 2,    false, false),
-(9,  '3-1', 3,    false, true),
-(10, '3-2', 3,    false, true),
-(11, '3-3', 3,    false, false),
-(12, '3-4', 3,    false, false),
-(13, '4-1', 1,    true,  false),
-(14, '4-2', 2,    true,  false),
-(15, '4-3', 3,    true,  false),
-(16, '4-4', NULL, true,  false),
-(17, '1-5', 1,    false, false),
-(18, '1-6', 1,    false, false),
-(19, '1-7', 1,    false, false),
-(20, '1-8', 1,    false, false),
-(21, '2-5', 2,    false, false),
-(22, '2-6', 2,    false, false),
-(23, '2-7', 2,    false, false),
-(24, '2-8', 2,    false, false),
-(25, '3-5', 3,    false, false),
-(26, '3-6', 3,    false, false),
-(27, '3-7', 3,    false, false),
-(28, '3-8', 3,    false, false),
-(29, '4-5', NULL, true,  false),
-(52, '???', NULL, false, false),
-(91, '5-1', NULL, false, false),
-(92, '5-2', NULL, false, false),
-(93, '5-3', NULL, false, false);
+INSERT INTO `maps` (`id`, `name`, `factions_id`, `is_pvp`, `is_starter`, `limits`) VALUES
+(2,  '1-2', 1,    false, true,  89335319769600),
+(1,  '1-1', 1,    false, true,  89335319769600),
+(3,  '1-3', 1,    false, false, 89335319769600),
+(4,  '1-4', 1,    false, false, 89335319769600),
+(5,  '2-1', 2,    false, true,  89335319769600),
+(6,  '2-2', 2,    false, true,  89335319769600),
+(7,  '2-3', 2,    false, false, 89335319769600),
+(8,  '2-4', 2,    false, false, 89335319769600),
+(9,  '3-1', 3,    false, true,  89335319769600),
+(10, '3-2', 3,    false, true,  89335319769600),
+(11, '3-3', 3,    false, false, 89335319769600),
+(12, '3-4', 3,    false, false, 89335319769600),
+(13, '4-1', 1,    true,  false, 89335319769600),
+(14, '4-2', 2,    true,  false, 89335319769600),
+(15, '4-3', 3,    true,  false, 89335319769600),
+(16, '4-4', NULL, true,  false, 178670639539200),
+(17, '1-5', 1,    false, false, 89335319769600),
+(18, '1-6', 1,    false, false, 89335319769600),
+(19, '1-7', 1,    false, false, 89335319769600),
+(20, '1-8', 1,    false, false, 89335319769600),
+(21, '2-5', 2,    false, false, 89335319769600),
+(22, '2-6', 2,    false, false, 89335319769600),
+(23, '2-7', 2,    false, false, 89335319769600),
+(24, '2-8', 2,    false, false, 89335319769600),
+(25, '3-5', 3,    false, false, 89335319769600),
+(26, '3-6', 3,    false, false, 89335319769600),
+(27, '3-7', 3,    false, false, 89335319769600),
+(28, '3-8', 3,    false, false, 89335319769600),
+(29, '4-5', NULL, true,  false, 178670639539200),
+(52, '???', NULL, false, false, 89335319769600),
+(91, '5-1', NULL, false, false, 178670639539200),
+(92, '5-2', NULL, false, false, 89335319769600),
+(93, '5-3', NULL, false, false, 178670639539200);
 
 -- Map's NPCs table.
 --
@@ -3291,15 +3292,15 @@ INSERT INTO `maps_npcs`(`id`, `maps_id`, `npcs_id`, `amount`) VALUES
 -- Portals on map.
 --
 CREATE TABLE `maps_portals` (
-    `id`              tinyint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `levels_id`       tinyint     NOT NULL DEFAULT 1,
-    `maps_id`         tinyint     NOT NULL,
-    `position`        varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
-    `target_maps_id`  tinyint     NOT NULL,
-    `target_position` varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position where the account will be spawned after using the portal.',
-    `is_visible`      boolean     NOT NULL DEFAULT 1,
-    `is_working`      boolean     NOT NULL DEFAULT 1,
-    `gfx`             tinyint     NOT NULL DEFAULT 1,
+    `id`              tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `levels_id`       tinyint NOT NULL DEFAULT 1,
+    `maps_id`         tinyint NOT NULL,
+    `position`        bigint  NOT NULL DEFAULT 0      COMMENT 'Position on map.',
+    `target_maps_id`  tinyint NOT NULL,
+    `target_position` bigint  NOT NULL DEFAULT 0      COMMENT 'Target position.',
+    `is_visible`      boolean NOT NULL DEFAULT true,
+    `is_working`      boolean NOT NULL DEFAULT true,
+    `gfx`             tinyint NOT NULL DEFAULT 1,
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Portals on map.';
@@ -3310,140 +3311,138 @@ CREATE INDEX `maps_portals_target_maps_id_idx` ON `maps_portals` (`target_maps_i
 
 -- Initial dump for the `maps_portals` table.
 
-INSERT INTO `maps_portals` (`maps_id`, `position`, `target_position`, `target_maps_id`, `levels_id`) VALUES
-(1,  '18500,11500', '2000,2000',   2,  1),
-(2,  '2000,2000',   '18500,11500', 1,  1),
-(2,  '18500,11500', '2000,2000',   4,  1),
-(2,  '18500,2000',  '2000,11500',  3,  1),
-(3,  '2000,11500',  '18500,2000',  2,  1),
-(3,  '18500,11500', '18500,2000',  4,  1),
-(3,  '18500,2000',  '2000,11500',  7,  1),
-(4,  '2000,2000',   '18500,11500', 2,  1),
-(4,  '18500,2000',  '18500,11500', 3,  1),
-(4,  '18500,11500', '2000,2000',   12, 1),
-(4,  '19500,7000',  '2000,7000',   13, 1),
-(5,  '2000,11500',  '18500,2000',  6,  1),
-(6,  '18500,11500', '2000,2000',   8,  1),
-(6,  '18500,2000',  '2000,11500',  5,  1),
-(6,  '2000,11500',  '18500,2000',  7,  1),
-(7,  '18500,2000',  '2000,11500',  6,  1),
-(7,  '2000,11500',  '18500,2000',  3,  1),
-(7,  '18500,11500', '18500,2000',  8,  1),
-(8,  '2000,2000',   '18500,11500', 6,  1),
-(8,  '2000,11500',  '2000,2000',   11, 1),
-(8,  '10000,12000', '10700,1200',  14, 1),
-(8,  '18500,2000',  '18500,11500', 7,  1),
-(9,  '2000,2000',   '18500,11500', 10, 1),
-(10, '18500,11500', '2000,2000',   9,  1),
-(10, '18500,2000',  '18500,11500', 11, 1),
-(10, '2000,2000',   '18500,11500', 12, 1),
-(11, '18500,11500', '18500,2000',  10, 1),
-(11, '2000,2000',   '2000,11500',  8,  1),
-(11, '2000,11500',  '18500,2000',  12, 1),
-(12, '10000,1200',  '19500,7000',  15, 1),
-(12, '18500,2000',  '2000,11500',  11, 1),
-(12, '2000,2000',   '18500,11500', 4,  1),
-(12, '18500,11500', '2000,7000',   10, 1),
-(13, '2000,7000',   '19500,7000',  4,  1),
-(13, '10700,7000',  '9500,7500',   16, 1),
-(13, '18500,2000',  '2000,11500',  14, 1),
-(13, '18500,11500', '2000,11500',  15, 1),
-(14, '2000,11500',  '18500,2000',  13, 1),
-(14, '18500,11500', '2000,2000',   15, 1),
-(14, '10700,7000',  '10700,5500',  16, 1),
-(14, '10700,1200',  '10000,12000', 8,  1),
-(15, '10700,7000',  '11900,7500',  16, 1),
-(15, '19500,7000',  '10000,1200',  15, 1),
-(15, '2000,11500',  '18500,11500', 13, 1),
-(15, '2000,2000',   '18500,11500', 14, 1),
-(16, '9500,7500',   '10700,7000',  13, 1),
-(16, '11900,7500',  '10700,7000',  15, 1),
-(16, '10700,5500',  '10700,7000',  14, 1),
-(16, '2500,7500',   '18500,6000',  17, 1),
-(16, '16000,12000', '2000,2000',   25, 1),
-(16, '16000,1200',  '2000,11500',  21, 1),
-(17, '2000,11500',  '18500,2000',  19, 1),
-(17, '18500,6000',  '2500,7500',   16, 1),
-(17, '2000,2000',   '18500,11500', 18, 1),
-(17, '10500,12000', '5500,13500',  29, 1),
-(18, '2000,11500',  '18500,2000',  20, 1),
-(18, '18500,11500', '2000,2000',   17, 1),
-(19, '2000,2000',   '18500,2000',  20, 1),
-(19, '18500,2000',  '2000,11500',  17, 1),
-(20, '18500,2000',  '2000,11500',  18, 1),
-(20, '18500,11500', '2000,2000',   19, 1),
-(21, '2000,2000',   '2000,11500',  22, 1),
-(21, '18500,2000',  '2000,11500',  23, 1),
-(21, '2000,11500',  '16000,1200',  16, 1),
-(21, '18500,11500', '25000,2000',  29, 1),
-(22, '18500,2000',  '2000,11500',  24, 1),
-(22, '2000,11500',  '2000,2000',   21, 1),
-(23, '18500,2000',  '18500,11500', 24, 1),
-(23, '2000,11500',  '18500,2000',  21, 1),
-(24, '18500,11500', '18500,2000',  23, 1),
-(24, '2000,11500',  '18500,2000',  22, 1),
-(25, '2000,11500',  '2000,2000',   26, 1),
-(25, '18500,11500', '2000,11500',  27, 1),
-(25, '2000,2000',   '16000,1200',  16, 1),
-(25, '18500,2000',  '25000,25000', 29, 1),
-(26, '2000,2000',   '2000,11500',  25, 1),
-(26, '18500,11500', '2000,11500',  28, 1),
-(27, '2000,11500',  '18500,11500', 25, 1),
-(27, '18500,11500', '2000,2000',   28, 1),
-(28, '2000,11500',  '18500,11500', 26, 1),
-(28, '2000,2000',   '18500,11500', 27, 1),
-(29, '5500,13500',  '10500,12000', 17, 1),
-(29, '27000,2000',  '18500,11500', 21, 1),
-(29, '27000,25000', '18500,2000',  25, 1),
-(29, '24400,20800', '35000,20000', 91, 1),
-(29, '24400,6400',  '38000,13000', 91, 1),
-(29, '11500,13400', '35000,7500',  91, 1),
-(52, '2000,2000',   '18500,11500', 1,  1),
-(91, '35000,20000', '24400,20800', 29, 1),
-(91, '4600,6800',   '18000,10000', 92, 1),
-(91, '38000,13000', '24400,6400',  29, 1),
-(91, '35000,7500',  '5000,5000',   29, 1),
-(91, '2200,13500',  '18500,6400',  92, 1),
-(91, '4600,20700',  '18000,2600',  92, 1),
-(92, '18000,10000', '4600,6800',   91, 1),
-(92, '18500,6400',  '2200,13500',  91, 1),
-(92, '18000,2800',  '4600,20700',  91, 1),
-(92, '2200,11000',  '37500,9000',  93, 1),
-(92, '2200,3600',   '37500,13000', 93, 1),
-(92, '700,6800',    '37500,11000', 93, 1),
-(93, '5000,7000',   '1000,6400',   20, 1),
-(93, '5000,11000',  '10000,1000',  24, 1),
-(93, '5000,16000',  '18500,6400',  28, 1),
-(93, '37500,9000',  '2200,11000',  92, 1),
-(93, '37500,11000', '2200,3600',   92, 1),
-(93, '37500,13000', '700,6700',    92, 1);
-
+INSERT INTO `maps_portals` (`maps_id`, `position`, `target_position`, `target_maps_id`) VALUES
+(1,  79456894987500,  8589934594000,   2),
+(2,  8589934594000,   79456894987500,  1),
+(2,  79456894987500,  8589934594000,   4),
+(2,  79456894978000,  8589934603500,   3),
+(3,  8589934603500,   79456894978000,  2),
+(3,  79456894987500,  79456894978000,  4),
+(3,  79456894978000,  8589934603500,   7),
+(4,  8589934594000,   79456894987500,  2),
+(4,  79456894978000,  79456894987500,  3),
+(4,  79456894987500,  8589934594000,   12),
+(4,  83751862279000,  8589934599000,   13),
+(5,  8589934603500,   79456894978000,  6),
+(6,  79456894987500,  8589934594000,   8),
+(6,  79456894978000,  8589934603500,   5),
+(6,  8589934603500,   79456894978000,  7),
+(7,  79456894978000,  8589934603500,   6),
+(7,  8589934603500,   79456894978000,  3),
+(7,  79456894987500,  79456894978000,  8),
+(8,  8589934594000,   79456894987500,  6),
+(8,  8589934603500,   8589934594000,   11),
+(8,  42949672972000,  45956150068400,  14),
+(8,  79456894978000,  79456894987500,  7),
+(9,  8589934594000,   79456894987500,  10),
+(10, 79456894987500,  8589934594000,   9),
+(10, 79456894978000,  79456894987500,  11),
+(10, 8589934594000,   79456894987500,  12),
+(11, 79456894987500,  79456894978000,  10),
+(11, 8589934594000,   8589934603500,   8),
+(11, 8589934603500,   79456894978000,  12),
+(12, 42949672961200,  83751862279000,  15),
+(12, 79456894978000,  8589934603500,   11),
+(12, 8589934594000,   79456894987500,  4),
+(12, 79456894987500,  8589934599000,   10),
+(13, 8589934599000,   83751862279000,  4),
+(13, 45956150074200,  40802189319500,  16),
+(13, 79456894978000,  8589934603500,   14),
+(13, 79456894987500,  8589934603500,   15),
+(14, 8589934603500,   79456894978000,  13),
+(14, 79456894987500,  8589934594000,   15),
+(14, 45956150074200,  45956150072700,  16),
+(14, 45956150068400,  42949672972000,  8),
+(15, 45956150074200,  51110110829900,  16),
+(15, 83751862279000,  42949672961200,  15),
+(15, 8589934603500,   79456894987500,  13),
+(15, 8589934594000,   79456894987500,  14),
+(16, 40802189319500,  45956150074200,  13),
+(16, 51110110829900,  45956150074200,  15),
+(16, 45956150072700,  45956150074200,  14),
+(16, 10737418247500,  79456894982000,  17),
+(16, 68719476748000,  8589934594000,   25),
+(16, 68719476737200,  8589934603500,   21),
+(17, 8589934603500,   79456894978000,  19),
+(17, 79456894982000,  10737418247500,  16),
+(17, 8589934594000,   79456894987500,  18),
+(17, 45097156620000,  23622320141500,  29),
+(18, 8589934603500,   79456894978000,  20),
+(18, 79456894987500,  8589934594000,   17),
+(19, 8589934594000,   79456894978000,  20),
+(19, 79456894978000,  8589934603500,   17),
+(20, 79456894978000,  8589934603500,   18),
+(20, 79456894987500,  8589934594000,   19),
+(21, 8589934594000,   8589934603500,   22),
+(21, 79456894978000,  8589934603500,   23),
+(21, 8589934603500,   68719476737200,  16),
+(21, 79456894987500,  107374182402000, 29),
+(22, 79456894978000,  8589934603500,   24),
+(22, 8589934603500,   8589934594000,   21),
+(23, 79456894978000,  79456894987500,  24),
+(23, 8589934603500,   79456894978000,  21),
+(24, 79456894987500,  79456894978000,  23),
+(24, 8589934603500,   79456894978000,  22),
+(25, 8589934603500,   8589934594000,   26),
+(25, 79456894987500,  8589934603500,   27),
+(25, 8589934594000,   68719476737200,  16),
+(25, 79456894978000,  107374182425000, 29),
+(26, 8589934594000,   8589934603500,   25),
+(26, 79456894987500,  8589934603500,   28),
+(27, 8589934603500,   79456894987500,  25),
+(27, 79456894987500,  8589934594000,   28),
+(28, 8589934603500,   79456894987500,  26),
+(28, 8589934594000,   79456894987500,  27),
+(29, 23622320141500,  45097156620000,  17),
+(29, 115964116994000, 79456894987500,  21),
+(29, 115964117017000, 79456894978000,  25),
+(29, 104797202043200, 150323855380000, 91),
+(29, 104797202028800, 163208757261000, 91),
+(29, 49392123917400,  150323855367500, 91),
+(52, 8589934594000,   79456894987500,  1),
+(91, 150323855380000, 104797202043200, 29),
+(91, 19756849568400,  77309411338000,  92),
+(91, 163208757261000, 104797202028800, 29),
+(91, 150323855367500, 21474836485000,  29),
+(91, 9448928064700,   79456894982400,  92),
+(91, 19756849582300,  77309411330600,  92),
+(92, 77309411338000,  19756849568400,  91),
+(92, 79456894982400,  9448928064700,   91),
+(92, 77309411330800,  19756849582300,  91),
+(92, 9448928062200,   161061273609000, 93),
+(92, 9448928054800,   161061273613000, 93),
+(92, 3006477114000,   161061273611000, 93),
+(93, 21474836487000,  4294967302400,   20),
+(93, 21474836491000,  42949672961000,  24),
+(93, 21474836496000,  79456894982400,  28),
+(93, 161061273609000, 9448928062200,   92),
+(93, 161061273611000, 9448928054800,   92),
+(93, 161061273613000, 3006477113900,   92);
 -- Map's stations table.
 --
 -- Stations on map.
 --
 CREATE TABLE `maps_stations` (
-    `id`          tinyint     NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
-    `position`    varchar(15) NOT NULL DEFAULT '0,0'  COMMENT 'Position on map.',
-    `maps_id`     tinyint     NULL     DEFAULT NULL,
-    `factions_id` tinyint     NULL     DEFAULT NULL,
+    `id`          tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
+    `position`    bigint  NOT NULL DEFAULT 0      COMMENT 'Position on map.',
+    `maps_id`     tinyint NULL     DEFAULT NULL,
+    `factions_id` tinyint NULL     DEFAULT NULL,
 
     CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Stations on map.';
 
-CREATE INDEX `maps_portals_factions_id_idx` ON `maps_stations` (`factions_id`);
-CREATE INDEX `maps_portals_maps_id_idx` ON `maps_stations` (`maps_id`);
+CREATE INDEX `maps_stations_factions_id_idx` ON `maps_stations` (`factions_id`);
+CREATE INDEX `maps_stations_maps_id_idx` ON `maps_stations` (`maps_id`);
 
 -- Initial dump for the `stations` table.
 
 INSERT INTO `maps_stations` (`id`, `position`, `maps_id`, `factions_id`) VALUES
-(1, '1000,1000',   1,  1),
-(2, '19000,1000',  5,  2),
-(3, '19000,12000', 9,  3),
-(4, '1000,6000',   20, 1),
-(5, '10000,1000',  24, 2),
-(6, '19000,6000',  28, 3);
-
+(1, 4294967297000,  1,  1),
+(2, 81604378625000, 5,  2),
+(3, 81604378636000, 9,  3),
+(4, 4294967302000,  20, 1),
+(5, 42949672961000, 24, 2),
+(6, 81604378630000, 28, 3);
 -- Moderators table.
 --
 -- Server moderators.
@@ -3513,7 +3512,7 @@ CREATE TABLE `moderators_roles_permissions` (
     `id`                  tinyint NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `moderators_roles_id` tinyint NOT NULL,
     `permissions_id`      tinyint NOT NULL,
-    `enabled`             boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
+    `is_enabled`          boolean NULL     DEFAULT NULL   COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Moderator roles'' permissions';
@@ -3523,7 +3522,7 @@ CREATE INDEX `moderators_roles_permissions_permissions_id_idx` ON `moderators_ro
 
 -- Initial dump for the `moderators_roles_permissions` table.
 
-INSERT INTO `moderators_roles_permissions`(`id`, `moderators_roles_id`, `permissions_id`, `enabled`) VALUES
+INSERT INTO `moderators_roles_permissions`(`id`, `moderators_roles_id`, `permissions_id`, `is_enabled`) VALUES
 (1,  1, 14, true),
 (2,  2, 14, null),
 (3,  2, 15, true),
@@ -3751,7 +3750,7 @@ CREATE TABLE `ranks` (
     `id`         tinyint      NOT NULL AUTO_INCREMENT COMMENT 'Primary Key.',
     `name`       varchar(255) NOT NULL DEFAULT '',
     `percentaje` float        NOT NULL DEFAULT 0.0,
-    `is_public`  boolean      NOT NULL DEFAULT 1,
+    `is_public`  boolean      NOT NULL DEFAULT true,
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains the rank system.';
@@ -6269,7 +6268,7 @@ CREATE TABLE `skilltree_skills` (
     `name`         varchar(255) NOT NULL DEFAULT ''       COMMENT 'Skill name.',
     `description`  text         NOT NULL                  COMMENT 'Skill description.',
     `type`         tinyint      NOT NULL DEFAULT 1        COMMENT '0 = blue, 1 = purple, 2 = red.',
-    `is_advanced`  boolean      NOT NULL DEFAULT 0        COMMENT 'Whether it''s an advanced skill or not.',
+    `is_advanced`  boolean      NOT NULL DEFAULT false    COMMENT 'Whether it''s an advanced skill or not.',
     `bonus_type`   varchar(255) NOT NULL DEFAULT 'health' COMMENT 'Type of bonus the skill awards.',
     `bonus_amount` int          NOT NULL DEFAULT 0        COMMENT 'Amount of bonus the skill awards.',
     `bonus_factor` tinyint      NOT NULL DEFAULT 2        COMMENT 'Factor the bonus increases with each upgrade.',

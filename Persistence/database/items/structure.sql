@@ -9,9 +9,9 @@ CREATE TABLE `items` (
     `description` text         NOT NULL                COMMENT 'Shop description.',
     `price`       int          NOT NULL DEFAULT 0,
     `type`        varchar(255) NOT NULL DEFAULT '',
-    `is_elite`    boolean      NOT NULL DEFAULT 0,
-    `is_event`    boolean      NOT NULL DEFAULT 0      COMMENT 'Event item.',
-    `is_buyable`  boolean      NOT NULL DEFAULT 1      COMMENT 'Buyable in shop',
+    `is_elite`    boolean      NOT NULL DEFAULT false,
+    `is_event`    boolean      NOT NULL DEFAULT false  COMMENT 'Event item.',
+    `is_buyable`  boolean      NOT NULL DEFAULT true   COMMENT 'Buyable in shop',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB CHARACTER SET utf8 COMMENT 'Contains server''s items.';
