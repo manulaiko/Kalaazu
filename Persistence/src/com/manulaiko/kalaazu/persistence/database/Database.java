@@ -1,6 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database;
 
 import com.manulaiko.kalaazu.persistence.database.entities.Entity;
+import com.speedment.runtime.core.ApplicationBuilder;
 import com.speedment.runtime.core.manager.Manager;
 
 import java.util.Optional;
@@ -60,7 +61,17 @@ public class Database {
             this.db = builder.withConnectionUrl(url)
                              .withUsername(this.getUsername())
                              .withPassword(this.getPassword())
+                             .withLogging(ApplicationBuilder.LogType.APPLICATION_BUILDER)
+                             .withLogging(ApplicationBuilder.LogType.CONNECTION)
+                             .withLogging(ApplicationBuilder.LogType.PERSIST)
+                             .withLogging(ApplicationBuilder.LogType.REMOVE)
+                             .withLogging(ApplicationBuilder.LogType.STREAM)
+                             .withLogging(ApplicationBuilder.LogType.STREAM_OPTIMIZER)
+                             .withLogging(ApplicationBuilder.LogType.TRANSACTION)
+                             .withLogging(ApplicationBuilder.LogType.UPDATE)
                              .build();
+
+            this.db.initialize();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
