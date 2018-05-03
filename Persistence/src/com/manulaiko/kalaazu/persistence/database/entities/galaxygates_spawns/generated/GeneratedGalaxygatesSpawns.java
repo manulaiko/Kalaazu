@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.npcs.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -68,7 +68,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return the id of this GalaxygatesSpawns
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the npcsId of this GalaxygatesSpawns. The npcsId field

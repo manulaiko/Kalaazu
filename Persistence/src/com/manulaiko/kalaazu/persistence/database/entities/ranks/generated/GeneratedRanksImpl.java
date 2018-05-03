@@ -31,7 +31,7 @@ public abstract class GeneratedRanksImpl implements Ranks {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.g
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.GalaxygatesWaves;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -33,7 +33,7 @@ public abstract class GeneratedGalaxygatesStagesImpl implements GalaxygatesStage
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.generated.GeneratedRewardsGalaxygates;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.g
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates {
+public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates, Entity<Byte> {
 }

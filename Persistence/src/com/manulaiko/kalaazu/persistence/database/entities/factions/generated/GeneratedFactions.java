@@ -7,7 +7,7 @@ import com.manulaiko.kalaazu.persistence.database.mappers.Vector2Mapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
@@ -141,7 +141,7 @@ public interface GeneratedFactions {
      *
      * @return the id of this Factions
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this Factions. The name field corresponds to the

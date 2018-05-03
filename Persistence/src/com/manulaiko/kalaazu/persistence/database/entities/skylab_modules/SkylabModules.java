@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.skylab_modules;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.skylab_modules.generated.GeneratedSkylabModules;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.skylab_modules.genera
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkylabModules extends GeneratedSkylabModules {
+public interface SkylabModules extends GeneratedSkylabModules, Entity<Byte> {
 }

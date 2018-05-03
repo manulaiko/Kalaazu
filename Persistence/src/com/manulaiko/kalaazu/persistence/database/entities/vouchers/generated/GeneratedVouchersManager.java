@@ -2,7 +2,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated;
 
 import com.manulaiko.kalaazu.persistence.database.entities.vouchers.Vouchers;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.generated.GeneratedInvitationCodesRedeemLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_rede
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface InvitationCodesRedeemLogs extends GeneratedInvitationCodesRedeemLogs {
+public interface InvitationCodesRedeemLogs extends GeneratedInvitationCodesRedeemLogs, Entity<Integer> {
 }

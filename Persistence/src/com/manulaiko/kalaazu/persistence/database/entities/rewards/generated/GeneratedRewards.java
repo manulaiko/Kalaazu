@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards.Rewards;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -92,7 +92,7 @@ public interface GeneratedRewards {
      *
      * @return the id of this Rewards
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the itemsId of this Rewards. The itemsId field corresponds to the

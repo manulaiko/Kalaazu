@@ -29,7 +29,7 @@ public abstract class GeneratedInvitationCodesImpl implements InvitationCodes {
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

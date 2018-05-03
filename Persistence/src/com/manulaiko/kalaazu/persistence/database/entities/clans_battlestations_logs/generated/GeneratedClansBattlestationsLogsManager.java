@@ -2,7 +2,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations
 
 import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_logs.ClansBattlestationsLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

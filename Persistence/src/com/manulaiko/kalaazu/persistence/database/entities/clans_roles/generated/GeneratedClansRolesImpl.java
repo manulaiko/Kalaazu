@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.clans_roles.generate
 import com.manulaiko.kalaazu.persistence.database.entities.clans.Clans;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.ClansRoles;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -37,7 +37,7 @@ public abstract class GeneratedClansRolesImpl implements ClansRoles {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -43,7 +43,7 @@ public abstract class GeneratedItemsImpl implements Items {
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

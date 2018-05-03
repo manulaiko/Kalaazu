@@ -36,7 +36,7 @@ public abstract class GeneratedEventsImpl implements Events {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

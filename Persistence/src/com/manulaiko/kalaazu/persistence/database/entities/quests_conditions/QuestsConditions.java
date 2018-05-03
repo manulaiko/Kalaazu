@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.quests_conditions;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.quests_conditions.generated.GeneratedQuestsConditions;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.quests_conditions.gen
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface QuestsConditions extends GeneratedQuestsConditions {
+public interface QuestsConditions extends GeneratedQuestsConditions, Entity<Integer> {
 }

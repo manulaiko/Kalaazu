@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -71,7 +71,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return the id of this RewardsCollectables
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the collectablesId of this RewardsCollectables. The

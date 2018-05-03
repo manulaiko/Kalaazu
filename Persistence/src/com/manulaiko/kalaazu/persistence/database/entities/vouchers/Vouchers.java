@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.vouchers;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.GeneratedVouchers;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.Ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Vouchers extends GeneratedVouchers {
+public interface Vouchers extends GeneratedVouchers, Entity<Short> {
 }

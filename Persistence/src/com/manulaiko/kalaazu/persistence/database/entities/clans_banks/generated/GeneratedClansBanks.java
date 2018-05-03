@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_banks.ClansBank
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -104,7 +104,7 @@ public interface GeneratedClansBanks {
      *
      * @return the id of this ClansBanks
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the clansId of this ClansBanks. The clansId field corresponds to

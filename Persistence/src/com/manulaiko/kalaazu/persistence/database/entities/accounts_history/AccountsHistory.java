@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_history;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_history.generated.GeneratedAccountsHistory;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_history.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsHistory extends GeneratedAccountsHistory {
+public interface AccountsHistory extends GeneratedAccountsHistory, Entity<Integer> {
 }

@@ -35,7 +35,7 @@ public abstract class GeneratedLevelsImpl implements Levels {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

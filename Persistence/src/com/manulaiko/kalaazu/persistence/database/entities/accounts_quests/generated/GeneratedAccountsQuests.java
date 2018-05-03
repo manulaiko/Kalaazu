@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.quests.Quests;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
@@ -94,7 +94,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the id of this AccountsQuests
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the questsId of this AccountsQuests. The questsId field

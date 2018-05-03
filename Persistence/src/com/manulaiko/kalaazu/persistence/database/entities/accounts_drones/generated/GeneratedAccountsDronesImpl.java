@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_drones.AccountsDrones;
 import com.manulaiko.kalaazu.persistence.database.entities.levels.Levels;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -37,7 +37,7 @@ public abstract class GeneratedAccountsDronesImpl implements AccountsDrones {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

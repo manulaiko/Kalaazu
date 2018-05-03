@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.math.Vector2;
 import com.manulaiko.kalaazu.persistence.database.entities.factions.Factions;
 import com.manulaiko.kalaazu.persistence.database.entities.maps.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -44,7 +44,7 @@ public abstract class GeneratedFactionsImpl implements Factions {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

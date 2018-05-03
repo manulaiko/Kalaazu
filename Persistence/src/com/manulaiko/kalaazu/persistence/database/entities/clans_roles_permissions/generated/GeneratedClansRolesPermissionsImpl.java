@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissio
 import com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -36,7 +36,7 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

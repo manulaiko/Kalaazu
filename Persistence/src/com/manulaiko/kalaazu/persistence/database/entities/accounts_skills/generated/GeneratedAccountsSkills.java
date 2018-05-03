@@ -7,7 +7,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.Skil
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -84,7 +84,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return the id of this AccountsSkills
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this AccountsSkills. The accountsId field

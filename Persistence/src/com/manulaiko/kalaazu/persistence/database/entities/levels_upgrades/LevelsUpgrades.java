@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades.generated.GeneratedLevelsUpgrades;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades.gener
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface LevelsUpgrades extends GeneratedLevelsUpgrades {
+public interface LevelsUpgrades extends GeneratedLevelsUpgrades, Entity<Integer> {
 }

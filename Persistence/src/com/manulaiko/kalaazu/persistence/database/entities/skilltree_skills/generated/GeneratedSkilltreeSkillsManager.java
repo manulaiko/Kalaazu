@@ -2,7 +2,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.gen
 
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.SkilltreeSkills;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

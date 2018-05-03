@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts.generated.GeneratedAccounts;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts.generated.Ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Accounts extends GeneratedAccounts {
+public interface Accounts extends GeneratedAccounts, Entity<Integer> {
 }

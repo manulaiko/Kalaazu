@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygat
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.GalaxygatesGgWaves;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.GalaxygatesWaves;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -32,7 +32,7 @@ public abstract class GeneratedGalaxygatesGgWavesImpl implements GalaxygatesGgWa
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

@@ -113,7 +113,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the id of this TechfactoryDrones
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this TechfactoryDrones. The name field corresponds to

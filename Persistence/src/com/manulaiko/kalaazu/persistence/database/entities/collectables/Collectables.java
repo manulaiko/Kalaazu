@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.collectables;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.collectables.generated.GeneratedCollectables;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.collectables.generate
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Collectables extends GeneratedCollectables {
+public interface Collectables extends GeneratedCollectables, Entity<Byte> {
 }

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations_accounts_items;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.generated.GeneratedAccountsConfigurationsAccountsItems;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_configuratio
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsConfigurationsAccountsItems extends GeneratedAccountsConfigurationsAccountsItems {
+public interface AccountsConfigurationsAccountsItems extends GeneratedAccountsConfigurationsAccountsItems, Entity<Integer> {
 }

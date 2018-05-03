@@ -92,7 +92,7 @@ public interface GeneratedEvents {
      *
      * @return the id of this Events
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the name of this Events. The name field corresponds to the

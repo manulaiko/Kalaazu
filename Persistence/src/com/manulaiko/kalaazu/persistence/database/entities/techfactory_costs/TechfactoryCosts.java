@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.techfactory_costs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.techfactory_costs.generated.GeneratedTechfactoryCosts;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_costs.gen
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TechfactoryCosts extends GeneratedTechfactoryCosts {
+public interface TechfactoryCosts extends GeneratedTechfactoryCosts, Entity<Byte> {
 }

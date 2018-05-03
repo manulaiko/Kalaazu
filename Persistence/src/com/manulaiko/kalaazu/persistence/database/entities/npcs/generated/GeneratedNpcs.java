@@ -137,7 +137,7 @@ public interface GeneratedNpcs {
      *
      * @return the id of this Npcs
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this Npcs. The name field corresponds to the database

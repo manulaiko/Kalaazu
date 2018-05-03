@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades.Level
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -92,7 +92,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the id of this LevelsUpgrades
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the levelsId of this LevelsUpgrades. The levelsId field

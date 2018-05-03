@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_npcs.RewardsN
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -69,7 +69,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return the id of this RewardsNpcs
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the npcsId of this RewardsNpcs. The npcsId field corresponds to

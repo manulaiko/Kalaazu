@@ -102,7 +102,7 @@ public interface GeneratedNews {
      *
      * @return the id of this News
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the date of this News. The date field corresponds to the database

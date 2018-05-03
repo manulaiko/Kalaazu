@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_destroys;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_destroys.generated.GeneratedAccountsDestroys;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_destroys.gen
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsDestroys extends GeneratedAccountsDestroys {
+public interface AccountsDestroys extends GeneratedAccountsDestroys, Entity<Integer> {
 }

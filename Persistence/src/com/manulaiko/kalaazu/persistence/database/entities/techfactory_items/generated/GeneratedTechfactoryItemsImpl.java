@@ -41,7 +41,7 @@ public abstract class GeneratedTechfactoryItemsImpl implements TechfactoryItems 
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

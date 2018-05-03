@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.generated.GeneratedTechfactoryDrones;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TechfactoryDrones extends GeneratedTechfactoryDrones {
+public interface TechfactoryDrones extends GeneratedTechfactoryDrones, Entity<Byte> {
 }

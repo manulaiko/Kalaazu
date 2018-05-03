@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.ranks;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.ranks.generated.GeneratedRanks;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.ranks.generated.Gener
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Ranks extends GeneratedRanks {
+public interface Ranks extends GeneratedRanks, Entity<Byte> {
 }

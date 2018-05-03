@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.factions;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.factions.generated.GeneratedFactions;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.factions.generated.Ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Factions extends GeneratedFactions {
+public interface Factions extends GeneratedFactions, Entity<Byte> {
 }

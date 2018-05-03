@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.generated.GeneratedSkilltreeSkills;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkilltreeSkills extends GeneratedSkilltreeSkills {
+public interface SkilltreeSkills extends GeneratedSkilltreeSkills, Entity<Byte> {
 }

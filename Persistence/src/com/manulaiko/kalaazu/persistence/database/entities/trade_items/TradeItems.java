@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.trade_items;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated.GeneratedTradeItems;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TradeItems extends GeneratedTradeItems {
+public interface TradeItems extends GeneratedTradeItems, Entity<Short> {
 }

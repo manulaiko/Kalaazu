@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.generated.GeneratedRewardsCollectables;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface RewardsCollectables extends GeneratedRewardsCollectables {
+public interface RewardsCollectables extends GeneratedRewardsCollectables, Entity<Short> {
 }

@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.Ski
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -69,7 +69,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return the id of this SkilltreeUnlocks
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the upgradeSkilltreeLevelsId of this SkilltreeUnlocks. The

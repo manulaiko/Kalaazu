@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_destroys.Acc
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -92,7 +92,7 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the id of this AccountsDestroys
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this AccountsDestroys. The accountsId field

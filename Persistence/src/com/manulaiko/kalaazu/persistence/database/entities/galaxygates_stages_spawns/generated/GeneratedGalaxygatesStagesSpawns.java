@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages_sp
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -71,7 +71,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return the id of this GalaxygatesStagesSpawns
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the galaxygatesStagesId of this GalaxygatesStagesSpawns. The

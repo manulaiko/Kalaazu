@@ -36,7 +36,7 @@ public abstract class GeneratedNewsImpl implements News {
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.invitation_codes;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.generated.GeneratedInvitationCodes;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface InvitationCodes extends GeneratedInvitationCodes {
+public interface InvitationCodes extends GeneratedInvitationCodes, Entity<Short> {
 }

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.events;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.events.generated.GeneratedEvents;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.events.generated.Gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Events extends GeneratedEvents {
+public interface Events extends GeneratedEvents, Entity<Integer> {
 }

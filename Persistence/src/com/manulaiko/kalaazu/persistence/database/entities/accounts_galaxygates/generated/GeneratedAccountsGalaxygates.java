@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygat
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -117,7 +117,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the id of this AccountsGalaxygates
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the galaxygatesId of this AccountsGalaxygates. The galaxygatesId

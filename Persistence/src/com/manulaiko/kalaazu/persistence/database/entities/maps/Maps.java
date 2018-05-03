@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.maps;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.maps.generated.GeneratedMaps;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.maps.generated.Genera
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Maps extends GeneratedMaps {
+public interface Maps extends GeneratedMaps, Entity<Byte> {
 }

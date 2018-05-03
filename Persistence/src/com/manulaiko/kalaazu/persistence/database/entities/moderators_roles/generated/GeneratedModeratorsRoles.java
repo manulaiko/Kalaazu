@@ -79,7 +79,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return the id of this ModeratorsRoles
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this ModeratorsRoles. The name field corresponds to

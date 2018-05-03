@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.moderators_logs.gene
 import com.manulaiko.kalaazu.persistence.database.entities.moderators.Moderators;
 import com.manulaiko.kalaazu.persistence.database.entities.moderators_logs.ModeratorsLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -36,7 +36,7 @@ public abstract class GeneratedModeratorsLogsImpl implements ModeratorsLogs {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

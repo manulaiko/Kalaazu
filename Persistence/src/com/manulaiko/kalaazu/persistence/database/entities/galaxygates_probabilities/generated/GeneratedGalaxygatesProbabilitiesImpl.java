@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygat
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities;
 import com.manulaiko.kalaazu.persistence.database.mappers.GalaxyGateProbabilityType;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -34,7 +34,7 @@ public abstract class GeneratedGalaxygatesProbabilitiesImpl implements Galaxygat
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

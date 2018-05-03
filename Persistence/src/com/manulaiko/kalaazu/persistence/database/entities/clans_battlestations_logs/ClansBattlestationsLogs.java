@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_logs.generated.GeneratedClansBattlestationsLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansBattlestationsLogs extends GeneratedClansBattlestationsLogs {
+public interface ClansBattlestationsLogs extends GeneratedClansBattlestationsLogs, Entity<Integer> {
 }

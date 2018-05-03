@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spawns;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spawns.generated.GeneratedGalaxygatesSpawns;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spawns.ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesSpawns extends GeneratedGalaxygatesSpawns {
+public interface GalaxygatesSpawns extends GeneratedGalaxygatesSpawns, Entity<Integer> {
 }

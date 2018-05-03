@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.generated.GeneratedVouchersRedeemLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs {
+public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs, Entity<Integer> {
 }

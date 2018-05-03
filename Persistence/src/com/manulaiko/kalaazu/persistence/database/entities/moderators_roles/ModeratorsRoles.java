@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.moderators_roles;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.generated.GeneratedModeratorsRoles;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ModeratorsRoles extends GeneratedModeratorsRoles {
+public interface ModeratorsRoles extends GeneratedModeratorsRoles, Entity<Byte> {
 }

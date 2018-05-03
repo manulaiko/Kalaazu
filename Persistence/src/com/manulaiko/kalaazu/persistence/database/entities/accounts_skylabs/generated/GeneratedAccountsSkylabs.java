@@ -7,7 +7,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.skylab_modules.Skylab
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
@@ -112,7 +112,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the id of this AccountsSkylabs
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this AccountsSkylabs. The accountsId field

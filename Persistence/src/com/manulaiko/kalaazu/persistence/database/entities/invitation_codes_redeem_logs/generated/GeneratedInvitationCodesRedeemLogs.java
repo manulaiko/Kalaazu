@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_rede
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ReferenceField;
@@ -89,7 +89,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the id of this InvitationCodesRedeemLogs
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the invitationCodesId of this InvitationCodesRedeemLogs. The

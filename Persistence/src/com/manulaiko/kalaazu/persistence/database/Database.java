@@ -2,9 +2,13 @@ package com.manulaiko.kalaazu.persistence.database;
 
 import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.speedment.runtime.core.ApplicationBuilder;
-import com.speedment.runtime.core.manager.Manager;
+import com.speedment.runtime.core.component.transaction.Transaction;
+import com.speedment.runtime.core.component.transaction.TransactionComponent;
+import com.speedment.runtime.core.component.transaction.TransactionHandler;
 
 import java.util.Optional;
+import java.util.function.Consumer;
+import java.util.function.Function;
 
 
 /**
@@ -15,6 +19,7 @@ import java.util.Optional;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@SuppressWarnings("unchecked")
 public class Database {
     /**
      * Speedment db instance.
@@ -77,38 +82,78 @@ public class Database {
         }
     }
 
+
     /**
-     * Finds a record in the database.
+     * Finds and returns an entity by its id.
      *
-     * @param id    Record id.
-     * @param clazz Entity class.
+     * @param id   Entity id.
+     * @param type Entity type.
      *
-     * @return Record from the database.
+     * @return Entity with `id`.
      */
-    public <T extends Entity> Optional<T> find(int id, Class<? extends Manager<T>> clazz) {
-        return this.db.getOrThrow(clazz)
-                      .stream()
-                      .filter(t -> t.getId() == id)
-                      .findFirst();
+    public <T extends Entity> Optional<T> find(int id, Class<T> type) {
+        return (Optional<T>) this.db
+                .manager(type)
+                .byId(id);
     }
 
     /**
-     * Parses a class name to a table name.
+     * Inserts a new entity.
      *
-     * @param clazz Class to parse.
+     * @param entity Entity to create.
      *
-     * @return Table name for clazz
+     * @return Inserted entity.
      */
-    private String parseTable(Class clazz) {
-        var name = clazz.getSimpleName()
-                        .replaceAll("([A-Z]+)", "\\_$1")
-                        .toLowerCase();
+    public <T extends Entity> T insert(T entity) {
+        return (T) this.db
+                .manager(entity.getClass())
+                .persist(entity);
+    }
 
-        if (name.endsWith("y")) {
-            return name.substring(0, name.length() - 1) + "ies";
-        }
+    /**
+     * Updates an entity.
+     *
+     * @param entity Entity to save.
+     *
+     * @return Updated entity.
+     */
+    public <T extends Entity> T update(T entity) {
+        return (T) this.db
+                .manager(entity.getClass())
+                .update(entity);
+    }
 
-        return name + "s";
+    /**
+     * Accepts a transaction.
+     *
+     * @param transaction Transaction to execute.
+     */
+    public void acceptTransaction(Consumer<? super Transaction> transaction) {
+        this.transaction()
+            .createAndAccept(transaction);
+    }
+
+    /**
+     * Applies a transaction.
+     *
+     * @param transaction Transaction to execute.
+     *
+     * @return Transaction result.
+     */
+    public <T> T applyTransaction(Function<? super Transaction, T> transaction) {
+        return this.transaction()
+                   .createAndApply(transaction);
+    }
+
+    /**
+     * Creates and returns a transaction handler.
+     *
+     * @return Transaction handler.
+     */
+    public TransactionHandler transaction() {
+        return this.db
+                .getOrThrow(TransactionComponent.class)
+                .createTransactionHandler();
     }
 
     //<editor-fold desc="Getters and setters">

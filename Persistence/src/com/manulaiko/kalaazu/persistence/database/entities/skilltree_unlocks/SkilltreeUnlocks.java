@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.generated.GeneratedSkilltreeUnlocks;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.gen
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkilltreeUnlocks extends GeneratedSkilltreeUnlocks {
+public interface SkilltreeUnlocks extends GeneratedSkilltreeUnlocks, Entity<Short> {
 }

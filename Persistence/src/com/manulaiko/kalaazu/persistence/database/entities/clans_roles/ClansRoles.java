@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_roles;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.generated.GeneratedClansRoles;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.generated
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansRoles extends GeneratedClansRoles {
+public interface ClansRoles extends GeneratedClansRoles, Entity<Integer> {
 }

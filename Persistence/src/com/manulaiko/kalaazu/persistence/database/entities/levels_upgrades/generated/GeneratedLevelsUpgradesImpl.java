@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades.gene
 import com.manulaiko.kalaazu.persistence.database.entities.levels.Levels;
 import com.manulaiko.kalaazu.persistence.database.entities.levels_upgrades.LevelsUpgrades;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -35,7 +35,7 @@ public abstract class GeneratedLevelsUpgradesImpl implements LevelsUpgrades {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

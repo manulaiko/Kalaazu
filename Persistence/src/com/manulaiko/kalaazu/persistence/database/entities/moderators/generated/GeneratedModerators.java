@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.Mode
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
@@ -84,7 +84,7 @@ public interface GeneratedModerators {
      *
      * @return the id of this Moderators
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the accountsId of this Moderators. The accountsId field

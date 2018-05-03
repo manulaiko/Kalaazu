@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.news;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.news.generated.GeneratedNews;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.news.generated.Genera
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface News extends GeneratedNews {
+public interface News extends GeneratedNews, Entity<Short> {
 }

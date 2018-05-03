@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.maps_npcs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.maps_npcs.generated.GeneratedMapsNpcs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.maps_npcs.generated.G
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface MapsNpcs extends GeneratedMapsNpcs {
+public interface MapsNpcs extends GeneratedMapsNpcs, Entity<Byte> {
 }

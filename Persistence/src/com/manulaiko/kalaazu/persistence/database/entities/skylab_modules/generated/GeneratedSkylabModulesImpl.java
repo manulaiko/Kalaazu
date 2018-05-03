@@ -43,7 +43,7 @@ public abstract class GeneratedSkylabModulesImpl implements SkylabModules {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

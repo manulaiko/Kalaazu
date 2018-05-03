@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_red
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.InvitationCodes;
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -34,7 +34,7 @@ public abstract class GeneratedInvitationCodesRedeemLogsImpl implements Invitati
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans.generated.GeneratedClans;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans.generated.Gener
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Clans extends GeneratedClans {
+public interface Clans extends GeneratedClans, Entity<Integer> {
 }

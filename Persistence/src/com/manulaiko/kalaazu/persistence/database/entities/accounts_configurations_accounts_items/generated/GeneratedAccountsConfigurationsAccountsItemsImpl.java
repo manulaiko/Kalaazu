@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_drones.Accou
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_items.AccountsItems;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_pets.AccountsPets;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -41,7 +41,7 @@ public abstract class GeneratedAccountsConfigurationsAccountsItemsImpl implement
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

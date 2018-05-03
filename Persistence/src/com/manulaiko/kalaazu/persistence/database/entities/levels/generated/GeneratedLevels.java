@@ -98,7 +98,7 @@ public interface GeneratedLevels {
      *
      * @return the id of this Levels
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the account of this Levels. The account field corresponds to the

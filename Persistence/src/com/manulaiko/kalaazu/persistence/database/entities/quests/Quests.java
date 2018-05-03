@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.quests;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.quests.generated.GeneratedQuests;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.quests.generated.Gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Quests extends GeneratedQuests {
+public interface Quests extends GeneratedQuests, Entity<Short> {
 }

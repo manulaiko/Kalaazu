@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -98,7 +98,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the id of this ClansBattlestationsLogs
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the clansId of this ClansBattlestationsLogs. The clansId field

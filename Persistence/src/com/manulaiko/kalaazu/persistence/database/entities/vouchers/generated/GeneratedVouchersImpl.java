@@ -29,7 +29,7 @@ public abstract class GeneratedVouchersImpl implements Vouchers {
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

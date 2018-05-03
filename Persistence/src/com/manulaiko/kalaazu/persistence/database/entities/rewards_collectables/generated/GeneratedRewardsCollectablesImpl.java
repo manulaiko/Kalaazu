@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.collectables.Collecta
 import com.manulaiko.kalaazu.persistence.database.entities.rewards.Rewards;
 import com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.RewardsCollectables;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -32,7 +32,7 @@ public abstract class GeneratedRewardsCollectablesImpl implements RewardsCollect
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

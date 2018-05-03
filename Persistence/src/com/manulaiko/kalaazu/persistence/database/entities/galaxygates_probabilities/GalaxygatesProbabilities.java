@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.generated.GeneratedGalaxygatesProbabilities;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabili
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesProbabilities extends GeneratedGalaxygatesProbabilities {
+public interface GalaxygatesProbabilities extends GeneratedGalaxygatesProbabilities, Entity<Byte> {
 }

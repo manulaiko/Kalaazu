@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.permissions;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.permissions.generated.GeneratedPermissions;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.permissions.generated
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Permissions extends GeneratedPermissions {
+public interface Permissions extends GeneratedPermissions, Entity<Byte> {
 }

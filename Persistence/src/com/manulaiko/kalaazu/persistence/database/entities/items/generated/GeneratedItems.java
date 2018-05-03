@@ -143,7 +143,7 @@ public interface GeneratedItems {
      *
      * @return the id of this Items
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the name of this Items. The name field corresponds to the

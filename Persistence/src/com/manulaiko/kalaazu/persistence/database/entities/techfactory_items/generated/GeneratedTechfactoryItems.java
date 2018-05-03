@@ -138,7 +138,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the id of this TechfactoryItems
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this TechfactoryItems. The name field corresponds to

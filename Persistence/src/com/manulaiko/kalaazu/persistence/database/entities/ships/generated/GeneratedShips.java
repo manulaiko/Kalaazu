@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.ships.Ships;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ShortField;
@@ -176,7 +176,7 @@ public interface GeneratedShips {
      *
      * @return the id of this Ships
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the itemsId of this Ships. The itemsId field corresponds to the

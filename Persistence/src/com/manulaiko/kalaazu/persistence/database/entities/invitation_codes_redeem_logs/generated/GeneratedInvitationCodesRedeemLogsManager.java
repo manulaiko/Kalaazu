@@ -2,7 +2,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_red
 
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

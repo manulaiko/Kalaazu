@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.ge
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.GalaxygatesWaves;
 import com.manulaiko.kalaazu.persistence.database.entities.maps.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -33,7 +33,7 @@ public abstract class GeneratedGalaxygatesWavesImpl implements GalaxygatesWaves 
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.users.generated;
 import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.InvitationCodes;
 import com.manulaiko.kalaazu.persistence.database.entities.users.Users;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.sql.Timestamp;
@@ -46,7 +46,7 @@ public abstract class GeneratedUsersImpl implements Users {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

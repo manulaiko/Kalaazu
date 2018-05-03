@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated.GeneratedGalaxygatesGgSpins;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesGgSpins extends GeneratedGalaxygatesGgSpins {
+public interface GalaxygatesGgSpins extends GeneratedGalaxygatesGgSpins, Entity<Short> {
 }

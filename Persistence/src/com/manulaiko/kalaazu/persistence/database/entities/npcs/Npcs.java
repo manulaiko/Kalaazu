@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.npcs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcs;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.npcs.generated.Genera
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Npcs extends GeneratedNpcs {
+public interface Npcs extends GeneratedNpcs, Entity<Byte> {
 }

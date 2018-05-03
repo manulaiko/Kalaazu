@@ -1,5 +1,7 @@
 module kalaazu.persistence {
     exports com.manulaiko.kalaazu.persistence;
+    exports com.manulaiko.kalaazu.persistence.database.entities;
+
     exports com.manulaiko.kalaazu.persistence.database.generated to speedment;
     exports com.manulaiko.kalaazu.persistence.database to speedment;
 

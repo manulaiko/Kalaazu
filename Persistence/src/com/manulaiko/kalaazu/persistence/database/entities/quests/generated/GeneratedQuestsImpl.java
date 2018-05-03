@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.factions.Factions;
 import com.manulaiko.kalaazu.persistence.database.entities.levels.Levels;
 import com.manulaiko.kalaazu.persistence.database.entities.quests.Quests;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -38,7 +38,7 @@ public abstract class GeneratedQuestsImpl implements Quests {
     }
 
     @Override
-    public short getId() {
+    public Short getId() {
         return id;
     }
 

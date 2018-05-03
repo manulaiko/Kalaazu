@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_banks_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_banks_logs.generated.GeneratedClansBanksLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_banks_logs.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansBanksLogs extends GeneratedClansBanksLogs {
+public interface ClansBanksLogs extends GeneratedClansBanksLogs, Entity<Integer> {
 }

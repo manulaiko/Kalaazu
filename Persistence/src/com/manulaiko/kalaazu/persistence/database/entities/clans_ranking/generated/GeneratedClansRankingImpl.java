@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.clans_ranking.genera
 import com.manulaiko.kalaazu.persistence.database.entities.clans.Clans;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_ranking.ClansRanking;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -33,7 +33,7 @@ public abstract class GeneratedClansRankingImpl implements ClansRanking {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

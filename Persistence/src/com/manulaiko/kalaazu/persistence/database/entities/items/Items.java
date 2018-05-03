@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.items;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.items.generated.GeneratedItems;
 
 /**
@@ -9,5 +10,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.items.generated.Gener
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Items extends GeneratedItems {
+public interface Items extends GeneratedItems, Entity<Short> {
 }

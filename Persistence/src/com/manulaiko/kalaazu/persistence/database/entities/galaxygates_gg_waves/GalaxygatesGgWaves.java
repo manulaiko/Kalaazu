@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.generated.GeneratedGalaxygatesGgWaves;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesGgWaves extends GeneratedGalaxygatesGgWaves {
+public interface GalaxygatesGgWaves extends GeneratedGalaxygatesGgWaves, Entity<Short> {
 }

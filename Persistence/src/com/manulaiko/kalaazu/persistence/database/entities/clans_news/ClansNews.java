@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_news;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_news.generated.GeneratedClansNews;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_news.generated.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansNews extends GeneratedClansNews {
+public interface ClansNews extends GeneratedClansNews, Entity<Integer> {
 }

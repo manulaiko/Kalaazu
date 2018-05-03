@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.techfactory_items;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.generated.GeneratedTechfactoryItems;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.gen
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TechfactoryItems extends GeneratedTechfactoryItems {
+public interface TechfactoryItems extends GeneratedTechfactoryItems, Entity<Byte> {
 }

@@ -63,7 +63,7 @@ public interface GeneratedPermissions {
      *
      * @return the id of this Permissions
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this Permissions. The name field corresponds to the

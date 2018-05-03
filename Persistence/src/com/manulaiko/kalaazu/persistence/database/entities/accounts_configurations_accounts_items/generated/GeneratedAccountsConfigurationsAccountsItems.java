@@ -8,7 +8,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_pets.Account
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ComparableForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -109,7 +109,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return the id of this AccountsConfigurationsAccountsItems
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsConfigurationsId of this

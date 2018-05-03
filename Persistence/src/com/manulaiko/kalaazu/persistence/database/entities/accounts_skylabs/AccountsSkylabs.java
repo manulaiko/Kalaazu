@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_skylabs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_skylabs.generated.GeneratedAccountsSkylabs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_skylabs.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsSkylabs extends GeneratedAccountsSkylabs {
+public interface AccountsSkylabs extends GeneratedAccountsSkylabs, Entity<Integer> {
 }

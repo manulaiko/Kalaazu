@@ -148,7 +148,7 @@ public interface GeneratedSkylabModules {
      *
      * @return the id of this SkylabModules
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this SkylabModules. The name field corresponds to the

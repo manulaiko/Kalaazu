@@ -64,7 +64,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return the id of this InvitationCodes
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the code of this InvitationCodes. The code field corresponds to

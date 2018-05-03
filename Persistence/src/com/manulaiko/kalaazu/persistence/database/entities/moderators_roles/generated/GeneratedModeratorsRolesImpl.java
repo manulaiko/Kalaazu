@@ -33,7 +33,7 @@ public abstract class GeneratedModeratorsRolesImpl implements ModeratorsRoles {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

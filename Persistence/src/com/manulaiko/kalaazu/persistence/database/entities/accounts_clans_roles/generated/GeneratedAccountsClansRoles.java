@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.ClansRole
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -70,7 +70,7 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return the id of this AccountsClansRoles
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this AccountsClansRoles. The accountsId field

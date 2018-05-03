@@ -90,7 +90,7 @@ public interface GeneratedServerLogs {
      *
      * @return the id of this ServerLogs
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the date of this ServerLogs. The date field corresponds to the

@@ -29,7 +29,7 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

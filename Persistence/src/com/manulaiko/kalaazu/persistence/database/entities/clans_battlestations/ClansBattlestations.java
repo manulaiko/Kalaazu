@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.generated.GeneratedClansBattlestations;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansBattlestations extends GeneratedClansBattlestations {
+public interface ClansBattlestations extends GeneratedClansBattlestations, Entity<Byte> {
 }

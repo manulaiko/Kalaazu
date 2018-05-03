@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_skills.Accou
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels.SkilltreeLevels;
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_skills.SkilltreeSkills;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -35,7 +35,7 @@ public abstract class GeneratedAccountsSkillsImpl implements AccountsSkills {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

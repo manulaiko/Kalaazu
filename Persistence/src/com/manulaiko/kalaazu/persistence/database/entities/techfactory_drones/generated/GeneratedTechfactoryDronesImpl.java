@@ -37,7 +37,7 @@ public abstract class GeneratedTechfactoryDronesImpl implements TechfactoryDrone
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

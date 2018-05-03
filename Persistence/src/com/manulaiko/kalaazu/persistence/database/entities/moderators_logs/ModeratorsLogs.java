@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.moderators_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.moderators_logs.generated.GeneratedModeratorsLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.moderators_logs.gener
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ModeratorsLogs extends GeneratedModeratorsLogs {
+public interface ModeratorsLogs extends GeneratedModeratorsLogs, Entity<Integer> {
 }

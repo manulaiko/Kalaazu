@@ -127,7 +127,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the id of this SkilltreeSkills
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this SkilltreeSkills. The name field corresponds to

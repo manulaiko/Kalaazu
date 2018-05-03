@@ -10,7 +10,7 @@ import com.manulaiko.kalaazu.persistence.database.mappers.CurrencyMapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.EnumField;
 import com.speedment.runtime.field.IntField;
@@ -141,7 +141,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the id of this ClansBanksLogs
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the clansBanksId of this ClansBanksLogs. The clansBanksId field

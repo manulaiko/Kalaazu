@@ -34,7 +34,7 @@ public abstract class GeneratedServerLogsImpl implements ServerLogs {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

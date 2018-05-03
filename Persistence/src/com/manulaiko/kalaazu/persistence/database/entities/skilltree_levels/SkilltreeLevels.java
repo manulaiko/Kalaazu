@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels.generated.GeneratedSkilltreeLevels;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.skilltree_levels.gene
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkilltreeLevels extends GeneratedSkilltreeLevels {
+public interface SkilltreeLevels extends GeneratedSkilltreeLevels, Entity<Short> {
 }

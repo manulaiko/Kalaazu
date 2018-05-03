@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans_news.ClansNews;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -96,7 +96,7 @@ public interface GeneratedClansNews {
      *
      * @return the id of this ClansNews
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this ClansNews. The accountsId field

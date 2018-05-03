@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.items.Items;
 import com.manulaiko.kalaazu.persistence.database.entities.techfactory_costs.TechfactoryCosts;
 import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -34,7 +34,7 @@ public abstract class GeneratedTechfactoryCostsImpl implements TechfactoryCosts 
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

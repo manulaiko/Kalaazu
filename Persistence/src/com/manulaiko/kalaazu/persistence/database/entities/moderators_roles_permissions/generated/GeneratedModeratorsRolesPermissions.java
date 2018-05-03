@@ -7,7 +7,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.BooleanField;
 import com.speedment.runtime.field.ByteField;
@@ -90,7 +90,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return the id of this ModeratorsRolesPermissions
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the moderatorsRolesId of this ModeratorsRolesPermissions. The

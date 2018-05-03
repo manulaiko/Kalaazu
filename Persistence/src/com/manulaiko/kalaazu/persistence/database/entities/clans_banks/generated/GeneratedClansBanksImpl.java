@@ -3,7 +3,7 @@ package com.manulaiko.kalaazu.persistence.database.entities.clans_banks.generate
 import com.manulaiko.kalaazu.persistence.database.entities.clans.Clans;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_banks.ClansBanks;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -37,7 +37,7 @@ public abstract class GeneratedClansBanksImpl implements ClansBanks {
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

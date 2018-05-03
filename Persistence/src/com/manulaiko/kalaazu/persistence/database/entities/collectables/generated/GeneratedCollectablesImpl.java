@@ -32,7 +32,7 @@ public abstract class GeneratedCollectablesImpl implements Collectables {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

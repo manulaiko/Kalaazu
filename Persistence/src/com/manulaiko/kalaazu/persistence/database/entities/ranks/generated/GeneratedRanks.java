@@ -78,7 +78,7 @@ public interface GeneratedRanks {
      *
      * @return the id of this Ranks
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the name of this Ranks. The name field corresponds to the

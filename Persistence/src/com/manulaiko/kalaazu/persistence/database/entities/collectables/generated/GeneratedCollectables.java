@@ -80,7 +80,7 @@ public interface GeneratedCollectables {
      *
      * @return the id of this Collectables
      */
-    byte getId();
+    Byte getId();
 
     /**
      * Returns the gfx of this Collectables. The gfx field corresponds to the

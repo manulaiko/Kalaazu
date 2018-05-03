@@ -41,7 +41,7 @@ public abstract class GeneratedNpcsImpl implements Npcs {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

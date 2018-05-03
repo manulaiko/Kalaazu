@@ -5,7 +5,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_history.Acco
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -103,7 +103,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the id of this AccountsHistory
      */
-    int getId();
+    Integer getId();
 
     /**
      * Returns the accountsId of this AccountsHistory. The accountsId field

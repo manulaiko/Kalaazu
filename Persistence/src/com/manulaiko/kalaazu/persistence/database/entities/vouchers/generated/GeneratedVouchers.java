@@ -64,7 +64,7 @@ public interface GeneratedVouchers {
      *
      * @return the id of this Vouchers
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the code of this Vouchers. The code field corresponds to the

@@ -1,5 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
+import java.util.Optional;
+
 /**
  * Entity interface.
  * =================
@@ -8,11 +10,13 @@ package com.manulaiko.kalaazu.persistence.database.entities;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface Entity<T> {
+public interface Manager<T extends Entity> extends com.speedment.runtime.core.manager.Manager<T> {
     /**
      * Returns the entity ID.
      *
      * @return Entity ID.
      */
-    T getId();
+    default Optional<T> byId(int id) {
+        return this.stream().filter(a -> (int)a.getId() == id).findFirst();
+    }
 }

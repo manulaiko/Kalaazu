@@ -6,7 +6,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.rewards_quests.Reward
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -68,7 +68,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return the id of this RewardsQuests
      */
-    short getId();
+    Short getId();
 
     /**
      * Returns the questsId of this RewardsQuests. The questsId field

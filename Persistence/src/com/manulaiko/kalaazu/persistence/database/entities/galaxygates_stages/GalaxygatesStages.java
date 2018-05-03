@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.generated.GeneratedGalaxygatesStages;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.ge
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesStages extends GeneratedGalaxygatesStages {
+public interface GalaxygatesStages extends GeneratedGalaxygatesStages, Entity<Integer> {
 }

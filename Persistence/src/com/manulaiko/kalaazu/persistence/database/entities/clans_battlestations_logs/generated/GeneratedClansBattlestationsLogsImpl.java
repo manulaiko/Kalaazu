@@ -4,7 +4,7 @@ import com.manulaiko.kalaazu.persistence.database.entities.clans.Clans;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations;
 import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_logs.ClansBattlestationsLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.manager.Manager;
+import com.manulaiko.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -37,7 +37,7 @@ public abstract class GeneratedClansBattlestationsLogsImpl implements ClansBattl
     }
 
     @Override
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 

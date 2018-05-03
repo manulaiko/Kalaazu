@@ -40,7 +40,7 @@ public abstract class GeneratedSkilltreeSkillsImpl implements SkilltreeSkills {
     }
 
     @Override
-    public byte getId() {
+    public Byte getId() {
         return id;
     }
 

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.generated.GeneratedAccountsClansRoles;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface AccountsClansRoles extends GeneratedAccountsClansRoles {
+public interface AccountsClansRoles extends GeneratedAccountsClansRoles, Entity<Integer> {
 }

@@ -1,5 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.server_logs;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated.GeneratedServerLogs;
 
 /**
@@ -10,5 +11,5 @@ import com.manulaiko.kalaazu.persistence.database.entities.server_logs.generated
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ServerLogs extends GeneratedServerLogs {
+public interface ServerLogs extends GeneratedServerLogs, Entity<Integer> {
 }
