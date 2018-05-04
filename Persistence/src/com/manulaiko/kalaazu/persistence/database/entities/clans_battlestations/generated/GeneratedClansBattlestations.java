@@ -1,9 +1,9 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.generated;
 
 import com.manulaiko.kalaazu.math.Vector2;
-import com.manulaiko.kalaazu.persistence.database.entities.clans.Clans;
-import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations;
-import com.manulaiko.kalaazu.persistence.database.entities.maps.Maps;
+import com.manulaiko.kalaazu.persistence.database.entities.Clans;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestations;
+import com.manulaiko.kalaazu.persistence.database.entities.Maps;
 import com.manulaiko.kalaazu.persistence.database.mappers.Vector2Mapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
@@ -19,7 +19,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations}-interface
+ * ClansBattlestations}-interface
  * representing entities of the {@code clans_battlestations}-table in the
  * database.
  * <p>

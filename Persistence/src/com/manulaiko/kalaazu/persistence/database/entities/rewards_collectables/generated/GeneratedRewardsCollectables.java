@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.collectables.Collectables;
-import com.manulaiko.kalaazu.persistence.database.entities.rewards.Rewards;
-import com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.RewardsCollectables;
+import com.manulaiko.kalaazu.persistence.database.entities.Collectables;
+import com.manulaiko.kalaazu.persistence.database.entities.Rewards;
+import com.manulaiko.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -14,7 +14,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.rewards_collectables.RewardsCollectables}-interface
+ * RewardsCollectables}-interface
  * representing entities of the {@code rewards_collectables}-table in the
  * database.
  * <p>

@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_items.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_items.AccountsItems;
-import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations;
-import com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_items.ClansBattlestationsItems;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsItems;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestations;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansBattlestationsItems;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.clans_battlestations_items.ClansBattlestationsItems}-interface
+ * ClansBattlestationsItems}-interface
  * representing entities of the {@code clans_battlestations_items}-table in the
  * database.
  * <p>

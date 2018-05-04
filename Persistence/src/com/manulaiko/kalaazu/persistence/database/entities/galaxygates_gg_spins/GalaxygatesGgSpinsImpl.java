@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins;
 
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesGgSpins;
 import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated.GeneratedGalaxygatesGgSpinsImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.GalaxygatesGgSpins}-interface.
+ * GalaxygatesGgSpins}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

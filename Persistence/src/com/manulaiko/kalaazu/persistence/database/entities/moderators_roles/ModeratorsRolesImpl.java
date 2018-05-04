@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.moderators_roles;
 
+import com.manulaiko.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.generated.GeneratedModeratorsRolesImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.ModeratorsRoles}-interface.
+ * ModeratorsRoles}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

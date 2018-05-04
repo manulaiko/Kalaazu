@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissions.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.ClansRoles;
-import com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissions.ClansRolesPermissions;
-import com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansRoles;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansRolesPermissions;
+import com.manulaiko.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
@@ -18,7 +18,7 @@ import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBoolean
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.clans_roles_permissions.ClansRolesPermissions}-interface
+ * ClansRolesPermissions}-interface
  * representing entities of the {@code clans_roles_permissions}-table in the
  * database.
  * <p>

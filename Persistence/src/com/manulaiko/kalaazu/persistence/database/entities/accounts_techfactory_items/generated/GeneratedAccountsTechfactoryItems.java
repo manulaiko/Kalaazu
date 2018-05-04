@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_techfactory_items.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_techfactory_items.AccountsTechfactoryItems;
-import com.manulaiko.kalaazu.persistence.database.entities.techfactory_items.TechfactoryItems;
+import com.manulaiko.kalaazu.persistence.database.entities.Accounts;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsTechfactoryItems;
+import com.manulaiko.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -16,7 +16,7 @@ import java.util.Optional;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_techfactory_items.AccountsTechfactoryItems}-interface
+ * AccountsTechfactoryItems}-interface
  * representing entities of the {@code accounts_techfactory_items}-table in the
  * database.
  * <p>

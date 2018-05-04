@@ -1,7 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurations;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_hangars.AccountsHangars;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsConfigurations;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsHangars;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -11,7 +11,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurations}-interface
+ * AccountsConfigurations}-interface
  * representing entities of the {@code accounts_configurations}-table in the
  * database.
  * <p>

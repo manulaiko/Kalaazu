@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.AccountsClansRoles;
-import com.manulaiko.kalaazu.persistence.database.entities.clans_roles.ClansRoles;
+import com.manulaiko.kalaazu.persistence.database.entities.Accounts;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsClansRoles;
+import com.manulaiko.kalaazu.persistence.database.entities.ClansRoles;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_clans_roles.AccountsClansRoles}-interface
+ * AccountsClansRoles}-interface
  * representing entities of the {@code accounts_clans_roles}-table in the
  * database.
  * <p>

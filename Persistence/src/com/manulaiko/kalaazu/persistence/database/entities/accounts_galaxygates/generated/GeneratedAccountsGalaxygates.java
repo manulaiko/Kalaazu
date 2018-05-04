@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_galaxygates.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_galaxygates.AccountsGalaxygates;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.Accounts;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsGalaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.Galaxygates;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -12,7 +12,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_galaxygates.AccountsGalaxygates}-interface
+ * AccountsGalaxygates}-interface
  * representing entities of the {@code accounts_galaxygates}-table in the
  * database.
  * <p>

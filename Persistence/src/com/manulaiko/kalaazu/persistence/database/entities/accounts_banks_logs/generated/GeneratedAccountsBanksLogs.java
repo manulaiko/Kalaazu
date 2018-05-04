@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_banks_logs.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_banks.AccountsBanks;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_banks_logs.AccountsBanksLogs;
+import com.manulaiko.kalaazu.persistence.database.entities.Accounts;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsBanks;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsBanksLogs;
 import com.manulaiko.kalaazu.persistence.database.mappers.BankLogType;
 import com.manulaiko.kalaazu.persistence.database.mappers.BankLogTypeMapper;
 import com.manulaiko.kalaazu.persistence.database.mappers.Currency;
@@ -21,7 +21,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_banks_logs.AccountsBanksLogs}-interface
+ * AccountsBanksLogs}-interface
  * representing entities of the {@code accounts_banks_logs}-table in the
  * database.
  * <p>

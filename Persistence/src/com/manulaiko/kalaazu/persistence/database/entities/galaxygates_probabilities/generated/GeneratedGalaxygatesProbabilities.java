@@ -1,7 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygates;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities;
+import com.manulaiko.kalaazu.persistence.database.entities.Galaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesProbabilities;
 import com.manulaiko.kalaazu.persistence.database.mappers.GalaxyGateProbabilityType;
 import com.manulaiko.kalaazu.persistence.database.mappers.GalaxyGateProbabilityTypeMapper;
 import com.speedment.common.annotation.GeneratedCode;
@@ -16,7 +16,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities}-interface
+ * GalaxygatesProbabilities}-interface
  * representing entities of the {@code galaxygates_probabilities}-table in the
  * database.
  * <p>

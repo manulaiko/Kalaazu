@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.moderators;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Moderators;
 import com.manulaiko.kalaazu.persistence.database.entities.moderators.generated.GeneratedModeratorsImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.moderators.Moderators}-interface.
+ * Moderators}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

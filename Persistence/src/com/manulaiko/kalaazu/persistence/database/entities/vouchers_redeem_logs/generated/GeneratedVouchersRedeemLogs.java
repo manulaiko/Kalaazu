@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts.Accounts;
-import com.manulaiko.kalaazu.persistence.database.entities.vouchers.Vouchers;
-import com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.VouchersRedeemLogs;
+import com.manulaiko.kalaazu.persistence.database.entities.Accounts;
+import com.manulaiko.kalaazu.persistence.database.entities.Vouchers;
+import com.manulaiko.kalaazu.persistence.database.entities.VouchersRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.VouchersRedeemLogs}-interface
+ * VouchersRedeemLogs}-interface
  * representing entities of the {@code vouchers_redeem_logs}-table in the
  * database.
  * <p>

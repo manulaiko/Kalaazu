@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.permissions;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Permissions;
 import com.manulaiko.kalaazu.persistence.database.entities.permissions.generated.GeneratedPermissionsImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions}-interface.
+ * Permissions}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

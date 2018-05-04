@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygates;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.GalaxygatesGgWaves;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.GalaxygatesWaves;
+import com.manulaiko.kalaazu.persistence.database.entities.Galaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesGgWaves;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_waves.GalaxygatesGgWaves}-interface
+ * GalaxygatesGgWaves}-interface
  * representing entities of the {@code galaxygates_gg_waves}-table in the
  * database.
  * <p>

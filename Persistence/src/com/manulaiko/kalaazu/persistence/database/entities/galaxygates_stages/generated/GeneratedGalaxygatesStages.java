@@ -1,7 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_waves.GalaxygatesWaves;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesStages;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -16,7 +16,7 @@ import java.util.Optional;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages}-interface
+ * GalaxygatesStages}-interface
  * representing entities of the {@code galaxygates_stages}-table in the
  * database.
  * <p>

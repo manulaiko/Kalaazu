@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygates;
-import com.manulaiko.kalaazu.persistence.database.entities.rewards.Rewards;
-import com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.RewardsGalaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.Galaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.Rewards;
+import com.manulaiko.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -14,7 +14,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.rewards_galaxygates.RewardsGalaxygates}-interface
+ * RewardsGalaxygates}-interface
  * representing entities of the {@code rewards_galaxygates}-table in the
  * database.
  * <p>

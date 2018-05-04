@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates.Galaxygates;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.GalaxygatesGgSpins;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spins.GalaxygatesSpins;
+import com.manulaiko.kalaazu.persistence.database.entities.Galaxygates;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesGgSpins;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesSpins;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_gg_spins.GalaxygatesGgSpins}-interface
+ * GalaxygatesGgSpins}-interface
  * representing entities of the {@code galaxygates_gg_spins}-table in the
  * database.
  * <p>

@@ -1,7 +1,7 @@
 package com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes.InvitationCodes;
-import com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs;
+import com.manulaiko.kalaazu.persistence.database.entities.InvitationCodes;
+import com.manulaiko.kalaazu.persistence.database.entities.InvitationCodesRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -17,7 +17,7 @@ import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs}-interface
+ * InvitationCodesRedeemLogs}-interface
  * representing entities of the {@code invitation_codes_redeem_logs}-table in
  * the database.
  * <p>

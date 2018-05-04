@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages_spawns.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_spawns.GalaxygatesSpawns;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages;
-import com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages_spawns.GalaxygatesStagesSpawns;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesSpawns;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesStages;
+import com.manulaiko.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.galaxygates_stages_spawns.GalaxygatesStagesSpawns}-interface
+ * GalaxygatesStagesSpawns}-interface
  * representing entities of the {@code galaxygates_stages_spawns}-table in the
  * database.
  * <p>

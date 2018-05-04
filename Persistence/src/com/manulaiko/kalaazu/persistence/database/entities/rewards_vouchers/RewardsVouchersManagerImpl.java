@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.rewards_vouchers;
 
+import com.manulaiko.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.manulaiko.kalaazu.persistence.database.entities.rewards_vouchers.generated.GeneratedRewardsVouchersManagerImpl;
 
 /**
  * The default implementation for the manager of every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.rewards_vouchers.RewardsVouchers}
+ * RewardsVouchers}
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.

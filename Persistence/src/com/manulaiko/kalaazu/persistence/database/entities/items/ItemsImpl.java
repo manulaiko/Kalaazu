@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.items;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Items;
 import com.manulaiko.kalaazu.persistence.database.entities.items.generated.GeneratedItemsImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.items.Items}-interface.
+ * Items}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

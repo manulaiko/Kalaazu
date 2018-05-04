@@ -1,10 +1,10 @@
 package com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurations;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItems;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_drones.AccountsDrones;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_items.AccountsItems;
-import com.manulaiko.kalaazu.persistence.database.entities.accounts_pets.AccountsPets;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsConfigurations;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsConfigurationsAccountsItems;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsDrones;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsItems;
+import com.manulaiko.kalaazu.persistence.database.entities.AccountsPets;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -20,7 +20,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItems}-interface
+ * AccountsConfigurationsAccountsItems}-interface
  * representing entities of the {@code
  * accounts_configurations_accounts_items}-table in the database.
  * <p>

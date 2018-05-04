@@ -1,8 +1,8 @@
 package com.manulaiko.kalaazu.persistence.database.entities.moderators_roles_permissions.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles.ModeratorsRoles;
-import com.manulaiko.kalaazu.persistence.database.entities.moderators_roles_permissions.ModeratorsRolesPermissions;
-import com.manulaiko.kalaazu.persistence.database.entities.permissions.Permissions;
+import com.manulaiko.kalaazu.persistence.database.entities.ModeratorsRoles;
+import com.manulaiko.kalaazu.persistence.database.entities.ModeratorsRolesPermissions;
+import com.manulaiko.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
@@ -17,7 +17,7 @@ import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBoolean
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.moderators_roles_permissions.ModeratorsRolesPermissions}-interface
+ * ModeratorsRolesPermissions}-interface
  * representing entities of the {@code moderators_roles_permissions}-table in
  * the database.
  * <p>

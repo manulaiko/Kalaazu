@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.generated;
 
-import com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.TechfactoryDrones;
+import com.manulaiko.kalaazu.persistence.database.entities.TechfactoryDrones;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -11,7 +11,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.techfactory_drones.TechfactoryDrones}-interface
+ * TechfactoryDrones}-interface
  * representing entities of the {@code techfactory_drones}-table in the
  * database.
  * <p>

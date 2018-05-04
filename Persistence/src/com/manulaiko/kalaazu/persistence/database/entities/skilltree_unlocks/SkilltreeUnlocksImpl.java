@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks;
 
+import com.manulaiko.kalaazu.persistence.database.entities.SkilltreeUnlocks;
 import com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.generated.GeneratedSkilltreeUnlocksImpl;
 
 /**
  * The default implementation of the {@link
- * com.manulaiko.kalaazu.persistence.database.entities.skilltree_unlocks.SkilltreeUnlocks}-interface.
+ * SkilltreeUnlocks}-interface.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *

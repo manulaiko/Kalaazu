@@ -1,10 +1,11 @@
 package com.manulaiko.kalaazu.persistence.database.entities.factions;
 
+import com.manulaiko.kalaazu.persistence.database.entities.Factions;
 import com.manulaiko.kalaazu.persistence.database.entities.factions.generated.GeneratedFactionsManagerImpl;
 
 /**
  * The default implementation for the manager of every {@link
- * com.manulaiko.kalaazu.persistence.database.entities.factions.Factions}
+ * Factions}
  * entity.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
