@@ -12,4 +12,17 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers_redeem_logs.
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs, Entity<Integer> {
+    /**
+     * Returns the account instance.
+     *
+     * @return Account instance.
+     */
+    Accounts getAccount();
+
+    /**
+     * Returns the voucher instance.
+     *
+     * @return Voucher instance.
+     */
+    Vouchers getVoucher();
 }

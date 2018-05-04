@@ -3,6 +3,8 @@ package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.GeneratedVouchers;
 
+import java.util.List;
+
 /**
  * The main interface for entities of the {@code vouchers}-table in the
  * database.
@@ -12,4 +14,10 @@ import com.manulaiko.kalaazu.persistence.database.entities.vouchers.generated.Ge
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface Vouchers extends GeneratedVouchers, Entity<Short> {
+    /**
+     * Returns the redeem logs of this voucher.
+     *
+     * @return Redeem logs of this voucher.
+     */
+    List<VouchersRedeemLogs> getRedeemLogs();
 }
