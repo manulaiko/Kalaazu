@@ -3,6 +3,8 @@ package com.manulaiko.kalaazu.persistence;
 import com.manulaiko.kalaazu.eventsystem.EventManager;
 import com.manulaiko.kalaazu.persistence.database.Database;
 import com.manulaiko.kalaazu.persistence.database.entities.Entity;
+import com.manulaiko.kalaazu.persistence.eventsystem.EventListener;
+import com.manulaiko.kalaazu.persistence.eventsystem.Handler;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -72,6 +74,11 @@ public class Persistence {
                      .setPassword(password);
 
         this.database.initialize();
+
+        Handler.setDatabase(this.database);
+        var listener = new EventListener();
+
+        this.eventManager.subscribe(listener);
     }
 
     /**
