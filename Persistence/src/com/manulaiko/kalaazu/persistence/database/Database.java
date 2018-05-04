@@ -9,6 +9,7 @@ import com.speedment.runtime.core.component.transaction.TransactionHandler;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
+import java.util.stream.Stream;
 
 
 /**
@@ -82,6 +83,17 @@ public class Database {
         }
     }
 
+    /**
+     * Find and returns all entities.
+     *
+     * @param type Entity type.
+     *
+     * @return Stream of entities.
+     */
+    public <T extends Entity> Stream<T> all(Class<T> type) {
+        return (Stream<T>) this.db.manager(type)
+                                  .stream();
+    }
 
     /**
      * Finds and returns an entity by its id.
@@ -92,9 +104,8 @@ public class Database {
      * @return Entity with `id`.
      */
     public <T extends Entity> Optional<T> find(int id, Class<T> type) {
-        return (Optional<T>) this.db
-                .manager(type)
-                .byId(id);
+        return (Optional<T>) this.db.manager(type)
+                                    .byId(id);
     }
 
     /**
@@ -104,10 +115,9 @@ public class Database {
      *
      * @return Inserted entity.
      */
-    public <T extends Entity> T insert(T entity) {
-        return (T) this.db
-                .manager(entity.getClass())
-                .persist(entity);
+    public <T extends Entity> T create(T entity) {
+        return (T) this.db.manager(entity.getClass())
+                          .persist(entity);
     }
 
     /**
@@ -118,9 +128,18 @@ public class Database {
      * @return Updated entity.
      */
     public <T extends Entity> T update(T entity) {
-        return (T) this.db
-                .manager(entity.getClass())
-                .update(entity);
+        return (T) this.db.manager(entity.getClass())
+                          .update(entity);
+    }
+
+    /**
+     * Deletes an entity.
+     *
+     * @param entity Entity to delete.
+     */
+    public void delete(Entity entity) {
+        this.db.manager(entity.getClass())
+               .remove(entity);
     }
 
     /**
@@ -151,9 +170,8 @@ public class Database {
      * @return Transaction handler.
      */
     public TransactionHandler transaction() {
-        return this.db
-                .getOrThrow(TransactionComponent.class)
-                .createTransactionHandler();
+        return this.db.getOrThrow(TransactionComponent.class)
+                      .createTransactionHandler();
     }
 
     //<editor-fold desc="Getters and setters">
