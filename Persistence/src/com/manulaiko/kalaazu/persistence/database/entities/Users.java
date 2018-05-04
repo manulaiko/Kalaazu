@@ -1,6 +1,5 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.database.entities.users.generated.GeneratedUsers;
 
 /**

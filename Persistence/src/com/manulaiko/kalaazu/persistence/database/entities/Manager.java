@@ -17,6 +17,8 @@ public interface Manager<T extends Entity> extends com.speedment.runtime.core.ma
      * @return Entity ID.
      */
     default Optional<T> byId(int id) {
-        return this.stream().filter(a -> (int)a.getId() == id).findFirst();
+        return this.stream()
+                   .filter(a -> (int) a.getId() == id)
+                   .findFirst();
     }
 }

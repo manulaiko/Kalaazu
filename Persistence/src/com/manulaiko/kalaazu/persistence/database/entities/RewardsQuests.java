@@ -1,6 +1,6 @@
 package com.manulaiko.kalaazu.persistence.database.entities;
 
-import com.manulaiko.kalaazu.persistence.database.entities.Entity;
+
 import com.manulaiko.kalaazu.persistence.database.entities.rewards_quests.generated.GeneratedRewardsQuests;
 
 /**
