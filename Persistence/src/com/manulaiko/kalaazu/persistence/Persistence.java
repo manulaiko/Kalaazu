@@ -4,7 +4,6 @@ import com.manulaiko.kalaazu.eventsystem.EventManager;
 import com.manulaiko.kalaazu.persistence.database.Database;
 import com.manulaiko.kalaazu.persistence.database.entities.Entity;
 import com.manulaiko.kalaazu.persistence.eventsystem.EventListener;
-import com.manulaiko.kalaazu.persistence.eventsystem.Handler;
 
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -42,11 +41,6 @@ public class Persistence {
     private EventManager eventManager;
 
     /**
-     * Database instance.
-     */
-    private Database database;
-
-    /**
      * Constructor.
      *
      * @param eventManager Event manager.
@@ -65,17 +59,18 @@ public class Persistence {
      * @param password User password.
      */
     public void initialize(String host, int port, String database, String username, String password) {
-        this.database = new Database();
+        var db = new Database();
 
-        this.database.setHost(host)
-                     .setPort(port)
-                     .setDatabase(database)
-                     .setUsername(username)
-                     .setPassword(password);
+        db.setHost(host)
+          .setPort(port)
+          .setDatabase(database)
+          .setUsername(username)
+          .setPassword(password);
 
-        this.database.initialize();
+        db.initialize();
 
-        Handler.setDatabase(this.database);
+        Database.setInstance(db);
+
         var listener = new EventListener();
 
         this.eventManager.subscribe(listener);
@@ -90,7 +85,8 @@ public class Persistence {
      * @return Entity of `type` with `id`.
      */
     public <T extends Entity> Optional<T> find(int id, Class<T> type) {
-        return this.database.find(id, type);
+        return Database.getInstance()
+                       .find(id, type);
     }
 
     /**
@@ -101,6 +97,7 @@ public class Persistence {
      * @return Stream of entities.
      */
     public <T extends Entity> Stream<T> all(Class<T> type) {
-        return this.database.all(type);
+        return Database.getInstance()
+                       .all(type);
     }
 }

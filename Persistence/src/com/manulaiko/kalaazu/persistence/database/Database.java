@@ -22,6 +22,29 @@ import java.util.stream.Stream;
  */
 @SuppressWarnings("unchecked")
 public class Database {
+    //////////////////////////////////
+    // Static methods and properties//
+    //////////////////////////////////
+
+    /**
+     * Database instance.
+     */
+    private static Database instance;
+
+    //<editor-fold desc="Getters and Setters">
+    public static Database getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(Database instance) {
+        Database.instance = instance;
+    }
+    //</editor-fold>
+
+    ///////////////////////////////////////
+    // Non static methods and properties //
+    ///////////////////////////////////////
+
     /**
      * Speedment db instance.
      */
