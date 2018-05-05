@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities;
 
 import com.kalaazu.persistence.database.entities.quests.generated.GeneratedQuests;
 
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -32,4 +33,11 @@ public interface Quests extends GeneratedQuests, Entity<Short> {
      * @return Required faction.
      */
     Optional<Factions> getFaction();
+
+    /**
+     * Returns the required conditions.
+     *
+     * @return Required conditions.
+     */
+    List<QuestsConditions> getConditions();
 }

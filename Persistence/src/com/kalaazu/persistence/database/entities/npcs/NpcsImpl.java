@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.npcs;
 
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.Npcs;
+import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsNpcs;
 import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcsImpl;
 
@@ -22,10 +23,10 @@ public final class NpcsImpl
     /**
      * Rewards.
      */
-    private List<RewardsNpcs> rewards;
+    private List<Rewards> rewards;
 
     @Override
-    public List<RewardsNpcs> getRewards() {
+    public List<Rewards> getRewards() {
         if (this.rewards != null) {
             return this.rewards;
         }
@@ -33,6 +34,7 @@ public final class NpcsImpl
         this.rewards = Database.getInstance()
                                .all(RewardsNpcs.class)
                                .filter(r -> r.getNpcsId() == super.getId())
+                               .map(RewardsNpcs::getReward)
                                .collect(Collectors.toList());
 
         return this.rewards;

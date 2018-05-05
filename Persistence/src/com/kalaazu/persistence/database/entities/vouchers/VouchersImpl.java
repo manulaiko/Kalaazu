@@ -1,6 +1,7 @@
 package com.kalaazu.persistence.database.entities.vouchers;
 
 import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.kalaazu.persistence.database.entities.VouchersRedeemLogs;
@@ -28,7 +29,7 @@ public final class VouchersImpl
     /**
      * Rewards.
      */
-    private List<RewardsVouchers> rewards;
+    private List<Rewards> rewards;
 
     @Override
     public List<VouchersRedeemLogs> getRedeemLogs() {
@@ -45,7 +46,7 @@ public final class VouchersImpl
     }
 
     @Override
-    public List<RewardsVouchers> getRewards() {
+    public List<Rewards> getRewards() {
         if (this.rewards != null) {
             return this.rewards;
         }
@@ -53,6 +54,7 @@ public final class VouchersImpl
         this.rewards = Database.getInstance()
                                .all(RewardsVouchers.class)
                                .filter(r -> r.getVouchersId() == super.getId())
+                               .map(RewardsVouchers::getReward)
                                .collect(Collectors.toList());
 
         return this.rewards;

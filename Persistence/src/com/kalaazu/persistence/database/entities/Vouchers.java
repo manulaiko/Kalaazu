@@ -25,5 +25,5 @@ public interface Vouchers extends GeneratedVouchers, Entity<Short> {
      *
      * @return Rewards of this voucher.
      */
-    List<RewardsVouchers> getRewards();
+    List<Rewards> getRewards();
 }

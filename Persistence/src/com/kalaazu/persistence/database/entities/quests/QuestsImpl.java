@@ -4,9 +4,12 @@ import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.Factions;
 import com.kalaazu.persistence.database.entities.Levels;
 import com.kalaazu.persistence.database.entities.Quests;
+import com.kalaazu.persistence.database.entities.QuestsConditions;
 import com.kalaazu.persistence.database.entities.quests.generated.GeneratedQuestsImpl;
 
+import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * The default implementation of the {@link
@@ -33,6 +36,11 @@ public final class QuestsImpl
      * Required faction.
      */
     private Optional<Factions> faction;
+
+    /**
+     * Quest conditions.
+     */
+    private List<QuestsConditions> conditions;
 
     @Override
     public Levels getLevel() {
@@ -77,5 +85,19 @@ public final class QuestsImpl
         );
 
         return faction;
+    }
+
+    @Override
+    public List<QuestsConditions> getConditions() {
+        if (this.conditions != null) {
+            return this.conditions;
+        }
+
+        this.conditions = Database.getInstance()
+                                  .all(QuestsConditions.class)
+                                  .filter(c -> c.getQuestsId() == super.getId())
+                                  .collect(Collectors.toList());
+
+        return conditions;
     }
 }
