@@ -84,7 +84,7 @@ public final class QuestsImpl
                         .manager(Factions.class)
         );
 
-        return faction;
+        return this.faction;
     }
 
     @Override
@@ -98,6 +98,6 @@ public final class QuestsImpl
                                   .filter(c -> c.getQuestsId() == super.getId())
                                   .collect(Collectors.toList());
 
-        return conditions;
+        return this.conditions;
     }
 }

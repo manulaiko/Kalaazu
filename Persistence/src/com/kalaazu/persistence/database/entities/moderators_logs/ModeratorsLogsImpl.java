@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.moderators_logs;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Moderators;
 import com.kalaazu.persistence.database.entities.ModeratorsLogs;
 import com.kalaazu.persistence.database.entities.moderators_logs.generated.GeneratedModeratorsLogsImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.moderators_logs.generated.Gener
 public final class ModeratorsLogsImpl
         extends GeneratedModeratorsLogsImpl
         implements ModeratorsLogs {
+    /**
+     * The moderator.
+     */
+    private Moderators moderator;
+
+    @Override
+    public Moderators getModerator() {
+        if (this.moderator != null) {
+            return this.moderator;
+        }
+
+        this.moderator = super.findModeratorsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Moderators.class)
+        );
+
+        return this.moderator;
+    }
 }
