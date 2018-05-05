@@ -1,6 +1,8 @@
 package com.kalaazu.persistence.database.entities.factions;
 
+import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.Factions;
+import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.factions.generated.GeneratedFactionsImpl;
 
 /**
@@ -14,4 +16,43 @@ import com.kalaazu.persistence.database.entities.factions.generated.GeneratedFac
 public final class FactionsImpl
         extends GeneratedFactionsImpl
         implements Factions {
+    /**
+     * Home lower map.
+     */
+    private Maps lowerMap;
+
+    /**
+     * Home high map.
+     */
+    private Maps highMap;
+
+    @Override
+    public Maps getLowMap() {
+        if (this.lowerMap != null) {
+            return this.lowerMap;
+        }
+
+        this.lowerMap = super.findLowMapsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Maps.class)
+        );
+
+        return this.lowerMap;
+    }
+
+    @Override
+    public Maps getHighMap() {
+        if (this.highMap != null) {
+            return this.highMap;
+        }
+
+        this.highMap = super.findHighMapsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Maps.class)
+        );
+
+        return this.highMap;
+    }
 }

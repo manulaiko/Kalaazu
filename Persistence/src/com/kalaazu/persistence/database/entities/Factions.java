@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.factions.generated.GeneratedFactions;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.factions.generated.GeneratedFac
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface Factions extends GeneratedFactions, Entity<Byte> {
+    /**
+     * Returns the home low map.
+     *
+     * @return Low map.
+     */
+    Maps getLowMap();
+
+    /**
+     * Returns the home high map.
+     *
+     * @return High map.
+     */
+    Maps getHighMap();
 }
