@@ -57,13 +57,11 @@ public final class UsersImpl
             return this.invitationCode;
         }
 
-        this.invitationCode = Optional.empty();
-
-        super.getInvitationCodesId()
-            .ifPresent(
-                    id -> this.invitationCode = Database.getInstance()
-                                                        .find(id, InvitationCodes.class)
-            );
+        this.invitationCode = super.findInvitationCodesId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(InvitationCodes.class)
+        );
 
         return this.invitationCode;
     }

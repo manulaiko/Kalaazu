@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.techfactory_costs.generated.GeneratedTechfactoryCosts;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.techfactory_costs.generated.Gen
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface TechfactoryCosts extends GeneratedTechfactoryCosts, Entity<Byte> {
+    /**
+     * Returns the techfactory item.
+     *
+     * @return Techfactory item.
+     */
+    TechfactoryItems getTechfactoryItem();
+
+    /**
+     * Returns the item.
+     *
+     * @return Item.
+     */
+    Items getItem();
 }

@@ -1,7 +1,12 @@
 package com.kalaazu.persistence.database.entities.techfactory_items;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.TechfactoryCosts;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.kalaazu.persistence.database.entities.techfactory_items.generated.GeneratedTechfactoryItemsImpl;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * The default implementation of the {@link
@@ -14,4 +19,22 @@ import com.kalaazu.persistence.database.entities.techfactory_items.generated.Gen
 public final class TechfactoryItemsImpl
         extends GeneratedTechfactoryItemsImpl
         implements TechfactoryItems {
+    /**
+     * Production costs.
+     */
+    private List<TechfactoryCosts> costs;
+
+    @Override
+    public List<TechfactoryCosts> getCosts() {
+        if (this.costs != null) {
+            return this.costs;
+        }
+
+        this.costs = Database.getInstance()
+                             .all(TechfactoryCosts.class)
+                             .filter(c -> c.getTechfactoryItemsId() == super.getId())
+                             .collect(Collectors.toList());
+
+        return this.costs;
+    }
 }

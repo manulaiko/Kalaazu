@@ -79,7 +79,7 @@ public class Database {
      * Initializes the connection with the database.
      */
     public void initialize() {
-        if (this.db != null) {
+        if (this.getDb() != null) {
             return;
         }
 
@@ -100,7 +100,8 @@ public class Database {
                              .withLogging(ApplicationBuilder.LogType.UPDATE)
                              .build();
 
-            this.db.initialize();
+            this.getDb()
+                .initialize();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
         }
@@ -114,8 +115,9 @@ public class Database {
      * @return Stream of entities.
      */
     public <T extends Entity> Stream<T> all(Class<T> type) {
-        return (Stream<T>) this.db.manager(type)
-                                  .stream();
+        return (Stream<T>) this.getDb()
+                               .manager(type)
+                               .stream();
     }
 
     /**
@@ -127,8 +129,9 @@ public class Database {
      * @return Entity with `id`.
      */
     public <T extends Entity> Optional<T> find(int id, Class<T> type) {
-        return (Optional<T>) this.db.manager(type)
-                                    .byId(id);
+        return (Optional<T>) this.getDb()
+                                 .manager(type)
+                                 .byId(id);
     }
 
     /**
@@ -139,8 +142,9 @@ public class Database {
      * @return Inserted entity.
      */
     public <T extends Entity> T create(T entity) {
-        return (T) this.db.manager(entity.getClass())
-                          .persist(entity);
+        return (T) this.getDb()
+                       .manager(entity.getClass())
+                       .persist(entity);
     }
 
     /**
@@ -151,8 +155,9 @@ public class Database {
      * @return Updated entity.
      */
     public <T extends Entity> T update(T entity) {
-        return (T) this.db.manager(entity.getClass())
-                          .update(entity);
+        return (T) this.getDb()
+                       .manager(entity.getClass())
+                       .update(entity);
     }
 
     /**
@@ -161,8 +166,9 @@ public class Database {
      * @param entity Entity to delete.
      */
     public void delete(Entity entity) {
-        this.db.manager(entity.getClass())
-               .remove(entity);
+        this.getDb()
+            .manager(entity.getClass())
+            .remove(entity);
     }
 
     /**
@@ -193,8 +199,9 @@ public class Database {
      * @return Transaction handler.
      */
     public TransactionHandler transaction() {
-        return this.db.getOrThrow(TransactionComponent.class)
-                      .createTransactionHandler();
+        return this.getDb()
+                   .getOrThrow(TransactionComponent.class)
+                   .createTransactionHandler();
     }
 
     //<editor-fold desc="Getters and setters">

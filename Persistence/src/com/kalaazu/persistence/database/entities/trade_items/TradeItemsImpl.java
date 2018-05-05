@@ -35,10 +35,11 @@ public final class TradeItemsImpl
             return item;
         }
 
-        this.item = Database.getInstance()
-                            .find(super.getItemsId(), Items.class)
-                            .orElse(null);
-
+        this.item = super.findItemsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Items.class)
+        );
         return this.item;
     }
 
@@ -48,13 +49,11 @@ public final class TradeItemsImpl
             return this.account;
         }
 
-        this.account = Optional.empty();
-
-        super.getAccountsId()
-             .ifPresent(
-                     i -> this.account = Database.getInstance()
-                                                 .find(i, Accounts.class)
-             );
+        this.account = super.findAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
 
         return this.account;
     }

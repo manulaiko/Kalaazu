@@ -33,10 +33,12 @@ public final class VouchersRedeemLogsImpl
             return this.account;
         }
 
-        this.account = Database.getInstance()
-                               .find(super.getAccountsId(), Accounts.class)
-                               .orElse(null);
 
+        this.account = super.findAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
         return this.account;
     }
 
@@ -46,10 +48,11 @@ public final class VouchersRedeemLogsImpl
             return this.voucher;
         }
 
-        this.voucher = Database.getInstance()
-                               .find(super.getVouchersId(), Vouchers.class)
-                               .orElse(null);
-
+        this.voucher = super.findVouchersId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Vouchers.class)
+        );
         return this.voucher;
     }
 }

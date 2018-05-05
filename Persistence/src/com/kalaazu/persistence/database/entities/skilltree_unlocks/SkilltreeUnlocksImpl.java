@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.skilltree_unlocks;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeUnlocks;
 import com.kalaazu.persistence.database.entities.skilltree_unlocks.generated.GeneratedSkilltreeUnlocksImpl;
 
@@ -14,4 +16,43 @@ import com.kalaazu.persistence.database.entities.skilltree_unlocks.generated.Gen
 public final class SkilltreeUnlocksImpl
         extends GeneratedSkilltreeUnlocksImpl
         implements SkilltreeUnlocks {
+    /**
+     * The skill to upgrade.
+     */
+    private SkilltreeLevels upgrade;
+
+    /**
+     * The required skill
+     */
+    private SkilltreeLevels required;
+
+    @Override
+    public SkilltreeLevels getUpgrade() {
+        if (this.upgrade != null) {
+            return this.upgrade;
+        }
+
+        this.upgrade = super.findUpgradeSkilltreeLevelsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(SkilltreeLevels.class)
+        );
+
+        return this.upgrade;
+    }
+
+    @Override
+    public SkilltreeLevels getRequired() {
+        if (this.required != null) {
+            return this.required;
+        }
+
+        this.required = super.findRequiredSkilltreeLevelsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(SkilltreeLevels.class)
+        );
+
+        return this.required;
+    }
 }

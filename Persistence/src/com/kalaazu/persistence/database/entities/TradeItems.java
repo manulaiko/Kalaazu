@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.trade_items.generated.GeneratedTradeItems;
 
 import java.util.Optional;

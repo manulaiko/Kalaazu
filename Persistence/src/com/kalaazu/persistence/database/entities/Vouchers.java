@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.vouchers.generated.GeneratedVouchers;
 
 import java.util.List;

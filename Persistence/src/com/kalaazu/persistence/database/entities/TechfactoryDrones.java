@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.techfactory_drones.generated.GeneratedTechfactoryDrones;
 
 /**
