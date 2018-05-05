@@ -37,7 +37,7 @@ public final class VouchersImpl
 
         this.redeemLogs = Database.getInstance()
                                   .all(VouchersRedeemLogs.class)
-                                  .filter(l -> l.getVouchersId() == this.getId())
+                                  .filter(l -> l.getVouchersId() == super.getId())
                                   .collect(Collectors.toList());
 
         return this.redeemLogs;

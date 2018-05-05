@@ -45,7 +45,7 @@ public final class UsersImpl
 
         this.accounts = Database.getInstance()
                                 .all(Accounts.class)
-                                .filter(a -> a.getUsersId() == this.getId())
+                                .filter(a -> a.getUsersId() == super.getId())
                                 .collect(Collectors.toList());
 
         return this.accounts;
@@ -59,7 +59,7 @@ public final class UsersImpl
 
         this.invitationCode = Optional.empty();
 
-        this.getInvitationCodesId()
+        super.getInvitationCodesId()
             .ifPresent(
                     id -> this.invitationCode = Database.getInstance()
                                                         .find(id, InvitationCodes.class)
@@ -78,7 +78,7 @@ public final class UsersImpl
             .stream()
             .min(Comparator.comparing(
                     a -> a.getLastLogin()
-                          .orElse(this.getDate())
+                          .orElse(super.getDate())
                     // TODO odds are this will fail ¯\_(ツ)_/¯
             ))
             .ifPresent(accounts1 -> this.lastUsedAccount = accounts1);

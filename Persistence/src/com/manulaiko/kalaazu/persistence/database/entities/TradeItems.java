@@ -3,6 +3,8 @@ package com.manulaiko.kalaazu.persistence.database.entities;
 
 import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated.GeneratedTradeItems;
 
+import java.util.Optional;
+
 /**
  * The main interface for entities of the {@code trade_items}-table in the
  * database.
@@ -12,4 +14,17 @@ import com.manulaiko.kalaazu.persistence.database.entities.trade_items.generated
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface TradeItems extends GeneratedTradeItems, Entity<Short> {
+    /**
+     * Returns the item.
+     *
+     * @return The item.
+     */
+    Items getItem();
+
+    /**
+     * Returns the max bidder.
+     *
+     * @return Max bidder.
+     */
+    Optional<Accounts> getAccount();
 }

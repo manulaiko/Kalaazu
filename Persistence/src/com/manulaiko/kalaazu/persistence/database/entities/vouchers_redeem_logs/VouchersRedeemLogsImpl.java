@@ -34,7 +34,7 @@ public final class VouchersRedeemLogsImpl
         }
 
         this.account = Database.getInstance()
-                               .find(this.getAccountsId(), Accounts.class)
+                               .find(super.getAccountsId(), Accounts.class)
                                .orElse(null);
 
         return this.account;
@@ -47,7 +47,7 @@ public final class VouchersRedeemLogsImpl
         }
 
         this.voucher = Database.getInstance()
-                               .find(this.getVouchersId(), Vouchers.class)
+                               .find(super.getVouchersId(), Vouchers.class)
                                .orElse(null);
 
         return this.voucher;
