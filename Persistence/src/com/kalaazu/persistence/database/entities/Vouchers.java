@@ -19,4 +19,11 @@ public interface Vouchers extends GeneratedVouchers, Entity<Short> {
      * @return Redeem logs of this voucher.
      */
     List<VouchersRedeemLogs> getRedeemLogs();
+
+    /**
+     * Returns the rewards of this voucher.
+     *
+     * @return Rewards of this voucher.
+     */
+    List<RewardsVouchers> getRewards();
 }

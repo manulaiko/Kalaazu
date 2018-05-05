@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.rewards;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.rewards.generated.GeneratedRewardsImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.rewards.generated.GeneratedRewa
 public final class RewardsImpl
         extends GeneratedRewardsImpl
         implements Rewards {
+    /**
+     * The item.
+     */
+    private Items item;
+
+    @Override
+    public Items getItem() {
+        if (this.item != null) {
+            return this.item;
+        }
+
+        this.item = super.findItemsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Items.class)
+        );
+
+        return this.item;
+    }
 }

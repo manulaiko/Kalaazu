@@ -27,6 +27,7 @@ public final class SkilltreeLevelsImpl
      */
     private Levels level;
 
+    @Override
     public SkilltreeSkills getSkill() {
         if (this.skill != null) {
             return this.skill;
@@ -39,5 +40,20 @@ public final class SkilltreeLevelsImpl
         );
 
         return this.skill;
+    }
+
+    @Override
+    public Levels getLevel() {
+        if (this.level != null) {
+            return this.level;
+        }
+
+        this.level = super.findLevelsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Levels.class)
+        );
+
+        return this.level;
     }
 }

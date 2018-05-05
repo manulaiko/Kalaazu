@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.server_logs.generated.GeneratedServerLogs;
 
 /**

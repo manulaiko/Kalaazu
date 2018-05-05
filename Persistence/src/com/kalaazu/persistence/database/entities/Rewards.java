@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.rewards.generated.GeneratedRewards;
 
 /**
@@ -11,4 +10,10 @@ import com.kalaazu.persistence.database.entities.rewards.generated.GeneratedRewa
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface Rewards extends GeneratedRewards, Entity<Short> {
+    /**
+     * Returns the item.
+     *
+     * @return The item
+     */
+    Items getItem();
 }

@@ -1,5 +1,8 @@
 package com.kalaazu.persistence.database.entities.rewards_galaxygates;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Galaxygates;
+import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.GeneratedRewardsGalaxygatesImpl;
 
@@ -14,4 +17,43 @@ import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.G
 public final class RewardsGalaxygatesImpl
         extends GeneratedRewardsGalaxygatesImpl
         implements RewardsGalaxygates {
+    /**
+     * The reward.
+     */
+    private Rewards reward;
+
+    /**
+     * The galaxyGate.
+     */
+    private Galaxygates galaxyGate;
+
+    @Override
+    public Rewards getReward() {
+        if (this.reward != null) {
+            return this.reward;
+        }
+
+        this.reward = super.findRewardsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Rewards.class)
+        );
+
+        return this.reward;
+    }
+
+    @Override
+    public Galaxygates getGalaxyGate() {
+        if (this.galaxyGate != null) {
+            return this.galaxyGate;
+        }
+
+        this.galaxyGate = super.findGalaxygatesId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Galaxygates.class)
+        );
+
+        return this.galaxyGate;
+    }
 }

@@ -1,6 +1,9 @@
 package com.kalaazu.persistence.database.entities.rewards_ships;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsShips;
+import com.kalaazu.persistence.database.entities.Ships;
 import com.kalaazu.persistence.database.entities.rewards_ships.generated.GeneratedRewardsShipsImpl;
 
 /**
@@ -14,4 +17,43 @@ import com.kalaazu.persistence.database.entities.rewards_ships.generated.Generat
 public final class RewardsShipsImpl
         extends GeneratedRewardsShipsImpl
         implements RewardsShips {
+    /**
+     * The reward.
+     */
+    private Rewards rewards;
+
+    /**
+     * The ship.
+     */
+    private Ships ship;
+
+    @Override
+    public Rewards getReward() {
+        if (this.rewards != null) {
+            return this.rewards;
+        }
+
+        this.rewards = super.findRewardsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Rewards.class)
+        );
+
+        return this.rewards;
+    }
+
+    @Override
+    public Ships getShip() {
+        if (this.ship != null) {
+            return this.ship;
+        }
+
+        this.ship = super.findShipsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Ships.class)
+        );
+
+        return this.ship;
+    }
 }

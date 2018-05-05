@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.ships;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.kalaazu.persistence.database.entities.ships.generated.GeneratedShipsImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.ships.generated.GeneratedShipsI
 public final class ShipsImpl
         extends GeneratedShipsImpl
         implements Ships {
+    /**
+     * The item.
+     */
+    private Items item;
+
+    @Override
+    public Items getItem() {
+        if (this.item != null) {
+            return this.item;
+        }
+
+        this.item = super.findItemsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Items.class)
+        );
+
+        return this.item;
+    }
 }

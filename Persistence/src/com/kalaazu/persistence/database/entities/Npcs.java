@@ -1,7 +1,8 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcs;
+
+import java.util.List;
 
 /**
  * The main interface for entities of the {@code npcs}-table in the database.
@@ -11,4 +12,10 @@ import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcs;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface Npcs extends GeneratedNpcs, Entity<Byte> {
+    /**
+     * Returns the rewards.
+     *
+     * @return The rewards.
+     */
+    List<RewardsNpcs> getRewards();
 }

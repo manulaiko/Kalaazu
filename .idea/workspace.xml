@@ -2,26 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Add `db` getter">
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeUnlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeUnlocks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkylabModules.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkylabModules.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryCosts.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryCosts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryDrones.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryDrones.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TradeItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TradeItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/News.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/News.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Npcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Npcs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Permissions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Permissions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Quests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Quests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/QuestsConditions.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/QuestsConditions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ranks.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ranks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Rewards.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Rewards.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsCollectables.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsCollectables.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsGalaxygates.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsGalaxygates.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsNpcs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsNpcs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsQuests.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsQuests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsShips.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsShips.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsVouchers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsVouchers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ServerLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ServerLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ships.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ships.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeLevels.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeLevels.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/VouchersRedeemLogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/VouchersRedeemLogs.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/npcs/NpcsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/npcs/NpcsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests/QuestsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests/QuestsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/QuestsConditionsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/QuestsConditionsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards/RewardsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards/RewardsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_collectables/RewardsCollectablesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_collectables/RewardsCollectablesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_galaxygates/RewardsGalaxygatesImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_galaxygates/RewardsGalaxygatesImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_npcs/RewardsNpcsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_npcs/RewardsNpcsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_quests/RewardsQuestsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_quests/RewardsQuestsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_ships/RewardsShipsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_ships/RewardsShipsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_vouchers/RewardsVouchersImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_vouchers/RewardsVouchersImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ships/ShipsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ships/ShipsImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/SkilltreeLevelsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/SkilltreeLevelsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/SkilltreeSkillsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/SkilltreeSkillsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_unlocks/SkilltreeUnlocksImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_unlocks/SkilltreeUnlocksImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_costs/TechfactoryCostsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_costs/TechfactoryCostsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_items/TechfactoryItemsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_items/TechfactoryItemsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/trade_items/TradeItemsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/trade_items/TradeItemsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/UsersImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/UsersImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
@@ -62,23 +74,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SkilltreeSkills.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java">
+      <file leaf-file-name="Vouchers.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="294">
+            <state relative-caret-position="252">
               <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SkilltreeSkillsImpl.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/SkilltreeSkillsImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
             </state>
           </provider>
         </entry>
@@ -180,40 +180,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/techfactory_drones/TechfactoryDrones.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/techfactory_items/TechfactoryItems.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/trade_items/TradeItems.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/users/Users.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/vouchers/Vouchers.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogs.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/vouchers_redeem_logs/generated/GeneratedVouchersRedeemLogsManager.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/key_value/generated/GeneratedKeyValueManager.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/accounts/AccountsManager.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/KalaazuApplication.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/module-info.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/PersistenceBuilder.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/eventsystem/EventListener.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/eventsystem/Handler.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/Accounts.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/accounts_items/AccountsItems.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/AccountsItems.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/Database.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/Persistence.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/users/generated/GeneratedUsers.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/users/generated/GeneratedUsersImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/Users.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/Vouchers.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/KalaazuApplicationImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/VouchersRedeemLogs.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/users/UsersImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/trade_items/TradeItemsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/database/entities/TradeItems.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Users.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryDrones.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TradeItems.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/VouchersRedeemLogs.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryCosts.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryItems.java" />
@@ -221,9 +193,7 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeUnlocks.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/SkilltreeLevelsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogsImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/UsersImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/trade_items/TradeItemsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_items/TechfactoryItemsImpl.java" />
@@ -231,6 +201,36 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_costs/TechfactoryCostsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_unlocks/SkilltreeUnlocksImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/SkilltreeSkillsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/SkilltreeLevelsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ships/ShipsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_vouchers/RewardsVouchersImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_ships/RewardsShipsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_quests/RewardsQuestsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_npcs/RewardsNpcsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsNpcs.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_galaxygates/RewardsGalaxygatesImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsGalaxygates.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsQuests.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsShips.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_collectables/RewardsCollectablesImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsCollectables.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards/RewardsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Rewards.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/QuestsConditionsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/QuestsConditions.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests/QuestsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Quests.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Permissions.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/npcs/NpcsImpl.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Npcs.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/News.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ranks.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsVouchers.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ServerLogs.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ships.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeLevels.java" />
       </list>
     </option>
   </component>
@@ -334,15 +334,9 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.manulaiko.kalaazu.persistence.database" />
-      <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
-      <recent name="com.manulaiko.kalaazu.util" />
-      <recent name="com.manulaiko.kalaazu.eventsystem" />
-    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
       <recent name="com.manulaiko.kalaazu.persistence" />
@@ -351,6 +345,13 @@
     </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.manulaiko.kalaazu.eventsystem" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Persistence/lib" />
+      <recent name="$PROJECT_DIR$/Persistence" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/Persistence/test" />
+      <recent name="$PROJECT_DIR$/Persistence/src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -372,12 +373,11 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
     </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Persistence/lib" />
-      <recent name="$PROJECT_DIR$/Persistence" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/Persistence/test" />
-      <recent name="$PROJECT_DIR$/Persistence/src" />
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.manulaiko.kalaazu.persistence.database" />
+      <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
+      <recent name="com.manulaiko.kalaazu.util" />
+      <recent name="com.manulaiko.kalaazu.eventsystem" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -542,14 +542,13 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="-2" width="1368" height="772" extended-state="6" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50454545" side_tool="true" weight="0.4078125" />
+      <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50454545" side_tool="true" weight="0.4068323" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
@@ -566,12 +565,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32819074" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
     </layout>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -619,7 +619,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Import jndi, clean up libraries" />
     <MESSAGE value="Generate database mapping" />
     <MESSAGE value="Fix builder methods" />
     <MESSAGE value="Fix multiple 'javax.annotation.xa' definition&#10;&#10;Idk why 'jboss-transaction-api' has it." />
@@ -644,7 +643,8 @@
     <MESSAGE value="Add more relations" />
     <MESSAGE value="Simplify package names&#10;&#10;Moved `com.manulaiko.kalaazu` to `com.kalaazu`" />
     <MESSAGE value="Add `db` getter" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add `db` getter" />
+    <MESSAGE value="Moar relations&#10;&#10;Also, I just found out that speedment provides some methods for&#10;finding foreign keys, bretty cool." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moar relations&#10;&#10;Also, I just found out that speedment provides some methods for&#10;finding foreign keys, bretty cool." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -659,7 +659,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="17" />
+      <option name="time" value="18" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -676,326 +676,301 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansBattlestationsItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansBattlestationsLogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansDiplomacies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansNews.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansRanking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansRoles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence/eventsystem/Handler.java" />
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/eventsystem/EventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/KalaazuApplicationBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="52" selection-start-line="5" selection-start-column="52" selection-end-line="5" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/generated/GeneratedUsersImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="968">
-          <caret line="169" column="44" lean-forward="true" selection-start-line="169" selection-start-column="44" selection-end-line="169" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/generated/GeneratedUsers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5203">
-          <caret line="11" column="59" selection-start-line="11" selection-start-column="59" selection-end-line="11" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/generated/GeneratedVouchers.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/KalaazuApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/KalaazuApplicationImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="129" column="53" lean-forward="true" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/trade_items/generated/GeneratedTradeItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1771">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_items/generated/GeneratedTechfactoryItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5021">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_drones/generated/GeneratedTechfactoryDrones.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2192">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_costs/generated/GeneratedTechfactoryCosts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-10-oracle/lib/src.zip!/java.base/java/lang/Override.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="52" column="18" selection-start-line="52" selection-start-column="18" selection-end-line="52" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-10-oracle/lib/src.zip!/java.base/java/util/List.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="137" column="17" selection-start-line="137" selection-start-column="17" selection-end-line="137" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skylab_modules/generated/GeneratedSkylabModules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2558">
-          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_unlocks/generated/GeneratedSkilltreeUnlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/generated/GeneratedSkilltreeSkills.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/database/skilltree_unlocks/structure.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-879">
-          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/EventSystem/src/com/kalaazu/eventsystem/EventListener.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1551" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1034">
-          <caret line="81" column="24" selection-start-line="81" selection-start-column="24" selection-end-line="81" selection-end-column="24" />
-          <folding>
-            <element signature="n#!!doc;n#getInstance#0;n#Database#0" />
-            <element signature="e#983#984#0" expanded="true" />
-            <element signature="e#1014#1015#0" expanded="true" />
-            <element signature="n#!!doc;n#getHost#0;n#Database#0" />
-            <element signature="e#6236#6237#0" expanded="true" />
-            <element signature="e#6261#6262#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/generated/GeneratedSkilltreeLevels.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
+        <state relative-caret-position="147">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_levels/SkilltreeLevelsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="568">
-          <caret line="38" column="8" selection-start-line="38" selection-start-column="8" selection-end-line="38" selection-end-column="8" />
+        <state relative-caret-position="204">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeLevels.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ships/generated/GeneratedShips.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="13" column="57" selection-start-line="13" selection-start-column="57" selection-end-line="13" selection-end-column="57" />
+        <state relative-caret-position="-3920">
+          <caret line="25" column="17" selection-start-line="25" selection-start-column="17" selection-end-line="25" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/VouchersRedeemLogsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ships/ShipsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="45" column="34" lean-forward="true" selection-start-line="45" selection-start-column="34" selection-end-line="45" selection-end-column="34" />
+        <state relative-caret-position="339">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/VouchersRedeemLogs.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/server_logs/generated/GeneratedServerLogs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        <state relative-caret-position="-2724">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_vouchers/generated/GeneratedRewardsVouchers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="43">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_vouchers/RewardsVouchersImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/vouchers/VouchersImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
+        <state relative-caret-position="360">
+          <caret line="46" column="13" selection-start-line="46" selection-start-column="13" selection-end-line="46" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_ships/RewardsShipsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="29" column="13" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_quests/RewardsQuestsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="525">
+          <caret line="29" column="11" lean-forward="true" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_npcs/RewardsNpcsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="48" selection-start-column="48" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_galaxygates/RewardsGalaxygatesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="30" column="19" selection-start-line="30" selection-start-column="19" selection-end-line="30" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards_collectables/RewardsCollectablesImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="30" column="13" lean-forward="true" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards/generated/GeneratedRewardsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="22" column="22" selection-start-line="22" selection-start-column="22" selection-end-line="22" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/users/UsersImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/rewards/RewardsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="24">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="339">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Users.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ranks/generated/GeneratedRanks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-990">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/generated/GeneratedQuestsConditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-10">
+          <caret line="28" column="17" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/QuestsConditionsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="45" column="4" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests/generated/GeneratedQuestsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests_conditions/generated/GeneratedQuestsConditionsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/quests/QuestsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/permissions/generated/GeneratedPermissionsImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/npcs/generated/GeneratedNpcsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/trade_items/TradeItemsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/npcs/NpcsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="56" column="8" selection-start-line="56" selection-start-column="8" selection-end-line="56" selection-end-column="8" />
+        <state relative-caret-position="277">
+          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TradeItems.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Npcs.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_items/TechfactoryItemsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/news/generated/GeneratedNews.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="467">
-          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-1960">
+          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryItems.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/News.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="231">
+          <caret line="11" column="38" lean-forward="true" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_drones/generated/GeneratedTechfactoryDronesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="32">
-          <caret line="129" column="40" lean-forward="true" selection-start-line="129" selection-start-column="40" selection-end-line="129" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryDrones.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Permissions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/techfactory_costs/TechfactoryCostsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Quests.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="54" column="10" selection-start-line="54" selection-start-column="10" selection-end-line="54" selection-end-column="10" />
+        <state relative-caret-position="231">
+          <caret line="13" column="17" selection-start-line="13" selection-start-column="17" selection-end-line="13" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryCosts.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/QuestsConditions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ranks.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Rewards.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="11" column="17" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsCollectables.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsGalaxygates.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsNpcs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsQuests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsShips.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/RewardsVouchers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ServerLogs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Ships.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeLevels.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeUnlocks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
@@ -1009,41 +984,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_unlocks/SkilltreeUnlocksImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="38" column="10" lean-forward="true" selection-start-line="38" selection-start-column="10" selection-end-line="38" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeUnlocks.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryCosts.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/SkilltreeSkills.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryDrones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
+        <state relative-caret-position="252">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TechfactoryItems.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/generated/GeneratedSkilltreeSkillsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/TradeItems.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="19" column="22" selection-start-line="19" selection-start-column="22" selection-end-line="19" selection-end-column="22" />
+        <state relative-caret-position="252">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/skilltree_skills/SkilltreeSkillsImpl.java">
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Users.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
+        <state relative-caret-position="231">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/VouchersRedeemLogs.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="5" column="79" lean-forward="true" selection-start-line="5" selection-start-column="79" selection-end-line="5" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Vouchers.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
         </state>
       </provider>
     </entry>

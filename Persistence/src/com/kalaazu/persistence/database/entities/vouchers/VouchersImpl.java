@@ -1,11 +1,9 @@
 package com.kalaazu.persistence.database.entities.vouchers;
 
 import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.kalaazu.persistence.database.entities.VouchersRedeemLogs;
-import com.kalaazu.persistence.database.entities.rewards_vouchers.RewardsVouchersManager;
 import com.kalaazu.persistence.database.entities.vouchers.generated.GeneratedVouchersImpl;
 
 import java.util.List;
@@ -17,8 +15,6 @@ import java.util.stream.Collectors;
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * TODO implement many-to-many relations for rewards.
- *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class VouchersImpl
@@ -28,6 +24,11 @@ public final class VouchersImpl
      * Redeem logs.
      */
     private List<VouchersRedeemLogs> redeemLogs;
+
+    /**
+     * Rewards.
+     */
+    private List<RewardsVouchers> rewards;
 
     @Override
     public List<VouchersRedeemLogs> getRedeemLogs() {
@@ -41,5 +42,19 @@ public final class VouchersImpl
                                   .collect(Collectors.toList());
 
         return this.redeemLogs;
+    }
+
+    @Override
+    public List<RewardsVouchers> getRewards() {
+        if (this.rewards != null) {
+            return this.rewards;
+        }
+
+        this.rewards = Database.getInstance()
+                               .all(RewardsVouchers.class)
+                               .filter(r -> r.getVouchersId() == super.getId())
+                               .collect(Collectors.toList());
+
+        return this.rewards;
     }
 }

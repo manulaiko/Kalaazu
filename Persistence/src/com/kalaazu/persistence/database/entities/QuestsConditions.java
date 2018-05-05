@@ -1,7 +1,8 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.quests_conditions.generated.GeneratedQuestsConditions;
+
+import java.util.Optional;
 
 /**
  * The main interface for entities of the {@code quests_conditions}-table in the
@@ -12,4 +13,17 @@ import com.kalaazu.persistence.database.entities.quests_conditions.generated.Gen
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface QuestsConditions extends GeneratedQuestsConditions, Entity<Integer> {
+    /**
+     * Returns the required quest condition.
+     *
+     * @return Required quest condition.
+     */
+    Optional<QuestsConditions> getCondition();
+
+    /**
+     * Returns the quest.
+     *
+     * @return The quest.
+     */
+    Quests getQuest();
 }

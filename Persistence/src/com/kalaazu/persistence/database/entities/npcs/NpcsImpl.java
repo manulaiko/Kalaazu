@@ -1,7 +1,12 @@
 package com.kalaazu.persistence.database.entities.npcs;
 
+import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.Npcs;
+import com.kalaazu.persistence.database.entities.RewardsNpcs;
 import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcsImpl;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * The default implementation of the {@link
@@ -14,4 +19,22 @@ import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcsImp
 public final class NpcsImpl
         extends GeneratedNpcsImpl
         implements Npcs {
+    /**
+     * Rewards.
+     */
+    private List<RewardsNpcs> rewards;
+
+    @Override
+    public List<RewardsNpcs> getRewards() {
+        if (this.rewards != null) {
+            return this.rewards;
+        }
+
+        this.rewards = Database.getInstance()
+                               .all(RewardsNpcs.class)
+                               .filter(r -> r.getNpcsId() == super.getId())
+                               .collect(Collectors.toList());
+
+        return this.rewards;
+    }
 }

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.GeneratedRewardsGalaxygates;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.G
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates, Entity<Byte> {
+    /**
+     * Returns the reward.
+     *
+     * @return The reward.
+     */
+    Rewards getReward();
+
+    /**
+     * Returns the galaxy gate.
+     *
+     * @return The galaxy gate.
+     */
+    Galaxygates getGalaxyGate();
 }

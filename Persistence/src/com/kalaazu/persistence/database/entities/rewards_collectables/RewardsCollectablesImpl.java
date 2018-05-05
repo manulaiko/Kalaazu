@@ -1,5 +1,9 @@
 package com.kalaazu.persistence.database.entities.rewards_collectables;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Collectables;
+import com.kalaazu.persistence.database.entities.Quests;
+import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.kalaazu.persistence.database.entities.rewards_collectables.generated.GeneratedRewardsCollectablesImpl;
 
@@ -14,4 +18,43 @@ import com.kalaazu.persistence.database.entities.rewards_collectables.generated.
 public final class RewardsCollectablesImpl
         extends GeneratedRewardsCollectablesImpl
         implements RewardsCollectables {
+    /**
+     * The reward.
+     */
+    private Rewards reward;
+
+    /**
+     * The collectable.
+     */
+    private Collectables collectable;
+
+    @Override
+    public Rewards getReward() {
+        if (this.reward != null) {
+            return this.reward;
+        }
+
+        this.reward = super.findRewardsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Rewards.class)
+        );
+
+        return this.reward;
+    }
+
+    @Override
+    public Collectables getCollectable() {
+        if (this.collectable != null) {
+            return this.collectable;
+        }
+
+        this.collectable = super.findCollectablesId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Quests.class)
+        );
+
+        return this.collectable;
+    }
 }
