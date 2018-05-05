@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.levels_upgrades;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Levels;
 import com.kalaazu.persistence.database.entities.LevelsUpgrades;
 import com.kalaazu.persistence.database.entities.levels_upgrades.generated.GeneratedLevelsUpgradesImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.levels_upgrades.generated.Gener
 public final class LevelsUpgradesImpl
         extends GeneratedLevelsUpgradesImpl
         implements LevelsUpgrades {
+    /**
+     * The level.
+     */
+    private Levels level;
+
+    @Override
+    public Levels getLevel() {
+        if (this.level != null) {
+            return this.level;
+        }
+
+        this.level = super.findLevelsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Levels.class)
+        );
+
+        return this.level;
+    }
 }
