@@ -48,7 +48,7 @@ public class Database {
     /**
      * Speedment db instance.
      */
-    public KalaazuApplication db;
+    private KalaazuApplication db;
 
     /**
      * Server host.
@@ -246,6 +246,10 @@ public class Database {
         this.database = database;
 
         return this;
+    }
+
+    public KalaazuApplication getDb() {
+        return db;
     }
     //</editor-fold>
 }
