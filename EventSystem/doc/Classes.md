@@ -5,9 +5,9 @@ Classes
 
 There are 3 main classes:
 
- * `com.manulaiko.kalaazu.eventsystem.EventManager`.
- * `com.manulaiko.kalaazu.eventsystem.EventListener`.
- * `com.manulaiko.kalaazu.eventsystem.Event`.
+ * `com.kalaazu.eventsystem.EventManager`.
+ * `com.kalaazu.eventsystem.EventListener`.
+ * `com.kalaazu.eventsystem.Event`.
 
 EventManager
 ------------

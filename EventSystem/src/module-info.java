@@ -1,5 +1,5 @@
 module kalaazu.eventsystem {
-    exports com.manulaiko.kalaazu.eventsystem;
+    exports com.kalaazu.eventsystem;
 
     requires eventbus;
 }

@@ -5,10 +5,10 @@ Classes
 
 There are 4 main classes:
 
- * `com.manulaiko.kalaazu.persistence.Persistence`.
- * `com.manulaiko.kalaazu.persistence.PersistenceBuilder`.
- * `com.manulaiko.kalaazu.persistence.eventsystem.EventListener`.
- * `com.manulaiko.kalaazu.persistence.Database`.
+ * `com.kalaazu.persistence.Persistence`.
+ * `com.kalaazu.persistence.PersistenceBuilder`.
+ * `com.kalaazu.persistence.eventsystem.EventListener`.
+ * `com.kalaazu.persistence.Database`.
 
 Persistence
 -----------
