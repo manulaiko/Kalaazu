@@ -1,6 +1,8 @@
 package com.kalaazu.persistence.database.entities.galaxygates_spawns;
 
+import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
+import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.GeneratedGalaxygatesSpawnsImpl;
 
 /**
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.Ge
 public final class GalaxygatesSpawnsImpl
         extends GeneratedGalaxygatesSpawnsImpl
         implements GalaxygatesSpawns {
+    /**
+     * The npc.
+     */
+    private Npcs npc;
+
+    @Override
+    public Npcs getNpc() {
+        if (this.npc != null) {
+            return this.npc;
+        }
+
+        this.npc = super.findNpcsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Npcs.class)
+        );
+
+        return this.npc;
+    }
 }

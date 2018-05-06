@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.generated.GeneratedGalaxygatesStagesSpawns;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.gener
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface GalaxygatesStagesSpawns extends GeneratedGalaxygatesStagesSpawns, Entity<Integer> {
+    /**
+     * Returns the stage.
+     *
+     * @return The stage.
+     */
+    GalaxygatesStages getStage();
+
+    /**
+     * Returns the spawn.
+     *
+     * @return The spawn.
+     */
+    GalaxygatesSpawns getSpawn();
 }

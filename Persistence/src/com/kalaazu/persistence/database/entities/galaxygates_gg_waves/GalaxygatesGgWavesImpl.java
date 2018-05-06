@@ -1,6 +1,9 @@
 package com.kalaazu.persistence.database.entities.galaxygates_gg_waves;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesGgWaves;
+import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.kalaazu.persistence.database.entities.galaxygates_gg_waves.generated.GeneratedGalaxygatesGgWavesImpl;
 
 /**
@@ -14,4 +17,43 @@ import com.kalaazu.persistence.database.entities.galaxygates_gg_waves.generated.
 public final class GalaxygatesGgWavesImpl
         extends GeneratedGalaxygatesGgWavesImpl
         implements GalaxygatesGgWaves {
+    /**
+     * The galaxygate.
+     */
+    private Galaxygates galaxygate;
+
+    /**
+     * The wave.
+     */
+    private GalaxygatesWaves wave;
+
+    @Override
+    public Galaxygates getGalaxygate() {
+        if (this.galaxygate != null) {
+            return this.galaxygate;
+        }
+
+        this.galaxygate = super.findGalaxygatesId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Galaxygates.class)
+        );
+
+        return this.galaxygate;
+    }
+
+    @Override
+    public GalaxygatesWaves getWave() {
+        if (this.wave != null) {
+            return this.wave;
+        }
+
+        this.wave = super.findGalaxygatesWavesId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(GalaxygatesWaves.class)
+        );
+
+        return this.wave;
+    }
 }

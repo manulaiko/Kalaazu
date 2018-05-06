@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.GeneratedGalaxygatesSpawns;
 
 /**
@@ -12,4 +11,10 @@ import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.Ge
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface GalaxygatesSpawns extends GeneratedGalaxygatesSpawns, Entity<Integer> {
+    /**
+     * Returns the npc.
+     *
+     * @return The npc.
+     */
+    Npcs getNpc();
 }

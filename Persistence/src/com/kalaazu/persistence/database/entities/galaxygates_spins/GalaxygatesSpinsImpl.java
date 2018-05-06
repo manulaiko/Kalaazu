@@ -1,6 +1,8 @@
 package com.kalaazu.persistence.database.entities.galaxygates_spins;
 
+import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.GalaxygatesSpins;
+import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.galaxygates_spins.generated.GeneratedGalaxygatesSpinsImpl;
 
 /**
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.galaxygates_spins.generated.Gen
 public final class GalaxygatesSpinsImpl
         extends GeneratedGalaxygatesSpinsImpl
         implements GalaxygatesSpins {
+    /**
+     * The item.
+     */
+    private Items item;
+
+    @Override
+    public Items getItem() {
+        if (this.item != null) {
+            return this.item;
+        }
+
+        this.item = super.findItemsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Items.class)
+        );
+
+        return this.item;
+    }
 }
