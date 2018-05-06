@@ -1,5 +1,8 @@
 package com.kalaazu.persistence.database.entities.clans_banks_logs;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.ClansBanks;
 import com.kalaazu.persistence.database.entities.ClansBanksLogs;
 import com.kalaazu.persistence.database.entities.clans_banks_logs.generated.GeneratedClansBanksLogsImpl;
 
@@ -14,4 +17,63 @@ import com.kalaazu.persistence.database.entities.clans_banks_logs.generated.Gene
 public final class ClansBanksLogsImpl
         extends GeneratedClansBanksLogsImpl
         implements ClansBanksLogs {
+    /**
+     * The bank.
+     */
+    private ClansBanks bank;
+
+    /**
+     * The author.
+     */
+    private Accounts author;
+
+    /**
+     * The destination.
+     */
+    private Accounts destination;
+
+    @Override
+    public ClansBanks getBank() {
+        if (this.bank != null) {
+            return this.bank;
+        }
+
+        this.bank = super.findClansBanksId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(ClansBanksLogs.class)
+        );
+
+        return this.bank;
+    }
+
+    @Override
+    public Accounts getAuthor() {
+        if (this.author != null) {
+            return this.author;
+        }
+
+        this.author = super.findFromAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.author;
+    }
+
+    @Override
+    public Accounts getDestination() {
+        if (this.destination != null) {
+            return this.destination;
+        }
+
+        this.destination = super.findToAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.destination;
+    }
 }

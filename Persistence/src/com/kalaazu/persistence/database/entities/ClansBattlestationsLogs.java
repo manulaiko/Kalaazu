@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.clans_battlestations_logs.generated.GeneratedClansBattlestationsLogs;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.clans_battlestations_logs.gener
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface ClansBattlestationsLogs extends GeneratedClansBattlestationsLogs, Entity<Integer> {
+    /**
+     * Returns the clan.
+     *
+     * @return The clan.
+     */
+    Clans getClan();
+
+    /**
+     * Returns the battlestation.
+     *
+     * @return The battlestation.
+     */
+    ClansBattlestations getBattlestation();
 }

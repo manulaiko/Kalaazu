@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.clans_applications.generated.GeneratedClansApplications;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.clans_applications.generated.Ge
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface ClansApplications extends GeneratedClansApplications, Entity<Integer> {
+    /**
+     * Returns the clan.
+     *
+     * @return The clan.
+     */
+    Clans getClan();
+
+    /**
+     * Returns the account.
+     *
+     * @return The account.
+     */
+    Accounts getAccount();
 }

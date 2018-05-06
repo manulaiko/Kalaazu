@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.clans_ranking;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansRanking;
 import com.kalaazu.persistence.database.entities.clans_ranking.generated.GeneratedClansRankingImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.clans_ranking.generated.Generat
 public final class ClansRankingImpl
         extends GeneratedClansRankingImpl
         implements ClansRanking {
+    /**
+     * The clan.
+     */
+    private Clans clan;
+
+    @Override
+    public Clans getClan() {
+        if (this.clan != null) {
+            return this.clan;
+        }
+
+        this.clan = super.findClansId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Clans.class)
+        );
+
+        return this.clan;
+    }
 }

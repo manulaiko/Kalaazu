@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.clans_ranking.generated.GeneratedClansRanking;
 
 /**
@@ -12,4 +11,10 @@ import com.kalaazu.persistence.database.entities.clans_ranking.generated.Generat
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface ClansRanking extends GeneratedClansRanking, Entity<Integer> {
+    /**
+     * Returns the clan.
+     *
+     * @return The clan.
+     */
+    Clans getClan();
 }
