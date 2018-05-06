@@ -71,13 +71,9 @@ public final class AccountsHangarsImpl
             return this.configuration;
         }
 
-        this.configuration = Optional.empty();
-
-        super.getAccountsConfigurationsId()
-             .ifPresent(
-                     i -> this.configuration = Database.getInstance()
-                                                       .find(i, AccountsConfigurations.class)
-             );
+        this.configuration = Database.getInstance()
+                                     .find(super.getAccountsConfigurationsId()
+                                                .orElse(0), AccountsConfigurations.class);
 
         return this.configuration;
     }

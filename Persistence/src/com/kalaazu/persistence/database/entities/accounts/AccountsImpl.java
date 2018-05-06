@@ -237,7 +237,7 @@ public final class AccountsImpl
 
         this.clanRoles = Database.getInstance()
                                  .all(AccountsClansRoles.class)
-                                 .filter(m -> m.getAccountsId() == super.getId())
+                                 .filter(AccountsClansRoles.ACCOUNTS_ID.equal(super.getId()))
                                  .map(AccountsClansRoles::getRole)
                                  .collect(Collectors.toList());
 
@@ -251,9 +251,9 @@ public final class AccountsImpl
         }
 
         this.destroys = Database.getInstance()
-                            .all(AccountsDestroys.class)
-                            .filter(m -> m.getAccountsId() == super.getId())
-                            .collect(Collectors.toList());
+                                .all(AccountsDestroys.class)
+                                .filter(AccountsDestroys.ACCOUNTS_ID.equal(super.getId()))
+                                .collect(Collectors.toList());
 
         return this.destroys;
     }
@@ -265,9 +265,9 @@ public final class AccountsImpl
         }
 
         this.drones = Database.getInstance()
-                            .all(AccountsDrones.class)
-                            .filter(m -> m.getAccountsId() == super.getId())
-                            .collect(Collectors.toList());
+                              .all(AccountsDrones.class)
+                              .filter(AccountsDrones.ACCOUNTS_ID.equal(super.getId()))
+                              .collect(Collectors.toList());
 
         return this.drones;
     }
@@ -280,7 +280,7 @@ public final class AccountsImpl
 
         this.galaxygates = Database.getInstance()
                                    .all(AccountsGalaxygates.class)
-                                   .filter(m -> m.getAccountsId() == super.getId())
+                                   .filter(AccountsGalaxygates.ACCOUNTS_ID.equal(super.getId()))
                                    .collect(Collectors.toList());
 
         return this.galaxygates;
@@ -294,7 +294,7 @@ public final class AccountsImpl
 
         this.hangars = Database.getInstance()
                                .all(AccountsHangars.class)
-                               .filter(m -> m.getAccountsId() == super.getId())
+                               .filter(AccountsHangars.ACCOUNTS_ID.equal(super.getId()))
                                .collect(Collectors.toList());
 
         return this.hangars;
@@ -308,7 +308,7 @@ public final class AccountsImpl
 
         this.histories = Database.getInstance()
                                  .all(AccountsHistory.class)
-                                 .filter(m -> m.getAccountsId() == super.getId())
+                                 .filter(AccountsHistory.ACCOUNTS_ID.equal(super.getId()))
                                  .collect(Collectors.toList());
 
         return this.histories;
@@ -322,7 +322,7 @@ public final class AccountsImpl
 
         this.items = Database.getInstance()
                              .all(AccountsItems.class)
-                             .filter(m -> m.getAccountsId() == super.getId())
+                             .filter(AccountsItems.ACCOUNTS_ID.equal(super.getId()))
                              .collect(Collectors.toList());
 
         return this.items;
@@ -336,7 +336,9 @@ public final class AccountsImpl
 
         this.messages = Database.getInstance()
                                 .all(AccountsMessages.class)
-                                .filter(m -> m.getFromAccountsId() == super.getId() || m.getToAccountsId() == super.getId())
+                                .filter(AccountsMessages.FROM_ACCOUNTS_ID.equal(super.getId())
+                                                                         .or(AccountsMessages.TO_ACCOUNTS_ID.equal(
+                                                                                 super.getId())))
                                 .collect(Collectors.toList());
 
         return this.messages;
@@ -350,7 +352,7 @@ public final class AccountsImpl
 
         this.pet = Database.getInstance()
                            .all(AccountsPets.class)
-                           .filter(p -> p.getAccountsId() == super.getId())
+                           .filter(AccountsPets.ACCOUNTS_ID.equal(super.getId()))
                            .findAny();
 
         return this.pet;
@@ -364,7 +366,7 @@ public final class AccountsImpl
 
         this.quest = Database.getInstance()
                              .all(AccountsQuests.class)
-                             .filter(m -> m.getAccountsId() == super.getId())
+                             .filter(AccountsQuests.ACCOUNTS_ID.equal(super.getId()))
                              .collect(Collectors.toList());
 
         return this.quest;
@@ -378,7 +380,7 @@ public final class AccountsImpl
 
         this.ranking = Database.getInstance()
                                .all(AccountsRankings.class)
-                               .filter(r -> r.getAccountsId() == super.getId())
+                               .filter(AccountsRankings.ACCOUNTS_ID.equal(super.getId()))
                                .findFirst()
                                .orElse(null);
 
@@ -393,7 +395,7 @@ public final class AccountsImpl
 
         this.ships = Database.getInstance()
                              .all(AccountsShips.class)
-                             .filter(m -> m.getAccountsId() == super.getId())
+                             .filter(AccountsShips.ACCOUNTS_ID.equal(super.getId()))
                              .collect(Collectors.toList());
 
         return this.ships;
@@ -407,7 +409,7 @@ public final class AccountsImpl
 
         this.skills = Database.getInstance()
                               .all(AccountsSkills.class)
-                              .filter(m -> m.getAccountsId() == super.getId())
+                              .filter(AccountsSkills.ACCOUNTS_ID.equal(super.getId()))
                               .collect(Collectors.toList());
 
         return this.skills;
@@ -421,7 +423,7 @@ public final class AccountsImpl
 
         this.skylabs = Database.getInstance()
                                .all(AccountsSkylabs.class)
-                               .filter(m -> m.getAccountsId() == super.getId())
+                               .filter(AccountsSkylabs.ACCOUNTS_ID.equal(super.getId()))
                                .collect(Collectors.toList());
 
         return this.skylabs;
@@ -435,7 +437,7 @@ public final class AccountsImpl
 
         this.techfactories = Database.getInstance()
                                      .all(AccountsTechfactories.class)
-                                     .filter(m -> m.getAccountsId() == super.getId())
+                                     .filter(AccountsTechfactories.ACCOUNTS_ID.equal(super.getId()))
                                      .collect(Collectors.toList());
 
         return this.techfactories;
@@ -449,7 +451,7 @@ public final class AccountsImpl
 
         this.techfactoryItems = Database.getInstance()
                                         .all(AccountsTechfactoryItems.class)
-                                        .filter(m -> m.getAccountsId() == super.getId())
+                                        .filter(AccountsTechfactoryItems.ACCOUNTS_ID.equal(super.getId()))
                                         .collect(Collectors.toList());
 
         return this.techfactoryItems;
@@ -463,7 +465,7 @@ public final class AccountsImpl
 
         this.clanApplications = Database.getInstance()
                                         .all(ClansApplications.class)
-                                        .filter(m -> m.getAccountsId() == super.getId())
+                                        .filter(ClansApplications.ACCOUNTS_ID.equal(super.getId()))
                                         .collect(Collectors.toList());
 
         return this.clanApplications;
@@ -475,13 +477,23 @@ public final class AccountsImpl
             return this.clanMessages;
         }
 
+        // If author
+        var where = ClansMessages.FROM_ACCOUNTS_ID.equal(super.getId());
+
+        // If destination
+        where = where.or(ClansMessages.TO_ACCOUNTS_ID.equal(super.getId()));
+
+        // If destination == null and clan_id == this.clan_id
+        where = where.or(
+                ClansMessages.TO_ACCOUNTS_ID.isNull()
+                                            .and(ClansMessages.CLANS_ID.equal(
+                                                    super.getClansId()
+                                                         .orElse(0)))
+        ); // ayy
+
         this.clanMessages = Database.getInstance()
                                     .all(ClansMessages.class)
-                                    .filter(
-                                            m -> m.getFromAccountsId() == super.getId() ||
-                                                 m.getToAccountsId()
-                                                  .orElse(super.getId()) == super.getId()
-                                    )
+                                    .filter(where)
                                     .collect(Collectors.toList());
 
         return this.clanMessages;

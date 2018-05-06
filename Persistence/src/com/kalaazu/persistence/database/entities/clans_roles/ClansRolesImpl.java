@@ -4,8 +4,6 @@ import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.ClansRolesPermissions;
 import com.kalaazu.persistence.database.entities.clans_roles.generated.GeneratedClansRolesImpl;
-import com.kalaazu.persistence.database.entities.roles.Role;
-import com.kalaazu.persistence.database.entities.roles.RolePermission;
 
 import java.util.List;
 import java.util.Optional;
@@ -38,13 +36,9 @@ public final class ClansRolesImpl
             return this.role;
         }
 
-        this.role = Optional.empty();
-
-        super.getClansRolesId()
-             .ifPresent(
-                     i -> this.role = Database.getInstance()
-                                              .find(i, ClansRoles.class)
-             );
+        this.role = Database.getInstance()
+                            .find(super.getClansRolesId()
+                                       .orElse(0), ClansRoles.class);
 
         return this.role;
     }
@@ -57,7 +51,7 @@ public final class ClansRolesImpl
 
         this.permissions = Database.getInstance()
                                    .all(ClansRolesPermissions.class)
-                                   .filter(p -> p.getClansRolesId() == super.getId())
+                                   .filter(ClansRolesPermissions.CLANS_ROLES_ID.equal(super.getId()))
                                    .collect(Collectors.toList());
 
         return this.permissions;

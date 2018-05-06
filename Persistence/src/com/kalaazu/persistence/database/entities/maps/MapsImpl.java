@@ -62,7 +62,7 @@ public final class MapsImpl
 
         this.npcs = Database.getInstance()
                             .all(MapsNpcs.class)
-                            .filter(n -> n.getMapsId() == super.getId())
+                            .filter(MapsNpcs.MAPS_ID.equal(super.getId()))
                             .collect(Collectors.toList());
 
         return this.npcs;
@@ -76,7 +76,7 @@ public final class MapsImpl
 
         this.portals = Database.getInstance()
                                .all(MapsPortals.class)
-                               .filter(p -> p.getMapsId() == super.getId())
+                               .filter(MapsPortals.MAPS_ID.equal(super.getId()))
                                .collect(Collectors.toList());
 
         return this.portals;
@@ -90,11 +90,7 @@ public final class MapsImpl
 
         this.stations = Database.getInstance()
                                 .all(MapsStations.class)
-                                .filter(
-                                        s -> s.getMapsId()
-                                              .orElse((byte) 0)
-                                              .equals(super.getId())
-                                )
+                                .filter(MapsStations.MAPS_ID.equal(super.getId()))
                                 .collect(Collectors.toList());
 
         return this.stations;

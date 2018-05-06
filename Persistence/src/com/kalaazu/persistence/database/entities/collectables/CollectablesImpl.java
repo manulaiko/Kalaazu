@@ -33,7 +33,7 @@ public final class CollectablesImpl
 
         this.rewards = Database.getInstance()
                                .all(RewardsCollectables.class)
-                               .filter(r -> r.getCollectablesId() == super.getId())
+                               .filter(RewardsCollectables.COLLECTABLES_ID.equal(super.getId()))
                                .map(RewardsCollectables::getReward)
                                .collect(Collectors.toList());
 

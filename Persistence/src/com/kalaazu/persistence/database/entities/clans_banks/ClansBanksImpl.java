@@ -53,7 +53,7 @@ public final class ClansBanksImpl
 
         this.logs = Database.getInstance()
                             .all(ClansBanksLogs.class)
-                            .filter(l -> l.getClansBanksId() == super.getId())
+                            .filter(ClansBanksLogs.CLANS_BANKS_ID.equal(super.getId()))
                             .collect(Collectors.toList());
 
         return this.logs;

@@ -6,7 +6,6 @@ import com.kalaazu.persistence.database.entities.InvitationCodes;
 import com.kalaazu.persistence.database.entities.Users;
 import com.kalaazu.persistence.database.entities.users.generated.GeneratedUsersImpl;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -45,7 +44,7 @@ public final class UsersImpl
 
         this.accounts = Database.getInstance()
                                 .all(Accounts.class)
-                                .filter(a -> a.getUsersId() == super.getId())
+                                .filter(Accounts.USERS_ID.equal(super.getId()))
                                 .collect(Collectors.toList());
 
         return this.accounts;
@@ -72,14 +71,10 @@ public final class UsersImpl
             return this.lastUsedAccount;
         }
 
-        this.getAccounts()
-            .stream()
-            .min(Comparator.comparing(
-                    a -> a.getLastLogin()
-                          .orElse(super.getDate())
-                    // TODO odds are this will fail ¯\_(ツ)_/¯
-            ))
-            .ifPresent(accounts1 -> this.lastUsedAccount = accounts1);
+        this.lastUsedAccount = this.getAccounts()
+                                   .stream()
+                                   .max(Accounts.LAST_LOGIN.comparator())
+                                   .orElse(null);
 
         return this.lastUsedAccount;
     }

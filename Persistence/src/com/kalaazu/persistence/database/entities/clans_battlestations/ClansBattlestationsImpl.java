@@ -75,7 +75,7 @@ public final class ClansBattlestationsImpl
 
         this.logs = Database.getInstance()
                             .all(ClansBattlestationsLogs.class)
-                            .filter(l -> l.getClansBattlestationsId() == super.getId())
+                            .filter(ClansBattlestationsLogs.CLANS_BATTLESTATIONS_ID.equal(super.getId()))
                             .collect(Collectors.toList());
 
         return this.logs;

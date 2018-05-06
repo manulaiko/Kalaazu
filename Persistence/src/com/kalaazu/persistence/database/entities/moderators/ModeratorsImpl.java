@@ -44,7 +44,7 @@ public final class ModeratorsImpl
 
         this.logs = Database.getInstance()
                             .all(ModeratorsLogs.class)
-                            .filter(l -> l.getModeratorsId() == super.getId())
+                            .filter(ModeratorsLogs.MODERATORS_ID.equal(super.getId()))
                             .collect(Collectors.toList());
 
         return this.logs;

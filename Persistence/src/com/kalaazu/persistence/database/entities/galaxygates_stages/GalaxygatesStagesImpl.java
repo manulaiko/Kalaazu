@@ -54,7 +54,7 @@ public final class GalaxygatesStagesImpl
 
         this.spawns = Database.getInstance()
                               .all(GalaxygatesStagesSpawns.class)
-                              .filter(s -> s.getGalaxygatesStagesId() == super.getGalaxygatesWavesId())
+                              .filter(GalaxygatesStagesSpawns.GALAXYGATES_STAGES_ID.equal(super.getId()))
                               .map(GalaxygatesStagesSpawns::getSpawn)
                               .collect(Collectors.toList());
 

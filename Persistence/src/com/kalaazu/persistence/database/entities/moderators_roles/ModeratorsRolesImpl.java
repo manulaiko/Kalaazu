@@ -36,13 +36,9 @@ public final class ModeratorsRolesImpl
             return this.role;
         }
 
-        this.role = Optional.empty();
-
-        super.getModeratorsRolesId()
-             .ifPresent(
-                     i -> this.role = Database.getInstance()
-                                              .find(i, ModeratorsRoles.class)
-             );
+        this.role = Database.getInstance()
+                            .find(super.getModeratorsRolesId()
+                                       .orElse((byte) 0), ModeratorsRoles.class);
 
         return this.role;
     }
@@ -55,7 +51,7 @@ public final class ModeratorsRolesImpl
 
         this.permissions = Database.getInstance()
                                    .all(ModeratorsRolesPermissions.class)
-                                   .filter(p -> p.getModeratorsRolesId() == super.getId())
+                                   .filter(ModeratorsRolesPermissions.MODERATORS_ROLES_ID.equal(super.getId()))
                                    .collect(Collectors.toList());
 
         return this.permissions;

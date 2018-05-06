@@ -95,7 +95,7 @@ public final class QuestsImpl
 
         this.conditions = Database.getInstance()
                                   .all(QuestsConditions.class)
-                                  .filter(c -> c.getQuestsId() == super.getId())
+                                  .filter(QuestsConditions.QUESTS_ID.equal(super.getId()))
                                   .collect(Collectors.toList());
 
         return this.conditions;

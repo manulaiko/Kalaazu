@@ -53,10 +53,7 @@ public final class AccountsBanksImpl
 
         this.logs = Database.getInstance()
                             .all(AccountsBanksLogs.class)
-                            .filter(
-                                    l -> l.getAccountsBanksId()
-                                          .orElse(0) == super.getId()
-                            )
+                            .filter(AccountsBanksLogs.ACCOUNTS_BANKS_ID.equal(super.getId()))
                             .collect(Collectors.toList());
 
         return this.logs;

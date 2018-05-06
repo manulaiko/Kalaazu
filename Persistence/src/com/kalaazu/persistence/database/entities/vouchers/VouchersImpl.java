@@ -39,7 +39,7 @@ public final class VouchersImpl
 
         this.redeemLogs = Database.getInstance()
                                   .all(VouchersRedeemLogs.class)
-                                  .filter(l -> l.getVouchersId() == super.getId())
+                                  .filter(VouchersRedeemLogs.VOUCHERS_ID.equal(super.getId()))
                                   .collect(Collectors.toList());
 
         return this.redeemLogs;
@@ -53,7 +53,7 @@ public final class VouchersImpl
 
         this.rewards = Database.getInstance()
                                .all(RewardsVouchers.class)
-                               .filter(r -> r.getVouchersId() == super.getId())
+                               .filter(RewardsVouchers.VOUCHERS_ID.equal(super.getId()))
                                .map(RewardsVouchers::getReward)
                                .collect(Collectors.toList());
 
