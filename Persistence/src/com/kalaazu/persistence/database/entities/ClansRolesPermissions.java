@@ -1,7 +1,7 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.clans_roles_permissions.generated.GeneratedClansRolesPermissions;
+import com.kalaazu.persistence.database.entities.roles.RolePermission;
 
 /**
  * The main interface for entities of the {@code clans_roles_permissions}-table
@@ -11,5 +11,5 @@ import com.kalaazu.persistence.database.entities.clans_roles_permissions.generat
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ClansRolesPermissions extends GeneratedClansRolesPermissions, Entity<Integer> {
+public interface ClansRolesPermissions extends GeneratedClansRolesPermissions, Entity<Integer>, RolePermission {
 }
