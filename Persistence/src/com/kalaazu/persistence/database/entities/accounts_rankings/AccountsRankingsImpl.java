@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_rankings;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsRankings;
 import com.kalaazu.persistence.database.entities.accounts_rankings.generated.GeneratedAccountsRankingsImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.accounts_rankings.generated.Gen
 public final class AccountsRankingsImpl
         extends GeneratedAccountsRankingsImpl
         implements AccountsRankings {
+    /**
+     * The account.
+     */
+    private Accounts account;
+
+    @Override
+    public Accounts getAccount() {
+        if (this.account != null) {
+            return this.account;
+        }
+
+        this.account = super.findAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.account;
+    }
 }

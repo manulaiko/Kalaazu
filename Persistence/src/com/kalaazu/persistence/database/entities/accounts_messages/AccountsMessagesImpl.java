@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_messages;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsMessages;
 import com.kalaazu.persistence.database.entities.accounts_messages.generated.GeneratedAccountsMessagesImpl;
 
@@ -14,4 +16,43 @@ import com.kalaazu.persistence.database.entities.accounts_messages.generated.Gen
 public final class AccountsMessagesImpl
         extends GeneratedAccountsMessagesImpl
         implements AccountsMessages {
+    /**
+     * The author.
+     */
+    private Accounts author;
+
+    /**
+     * The destination.
+     */
+    private Accounts destination;
+
+    @Override
+    public Accounts getAuthor() {
+        if (this.author != null) {
+            return this.author;
+        }
+
+        this.author = super.findFromAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.author;
+    }
+
+    @Override
+    public Accounts getDestination() {
+        if (this.destination != null) {
+            return this.destination;
+        }
+
+        this.destination = super.findToAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.destination;
+    }
 }

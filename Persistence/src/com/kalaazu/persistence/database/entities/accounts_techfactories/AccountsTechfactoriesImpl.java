@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_techfactories;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsTechfactories;
 import com.kalaazu.persistence.database.entities.accounts_techfactories.generated.GeneratedAccountsTechfactoriesImpl;
 
@@ -14,4 +16,23 @@ import com.kalaazu.persistence.database.entities.accounts_techfactories.generate
 public final class AccountsTechfactoriesImpl
         extends GeneratedAccountsTechfactoriesImpl
         implements AccountsTechfactories {
+    /**
+     * The account.
+     */
+    private Accounts account;
+
+    @Override
+    public Accounts getAccount() {
+        if (this.account != null) {
+            return this.account;
+        }
+
+        this.account = super.findAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.account;
+    }
 }

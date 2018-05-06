@@ -25,15 +25,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsSkylabsImpl implements AccountsSkylabs {
 
-    private int       id;
+    private int id;
 
-    private int       accountsId;
+    private int accountsId;
 
-    private byte      skylabModulesId;
+    private byte skylabModulesId;
 
-    private byte      levelsId;
+    private byte levelsId;
 
-    private int       space;
+    private int space;
 
     private Timestamp upgrade;
 

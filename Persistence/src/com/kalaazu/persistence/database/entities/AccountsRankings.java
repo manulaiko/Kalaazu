@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.accounts_rankings.generated.GeneratedAccountsRankings;
 
 /**
@@ -12,4 +11,10 @@ import com.kalaazu.persistence.database.entities.accounts_rankings.generated.Gen
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface AccountsRankings extends GeneratedAccountsRankings, Entity<Integer> {
+    /**
+     * Returns the account.
+     *
+     * @return The account.
+     */
+    Accounts getAccount();
 }
