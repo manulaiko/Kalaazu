@@ -1,7 +1,13 @@
 package com.kalaazu.persistence.database.entities.accounts_hangars;
 
+import com.kalaazu.persistence.database.Database;
+import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.AccountsConfigurations;
 import com.kalaazu.persistence.database.entities.AccountsHangars;
+import com.kalaazu.persistence.database.entities.AccountsShips;
 import com.kalaazu.persistence.database.entities.accounts_hangars.generated.GeneratedAccountsHangarsImpl;
+
+import java.util.Optional;
 
 /**
  * The default implementation of the {@link
@@ -14,4 +20,65 @@ import com.kalaazu.persistence.database.entities.accounts_hangars.generated.Gene
 public final class AccountsHangarsImpl
         extends GeneratedAccountsHangarsImpl
         implements AccountsHangars {
+    /**
+     * The account.
+     */
+    private Accounts account;
+
+    /**
+     * The ship.
+     */
+    private Optional<AccountsShips> ship;
+
+    /**
+     * The configuration.
+     */
+    private Optional<AccountsConfigurations> configuration;
+
+    @Override
+    public Accounts getAccount() {
+        if (this.account != null) {
+            return this.account;
+        }
+
+        this.account = super.findAccountsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(Accounts.class)
+        );
+
+        return this.account;
+    }
+
+    @Override
+    public Optional<AccountsShips> getShip() {
+        if (this.ship != null) {
+            return this.ship;
+        }
+
+        this.ship = super.findAccountsShipsId(
+                Database.getInstance()
+                        .getDb()
+                        .manager(AccountsShips.class)
+        );
+
+        return this.ship;
+    }
+
+    @Override
+    public Optional<AccountsConfigurations> getConfiguration() {
+        if (this.configuration != null) {
+            return this.configuration;
+        }
+
+        this.configuration = Optional.empty();
+
+        super.getAccountsConfigurationsId()
+             .ifPresent(
+                     i -> this.configuration = Database.getInstance()
+                                                       .find(i, AccountsConfigurations.class)
+             );
+
+        return this.configuration;
+    }
 }

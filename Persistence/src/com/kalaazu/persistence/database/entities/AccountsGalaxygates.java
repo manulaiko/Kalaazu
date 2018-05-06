@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.accounts_galaxygates.generated.GeneratedAccountsGalaxygates;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.accounts_galaxygates.generated.
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface AccountsGalaxygates extends GeneratedAccountsGalaxygates, Entity<Integer> {
+    /**
+     * Returns the account.
+     *
+     * @return The account.
+     */
+    Accounts getAccount();
+
+    /**
+     * Returns the galaxygate.
+     *
+     * @return The galaxygate.
+     */
+    Galaxygates getGalaxygate();
 }

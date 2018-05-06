@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities;
 
-
 import com.kalaazu.persistence.database.entities.accounts_destroys.generated.GeneratedAccountsDestroys;
 
 /**
@@ -12,4 +11,17 @@ import com.kalaazu.persistence.database.entities.accounts_destroys.generated.Gen
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface AccountsDestroys extends GeneratedAccountsDestroys, Entity<Integer> {
+    /**
+     * Returns the account.
+     *
+     * @return The account.
+     */
+    Accounts getAccount();
+
+    /**
+     * Returns the ship.
+     *
+     * @return The ship.
+     */
+    Ships getShip();
 }
