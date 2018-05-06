@@ -1,6 +1,10 @@
 package com.kalaazu.persistence;
 
 import com.kalaazu.eventsystem.EventManager;
+import com.speedment.runtime.core.ApplicationBuilder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Persistence builder.
@@ -14,11 +18,11 @@ import com.kalaazu.eventsystem.EventManager;
  * var builder = new PersistenceBuilder();
  *
  * builder.setEventManager(eventManager)
- * .setHost("localhost")
- * .setPort(3306)
- * .setDatabase("kalaazu")
- * .setUsername("manulaiko")
- * .setPassword("");
+ *        .setHost("localhost")
+ *        .setPort(3306)
+ *        .setDatabase("kalaazu")
+ *        .setUsername("manulaiko")
+ *        .setPassword("");
  *
  * var persistence = builder.build();
  * ```
@@ -32,6 +36,8 @@ public class PersistenceBuilder {
     private String       database = "kalaazu";
     private String       username = "manulaiko";
     private String       password = "";
+
+    private List<ApplicationBuilder.LogType> logType = new ArrayList<>();
 
     /**
      * Builds and initializes the persistence.
@@ -50,35 +56,54 @@ public class PersistenceBuilder {
                 this.port,
                 this.database,
                 this.username,
-                this.password
+                this.password,
+                this.logType
         );
 
         return persistence;
     }
 
     //<editor-fold desc="Setters">
-    public void setEventManager(EventManager eventManager) {
+    public PersistenceBuilder setEventManager(EventManager eventManager) {
         this.eventManager = eventManager;
+
+        return this;
     }
 
-    public void setHost(String host) {
+    public PersistenceBuilder setHost(String host) {
         this.host = host;
+
+        return this;
     }
 
-    public void setPort(int port) {
+    public PersistenceBuilder setPort(int port) {
         this.port = port;
+
+        return this;
     }
 
-    public void setDatabase(String database) {
+    public PersistenceBuilder setDatabase(String database) {
         this.database = database;
+
+        return this;
     }
 
-    public void setUsername(String username) {
+    public PersistenceBuilder setUsername(String username) {
         this.username = username;
+
+        return this;
     }
 
-    public void setPassword(String password) {
+    public PersistenceBuilder setPassword(String password) {
         this.password = password;
+
+        return this;
+    }
+
+    public PersistenceBuilder addLogType(ApplicationBuilder.LogType logType) {
+        this.logType.add(logType);
+
+        return this;
     }
     //</editor-fold>
 }

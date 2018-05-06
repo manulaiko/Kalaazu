@@ -6,6 +6,7 @@ import com.speedment.runtime.core.component.transaction.Transaction;
 import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -51,6 +52,11 @@ public class Database {
     private KalaazuApplication db;
 
     /**
+     * Log levels.
+     */
+    private List<ApplicationBuilder.LogType> logTypes;
+
+    /**
      * Server host.
      */
     private String host;
@@ -87,18 +93,13 @@ public class Database {
             var url     = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
             var builder = new KalaazuApplicationBuilder();
 
-            this.db = builder.withConnectionUrl(url)
-                             .withUsername(this.getUsername())
-                             .withPassword(this.getPassword())
-                             .withLogging(ApplicationBuilder.LogType.APPLICATION_BUILDER)
-                             .withLogging(ApplicationBuilder.LogType.CONNECTION)
-                             .withLogging(ApplicationBuilder.LogType.PERSIST)
-                             .withLogging(ApplicationBuilder.LogType.REMOVE)
-                             .withLogging(ApplicationBuilder.LogType.STREAM)
-                             .withLogging(ApplicationBuilder.LogType.STREAM_OPTIMIZER)
-                             .withLogging(ApplicationBuilder.LogType.TRANSACTION)
-                             .withLogging(ApplicationBuilder.LogType.UPDATE)
-                             .build();
+            builder.withConnectionUrl(url)
+                   .withUsername(this.getUsername())
+                   .withPassword(this.getPassword());
+
+            this.getLogTypes().forEach(builder::withLogging);
+
+            this.db = builder.build();
 
             this.getDb()
                 .initialize();
@@ -253,6 +254,14 @@ public class Database {
         this.database = database;
 
         return this;
+    }
+
+    public List<ApplicationBuilder.LogType> getLogTypes() {
+        return logTypes;
+    }
+
+    public void setLogTypes(List<ApplicationBuilder.LogType> logTypes) {
+        this.logTypes = logTypes;
     }
 
     public KalaazuApplication getDb() {

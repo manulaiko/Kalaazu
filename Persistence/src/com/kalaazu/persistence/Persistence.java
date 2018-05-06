@@ -4,7 +4,9 @@ import com.kalaazu.eventsystem.EventManager;
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.Entity;
 import com.kalaazu.persistence.eventsystem.EventListener;
+import com.speedment.runtime.core.ApplicationBuilder;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
@@ -41,6 +43,11 @@ public class Persistence {
     private EventManager eventManager;
 
     /**
+     * Whether the persistence has been initialized or not.
+     */
+    private boolean initialized;
+
+    /**
      * Constructor.
      *
      * @param eventManager Event manager.
@@ -58,14 +65,19 @@ public class Persistence {
      * @param username User name.
      * @param password User password.
      */
-    public void initialize(String host, int port, String database, String username, String password) {
+    public void initialize(String host, int port, String database, String username, String password, List<ApplicationBuilder.LogType> logTypes) {
+        if (this.isInitialized()) {
+            throw new ExceptionInInitializerError("Already initialized!");
+        }
+
         var db = new Database();
 
         db.setHost(host)
           .setPort(port)
           .setDatabase(database)
           .setUsername(username)
-          .setPassword(password);
+          .setPassword(password)
+          .setLogTypes(logTypes);
 
         db.initialize();
 
@@ -74,6 +86,8 @@ public class Persistence {
         var listener = new EventListener();
 
         this.eventManager.subscribe(listener);
+
+        this.initialized = true;
     }
 
     /**
@@ -99,5 +113,23 @@ public class Persistence {
     public <T extends Entity> Stream<T> all(Class<T> type) {
         return Database.getInstance()
                        .all(type);
+    }
+
+    /**
+     * Convenience method when you're sure that
+     * an entity exists in the database.
+     *
+     * @param id   Entity id.
+     * @param type Entity type.
+     *
+     * @return Entity with `id` or null if you're stupid and it actually does not exist.
+     */
+    public <T extends Entity> T get(int id, Class<T> type) {
+        return this.find(id, type)
+                   .orElse(null);
+    }
+
+    public boolean isInitialized() {
+        return initialized;
     }
 }
