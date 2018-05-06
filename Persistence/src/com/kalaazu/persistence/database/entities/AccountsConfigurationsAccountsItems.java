@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.accounts_configurations_account
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code
- * accounts_configurations_accounts_items}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' items to accounts' configurations table.
+ * ==================================================
+ *
+ * Maps the items to the configuration their equipped in.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

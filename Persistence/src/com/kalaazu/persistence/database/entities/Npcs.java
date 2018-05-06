@@ -5,9 +5,10 @@ import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcs;
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code npcs}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Npcs table.
+ * ===========
+ *
+ * Contains all the npcs of the server.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

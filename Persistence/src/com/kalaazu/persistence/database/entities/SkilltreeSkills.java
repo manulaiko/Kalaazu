@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.skilltree_skills.generated.Gene
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code skilltree_skills}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Skilltree skills table.
+ * =======================
+ *
+ * Contains the different skills.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

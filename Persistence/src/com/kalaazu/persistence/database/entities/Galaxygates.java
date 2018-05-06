@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code galaxygates}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Galaxygates table.
+ * ==================
+ *
+ * Contains the different galaxygates.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.invitation_codes.generated.Gene
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code invitation_codes}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Invitation codes table.
+ * =======================
+ *
+ * Contains the invitation codes required to register.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

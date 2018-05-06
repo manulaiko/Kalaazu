@@ -3,9 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.ranks.generated.GeneratedRanks;
 
 /**
- * The main interface for entities of the {@code ranks}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Ranks table.
+ * ============
+ *
+ * Contains the ranks an account can reach.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

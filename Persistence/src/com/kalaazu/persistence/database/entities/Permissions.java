@@ -4,10 +4,11 @@ import com.kalaazu.persistence.database.entities.permissions.generated.Generated
 import com.kalaazu.persistence.database.entities.roles.Permission;
 
 /**
- * The main interface for entities of the {@code permissions}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Permissions table.
+ * ==================
+ *
+ * Contains the different permissions that can
+ * be assigned to any role system.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

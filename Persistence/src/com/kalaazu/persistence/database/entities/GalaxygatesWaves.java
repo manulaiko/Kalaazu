@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.galaxygates_waves.generated.Gen
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code galaxygates_waves}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Galaxygates' waves table.
+ * =========================
+ *
+ * Contains all the waves of the galaxygates.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

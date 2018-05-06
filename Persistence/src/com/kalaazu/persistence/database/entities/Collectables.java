@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.collectables.generated.Generate
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code collectables}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Collectables table.
+ * ===================
+ *
+ * Contains all the collectables in the server.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

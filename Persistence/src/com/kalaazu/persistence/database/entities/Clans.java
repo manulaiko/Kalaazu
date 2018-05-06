@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code clans}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Clans table.
+ * ============
+ *
+ * Contains the clans.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code users}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Users table.
+ * ============
+ *
+ * Contains the login information of all the users.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

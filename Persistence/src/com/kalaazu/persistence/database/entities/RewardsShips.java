@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.rewards_ships.generated.GeneratedRewardsShips;
 
 /**
- * The main interface for entities of the {@code rewards_ships}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Rewards to ships table.
+ * =======================
+ *
+ * Maps the rewards to their given ships.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

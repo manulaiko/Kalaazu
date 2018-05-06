@@ -3,9 +3,11 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.rewards.generated.GeneratedRewards;
 
 /**
- * The main interface for entities of the {@code rewards}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Rewards table.
+ * ==============
+ *
+ * Contains all possible rewards that can be
+ * awarded to someone, all of them.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

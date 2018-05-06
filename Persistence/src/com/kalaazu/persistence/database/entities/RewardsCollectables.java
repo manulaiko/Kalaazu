@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.rewards_collectables.generated.GeneratedRewardsCollectables;
 
 /**
- * The main interface for entities of the {@code rewards_collectables}-table in
- * the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Rewards to collectables table.
+ * ==============================
+ *
+ * Maps the rewards with their given collectable.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

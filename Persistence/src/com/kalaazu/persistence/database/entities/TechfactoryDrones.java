@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.techfactory_drones.generated.GeneratedTechfactoryDrones;
 
 /**
- * The main interface for entities of the {@code techfactory_drones}-table in
- * the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Techfactory drones table.
+ * =========================
+ *
+ * Contains the drones that can be produced in the techfactory.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

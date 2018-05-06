@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.clans_banks.generated.Generated
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code clans_banks}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Clans' banks table.
+ * ===================
+ *
+ * Contains the clans' banks.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

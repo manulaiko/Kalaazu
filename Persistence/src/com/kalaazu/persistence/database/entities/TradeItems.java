@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.trade_items.generated.Generated
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code trade_items}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Trade items table.
+ * ==================
+ *
+ * Contains the items available in the auction.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

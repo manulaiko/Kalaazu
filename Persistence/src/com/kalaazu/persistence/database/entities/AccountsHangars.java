@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.accounts_hangars.generated.Gene
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code accounts_hangars}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' hangars table.
+ * ========================
+ *
+ * Contains the hangars of an account.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

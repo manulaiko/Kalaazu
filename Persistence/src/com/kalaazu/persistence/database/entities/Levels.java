@@ -3,9 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.levels.generated.GeneratedLevels;
 
 /**
- * The main interface for entities of the {@code levels}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Levels table.
+ * =============
+ *
+ * Contains the levels of the things that can level up.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

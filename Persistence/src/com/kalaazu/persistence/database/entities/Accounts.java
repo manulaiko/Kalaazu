@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code accounts}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts table.
+ * ===============
+ *
+ * Contains the game progress of a user's account.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

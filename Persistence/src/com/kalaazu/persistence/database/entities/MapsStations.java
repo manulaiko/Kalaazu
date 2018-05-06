@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.maps_stations.generated.Generat
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code maps_stations}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Maps' stations table.
+ * =====================
+ *
+ * Contains the stations that are placed in a map.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

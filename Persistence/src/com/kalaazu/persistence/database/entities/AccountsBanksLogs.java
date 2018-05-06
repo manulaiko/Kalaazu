@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.accounts_banks_logs.generated.G
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code accounts_banks_logs}-table in
- * the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' bank logs table.
+ * ==========================
+ *
+ * Contains the transaction logs of the account banks.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

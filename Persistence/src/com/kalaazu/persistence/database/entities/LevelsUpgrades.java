@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.levels_upgrades.generated.GeneratedLevelsUpgrades;
 
 /**
- * The main interface for entities of the {@code levels_upgrades}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Level upgrades table.
+ * =====================
+ *
+ * Contains the costs to upgrade to each level.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

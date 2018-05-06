@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.techfactory_items.generated.Gen
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code techfactory_items}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Techfactory items table.
+ * ========================
+ *
+ * Contains the items that can be produced in the techfactory.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

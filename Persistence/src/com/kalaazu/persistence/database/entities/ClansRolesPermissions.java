@@ -4,10 +4,10 @@ import com.kalaazu.persistence.database.entities.clans_roles_permissions.generat
 import com.kalaazu.persistence.database.entities.roles.RolePermission;
 
 /**
- * The main interface for entities of the {@code clans_roles_permissions}-table
- * in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Clans' roles to permissions table.
+ * ==================================
+ *
+ * Maps the permissions to their clan role.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

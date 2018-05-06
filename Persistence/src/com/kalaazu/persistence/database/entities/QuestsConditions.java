@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.quests_conditions.generated.Gen
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code quests_conditions}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Quests' conditions table.
+ * =========================
+ *
+ * Contains the conditions required to accomplish a quest.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.accounts_ships.generated.GeneratedAccountsShips;
 
 /**
- * The main interface for entities of the {@code accounts_ships}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' ships table.
+ * ======================
+ *
+ * Contains the ships owned by an account.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

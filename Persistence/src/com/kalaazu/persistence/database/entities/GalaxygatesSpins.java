@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.galaxygates_spins.generated.GeneratedGalaxygatesSpins;
 
 /**
- * The main interface for entities of the {@code galaxygates_spins}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Galaxygates' spins table.
+ * =========================
+ *
+ * Contains the spin results of each galaxygate.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

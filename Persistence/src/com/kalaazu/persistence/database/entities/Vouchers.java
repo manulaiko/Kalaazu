@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.vouchers.generated.GeneratedVou
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code vouchers}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Vouchers table.
+ * ===============
+ *
+ * Contains the voucher codes available in the server.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

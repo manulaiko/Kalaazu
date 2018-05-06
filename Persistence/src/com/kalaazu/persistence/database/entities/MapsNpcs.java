@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.maps_npcs.generated.GeneratedMapsNpcs;
 
 /**
- * The main interface for entities of the {@code maps_npcs}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Maps' npcs table.
+ * =================
+ *
+ * Contains the npcs that are spawned in each map.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

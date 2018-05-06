@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.accounts_items.generated.GeneratedAccountsItems;
 
 /**
- * The main interface for entities of the {@code accounts_items}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' items table.
+ * ======================
+ *
+ * Contains the items owned by an account.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

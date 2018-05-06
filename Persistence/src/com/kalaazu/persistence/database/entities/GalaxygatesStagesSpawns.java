@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.generated.GeneratedGalaxygatesStagesSpawns;
 
 /**
- * The main interface for entities of the {@code
- * galaxygates_stages_spawns}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Galaxygates' spawns to stages table.
+ * ====================================
+ *
+ * Maps the spawns with their stages.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.accounts_banks.generated.Genera
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code accounts_banks}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts' banks table.
+ * ======================
+ *
+ * Contains the banks of the accounts.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

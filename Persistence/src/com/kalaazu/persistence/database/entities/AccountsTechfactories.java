@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities;
 import com.kalaazu.persistence.database.entities.accounts_techfactories.generated.GeneratedAccountsTechfactories;
 
 /**
- * The main interface for entities of the {@code accounts_techfactories}-table
- * in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Accounts techfactories table.
+ * =============================
+ *
+ * Contains the techfactories of an account.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

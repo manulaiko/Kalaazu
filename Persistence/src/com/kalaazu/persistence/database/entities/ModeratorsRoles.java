@@ -4,10 +4,10 @@ import com.kalaazu.persistence.database.entities.moderators_roles.generated.Gene
 import com.kalaazu.persistence.database.entities.roles.Role;
 
 /**
- * The main interface for entities of the {@code moderators_roles}-table in the
- * database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Moderators' roles table.
+ * ========================
+ *
+ * Contains the roles a moderator can have.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

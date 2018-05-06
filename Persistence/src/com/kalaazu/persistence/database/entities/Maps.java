@@ -6,9 +6,10 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * The main interface for entities of the {@code maps}-table in the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Maps table.
+ * ===========
+ *
+ * Contains the maps of the server.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

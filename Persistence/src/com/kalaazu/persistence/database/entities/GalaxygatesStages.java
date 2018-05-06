@@ -5,10 +5,10 @@ import com.kalaazu.persistence.database.entities.galaxygates_stages.generated.Ge
 import java.util.List;
 
 /**
- * The main interface for entities of the {@code galaxygates_stages}-table in
- * the database.
- * <p>
- * This file is safe to edit. It will not be overwritten by the code generator.
+ * Galaxygates' stages table.
+ * ==========================
+ *
+ * Contains all stages of a wave.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
