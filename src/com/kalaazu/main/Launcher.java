@@ -2,6 +2,9 @@ package com.kalaazu.main;
 
 import com.kalaazu.eventsystem.EventManager;
 import com.kalaazu.eventsystem.EventManagerBuilder;
+import com.kalaazu.persistence.Persistence;
+import com.kalaazu.persistence.PersistenceBuilder;
+import com.kalaazu.persistence.database.entities.Items;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
@@ -31,6 +34,11 @@ public class Launcher {
     private static EventManager eventManager;
 
     /**
+     * The persistence.
+     */
+    private static Persistence persistence;
+
+    /**
      * Main method.
      *
      * @param args Command line arguments.
@@ -43,6 +51,10 @@ public class Launcher {
         Launcher.logger.info("Starting event manager...");
         Launcher.startEventManager();
         Launcher.logger.debug("Event manager started!");
+
+        Launcher.logger.info("Starting persistence...");
+        Launcher.startPersistence();
+        Launcher.logger.debug("Persistence started!");
     }
 
     /**
@@ -65,5 +77,23 @@ public class Launcher {
                .setSendSubscriberExceptionEvent(Launcher.settings.eventSystem_sendSubscriberExceptionEvent);
 
         Launcher.eventManager = builder.build();
+    }
+
+    /**
+     * Starts the persistence.
+     */
+    public static void startPersistence() {
+        var builder = new PersistenceBuilder();
+
+        builder.setEventManager(Launcher.eventManager)
+               .setHost(Launcher.settings.persistence_host)
+               .setPort(Launcher.settings.persistence_port)
+               .setDatabase(Launcher.settings.persistence_database)
+               .setUsername(Launcher.settings.persistence_username)
+               .setPassword(Launcher.settings.persistence_password);
+
+        Launcher.settings.persistence_logTypes.forEach(builder::addLogType);
+
+        Launcher.persistence = builder.build();
     }
 }

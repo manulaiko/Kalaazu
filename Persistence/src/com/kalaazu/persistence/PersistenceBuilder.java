@@ -105,5 +105,11 @@ public class PersistenceBuilder {
 
         return this;
     }
+
+    public PersistenceBuilder addLogType(String logType) {
+        this.logType.add(ApplicationBuilder.LogType.valueOf(logType));
+
+        return this;
+    }
     //</editor-fold>
 }

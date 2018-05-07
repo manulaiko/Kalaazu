@@ -1,24 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Utils/src/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/Affine2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/Interpolation.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/MathUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/Matrix3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/NumberUtils.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/RandomXS128.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/Vector.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/math/Vector2.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/module-info.java" afterDir="false" />
     </list>
-    <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,8 +50,45 @@
       <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="377">
-              <caret line="44" column="56" lean-forward="true" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+            <state relative-caret-position="128">
+              <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Settings.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#198#242#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistenceBuilderTest.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="483">
+              <caret line="21" column="95" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="95" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PersistenceBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="569">
+              <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,7 +194,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesStages.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesStagesSpawns.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesSpins.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesProbabilities.java" />
@@ -201,15 +226,12 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/AccountsHangars.java" />
         <option value="$PROJECT_DIR$/Persistence/test/module-info.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Manager.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" />
         <option value="$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java" />
         <option value="$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceTest.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/launcher/Main.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/launcher/Launcher.java" />
-        <option value="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" />
-        <option value="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" />
         <option value="$PROJECT_DIR$/src/module-info.java" />
         <option value="$PROJECT_DIR$/Utils/src/module-info.java" />
         <option value="$PROJECT_DIR$/Persistence/src/module-info.java" />
@@ -219,6 +241,10 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/maps_stations/generated/GeneratedMapsStations.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/accounts_ships/generated/GeneratedAccountsShips.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/factions/generated/GeneratedFactionsSqlAdapter.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" />
+        <option value="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" />
+        <option value="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" />
       </list>
     </option>
   </component>
@@ -260,13 +286,20 @@
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="Persistence" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="persistence" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -540,7 +573,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.6724638" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.6869565" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3942029" visible="true" weight="0.3151515" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3942029" weight="0.3151515" />
       <window_info id="Web" sideWeight="0.6057971" side_tool="true" weight="0.3151515" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32753623" />
@@ -651,8 +684,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Add global database instance&#10;&#10;&quot;HURR DURR GLOBAL VARIABLES ARE BAD HURR DURR YOU SHOULD BE ASHAMED&quot;&#10;Shut the fuck up, I prefer this being easy than socially accepted." />
-    <MESSAGE value="Delete useless imports&#10;&#10;Almost as useless as this commit message." />
     <MESSAGE value="Implement relations&#10;&#10;Rome wasn't build in one day." />
     <MESSAGE value="Add more relations" />
     <MESSAGE value="Simplify package names&#10;&#10;Moved `com.manulaiko.kalaazu` to `com.kalaazu`" />
@@ -676,7 +707,9 @@
     <MESSAGE value="Improve entity documentation" />
     <MESSAGE value="Add tests&#10;&#10;Add `PersistenceBuilder.addLogType` to specify speedment logging and&#10;created `Persistence.get` as shortcut to&#10;`Persistence.find(id, type).orElse(null)`, useful af tbh." />
     <MESSAGE value="Create launcher&#10;&#10;We need something to launch the app, right?" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create launcher&#10;&#10;We need something to launch the app, right?" />
+    <MESSAGE value="Add logging" />
+    <MESSAGE value="Create `Utils` module&#10;&#10;Because of cyclic dependencies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Create `Utils` module&#10;&#10;Because of cyclic dependencies." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -708,13 +741,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansMessages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="11" column="3" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansDiplomacies.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -863,16 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="59" column="28" selection-start-line="59" selection-start-column="28" selection-end-line="59" selection-end-column="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/items/generated/GeneratedItems.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="560">
@@ -943,16 +959,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="80" lean-forward="true" selection-start-line="13" selection-start-column="80" selection-end-line="21" selection-end-column="96" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/EventSystem/src/com/kalaazu/eventsystem/EventManager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
@@ -977,13 +983,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="220">
           <caret line="20" column="34" selection-start-line="20" selection-start-column="34" selection-end-line="24" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Settings.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="615">
-          <caret line="44" column="37" selection-start-line="44" selection-start-column="37" selection-end-line="44" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1060,10 +1059,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="569">
+          <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="483">
+          <caret line="21" column="95" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="95" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Settings.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#198#242#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="377">
-          <caret line="44" column="56" lean-forward="true" selection-start-line="44" selection-start-column="56" selection-end-line="44" selection-end-column="56" />
+        <state relative-caret-position="128">
+          <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1076,7 +1109,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited />
+          <last-edited>CMS:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1089,7 +1122,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
