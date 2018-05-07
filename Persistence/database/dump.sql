@@ -1,5 +1,5 @@
 -- Kalaazu database v3.0.0
--- 
+--
 -- @author Manulaiko <manulaiko@gmail.com>
 
 DROP DATABASE IF EXISTS `kalaazu`;
@@ -2466,7 +2466,7 @@ INSERT INTO `items` (`id`, `name`, `category`, `description`, `price`, `type`, `
   (18, 'Goliath', 1, 'Goliath\n\nThe ultimate battlecruiser: hot-shot pilots accept no substitutes!', 80000, 0, 1, 1, 0),
   (19, 'Sepearhead', 1, 'Spearhead\n\nAn agile reconnaissance ship, ideal for the ruthless, cold-blooded lone wolf. Spearheads can penetrate unseen deep into enemy territory as scouts, disable enemy ships'' skills, or even mark them for her allies.', 45000, 0, 1, 1, 0),
   (20, 'Aegis', 1, 'Aegis\n\nThe Aegis tips the scales one way or the other in every battle she''s flown in. This versatile engineering ship''s support and repair abilities have often made the difference between defeat and victory - so make sure she''s on your side!', 250000, 0, 1, 1, 0),
-  (21, 'Citadel', 1, 'Citadel\n\nA Citadel is often affectionately called a \"Clank Tank\" - or just The Tank - by her crew. She''s a hulking Heavy Cruiser with two rocket launcher slots and various abilities that make her a mobile shield for her allies. Now this bulwark among spaceships can be yours!', 300000, 0, 1, 1, 0),
+  (21, 'Citadel', 1, 'Citadel\n\nA Citadel is often affectionately called a \"Clank Tank\" - or just The Tank - by her crew. She''s a hulking Heavy Cruiser with two rocket main slots and various abilities that make her a mobile shield for her allies. Now this bulwark among spaceships can be yours!', 300000, 0, 1, 1, 0),
   (22, 'Aegis Superelite', 1, 'Aegis Elite\n\nLoyal, trustworthy, tough - no pilot could wish for a better support system! This ship has the following abilities: 5% extra damage, 50% longer-lasting repairbots, 20% faster shield repair, and 10% faster HP repair.', 300000, 3, 1, 1, 0),
   (23, 'Aegis Elite', 1, 'Aegis Veteran\n\nBe the shield your allies deserve: the A-Veteran is a beautifully designed support ship, ready to prove her worth in any battle! This ship has the following abilities: 5% bonus to experience and honor points.', 300000, 3, 1, 1, 0),
   (24, 'Citadel Superelite', 1, 'Citadel Elite\n\nThis flying fortress will teach your enemies the true meaning of fear! This ship has the following abilities: 5% extra damage, 50% increased durations of the Protection and Draw Fire abilities, 25% shorter Fortify ability, and 15% shorter Travel ability.', 300000, 4, 1, 1, 0),
@@ -2522,12 +2522,12 @@ INSERT INTO `items` (`id`, `name`, `category`, `description`, `price`, `type`, `
   (74, 'BDR-1212', 2, 'No description available.', 100, 11, 1, 1, 1),
   (75, 'CBR-100', 2, 'CBR Rocket\n\nThe combo rocket will help you make a name for yourself. A combination of high damage infliction and Shield Leech is a one-two punch your enemies won''t soon forget.', 30, 11, 1, 1, 1),
   (76, 'ECO-10', 2, 'ECO-10 rocket\n\nThe multi-angle damage rocket for smart spenders. Your toughest enemies won''t stand a chance against the many broadsides of the ECO Hellstorm.', 1500, 11, 0, 1, 0),
-  (77, 'HSTRM-01', 2, 'Hellstorm\n\nDouble the rockets, double the trouble!\nUpon being fired from the rocket launcher, these rockets will rapidly descend upon your enemy and scorch their target with a near apocalyptic explosion. Fired off in a broadside, they will cause even more damage, hitting an enemy ship from multiple sides to weaken its hull structure..', 25, 11, 1, 1, 1),
-  (78, 'SAR-01', 2, 'SAR-01 rocket\n\nThe Hellstorm SAR-01, a Shield Leeching rocket, is fired from a rocket launcher. An especially good quick-strike weapon!', 2000, 11, 0, 1, 0),
-  (79, 'SAR-02', 2, 'SAR-02 rocket\n\nThe Hellstorm SAR-02, a Shield Leeching rocket, is fired from a rocket launcher. An especially good quick-strike weapon!', 10, 11, 1, 1, 1),
+  (77, 'HSTRM-01', 2, 'Hellstorm\n\nDouble the rockets, double the trouble!\nUpon being fired from the rocket main, these rockets will rapidly descend upon your enemy and scorch their target with a near apocalyptic explosion. Fired off in a broadside, they will cause even more damage, hitting an enemy ship from multiple sides to weaken its hull structure..', 25, 11, 1, 1, 1),
+  (78, 'SAR-01', 2, 'SAR-01 rocket\n\nThe Hellstorm SAR-01, a Shield Leeching rocket, is fired from a rocket main. An especially good quick-strike weapon!', 2000, 11, 0, 1, 0),
+  (79, 'SAR-02', 2, 'SAR-02 rocket\n\nThe Hellstorm SAR-02, a Shield Leeching rocket, is fired from a rocket main. An especially good quick-strike weapon!', 10, 11, 1, 1, 1),
   (80, 'SHG-01', 2, 'No description available.', 2000, 11, 0, 1, 0),
   (81, 'SHG-02', 2, 'No description available.', 25, 11, 1, 1, 1),
-  (82, 'UBR-100', 2, 'Uber\n\nYour rocket launcher will fire salvos of UBR-100 rockets. Their optimized warheads are at least 80% more effective against aliens, and they also utilize the multi-angle damage feature of conventional Hellstorm rockets.', 30, 11, 1, 1, 1),
+  (82, 'UBR-100', 2, 'Uber\n\nYour rocket main will fire salvos of UBR-100 rockets. Their optimized warheads are at least 80% more effective against aliens, and they also utilize the multi-angle damage feature of conventional Hellstorm rockets.', 30, 11, 1, 1, 1),
   (83, 'BDR-1211', 2, 'Birthday Rocket\n\nCause extensive damage to aliens of max. 7,500 per shot! On other pilot''s ships, they only cause a max. 4,000 damage per hit.', 10, 12, 1, 1, 1),
   (84, 'PLT-2021', 2, 'PLT-2021\n\nLong-range rocket: causes up to 4,000 points per rocket fired.', 5, 12, 1, 1, 0),
   (85, 'PLT-2026', 2, 'PLT-2026\n\nMid-range rocket: causes up to 2,000 damage points per rocket fired.', 500, 12, 0, 1, 0),
@@ -2570,8 +2570,8 @@ INSERT INTO `items` (`id`, `name`, `category`, `description`, `price`, `type`, `
   (122, 'LF-2', 4, 'LF-2\n\nStrong laser: causes up to 100 damage points per round.', 0, 16, 0, 1, 0),
   (123, 'LF-3', 4, 'LF-3\n\nMuch stronger laser: Causes up to 150 damage points per round.', 0, 16, 0, 1, 0),
   (124, 'LF-4', 4, 'LF-4\n\nMuch much stronger laser: Causes up to 200 damage points per round.', 0, 16, 0, 1, 0),
-  (125, 'HST-1', 4, 'Hellstorm launcher 1\n\nThe rapid reloader!\nThis rocket launcher makes it possible to win a battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 3 rockets, this rocket launcher unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.', 0, 17, 0, 1, 0),
-  (126, 'HST-2', 4, 'Hellstorm launcher 2\n\nThe rapid reloader!\nThis upgraded version of the Hellstorm launcher 1 makes it possible to win the battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 5 rockets, this rocket launcher unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.', 0, 17, 0, 1, 0),
+  (125, 'HST-1', 4, 'Hellstorm main 1\n\nThe rapid reloader!\nThis rocket main makes it possible to win a battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 3 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.', 0, 17, 0, 1, 0),
+  (126, 'HST-2', 4, 'Hellstorm main 2\n\nThe rapid reloader!\nThis upgraded version of the Hellstorm main 1 makes it possible to win the battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 5 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.', 0, 17, 0, 1, 0),
   (127, 'HMD-07', 4, 'HM7 trade drone\n\nWith the HM7 trade drone, you can sell your ore no matter what orbit you''re in. Why waste time going back to the space station?\nValid for 100 transactions.\n\nYou already have an active trade drone. If you buy this trade drone now, you''ll receive 100 more transactions.\n\nOnly one of these items is allowed per configuration.', 10000, 18, 1, 1, 0),
   (128, 'AIM-01', 4, 'Targeting Guidance CPU 1\n\n25% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU is allowed per configuration.\n\nOnly one of these items is allowed per configuration.', 20000000, 19, 0, 1, 0),
   (129, 'AIM-02', 4, 'Targeting Guidance CPU 2\n\n50% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU allowed per configuration.\n\nOnly one of these items is allowed per configuration.', 200000, 19, 1, 1, 0),
@@ -2602,7 +2602,7 @@ INSERT INTO `items` (`id`, `name`, `category`, `description`, `price`, `type`, `
   (154, 'NC-RRB-X', 4, 'Repair-bot Auto CPU\n\nAuto-activates a repair robot available\n\nOnly one of these items is allowed per configuration.', 10000, 19, 1, 1, 0),
   (155, 'RB-X', 4, 'Rocket CPU\n\nAutomatically buys 500 rockets of the selected rocket type when you have less than 100 left on board. To set the rocket type, click on Hangar/Manage.\n\nOnly one of these items is allowed per configuration.', 15000, 19, 1, 1, 0),
   (156, 'RD-X', 4, 'Radar CPU\n\nDisplays diplomacy status on mini map\n\nOnly one of these items is allowed per configuration.', 15000, 19, 1, 1, 0),
-  (157, 'RLLB-X', 4, 'Rocket-launcher CPU\n\nThe rocket-launcher CPU automatically reloads your rocket launcher with a specified rocket type to rain fire on your enemies when you launch a laser attack.\n\nAfter installation is completed, the RL-LB1 CPU must be activated on the space map in \"CPUs\".\n\nOnly one of these items is allowed per configuration.', 25000, 19, 1, 1, 0),
+  (157, 'RLLB-X', 4, 'Rocket-main CPU\n\nThe rocket-main CPU automatically reloads your rocket main with a specified rocket type to rain fire on your enemies when you launch a laser attack.\n\nAfter installation is completed, the RL-LB1 CPU must be activated on the space map in \"CPUs\".\n\nOnly one of these items is allowed per configuration.', 25000, 19, 1, 1, 0),
   (158, 'ROK-T01', 4, 'Rocket Turbo\n\nDoubles rocket firing speed\n\nOnly one of these items is allowed per configuration.', 10000, 19, 1, 1, 0),
   (159, 'SLE-01', 4, 'Slot CPU 1\n\n+2 new slots for extras.\n\nOnly one of these items is allowed per configuration.', 600000, 19, 1, 1, 0),
   (160, 'SLE-02', 4, 'Slot CPU 2\n\n+4 new slots for extras.\n\nOnly one of these items is allowed per configuration.', 75000, 19, 1, 1, 0),
@@ -2651,7 +2651,7 @@ INSERT INTO `items` (`id`, `name`, `category`, `description`, `price`, `type`, `
   (203, 'F-01-TU', 7, '', 1000000, 24, 0, 1, 0),
   (204, 'F-02-AR', 7, '', 1000000, 24, 0, 1, 0),
   (205, 'F-03-LA', 7, 'No description available.', 100000, 24, 1, 0, 0),
-  (206, 'F-04-ST', 7, 'Star Formation\n\nAugment your drone control unit with the Star Formation.\n\nIncreases rocket damage by 25%, but rocket launcher reload time increases by 33%, as well.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.', 75000, 24, 1, 1, 0),
+  (206, 'F-04-ST', 7, 'Star Formation\n\nAugment your drone control unit with the Star Formation.\n\nIncreases rocket damage by 25%, but rocket main reload time increases by 33%, as well.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.', 75000, 24, 1, 1, 0),
   (207, 'F-05-PI', 7, 'Pincer Formation\n\nAugment your drone control unit with the Pincer Formation.\n\nIncreases laser damage by 3% against other players and provides an additional 5% honor point bonus. However, it reduces shield penetration by 10%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.', 100000, 24, 1, 1, 0),
   (208, 'F-06-DA', 7, 'Double Arrow Formation\n\nAugment your drone control unit with the Double Arrow Formation.\n\nIncreases shield penetration by 10%, but reduces shield power by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.', 75000, 24, 1, 1, 0),
   (209, 'F-07-DI', 7, 'Diamond Formation\n\nAugment your drone control unit with the Diamond Formation.\n\nYour shield regenerates 1% of your max shield power per second, up to a maximum of 5,000 per second. But hit points are reduced by 30%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.', 100000, 24, 1, 1, 0),
@@ -7034,7 +7034,7 @@ ALTER TABLE `maps_stations` ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY 
 
 ALTER TABLE `moderators` ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
     REFERENCES `accounts` (`id`);
-    
+
 ALTER TABLE `moderators` ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
     REFERENCES `moderators_roles` (`id`);
 
