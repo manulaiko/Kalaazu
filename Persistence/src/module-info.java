@@ -265,8 +265,8 @@ module kalaazu.persistence {
     exports com.kalaazu.persistence.database.entities.users;
     exports com.kalaazu.persistence.database.entities.vouchers;
     exports com.kalaazu.persistence.database.entities.vouchers_redeem_logs;
-    
-    requires kalaazu;
+
+    requires kalaazu.utils;
     requires kalaazu.eventsystem;
     requires org.mariadb.jdbc;
     requires java.sql;

@@ -37,4 +37,10 @@ public class Settings {
             description = "Fires an event when a subscriber encounters an exception."
     )
     public boolean eventSystem_sendSubscriberExceptionEvent;
+
+    @Option(
+            names = {"logLevel", "ll"},
+            description = "The log level output (ERROR, WARNING, INFO, DEBUG, TRACE)."
+    )
+    public String logLevel = "DEBUG";
 }

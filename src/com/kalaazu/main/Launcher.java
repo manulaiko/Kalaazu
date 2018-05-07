@@ -2,6 +2,8 @@ package com.kalaazu.main;
 
 import com.kalaazu.eventsystem.EventManager;
 import com.kalaazu.eventsystem.EventManagerBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import picocli.CommandLine;
 
 /**
@@ -13,6 +15,11 @@ import picocli.CommandLine;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class Launcher {
+    /**
+     * Console logger.
+     */
+    public static Logger logger;
+
     /**
      * Application settings.
      */
@@ -31,7 +38,19 @@ public class Launcher {
     public static void main(String[] args) {
         CommandLine.populateCommand(Launcher.settings, args);
 
+        Launcher.setLogger();
+
+        Launcher.logger.info("Starting event manager...");
         Launcher.startEventManager();
+        Launcher.logger.debug("Event manager started!");
+    }
+
+    /**
+     * Configures the loggers.
+     */
+    public static void setLogger() {
+        System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", Launcher.settings.logLevel);
+        Launcher.logger  = LoggerFactory.getLogger(Launcher.class);
     }
 
     /**
