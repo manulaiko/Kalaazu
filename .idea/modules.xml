@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/EventSystem/EventSystem.iml" filepath="$PROJECT_DIR$/EventSystem/EventSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kalaazu.iml" filepath="$PROJECT_DIR$/Kalaazu.iml" />
       <module fileurl="file://$PROJECT_DIR$/Persistence/Persistence.iml" filepath="$PROJECT_DIR$/Persistence/Persistence.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" />
     </modules>
   </component>
 </project>
