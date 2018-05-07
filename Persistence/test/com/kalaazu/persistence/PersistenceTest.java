@@ -1,7 +1,6 @@
 package com.kalaazu.persistence;
 
 import com.kalaazu.eventsystem.EventManagerBuilder;
-import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.runtime.core.ApplicationBuilder;
