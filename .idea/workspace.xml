@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" afterDir="false" />
-    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,45 +45,8 @@
       <file leaf-file-name="Launcher.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Settings.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Settings.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="615">
-              <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#198#242#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistenceBuilderTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="21" column="95" lean-forward="true" selection-start-line="21" selection-start-column="89" selection-end-line="21" selection-end-column="95" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistenceBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
+            <state relative-caret-position="117">
+              <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -560,7 +518,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="-24" width="1368" height="793" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -571,7 +528,7 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.6724638" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6869565" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.6869565" />
       <window_info id="Designer" order="3" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3942029" weight="0.3151515" />
       <window_info id="Web" sideWeight="0.6057971" side_tool="true" weight="0.3151515" />
@@ -684,7 +641,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Implement relations&#10;&#10;Rome wasn't build in one day." />
     <MESSAGE value="Add more relations" />
     <MESSAGE value="Simplify package names&#10;&#10;Moved `com.manulaiko.kalaazu` to `com.kalaazu`" />
     <MESSAGE value="Add `db` getter" />
@@ -709,7 +665,8 @@
     <MESSAGE value="Create launcher&#10;&#10;We need something to launch the app, right?" />
     <MESSAGE value="Add logging" />
     <MESSAGE value="Create `Utils` module&#10;&#10;Because of cyclic dependencies." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create `Utils` module&#10;&#10;Because of cyclic dependencies." />
+    <MESSAGE value="Implement persistence" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement persistence" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1095,8 +1052,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="58" column="60" lean-forward="true" selection-start-line="58" selection-start-column="60" selection-end-line="58" selection-end-column="60" />
+        <state relative-caret-position="117">
+          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
