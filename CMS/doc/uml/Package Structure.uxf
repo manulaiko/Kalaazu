@@ -5,16 +5,22 @@
     <coordinates>
       <x>330</x>
       <y>120</y>
-      <w>230</w>
-      <h>240</h>
+      <w>330</w>
+      <h>430</h>
     </coordinates>
     <panel_attributes>type=Package
 com.kalaazu
 	+cms
 		+events
-		-controllers
-		-models
-		-presenters
+		-mvc
+			-pages
+				-controllers
+				-models
+				-presenters
+			-modules
+				-controllers
+				-models
+				-presenters
 		-server</panel_attributes>
     <additional_attributes/>
   </element>
