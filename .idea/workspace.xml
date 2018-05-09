@@ -43,7 +43,7 @@
     <favorites_list name="Kalaazu" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -427,13 +427,6 @@
       <option name="MAIN_CLASS_NAME" />
       <option name="WORKING_DIRECTORY" />
     </configuration>
-    <configuration default="true" type="Remote" factoryName="Remote">
-      <option name="USE_SOCKET_TRANSPORT" value="true" />
-      <option name="SERVER_MODE" value="false" />
-      <option name="SHMEM_ADDRESS" value="javadebug" />
-      <option name="HOST" value="localhost" />
-      <option name="PORT" value="5005" />
-    </configuration>
     <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
       <option name="MAIN_CLASS_NAME" />
       <option name="VM_PARAMETERS" value="-ea" />
@@ -501,41 +494,41 @@
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50454545" side_tool="true" weight="0.4068323" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.6724638" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.6869565" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32761312" visible="true" weight="0.32045454" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32761312" visible="true" weight="0.33106062" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.6723869" side_tool="true" weight="0.3098485" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6316614" />
+      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info id="Web" order="4" sideWeight="0.6057971" side_tool="true" weight="0.3151515" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40869564" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32753623" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40869564" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
-      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3291536" visible="true" weight="0.3001464" />
       <window_info id="Structure" order="1" sideWeight="0.6708464" side_tool="true" weight="0.33030304" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -551,7 +544,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -599,8 +592,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Add more relations" />
-    <MESSAGE value="Simplify package names&#10;&#10;Moved `com.manulaiko.kalaazu` to `com.kalaazu`" />
     <MESSAGE value="Add `db` getter" />
     <MESSAGE value="Moar relations&#10;&#10;Also, I just found out that speedment provides some methods for&#10;finding foreign keys, bretty cool." />
     <MESSAGE value="This will never end" />
@@ -624,7 +615,9 @@
     <MESSAGE value="Add logging" />
     <MESSAGE value="Create `Utils` module&#10;&#10;Because of cyclic dependencies." />
     <MESSAGE value="Implement persistence" />
-    <option name="LAST_COMMIT_MESSAGE" value="Implement persistence" />
+    <MESSAGE value="Import jackson" />
+    <MESSAGE value="Import netty" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import netty" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -660,9 +653,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1288">
           <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -973,10 +963,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="90" column="6" lean-forward="true" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#198#242#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -984,9 +970,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1044,12 +1027,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Utils</last-edited>
+          <last-edited>CMS</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
                 <option value="0.2" />
-                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
