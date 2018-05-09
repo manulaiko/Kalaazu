@@ -2,6 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMSBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/eventsystem/EventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMS/src/module-info.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
@@ -43,16 +47,55 @@
     <favorites_list name="Kalaazu" />
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file leaf-file-name="CMSBuilder.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMSBuilder.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="310">
+              <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="n#!!doc;n#setEventManager#0;n#CMSBuilder#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CMS.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1407#1408#0" expanded="true" />
+                <element signature="e#1441#1442#0" expanded="true" />
+                <element signature="e#1482#1483#0" expanded="true" />
+                <element signature="e#1514#1515#0" expanded="true" />
+                <element signature="e#1590#1591#0" expanded="true" />
+                <element signature="e#1619#1620#0" expanded="true" />
+                <element signature="e#1790#1791#0" expanded="true" />
+                <element signature="e#1833#1834#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Classes.png" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/doc/uml/Classes.png">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="hibernate-configuration-5.2" />
         <option value="hibernate-main-5.2" />
-        <option value="module-info" />
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
+        <option value="module-info" />
         <option value="Class" />
       </list>
     </option>
@@ -141,12 +184,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesStagesSpawns.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesSpins.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesProbabilities.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesGgWaves.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/GalaxygatesGgSpins.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Galaxygates.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansRolesPermissions.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansRoles.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansRanking.java" />
@@ -174,7 +211,6 @@
         <option value="$PROJECT_DIR$/Persistence/test/module-info.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Manager.java" />
         <option value="$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/Database.java" />
         <option value="$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceTest.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/launcher/Main.java" />
@@ -192,6 +228,13 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" />
+        <option value="$PROJECT_DIR$/CMS/src/module-info.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/events/Listener.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/eventsystem/Listener.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/eventsystem/EventListener.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMSBuilder.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" />
       </list>
     </option>
   </component>
@@ -222,7 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -234,12 +276,39 @@
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="doc" type="462c0819:PsiDirectoryNode" />
+              <item name="uml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="cms" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -253,14 +322,21 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last.edited.regexp" value="Sample Text" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/Persistence/src/com/manulaiko/kalaazu/persistence" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.kalaazu.cms" />
+      <recent name="com.kalaazu.main" />
+      <recent name="com.kalaazu.persistence.database.entities" />
+      <recent name="com.manulaiko.kalaazu.persistence.database" />
+      <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
+    </key>
     <key name="ImportMappingsDialog.RecentPackages">
       <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
       <recent name="com.manulaiko.kalaazu.persistence" />
@@ -270,13 +346,6 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.kalaazu.persistence" />
       <recent name="com.manulaiko.kalaazu.eventsystem" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Persistence/lib" />
-      <recent name="$PROJECT_DIR$/Persistence" />
-      <recent name="$PROJECT_DIR$/src" />
-      <recent name="$PROJECT_DIR$/Persistence/test" />
-      <recent name="$PROJECT_DIR$/Persistence/src" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -298,12 +367,12 @@
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.kalaazu.main" />
-      <recent name="com.kalaazu.persistence.database.entities" />
-      <recent name="com.manulaiko.kalaazu.persistence.database" />
-      <recent name="com.manulaiko.kalaazu.persistence.database.entities" />
-      <recent name="com.manulaiko.kalaazu.util" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Persistence/lib" />
+      <recent name="$PROJECT_DIR$/Persistence" />
+      <recent name="$PROJECT_DIR$/src" />
+      <recent name="$PROJECT_DIR$/Persistence/test" />
+      <recent name="$PROJECT_DIR$/Persistence/src" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="com.kalaazu.persistence.database.entities" />
@@ -487,6 +556,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -496,9 +566,9 @@
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.6724638" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6869565" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6864275" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32761312" visible="true" weight="0.33106062" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32761312" visible="true" weight="0.33636364" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.6723869" side_tool="true" weight="0.3098485" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -509,9 +579,9 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40869564" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
@@ -519,20 +589,20 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
+      <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3291536" visible="true" weight="0.3001464" />
       <window_info id="Structure" order="1" sideWeight="0.6708464" side_tool="true" weight="0.33030304" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.6900312" />
@@ -541,8 +611,8 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50454545" side_tool="true" weight="0.4068323" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
     </layout-to-restore>
@@ -592,7 +662,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Add `db` getter" />
     <MESSAGE value="Moar relations&#10;&#10;Also, I just found out that speedment provides some methods for&#10;finding foreign keys, bretty cool." />
     <MESSAGE value="This will never end" />
     <MESSAGE value="Improve many-to-many relations&#10;&#10;Surprisingly simple, tbh." />
@@ -617,7 +686,8 @@
     <MESSAGE value="Implement persistence" />
     <MESSAGE value="Import jackson" />
     <MESSAGE value="Import netty" />
-    <option name="LAST_COMMIT_MESSAGE" value="Import netty" />
+    <MESSAGE value="Import vertx" />
+    <option name="LAST_COMMIT_MESSAGE" value="Import vertx" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -649,34 +719,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="56" column="54" selection-start-line="56" selection-start-column="54" selection-end-line="56" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansDiplomacies.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansBattlestationsLogs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansBattlestationsItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="9" column="3" selection-start-line="9" selection-start-column="3" selection-end-line="9" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/ClansBattlestations.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="157">
@@ -790,13 +832,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/test/module-info.java" />
-    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/kalaazu/eventsystem/EventManagerTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Manager.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -843,13 +878,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="117" column="60" lean-forward="true" selection-start-line="117" selection-start-column="60" selection-end-line="117" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -945,13 +973,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/test/com/kalaazu/persistence/PersistenceBuilderTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="483">
@@ -970,6 +991,83 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
           <caret line="59" column="7" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/EventSystem/test/com/kalaazu/eventsystem/EventManagerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="4" column="6" selection-start-line="4" selection-start-column="6" selection-end-line="4" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="4" lean-forward="true" selection-start-line="1" selection-start-column="4" selection-end-line="1" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/eventsystem/EventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="3" lean-forward="true" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/eventsystem/EventListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/doc/uml/Package Structure.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMSBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="46" column="16" lean-forward="true" selection-start-line="46" selection-start-column="16" selection-end-line="46" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="n#!!doc;n#setEventManager#0;n#CMSBuilder#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="217">
+          <caret line="46" column="15" selection-start-line="46" selection-start-column="15" selection-end-line="46" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="502">
+          <caret line="34" column="6" lean-forward="true" selection-start-line="14" selection-start-column="21" selection-end-line="34" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/doc/uml/Classes.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="66" column="5" lean-forward="true" selection-start-line="66" selection-start-column="5" selection-end-line="66" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1407#1408#0" expanded="true" />
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1482#1483#0" expanded="true" />
+            <element signature="e#1514#1515#0" expanded="true" />
+            <element signature="e#1590#1591#0" expanded="true" />
+            <element signature="e#1619#1620#0" expanded="true" />
+            <element signature="e#1790#1791#0" expanded="true" />
+            <element signature="e#1833#1834#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
