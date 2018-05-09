@@ -1,5 +1,6 @@
 package com.kalaazu.cms;
 
+import com.kalaazu.cms.server.Server;
 import com.kalaazu.eventsystem.EventManager;
 import com.kalaazu.persistence.Persistence;
 
