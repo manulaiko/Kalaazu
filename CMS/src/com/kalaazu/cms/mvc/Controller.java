@@ -1,5 +1,6 @@
 package com.kalaazu.cms.mvc;
 
+import com.kalaazu.cms.server.Request;
 import io.vertx.core.http.HttpServerRequest;
 
 /**
@@ -31,6 +32,7 @@ public class Controller extends Component {
      *
      * @return The response.
      */
+    @Request
     public String index(HttpServerRequest request) {
         return "The requested page does not exist!";
     }
