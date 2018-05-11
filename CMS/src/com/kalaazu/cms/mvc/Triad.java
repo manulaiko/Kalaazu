@@ -1,8 +1,6 @@
 package com.kalaazu.cms.mvc;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * Triad class.
@@ -30,7 +28,7 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
     /**
      * Children triads.
      */
-    private List<Triad> children = new ArrayList<>();
+    private Map<String, Triad> children = new HashMap<>();
 
     /**
      * The model.
@@ -69,4 +67,47 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
      * @return URL endpoint.
      */
     public abstract String getEndpoint();
+
+    /**
+     * Adds a child triad.
+     *
+     * @param name  Child name.
+     * @param triad The triad.
+     */
+    public void addChildren(String name, Triad triad) {
+        triad.setParent(this);
+
+        this.children.put(name, triad);
+    }
+
+    /**
+     * Sets the parent triad.
+     *
+     * @param parent Parent triad.
+     */
+    private void setParent(Triad parent) {
+        this.parent = Optional.of(parent);
+    }
+
+    /**
+     * Returns the full endpoint containing parent's.
+     *
+     * @return The full endpoint path.
+     */
+    public String getFullEndpoint() {
+        var endpoint = new StringBuilder();
+
+        this.parent.ifPresent(p -> {
+            var e = p.getFullEndpoint();
+            endpoint.append(e, 0, e.length() - 1);
+        });
+
+        var e = this.getEndpoint();
+        if (!e.startsWith("/")) {
+            endpoint.append("/");
+        }
+
+        return endpoint.append(e)
+                       .toString();
+    }
 }

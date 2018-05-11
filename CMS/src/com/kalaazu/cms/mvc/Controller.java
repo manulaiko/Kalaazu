@@ -1,5 +1,7 @@
 package com.kalaazu.cms.mvc;
 
+import io.vertx.core.http.HttpServerRequest;
+
 /**
  * Controller component.
  * =====================
@@ -18,5 +20,18 @@ public class Controller extends Component {
      */
     public Controller(Triad triad) {
         super(triad);
+    }
+
+    /**
+     * Default route fallback.
+     *
+     * Called when there's no other route handler.
+     *
+     * @param request The HTTP request.
+     *
+     * @return The response.
+     */
+    public String index(HttpServerRequest request) {
+        return "The requested page does not exist!";
     }
 }
