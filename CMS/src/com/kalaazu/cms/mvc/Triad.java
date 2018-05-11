@@ -1,6 +1,8 @@
 package com.kalaazu.cms.mvc;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Optional;
 
 /**
  * Triad class.
@@ -47,18 +49,59 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
     /**
      * Constructor.
-     *
-     * @param parent Parent triad.
      */
-    public Triad(Triad parent) {
-        this.parent = Optional.of(parent);
+    public Triad() {
+        this(null, null, null, null);
     }
 
     /**
      * Constructor.
+     *
+     * @param parent Parent triad.
      */
-    public Triad() {
-        this.parent = Optional.empty();
+    public Triad(Triad parent) {
+        this(parent, null, null, null);
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param model Model instance.
+     * @param presenter Presenter instance.
+     * @param controller Controller instance.
+     */
+    public Triad(M model, P presenter, C controller) {
+        this(null, model, presenter, controller);
+    }
+
+    /**
+     * Constructor.
+     *
+     * @param parent Parent triad.
+     * @param model  Model instance.
+     * @param presenter Presenter instance.
+     * @param controller Controller instance.
+     */
+    public Triad(Triad parent, M model, P presenter, C controller) {
+        this.setParent(parent);
+        this.initialize(model, presenter, controller);
+    }
+
+    /**
+     * Initializes the triad.
+     *
+     * @param model      The model instance.
+     * @param presenter  The presenter instance.
+     * @param controller The controller instance.
+     */
+    public void initialize(M model, P presenter, C controller) {
+        if (model == null || presenter == null || controller == null) {
+            return;
+        }
+
+        this.setModel(model);
+        this.setPresenter(presenter);
+        this.setController(controller);
     }
 
     /**
@@ -86,6 +129,12 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
      * @param parent Parent triad.
      */
     private void setParent(Triad parent) {
+        if (parent == null) {
+            this.parent = Optional.empty();
+
+            return;
+        }
+
         this.parent = Optional.of(parent);
     }
 
@@ -110,4 +159,34 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
         return endpoint.append(e)
                        .toString();
     }
+
+    //<editor-fold desc="Getters and Setters">
+    public M getModel() {
+        return model;
+    }
+
+    public void setModel(M model) {
+        this.model = model;
+    }
+
+    public P getPresenter() {
+        return presenter;
+    }
+
+    public void setPresenter(P presenter) {
+        this.presenter = presenter;
+    }
+
+    public C getController() {
+        return controller;
+    }
+
+    public void setController(C controller) {
+        this.controller = controller;
+    }
+
+    public Triad getChild(String name) {
+        return this.children.getOrDefault(name, null);
+    }
+    //</editor-fold>
 }
