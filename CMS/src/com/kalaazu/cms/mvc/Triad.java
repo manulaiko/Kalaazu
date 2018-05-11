@@ -2,9 +2,13 @@ package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.*;
 import io.vertx.core.http.HttpServerRequest;
+import io.vertx.core.logging.Logger;
+import io.vertx.core.logging.LoggerFactory;
+import io.vertx.ext.web.RoutingContext;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Optional;
@@ -19,16 +23,19 @@ import java.util.Optional;
  * Each triad is associated with an endpoint which will be used
  * to handle the incoming requests.
  *
- * The triad will check if the request matches any of their child
- * triads endpoints, if it does, it will delegate the request to it.
- * If not it will check if the controller can handle the request
- * or call its `index` method.
+ * The triad will check if the request can be handled by the
+ * annotated methods, otherwise it will call `Controller.index`.
  *
  * TODO refactor annotation processing to their own class.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public abstract class Triad<M extends Model, P extends Presenter, C extends Controller> {
+    /**
+     * Console logger.
+     */
+    public static final Logger logger = LoggerFactory.getLogger(Triad.class);
+
     /**
      * Parent triad.
      */
@@ -122,6 +129,56 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
      * @return URL endpoint.
      */
     public abstract String getEndpoint();
+
+    /**
+     * Handles an incoming HTTP request.
+     *
+     * @param context The HTTP request context.
+     */
+    public void handle(RoutingContext context) {
+        var uri = context.request()
+                         .uri()
+                         .split("/");
+        var action = "index";
+
+        Class<? extends Annotation> method = Request.class;
+
+        try {
+            action = uri[2];
+        } catch (Exception ignored) {
+        }
+
+        switch (context.request()
+                       .method()) {
+            case GET:
+                method = Get.class;
+                break;
+
+            case POST:
+                method = Post.class;
+                break;
+
+            case PUT:
+                method = Put.class;
+                break;
+
+            case DELETE:
+                method = Delete.class;
+        }
+
+        var handler = this.findHandler(method, action);
+
+        var response = "";
+        try {
+            response = (String) handler.invoke(context.request());
+        } catch (Exception e) {
+            Triad.logger.debug("Couldn't invoke method!", e);
+        }
+
+        context.response()
+               .putHeader("Content-Type", "text/html")
+               .end(response);
+    }
 
     /**
      * Scans the controller for the annotations.
@@ -233,25 +290,21 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
     }
 
     /**
-     * Returns the full endpoint containing parent's.
+     * Finds and returns a handler.
      *
-     * @return The full endpoint path.
+     * @param type   Request type.
+     * @param action Handler action.
+     *
+     * @return The specified handler.
      */
-    public String getFullEndpoint() {
-        var endpoint = new StringBuilder();
+    private Method findHandler(Class<? extends Annotation> type, String action) {
+        var handlers = this.handlers.getOrDefault(type, Collections.emptyMap());
 
-        this.parent.ifPresent(p -> {
-            var e = p.getFullEndpoint();
-            endpoint.append(e, 0, e.length() - 1);
-        });
-
-        var e = this.getEndpoint();
-        if (!e.startsWith("/")) {
-            endpoint.append("/");
+        if (handlers.isEmpty()) {
+            handlers = this.handlers.getOrDefault(Request.class, Collections.emptyMap());
         }
 
-        return endpoint.append(e)
-                       .toString();
+        return handlers.getOrDefault(action, null);
     }
 
     //<editor-fold desc="Getters and Setters">

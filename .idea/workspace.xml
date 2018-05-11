@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Delete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Get.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Post.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Put.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Request.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/CMS/test/InstanceServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" afterDir="false" />
     </list>
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -52,56 +50,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Get.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Get.java">
+      <file leaf-file-name="Triad.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+            <state relative-caret-position="4025">
+              <caret line="179" column="30" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1151#1152#0" expanded="true" />
+                <element signature="e#1195#1196#0" expanded="true" />
+                <element signature="n#!!doc;n#getModel#0;n#Triad#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Request.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Request.java">
+      <file leaf-file-name="Collections.java" pinned="false" current-in-tab="false">
+        <entry file="jar:///usr/lib/jvm/java-10-oracle/lib/src.zip!/java.base/java/util/Collections.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Post.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Post.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="203">
+              <caret line="4506" column="28" selection-start-line="4506" selection-start-column="28" selection-end-line="4506" selection-end-column="28" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#178368#178369#0" expanded="true" />
+                <element signature="e#178411#178412#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Put.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Put.java">
+      <file leaf-file-name="HttpServerRequest.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-core-3.5.1.jar!/io/vertx/core/http/HttpServerRequest.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="203">
+              <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Delete.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Delete.java">
+      <file leaf-file-name="HttpMethod.class" pinned="false" current-in-tab="false">
+        <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-core-3.5.1.jar!/io/vertx/core/http/HttpMethod.class">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="17" selection-end-column="27" />
+            <state relative-caret-position="161">
+              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jshell_console.snippet" pinned="false" current-in-tab="false">
+        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="115">
+              <caret line="5" selection-start-line="5" selection-end-line="10" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -119,8 +127,8 @@
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="module-info" />
-        <option value="Class" />
         <option value="AnnotationType" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -208,7 +216,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/AccountsTechfactories.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/AccountsSkylabs.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/AccountsSkills.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/AccountsShips.java" />
@@ -235,7 +242,6 @@
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/maps_stations/generated/GeneratedMapsStations.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/accounts_ships/generated/GeneratedAccountsShips.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/factions/generated/GeneratedFactionsSqlAdapter.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/main/Settings.java" />
         <option value="$PROJECT_DIR$/src/com/kalaazu/main/Launcher.java" />
@@ -245,20 +251,22 @@
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMSBuilder.java" />
         <option value="$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/Persistence.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" />
-        <option value="$PROJECT_DIR$/CMS/src/module-info.java" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Component.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Presenter.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Model.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_1.snippet" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_2.snippet" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Delete.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Put.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Post.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Get.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Request.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" />
+        <option value="$PROJECT_DIR$/CMS/test/InstanceServer.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" />
+        <option value="$PROJECT_DIR$/CMS/src/module-info.java" />
       </list>
     </option>
   </component>
@@ -274,9 +282,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="687" />
-    <option name="width" value="679" />
-    <option name="height" value="768" />
+    <option name="x" value="453" />
+    <option name="width" value="671" />
+    <option name="height" value="763" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -307,21 +315,6 @@
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
@@ -419,9 +412,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Launcher">
+  <component name="RunManager" selected="Application.InstanceServer">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+    </configuration>
+    <configuration name="InstanceServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="InstanceServer" />
+      <module name="CMS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
     <configuration name="Launcher" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.kalaazu.main.Launcher" />
@@ -456,23 +454,6 @@
       <option name="MAIN_CLASS_NAME" value="com.kalaazu.persistence.PersistenceTest" />
       <option name="METHOD_NAME" />
       <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="PersistenceTest.all" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Persistence" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="com.kalaazu.persistence" />
-      <option name="MAIN_CLASS_NAME" value="com.kalaazu.persistence.PersistenceTest" />
-      <option name="METHOD_NAME" value="all" />
-      <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
@@ -536,18 +517,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.PersistenceTest" />
-      <item itemvalue="JUnit.PersistenceTest.all" />
       <item itemvalue="JUnit.PersistenceTest.relations" />
       <item itemvalue="JUnit.All in EventSystem" />
       <item itemvalue="Application.Launcher" />
+      <item itemvalue="Application.InstanceServer" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.InstanceServer" />
         <item itemvalue="Application.Launcher" />
         <item itemvalue="JUnit.All in EventSystem" />
         <item itemvalue="JUnit.PersistenceTest.relations" />
         <item itemvalue="JUnit.PersistenceTest" />
-        <item itemvalue="JUnit.PersistenceTest.all" />
       </list>
     </recent_temporary>
   </component>
@@ -589,15 +570,16 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40869564" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5030303" side_tool="true" weight="0.6723869" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969697" weight="0.6723869" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6864275" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969697" weight="0.6713396" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.6853582" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.32605305" weight="0.33712122" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32605305" visible="true" weight="0.33712122" />
       <window_info anchor="bottom" id="Problems" order="14" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.673947" side_tool="true" weight="0.33636364" />
@@ -611,7 +593,6 @@
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40869564" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
@@ -692,8 +673,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="pls help, this is boring af" />
-    <MESSAGE value="Fek off, 2boring4me&#10;&#10;Only things to do are Accounts*, Clans* and Galaxygates*" />
     <MESSAGE value="alrit lets do dis" />
     <MESSAGE value="Abstract role system&#10;&#10;The role system is abstracted to interfaces to reduce bah fuck off, read the code and you'll know" />
     <MESSAGE value="Almost done" />
@@ -717,7 +696,9 @@
     <MESSAGE value="Create HMV(VM)C components&#10;&#10;Nothing complex so far, just the classes." />
     <MESSAGE value="Improve triad hierarchy, add default controller method&#10;&#10;Each child triad has a name." />
     <MESSAGE value="Create constructors&#10;&#10;Add more constructors to automatically initialize the triad." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create constructors&#10;&#10;Add more constructors to automatically initialize the triad." />
+    <MESSAGE value="Create request annotations&#10;&#10;This will be used to annotate the controller methods that&#10;can handle the incoming requests." />
+    <MESSAGE value="Add request handler indexing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add request handler indexing" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -733,7 +714,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="27" />
+      <option name="time" value="29" />
     </breakpoint-manager>
   </component>
   <component name="antWorkspaceConfiguration">
@@ -750,28 +731,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Persistence/test/module-info.java" />
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/Manager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="27" column="47" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/items/generated/GeneratedItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="145" column="10" selection-start-line="145" selection-start-column="10" selection-end-line="145" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/database/entities/galaxygates_stages/GalaxygatesStagesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="56" column="30" selection-start-line="56" selection-start-column="30" selection-end-line="56" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/lib/junit-jupiter-api-5.0.0.jar!/org/junit/jupiter/api/AssertTrue.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="333">
@@ -783,13 +742,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="105">
           <caret line="47" column="22" lean-forward="true" selection-start-line="47" selection-start-column="22" selection-end-line="47" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///usr/lib/jvm/java-10-oracle/lib/src.zip!/java.base/java/util/Collections.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-884">
-          <caret line="4434" column="25" selection-start-line="4434" selection-start-column="25" selection-end-line="4434" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -959,13 +911,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/module-info.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="24" selection-start-line="4" selection-start-column="24" selection-end-line="4" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1472">
@@ -987,27 +932,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="8126">
           <caret line="596" column="21" selection-start-line="596" selection-start-column="21" selection-end-line="596" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="48" column="20" selection-start-line="48" selection-start-column="20" selection-end-line="48" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Presenter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="13" column="4" selection-start-line="13" selection-start-column="4" selection-end-line="13" selection-end-column="4" />
-          <folding>
-            <element signature="e#378#379#0" expanded="true" />
-            <element signature="e#406#407#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1058,48 +982,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-163">
-          <caret line="2" column="44" selection-start-line="2" selection-start-column="44" selection-end-line="2" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2058">
-          <caret line="54" column="5" selection-start-line="54" selection-start-column="5" selection-end-line="54" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1151#1152#0" expanded="true" />
-            <element signature="e#1195#1196#0" expanded="true" />
-            <element signature="e#1506#1507#0" expanded="true" />
-            <element signature="e#1555#1556#0" expanded="true" />
-            <element signature="e#1579#1580#0" expanded="true" />
-            <element signature="e#1598#1599#0" expanded="true" />
-            <element signature="n#!!doc;n#getModel#0;n#Triad#0" />
-            <element signature="e#2867#2868#0" expanded="true" />
-            <element signature="e#2895#2896#0" expanded="true" />
-            <element signature="e#2932#2933#0" expanded="true" />
-            <element signature="e#2966#2967#0" expanded="true" />
-            <element signature="e#2997#2998#0" expanded="true" />
-            <element signature="e#3029#3030#0" expanded="true" />
-            <element signature="e#3074#3075#0" expanded="true" />
-            <element signature="e#3116#3117#0" expanded="true" />
-            <element signature="e#3148#3149#0" expanded="true" />
-            <element signature="e#3181#3182#0" expanded="true" />
-            <element signature="e#3228#3229#0" expanded="true" />
-            <element signature="e#3272#3273#0" expanded="true" />
-            <element signature="e#3314#3315#0" expanded="true" />
-            <element signature="e#3360#3361#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Delete.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
-          <caret line="15" column="3" lean-forward="true" selection-start-line="15" selection-start-column="3" selection-end-line="17" selection-end-column="27" />
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="17" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1116,20 +1002,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Post.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="27" selection-start-line="17" selection-start-column="27" selection-end-line="17" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Get.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
-          <caret line="18" column="23" lean-forward="true" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
+          <caret line="18" column="23" selection-start-line="18" selection-start-column="23" selection-end-line="18" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1140,6 +1016,102 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Presenter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="7" lean-forward="true" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Post.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="17" column="27" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="25" column="7" lean-forward="true" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console.snippet">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" selection-start-line="5" selection-end-line="10" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-core-3.5.1.jar!/io/vertx/core/http/HttpServerRequest.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="36" column="7" lean-forward="true" selection-start-line="36" selection-start-column="7" selection-end-line="36" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-core-3.5.1.jar!/io/vertx/core/http/HttpMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///usr/lib/jvm/java-10-oracle/lib/src.zip!/java.base/java/util/Collections.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="203">
+          <caret line="4506" column="28" selection-start-line="4506" selection-start-column="28" selection-end-line="4506" selection-end-column="28" />
+          <folding>
+            <element signature="e#178368#178369#0" expanded="true" />
+            <element signature="e#178411#178412#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4025">
+          <caret line="179" column="30" selection-start-line="179" selection-start-column="30" selection-end-line="179" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1151#1152#0" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="n#!!doc;n#getModel#0;n#Triad#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="28" selection-start-line="9" selection-start-column="28" selection-end-line="9" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="150" column="32" lean-forward="true" selection-start-line="150" selection-start-column="32" selection-end-line="150" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

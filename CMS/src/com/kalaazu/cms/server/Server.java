@@ -1,5 +1,6 @@
 package com.kalaazu.cms.server;
 
+import com.kalaazu.cms.mvc.Triad;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
@@ -34,11 +35,6 @@ public class Server {
     private int port;
 
     /**
-     * The Vertx instance.
-     */
-    private Vertx vertx;
-
-    /**
      * The router instance.
      */
     private Router router;
@@ -51,7 +47,7 @@ public class Server {
     /**
      * Registered triads.
      */
-    private List triads = new ArrayList<>();
+    private List<Triad> triads = new ArrayList<>();
 
     /**
      * Constructor.
@@ -70,7 +66,8 @@ public class Server {
      * Initializes the HTTP server.
      */
     public void initialize() {
-        this.vertx  = Vertx.vertx();
+        var vertx = Vertx.vertx();
+
         this.router = Router.router(vertx);
         this.server = vertx.createHttpServer();
 
@@ -84,6 +81,11 @@ public class Server {
      */
     private void registerRoutes() {
         this.registerTriads();
+
+        this.triads.forEach(t -> {
+            this.router.route(t.getEndpoint() + "/*")
+                       .handler(t::handle);
+        });
     }
 
     /**
