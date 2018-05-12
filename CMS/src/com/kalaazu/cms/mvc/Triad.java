@@ -168,9 +168,13 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
         var handler = this.findHandler(method, action);
 
+        if (handler == null) {
+            handler = this.findHandler(Request.class, "index");
+        }
+
         var response = "";
         try {
-            response = (String) handler.invoke(context.request());
+            response = (String) handler.invoke(this.getController(), context.request());
         } catch (Exception e) {
             Triad.logger.debug("Couldn't invoke method!", e);
         }
@@ -242,9 +246,8 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
         try {
             correct = (
-                    method.getParameterTypes()[0].isInstance(HttpServerRequest.class) &&
-                    method.getReturnType()
-                          .isInstance(String.class)
+                    method.getParameterTypes()[0] == HttpServerRequest.class &&
+                    method.getReturnType() == String.class
             );
         } catch (Exception ignored) {
         }
@@ -322,6 +325,8 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
     public void setPresenter(P presenter) {
         this.presenter = presenter;
+
+        this.presenter.setView(new View(this));
     }
 
     public C getController() {
@@ -330,10 +335,20 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
     public void setController(C controller) {
         this.controller = controller;
+
+        this.scanAnnotations();
     }
 
     public Triad getChild(String name) {
         return this.children.getOrDefault(name, null);
+    }
+
+    public Optional<Triad> getParent() {
+        return parent;
+    }
+
+    public Map<String, Triad> getChildren() {
+        return children;
     }
     //</editor-fold>
 }

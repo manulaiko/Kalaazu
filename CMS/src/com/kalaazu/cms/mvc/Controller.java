@@ -13,13 +13,13 @@ import io.vertx.core.http.HttpServerRequest;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public class Controller extends Component {
+public class Controller<M extends Model, P extends Presenter, C extends Controller> extends Component<M, P, C> {
     /**
      * Constructor.
      *
      * @param triad Parent triad.
      */
-    public Controller(Triad triad) {
+    public Controller(Triad<M, P, C> triad) {
         super(triad);
     }
 

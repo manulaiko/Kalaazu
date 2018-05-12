@@ -1,11 +1,14 @@
 package com.kalaazu.cms.server;
 
 import com.kalaazu.cms.mvc.Triad;
+import com.kalaazu.cms.mvc.View;
+import com.kalaazu.cms.mvc.pages.External;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.StaticHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -66,6 +69,8 @@ public class Server {
      * Initializes the HTTP server.
      */
     public void initialize() {
+        View.viewsPath = this.viewsPath;
+
         var vertx = Vertx.vertx();
 
         this.router = Router.router(vertx);
@@ -82,17 +87,17 @@ public class Server {
     private void registerRoutes() {
         this.registerTriads();
 
-        this.triads.forEach(t -> {
-            this.router.route(t.getEndpoint() + "/*")
-                       .handler(t::handle);
-        });
+        this.triads.forEach(t -> this.router.route(t.getEndpoint() + "/*")
+                                            .handler(t::handle));
+        this.router.route("/assets/*")
+                   .handler(StaticHandler.create(this.assetsPath));
     }
 
     /**
      * Registers the Triad instances.
      */
     private void registerTriads() {
-
+        this.triads.add(new External());
     }
 
     /**
