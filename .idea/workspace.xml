@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/www/views/External/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/www/views/External/index.tpl" afterDir="false" />
-    </list>
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -50,14 +46,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+            <state relative-caret-position="125">
+              <caret line="79" selection-start-line="79" selection-end-line="79" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceServer.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="37" selection-start-column="37" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -209,9 +214,9 @@
         <option value="$PROJECT_DIR$/CMS/www/views/External/index.tpl" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" />
-        <option value="$PROJECT_DIR$/CMS/test/InstanceServer.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
+        <option value="$PROJECT_DIR$/CMS/test/InstanceServer.java" />
       </list>
     </option>
   </component>
@@ -226,7 +231,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-132" />
     <option name="y" value="179" />
     <option name="width" value="910" />
@@ -265,16 +270,7 @@
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="cms" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -561,7 +557,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
@@ -575,7 +571,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969697" weight="0.6713396" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.72772276" />
       <window_info id="Designer" order="3" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.32605305" visible="true" weight="0.3530303" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.32605305" visible="true" weight="0.3530303" />
       <window_info anchor="bottom" id="Problems" order="14" weight="0.32866043" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.673947" side_tool="true" weight="0.33636364" />
@@ -670,7 +666,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="Almost almost done done" />
     <MESSAGE value="pon pon way way way pon pon way pon way pon pon&#10;way way pon pon pon way way pon way pon way way" />
     <MESSAGE value="I realized too late that I can copypaste" />
     <MESSAGE value="Finish relations&#10;&#10;Now it's time to polish them" />
@@ -695,7 +690,8 @@
     <MESSAGE value="Add request routing" />
     <MESSAGE value="Create external page, add other things&#10;&#10;Things I didn't commit yesterday, the External page seems to work /shrug." />
     <MESSAGE value="Add missing libraries&#10;&#10;Add Pebble's missing dependencies" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add missing libraries&#10;&#10;Add Pebble's missing dependencies" />
+    <MESSAGE value="Add default route&#10;&#10;Redirect to `/External` if the path is empty, also minor organization." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add default route&#10;&#10;Redirect to `/External` if the path is empty, also minor organization." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1055,13 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="67" selection-start-line="7" selection-start-column="67" selection-end-line="7" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="736">
@@ -1112,11 +1101,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="88" lean-forward="true" selection-start-line="88" selection-end-line="88" />
+        <state relative-caret-position="125">
+          <caret line="79" selection-start-line="79" selection-end-line="79" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="37" selection-start-column="37" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -1126,7 +1122,7 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
-          <last-edited />
+          <last-edited>CMS:war exploded</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -1138,7 +1134,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited />
+          <last-edited>No facets are configured</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
