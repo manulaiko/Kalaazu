@@ -91,6 +91,9 @@ public class Server {
                                             .handler(t::handle));
         this.router.route("/assets/*")
                    .handler(StaticHandler.create(this.assetsPath));
+
+        this.router.route("/")
+                   .handler(c -> c.reroute("/External"));
     }
 
     /**
