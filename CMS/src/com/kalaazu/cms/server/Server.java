@@ -3,11 +3,13 @@ package com.kalaazu.cms.server;
 import com.kalaazu.cms.mvc.Triad;
 import com.kalaazu.cms.mvc.View;
 import com.kalaazu.cms.mvc.pages.External;
+import com.kalaazu.persistence.Persistence;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
 import io.vertx.core.http.HttpServer;
 import io.vertx.ext.web.Router;
+import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
 import java.util.ArrayList;
@@ -70,6 +72,7 @@ public class Server {
      */
     public void initialize() {
         View.viewsPath = this.viewsPath;
+
         var url = "http://localhost";
         if (this.port != 80) {
             url += ":" + this.port;
@@ -93,6 +96,17 @@ public class Server {
      */
     private void registerRoutes() {
         this.registerTriads();
+
+        this.router.route("/*")
+                   .handler(BodyHandler.create());
+        this.router.route("/*")
+                   .handler(c -> {
+                       var r = c.request();
+
+                       System.out.println(r.method() + ": " + r.uri());
+
+                       c.next();
+                   });
 
         this.triads.forEach(t -> this.router.route(t.getEndpoint() + "/*")
                                             .handler(t::handle));
