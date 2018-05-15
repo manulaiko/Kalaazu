@@ -1,6 +1,8 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.*;
+import com.kalaazu.eventsystem.EventManager;
+import com.kalaazu.persistence.Persistence;
 import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
@@ -35,6 +37,38 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
      * Console logger.
      */
     public static final Logger logger = LoggerFactory.getLogger(Triad.class);
+
+    /**
+     * Persistence instance.
+     */
+    private static Persistence persistence;
+
+    /**
+     * Event manager instance.
+     */
+    private static EventManager eventManager;
+
+    /**
+     * Sets the persistence.
+     *
+     * @param persistence Persistence instance.
+     */
+    public static void setPersistence(Persistence persistence) {
+        if (Triad.persistence == null) {
+            Triad.persistence = persistence;
+        }
+    }
+
+    /**
+     * Sets the event manager.
+     *
+     * @param eventManager Event manager instance.
+     */
+    public static void setEventManager(EventManager eventManager) {
+        if (Triad.eventManager == null) {
+            Triad.eventManager = eventManager;
+        }
+    }
 
     /**
      * Parent triad.
@@ -335,6 +369,8 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
     public void setController(C controller) {
         this.controller = controller;
+        this.controller.setPersistence(Triad.persistence);
+        this.controller.setEventManager(Triad.eventManager);
 
         this.scanAnnotations();
     }

@@ -1,15 +1,23 @@
-import com.kalaazu.cms.server.Server;
+import com.kalaazu.cms.CMSBuilder;
+import com.kalaazu.eventsystem.EventManagerBuilder;
+import com.kalaazu.persistence.PersistenceBuilder;
 
 /**
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class InstanceServer {
     public static void main(String[] args) {
-        var server = new Server(8080, "www/views", "www/public_html");
-        server.initialize();
+        System.out.println("Initializing server...");
+        var eventManager = new EventManagerBuilder().build();
+        var persistence = new PersistenceBuilder().setEventManager(eventManager)
+                                                  .build();
+        var cms = new CMSBuilder().setPersistence(persistence)
+                                  .setEventManager(eventManager)
+                                  .setPort(8080)
+                                  .build();
 
         System.out.println("Starting server...");
-        server.start();
+        cms.start();
         System.out.println("Server started!");
     }
 }

@@ -1,5 +1,6 @@
 package com.kalaazu.cms;
 
+import com.kalaazu.cms.mvc.Triad;
 import com.kalaazu.cms.server.Server;
 import com.kalaazu.eventsystem.EventManager;
 import com.kalaazu.persistence.Persistence;
@@ -62,6 +63,9 @@ public class CMS {
      * @param assetsPath Path to the static assets.
      */
     public void initialize(int port, String viewsPath, String assetsPath) {
+        Triad.setPersistence(this.persistence);
+        Triad.setEventManager(this.eventManager);
+
         this.server = new Server(port, viewsPath, assetsPath);
 
         this.server.initialize();
