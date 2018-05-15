@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/www/views/External/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/www/views/External/index.tpl" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -49,8 +54,8 @@
       <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="125">
-              <caret line="79" selection-start-line="79" selection-end-line="79" />
+            <state relative-caret-position="1541">
+              <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -58,11 +63,48 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InstanceServer.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.tpl" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/www/views/External/index.tpl">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="415">
+              <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+              <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+              <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InstanceServer.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="37" selection-start-column="37" selection-end-column="37" />
+            <state relative-caret-position="253">
+              <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="View.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="107">
+              <caret line="98" column="39" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Component.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Component.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="230">
+              <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+              <folding>
+                <element signature="e#524#525#0" expanded="true" />
+                <element signature="e#552#553#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,13 +252,13 @@
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/models/ExternalModel.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/External.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/presenters/ExternalPresenter.java" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java" />
-        <option value="$PROJECT_DIR$/CMS/www/views/External/index.tpl" />
         <option value="$APPLICATION_CONFIG_DIR$/scratches/scratch.http" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
         <option value="$PROJECT_DIR$/CMS/test/InstanceServer.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
+        <option value="$PROJECT_DIR$/CMS/www/views/External/index.tpl" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java" />
       </list>
     </option>
   </component>
@@ -231,7 +273,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-132" />
     <option name="y" value="179" />
     <option name="width" value="910" />
@@ -264,20 +306,29 @@
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="CMS" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Kalaazu" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Kalaazu" type="462c0819:PsiDirectoryNode" />
+              <item name="CMS" type="462c0819:PsiDirectoryNode" />
+              <item name="www" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="External" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -293,11 +344,11 @@
     <property name="full.screen.before.presentation.mode" value="false" />
     <property name="last.edited.regexp" value="Sample Text" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/CMS/www/views" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.16863033" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
+    <property name="settings.editor.selected.configurable" value="Template Data Languages" />
   </component>
   <component name="RecentsManager">
     <key name="ImportMappingsDialog.RecentPackages">
@@ -557,8 +608,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1" y="0" width="1368" height="769" extended-state="7" />
-    <editor active="true" />
+    <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -567,18 +617,18 @@
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.5030303" side_tool="true" weight="0.6723869" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4969697" visible="true" weight="0.6713396" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4969697" weight="0.6713396" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.72772276" />
       <window_info id="Designer" order="3" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.32605305" visible="true" weight="0.3530303" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.32605305" visible="true" weight="0.37121212" />
       <window_info anchor="bottom" id="Problems" order="14" weight="0.32866043" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info id="Structure" order="1" sideWeight="0.673947" side_tool="true" weight="0.33636364" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.63084114" />
+      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
@@ -593,20 +643,20 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" order="10" weight="0.3291536" />
       <window_info id="Persistence" order="2" sideWeight="0.7492754" side_tool="true" weight="0.2931818" />
-      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.3291536" visible="true" weight="0.3001464" />
       <window_info id="Structure" order="1" sideWeight="0.6708464" side_tool="true" weight="0.33030304" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924242" weight="0.48119122" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
+      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="4" weight="0.32954547" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.6900312" />
@@ -615,10 +665,10 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Event Log" order="13" sideWeight="0.50454545" side_tool="true" weight="0.4068323" />
       <window_info anchor="bottom" id="Database Console" order="12" weight="0.3289855" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Messages" order="9" sideWeight="0.49545455" weight="0.40873635" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32761312" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.3289855" />
       <window_info anchor="right" id="Maven Projects" order="5" weight="0.32954547" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info id="Favorites" order="5" side_tool="true" weight="0.32954547" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -981,10 +1031,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
           <caret line="35" column="18" selection-start-line="35" selection-start-column="18" selection-end-line="35" selection-end-column="18" />
-          <folding>
-            <element signature="e#814#815#0" expanded="true" />
-            <element signature="e#873#874#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,13 +1038,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="23" column="31" selection-start-line="23" selection-start-column="31" selection-end-line="23" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/www/views/External/index.tpl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="4" selection-start-column="4" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -1037,10 +1076,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="322" selection-start-line="322" selection-end-line="322" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#8135#8136#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1061,16 +1096,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="67" selection-start-line="67" selection-end-line="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$PROJECT_DIR$/CMS/lib/pebble-2.5.1.jar!/com/mitchellbosecke/pebble/PebbleEngine.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
@@ -1082,18 +1107,22 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="564">
           <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#822#823#0" expanded="true" />
-          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" column="23" selection-start-line="11" selection-start-column="23" selection-end-line="11" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Component.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="230">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
           <folding>
+            <element signature="e#524#525#0" expanded="true" />
             <element signature="e#552#553#0" expanded="true" />
           </folding>
         </state>
@@ -1101,18 +1130,31 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="79" selection-start-line="79" selection-end-line="79" />
+        <state relative-caret-position="1541">
+          <caret line="78" column="43" selection-start-line="78" selection-start-column="43" selection-end-line="78" selection-end-column="43" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
+    <entry file="file://$PROJECT_DIR$/CMS/www/views/External/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="37" selection-end-column="37" />
+        <state relative-caret-position="415">
+          <caret line="7" column="49" selection-start-line="7" selection-start-column="49" selection-end-line="7" selection-end-column="49" />
+          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
+          <caret line="58" column="31" selection-start-line="58" selection-start-column="31" selection-end-line="58" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/View.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="98" column="39" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

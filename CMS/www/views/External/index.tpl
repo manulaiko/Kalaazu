@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Kalaazu</title>
-    <link rel="stylesheet" href="/css/bulma.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <script defer src="/js/font-awesome.js"></script>
+      <link rel="stylesheet" href="{{ URL }}assets/css/bulma.css">
+      <link rel="stylesheet" href="{{ URL }}assets/css/main.css">
+      <script defer src="{{ URL }}assets/js/font-awesome.js"></script>
   </head>
   <body>
     <section class="hero is-fullheight">
@@ -55,6 +55,6 @@
       </div>
     </section>
   </body>
-  <script src="/js/main.js"></script>
-  <script src="/js/external.js"></script>
+  <script src="{{ URL }}assets/js/main.js"></script>
+  <script src="{{ URL }}assets/js/external.js"></script>
 </html>

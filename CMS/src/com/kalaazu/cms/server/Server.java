@@ -70,6 +70,13 @@ public class Server {
      */
     public void initialize() {
         View.viewsPath = this.viewsPath;
+        var url = "http://localhost";
+        if (this.port != 80) {
+            url += ":" + this.port;
+        }
+        url += "/";
+
+        View.globalVariables.put("URL", url);
 
         var vertx = Vertx.vertx();
 
