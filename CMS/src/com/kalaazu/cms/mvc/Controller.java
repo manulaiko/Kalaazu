@@ -58,6 +58,10 @@ public class Controller<M extends Model, P extends Presenter, C extends Controll
         this.persistence = persistence;
     }
 
+    protected EventManager getEventManager() {
+        return this.eventManager;
+    }
+
     public void setEventManager(EventManager eventManager) {
         this.eventManager = eventManager;
     }

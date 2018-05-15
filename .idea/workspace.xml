@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="Add global variables, disable caching">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/test/InstanceServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/test/InstanceServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/www/views/External/index.tpl" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/www/views/External/index.tpl" afterDir="false" />
-    </list>
     <list id="1ef21578-6f97-4468-9238-2d687e8466ff" name="Revert &quot;Rename `stats` table to `key_value`&quot;" comment="Revert &quot;Rename `stats` table to `key_value`&quot;&#10;&#10;This reverts commit dfa7689" />
+    <list default="true" id="2f84aee7-c773-43fc-bd7c-84ed43054832" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/target/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -55,80 +49,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Server.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1357">
-              <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Triad.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="372" column="39" lean-forward="true" selection-start-line="372" selection-start-column="39" selection-end-line="372" selection-end-column="39" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InstanceServer.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/test/InstanceServer.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="383">
-              <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PersistenceBuilder.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1840">
-              <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-              <folding>
-                <element signature="e#1090#1091#0" expanded="true" />
-                <element signature="e#1124#1125#0" expanded="true" />
-                <element signature="e#1336#1337#0" expanded="true" />
-                <element signature="e#1384#1385#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CMS.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="460">
-              <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ExternalController.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ExternalController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-928">
-              <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+            <state relative-caret-position="360">
+              <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -141,6 +66,21 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="2116">
               <caret line="92" column="34" selection-start-line="92" selection-start-column="34" selection-end-line="92" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Controller.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="181">
+              <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+              <folding>
+                <element signature="e#1519#1520#0" expanded="true" />
+                <element signature="e#1559#1560#0" expanded="true" />
+                <element signature="e#1423#1424#0" expanded="true" />
+                <element signature="e#1471#1472#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -291,10 +231,10 @@
         <option value="$PROJECT_DIR$/CMS/www/views/External/index.tpl" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java" />
         <option value="$PROJECT_DIR$/CMS/test/InstanceServer.java" />
-        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Triad.java" />
         <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java" />
+        <option value="$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" />
       </list>
     </option>
   </component>
@@ -753,8 +693,6 @@
     <ignored-roots>
       <path value="$PROJECT_DIR$/Persistence/test/sql2o" />
     </ignored-roots>
-    <MESSAGE value="I realized too late that I can copypaste" />
-    <MESSAGE value="Finish relations&#10;&#10;Now it's time to polish them" />
     <MESSAGE value="Update readme&#10;&#10;Add link to the discord server." />
     <MESSAGE value="Improve relations&#10;&#10;I feel like Bigpoint should hire me." />
     <MESSAGE value="Improve entity documentation" />
@@ -778,7 +716,9 @@
     <MESSAGE value="Add missing libraries&#10;&#10;Add Pebble's missing dependencies" />
     <MESSAGE value="Add default route&#10;&#10;Redirect to `/External` if the path is empty, also minor organization." />
     <MESSAGE value="Add global variables, disable caching" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add global variables, disable caching" />
+    <MESSAGE value="Add persistence and event manager references" />
+    <MESSAGE value="Create base login, add debug print" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create base login, add debug print" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1100,6 +1040,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2162">
           <caret line="98" column="39" selection-start-line="98" selection-start-column="39" selection-end-line="98" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1110,16 +1053,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1357">
-          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CMS/www/views/External/index.tpl">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2116">
@@ -1127,9 +1060,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-web-3.5.1.jar!/io/vertx/ext/web/impl/RouteImpl.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-192">
+          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/com/kalaazu/persistence/PersistenceBuilder.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1840">
+        <state relative-caret-position="23">
           <caret line="84" column="30" selection-start-line="84" selection-start-column="30" selection-end-line="84" selection-end-column="30" />
         </state>
       </provider>
@@ -1154,40 +1101,36 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/CMS/lib/vertx-web-3.5.1.jar!/io/vertx/ext/web/impl/RouteImpl.class">
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/server/Server.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="201" lean-forward="true" selection-start-line="201" selection-end-line="201" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="19" column="28" lean-forward="true" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-          <folding>
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1124#1125#0" expanded="true" />
-            <element signature="e#1336#1337#0" expanded="true" />
-            <element signature="e#1384#1385#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-928">
-          <caret line="9" column="44" selection-start-line="9" selection-start-column="44" selection-end-line="9" selection-end-column="44" />
+        <state relative-caret-position="23">
+          <caret line="72" column="27" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/CMS.java">
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/Controller.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="66" column="14" selection-start-line="66" selection-start-column="14" selection-end-line="66" selection-end-column="14" />
+        <state relative-caret-position="181">
+          <caret line="63" lean-forward="true" selection-start-line="63" selection-end-line="63" />
+          <folding>
+            <element signature="e#1519#1520#0" expanded="true" />
+            <element signature="e#1559#1560#0" expanded="true" />
+            <element signature="e#1423#1424#0" expanded="true" />
+            <element signature="e#1471#1472#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CMS/src/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="65" column="41" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
