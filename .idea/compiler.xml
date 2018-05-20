@@ -7,9 +7,12 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Kalaazu" />
         <module name="Persistence" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="10" />
+    <bytecodeTargetLevel target="10">
+      <module name="Kalaazu" target="10" />
+    </bytecodeTargetLevel>
   </component>
 </project>
