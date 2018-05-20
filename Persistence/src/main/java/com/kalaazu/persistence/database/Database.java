@@ -1,12 +1,10 @@
 package com.kalaazu.persistence.database;
 
 import com.kalaazu.persistence.database.entities.Entity;
-import com.speedment.runtime.core.ApplicationBuilder;
 import com.speedment.runtime.core.component.transaction.Transaction;
 import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -52,11 +50,6 @@ public class Database {
     private KalaazuApplication db;
 
     /**
-     * Log levels.
-     */
-    private List<ApplicationBuilder.LogType> logTypes;
-
-    /**
      * Server host.
      */
     private String host;
@@ -96,8 +89,6 @@ public class Database {
             builder.withConnectionUrl(url)
                    .withUsername(this.getUsername())
                    .withPassword(this.getPassword());
-
-            this.getLogTypes().forEach(builder::withLogging);
 
             this.db = builder.build();
 
@@ -254,14 +245,6 @@ public class Database {
         this.database = database;
 
         return this;
-    }
-
-    public List<ApplicationBuilder.LogType> getLogTypes() {
-        return logTypes;
-    }
-
-    public void setLogTypes(List<ApplicationBuilder.LogType> logTypes) {
-        this.logTypes = logTypes;
     }
 
     public KalaazuApplication getDb() {

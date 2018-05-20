@@ -68,6 +68,11 @@
             <artifactId>utils</artifactId>
             <version>${version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.kalaazu</groupId>
+            <artifactId>persistence</artifactId>
+            <version>${version}</version>
+        </dependency>
 
         <dependency>
             <groupId>io.vertx</groupId>

@@ -20,6 +20,30 @@
     <orderEntry type="library" name="lib" level="project" />
     <orderEntry type="module" module-name="EventSystem" />
     <orderEntry type="module" module-name="utils" />
+    <orderEntry type="module" module-name="Persistence" />
+    <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:injector:1.2.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:function:1.0.5" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-core:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:jvm-version:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-compute:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-application:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:connector-mysql:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:connector-mariadb:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:connector-postgres:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-typemapper:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-field:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:annotation:1.0.0" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-config:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-bulk:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-join:3.1.1" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:tuple:1.0.8" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:json:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:lazy:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:mapstream:2.3.5" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:logger:1.0.4" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:invariant:1.0.3" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment.common:singleton-stream:1.0.1" level="project" />
     <orderEntry type="library" name="Maven: io.vertx:vertx-core:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.19.Final" level="project" />
