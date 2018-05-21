@@ -37,19 +37,15 @@ public class FindEvent implements Event {
         return entity;
     }
 
-    public FindEvent setEntity(Class<? extends Entity> entity) {
+    public void setEntity(Class<? extends Entity> entity) {
         this.entity = entity;
-
-        return this;
     }
 
     public int getId() {
         return id;
     }
 
-    public FindEvent setId(int id) {
+    public void setId(int id) {
         this.id = id;
-
-        return this;
     }
 }

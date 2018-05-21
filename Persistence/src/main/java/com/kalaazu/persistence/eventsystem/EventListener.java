@@ -1,7 +1,7 @@
 package com.kalaazu.persistence.eventsystem;
 
-import com.kalaazu.persistence.eventsystem.events.FindEvent;
-import com.kalaazu.persistence.eventsystem.handlers.FindHandler;
+import com.kalaazu.persistence.eventsystem.events.*;
+import com.kalaazu.persistence.eventsystem.handlers.*;
 
 /**
  * Event listener.
@@ -18,5 +18,9 @@ public class EventListener extends com.kalaazu.eventsystem.EventListener {
     @Override
     public void initialize() {
         super.addHandler(FindEvent.class, new FindHandler());
+        super.addHandler(AllEvent.class, new AllHandler());
+        super.addHandler(CreateEvent.class, new CreateHandler());
+        super.addHandler(UpdateEvent.class, new UpdateHandler());
+        super.addHandler(DeleteEvent.class, new DeleteHandler());
     }
 }

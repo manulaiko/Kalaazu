@@ -1,27 +1,25 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
 import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.eventsystem.events.FindEvent;
+import com.kalaazu.persistence.eventsystem.events.UpdateEvent;
 import io.vertx.core.Handler;
 import io.vertx.core.eventbus.Message;
 
 /**
- * Find handler.
- * =============
+ * Update handler.
+ * ===============
  *
- * Finds and returns something in the database.
+ * Updates an entity in the database.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public class FindHandler implements Handler<Message<FindEvent>> {
+public class UpdateHandler implements Handler<Message<UpdateEvent>> {
     @Override
-    public void handle(Message<FindEvent> event) {
+    public void handle(Message<UpdateEvent> event) {
         try {
             event.reply(
                     Database.getInstance()
-                            .find(
-                                    event.body()
-                                         .getId(),
+                            .update(
                                     event.body()
                                          .getEntity()
                             )

@@ -19,6 +19,7 @@
     <orderEntry type="module" module-name="utils" />
     <orderEntry type="module" module-name="Persistence" />
     <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.2.3" level="project" />
+    <orderEntry type="library" name="Maven: com.speedment:runtime:3.1.1" level="project" />
     <orderEntry type="library" name="Maven: com.speedment.common:injector:1.2.1" level="project" />
     <orderEntry type="library" name="Maven: com.speedment.common:function:1.0.5" level="project" />
     <orderEntry type="library" name="Maven: com.speedment.runtime:runtime-core:3.1.1" level="project" />
