@@ -4,7 +4,7 @@ package com.kalaazu.persistence.eventsystem;
  * Event listener.
  * ===============
  *
- * Subscribes to the event bus and listens for events.
+ * Registers the event handlers.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

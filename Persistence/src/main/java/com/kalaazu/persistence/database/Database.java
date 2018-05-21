@@ -1,9 +1,11 @@
 package com.kalaazu.persistence.database;
 
 import com.kalaazu.persistence.database.entities.Entity;
+import com.speedment.runtime.core.ApplicationBuilder;
 import com.speedment.runtime.core.component.transaction.Transaction;
 import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
+import io.vertx.core.json.JsonArray;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -75,6 +77,11 @@ public class Database {
     private String database;
 
     /**
+     * Log types.
+     */
+    private JsonArray logTypes;
+
+    /**
      * Initializes the connection with the database.
      */
     public void initialize() {
@@ -89,6 +96,11 @@ public class Database {
             builder.withConnectionUrl(url)
                    .withUsername(this.getUsername())
                    .withPassword(this.getPassword());
+
+            this.getLogTypes()
+                .forEach(
+                        l -> builder.withLogging(ApplicationBuilder.LogType.valueOf(l.toString()))
+                );
 
             this.db = builder.build();
 
@@ -249,6 +261,16 @@ public class Database {
 
     public KalaazuApplication getDb() {
         return db;
+    }
+
+    public JsonArray getLogTypes() {
+        return logTypes;
+    }
+
+    public Database setLogTypes(JsonArray logTypes) {
+        this.logTypes = logTypes;
+
+        return this;
     }
     //</editor-fold>
 }
