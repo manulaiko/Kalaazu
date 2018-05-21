@@ -1,12 +1,12 @@
 package com.kalaazu.eventsystem;
 
+import io.vertx.core.Handler;
+import io.vertx.core.eventbus.Message;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import io.vertx.core.Handler;
-import io.vertx.core.eventbus.Message;
 
 /**
  * Event listener.
@@ -49,15 +49,21 @@ public abstract class EventListener implements Handler<Message<Object>> {
 
     @Override
     public void handle(Message<Object> event) {
-        this.handlers.forEach((k, v) -> {
-            if (!k.isInstance(event.body())) {
-                return;
-            }
+        var handlers = this.handlers.getOrDefault(
+                event.body()
+                     .getClass(),
+                null
+        );
 
-            //noinspection unchecked
-            v.parallelStream()
-             .forEach(h -> h.handle(event));
-        });
+        if (handlers == null) {
+            event.fail(-1, "No handler registered for this event!");
+
+            return;
+        }
+
+        //noinspection unchecked
+        handlers.parallelStream()
+                .forEach(h -> h.handle(event));
     }
 
     /**
