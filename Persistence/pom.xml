@@ -47,5 +47,12 @@
             <version>${speedment.version}</version>
             <type>pom</type>
         </dependency>
+        <dependency>
+            <groupId>com.speedment</groupId>
+            <artifactId>runtime-application</artifactId>
+            <version>${speedment.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/runtime-application-${speedment.version}.jar</systemPath>
+        </dependency>
     </dependencies>
 </project>

@@ -10,15 +10,12 @@
       <sourceFolder url="file://$MODULE_DIR$/src/main/java" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/src/main/resources" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/src/test/java" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/Utils/src/main/java" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/Utils/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/bin" />
       <excludeFolder url="file://$MODULE_DIR$/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lib" level="project" />
-    <orderEntry type="module" module-name="EventSystem" />
     <orderEntry type="module" module-name="utils" />
     <orderEntry type="module" module-name="Persistence" />
     <orderEntry type="library" name="Maven: org.mariadb.jdbc:mariadb-java-client:2.2.3" level="project" />
@@ -44,6 +41,15 @@
     <orderEntry type="library" name="Maven: com.speedment.common:logger:1.0.4" level="project" />
     <orderEntry type="library" name="Maven: com.speedment.common:invariant:1.0.3" level="project" />
     <orderEntry type="library" name="Maven: com.speedment.common:singleton-stream:1.0.1" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.speedment:runtime-application:3.1.1">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/Persistence/lib/runtime-application-3.1.1.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: io.vertx:vertx-core:3.5.1" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-common:4.1.19.Final" level="project" />
     <orderEntry type="library" name="Maven: io.netty:netty-buffer:4.1.19.Final" level="project" />
