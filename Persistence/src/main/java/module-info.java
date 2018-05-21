@@ -90,26 +90,5 @@ module kalaazu.persistence {
     exports com.kalaazu.persistence.database.entities.vouchers_redeem_logs;
 
     requires kalaazu.utils;
-    requires java.sql;
-    requires annotation;
-    requires connector.mariadb;
-    requires function;
-    requires injector;
-    requires invariant;
-    requires lazy;
-    requires logger;
-    requires mapstream;
-    requires org.mariadb.jdbc;
-    requires runtime.application;
-    requires runtime.bulk;
-    requires runtime.compute;
-    requires runtime.config;
-    requires runtime.field;
-    requires runtime.join;
-    requires runtime.typemapper;
-    requires singleton.stream;
-    requires slf4j.api;
-    requires tuple;
     requires vertx.core;
-    requires runtime.core;
 }

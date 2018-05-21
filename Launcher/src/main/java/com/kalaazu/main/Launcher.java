@@ -1,5 +1,6 @@
 package com.kalaazu.main;
 
+import com.kalaazu.persistence.Persistence;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
@@ -23,6 +24,7 @@ public class Launcher extends AbstractVerticle {
         this.setLogger();
 
         Launcher.logger.info("Starting Kalaazu...");
+        vertx.deployVerticle(new Persistence());
     }
 
     /**

@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CMS/CMS.iml" filepath="$PROJECT_DIR$/CMS/CMS.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Emulator/Emulator.iml" filepath="$PROJECT_DIR$/Emulator/Emulator.iml" />
-      <module fileurl="file://$PROJECT_DIR$/EventSystem/EventSystem.iml" filepath="$PROJECT_DIR$/EventSystem/EventSystem.iml" />
       <module fileurl="file://$PROJECT_DIR$/Kalaazu.iml" filepath="$PROJECT_DIR$/Kalaazu.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Launcher/Launcher.iml" filepath="$PROJECT_DIR$/Launcher/Launcher.iml" />
       <module fileurl="file://$PROJECT_DIR$/Persistence/Persistence.iml" filepath="$PROJECT_DIR$/Persistence/Persistence.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Utils/utils.iml" filepath="$PROJECT_DIR$/Utils/utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" />
     </modules>
   </component>
 </project>

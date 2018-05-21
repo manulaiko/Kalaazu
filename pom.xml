@@ -9,71 +9,22 @@
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
 
-    <properties>
-        <java.version>10</java.version>
-        <vertx.version>3.5.1</vertx.version>
-        <kalaazu.launcher>com.kalaazu.main.Launcher</kalaazu.launcher>
-        <kalaazu.config>config.json</kalaazu.config>
-    </properties>
-
     <modules>
+        <module>Launcher</module>
         <module>Utils</module>
         <module>Persistence</module>
     </modules>
 
-    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5.1</version>
-                <configuration>
-                    <source>${java.version}</source>
-                    <target>${java.version}</target>
-                </configuration>
-            </plugin>
-
-            <plugin>
-                <groupId>io.reactiverse</groupId>
-                <artifactId>vertx-maven-plugin</artifactId>
-                <version>1.0.15</version>
-                <executions>
-                    <execution>
-                        <id>vmp</id>
-                        <goals>
-                            <goal>initialize</goal>
-                            <goal>package</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>vmp-run</id>
-                        <goals>
-                            <goal>initialize</goal>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
-                    <redeploy>true</redeploy>
-                    <config>${kalaazu.config}</config>
-                    <verticle>${kalaazu.launcher}</verticle>
-                </configuration>
-            </plugin>
-        </plugins>
-    </build>
+    <properties>
+        <java.version>10</java.version>
+        <vertx.version>3.5.0</vertx.version>
+        <slf4j.version>1.7.25</slf4j.version>
+        <speedment.version>3.1.1</speedment.version>
+        <kalaazu.launcher>com.kalaazu.main.Launcher</kalaazu.launcher>
+        <kalaazu.config>config.json</kalaazu.config>
+    </properties>
 
     <dependencies>
-        <dependency>
-            <groupId>com.kalaazu</groupId>
-            <artifactId>utils</artifactId>
-            <version>${version}</version>
-        </dependency>
-        <dependency>
-            <groupId>com.kalaazu</groupId>
-            <artifactId>persistence</artifactId>
-            <version>${version}</version>
-        </dependency>
-
         <dependency>
             <groupId>io.vertx</groupId>
             <artifactId>vertx-core</artifactId>
@@ -93,12 +44,33 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.8.0-beta2</version>
+            <version>${slf4j.version}</version>
         </dependency>
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.8.0-beta2</version>
+            <version>${slf4j.version}</version>
         </dependency>
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.ow2.asm</groupId>
+                        <artifactId>asm</artifactId>
+                        <version>6.1.1</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
 </project>
