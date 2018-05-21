@@ -5,8 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import io.vertx.core.eventbus.Message;
 import io.vertx.core.Handler;
+import io.vertx.core.eventbus.Message;
 
 /**
  * Event listener.
@@ -29,34 +29,32 @@ import io.vertx.core.Handler;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public abstract class EventListener {
+public abstract class EventListener implements Handler<Message<Object>> {
     /**
      * Events that this listener can handle.
      */
-    private Map<Class<? extends Event>, List<Handler<? extends Message>>> handlers = new HashMap<>();
+    private Map<Class<? extends Event>, List<Handler>> handlers = new HashMap<>();
+
+    /**
+     * Constructor.
+     */
+    public EventListener() {
+        this.initialize();
+    }
 
     /**
      * Initializes the event handlers.
      */
     public abstract void initialize();
 
-    /**
-     * Handles an incoming event.
-     *
-     * @param event Incoming event.
-     */
-    public void handle(Message<?> event) {
-        if (!(event.body() instanceof Event)) {
-            event.fail(0, "Can't handle event type!");
-
-            return;
-        }
-
+    @Override
+    public void handle(Message<Object> event) {
         this.handlers.forEach((k, v) -> {
             if (!k.isInstance(event.body())) {
                 return;
             }
 
+            //noinspection unchecked
             v.parallelStream()
              .forEach(h -> h.handle(event));
         });
@@ -68,7 +66,7 @@ public abstract class EventListener {
      * @param clazz   Event type that can be handled.
      * @param handler Handler to call.
      */
-    public void addHandler(Class<? extends Event> clazz, Handler<Message<?>> handler) {
+    public void addHandler(Class<? extends Event> clazz, Handler handler) {
         if (!clazz.isInstance(handler)) {
             return;
         }
@@ -85,7 +83,7 @@ public abstract class EventListener {
      * @param clazz   Event type that can be handled.
      * @param handler Handler to remove.
      */
-    public void removeHandler(Class<? extends Event> clazz, Handler<Message<?>> handler) {
+    public void removeHandler(Class<? extends Event> clazz, Handler handler) {
         var handlers = this.findHandlers(clazz);
         handlers.remove(handler);
 
@@ -101,7 +99,7 @@ public abstract class EventListener {
      *
      * @return List of registered handlers.
      */
-    private List<Handler<Message<?>>> findHandlers(Class<? extends Event> clazz) {
+    private List<Handler> findHandlers(Class<? extends Event> clazz) {
         return this.handlers.getOrDefault(clazz, new ArrayList<>());
     }
 }

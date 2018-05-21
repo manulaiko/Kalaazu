@@ -63,10 +63,9 @@ public class Persistence extends AbstractVerticle {
 
         Persistence.logger.info("Initializing event listener...");
         var listener = new EventListener();
-        listener.initialize();
 
         vertx.eventBus()
-             .consumer("persistence", listener::handle);
+             .consumer("persistence", listener);
 
         startFuture.complete();
     }
