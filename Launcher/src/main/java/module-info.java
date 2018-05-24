@@ -3,7 +3,7 @@ module kalaazu {
 
     requires kalaazu.persistence;
 
-    requires org.slf4j;
-    requires org.slf4j.simple;
+    requires slf4j.api;
+    requires slf4j.simple;
     requires vertx.core;
 }

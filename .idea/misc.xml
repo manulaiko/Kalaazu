@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/Persistence/pom.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/Utils/pom.xml" />
+        <option value="$PROJECT_DIR$/Persistence/src/test/speedment/pom.xml" />
       </list>
     </option>
   </component>

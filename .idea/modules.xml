@@ -2,10 +2,19 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Kalaazu.iml" filepath="$PROJECT_DIR$/Kalaazu.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Launcher/Launcher.iml" filepath="$PROJECT_DIR$/Launcher/Launcher.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Persistence/Persistence.iml" filepath="$PROJECT_DIR$/Persistence/Persistence.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Launcher.iml" filepath="$PROJECT_DIR$/.idea/modules/Launcher.iml" group="Launcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Launcher/Launcher_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Launcher/Launcher_main.iml" group="Launcher" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Launcher/Launcher_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Launcher/Launcher_test.iml" group="Launcher" />
+      <module fileurl="file://$PROJECT_DIR$/Persistence/Persistence.iml" filepath="$PROJECT_DIR$/Persistence/Persistence.iml" group="Persistence" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence/Persistence_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence/Persistence_main.iml" group="Persistence" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Persistence/Persistence_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Persistence/Persistence_test.iml" group="Persistence" />
+      <module fileurl="file://$PROJECT_DIR$/Utils/Utils.iml" filepath="$PROJECT_DIR$/Utils/Utils.iml" group="Utils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Utils/Utils_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Utils/Utils_main.iml" group="Utils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Utils/Utils_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Utils/Utils_test.iml" group="Utils" />
+      <module fileurl="file://$PROJECT_DIR$/Persistence/src/test/speedment/demo.iml" filepath="$PROJECT_DIR$/Persistence/src/test/speedment/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main.iml" filepath="$PROJECT_DIR$/.idea/modules/main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main_main.iml" filepath="$PROJECT_DIR$/.idea/modules/main_main.iml" group="main" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/main_test.iml" filepath="$PROJECT_DIR$/.idea/modules/main_test.iml" group="main" />
     </modules>
   </component>
 </project>

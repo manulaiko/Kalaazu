@@ -1,0 +1,31 @@
+allprojects {
+    apply plugin: 'java'
+
+    group 'com.kalaazu'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 10
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    compileJava {
+        doFirst {
+            options.compilerArgs = [
+                    '--module-path', classpath.asPath,
+            ]
+            classpath = files()
+        }
+    }
+
+    dependencies {
+        testCompile group: 'junit', name: 'junit', version: '4.12'
+        compile group: 'io.vertx', name: 'vertx-core', version: '3.5.1'
+        compile group: 'io.vertx', name: 'vertx-unit', version: '3.5.1'
+        compile group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.24.Final', classifier: 'linux-x86_64'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
+        compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+    }
+}

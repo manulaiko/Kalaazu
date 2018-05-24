@@ -1,0 +1,13 @@
+description = ''
+
+repositories {
+    flatDir {
+        dirs 'lib'
+    }
+}
+
+dependencies {
+    compile project(':Utils')
+    compile files('lib/runtime-deploy-3.1.1.jar')
+    compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.2.4'
+}
