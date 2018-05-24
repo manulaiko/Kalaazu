@@ -3,9 +3,7 @@ package com.kalaazu.eventsystem;
 import io.vertx.core.Handler;
 import io.vertx.core.eventbus.Message;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -33,7 +31,7 @@ public abstract class EventListener implements Handler<Message<Object>> {
     /**
      * Events that this listener can handle.
      */
-    private Map<Class<? extends Event>, List<Handler>> handlers = new HashMap<>();
+    private Map<Class<? extends Event>, Handler> handlers = new HashMap<>();
 
     /**
      * Constructor.
@@ -49,21 +47,20 @@ public abstract class EventListener implements Handler<Message<Object>> {
 
     @Override
     public void handle(Message<Object> event) {
-        var handlers = this.handlers.getOrDefault(
+        var handler = this.handlers.getOrDefault(
                 event.body()
                      .getClass(),
                 null
         );
 
-        if (handlers == null) {
+        if (handler == null) {
             event.fail(-1, "No handler registered for this event!");
 
             return;
         }
 
         //noinspection unchecked
-        handlers.parallelStream()
-                .forEach(h -> h.handle(event));
+        handler.handle(event);
     }
 
     /**
@@ -77,10 +74,7 @@ public abstract class EventListener implements Handler<Message<Object>> {
             return;
         }
 
-        var handlers = this.findHandlers(clazz);
-        handlers.add(handler);
-
-        this.handlers.put(clazz, handlers);
+        this.handlers.put(clazz, handler);
     }
 
     /**
@@ -90,22 +84,6 @@ public abstract class EventListener implements Handler<Message<Object>> {
      * @param handler Handler to remove.
      */
     public void removeHandler(Class<? extends Event> clazz, Handler handler) {
-        var handlers = this.findHandlers(clazz);
-        handlers.remove(handler);
-
-        this.handlers.put(clazz, handlers);
-    }
-
-    /**
-     * Returns all handlers registered for the class.
-     *
-     * If no handler is registered, an empty list will be returned.
-     *
-     * @param clazz Event type.
-     *
-     * @return List of registered handlers.
-     */
-    private List<Handler> findHandlers(Class<? extends Event> clazz) {
-        return this.handlers.getOrDefault(clazz, new ArrayList<>());
+        this.handlers.remove(clazz);
     }
 }
