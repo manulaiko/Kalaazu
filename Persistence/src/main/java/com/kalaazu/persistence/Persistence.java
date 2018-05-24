@@ -67,6 +67,8 @@ public class Persistence extends AbstractVerticle {
         vertx.eventBus()
              .consumer("persistence", listener);
 
+        Persistence.logger.info("Persistence initialize!");
+
         startFuture.complete();
     }
 }

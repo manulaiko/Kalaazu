@@ -1,3 +1,44 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '2.0.2'
+    id 'application'
+}
+
+repositories {
+    jcenter()
+}
+
+mainClassName = 'io.vertx.core.Launcher'
+def mainVerticleName = 'com.kalaazu.main.Launcher'
+def configurationFile = 'settings.json'
+def watchForChange = '**/*.java'
+def doOnChange = './gradlew classes'
+
+shadowJar {
+    classifier = 'fat'
+    manifest {
+        attributes "Main-Verticle": mainVerticleName
+    }
+    mergeServiceFiles {
+        include 'META-INF/services/io.vertx.core.spi.VerticleFactory'
+    }
+}
+
+dependencies {
+    compile project(':Launcher')
+}
+
+run {
+    args = [
+            'run',
+            mainVerticleName,
+            '-conf',
+            configurationFile,
+            "--redeploy=$watchForChange",
+            "--on-redeploy=$doOnChange",
+            "--launcher-class=$mainClassName"
+    ]
+}
+
 allprojects {
     apply plugin: 'java'
 
