@@ -2,6 +2,7 @@ package com.kalaazu.main;
 
 import com.kalaazu.persistence.Persistence;
 import io.vertx.core.AbstractVerticle;
+import io.vertx.core.DeploymentOptions;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 
@@ -24,7 +25,8 @@ public class Launcher extends AbstractVerticle {
         this.setLogger();
 
         Launcher.logger.info("Starting Kalaazu...");
-        vertx.deployVerticle(new Persistence());
+
+        this.startPersistence();
     }
 
     /**
@@ -34,5 +36,15 @@ public class Launcher extends AbstractVerticle {
         System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory");
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", config().getString("logLevel", "DEBUG"));
         Launcher.logger  = LoggerFactory.getLogger(Launcher.class);
+    }
+
+    /**
+     * Starts and deploys the persistence verticle.
+     */
+    public void startPersistence() {
+        Launcher.logger.info("Starting Persistence module...");
+
+        var opts = new DeploymentOptions().setWorker(true);
+        vertx.deployVerticle(new Persistence(), opts);
     }
 }

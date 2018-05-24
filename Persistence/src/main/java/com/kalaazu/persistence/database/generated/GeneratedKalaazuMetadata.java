@@ -1,7 +1,7 @@
 package com.kalaazu.persistence.database.generated;
 
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.application.AbstractApplicationMetadata;
+import com.speedment.runtime.core.internal.AbstractApplicationMetadata;
 
 import java.util.Optional;
 import java.util.stream.Stream;

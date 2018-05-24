@@ -2,44 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaef968c-8022-4bee-aa08-a11efbc4221e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/BankLogType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/BankLogTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ClanStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ClanStatusMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/CollectableType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/CollectableTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/Currency.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/CurrencyMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/DiplomacyStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/DiplomacyStatusMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/DiplomacyType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/DiplomacyTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/GalaxyGateProbabilityType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/GalaxyGateProbabilityTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ItemCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ItemCategoryMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/ItemTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/MessageStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/MessageStatusMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/QuestConditionType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/QuestConditionTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/SkillType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/SkillTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/TradeType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/TradeTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/mappers/Vector2Mapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Kalaazu.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Launcher/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Launcher/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Launcher/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/lib/runtime-application-3.1.1.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/PersistenceBuilder.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Launcher/src/main/java/com/kalaazu/main/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/Launcher/src/main/java/com/kalaazu/main/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuMetadata.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuMetadata.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <list id="c4a9e5f9-8fc9-4d0f-bf42-b43e97ded77c" name="Revert: Updated speedment entities" comment="">
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/accounts/AccountsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/accounts/AccountsManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/accounts/AccountsSqlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/accounts/AccountsSqlAdapter.java" afterDir="false" />
@@ -722,9 +701,6 @@
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/generated/GeneratedVouchersRedeemLogsManagerImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/generated/GeneratedVouchersRedeemLogsManagerImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/generated/GeneratedVouchersRedeemLogsSqlAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/vouchers_redeem_logs/generated/GeneratedVouchersRedeemLogsSqlAdapter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -745,7 +721,6 @@
     <ignored path="$PROJECT_DIR$/Utils/out/" />
     <ignored path="$PROJECT_DIR$/Persistence/src/test/speedment/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -818,21 +793,66 @@
     </system>
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="GeneratedModeratorsRolesPermissionsSqlAdapter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissionsSqlAdapter.java">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/module-info.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="159">
-              <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+            <state relative-caret-position="145">
+              <caret line="95" column="42" lean-forward="true" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GeneratedClansRolesPermissionsSqlAdapter.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/Database.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+            <state>
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.speedment.runtime/runtime-core/3.0.22/4bae1a808c52cde9859012988434e49981f9b4e7/runtime-core-3.0.22-sources.jar!/com/speedment/runtime/core/internal/AbstractApplicationMetadata.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Persistence/build.gradle">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Launcher/src/main/java/com/kalaazu/main/Launcher.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4">
+              <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Persistence.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="59" selection-start-line="59" selection-end-line="59" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.1/6243c5275b70f8794f6ef60d5b9f9f7336430c26/vertx-core-3.5.1-sources.jar!/io/vertx/core/impl/DeploymentManager.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret line="482" selection-start-line="482" selection-end-line="482" />
             </state>
           </provider>
         </entry>
@@ -851,11 +871,17 @@
     <findStrings>
       <find>com.example.demo.MainVerticle</find>
       <find />
-      <find />
+      <find>exports (.*);</find>
+      <find>runtime.deploy</find>
+      <find>runtime.core</find>
+      <find>(.*) to injector;</find>
     </findStrings>
     <replaceStrings>
       <replace />
-      <replace />
+      <replace>opens $1 to runtime.deploy;</replace>
+      <replace>runtime.core</replace>
+      <replace>injector</replace>
+      <replace>$1.generated to injector;</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -864,7 +890,7 @@
   <component name="GradleLocalSettings">
     <option name="myGradleHomes">
       <map>
-        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.7-all/4cret0dgl5o3b21weaoncl7ys/gradle-4.7" />
+        <entry key="$PROJECT_DIR$" value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.7-bin/73xux3q4721jgr4pjvqf9o30/gradle-4.7" />
       </map>
     </option>
     <option name="myGradleVersions">
@@ -1444,10 +1470,10 @@
     </option>
     <option name="modificationStamps">
       <map>
-        <entry key="$PROJECT_DIR$" value="10688681215000" />
+        <entry key="$PROJECT_DIR$" value="10689003407000" />
         <entry key="$PROJECT_DIR$/.gradle" value="0" />
         <entry key="$PROJECT_DIR$/Launcher/build.gradle" value="2934618549" />
-        <entry key="$PROJECT_DIR$/Persistence/build.gradle" value="3618620023" />
+        <entry key="$PROJECT_DIR$/Persistence/build.gradle" value="2301923397" />
         <entry key="$PROJECT_DIR$/Utils/build.gradle" value="3353607044" />
         <entry key="$PROJECT_DIR$/build.gradle" value="1138275516" />
         <entry key="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" value="1168256157" />
@@ -1639,8 +1665,6 @@
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.7-all/4cret0dgl5o3b21weaoncl7ys/gradle-4.7/lib/plugins/gradle-language-java-4.7.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.7-all/4cret0dgl5o3b21weaoncl7ys/gradle-4.7/lib/plugins/gradle-ide-native-4.7.jar" />
                   <option value="$USER_HOME$/.gradle/wrapper/dists/gradle-4.7-all/4cret0dgl5o3b21weaoncl7ys/gradle-4.7/lib/plugins/gradle-platform-base-4.7.jar" />
-                  <option value="$PROJECT_DIR$/buildSrc/src/main/java" />
-                  <option value="$PROJECT_DIR$/buildSrc/src/main/groovy" />
                 </list>
               </option>
             </ExternalProjectBuildClasspathPojo>
@@ -1658,12 +1682,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/rewards_ships/generated/GeneratedRewardsShips.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/rewards_ships/generated/GeneratedRewardsShipsImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/rewards_vouchers/generated/GeneratedRewardsVouchers.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/rewards_vouchers/generated/GeneratedRewardsVouchersImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/server_logs/generated/GeneratedServerLogs.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/server_logs/generated/GeneratedServerLogsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/ships/generated/GeneratedShips.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/ships/generated/GeneratedShipsImpl.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skilltree_levels/generated/GeneratedSkilltreeLevels.java" />
@@ -1707,8 +1725,14 @@
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissions.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissions.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsImpl.java" />
-        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java" />
         <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissionsSqlAdapter.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Main.java" />
+        <option value="$PROJECT_DIR$/Persistence/build.gradle" />
+        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuMetadata.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationBuilder.java" />
+        <option value="$PROJECT_DIR$/Persistence/src/main/java/module-info.java" />
+        <option value="$PROJECT_DIR$/Launcher/src/main/java/com/kalaazu/main/Launcher.java" />
       </list>
     </option>
   </component>
@@ -1750,13 +1774,553 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+  <component name="ProjectUserFactors">
+    <factor id="binaryFeature:liftShorter">
+      <dailyData date="24-5-2018">
+        <observation name="false" value="27.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:liftShorterClasses">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="false" value="26.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="false" value="2.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:middleMatching">
+      <dailyData date="24-5-2018">
+        <observation name="false" value="26.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:nonGeneric">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="27.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="0" value="2.0" />
+        <observation name="UNDEFINED" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:prox_inResolveScope">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="10.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="true" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:prox_openedInEditor">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="2.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:prox_sameDirectory">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="2.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:prox_sameLogicalRoot">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="2.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:prox_sdkOrLibrary">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="binaryFeature:templates">
+      <dailyData date="24-5-2018">
+        <observation name="false" value="27.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:accessible">
+      <dailyData date="24-5-2018">
+        <observation name="NORMAL" value="26.0" />
+        <observation name="UNDEFINED" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="NORMAL" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:expectedType">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="normal" value="26.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="expected" value="1.0" />
+        <observation name="normal" value="2.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:kind">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="classNameOrGlobalStatic" value="1.0" />
+        <observation name="normal" value="25.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="classNameOrGlobalStatic" value="2.0" />
+        <observation name="normal" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:prox_groovyReferenceListWeigher">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="unknown" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="unknown" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:prox_javaInheritance">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="false" value="1.0" />
+        <observation name="null" value="10.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="false" value="1.0" />
+        <observation name="null" value="1.0" />
+        <observation name="true" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:prox_referenceList">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="unknown" value="11.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="unknown" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="categoricalFeature:recursion">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="27.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="normal" value="2.0" />
+      </dailyData>
+    </factor>
+    <factor id="completionFinishedType">
+      <dailyData date="24-5-2018">
+        <observation name="cancelled" value="45.0" />
+        <observation name="explicitSelect" value="15.0" />
+        <observation name="typedSelect" value="12.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="cancelled" value="42.0" />
+        <observation name="explicitSelect" value="2.0" />
+        <observation name="typedSelect" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="completionType">
+      <dailyData date="24-5-2018">
+        <observation name="BASIC" value="52.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="BASIC" value="6.0" />
+      </dailyData>
+    </factor>
+    <factor id="completionUsage">
+      <dailyData date="24-5-2018">
+        <observation name="count" value="72.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="count" value="45.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:explicitProximity">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.4" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="1.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.09" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:grouping">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:mostUsed">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="27.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="UNDEFINED" value="3.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:nameEnd">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="51.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:position">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="0.716981" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="4.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="1.188916" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:prefix">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="-1109.037736" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="-1.0" />
+        <observation name="min" value="-1153.0" />
+        <observation name="variance" value="53297.053964" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="-1131.8" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="-1053.0" />
+        <observation name="min" value="-1202.0" />
+        <observation name="variance" value="1334.41" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:priority">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="-0.566038" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="-1.0" />
+        <observation name="variance" value="0.169753" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:prox_explicitlyImported">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="average" value="4.761905" />
+        <observation name="count" value="21.0" />
+        <observation name="max" value="50.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="118.448875" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="80.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="300.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="4377.777778" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:prox_knownElement">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="21.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:prox_sameModule">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="21.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.4" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="2.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.217778" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:prox_samePsiMember">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="16.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="21.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.2" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="1.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.054444" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:query_length">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:result_length">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="9.943396" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="26.0" />
+        <observation name="min" value="4.0" />
+        <observation name="variance" value="13.519923" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="12.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="17.0" />
+        <observation name="min" value="8.0" />
+        <observation name="variance" value="5.85" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:sameWords">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="51.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:shorter">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="51.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:simple">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="1.0" />
+        <observation name="average" value="0.0" />
+        <observation name="count" value="51.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:sorter">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="1.0" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="1.0" />
+        <observation name="min" value="1.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="1.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="1.0" />
+        <observation name="min" value="1.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:statics">
+      <dailyData date="24-5-2018">
+        <observation name="UNDEFINED" value="2.0" />
+        <observation name="average" value="-1.102041" />
+        <observation name="count" value="49.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="-3.0" />
+        <observation name="variance" value="1.421906" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="UNDEFINED" value="2.0" />
+        <observation name="average" value="-3.0" />
+        <observation name="count" value="1.0" />
+        <observation name="max" value="-3.0" />
+        <observation name="min" value="-3.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="doubleFeature:stats">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="377.358491" />
+        <observation name="count" value="53.0" />
+        <observation name="max" value="10000.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="3760844.389825" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="0.0" />
+        <observation name="count" value="5.0" />
+        <observation name="max" value="0.0" />
+        <observation name="min" value="0.0" />
+        <observation name="variance" value="0.0" />
+      </dailyData>
+    </factor>
+    <factor id="itemPosition">
+      <dailyData date="24-5-2018">
+        <observation name="0" value="6.0" />
+        <observation name="1" value="4.0" />
+        <observation name="2" value="1.0" />
+        <observation name="3" value="3.0" />
+        <observation name="4" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="0" value="2.0" />
+      </dailyData>
+    </factor>
+    <factor id="mnemonicsUsage">
+      <dailyData date="24-5-2018">
+        <observation name="total" value="7.0" />
+        <observation name="withMnemonics" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="total" value="2.0" />
+        <observation name="withMnemonics" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="prefixLength">
+      <dailyData date="24-5-2018">
+        <observation name="1" value="8.0" />
+        <observation name="2" value="2.0" />
+        <observation name="3" value="4.0" />
+        <observation name="8" value="1.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="4" value="1.0" />
+        <observation name="7" value="1.0" />
+      </dailyData>
+    </factor>
+    <factor id="timeBetweenTyping">
+      <dailyData date="24-5-2018">
+        <observation name="average" value="124.172131" />
+        <observation name="count" value="122.0" />
+      </dailyData>
+      <dailyData date="25-5-2018">
+        <observation name="average" value="203.304878" />
+        <observation name="count" value="82.0" />
+      </dailyData>
+    </factor>
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -1780,44 +2344,14 @@
               <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
               <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -1825,120 +2359,9 @@
               <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
               <item name="persistence" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="clans_roles_permissions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="clans_roles_permissions" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="moderators_roles_permissions" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="main" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Kalaazu" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="Persistence" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="speedment" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="kalaazu" type="462c0819:PsiDirectoryNode" />
-              <item name="persistence" type="462c0819:PsiDirectoryNode" />
-              <item name="database" type="462c0819:PsiDirectoryNode" />
-              <item name="entities" type="462c0819:PsiDirectoryNode" />
-              <item name="moderators_roles_permissions" type="462c0819:PsiDirectoryNode" />
-              <item name="generated" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="main" type="b2602c69:ProjectViewProjectNode" />
@@ -1948,6 +2371,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1955,8 +2380,8 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Persistence/src/test/speedment/pom.xml" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.16863033" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="project.structure.side.proportion" value="0.3451119" />
+    <property name="settings.editor.selected.configurable" value="project.propCompiler" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -1995,12 +2420,35 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.Kalaazu:Persistence [build]">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
+      <option name="MAIN_CLASS_NAME" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+    </configuration>
+    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
+      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+    </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.kalaazu.persistence.Main" />
+      <module name="Persistence_main" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration name="Kalaazu [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -2018,6 +2466,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="Kalaazu [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -2035,23 +2484,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-    </configuration>
-    <configuration name="Kalaazu [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value="clean" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="Kalaazu:Launcher [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -2069,6 +2502,7 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration name="Kalaazu:Persistence [build]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -2086,104 +2520,87 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
+      <method v="2" />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <patterns />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="TestNG" default="true" selected="false">
-      <option name="MAIN_CLASS_NAME" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-    </configuration>
-    <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
-      <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <list>
-      <item itemvalue="Gradle.Kalaazu [clean]" />
       <item itemvalue="Gradle.Kalaazu [build]" />
       <item itemvalue="Gradle.Kalaazu [assemble]" />
       <item itemvalue="Gradle.Kalaazu:Launcher [build]" />
       <item itemvalue="Gradle.Kalaazu:Persistence [build]" />
+      <item itemvalue="Application.Main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.Kalaazu:Persistence [build]" />
         <item itemvalue="Gradle.Kalaazu:Launcher [build]" />
         <item itemvalue="Gradle.Kalaazu [assemble]" />
         <item itemvalue="Gradle.Kalaazu [build]" />
-        <item itemvalue="Gradle.Kalaazu [clean]" />
       </list>
     </recent_temporary>
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1368" height="769" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="10" weight="0.3271028" />
-      <window_info anchor="right" id="Palette&#9;" order="4" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5022727" side_tool="true" weight="0.32554516" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.27651516" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.21028037" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49772727" weight="0.32554516" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49772727" visible="true" weight="0.6666667" />
-      <window_info id="Designer" order="2" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.3719697" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32954547" />
-      <window_info anchor="right" id="Gradle" order="7" weight="0.32954547" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.39621213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="UI Designer" order="2" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719626" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Build" order="12" weight="0.3271028" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-    </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37878788" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Version Control" order="7" weight="0.21028037" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49772727" weight="0.3271028" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
-      <window_info anchor="right" id="Database" order="5" weight="0.32954547" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49772727" weight="0.7211838" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719626" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5022727" side_tool="true" weight="0.32503888" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="9" visible="true" weight="0.47819313" />
+      <window_info anchor="bottom" id="Messages" order="10" weight="0.32659408" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49772727" weight="0.66407466" />
+      <window_info anchor="bottom" id="Build" order="12" weight="0.32659408" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32954547" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.27651516" />
+      <window_info anchor="right" id="Gradle" order="7" weight="0.32954547" />
+    </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.37878788" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="UI Designer" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32866043" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49772727" weight="0.3271028" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719626" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Version Control" order="7" weight="0.21028037" />
+      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49772727" weight="0.6697819" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5022727" side_tool="true" weight="0.32554516" />
-      <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.39719626" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.3271028" />
+      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Palette&#9;" order="4" />
+      <window_info anchor="right" id="Database" order="5" weight="0.32954547" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.27651516" />
-      <window_info id="Favorites" order="4" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.History.Properties">
@@ -2194,6 +2611,38 @@
         <option value="3" />
         <option value="1" />
       </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_WIDTH">
+                <map>
+                  <entry key="2" value="82" />
+                  <entry key="3" value="92" />
+                </map>
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
     </option>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -2272,122 +2721,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skilltree_skills/generated/GeneratedSkilltreeSkillsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="16" />
-          <folding>
-            <element signature="e#984#985#0" expanded="true" />
-            <element signature="e#1009#1010#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skilltree_unlocks/generated/GeneratedSkilltreeUnlocks.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="71" column="10" selection-start-line="71" selection-start-column="10" selection-end-line="71" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skilltree_unlocks/generated/GeneratedSkilltreeUnlocksImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="32" column="17" selection-start-line="32" selection-start-column="17" selection-end-line="32" selection-end-column="17" />
-          <folding>
-            <element signature="e#985#986#0" expanded="true" />
-            <element signature="e#1010#1011#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skylab_modules/generated/GeneratedSkylabModules.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/skylab_modules/generated/GeneratedSkylabModulesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="44" column="16" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="16" />
-          <folding>
-            <element signature="e#1058#1059#0" expanded="true" />
-            <element signature="e#1083#1084#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_costs/generated/GeneratedTechfactoryCosts.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="85" column="9" selection-start-line="85" selection-start-column="9" selection-end-line="85" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_costs/generated/GeneratedTechfactoryCostsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-          <folding>
-            <element signature="e#1044#1045#0" expanded="true" />
-            <element signature="e#1069#1070#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_drones/generated/GeneratedTechfactoryDrones.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="115" column="9" selection-start-line="115" selection-start-column="9" selection-end-line="115" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_drones/generated/GeneratedTechfactoryDronesImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="38" column="16" selection-start-line="38" selection-start-column="16" selection-end-line="38" selection-end-column="16" />
-          <folding>
-            <element signature="e#951#952#0" expanded="true" />
-            <element signature="e#976#977#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_items/generated/GeneratedTechfactoryItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="140" column="9" selection-start-line="140" selection-start-column="9" selection-end-line="140" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/techfactory_items/generated/GeneratedTechfactoryItemsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="42" column="16" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
-          <folding>
-            <element signature="e#1025#1026#0" expanded="true" />
-            <element signature="e#1050#1051#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/trade_items/generated/GeneratedTradeItems.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="97" column="10" selection-start-line="97" selection-start-column="10" selection-end-line="97" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/trade_items/generated/GeneratedTradeItemsImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="40" column="17" selection-start-line="40" selection-start-column="17" selection-end-line="40" selection-end-column="17" />
-          <folding>
-            <element signature="e#1131#1132#0" expanded="true" />
-            <element signature="e#1156#1157#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2402,10 +2739,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="47" column="19" selection-start-line="47" selection-start-column="19" selection-end-line="47" selection-end-column="19" />
-          <folding>
-            <element signature="e#1206#1207#0" expanded="true" />
-            <element signature="e#1231#1232#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2420,10 +2753,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="30" column="17" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
-          <folding>
-            <element signature="e#773#774#0" expanded="true" />
-            <element signature="e#798#799#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2438,10 +2767,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-          <folding>
-            <element signature="e#1090#1091#0" expanded="true" />
-            <element signature="e#1115#1116#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2477,9 +2802,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="15" column="19" lean-forward="true" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2529,9 +2851,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2539,9 +2858,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
           <caret line="2" column="7" selection-start-line="2" selection-start-column="7" selection-end-line="2" selection-end-column="7" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2549,9 +2865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2566,9 +2879,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
           <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2576,9 +2886,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="552">
           <caret line="24" selection-start-line="24" selection-end-line="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2586,9 +2893,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2599,20 +2903,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/factions/generated/GeneratedFactionsImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2095">
-          <caret line="77" column="4" lean-forward="true" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles/generated/GeneratedModeratorsRoles.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="24" column="17" selection-start-line="24" selection-start-column="17" selection-end-line="24" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/factions/generated/GeneratedFactionsImpl.java" />
+    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles/generated/GeneratedModeratorsRoles.java" />
     <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="82">
@@ -2620,20 +2912,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="155" column="42" selection-start-line="155" selection-end-line="156" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissions.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="154" column="34" selection-start-line="154" selection-end-line="155" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissions.java" />
+    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissions.java" />
     <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissions.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
@@ -2666,31 +2946,107 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="23">
           <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="e#1430#1431#0" expanded="true" />
-            <element signature="e#1487#1488#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="42" column="55" selection-start-line="42" selection-end-line="43" />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/test/speedment/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java" />
+    <entry file="file://$PROJECT_DIR$/Launcher/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/moderators_roles_permissions/generated/GeneratedModeratorsRolesPermissionsSqlAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="159">
-          <caret line="41" column="30" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="30" />
+        <state relative-caret-position="851">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/entities/clans_roles_permissions/generated/GeneratedClansRolesPermissionsSqlAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="37" column="29" lean-forward="true" selection-start-line="37" selection-start-column="29" selection-end-line="37" selection-end-column="29" />
+        <state relative-caret-position="644">
+          <caret line="45" column="1" selection-start-line="45" selection-start-column="1" selection-end-line="45" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.vertx/vertx-core/3.5.1/6243c5275b70f8794f6ef60d5b9f9f7336430c26/vertx-core-3.5.1-sources.jar!/io/vertx/core/impl/DeploymentManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="482" selection-start-line="482" selection-end-line="482" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.speedment.runtime/runtime-core/3.0.22/4bae1a808c52cde9859012988434e49981f9b4e7/runtime-core-3.0.22-sources.jar!/com/speedment/runtime/core/internal/AbstractApplicationMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="35" column="22" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Persistence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="59" selection-start-line="59" selection-end-line="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="182" column="26" selection-start-line="182" selection-start-column="26" selection-end-line="182" selection-end-column="26" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuApplicationImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/database/generated/GeneratedKalaazuMetadata.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="19" column="52" selection-start-line="19" selection-start-column="52" selection-end-line="19" selection-end-column="52" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Launcher/src/main/java/com/kalaazu/main/Launcher.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Persistence/src/main/java/module-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="95" column="42" lean-forward="true" selection-start-line="95" selection-start-column="42" selection-end-line="95" selection-end-column="42" />
         </state>
       </provider>
     </entry>
@@ -2746,12 +3102,11 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>Launcher</last-edited>
+          <last-edited>Utils_main|Utils</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
-                <option value="0.6" />
+                <option value="0.3451119" />
               </list>
             </option>
           </splitter-proportions>
@@ -2771,11 +3126,11 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.speedment.runtime:runtime-application:3.1.1</last-edited>
+          <last-edited>Gradle: com.fasterxml.jackson.core:jackson-annotations:2.9.0</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.2" />
+                <option value="0.3451119" />
               </list>
             </option>
           </splitter-proportions>
