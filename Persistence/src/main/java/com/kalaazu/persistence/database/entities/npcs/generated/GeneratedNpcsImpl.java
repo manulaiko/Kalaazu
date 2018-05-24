@@ -37,7 +37,6 @@ public abstract class GeneratedNpcsImpl implements Npcs {
     private byte   ai;
 
     protected GeneratedNpcsImpl() {
-
     }
 
     @Override

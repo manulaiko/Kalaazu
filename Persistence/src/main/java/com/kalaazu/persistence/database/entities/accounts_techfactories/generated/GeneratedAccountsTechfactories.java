@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * AccountsTechfactories}-interface
+ * com.kalaazu.persistence.database.entities.accounts_techfactories.AccountsTechfactories}-interface
  * representing entities of the {@code accounts_techfactories}-table in the
  * database.
  * <p>
@@ -205,37 +205,37 @@ public interface GeneratedAccountsTechfactories {
         SLOT_UNLOCK_FACTOR("slot_unlock_factor"),
         SLOTS("slots");
 
-        private final String                                 columnName;
+        private final String                                 columnId;
 
         private final TableIdentifier<AccountsTechfactories> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "accounts_techfactories";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

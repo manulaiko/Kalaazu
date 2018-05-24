@@ -3,17 +3,12 @@ package com.kalaazu.persistence.database.entities.key_value.generated;
 import com.kalaazu.persistence.database.entities.KeyValue;
 import com.kalaazu.persistence.database.entities.key_value.KeyValueImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.component.SqlAdapter;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static com.speedment.common.injector.State.RESOLVED;
 
 /**
  * The generated Sql Adapter for a {@link
@@ -26,7 +21,7 @@ import static com.speedment.common.injector.State.RESOLVED;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedKeyValueSqlAdapter {
+public abstract class GeneratedKeyValueSqlAdapter implements SqlAdapter<KeyValue> {
 
     private final TableIdentifier<KeyValue> tableIdentifier;
 
@@ -34,27 +29,29 @@ public abstract class GeneratedKeyValueSqlAdapter {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "key_value");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected KeyValue apply(ResultSet resultSet) throws SpeedmentException {
-        final KeyValue entity = createEntity();
-        try {
-            entity.setKey(resultSet.getString(1));
-            entity.setValue(resultSet.getString(2));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected KeyValue apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setKey(resultSet.getString(1 + offset))
+                .setValue(resultSet.getString(2 + offset))
+                ;
     }
 
     protected KeyValueImpl createEntity() {
         return new KeyValueImpl();
+    }
+
+    @Override
+    public TableIdentifier<KeyValue> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, KeyValue> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, KeyValue> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

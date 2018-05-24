@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * GalaxygatesGgSpins}-interface
+ * com.kalaazu.persistence.database.entities.galaxygates_gg_spins.GalaxygatesGgSpins}-interface
  * representing entities of the {@code galaxygates_gg_spins}-table in the
  * database.
  * <p>
@@ -150,37 +150,37 @@ public interface GeneratedGalaxygatesGgSpins {
         GALAXYGATES_ID("galaxygates_id"),
         GALAXYGATES_SPINS_ID("galaxygates_spins_id");
 
-        private final String                              columnName;
+        private final String                              columnId;
 
         private final TableIdentifier<GalaxygatesGgSpins> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "galaxygates_gg_spins";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

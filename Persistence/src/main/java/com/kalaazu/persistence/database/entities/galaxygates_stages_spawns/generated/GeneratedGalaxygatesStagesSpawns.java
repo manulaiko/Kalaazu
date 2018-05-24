@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * GalaxygatesStagesSpawns}-interface
+ * com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.GalaxygatesStagesSpawns}-interface
  * representing entities of the {@code galaxygates_stages_spawns}-table in the
  * database.
  * <p>
@@ -151,37 +151,37 @@ public interface GeneratedGalaxygatesStagesSpawns {
         GALAXYGATES_STAGES_ID("galaxygates_stages_id"),
         GALAXYGATES_SPAWNS_ID("galaxygates_spawns_id");
 
-        private final String                                   columnName;
+        private final String                                   columnId;
 
         private final TableIdentifier<GalaxygatesStagesSpawns> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "galaxygates_stages_spawns";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

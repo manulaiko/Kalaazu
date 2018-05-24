@@ -3,20 +3,14 @@ package com.kalaazu.persistence.database.entities.clans_roles_permissions.genera
 import com.kalaazu.persistence.database.entities.ClansRolesPermissions;
 import com.kalaazu.persistence.database.entities.clans_roles_permissions.ClansRolesPermissionsImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
-import com.speedment.runtime.config.Project;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.ProjectComponent;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
+import com.speedment.runtime.core.component.SqlAdapter;
 import com.speedment.runtime.core.component.sql.SqlTypeMapperHelper;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.speedment.common.injector.State.RESOLVED;
 import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getInt;
 
 /**
@@ -30,46 +24,41 @@ import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getInt;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedClansRolesPermissionsSqlAdapter {
+public abstract class GeneratedClansRolesPermissionsSqlAdapter implements SqlAdapter<ClansRolesPermissions> {
 
     private final TableIdentifier<ClansRolesPermissions> tableIdentifier;
 
-    private       SqlTypeMapperHelper<Integer, Boolean>  isEnabledHelper;
+    private SqlTypeMapperHelper<Integer, Boolean> isEnabledHelper;
 
     protected GeneratedClansRolesPermissionsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "clans_roles_permissions");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected ClansRolesPermissions apply(ResultSet resultSet) throws SpeedmentException {
-        final ClansRolesPermissions entity = createEntity();
-        try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansRolesId(resultSet.getInt(2));
-            entity.setPermissionsId(resultSet.getByte(3));
-            entity.setIsEnabled(isEnabledHelper.apply(getInt(resultSet, 4)));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected ClansRolesPermissions apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setId(            resultSet.getInt(1 + offset))
+                .setClansRolesId(  resultSet.getInt(2 + offset))
+                .setPermissionsId( resultSet.getByte(3 + offset))
+                .setIsEnabled(     isEnabledHelper.apply(getInt(resultSet, 4 + offset)))
+                ;
     }
 
     protected ClansRolesPermissionsImpl createEntity() {
         return new ClansRolesPermissionsImpl();
     }
 
-    @ExecuteBefore(RESOLVED)
-    void createHelpers(ProjectComponent projectComponent) {
-        final Project project = projectComponent.getProject();
-        isEnabledHelper = SqlTypeMapperHelper.create(
-                project, ClansRolesPermissions.IS_ENABLED, ClansRolesPermissions.class);
+    @Override
+    public TableIdentifier<ClansRolesPermissions> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ClansRolesPermissions> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ClansRolesPermissions> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

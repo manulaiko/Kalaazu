@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.galaxygates_gg_spins;
 
-import com.kalaazu.persistence.database.entities.GalaxygatesGgSpins;
 import com.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated.GeneratedGalaxygatesGgSpinsSqlAdapter;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public class GalaxygatesGgSpinsSqlAdapter extends GeneratedGalaxygatesGgSpinsSqlAdapter {
 }

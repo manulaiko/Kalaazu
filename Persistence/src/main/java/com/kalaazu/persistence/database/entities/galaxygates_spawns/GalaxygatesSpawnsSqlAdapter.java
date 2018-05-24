@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.galaxygates_spawns;
 
-import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
 import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.GeneratedGalaxygatesSpawnsSqlAdapter;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.galaxygates_spawns.generated.Ge
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public class GalaxygatesSpawnsSqlAdapter extends GeneratedGalaxygatesSpawnsSqlAdapter {
 }

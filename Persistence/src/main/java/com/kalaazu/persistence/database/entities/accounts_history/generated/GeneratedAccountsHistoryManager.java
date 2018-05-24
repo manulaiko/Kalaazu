@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.accounts_history.generated;
 
 import com.kalaazu.persistence.database.entities.AccountsHistory;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -23,7 +24,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedAccountsHistoryManager extends Manager<AccountsHistory> {
 
-    List<Field<AccountsHistory>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<AccountsHistory> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "accounts_history"
+    );
+
+    List<Field<AccountsHistory>>     FIELDS     = unmodifiableList(asList(
             AccountsHistory.ID,
             AccountsHistory.ACCOUNTS_ID,
             AccountsHistory.TYPE,

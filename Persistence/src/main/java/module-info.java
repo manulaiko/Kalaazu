@@ -91,4 +91,8 @@ module kalaazu.persistence {
 
     requires kalaazu.utils;
     requires vertx.core;
+    requires slf4j.api;
+    requires slf4j.simple;
+    requires java.sql;
+    requires runtime.deploy;
 }

@@ -22,20 +22,19 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedMapsImpl implements Maps {
 
-    private byte    id;
+    private byte   id;
 
-    private String  name;
+    private String name;
 
-    private Byte    factionsId;
+    private Byte   factionsId;
 
-    private boolean isPvp;
+    private int    isPvp;
 
-    private boolean isStarter;
+    private int    isStarter;
 
-    private long    limits;
+    private long   limits;
 
     protected GeneratedMapsImpl() {
-
     }
 
     @Override
@@ -54,12 +53,12 @@ public abstract class GeneratedMapsImpl implements Maps {
     }
 
     @Override
-    public boolean getIsPvp() {
+    public int getIsPvp() {
         return isPvp;
     }
 
     @Override
-    public boolean getIsStarter() {
+    public int getIsStarter() {
         return isStarter;
     }
 
@@ -87,13 +86,13 @@ public abstract class GeneratedMapsImpl implements Maps {
     }
 
     @Override
-    public Maps setIsPvp(boolean isPvp) {
+    public Maps setIsPvp(int isPvp) {
         this.isPvp = isPvp;
         return this;
     }
 
     @Override
-    public Maps setIsStarter(boolean isStarter) {
+    public Maps setIsStarter(int isStarter) {
         this.isStarter = isStarter;
         return this;
     }
@@ -162,9 +161,9 @@ public abstract class GeneratedMapsImpl implements Maps {
         int hash = 7;
         hash = 31 * hash + Byte.hashCode(getId());
         hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getFactionsId());
-        hash = 31 * hash + Boolean.hashCode(getIsPvp());
-        hash = 31 * hash + Boolean.hashCode(getIsStarter());
+        hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getFactionsId()));
+        hash = 31 * hash + Integer.hashCode(getIsPvp());
+        hash = 31 * hash + Integer.hashCode(getIsStarter());
         hash = 31 * hash + Long.hashCode(getLimits());
         return hash;
     }

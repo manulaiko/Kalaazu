@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.accounts_ships;
 
-import com.kalaazu.persistence.database.entities.AccountsShips;
 import com.kalaazu.persistence.database.entities.accounts_ships.generated.GeneratedAccountsShipsSqlAdapter;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.accounts_ships.generated.Genera
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public class AccountsShipsSqlAdapter extends GeneratedAccountsShipsSqlAdapter {
 }

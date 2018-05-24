@@ -12,12 +12,15 @@ import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.BooleanField;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
+import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
 
+import java.util.OptionalInt;
+
 /**
  * The generated base for the {@link
- * ModeratorsRolesPermissions}-interface
+ * com.kalaazu.persistence.database.entities.moderators_roles_permissions.ModeratorsRolesPermissions}-interface
  * representing entities of the {@code moderators_roles_permissions}-table in
  * the database.
  * <p>
@@ -75,7 +78,7 @@ public interface GeneratedModeratorsRolesPermissions {
      * that can be obtained using the {@link
      * ModeratorsRolesPermissions#getIsEnabled()} method.
      */
-    BooleanField<ModeratorsRolesPermissions, Integer>                      IS_ENABLED          = BooleanField.create(
+    BooleanField<ModeratorsRolesPermissions, Integer> IS_ENABLED = BooleanField.create(
             Identifier.IS_ENABLED,
             o -> OptionalUtil.unwrap(o.getIsEnabled()),
             ModeratorsRolesPermissions::setIsEnabled,
@@ -190,37 +193,37 @@ public interface GeneratedModeratorsRolesPermissions {
         PERMISSIONS_ID("permissions_id"),
         IS_ENABLED("is_enabled");
 
-        private final String                                      columnName;
+        private final String                                      columnId;
 
         private final TableIdentifier<ModeratorsRolesPermissions> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "moderators_roles_permissions";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

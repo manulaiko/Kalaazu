@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.clans_ranking.generated;
 
 import com.kalaazu.persistence.database.entities.ClansRanking;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -23,7 +24,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedClansRankingManager extends Manager<ClansRanking> {
 
-    List<Field<ClansRanking>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<ClansRanking> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "clans_ranking"
+    );
+
+    List<Field<ClansRanking>>     FIELDS     = unmodifiableList(asList(
             ClansRanking.ID,
             ClansRanking.CLANS_ID,
             ClansRanking.POINTS,

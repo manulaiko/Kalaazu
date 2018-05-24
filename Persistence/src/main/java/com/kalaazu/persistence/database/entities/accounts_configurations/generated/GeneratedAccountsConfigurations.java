@@ -1,7 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_configurations.generated;
 
-import com.kalaazu.persistence.database.entities.AccountsConfigurations;
-import com.kalaazu.persistence.database.entities.AccountsHangars;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -11,7 +10,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * AccountsConfigurations}-interface
+ * com.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurations}-interface
  * representing entities of the {@code accounts_configurations}-table in the
  * database.
  * <p>
@@ -272,37 +271,37 @@ public interface GeneratedAccountsConfigurations {
         SPEED("speed"),
         DAMAGE("damage");
 
-        private final String                                  columnName;
+        private final String                                  columnId;
 
         private final TableIdentifier<AccountsConfigurations> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "accounts_configurations";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

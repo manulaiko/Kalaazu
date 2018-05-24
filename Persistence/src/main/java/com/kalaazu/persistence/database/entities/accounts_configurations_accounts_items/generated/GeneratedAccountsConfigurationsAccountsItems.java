@@ -10,7 +10,6 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.ComparableForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -20,7 +19,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * AccountsConfigurationsAccountsItems}-interface
+ * com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItems}-interface
  * representing entities of the {@code
  * accounts_configurations_accounts_items}-table in the database.
  * <p>
@@ -37,7 +36,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getId()} method.
      */
-    IntField<AccountsConfigurationsAccountsItems, Integer>                                           ID                         = IntField.create(
+    IntField<AccountsConfigurationsAccountsItems, Integer>                                   ID                         = IntField.create(
             Identifier.ID,
             AccountsConfigurationsAccountsItems::getId,
             AccountsConfigurationsAccountsItems::setId,
@@ -51,7 +50,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * AccountsConfigurationsAccountsItems#getAccountsConfigurationsId()}
      * method.
      */
-    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsConfigurations>         ACCOUNTS_CONFIGURATIONS_ID = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsConfigurations> ACCOUNTS_CONFIGURATIONS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_CONFIGURATIONS_ID,
             AccountsConfigurationsAccountsItems::getAccountsConfigurationsId,
             AccountsConfigurationsAccountsItems::setAccountsConfigurationsId,
@@ -65,7 +64,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsItemsId()} method.
      */
-    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsItems>                  ACCOUNTS_ITEMS_ID          = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsItems>          ACCOUNTS_ITEMS_ID          = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ITEMS_ID,
             AccountsConfigurationsAccountsItems::getAccountsItemsId,
             AccountsConfigurationsAccountsItems::setAccountsItemsId,
@@ -79,12 +78,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsDronesId()} method.
      */
-    ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsDrones> ACCOUNTS_DRONES_ID         = ComparableForeignKeyField.create(
+    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsDrones>         ACCOUNTS_DRONES_ID         = IntForeignKeyField.create(
             Identifier.ACCOUNTS_DRONES_ID,
             o -> OptionalUtil.unwrap(o.getAccountsDronesId()),
             AccountsConfigurationsAccountsItems::setAccountsDronesId,
             AccountsDrones.ID,
-            TypeMapper.identity(),
+            TypeMapper.primitive(),
             false
     );
 
@@ -93,12 +92,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsPetsId()} method.
      */
-    ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsPets>   ACCOUNTS_PETS_ID           = ComparableForeignKeyField.create(
+    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsPets>           ACCOUNTS_PETS_ID           = IntForeignKeyField.create(
             Identifier.ACCOUNTS_PETS_ID,
             o -> OptionalUtil.unwrap(o.getAccountsPetsId()),
             AccountsConfigurationsAccountsItems::setAccountsPetsId,
             AccountsPets.ID,
-            TypeMapper.identity(),
+            TypeMapper.primitive(),
             false
     );
 
@@ -195,7 +194,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsDronesId(Integer accountsDronesId);
+    AccountsConfigurationsAccountsItems setAccountsDronesId(int accountsDronesId);
 
     /**
      * Sets the accountsPetsId of this AccountsConfigurationsAccountsItems. The
@@ -206,7 +205,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsPetsId(Integer accountsPetsId);
+    AccountsConfigurationsAccountsItems setAccountsPetsId(int accountsPetsId);
 
     /**
      * Queries the specified manager for the referenced AccountsConfigurations.
@@ -259,37 +258,37 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
         ACCOUNTS_DRONES_ID("accounts_drones_id"),
         ACCOUNTS_PETS_ID("accounts_pets_id");
 
-        private final String                                               columnName;
+        private final String                                               columnId;
 
         private final TableIdentifier<AccountsConfigurationsAccountsItems> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "accounts_configurations_accounts_items";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

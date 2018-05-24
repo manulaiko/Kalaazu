@@ -9,12 +9,11 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.BooleanField;
-import com.speedment.runtime.field.ByteForeignKeyField;
-import com.speedment.runtime.field.IntField;
-import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
+
+import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
@@ -75,7 +74,7 @@ public interface GeneratedClansRolesPermissions {
      * can be obtained using the {@link ClansRolesPermissions#getIsEnabled()}
      * method.
      */
-    BooleanField<ClansRolesPermissions, Integer>                   IS_ENABLED     = BooleanField.create(
+    BooleanField<ClansRolesPermissions, Integer> IS_ENABLED = BooleanField.create(
             Identifier.IS_ENABLED,
             o -> OptionalUtil.unwrap(o.getIsEnabled()),
             ClansRolesPermissions::setIsEnabled,
@@ -188,37 +187,37 @@ public interface GeneratedClansRolesPermissions {
         PERMISSIONS_ID("permissions_id"),
         IS_ENABLED("is_enabled");
 
-        private final String                                 columnName;
+        private final String                                 columnId;
 
         private final TableIdentifier<ClansRolesPermissions> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "clans_roles_permissions";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

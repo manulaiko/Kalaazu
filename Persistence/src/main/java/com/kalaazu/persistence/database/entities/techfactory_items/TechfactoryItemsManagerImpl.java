@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.techfactory_items;
 
-import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.kalaazu.persistence.database.entities.techfactory_items.generated.GeneratedTechfactoryItemsManagerImpl;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.techfactory_items.generated.Gen
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class TechfactoryItemsManagerImpl
         extends GeneratedTechfactoryItemsManagerImpl

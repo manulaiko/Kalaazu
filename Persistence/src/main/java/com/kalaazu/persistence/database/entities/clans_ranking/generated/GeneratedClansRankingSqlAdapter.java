@@ -3,17 +3,12 @@ package com.kalaazu.persistence.database.entities.clans_ranking.generated;
 import com.kalaazu.persistence.database.entities.ClansRanking;
 import com.kalaazu.persistence.database.entities.clans_ranking.ClansRankingImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.component.SqlAdapter;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static com.speedment.common.injector.State.RESOLVED;
 
 /**
  * The generated Sql Adapter for a {@link
@@ -26,7 +21,7 @@ import static com.speedment.common.injector.State.RESOLVED;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedClansRankingSqlAdapter {
+public abstract class GeneratedClansRankingSqlAdapter implements SqlAdapter<ClansRanking> {
 
     private final TableIdentifier<ClansRanking> tableIdentifier;
 
@@ -34,29 +29,31 @@ public abstract class GeneratedClansRankingSqlAdapter {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "clans_ranking");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected ClansRanking apply(ResultSet resultSet) throws SpeedmentException {
-        final ClansRanking entity = createEntity();
-        try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansId(resultSet.getInt(2));
-            entity.setPoints(resultSet.getInt(3));
-            entity.setBestPoints(resultSet.getInt(4));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected ClansRanking apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setId(resultSet.getInt(1 + offset))
+                .setClansId(resultSet.getInt(2 + offset))
+                .setPoints(resultSet.getInt(3 + offset))
+                .setBestPoints(resultSet.getInt(4 + offset))
+                ;
     }
 
     protected ClansRankingImpl createEntity() {
         return new ClansRankingImpl();
+    }
+
+    @Override
+    public TableIdentifier<ClansRanking> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ClansRanking> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ClansRanking> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.items;
 
-import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.items.generated.GeneratedItemsManagerImpl;
 
 /**
@@ -9,7 +8,7 @@ import com.kalaazu.persistence.database.entities.items.generated.GeneratedItemsM
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class ItemsManagerImpl
         extends GeneratedItemsManagerImpl

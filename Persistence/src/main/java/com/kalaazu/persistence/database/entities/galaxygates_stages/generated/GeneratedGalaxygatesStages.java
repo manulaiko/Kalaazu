@@ -16,7 +16,7 @@ import java.util.Optional;
 
 /**
  * The generated base for the {@link
- * GalaxygatesStages}-interface
+ * com.kalaazu.persistence.database.entities.galaxygates_stages.GalaxygatesStages}-interface
  * representing entities of the {@code galaxygates_stages}-table in the
  * database.
  * <p>
@@ -140,37 +140,37 @@ public interface GeneratedGalaxygatesStages {
         GALAXYGATES_WAVES_ID("galaxygates_waves_id"),
         COMMENT("comment");
 
-        private final String                             columnName;
+        private final String                             columnId;
 
         private final TableIdentifier<GalaxygatesStages> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "galaxygates_stages";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.levels_upgrades;
 
-import com.kalaazu.persistence.database.entities.LevelsUpgrades;
 import com.kalaazu.persistence.database.entities.levels_upgrades.generated.GeneratedLevelsUpgradesManager;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.levels_upgrades.generated.Gener
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public interface LevelsUpgradesManager extends GeneratedLevelsUpgradesManager {
 }

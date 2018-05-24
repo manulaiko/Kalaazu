@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.npcs;
 
-import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcsManagerImpl;
 
 /**
@@ -9,7 +8,7 @@ import com.kalaazu.persistence.database.entities.npcs.generated.GeneratedNpcsMan
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class NpcsManagerImpl
         extends GeneratedNpcsManagerImpl

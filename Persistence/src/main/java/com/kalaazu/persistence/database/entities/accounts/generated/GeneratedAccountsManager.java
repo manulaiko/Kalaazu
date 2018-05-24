@@ -1,7 +1,8 @@
 package com.kalaazu.persistence.database.entities.accounts.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -23,7 +24,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedAccountsManager extends Manager<Accounts> {
 
-    List<Field<Accounts>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<Accounts> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "accounts"
+    );
+
+    List<Field<Accounts>>     FIELDS     = unmodifiableList(asList(
             Accounts.ID,
             Accounts.USERS_ID,
             Accounts.SESSION_ID,

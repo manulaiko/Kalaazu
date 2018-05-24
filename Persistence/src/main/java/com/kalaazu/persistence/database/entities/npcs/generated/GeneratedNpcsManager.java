@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.npcs.generated;
 
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -22,7 +23,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedNpcsManager extends Manager<Npcs> {
 
-    List<Field<Npcs>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<Npcs> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "npcs"
+    );
+
+    List<Field<Npcs>>     FIELDS     = unmodifiableList(asList(
             Npcs.ID,
             Npcs.NAME,
             Npcs.HEALTH,

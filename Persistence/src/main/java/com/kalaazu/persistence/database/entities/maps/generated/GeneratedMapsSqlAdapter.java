@@ -3,20 +3,13 @@ package com.kalaazu.persistence.database.entities.maps.generated;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.maps.MapsImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
-import com.speedment.runtime.config.Project;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.ProjectComponent;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.component.sql.SqlTypeMapperHelper;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.component.SqlAdapter;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.speedment.common.injector.State.RESOLVED;
 import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getByte;
 
 /**
@@ -29,50 +22,41 @@ import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getByte
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedMapsSqlAdapter {
+public abstract class GeneratedMapsSqlAdapter implements SqlAdapter<Maps> {
 
-    private final TableIdentifier<Maps>                 tableIdentifier;
-
-    private       SqlTypeMapperHelper<Integer, Boolean> isPvpHelper;
-
-    private       SqlTypeMapperHelper<Integer, Boolean> isStarterHelper;
+    private final TableIdentifier<Maps> tableIdentifier;
 
     protected GeneratedMapsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "maps");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected Maps apply(ResultSet resultSet) throws SpeedmentException {
-        final Maps entity = createEntity();
-        try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setFactionsId(getByte(resultSet, 3));
-            entity.setIsPvp(isPvpHelper.apply(resultSet.getInt(4)));
-            entity.setIsStarter(isStarterHelper.apply(resultSet.getInt(5)));
-            entity.setLimits(resultSet.getLong(6));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected Maps apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setId(resultSet.getByte(1 + offset))
+                .setName(resultSet.getString(2 + offset))
+                .setFactionsId(getByte(resultSet, 3 + offset))
+                .setIsPvp(resultSet.getInt(4 + offset))
+                .setIsStarter(resultSet.getInt(5 + offset))
+                .setLimits(resultSet.getLong(6 + offset))
+                ;
     }
 
     protected MapsImpl createEntity() {
         return new MapsImpl();
     }
 
-    @ExecuteBefore(RESOLVED)
-    void createHelpers(ProjectComponent projectComponent) {
-        final Project project = projectComponent.getProject();
-        isPvpHelper = SqlTypeMapperHelper.create(project, Maps.IS_PVP, Maps.class);
-        isStarterHelper = SqlTypeMapperHelper.create(project, Maps.IS_STARTER, Maps.class);
+    @Override
+    public TableIdentifier<Maps> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, Maps> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, Maps> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

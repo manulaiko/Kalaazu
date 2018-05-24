@@ -23,10 +23,10 @@ public interface Manager<T extends Entity> extends com.speedment.runtime.core.ma
                        int j = 0;
 
                        if (i instanceof Byte) {
-                           j = ((Byte)i).intValue();
+                           j = ((Byte) i).intValue();
                        }
                        if (i instanceof Short) {
-                           j = ((Short)i).intValue();
+                           j = ((Short) i).intValue();
                        }
                        if (i instanceof Integer) {
                            j = (Integer) i;

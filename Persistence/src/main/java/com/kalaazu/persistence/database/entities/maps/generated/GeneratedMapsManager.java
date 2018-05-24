@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.maps.generated;
 
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -22,7 +23,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedMapsManager extends Manager<Maps> {
 
-    List<Field<Maps>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<Maps> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "maps"
+    );
+
+    List<Field<Maps>>     FIELDS     = unmodifiableList(asList(
             Maps.ID,
             Maps.NAME,
             Maps.FACTIONS_ID,

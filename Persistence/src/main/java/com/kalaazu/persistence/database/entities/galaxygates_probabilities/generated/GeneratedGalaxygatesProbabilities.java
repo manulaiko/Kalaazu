@@ -2,8 +2,6 @@ package com.kalaazu.persistence.database.entities.galaxygates_probabilities.gene
 
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesProbabilities;
-import com.kalaazu.persistence.database.mappers.GalaxyGateProbabilityType;
-import com.kalaazu.persistence.database.mappers.GalaxyGateProbabilityTypeMapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -11,12 +9,11 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.DoubleField;
-import com.speedment.runtime.field.EnumField;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * GalaxygatesProbabilities}-interface
+ * com.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities}-interface
  * representing entities of the {@code galaxygates_probabilities}-table in the
  * database.
  * <p>
@@ -33,7 +30,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link GalaxygatesProbabilities#getId()}
      * method.
      */
-    ByteField<GalaxygatesProbabilities, Byte>                            ID             = ByteField.create(
+    ByteField<GalaxygatesProbabilities, Byte>                        ID             = ByteField.create(
             Identifier.ID,
             GalaxygatesProbabilities::getId,
             GalaxygatesProbabilities::setId,
@@ -46,7 +43,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link
      * GalaxygatesProbabilities#getGalaxygatesId()} method.
      */
-    ByteForeignKeyField<GalaxygatesProbabilities, Byte, Galaxygates>     GALAXYGATES_ID = ByteForeignKeyField.create(
+    ByteForeignKeyField<GalaxygatesProbabilities, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
             GalaxygatesProbabilities::getGalaxygatesId,
             GalaxygatesProbabilities::setGalaxygatesId,
@@ -60,14 +57,12 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link GalaxygatesProbabilities#getType()}
      * method.
      */
-    EnumField<GalaxygatesProbabilities, Byte, GalaxyGateProbabilityType> TYPE           = EnumField.create(
+    ByteField<GalaxygatesProbabilities, Byte>                        TYPE           = ByteField.create(
             Identifier.TYPE,
             GalaxygatesProbabilities::getType,
             GalaxygatesProbabilities::setType,
-            new GalaxyGateProbabilityTypeMapper(),
-            GalaxyGateProbabilityType::name,
-            GalaxyGateProbabilityType::valueOf,
-            GalaxyGateProbabilityType.class
+            TypeMapper.primitive(),
+            false
     );
 
     /**
@@ -75,7 +70,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link
      * GalaxygatesProbabilities#getProbability()} method.
      */
-    DoubleField<GalaxygatesProbabilities, Double>                        PROBABILITY    = DoubleField.create(
+    DoubleField<GalaxygatesProbabilities, Double>                    PROBABILITY    = DoubleField.create(
             Identifier.PROBABILITY,
             GalaxygatesProbabilities::getProbability,
             GalaxygatesProbabilities::setProbability,
@@ -107,7 +102,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the type of this GalaxygatesProbabilities
      */
-    GalaxyGateProbabilityType getType();
+    byte getType();
 
     /**
      * Returns the probability of this GalaxygatesProbabilities. The probability
@@ -148,7 +143,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setType(GalaxyGateProbabilityType type);
+    GalaxygatesProbabilities setType(byte type);
 
     /**
      * Sets the probability of this GalaxygatesProbabilities. The probability
@@ -178,37 +173,37 @@ public interface GeneratedGalaxygatesProbabilities {
         TYPE("type"),
         PROBABILITY("probability");
 
-        private final String                                    columnName;
+        private final String                                    columnId;
 
         private final TableIdentifier<GalaxygatesProbabilities> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "galaxygates_probabilities";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

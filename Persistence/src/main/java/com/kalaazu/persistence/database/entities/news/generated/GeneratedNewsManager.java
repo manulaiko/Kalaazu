@@ -2,6 +2,7 @@ package com.kalaazu.persistence.database.entities.news.generated;
 
 import com.kalaazu.persistence.database.entities.News;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -22,7 +23,13 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedNewsManager extends Manager<News> {
 
-    List<Field<News>> FIELDS = unmodifiableList(asList(
+    TableIdentifier<News> IDENTIFIER = TableIdentifier.of(
+            "database",
+            "entities",
+            "news"
+    );
+
+    List<Field<News>>     FIELDS     = unmodifiableList(asList(
             News.ID,
             News.DATE,
             News.IMAGE,

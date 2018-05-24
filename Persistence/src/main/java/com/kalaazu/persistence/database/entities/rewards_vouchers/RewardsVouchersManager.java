@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.rewards_vouchers;
 
-import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.rewards_vouchers.generated.GeneratedRewardsVouchersManager;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.rewards_vouchers.generated.Gene
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public interface RewardsVouchersManager extends GeneratedRewardsVouchersManager {
 }

@@ -11,7 +11,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * TechfactoryDrones}-interface
+ * com.kalaazu.persistence.database.entities.techfactory_drones.TechfactoryDrones}-interface
  * representing entities of the {@code techfactory_drones}-table in the
  * database.
  * <p>
@@ -246,37 +246,37 @@ public interface GeneratedTechfactoryDrones {
         PRICE("price"),
         FACTOR("factor");
 
-        private final String                             columnName;
+        private final String                             columnId;
 
         private final TableIdentifier<TechfactoryDrones> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "techfactory_drones";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

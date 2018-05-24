@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.accounts_destroys;
 
-import com.kalaazu.persistence.database.entities.AccountsDestroys;
 import com.kalaazu.persistence.database.entities.accounts_destroys.generated.GeneratedAccountsDestroysManager;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.accounts_destroys.generated.Gen
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public interface AccountsDestroysManager extends GeneratedAccountsDestroysManager {
 }

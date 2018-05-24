@@ -3,20 +3,14 @@ package com.kalaazu.persistence.database.entities.moderators_roles_permissions.g
 import com.kalaazu.persistence.database.entities.ModeratorsRolesPermissions;
 import com.kalaazu.persistence.database.entities.moderators_roles_permissions.ModeratorsRolesPermissionsImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
-import com.speedment.runtime.config.Project;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.ProjectComponent;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
+import com.speedment.runtime.core.component.SqlAdapter;
 import com.speedment.runtime.core.component.sql.SqlTypeMapperHelper;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static com.speedment.common.injector.State.RESOLVED;
 import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getInt;
 
 /**
@@ -30,46 +24,41 @@ import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getInt;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedModeratorsRolesPermissionsSqlAdapter {
+public abstract class GeneratedModeratorsRolesPermissionsSqlAdapter implements SqlAdapter<ModeratorsRolesPermissions> {
 
     private final TableIdentifier<ModeratorsRolesPermissions> tableIdentifier;
 
-    private       SqlTypeMapperHelper<Integer, Boolean>       isEnabledHelper;
+    private SqlTypeMapperHelper<Integer, Boolean> isEnabledHelper;
 
     protected GeneratedModeratorsRolesPermissionsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "moderators_roles_permissions");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected ModeratorsRolesPermissions apply(ResultSet resultSet) throws SpeedmentException {
-        final ModeratorsRolesPermissions entity = createEntity();
-        try {
-            entity.setId(resultSet.getByte(1));
-            entity.setModeratorsRolesId(resultSet.getByte(2));
-            entity.setPermissionsId(resultSet.getByte(3));
-            entity.setIsEnabled(isEnabledHelper.apply(getInt(resultSet, 4)));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected ModeratorsRolesPermissions apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setId(resultSet.getByte(1 + offset))
+                .setModeratorsRolesId(resultSet.getByte(2 + offset))
+                .setPermissionsId(resultSet.getByte(3 + offset))
+                .setIsEnabled(isEnabledHelper.apply(getInt(resultSet, 4 + offset)))
+                ;
     }
 
     protected ModeratorsRolesPermissionsImpl createEntity() {
         return new ModeratorsRolesPermissionsImpl();
     }
 
-    @ExecuteBefore(RESOLVED)
-    void createHelpers(ProjectComponent projectComponent) {
-        final Project project = projectComponent.getProject();
-        isEnabledHelper = SqlTypeMapperHelper.create(
-                project, ModeratorsRolesPermissions.IS_ENABLED, ModeratorsRolesPermissions.class);
+    @Override
+    public TableIdentifier<ModeratorsRolesPermissions> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ModeratorsRolesPermissions> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, ModeratorsRolesPermissions> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

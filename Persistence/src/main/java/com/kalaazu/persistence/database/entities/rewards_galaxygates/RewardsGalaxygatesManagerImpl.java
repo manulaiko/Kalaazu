@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.rewards_galaxygates;
 
-import com.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.GeneratedRewardsGalaxygatesManagerImpl;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.rewards_galaxygates.generated.G
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class RewardsGalaxygatesManagerImpl
         extends GeneratedRewardsGalaxygatesManagerImpl

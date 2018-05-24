@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.techfactory_drones;
 
-import com.kalaazu.persistence.database.entities.TechfactoryDrones;
 import com.kalaazu.persistence.database.entities.techfactory_drones.generated.GeneratedTechfactoryDronesManager;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.techfactory_drones.generated.Ge
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public interface TechfactoryDronesManager extends GeneratedTechfactoryDronesManager {
 }

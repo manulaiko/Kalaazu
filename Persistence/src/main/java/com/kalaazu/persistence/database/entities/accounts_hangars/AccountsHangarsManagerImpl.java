@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.accounts_hangars;
 
-import com.kalaazu.persistence.database.entities.AccountsHangars;
 import com.kalaazu.persistence.database.entities.accounts_hangars.generated.GeneratedAccountsHangarsManagerImpl;
 
 /**
@@ -10,7 +9,7 @@ import com.kalaazu.persistence.database.entities.accounts_hangars.generated.Gene
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class AccountsHangarsManagerImpl
         extends GeneratedAccountsHangarsManagerImpl

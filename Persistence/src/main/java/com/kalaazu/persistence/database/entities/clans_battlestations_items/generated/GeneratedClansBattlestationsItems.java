@@ -14,7 +14,7 @@ import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * ClansBattlestationsItems}-interface
+ * com.kalaazu.persistence.database.entities.clans_battlestations_items.ClansBattlestationsItems}-interface
  * representing entities of the {@code clans_battlestations_items}-table in the
  * database.
  * <p>
@@ -221,37 +221,37 @@ public interface GeneratedClansBattlestationsItems {
         SLOT("slot"),
         DATE("date");
 
-        private final String                                    columnName;
+        private final String                                    columnId;
 
         private final TableIdentifier<ClansBattlestationsItems> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "clans_battlestations_items";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

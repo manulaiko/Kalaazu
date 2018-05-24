@@ -1,8 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_clans_roles.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsClansRoles;
-import com.kalaazu.persistence.database.entities.ClansRoles;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
@@ -13,7 +11,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * AccountsClansRoles}-interface
+ * com.kalaazu.persistence.database.entities.accounts_clans_roles.AccountsClansRoles}-interface
  * representing entities of the {@code accounts_clans_roles}-table in the
  * database.
  * <p>
@@ -148,37 +146,37 @@ public interface GeneratedAccountsClansRoles {
         ACCOUNTS_ID("accounts_id"),
         CLANS_ROLES_ID("clans_roles_id");
 
-        private final String                              columnName;
+        private final String                              columnId;
 
         private final TableIdentifier<AccountsClansRoles> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "accounts_clans_roles";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

@@ -3,17 +3,12 @@ package com.kalaazu.persistence.database.entities.accounts_history.generated;
 import com.kalaazu.persistence.database.entities.AccountsHistory;
 import com.kalaazu.persistence.database.entities.accounts_history.AccountsHistoryImpl;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.common.injector.annotation.ExecuteBefore;
-import com.speedment.common.injector.annotation.WithState;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
-import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.exception.SpeedmentException;
+import com.speedment.runtime.core.component.SqlAdapter;
+import com.speedment.runtime.core.db.SqlFunction;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static com.speedment.common.injector.State.RESOLVED;
 
 /**
  * The generated Sql Adapter for a {@link
@@ -26,7 +21,7 @@ import static com.speedment.common.injector.State.RESOLVED;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedAccountsHistorySqlAdapter {
+public abstract class GeneratedAccountsHistorySqlAdapter implements SqlAdapter<AccountsHistory> {
 
     private final TableIdentifier<AccountsHistory> tableIdentifier;
 
@@ -34,31 +29,33 @@ public abstract class GeneratedAccountsHistorySqlAdapter {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "accounts_history");
     }
 
-    @ExecuteBefore(RESOLVED)
-    void installMethodName(
-            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
-            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
-    ) {
-        streamSupplierComponent.install(tableIdentifier, this::apply);
-        persistenceComponent.install(tableIdentifier);
-    }
-
-    protected AccountsHistory apply(ResultSet resultSet) throws SpeedmentException {
-        final AccountsHistory entity = createEntity();
-        try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setType(resultSet.getByte(3));
-            entity.setMessage(resultSet.getString(4));
-            entity.setAmount(resultSet.getInt(5));
-            entity.setDate(resultSet.getTimestamp(6));
-        } catch (final SQLException sqle) {
-            throw new SpeedmentException(sqle);
-        }
-        return entity;
+    protected AccountsHistory apply(ResultSet resultSet, int offset) throws SQLException {
+        return createEntity()
+                .setId(resultSet.getInt(1 + offset))
+                .setAccountsId(resultSet.getInt(2 + offset))
+                .setType(resultSet.getByte(3 + offset))
+                .setMessage(resultSet.getString(4 + offset))
+                .setAmount(resultSet.getInt(5 + offset))
+                .setDate(resultSet.getTimestamp(6 + offset))
+                ;
     }
 
     protected AccountsHistoryImpl createEntity() {
         return new AccountsHistoryImpl();
+    }
+
+    @Override
+    public TableIdentifier<AccountsHistory> identifier() {
+        return tableIdentifier;
+    }
+
+    @Override
+    public SqlFunction<ResultSet, AccountsHistory> entityMapper() {
+        return entityMapper(0);
+    }
+
+    @Override
+    public SqlFunction<ResultSet, AccountsHistory> entityMapper(int offset) {
+        return rs -> apply(rs, offset);
     }
 }

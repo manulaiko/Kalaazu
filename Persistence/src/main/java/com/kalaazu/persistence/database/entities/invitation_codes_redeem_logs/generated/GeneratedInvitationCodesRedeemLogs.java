@@ -11,13 +11,12 @@ import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ReferenceField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
-import com.speedment.runtime.typemapper.other.BinaryToByteArrayMapper;
 
 import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * InvitationCodesRedeemLogs}-interface
+ * com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs}-interface
  * representing entities of the {@code invitation_codes_redeem_logs}-table in
  * the database.
  * <p>
@@ -61,11 +60,11 @@ public interface GeneratedInvitationCodesRedeemLogs {
      * that can be obtained using the {@link InvitationCodesRedeemLogs#getIp()}
      * method.
      */
-    ReferenceField<InvitationCodesRedeemLogs, Object, byte[]>               IP                  = ReferenceField.create(
+    ReferenceField<InvitationCodesRedeemLogs, Object, Object>               IP                  = ReferenceField.create(
             Identifier.IP,
             InvitationCodesRedeemLogs::getIp,
             InvitationCodesRedeemLogs::setIp,
-            new BinaryToByteArrayMapper(),
+            TypeMapper.identity(),
             false
     );
 
@@ -107,7 +106,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the ip of this InvitationCodesRedeemLogs
      */
-    byte[] getIp();
+    Object getIp();
 
     /**
      * Returns the date of this InvitationCodesRedeemLogs. The date field
@@ -147,7 +146,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setIp(byte... ip);
+    InvitationCodesRedeemLogs setIp(Object ip);
 
     /**
      * Sets the date of this InvitationCodesRedeemLogs. The date field
@@ -178,37 +177,37 @@ public interface GeneratedInvitationCodesRedeemLogs {
         IP("ip"),
         DATE("date");
 
-        private final String                                     columnName;
+        private final String                                     columnId;
 
         private final TableIdentifier<InvitationCodesRedeemLogs> tableIdentifier;
 
-        Identifier(String columnName) {
-            this.columnName = columnName;
+        Identifier(String columnId) {
+            this.columnId = columnId;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsName(),
-                    getSchemaName(),
-                    getTableName()
+                    getDbmsId(),
+                    getSchemaId(),
+                    getTableId()
             );
         }
 
         @Override
-        public String getDbmsName() {
+        public String getDbmsId() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaName() {
+        public String getSchemaId() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableName() {
+        public String getTableId() {
             return "invitation_codes_redeem_logs";
         }
 
         @Override
-        public String getColumnName() {
-            return this.columnName;
+        public String getColumnId() {
+            return this.columnId;
         }
 
         @Override

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.quests;
 
-import com.kalaazu.persistence.database.entities.Quests;
 import com.kalaazu.persistence.database.entities.quests.generated.GeneratedQuestsSqlAdapter;
 
 /**
@@ -9,7 +8,7 @@ import com.kalaazu.persistence.database.entities.quests.generated.GeneratedQuest
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public class QuestsSqlAdapter extends GeneratedQuestsSqlAdapter {
 }

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence.database.entities.users;
 
-import com.kalaazu.persistence.database.entities.Users;
 import com.kalaazu.persistence.database.entities.users.generated.GeneratedUsersManagerImpl;
 
 /**
@@ -9,7 +8,7 @@ import com.kalaazu.persistence.database.entities.users.generated.GeneratedUsersM
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author Manulaiko <manulaiko@gmail.com>
+ * @author kalaazu
  */
 public final class UsersManagerImpl
         extends GeneratedUsersManagerImpl
