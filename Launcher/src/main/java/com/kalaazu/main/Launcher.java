@@ -1,5 +1,6 @@
 package com.kalaazu.main;
 
+import com.kalaazu.cms.CMS;
 import com.kalaazu.persistence.Persistence;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.DeploymentOptions;
@@ -20,13 +21,22 @@ public class Launcher extends AbstractVerticle {
      */
     public static Logger logger;
 
+    /**
+     * Deployment options.
+     */
+    private DeploymentOptions opts;
+
     @Override
     public void start() {
         this.setLogger();
 
         Launcher.logger.info("Starting Kalaazu...");
 
+        this.opts = new DeploymentOptions();
+        this.opts.setWorker(true);
+
         this.startPersistence();
+        this.startCMS();
     }
 
     /**
@@ -44,7 +54,15 @@ public class Launcher extends AbstractVerticle {
     public void startPersistence() {
         Launcher.logger.info("Starting Persistence module...");
 
-        var opts = new DeploymentOptions().setWorker(true);
-        vertx.deployVerticle(new Persistence(), opts);
+        vertx.deployVerticle(new Persistence(), this.opts);
+    }
+
+    /**
+     * Starts and deploys the CMS verticle.
+     */
+    public void startCMS() {
+        Launcher.logger.info("Starting CMS module...");
+
+        vertx.deployVerticle(new CMS(), this.opts);
     }
 }

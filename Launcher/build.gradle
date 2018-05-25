@@ -1,3 +1,4 @@
 dependencies {
     compile project(':Persistence')
+    compile project(':CMS')
 }

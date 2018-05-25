@@ -14,6 +14,8 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="10">
+      <module name="CMS_main" target="1.10" />
+      <module name="CMS_test" target="1.10" />
       <module name="Launcher_main" target="1.10" />
       <module name="Launcher_test" target="1.10" />
       <module name="main_main" target="1.10" />
