@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.generated;
 
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.application.AbstractSpeedment;
+import com.speedment.runtime.core.internal.AbstractSpeedment;
 
 /**
  * The generated {@link
- * com.speedment.runtime.application.AbstractApplicationBuilder}
+ * com.speedment.runtime.core.internal.AbstractApplicationBuilder}
  * implementation class for the {@link com.speedment.runtime.config.Project}
  * named kalaazu.
  * <p>

@@ -9,11 +9,12 @@ import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.BooleanField;
+import com.speedment.runtime.field.ByteForeignKeyField;
+import com.speedment.runtime.field.IntField;
+import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
-
-import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
@@ -191,33 +192,33 @@ public interface GeneratedClansRolesPermissions {
 
         private final TableIdentifier<ClansRolesPermissions> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "clans_roles_permissions";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

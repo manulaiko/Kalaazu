@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.users;
 
+import com.kalaazu.persistence.database.entities.Users;
 import com.kalaazu.persistence.database.entities.users.generated.GeneratedUsersSqlAdapter;
 
 /**
@@ -8,7 +9,7 @@ import com.kalaazu.persistence.database.entities.users.generated.GeneratedUsersS
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public class UsersSqlAdapter extends GeneratedUsersSqlAdapter {
 }

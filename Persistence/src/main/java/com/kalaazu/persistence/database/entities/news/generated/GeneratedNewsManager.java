@@ -22,13 +22,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedNewsManager extends Manager<News> {
 
-    TableIdentifier<News> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "news"
-    );
-
-    List<Field<News>>     FIELDS     = unmodifiableList(asList(
+    List<Field<News>> FIELDS = unmodifiableList(asList(
             News.ID,
             News.DATE,
             News.IMAGE,

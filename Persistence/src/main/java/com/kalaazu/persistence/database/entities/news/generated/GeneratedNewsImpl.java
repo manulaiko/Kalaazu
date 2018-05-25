@@ -32,6 +32,7 @@ public abstract class GeneratedNewsImpl implements News {
     private String text;
 
     protected GeneratedNewsImpl() {
+
     }
 
     @Override

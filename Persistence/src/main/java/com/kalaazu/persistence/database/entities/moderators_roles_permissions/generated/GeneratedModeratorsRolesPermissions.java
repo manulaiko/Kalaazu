@@ -12,15 +12,12 @@ import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.BooleanField;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
-import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
 
-import java.util.OptionalInt;
-
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.moderators_roles_permissions.ModeratorsRolesPermissions}-interface
+ * ModeratorsRolesPermissions}-interface
  * representing entities of the {@code moderators_roles_permissions}-table in
  * the database.
  * <p>
@@ -197,33 +194,33 @@ public interface GeneratedModeratorsRolesPermissions {
 
         private final TableIdentifier<ModeratorsRolesPermissions> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "moderators_roles_permissions";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

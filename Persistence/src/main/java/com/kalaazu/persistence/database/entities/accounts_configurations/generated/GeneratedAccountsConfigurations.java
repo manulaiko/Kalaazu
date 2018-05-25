@@ -1,16 +1,17 @@
 package com.kalaazu.persistence.database.entities.accounts_configurations.generated;
 
-import com.kalaazu.persistence.database.entities.*;
+import com.kalaazu.persistence.database.entities.AccountsConfigurations;
+import com.kalaazu.persistence.database.entities.AccountsHangars;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurations}-interface
+ * AccountsConfigurations}-interface
  * representing entities of the {@code accounts_configurations}-table in the
  * database.
  * <p>
@@ -275,33 +276,33 @@ public interface GeneratedAccountsConfigurations {
 
         private final TableIdentifier<AccountsConfigurations> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "accounts_configurations";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

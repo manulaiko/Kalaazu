@@ -2,14 +2,13 @@ package com.kalaazu.persistence.database.entities.clans_roles_permissions.genera
 
 import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.ClansRolesPermissions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
-import java.util.OptionalInt;
 import java.util.StringJoiner;
 
 /**
@@ -33,6 +32,7 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
     private boolean isEnabled;
 
     protected GeneratedClansRolesPermissionsImpl() {
+
     }
 
     @Override
@@ -123,7 +123,7 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
         if (this.getPermissionsId() != thatClansRolesPermissions.getPermissionsId()) {
             return false;
         }
-        if (!Objects.equals(this.getIsEnabled(), thatClansRolesPermissions.getIsEnabled())) {
+        if (this.getIsEnabled() != thatClansRolesPermissions.getIsEnabled()) {
             return false;
         }
         return true;
@@ -135,7 +135,7 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
         hash = 31 * hash + Integer.hashCode(getId());
         hash = 31 * hash + Integer.hashCode(getClansRolesId());
         hash = 31 * hash + Byte.hashCode(getPermissionsId());
-        hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getIsEnabled()));
+        hash = 31 * hash + Boolean.hashCode(getIsEnabled().orElse(false));
         return hash;
     }
 }

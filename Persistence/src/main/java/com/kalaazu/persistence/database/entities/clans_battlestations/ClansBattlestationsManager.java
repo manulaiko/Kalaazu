@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.clans_battlestations;
 
+import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.clans_battlestations.generated.GeneratedClansBattlestationsManager;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.clans_battlestations.generated.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface ClansBattlestationsManager extends GeneratedClansBattlestationsManager {
 }

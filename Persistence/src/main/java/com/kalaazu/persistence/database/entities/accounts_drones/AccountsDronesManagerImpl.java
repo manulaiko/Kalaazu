@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_drones;
 
+import com.kalaazu.persistence.database.entities.AccountsDrones;
 import com.kalaazu.persistence.database.entities.accounts_drones.generated.GeneratedAccountsDronesManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_drones.generated.Gener
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class AccountsDronesManagerImpl
         extends GeneratedAccountsDronesManagerImpl

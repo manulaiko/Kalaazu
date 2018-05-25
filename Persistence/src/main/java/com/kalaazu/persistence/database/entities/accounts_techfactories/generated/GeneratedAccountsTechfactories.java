@@ -13,7 +13,7 @@ import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.accounts_techfactories.AccountsTechfactories}-interface
+ * AccountsTechfactories}-interface
  * representing entities of the {@code accounts_techfactories}-table in the
  * database.
  * <p>
@@ -209,33 +209,33 @@ public interface GeneratedAccountsTechfactories {
 
         private final TableIdentifier<AccountsTechfactories> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "accounts_techfactories";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

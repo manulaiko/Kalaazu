@@ -22,13 +22,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedMapsManager extends Manager<Maps> {
 
-    TableIdentifier<Maps> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "maps"
-    );
-
-    List<Field<Maps>>     FIELDS     = unmodifiableList(asList(
+    List<Field<Maps>> FIELDS = unmodifiableList(asList(
             Maps.ID,
             Maps.NAME,
             Maps.FACTIONS_ID,

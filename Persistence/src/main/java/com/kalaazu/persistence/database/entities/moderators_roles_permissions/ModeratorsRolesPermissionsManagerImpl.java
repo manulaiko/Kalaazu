@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.moderators_roles_permissions;
 
+import com.kalaazu.persistence.database.entities.ModeratorsRolesPermissions;
 import com.kalaazu.persistence.database.entities.moderators_roles_permissions.generated.GeneratedModeratorsRolesPermissionsManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.moderators_roles_permissions.ge
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class ModeratorsRolesPermissionsManagerImpl
         extends GeneratedModeratorsRolesPermissionsManagerImpl

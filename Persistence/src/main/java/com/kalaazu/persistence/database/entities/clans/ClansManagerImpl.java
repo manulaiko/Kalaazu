@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.clans;
 
+import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.clans.generated.GeneratedClansManagerImpl;
 
 /**
@@ -8,7 +9,7 @@ import com.kalaazu.persistence.database.entities.clans.generated.GeneratedClansM
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class ClansManagerImpl
         extends GeneratedClansManagerImpl

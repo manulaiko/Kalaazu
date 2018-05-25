@@ -11,12 +11,13 @@ import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ReferenceField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
+import com.speedment.runtime.typemapper.other.BinaryToByteArrayMapper;
 
 import java.sql.Timestamp;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogs}-interface
+ * InvitationCodesRedeemLogs}-interface
  * representing entities of the {@code invitation_codes_redeem_logs}-table in
  * the database.
  * <p>
@@ -64,7 +65,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
             Identifier.IP,
             InvitationCodesRedeemLogs::getIp,
             InvitationCodesRedeemLogs::setIp,
-            TypeMapper.identity(),
+            new BinaryToByteArrayMapper(),
             false
     );
 
@@ -106,7 +107,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the ip of this InvitationCodesRedeemLogs
      */
-    Object getIp();
+    byte[] getIp();
 
     /**
      * Returns the date of this InvitationCodesRedeemLogs. The date field
@@ -146,7 +147,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setIp(Object ip);
+    InvitationCodesRedeemLogs setIp(byte... ip);
 
     /**
      * Sets the date of this InvitationCodesRedeemLogs. The date field
@@ -181,33 +182,33 @@ public interface GeneratedInvitationCodesRedeemLogs {
 
         private final TableIdentifier<InvitationCodesRedeemLogs> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "invitation_codes_redeem_logs";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

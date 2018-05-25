@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs;
 
+import com.kalaazu.persistence.database.entities.InvitationCodesRedeemLogs;
 import com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.generated.GeneratedInvitationCodesRedeemLogsManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.ge
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class InvitationCodesRedeemLogsManagerImpl
         extends GeneratedInvitationCodesRedeemLogsManagerImpl

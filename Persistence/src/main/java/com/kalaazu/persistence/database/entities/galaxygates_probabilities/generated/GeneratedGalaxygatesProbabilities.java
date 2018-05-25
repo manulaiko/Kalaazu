@@ -2,18 +2,21 @@ package com.kalaazu.persistence.database.entities.galaxygates_probabilities.gene
 
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesProbabilities;
+import com.kalaazu.persistence.database.entities.Manager;
+import com.kalaazu.persistence.database.mappers.GalaxyGateProbabilityType;
+import com.kalaazu.persistence.database.mappers.GalaxyGateProbabilityTypeMapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.DoubleField;
+import com.speedment.runtime.field.EnumField;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.galaxygates_probabilities.GalaxygatesProbabilities}-interface
+ * GalaxygatesProbabilities}-interface
  * representing entities of the {@code galaxygates_probabilities}-table in the
  * database.
  * <p>
@@ -61,8 +64,10 @@ public interface GeneratedGalaxygatesProbabilities {
             Identifier.TYPE,
             GalaxygatesProbabilities::getType,
             GalaxygatesProbabilities::setType,
-            TypeMapper.primitive(),
-            false
+            new GalaxyGateProbabilityTypeMapper(),
+            GalaxyGateProbabilityType::name,
+            GalaxyGateProbabilityType::valueOf,
+            GalaxyGateProbabilityType.class
     );
 
     /**
@@ -102,7 +107,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the type of this GalaxygatesProbabilities
      */
-    byte getType();
+    GalaxyGateProbabilityType getType();
 
     /**
      * Returns the probability of this GalaxygatesProbabilities. The probability
@@ -143,7 +148,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setType(byte type);
+    GalaxygatesProbabilities setType(GalaxyGateProbabilityType type);
 
     /**
      * Sets the probability of this GalaxygatesProbabilities. The probability
@@ -177,33 +182,33 @@ public interface GeneratedGalaxygatesProbabilities {
 
         private final TableIdentifier<GalaxygatesProbabilities> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "galaxygates_probabilities";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

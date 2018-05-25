@@ -3,12 +3,17 @@ package com.kalaazu.persistence.database.entities.news.generated;
 import com.kalaazu.persistence.database.entities.News;
 import com.kalaazu.persistence.database.entities.news.NewsImpl;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.common.injector.annotation.ExecuteBefore;
+import com.speedment.common.injector.annotation.WithState;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.SqlAdapter;
-import com.speedment.runtime.core.db.SqlFunction;
+import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
+import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
+import com.speedment.runtime.core.exception.SpeedmentException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static com.speedment.common.injector.State.RESOLVED;
 
 /**
  * The generated Sql Adapter for a {@link
@@ -20,7 +25,7 @@ import java.sql.SQLException;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedNewsSqlAdapter implements SqlAdapter<News> {
+public abstract class GeneratedNewsSqlAdapter {
 
     private final TableIdentifier<News> tableIdentifier;
 
@@ -28,33 +33,31 @@ public abstract class GeneratedNewsSqlAdapter implements SqlAdapter<News> {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "news");
     }
 
-    protected News apply(ResultSet resultSet, int offset) throws SQLException {
-        return createEntity()
-                .setId(resultSet.getShort(1 + offset))
-                .setDate(resultSet.getTimestamp(2 + offset))
-                .setImage(resultSet.getString(3 + offset))
-                .setTitle(resultSet.getString(4 + offset))
-                .setTeaser(resultSet.getString(5 + offset))
-                .setText(resultSet.getString(6 + offset))
-                ;
+    @ExecuteBefore(RESOLVED)
+    void installMethodName(
+            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
+            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
+    ) {
+        streamSupplierComponent.install(tableIdentifier, this::apply);
+        persistenceComponent.install(tableIdentifier);
+    }
+
+    protected News apply(ResultSet resultSet) throws SpeedmentException {
+        final News entity = createEntity();
+        try {
+            entity.setId(resultSet.getShort(1));
+            entity.setDate(resultSet.getTimestamp(2));
+            entity.setImage(resultSet.getString(3));
+            entity.setTitle(resultSet.getString(4));
+            entity.setTeaser(resultSet.getString(5));
+            entity.setText(resultSet.getString(6));
+        } catch (final SQLException sqle) {
+            throw new SpeedmentException(sqle);
+        }
+        return entity;
     }
 
     protected NewsImpl createEntity() {
         return new NewsImpl();
-    }
-
-    @Override
-    public TableIdentifier<News> identifier() {
-        return tableIdentifier;
-    }
-
-    @Override
-    public SqlFunction<ResultSet, News> entityMapper() {
-        return entityMapper(0);
-    }
-
-    @Override
-    public SqlFunction<ResultSet, News> entityMapper(int offset) {
-        return rs -> apply(rs, offset);
     }
 }

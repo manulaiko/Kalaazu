@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.skilltree_skills;
 
+import com.kalaazu.persistence.database.entities.SkilltreeSkills;
 import com.kalaazu.persistence.database.entities.skilltree_skills.generated.GeneratedSkilltreeSkillsManager;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.skilltree_skills.generated.Gene
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public interface SkilltreeSkillsManager extends GeneratedSkilltreeSkillsManager {
 }

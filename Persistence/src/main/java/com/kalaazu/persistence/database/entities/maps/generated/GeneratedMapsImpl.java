@@ -28,13 +28,14 @@ public abstract class GeneratedMapsImpl implements Maps {
 
     private Byte factionsId;
 
-    private int    isPvp;
+    private boolean isPvp;
 
-    private int    isStarter;
+    private boolean isStarter;
 
     private long limits;
 
     protected GeneratedMapsImpl() {
+
     }
 
     @Override
@@ -53,12 +54,12 @@ public abstract class GeneratedMapsImpl implements Maps {
     }
 
     @Override
-    public int getIsPvp() {
+    public boolean getIsPvp() {
         return isPvp;
     }
 
     @Override
-    public int getIsStarter() {
+    public boolean getIsStarter() {
         return isStarter;
     }
 
@@ -86,13 +87,13 @@ public abstract class GeneratedMapsImpl implements Maps {
     }
 
     @Override
-    public Maps setIsPvp(int isPvp) {
+    public Maps setIsPvp(boolean isPvp) {
         this.isPvp = isPvp;
         return this;
     }
 
     @Override
-    public Maps setIsStarter(int isStarter) {
+    public Maps setIsStarter(boolean isStarter) {
         this.isStarter = isStarter;
         return this;
     }
@@ -161,9 +162,9 @@ public abstract class GeneratedMapsImpl implements Maps {
         int hash = 7;
         hash = 31 * hash + Byte.hashCode(getId());
         hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(OptionalUtil.unwrap(getFactionsId()));
-        hash = 31 * hash + Integer.hashCode(getIsPvp());
-        hash = 31 * hash + Integer.hashCode(getIsStarter());
+        hash = 31 * hash + Objects.hashCode(getFactionsId());
+        hash = 31 * hash + Boolean.hashCode(getIsPvp());
+        hash = 31 * hash + Boolean.hashCode(getIsStarter());
         hash = 31 * hash + Long.hashCode(getLimits());
         return hash;
     }

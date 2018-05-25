@@ -22,13 +22,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedNpcsManager extends Manager<Npcs> {
 
-    TableIdentifier<Npcs> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "npcs"
-    );
-
-    List<Field<Npcs>>     FIELDS     = unmodifiableList(asList(
+    List<Field<Npcs>> FIELDS = unmodifiableList(asList(
             Npcs.ID,
             Npcs.NAME,
             Npcs.HEALTH,

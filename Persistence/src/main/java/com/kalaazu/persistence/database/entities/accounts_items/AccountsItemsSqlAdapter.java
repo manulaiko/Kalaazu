@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_items;
 
+import com.kalaazu.persistence.database.entities.AccountsItems;
 import com.kalaazu.persistence.database.entities.accounts_items.generated.GeneratedAccountsItemsSqlAdapter;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_items.generated.Genera
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public class AccountsItemsSqlAdapter extends GeneratedAccountsItemsSqlAdapter {
 }

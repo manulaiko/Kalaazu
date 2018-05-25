@@ -23,13 +23,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedClansRankingManager extends Manager<ClansRanking> {
 
-    TableIdentifier<ClansRanking> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "clans_ranking"
-    );
-
-    List<Field<ClansRanking>>     FIELDS     = unmodifiableList(asList(
+    List<Field<ClansRanking>> FIELDS = unmodifiableList(asList(
             ClansRanking.ID,
             ClansRanking.CLANS_ID,
             ClansRanking.POINTS,

@@ -1,15 +1,18 @@
 package com.kalaazu.persistence.database.entities.accounts_banks_logs.generated;
 
-import com.kalaazu.persistence.database.entities.*;
+import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.AccountsBanks;
+import com.kalaazu.persistence.database.entities.AccountsBanksLogs;
+import com.kalaazu.persistence.database.entities.Manager;
+import com.kalaazu.persistence.database.mappers.BankLogType;
+import com.kalaazu.persistence.database.mappers.BankLogTypeMapper;
+import com.kalaazu.persistence.database.mappers.Currency;
+import com.kalaazu.persistence.database.mappers.CurrencyMapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
-import com.speedment.runtime.field.ByteField;
-import com.speedment.runtime.field.ComparableField;
-import com.speedment.runtime.field.IntField;
-import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -18,7 +21,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.accounts_banks_logs.AccountsBanksLogs}-interface
+ * AccountsBanksLogs}-interface
  * representing entities of the {@code accounts_banks_logs}-table in the
  * database.
  * <p>
@@ -88,8 +91,10 @@ public interface GeneratedAccountsBanksLogs {
             Identifier.TYPE,
             AccountsBanksLogs::getType,
             AccountsBanksLogs::setType,
-            TypeMapper.primitive(),
-            false
+            new BankLogTypeMapper(),
+            BankLogType::name,
+            BankLogType::valueOf,
+            BankLogType.class
     );
 
     /**
@@ -112,20 +117,22 @@ public interface GeneratedAccountsBanksLogs {
             Identifier.CURRENCY,
             AccountsBanksLogs::getCurrency,
             AccountsBanksLogs::setCurrency,
-            TypeMapper.primitive(),
-            false
+            new CurrencyMapper(),
+            Currency::name,
+            Currency::valueOf,
+            Currency.class
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getAccountsBanksId()} method.
      */
-    IntForeignKeyField<AccountsBanksLogs, Integer, AccountsBanks> ACCOUNTS_BANKS_ID = IntForeignKeyField.create(
+    ComparableForeignKeyField<AccountsBanksLogs, Integer, Integer, AccountsBanks> ACCOUNTS_BANKS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_BANKS_ID,
             o -> OptionalUtil.unwrap(o.getAccountsBanksId()),
             AccountsBanksLogs::setAccountsBanksId,
             AccountsBanks.ID,
-            TypeMapper.primitive(),
+            TypeMapper.identity(),
             false
     );
 
@@ -169,7 +176,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the type of this AccountsBanksLogs
      */
-    byte getType();
+    BankLogType getType();
 
     /**
      * Returns the amount of this AccountsBanksLogs. The amount field
@@ -187,7 +194,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the currency of this AccountsBanksLogs
      */
-    byte getCurrency();
+    Currency getCurrency();
 
     /**
      * Returns the accountsBanksId of this AccountsBanksLogs. The
@@ -248,7 +255,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setType(byte type);
+    AccountsBanksLogs setType(BankLogType type);
 
     /**
      * Sets the amount of this AccountsBanksLogs. The amount field corresponds
@@ -269,7 +276,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setCurrency(byte currency);
+    AccountsBanksLogs setCurrency(Currency currency);
 
     /**
      * Sets the accountsBanksId of this AccountsBanksLogs. The accountsBanksId
@@ -280,7 +287,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setAccountsBanksId(int accountsBanksId);
+    AccountsBanksLogs setAccountsBanksId(Integer accountsBanksId);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
@@ -328,33 +335,33 @@ public interface GeneratedAccountsBanksLogs {
 
         private final TableIdentifier<AccountsBanksLogs> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "accounts_banks_logs";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

@@ -23,13 +23,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedAccountsManager extends Manager<Accounts> {
 
-    TableIdentifier<Accounts> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "accounts"
-    );
-
-    List<Field<Accounts>>     FIELDS     = unmodifiableList(asList(
+    List<Field<Accounts>> FIELDS = unmodifiableList(asList(
             Accounts.ID,
             Accounts.USERS_ID,
             Accounts.SESSION_ID,

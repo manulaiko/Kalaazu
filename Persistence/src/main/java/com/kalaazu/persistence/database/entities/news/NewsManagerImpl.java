@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.news;
 
+import com.kalaazu.persistence.database.entities.News;
 import com.kalaazu.persistence.database.entities.news.generated.GeneratedNewsManagerImpl;
 
 /**
@@ -8,7 +9,7 @@ import com.kalaazu.persistence.database.entities.news.generated.GeneratedNewsMan
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class NewsManagerImpl
         extends GeneratedNewsManagerImpl

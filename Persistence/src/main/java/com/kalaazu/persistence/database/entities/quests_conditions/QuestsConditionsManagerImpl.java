@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.quests_conditions;
 
+import com.kalaazu.persistence.database.entities.QuestsConditions;
 import com.kalaazu.persistence.database.entities.quests_conditions.generated.GeneratedQuestsConditionsManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.quests_conditions.generated.Gen
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class QuestsConditionsManagerImpl
         extends GeneratedQuestsConditionsManagerImpl

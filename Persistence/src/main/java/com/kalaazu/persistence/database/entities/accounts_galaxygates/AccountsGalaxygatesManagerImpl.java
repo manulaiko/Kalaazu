@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_galaxygates;
 
+import com.kalaazu.persistence.database.entities.AccountsGalaxygates;
 import com.kalaazu.persistence.database.entities.accounts_galaxygates.generated.GeneratedAccountsGalaxygatesManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_galaxygates.generated.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class AccountsGalaxygatesManagerImpl
         extends GeneratedAccountsGalaxygatesManagerImpl

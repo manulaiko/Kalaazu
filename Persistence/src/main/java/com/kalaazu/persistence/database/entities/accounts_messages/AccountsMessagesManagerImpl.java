@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_messages;
 
+import com.kalaazu.persistence.database.entities.AccountsMessages;
 import com.kalaazu.persistence.database.entities.accounts_messages.generated.GeneratedAccountsMessagesManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_messages.generated.Gen
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class AccountsMessagesManagerImpl
         extends GeneratedAccountsMessagesManagerImpl

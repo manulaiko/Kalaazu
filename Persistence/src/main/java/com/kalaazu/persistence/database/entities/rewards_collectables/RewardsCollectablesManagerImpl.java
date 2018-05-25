@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.rewards_collectables;
 
+import com.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.kalaazu.persistence.database.entities.rewards_collectables.generated.GeneratedRewardsCollectablesManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.rewards_collectables.generated.
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class RewardsCollectablesManagerImpl
         extends GeneratedRewardsCollectablesManagerImpl

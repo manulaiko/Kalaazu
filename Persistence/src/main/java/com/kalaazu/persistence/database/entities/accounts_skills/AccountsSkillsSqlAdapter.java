@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_skills;
 
+import com.kalaazu.persistence.database.entities.AccountsSkills;
 import com.kalaazu.persistence.database.entities.accounts_skills.generated.GeneratedAccountsSkillsSqlAdapter;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_skills.generated.Gener
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public class AccountsSkillsSqlAdapter extends GeneratedAccountsSkillsSqlAdapter {
 }

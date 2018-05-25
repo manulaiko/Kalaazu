@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_rankings;
 
+import com.kalaazu.persistence.database.entities.AccountsRankings;
 import com.kalaazu.persistence.database.entities.accounts_rankings.generated.GeneratedAccountsRankingsManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_rankings.generated.Gen
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class AccountsRankingsManagerImpl
         extends GeneratedAccountsRankingsManagerImpl

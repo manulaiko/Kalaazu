@@ -1,12 +1,14 @@
 package com.kalaazu.persistence.database.entities.clans_battlestations.generated;
 
+import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansBattlestations;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
+import com.kalaazu.persistence.database.mappers.Vector2Mapper;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -17,7 +19,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.clans_battlestations.ClansBattlestations}-interface
+ * ClansBattlestations}-interface
  * representing entities of the {@code clans_battlestations}-table in the
  * database.
  * <p>
@@ -45,12 +47,12 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getClansId()} method.
      */
-    IntForeignKeyField<ClansBattlestations, Integer, Clans>    CLANS_ID = IntForeignKeyField.create(
+    ComparableForeignKeyField<ClansBattlestations, Integer, Integer, Clans> CLANS_ID = ComparableForeignKeyField.create(
             Identifier.CLANS_ID,
             o -> OptionalUtil.unwrap(o.getClansId()),
             ClansBattlestations::setClansId,
             Clans.ID,
-            TypeMapper.primitive(),
+            TypeMapper.identity(),
             false
     );
 
@@ -87,7 +89,7 @@ public interface GeneratedClansBattlestations {
             Identifier.POSITION,
             ClansBattlestations::getPosition,
             ClansBattlestations::setPosition,
-            TypeMapper.primitive(),
+            new Vector2Mapper(),
             false
     );
 
@@ -144,7 +146,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the position of this ClansBattlestations
      */
-    long getPosition();
+    Vector2 getPosition();
 
     /**
      * Returns the date of this ClansBattlestations. The date field corresponds
@@ -173,7 +175,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setClansId(int clansId);
+    ClansBattlestations setClansId(Integer clansId);
 
     /**
      * Sets the mapsId of this ClansBattlestations. The mapsId field corresponds
@@ -204,7 +206,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setPosition(long position);
+    ClansBattlestations setPosition(Vector2 position);
 
     /**
      * Sets the date of this ClansBattlestations. The date field corresponds to
@@ -249,33 +251,33 @@ public interface GeneratedClansBattlestations {
 
         private final TableIdentifier<ClansBattlestations> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "clans_battlestations";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

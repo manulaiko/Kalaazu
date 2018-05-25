@@ -2,7 +2,6 @@ package com.kalaazu.persistence.database.entities.key_value.generated;
 
 import com.kalaazu.persistence.database.entities.KeyValue;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.manager.Manager;
 import com.speedment.runtime.field.Field;
 
@@ -24,13 +23,7 @@ import static java.util.Collections.unmodifiableList;
 @GeneratedCode("Speedment")
 public interface GeneratedKeyValueManager extends Manager<KeyValue> {
 
-    TableIdentifier<KeyValue> IDENTIFIER = TableIdentifier.of(
-            "database",
-            "entities",
-            "key_value"
-    );
-
-    List<Field<KeyValue>>     FIELDS     = unmodifiableList(asList(
+    List<Field<KeyValue>> FIELDS = unmodifiableList(asList(
             KeyValue.KEY,
             KeyValue.VALUE
     ));

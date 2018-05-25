@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.accounts_techfactories;
 
+import com.kalaazu.persistence.database.entities.AccountsTechfactories;
 import com.kalaazu.persistence.database.entities.accounts_techfactories.generated.GeneratedAccountsTechfactoriesManagerImpl;
 
 /**
@@ -9,7 +10,7 @@ import com.kalaazu.persistence.database.entities.accounts_techfactories.generate
  * <p>
  * This file is safe to edit. It will not be overwritten by the code generator.
  *
- * @author kalaazu
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 public final class AccountsTechfactoriesManagerImpl
         extends GeneratedAccountsTechfactoriesManagerImpl

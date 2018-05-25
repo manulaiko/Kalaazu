@@ -5,6 +5,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
+import com.speedment.runtime.field.ComparableForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -14,7 +15,7 @@ import java.util.OptionalInt;
 
 /**
  * The generated base for the {@link
- * com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItems}-interface
+ * AccountsConfigurationsAccountsItems}-interface
  * representing entities of the {@code
  * accounts_configurations_accounts_items}-table in the database.
  * <p>
@@ -78,7 +79,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
             o -> OptionalUtil.unwrap(o.getAccountsDronesId()),
             AccountsConfigurationsAccountsItems::setAccountsDronesId,
             AccountsDrones.ID,
-            TypeMapper.primitive(),
+            TypeMapper.identity(),
             false
     );
 
@@ -92,7 +93,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
             o -> OptionalUtil.unwrap(o.getAccountsPetsId()),
             AccountsConfigurationsAccountsItems::setAccountsPetsId,
             AccountsPets.ID,
-            TypeMapper.primitive(),
+            TypeMapper.identity(),
             false
     );
 
@@ -189,7 +190,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsDronesId(int accountsDronesId);
+    AccountsConfigurationsAccountsItems setAccountsDronesId(Integer accountsDronesId);
 
     /**
      * Sets the accountsPetsId of this AccountsConfigurationsAccountsItems. The
@@ -200,7 +201,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsPetsId(int accountsPetsId);
+    AccountsConfigurationsAccountsItems setAccountsPetsId(Integer accountsPetsId);
 
     /**
      * Queries the specified manager for the referenced AccountsConfigurations.
@@ -257,33 +258,33 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
 
         private final TableIdentifier<AccountsConfigurationsAccountsItems> tableIdentifier;
 
-        Identifier(String columnId) {
-            this.columnId = columnId;
+        Identifier(String columnName) {
+            this.columnName = columnName;
             this.tableIdentifier = TableIdentifier.of(
-                    getDbmsId(),
-                    getSchemaId(),
-                    getTableId()
+                    getDbmsName(),
+                    getSchemaName(),
+                    getTableName()
             );
         }
 
         @Override
-        public String getDbmsId() {
+        public String getDbmsName() {
             return "kalaazu";
         }
 
         @Override
-        public String getSchemaId() {
+        public String getSchemaName() {
             return "kalaazu";
         }
 
         @Override
-        public String getTableId() {
+        public String getTableName() {
             return "accounts_configurations_accounts_items";
         }
 
         @Override
-        public String getColumnId() {
-            return this.columnId;
+        public String getColumnName() {
+            return this.columnName;
         }
 
         @Override

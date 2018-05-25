@@ -3,12 +3,17 @@ package com.kalaazu.persistence.database.entities.npcs.generated;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.npcs.NpcsImpl;
 import com.speedment.common.annotation.GeneratedCode;
+import com.speedment.common.injector.annotation.ExecuteBefore;
+import com.speedment.common.injector.annotation.WithState;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.SqlAdapter;
-import com.speedment.runtime.core.db.SqlFunction;
+import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
+import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
+import com.speedment.runtime.core.exception.SpeedmentException;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static com.speedment.common.injector.State.RESOLVED;
 
 /**
  * The generated Sql Adapter for a {@link
@@ -20,7 +25,7 @@ import java.sql.SQLException;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
-public abstract class GeneratedNpcsSqlAdapter implements SqlAdapter<Npcs> {
+public abstract class GeneratedNpcsSqlAdapter {
 
     private final TableIdentifier<Npcs> tableIdentifier;
 
@@ -28,36 +33,34 @@ public abstract class GeneratedNpcsSqlAdapter implements SqlAdapter<Npcs> {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "npcs");
     }
 
-    protected Npcs apply(ResultSet resultSet, int offset) throws SQLException {
-        return createEntity()
-                .setId(resultSet.getByte(1 + offset))
-                .setName(resultSet.getString(2 + offset))
-                .setHealth(resultSet.getInt(3 + offset))
-                .setShield(resultSet.getInt(4 + offset))
-                .setShieldAbsorption(resultSet.getByte(5 + offset))
-                .setDamage(resultSet.getInt(6 + offset))
-                .setSpeed(resultSet.getShort(7 + offset))
-                .setGfx(resultSet.getByte(8 + offset))
-                .setAi(resultSet.getByte(9 + offset))
-                ;
+    @ExecuteBefore(RESOLVED)
+    void installMethodName(
+            @WithState(RESOLVED) SqlStreamSupplierComponent streamSupplierComponent,
+            @WithState(RESOLVED) SqlPersistenceComponent persistenceComponent
+    ) {
+        streamSupplierComponent.install(tableIdentifier, this::apply);
+        persistenceComponent.install(tableIdentifier);
+    }
+
+    protected Npcs apply(ResultSet resultSet) throws SpeedmentException {
+        final Npcs entity = createEntity();
+        try {
+            entity.setId(resultSet.getByte(1));
+            entity.setName(resultSet.getString(2));
+            entity.setHealth(resultSet.getInt(3));
+            entity.setShield(resultSet.getInt(4));
+            entity.setShieldAbsorption(resultSet.getByte(5));
+            entity.setDamage(resultSet.getInt(6));
+            entity.setSpeed(resultSet.getShort(7));
+            entity.setGfx(resultSet.getByte(8));
+            entity.setAi(resultSet.getByte(9));
+        } catch (final SQLException sqle) {
+            throw new SpeedmentException(sqle);
+        }
+        return entity;
     }
 
     protected NpcsImpl createEntity() {
         return new NpcsImpl();
-    }
-
-    @Override
-    public TableIdentifier<Npcs> identifier() {
-        return tableIdentifier;
-    }
-
-    @Override
-    public SqlFunction<ResultSet, Npcs> entityMapper() {
-        return entityMapper(0);
-    }
-
-    @Override
-    public SqlFunction<ResultSet, Npcs> entityMapper(int offset) {
-        return rs -> apply(rs, offset);
     }
 }
