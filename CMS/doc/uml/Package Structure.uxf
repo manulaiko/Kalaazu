@@ -8,7 +8,7 @@
       <w>330</w>
       <h>430</h>
     </coordinates>
-    <panel_attributes>type=Package
+    <panel_attributes>entity=Package
 com.kalaazu
 	+cms
 		+events

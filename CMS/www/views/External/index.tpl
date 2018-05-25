@@ -26,7 +26,7 @@
                     </div>
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input class="input" type="text" placeholder="Username" id="username">
+                            <input class="input" entity="text" placeholder="Username" id="username">
                             <span class="icon is-small is-left">
                     <i class="fas fa-user"></i>
                   </span>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="field">
                         <p class="control has-icons-left">
-                            <input class="input" type="password" placeholder="Password" id="password">
+                            <input class="input" entity="password" placeholder="Password" id="password">
                             <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>

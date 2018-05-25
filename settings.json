@@ -1,0 +1,5 @@
+{
+  "logLevel": "DEBUG",
+  "cms.viewsPath": "CMS/www/views",
+  "cms.assetsPath": "CMS/www/public_html"
+}

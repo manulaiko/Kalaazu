@@ -1,0 +1,6 @@
+dependencies {
+    compile project(":Utils")
+    compile project(":Persistence")
+    compile group: 'io.vertx', name: 'vertx-web', version: '3.5.1'
+    compile group: 'com.mitchellbosecke', name: 'pebble', version: '2.4.0'
+}

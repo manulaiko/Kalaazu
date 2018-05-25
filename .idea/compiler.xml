@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
+    <option name="BUILD_PROCESS_HEAP_SIZE" value="2048" />
     <annotationProcessing>
       <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="demo" />
         <module name="Persistence" />
+        <module name="Utils" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel target="10" />
+    <bytecodeTargetLevel target="10">
+      <module name="CMS_main" target="1.10" />
+      <module name="CMS_test" target="1.10" />
+      <module name="Launcher_main" target="1.10" />
+      <module name="Launcher_test" target="1.10" />
+      <module name="main_main" target="1.10" />
+      <module name="main_test" target="1.10" />
+      <module name="Persistence_main" target="1.10" />
+      <module name="Persistence_test" target="1.10" />
+      <module name="Utils_main" target="1.10" />
+      <module name="Utils_test" target="1.10" />
+    </bytecodeTargetLevel>
   </component>
 </project>
