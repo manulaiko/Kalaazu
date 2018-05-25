@@ -26,6 +26,8 @@ public abstract class GeneratedUsersSqlAdapter implements SqlAdapter<Users> {
 
     private final TableIdentifier<Users> tableIdentifier;
 
+    private SqlTypeMapperHelper<Object, byte[]> ipHelper;
+
     protected GeneratedUsersSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "users");
     }

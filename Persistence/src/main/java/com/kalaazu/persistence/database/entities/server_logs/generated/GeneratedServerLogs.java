@@ -28,7 +28,7 @@ public interface GeneratedServerLogs {
      * This Field corresponds to the {@link ServerLogs} field that can be
      * obtained using the {@link ServerLogs#getId()} method.
      */
-    IntField<ServerLogs, Integer>                     ID      = IntField.create(
+    IntField<ServerLogs, Integer> ID = IntField.create(
             Identifier.ID,
             ServerLogs::getId,
             ServerLogs::setId,
@@ -40,7 +40,7 @@ public interface GeneratedServerLogs {
      * This Field corresponds to the {@link ServerLogs} field that can be
      * obtained using the {@link ServerLogs#getDate()} method.
      */
-    ComparableField<ServerLogs, Timestamp, Timestamp> DATE    = ComparableField.create(
+    ComparableField<ServerLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ServerLogs::getDate,
             ServerLogs::setDate,
@@ -52,7 +52,7 @@ public interface GeneratedServerLogs {
      * This Field corresponds to the {@link ServerLogs} field that can be
      * obtained using the {@link ServerLogs#getLevel()} method.
      */
-    StringField<ServerLogs, String>                   LEVEL   = StringField.create(
+    StringField<ServerLogs, String> LEVEL = StringField.create(
             Identifier.LEVEL,
             ServerLogs::getLevel,
             ServerLogs::setLevel,
@@ -64,7 +64,7 @@ public interface GeneratedServerLogs {
      * This Field corresponds to the {@link ServerLogs} field that can be
      * obtained using the {@link ServerLogs#getType()} method.
      */
-    StringField<ServerLogs, String>                   TYPE    = StringField.create(
+    StringField<ServerLogs, String> TYPE = StringField.create(
             Identifier.TYPE,
             ServerLogs::getType,
             ServerLogs::setType,
@@ -76,7 +76,7 @@ public interface GeneratedServerLogs {
      * This Field corresponds to the {@link ServerLogs} field that can be
      * obtained using the {@link ServerLogs#getContext()} method.
      */
-    StringField<ServerLogs, String>                   CONTEXT = StringField.create(
+    StringField<ServerLogs, String> CONTEXT = StringField.create(
             Identifier.CONTEXT,
             ServerLogs::getContext,
             ServerLogs::setContext,
@@ -182,7 +182,7 @@ public interface GeneratedServerLogs {
         TYPE("type"),
         CONTEXT("context");
 
-        private final String                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<ServerLogs> tableIdentifier;
 

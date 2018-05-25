@@ -1,14 +1,9 @@
 package com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.generated;
 
-import com.kalaazu.persistence.database.entities.AccountsConfigurations;
-import com.kalaazu.persistence.database.entities.AccountsConfigurationsAccountsItems;
-import com.kalaazu.persistence.database.entities.AccountsDrones;
-import com.kalaazu.persistence.database.entities.AccountsItems;
-import com.kalaazu.persistence.database.entities.AccountsPets;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -36,7 +31,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getId()} method.
      */
-    IntField<AccountsConfigurationsAccountsItems, Integer>                                   ID                         = IntField.create(
+    IntField<AccountsConfigurationsAccountsItems, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsConfigurationsAccountsItems::getId,
             AccountsConfigurationsAccountsItems::setId,
@@ -64,7 +59,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsItemsId()} method.
      */
-    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsItems>          ACCOUNTS_ITEMS_ID          = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsItems> ACCOUNTS_ITEMS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ITEMS_ID,
             AccountsConfigurationsAccountsItems::getAccountsItemsId,
             AccountsConfigurationsAccountsItems::setAccountsItemsId,
@@ -78,7 +73,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsDronesId()} method.
      */
-    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsDrones>         ACCOUNTS_DRONES_ID         = IntForeignKeyField.create(
+    ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsDrones> ACCOUNTS_DRONES_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_DRONES_ID,
             o -> OptionalUtil.unwrap(o.getAccountsDronesId()),
             AccountsConfigurationsAccountsItems::setAccountsDronesId,
@@ -92,7 +87,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * field that can be obtained using the {@link
      * AccountsConfigurationsAccountsItems#getAccountsPetsId()} method.
      */
-    IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsPets>           ACCOUNTS_PETS_ID           = IntForeignKeyField.create(
+    ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsPets> ACCOUNTS_PETS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_PETS_ID,
             o -> OptionalUtil.unwrap(o.getAccountsPetsId()),
             AccountsConfigurationsAccountsItems::setAccountsPetsId,
@@ -258,7 +253,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
         ACCOUNTS_DRONES_ID("accounts_drones_id"),
         ACCOUNTS_PETS_ID("accounts_pets_id");
 
-        private final String                                               columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsConfigurationsAccountsItems> tableIdentifier;
 

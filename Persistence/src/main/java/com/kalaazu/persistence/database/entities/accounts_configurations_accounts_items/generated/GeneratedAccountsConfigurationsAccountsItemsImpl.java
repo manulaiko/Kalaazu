@@ -1,12 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.generated;
 
-import com.kalaazu.persistence.database.entities.AccountsConfigurations;
-import com.kalaazu.persistence.database.entities.AccountsConfigurationsAccountsItems;
-import com.kalaazu.persistence.database.entities.AccountsDrones;
-import com.kalaazu.persistence.database.entities.AccountsItems;
-import com.kalaazu.persistence.database.entities.AccountsPets;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;

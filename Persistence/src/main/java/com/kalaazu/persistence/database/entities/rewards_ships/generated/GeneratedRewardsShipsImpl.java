@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.rewards_ships.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsShips;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -21,9 +21,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedRewardsShipsImpl implements RewardsShips {
 
-    private byte  id;
+    private byte id;
 
-    private byte  shipsId;
+    private byte shipsId;
 
     private short rewardsId;
 

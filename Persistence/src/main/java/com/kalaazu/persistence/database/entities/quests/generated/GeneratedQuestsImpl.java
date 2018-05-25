@@ -2,9 +2,9 @@ package com.kalaazu.persistence.database.entities.quests.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Quests;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -23,13 +23,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedQuestsImpl implements Quests {
 
-    private short  id;
+    private short id;
 
-    private byte   levelsId;
+    private byte levelsId;
 
-    private Short  questsId;
+    private Short questsId;
 
-    private Byte   factionsId;
+    private Byte factionsId;
 
     private String name;
 

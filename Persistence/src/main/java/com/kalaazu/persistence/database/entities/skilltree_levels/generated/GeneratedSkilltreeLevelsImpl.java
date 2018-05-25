@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.skilltree_levels.generated;
 
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeSkills;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -23,15 +23,15 @@ public abstract class GeneratedSkilltreeLevelsImpl implements SkilltreeLevels {
 
     private short id;
 
-    private byte  skilltreeSkillsId;
+    private byte skilltreeSkillsId;
 
-    private byte  levelsId;
+    private byte levelsId;
 
-    private int   credits;
+    private int credits;
 
     private short seprom;
 
-    private byte  points;
+    private byte points;
 
     protected GeneratedSkilltreeLevelsImpl() {
     }

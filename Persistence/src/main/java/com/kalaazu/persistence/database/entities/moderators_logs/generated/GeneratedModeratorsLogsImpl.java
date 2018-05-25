@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.moderators_logs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Moderators;
 import com.kalaazu.persistence.database.entities.ModeratorsLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -21,15 +21,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedModeratorsLogsImpl implements ModeratorsLogs {
 
-    private int       id;
+    private int id;
 
-    private byte      moderatorsId;
+    private byte moderatorsId;
 
     private Timestamp date;
 
-    private String    type;
+    private String type;
 
-    private String    text;
+    private String text;
 
     protected GeneratedModeratorsLogsImpl() {
     }

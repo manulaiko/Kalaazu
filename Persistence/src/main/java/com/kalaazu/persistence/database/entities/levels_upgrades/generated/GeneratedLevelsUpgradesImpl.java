@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.levels_upgrades.generated;
 
 import com.kalaazu.persistence.database.entities.Levels;
 import com.kalaazu.persistence.database.entities.LevelsUpgrades;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,13 +20,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedLevelsUpgradesImpl implements LevelsUpgrades {
 
-    private int   id;
+    private int id;
 
-    private byte  levelsId;
+    private byte levelsId;
 
-    private byte  probability;
+    private byte probability;
 
-    private int   credits;
+    private int credits;
 
     private short uridium;
 

@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.clans_battlestations_logs.gene
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.ClansBattlestationsLogs;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -30,7 +30,7 @@ public interface GeneratedClansBattlestationsLogs {
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
      * can be obtained using the {@link ClansBattlestationsLogs#getId()} method.
      */
-    IntField<ClansBattlestationsLogs, Integer>                              ID                      = IntField.create(
+    IntField<ClansBattlestationsLogs, Integer> ID = IntField.create(
             Identifier.ID,
             ClansBattlestationsLogs::getId,
             ClansBattlestationsLogs::setId,
@@ -43,7 +43,7 @@ public interface GeneratedClansBattlestationsLogs {
      * can be obtained using the {@link ClansBattlestationsLogs#getClansId()}
      * method.
      */
-    IntForeignKeyField<ClansBattlestationsLogs, Integer, Clans>             CLANS_ID                = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBattlestationsLogs, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansBattlestationsLogs::getClansId,
             ClansBattlestationsLogs::setClansId,
@@ -71,7 +71,7 @@ public interface GeneratedClansBattlestationsLogs {
      * can be obtained using the {@link ClansBattlestationsLogs#getMessage()}
      * method.
      */
-    StringField<ClansBattlestationsLogs, String>                            MESSAGE                 = StringField.create(
+    StringField<ClansBattlestationsLogs, String> MESSAGE = StringField.create(
             Identifier.MESSAGE,
             ClansBattlestationsLogs::getMessage,
             ClansBattlestationsLogs::setMessage,
@@ -84,7 +84,7 @@ public interface GeneratedClansBattlestationsLogs {
      * can be obtained using the {@link ClansBattlestationsLogs#getDate()}
      * method.
      */
-    ComparableField<ClansBattlestationsLogs, Timestamp, Timestamp>          DATE                    = ComparableField.create(
+    ComparableField<ClansBattlestationsLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansBattlestationsLogs::getDate,
             ClansBattlestationsLogs::setDate,
@@ -218,7 +218,7 @@ public interface GeneratedClansBattlestationsLogs {
         MESSAGE("message"),
         DATE("date");
 
-        private final String                                   columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansBattlestationsLogs> tableIdentifier;
 

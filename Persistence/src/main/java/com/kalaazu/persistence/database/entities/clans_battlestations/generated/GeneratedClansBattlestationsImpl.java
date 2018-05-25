@@ -2,9 +2,9 @@ package com.kalaazu.persistence.database.entities.clans_battlestations.generated
 
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansBattlestations;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.sql.Timestamp;
@@ -25,15 +25,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansBattlestationsImpl implements ClansBattlestations {
 
-    private byte      id;
+    private byte id;
 
-    private int       clansId;
+    private Integer clansId;
 
-    private byte      mapsId;
+    private byte mapsId;
 
-    private String    name;
+    private String name;
 
-    private long      position;
+    private Vector2 position;
 
     private Timestamp date;
 

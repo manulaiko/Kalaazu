@@ -24,6 +24,8 @@ public abstract class GeneratedCollectablesSqlAdapter implements SqlAdapter<Coll
 
     private final TableIdentifier<Collectables> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, CollectableType> typeHelper;
+
     protected GeneratedCollectablesSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "collectables");
     }

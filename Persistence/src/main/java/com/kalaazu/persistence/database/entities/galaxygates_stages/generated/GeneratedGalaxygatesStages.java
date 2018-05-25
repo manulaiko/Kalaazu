@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.galaxygates_stages.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -32,7 +32,7 @@ public interface GeneratedGalaxygatesStages {
      * This Field corresponds to the {@link GalaxygatesStages} field that can be
      * obtained using the {@link GalaxygatesStages#getId()} method.
      */
-    IntField<GalaxygatesStages, Integer>                           ID                   = IntField.create(
+    IntField<GalaxygatesStages, Integer> ID = IntField.create(
             Identifier.ID,
             GalaxygatesStages::getId,
             GalaxygatesStages::setId,
@@ -58,7 +58,7 @@ public interface GeneratedGalaxygatesStages {
      * This Field corresponds to the {@link GalaxygatesStages} field that can be
      * obtained using the {@link GalaxygatesStages#getComment()} method.
      */
-    StringField<GalaxygatesStages, String>                         COMMENT              = StringField.create(
+    StringField<GalaxygatesStages, String> COMMENT = StringField.create(
             Identifier.COMMENT,
             o -> OptionalUtil.unwrap(o.getComment()),
             GalaxygatesStages::setComment,
@@ -140,7 +140,7 @@ public interface GeneratedGalaxygatesStages {
         GALAXYGATES_WAVES_ID("galaxygates_waves_id"),
         COMMENT("comment");
 
-        private final String                             columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesStages> tableIdentifier;
 

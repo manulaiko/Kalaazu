@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.galaxygates.generated;
 
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ComparableForeignKeyField;
@@ -31,7 +31,7 @@ public interface GeneratedGalaxygates {
      * This Field corresponds to the {@link Galaxygates} field that can be
      * obtained using the {@link Galaxygates#getId()} method.
      */
-    ByteField<Galaxygates, Byte>                                         ID                   = ByteField.create(
+    ByteField<Galaxygates, Byte> ID = ByteField.create(
             Identifier.ID,
             Galaxygates::getId,
             Galaxygates::setId,
@@ -43,7 +43,7 @@ public interface GeneratedGalaxygates {
      * This Field corresponds to the {@link Galaxygates} field that can be
      * obtained using the {@link Galaxygates#getName()} method.
      */
-    StringField<Galaxygates, String>                                     NAME                 = StringField.create(
+    StringField<Galaxygates, String> NAME = StringField.create(
             Identifier.NAME,
             Galaxygates::getName,
             Galaxygates::setName,
@@ -68,7 +68,7 @@ public interface GeneratedGalaxygates {
      * This Field corresponds to the {@link Galaxygates} field that can be
      * obtained using the {@link Galaxygates#getParts()} method.
      */
-    ByteField<Galaxygates, Byte>                                         PARTS                = ByteField.create(
+    ByteField<Galaxygates, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
             Galaxygates::getParts,
             Galaxygates::setParts,
@@ -168,7 +168,7 @@ public interface GeneratedGalaxygates {
         GALAXYGATES_WAVES_ID("galaxygates_waves_id"),
         PARTS("parts");
 
-        private final String                       columnId;
+        private final String columnName;
 
         private final TableIdentifier<Galaxygates> tableIdentifier;
 

@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_quests.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Quests;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsQuests;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -28,7 +28,7 @@ public interface GeneratedRewardsQuests {
      * This Field corresponds to the {@link RewardsQuests} field that can be
      * obtained using the {@link RewardsQuests#getId()} method.
      */
-    ShortField<RewardsQuests, Short>                    ID         = ShortField.create(
+    ShortField<RewardsQuests, Short> ID = ShortField.create(
             Identifier.ID,
             RewardsQuests::getId,
             RewardsQuests::setId,
@@ -40,7 +40,7 @@ public interface GeneratedRewardsQuests {
      * This Field corresponds to the {@link RewardsQuests} field that can be
      * obtained using the {@link RewardsQuests#getQuestsId()} method.
      */
-    ShortForeignKeyField<RewardsQuests, Short, Quests>  QUESTS_ID  = ShortForeignKeyField.create(
+    ShortForeignKeyField<RewardsQuests, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
             RewardsQuests::getQuestsId,
             RewardsQuests::setQuestsId,
@@ -144,7 +144,7 @@ public interface GeneratedRewardsQuests {
         QUESTS_ID("quests_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsQuests> tableIdentifier;
 

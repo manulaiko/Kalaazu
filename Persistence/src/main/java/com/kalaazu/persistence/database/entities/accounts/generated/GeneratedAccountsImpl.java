@@ -23,23 +23,23 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsImpl implements Accounts {
 
-    private int       id;
+    private int id;
 
-    private int       usersId;
+    private int usersId;
 
-    private String    sessionId;
+    private String sessionId;
 
-    private byte      levelsId;
+    private byte levelsId;
 
-    private byte      factionsId;
+    private Byte factionsId;
 
-    private int       accountsHangarsId;
+    private Integer accountsHangarsId;
 
-    private int       clansId;
+    private Integer clansId;
 
-    private byte      ranksId;
+    private byte ranksId;
 
-    private String    name;
+    private String name;
 
     private Timestamp banDate;
 
@@ -49,9 +49,9 @@ public abstract class GeneratedAccountsImpl implements Accounts {
 
     private Timestamp lastLogin;
 
-    private short     skillPointsTotal;
+    private short skillPointsTotal;
 
-    private short     skillPointsFree;
+    private short skillPointsFree;
 
     protected GeneratedAccountsImpl() {
     }

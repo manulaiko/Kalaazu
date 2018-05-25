@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.ships.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,11 +20,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedShipsImpl implements Ships {
 
-    private byte  id;
+    private byte id;
 
     private short itemsId;
 
-    private int   health;
+    private int health;
 
     private short speed;
 
@@ -34,15 +34,15 @@ public abstract class GeneratedShipsImpl implements Ships {
 
     private short rockets;
 
-    private byte  lasers;
+    private byte lasers;
 
-    private byte  hellstorms;
+    private byte hellstorms;
 
-    private byte  generators;
+    private byte generators;
 
-    private byte  extras;
+    private byte extras;
 
-    private byte  gfx;
+    private byte gfx;
 
     protected GeneratedShipsImpl() {
     }

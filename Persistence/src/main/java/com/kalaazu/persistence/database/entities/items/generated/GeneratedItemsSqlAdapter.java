@@ -24,6 +24,16 @@ public abstract class GeneratedItemsSqlAdapter implements SqlAdapter<Items> {
 
     private final TableIdentifier<Items> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, ItemCategory> categoryHelper;
+
+    private SqlTypeMapperHelper<Byte, ItemType> typeHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isEliteHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isEventHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isBuyableHelper;
+
     protected GeneratedItemsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "items");
     }

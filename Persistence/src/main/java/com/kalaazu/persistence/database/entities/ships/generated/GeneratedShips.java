@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.ships.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ShortField;
@@ -29,7 +29,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getId()} method.
      */
-    ByteField<Ships, Byte>                    ID         = ByteField.create(
+    ByteField<Ships, Byte> ID = ByteField.create(
             Identifier.ID,
             Ships::getId,
             Ships::setId,
@@ -41,7 +41,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getItemsId()} method.
      */
-    ShortForeignKeyField<Ships, Short, Items> ITEMS_ID   = ShortForeignKeyField.create(
+    ShortForeignKeyField<Ships, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             Ships::getItemsId,
             Ships::setItemsId,
@@ -54,7 +54,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getHealth()} method.
      */
-    IntField<Ships, Integer>                  HEALTH     = IntField.create(
+    IntField<Ships, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
             Ships::getHealth,
             Ships::setHealth,
@@ -66,7 +66,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getSpeed()} method.
      */
-    ShortField<Ships, Short>                  SPEED      = ShortField.create(
+    ShortField<Ships, Short> SPEED = ShortField.create(
             Identifier.SPEED,
             Ships::getSpeed,
             Ships::setSpeed,
@@ -78,7 +78,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getCargo()} method.
      */
-    ShortField<Ships, Short>                  CARGO      = ShortField.create(
+    ShortField<Ships, Short> CARGO = ShortField.create(
             Identifier.CARGO,
             Ships::getCargo,
             Ships::setCargo,
@@ -90,7 +90,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getBatteries()} method.
      */
-    ShortField<Ships, Short>                  BATTERIES  = ShortField.create(
+    ShortField<Ships, Short> BATTERIES = ShortField.create(
             Identifier.BATTERIES,
             Ships::getBatteries,
             Ships::setBatteries,
@@ -102,7 +102,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getRockets()} method.
      */
-    ShortField<Ships, Short>                  ROCKETS    = ShortField.create(
+    ShortField<Ships, Short> ROCKETS = ShortField.create(
             Identifier.ROCKETS,
             Ships::getRockets,
             Ships::setRockets,
@@ -114,7 +114,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getLasers()} method.
      */
-    ByteField<Ships, Byte>                    LASERS     = ByteField.create(
+    ByteField<Ships, Byte> LASERS = ByteField.create(
             Identifier.LASERS,
             Ships::getLasers,
             Ships::setLasers,
@@ -126,7 +126,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getHellstorms()} method.
      */
-    ByteField<Ships, Byte>                    HELLSTORMS = ByteField.create(
+    ByteField<Ships, Byte> HELLSTORMS = ByteField.create(
             Identifier.HELLSTORMS,
             Ships::getHellstorms,
             Ships::setHellstorms,
@@ -138,7 +138,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getGenerators()} method.
      */
-    ByteField<Ships, Byte>                    GENERATORS = ByteField.create(
+    ByteField<Ships, Byte> GENERATORS = ByteField.create(
             Identifier.GENERATORS,
             Ships::getGenerators,
             Ships::setGenerators,
@@ -150,7 +150,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getExtras()} method.
      */
-    ByteField<Ships, Byte>                    EXTRAS     = ByteField.create(
+    ByteField<Ships, Byte> EXTRAS = ByteField.create(
             Identifier.EXTRAS,
             Ships::getExtras,
             Ships::setExtras,
@@ -162,7 +162,7 @@ public interface GeneratedShips {
      * This Field corresponds to the {@link Ships} field that can be obtained
      * using the {@link Ships#getGfx()} method.
      */
-    ByteField<Ships, Byte>                    GFX        = ByteField.create(
+    ByteField<Ships, Byte> GFX = ByteField.create(
             Identifier.GFX,
             Ships::getGfx,
             Ships::setGfx,
@@ -411,7 +411,7 @@ public interface GeneratedShips {
         EXTRAS("extras"),
         GFX("gfx");
 
-        private final String                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<Ships> tableIdentifier;
 

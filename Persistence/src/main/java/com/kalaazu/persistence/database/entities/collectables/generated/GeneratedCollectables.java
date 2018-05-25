@@ -25,7 +25,7 @@ public interface GeneratedCollectables {
      * This Field corresponds to the {@link Collectables} field that can be
      * obtained using the {@link Collectables#getId()} method.
      */
-    ByteField<Collectables, Byte>     ID   = ByteField.create(
+    ByteField<Collectables, Byte> ID = ByteField.create(
             Identifier.ID,
             Collectables::getId,
             Collectables::setId,
@@ -37,7 +37,7 @@ public interface GeneratedCollectables {
      * This Field corresponds to the {@link Collectables} field that can be
      * obtained using the {@link Collectables#getGfx()} method.
      */
-    ByteField<Collectables, Byte>     GFX  = ByteField.create(
+    ByteField<Collectables, Byte> GFX = ByteField.create(
             Identifier.GFX,
             Collectables::getGfx,
             Collectables::setGfx,
@@ -148,7 +148,7 @@ public interface GeneratedCollectables {
         TYPE("type"),
         NAME("name");
 
-        private final String                        columnId;
+        private final String columnName;
 
         private final TableIdentifier<Collectables> tableIdentifier;
 

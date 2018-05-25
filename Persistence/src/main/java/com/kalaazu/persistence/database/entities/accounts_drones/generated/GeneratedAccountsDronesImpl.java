@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.accounts_drones.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsDrones;
 import com.kalaazu.persistence.database.entities.Levels;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -22,13 +22,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsDronesImpl implements AccountsDrones {
 
-    private int       id;
+    private int id;
 
-    private int       accountsId;
+    private int accountsId;
 
-    private byte      levelsId;
+    private byte levelsId;
 
-    private short     experience;
+    private short experience;
 
     private Timestamp date;
 

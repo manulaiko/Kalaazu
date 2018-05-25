@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.rewards.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -29,7 +29,7 @@ public interface GeneratedRewards {
      * This Field corresponds to the {@link Rewards} field that can be obtained
      * using the {@link Rewards#getId()} method.
      */
-    ShortField<Rewards, Short>                  ID          = ShortField.create(
+    ShortField<Rewards, Short> ID = ShortField.create(
             Identifier.ID,
             Rewards::getId,
             Rewards::setId,
@@ -41,7 +41,7 @@ public interface GeneratedRewards {
      * This Field corresponds to the {@link Rewards} field that can be obtained
      * using the {@link Rewards#getItemsId()} method.
      */
-    ShortForeignKeyField<Rewards, Short, Items> ITEMS_ID    = ShortForeignKeyField.create(
+    ShortForeignKeyField<Rewards, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             Rewards::getItemsId,
             Rewards::setItemsId,
@@ -54,7 +54,7 @@ public interface GeneratedRewards {
      * This Field corresponds to the {@link Rewards} field that can be obtained
      * using the {@link Rewards#getAmount()} method.
      */
-    IntField<Rewards, Integer>                  AMOUNT      = IntField.create(
+    IntField<Rewards, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
             Rewards::getAmount,
             Rewards::setAmount,
@@ -66,7 +66,7 @@ public interface GeneratedRewards {
      * This Field corresponds to the {@link Rewards} field that can be obtained
      * using the {@link Rewards#getProbability()} method.
      */
-    DoubleField<Rewards, Double>                PROBABILITY = DoubleField.create(
+    DoubleField<Rewards, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
             Rewards::getProbability,
             Rewards::setProbability,
@@ -78,7 +78,7 @@ public interface GeneratedRewards {
      * This Field corresponds to the {@link Rewards} field that can be obtained
      * using the {@link Rewards#getComment()} method.
      */
-    StringField<Rewards, String>                COMMENT     = StringField.create(
+    StringField<Rewards, String> COMMENT = StringField.create(
             Identifier.COMMENT,
             o -> OptionalUtil.unwrap(o.getComment()),
             Rewards::setComment,
@@ -194,7 +194,7 @@ public interface GeneratedRewards {
         PROBABILITY("probability"),
         COMMENT("comment");
 
-        private final String                   columnId;
+        private final String columnName;
 
         private final TableIdentifier<Rewards> tableIdentifier;
 

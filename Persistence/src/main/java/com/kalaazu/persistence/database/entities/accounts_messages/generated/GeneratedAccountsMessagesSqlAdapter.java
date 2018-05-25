@@ -25,6 +25,10 @@ public abstract class GeneratedAccountsMessagesSqlAdapter implements SqlAdapter<
 
     private final TableIdentifier<AccountsMessages> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, MessageStatus> fromStatusHelper;
+
+    private SqlTypeMapperHelper<Byte, MessageStatus> toStatusHelper;
+
     protected GeneratedAccountsMessagesSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "accounts_messages");
     }

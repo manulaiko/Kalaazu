@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLHierarchy</id>
+    <coordinates>
+      <x>330</x>
+      <y>120</y>
+      <w>330</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>entity=Package
+com.kalaazu
+	+cms
+		+events
+		-mvc
+			-pages
+				-controllers
+				-models
+				-presenters
+			-modules
+				-controllers
+				-models
+				-presenters
+		-server</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

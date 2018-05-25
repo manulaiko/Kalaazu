@@ -18,7 +18,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedSkilltreeSkillsImpl implements SkilltreeSkills {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
@@ -26,13 +26,13 @@ public abstract class GeneratedSkilltreeSkillsImpl implements SkilltreeSkills {
 
     private byte   type;
 
-    private int    isAdvanced;
+    private boolean isAdvanced;
 
     private String bonusType;
 
-    private int    bonusAmount;
+    private int bonusAmount;
 
-    private byte   bonusFactor;
+    private byte bonusFactor;
 
     protected GeneratedSkilltreeSkillsImpl() {
     }

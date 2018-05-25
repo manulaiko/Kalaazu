@@ -20,13 +20,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedModeratorsRolesImpl implements ModeratorsRoles {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
-    private Byte   moderatorsRolesId;
+    private Byte moderatorsRolesId;
 
-    private byte   priority;
+    private byte priority;
 
     protected GeneratedModeratorsRolesImpl() {
     }

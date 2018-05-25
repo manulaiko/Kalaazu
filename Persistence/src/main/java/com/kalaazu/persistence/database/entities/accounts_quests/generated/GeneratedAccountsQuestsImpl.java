@@ -2,9 +2,9 @@ package com.kalaazu.persistence.database.entities.accounts_quests.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsQuests;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Quests;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -22,13 +22,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsQuestsImpl implements AccountsQuests {
 
-    private int       id;
+    private int id;
 
-    private short     questsId;
+    private short questsId;
 
-    private int       accountsId;
+    private int accountsId;
 
-    private int       isCompleted;
+    private boolean isCompleted;
 
     private Timestamp date;
 

@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.clans_battlestations_items.gen
 import com.kalaazu.persistence.database.entities.AccountsItems;
 import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.ClansBattlestationsItems;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -31,7 +31,7 @@ public interface GeneratedClansBattlestationsItems {
      * can be obtained using the {@link ClansBattlestationsItems#getId()}
      * method.
      */
-    IntField<ClansBattlestationsItems, Integer>                              ID                      = IntField.create(
+    IntField<ClansBattlestationsItems, Integer> ID = IntField.create(
             Identifier.ID,
             ClansBattlestationsItems::getId,
             ClansBattlestationsItems::setId,
@@ -58,7 +58,7 @@ public interface GeneratedClansBattlestationsItems {
      * can be obtained using the {@link
      * ClansBattlestationsItems#getAccountsItemsId()} method.
      */
-    IntForeignKeyField<ClansBattlestationsItems, Integer, AccountsItems>     ACCOUNTS_ITEMS_ID       = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBattlestationsItems, Integer, AccountsItems> ACCOUNTS_ITEMS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ITEMS_ID,
             ClansBattlestationsItems::getAccountsItemsId,
             ClansBattlestationsItems::setAccountsItemsId,
@@ -72,7 +72,7 @@ public interface GeneratedClansBattlestationsItems {
      * can be obtained using the {@link ClansBattlestationsItems#getSlot()}
      * method.
      */
-    ByteField<ClansBattlestationsItems, Byte>                                SLOT                    = ByteField.create(
+    ByteField<ClansBattlestationsItems, Byte> SLOT = ByteField.create(
             Identifier.SLOT,
             ClansBattlestationsItems::getSlot,
             ClansBattlestationsItems::setSlot,
@@ -85,7 +85,7 @@ public interface GeneratedClansBattlestationsItems {
      * can be obtained using the {@link ClansBattlestationsItems#getDate()}
      * method.
      */
-    ComparableField<ClansBattlestationsItems, Timestamp, Timestamp>          DATE                    = ComparableField.create(
+    ComparableField<ClansBattlestationsItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansBattlestationsItems::getDate,
             ClansBattlestationsItems::setDate,
@@ -221,7 +221,7 @@ public interface GeneratedClansBattlestationsItems {
         SLOT("slot"),
         DATE("date");
 
-        private final String                                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansBattlestationsItems> tableIdentifier;
 

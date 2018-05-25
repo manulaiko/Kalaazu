@@ -23,11 +23,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansDiplomaciesImpl implements ClansDiplomacies {
 
-    private int       id;
+    private int id;
 
-    private int       fromClansId;
+    private int fromClansId;
 
-    private int       toClansId;
+    private int toClansId;
 
     private Timestamp date;
 
@@ -35,7 +35,7 @@ public abstract class GeneratedClansDiplomaciesImpl implements ClansDiplomacies 
 
     private byte      status;
 
-    private byte      type;
+    private DiplomacyType type;
 
     protected GeneratedClansDiplomaciesImpl() {
     }

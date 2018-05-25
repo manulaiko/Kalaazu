@@ -1,9 +1,8 @@
 package com.kalaazu.persistence.database.entities.clans_messages.generated;
 
 import com.kalaazu.persistence.database.entities.ClansMessages;
-import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

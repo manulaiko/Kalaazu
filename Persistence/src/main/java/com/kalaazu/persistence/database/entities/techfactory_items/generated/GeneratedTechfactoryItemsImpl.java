@@ -18,7 +18,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedTechfactoryItemsImpl implements TechfactoryItems {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
@@ -26,15 +26,15 @@ public abstract class GeneratedTechfactoryItemsImpl implements TechfactoryItems 
 
     private String effect;
 
-    private short  duration;
+    private short duration;
 
-    private short  cooldown;
+    private short cooldown;
 
-    private int    time;
+    private int time;
 
-    private short  freeProduction;
+    private short freeProduction;
 
-    private short  instantProduction;
+    private short instantProduction;
 
     protected GeneratedTechfactoryItemsImpl() {
     }

@@ -19,19 +19,19 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsConfigurationsImpl implements AccountsConfigurations {
 
-    private int    id;
+    private int id;
 
-    private int    accountsHangarsId;
+    private int accountsHangarsId;
 
-    private byte   configurationId;
+    private byte configurationId;
 
     private String name;
 
-    private int    shield;
+    private int shield;
 
-    private short  speed;
+    private short speed;
 
-    private int    damage;
+    private int damage;
 
     protected GeneratedAccountsConfigurationsImpl() {
     }

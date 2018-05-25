@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.moderators_roles_permissions.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.kalaazu.persistence.database.entities.ModeratorsRolesPermissions;
 import com.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -23,11 +23,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedModeratorsRolesPermissionsImpl implements ModeratorsRolesPermissions {
 
-    private byte    id;
+    private byte id;
 
-    private byte    moderatorsRolesId;
+    private byte moderatorsRolesId;
 
-    private byte    permissionsId;
+    private byte permissionsId;
 
     private boolean isEnabled;
 

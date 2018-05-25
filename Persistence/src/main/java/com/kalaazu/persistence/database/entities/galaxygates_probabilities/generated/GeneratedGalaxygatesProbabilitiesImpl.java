@@ -20,9 +20,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedGalaxygatesProbabilitiesImpl implements GalaxygatesProbabilities {
 
-    private byte   id;
+    private byte id;
 
-    private byte   galaxygatesId;
+    private byte galaxygatesId;
 
     private byte   type;
 

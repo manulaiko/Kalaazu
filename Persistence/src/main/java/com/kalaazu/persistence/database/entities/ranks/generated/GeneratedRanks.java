@@ -27,7 +27,7 @@ public interface GeneratedRanks {
      * This Field corresponds to the {@link Ranks} field that can be obtained
      * using the {@link Ranks#getId()} method.
      */
-    ByteField<Ranks, Byte>     ID         = ByteField.create(
+    ByteField<Ranks, Byte> ID = ByteField.create(
             Identifier.ID,
             Ranks::getId,
             Ranks::setId,
@@ -39,7 +39,7 @@ public interface GeneratedRanks {
      * This Field corresponds to the {@link Ranks} field that can be obtained
      * using the {@link Ranks#getName()} method.
      */
-    StringField<Ranks, String> NAME       = StringField.create(
+    StringField<Ranks, String> NAME = StringField.create(
             Identifier.NAME,
             Ranks::getName,
             Ranks::setName,
@@ -63,7 +63,7 @@ public interface GeneratedRanks {
      * This Field corresponds to the {@link Ranks} field that can be obtained
      * using the {@link Ranks#getIsPublic()} method.
      */
-    IntField<Ranks, Integer>   IS_PUBLIC  = IntField.create(
+    BooleanField<Ranks, Integer> IS_PUBLIC = BooleanField.create(
             Identifier.IS_PUBLIC,
             Ranks::getIsPublic,
             Ranks::setIsPublic,
@@ -150,7 +150,7 @@ public interface GeneratedRanks {
         PERCENTAJE("percentaje"),
         IS_PUBLIC("is_public");
 
-        private final String                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<Ranks> tableIdentifier;
 

@@ -27,7 +27,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getId()} method.
      */
-    ByteField<TechfactoryItems, Byte>     ID                 = ByteField.create(
+    ByteField<TechfactoryItems, Byte> ID = ByteField.create(
             Identifier.ID,
             TechfactoryItems::getId,
             TechfactoryItems::setId,
@@ -39,7 +39,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getName()} method.
      */
-    StringField<TechfactoryItems, String> NAME               = StringField.create(
+    StringField<TechfactoryItems, String> NAME = StringField.create(
             Identifier.NAME,
             TechfactoryItems::getName,
             TechfactoryItems::setName,
@@ -51,7 +51,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getDescription()} method.
      */
-    StringField<TechfactoryItems, String> DESCRIPTION        = StringField.create(
+    StringField<TechfactoryItems, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
             TechfactoryItems::getDescription,
             TechfactoryItems::setDescription,
@@ -63,7 +63,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getEffect()} method.
      */
-    StringField<TechfactoryItems, String> EFFECT             = StringField.create(
+    StringField<TechfactoryItems, String> EFFECT = StringField.create(
             Identifier.EFFECT,
             TechfactoryItems::getEffect,
             TechfactoryItems::setEffect,
@@ -75,7 +75,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getDuration()} method.
      */
-    ShortField<TechfactoryItems, Short>   DURATION           = ShortField.create(
+    ShortField<TechfactoryItems, Short> DURATION = ShortField.create(
             Identifier.DURATION,
             TechfactoryItems::getDuration,
             TechfactoryItems::setDuration,
@@ -87,7 +87,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getCooldown()} method.
      */
-    ShortField<TechfactoryItems, Short>   COOLDOWN           = ShortField.create(
+    ShortField<TechfactoryItems, Short> COOLDOWN = ShortField.create(
             Identifier.COOLDOWN,
             TechfactoryItems::getCooldown,
             TechfactoryItems::setCooldown,
@@ -99,7 +99,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getTime()} method.
      */
-    IntField<TechfactoryItems, Integer>   TIME               = IntField.create(
+    IntField<TechfactoryItems, Integer> TIME = IntField.create(
             Identifier.TIME,
             TechfactoryItems::getTime,
             TechfactoryItems::setTime,
@@ -111,7 +111,7 @@ public interface GeneratedTechfactoryItems {
      * This Field corresponds to the {@link TechfactoryItems} field that can be
      * obtained using the {@link TechfactoryItems#getFreeProduction()} method.
      */
-    ShortField<TechfactoryItems, Short>   FREE_PRODUCTION    = ShortField.create(
+    ShortField<TechfactoryItems, Short> FREE_PRODUCTION = ShortField.create(
             Identifier.FREE_PRODUCTION,
             TechfactoryItems::getFreeProduction,
             TechfactoryItems::setFreeProduction,
@@ -124,7 +124,7 @@ public interface GeneratedTechfactoryItems {
      * obtained using the {@link TechfactoryItems#getInstantProduction()}
      * method.
      */
-    ShortField<TechfactoryItems, Short>   INSTANT_PRODUCTION = ShortField.create(
+    ShortField<TechfactoryItems, Short> INSTANT_PRODUCTION = ShortField.create(
             Identifier.INSTANT_PRODUCTION,
             TechfactoryItems::getInstantProduction,
             TechfactoryItems::setInstantProduction,
@@ -316,7 +316,7 @@ public interface GeneratedTechfactoryItems {
         FREE_PRODUCTION("free_production"),
         INSTANT_PRODUCTION("instant_production");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<TechfactoryItems> tableIdentifier;
 

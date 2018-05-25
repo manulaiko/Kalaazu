@@ -27,7 +27,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getId()} method.
      */
-    ByteField<TechfactoryDrones, Byte>     ID          = ByteField.create(
+    ByteField<TechfactoryDrones, Byte> ID = ByteField.create(
             Identifier.ID,
             TechfactoryDrones::getId,
             TechfactoryDrones::setId,
@@ -39,7 +39,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getName()} method.
      */
-    StringField<TechfactoryDrones, String> NAME        = StringField.create(
+    StringField<TechfactoryDrones, String> NAME = StringField.create(
             Identifier.NAME,
             TechfactoryDrones::getName,
             TechfactoryDrones::setName,
@@ -63,7 +63,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getTime()} method.
      */
-    ByteField<TechfactoryDrones, Byte>     TIME        = ByteField.create(
+    ByteField<TechfactoryDrones, Byte> TIME = ByteField.create(
             Identifier.TIME,
             TechfactoryDrones::getTime,
             TechfactoryDrones::setTime,
@@ -75,7 +75,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getParts()} method.
      */
-    ByteField<TechfactoryDrones, Byte>     PARTS       = ByteField.create(
+    ByteField<TechfactoryDrones, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
             TechfactoryDrones::getParts,
             TechfactoryDrones::setParts,
@@ -87,7 +87,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getPrice()} method.
      */
-    IntField<TechfactoryDrones, Integer>   PRICE       = IntField.create(
+    IntField<TechfactoryDrones, Integer> PRICE = IntField.create(
             Identifier.PRICE,
             TechfactoryDrones::getPrice,
             TechfactoryDrones::setPrice,
@@ -99,7 +99,7 @@ public interface GeneratedTechfactoryDrones {
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
      * obtained using the {@link TechfactoryDrones#getFactor()} method.
      */
-    ByteField<TechfactoryDrones, Byte>     FACTOR      = ByteField.create(
+    ByteField<TechfactoryDrones, Byte> FACTOR = ByteField.create(
             Identifier.FACTOR,
             TechfactoryDrones::getFactor,
             TechfactoryDrones::setFactor,
@@ -246,7 +246,7 @@ public interface GeneratedTechfactoryDrones {
         PRICE("price"),
         FACTOR("factor");
 
-        private final String                             columnId;
+        private final String columnName;
 
         private final TableIdentifier<TechfactoryDrones> tableIdentifier;
 

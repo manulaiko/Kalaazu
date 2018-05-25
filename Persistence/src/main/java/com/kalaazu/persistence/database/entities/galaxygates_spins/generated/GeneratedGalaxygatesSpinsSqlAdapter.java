@@ -25,6 +25,8 @@ public abstract class GeneratedGalaxygatesSpinsSqlAdapter implements SqlAdapter<
 
     private final TableIdentifier<GalaxygatesSpins> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, GalaxyGateProbabilityType> typeHelper;
+
     protected GeneratedGalaxygatesSpinsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "galaxygates_spins");
     }

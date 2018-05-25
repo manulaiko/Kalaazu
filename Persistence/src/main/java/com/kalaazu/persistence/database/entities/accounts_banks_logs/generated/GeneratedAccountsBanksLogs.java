@@ -34,7 +34,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getId()} method.
      */
-    IntField<AccountsBanksLogs, Integer>                          ID                = IntField.create(
+    IntField<AccountsBanksLogs, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsBanksLogs::getId,
             AccountsBanksLogs::setId,
@@ -46,7 +46,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getFromAccountsId()} method.
      */
-    IntForeignKeyField<AccountsBanksLogs, Integer, Accounts>      FROM_ACCOUNTS_ID  = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsBanksLogs, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
             AccountsBanksLogs::getFromAccountsId,
             AccountsBanksLogs::setFromAccountsId,
@@ -59,7 +59,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getToAccountsId()} method.
      */
-    IntForeignKeyField<AccountsBanksLogs, Integer, Accounts>      TO_ACCOUNTS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsBanksLogs, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
             AccountsBanksLogs::getToAccountsId,
             AccountsBanksLogs::setToAccountsId,
@@ -72,7 +72,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getDate()} method.
      */
-    ComparableField<AccountsBanksLogs, Timestamp, Timestamp>      DATE              = ComparableField.create(
+    ComparableField<AccountsBanksLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsBanksLogs::getDate,
             AccountsBanksLogs::setDate,
@@ -84,7 +84,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getType()} method.
      */
-    ByteField<AccountsBanksLogs, Byte>                            TYPE              = ByteField.create(
+    EnumField<AccountsBanksLogs, Byte, BankLogType> TYPE = EnumField.create(
             Identifier.TYPE,
             AccountsBanksLogs::getType,
             AccountsBanksLogs::setType,
@@ -96,7 +96,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getAmount()} method.
      */
-    IntField<AccountsBanksLogs, Integer>                          AMOUNT            = IntField.create(
+    IntField<AccountsBanksLogs, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
             AccountsBanksLogs::getAmount,
             AccountsBanksLogs::setAmount,
@@ -108,7 +108,7 @@ public interface GeneratedAccountsBanksLogs {
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
      * obtained using the {@link AccountsBanksLogs#getCurrency()} method.
      */
-    ByteField<AccountsBanksLogs, Byte>                            CURRENCY          = ByteField.create(
+    EnumField<AccountsBanksLogs, Byte, Currency> CURRENCY = EnumField.create(
             Identifier.CURRENCY,
             AccountsBanksLogs::getCurrency,
             AccountsBanksLogs::setCurrency,
@@ -324,7 +324,7 @@ public interface GeneratedAccountsBanksLogs {
         CURRENCY("currency"),
         ACCOUNTS_BANKS_ID("accounts_banks_id");
 
-        private final String                             columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsBanksLogs> tableIdentifier;
 

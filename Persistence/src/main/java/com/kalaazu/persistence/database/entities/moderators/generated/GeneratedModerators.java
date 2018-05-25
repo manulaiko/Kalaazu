@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.moderators.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Moderators;
 import com.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
@@ -32,7 +32,7 @@ public interface GeneratedModerators {
      * This Field corresponds to the {@link Moderators} field that can be
      * obtained using the {@link Moderators#getId()} method.
      */
-    ByteField<Moderators, Byte>                            ID                  = ByteField.create(
+    ByteField<Moderators, Byte> ID = ByteField.create(
             Identifier.ID,
             Moderators::getId,
             Moderators::setId,
@@ -44,7 +44,7 @@ public interface GeneratedModerators {
      * This Field corresponds to the {@link Moderators} field that can be
      * obtained using the {@link Moderators#getAccountsId()} method.
      */
-    IntForeignKeyField<Moderators, Integer, Accounts>      ACCOUNTS_ID         = IntForeignKeyField.create(
+    IntForeignKeyField<Moderators, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             Moderators::getAccountsId,
             Moderators::setAccountsId,
@@ -70,7 +70,7 @@ public interface GeneratedModerators {
      * This Field corresponds to the {@link Moderators} field that can be
      * obtained using the {@link Moderators#getDate()} method.
      */
-    ComparableField<Moderators, Timestamp, Timestamp>      DATE                = ComparableField.create(
+    ComparableField<Moderators, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             Moderators::getDate,
             Moderators::setDate,
@@ -181,7 +181,7 @@ public interface GeneratedModerators {
         MODERATORS_ROLES_ID("moderators_roles_id"),
         DATE("date");
 
-        private final String                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<Moderators> tableIdentifier;
 

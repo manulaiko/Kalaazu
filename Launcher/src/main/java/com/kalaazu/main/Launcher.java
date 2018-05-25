@@ -45,7 +45,7 @@ public class Launcher extends AbstractVerticle {
     public void setLogger() {
         System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory");
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", config().getString("logLevel", "DEBUG"));
-        Launcher.logger  = LoggerFactory.getLogger(Launcher.class);
+        Launcher.logger = LoggerFactory.getLogger(Launcher.class);
     }
 
     /**

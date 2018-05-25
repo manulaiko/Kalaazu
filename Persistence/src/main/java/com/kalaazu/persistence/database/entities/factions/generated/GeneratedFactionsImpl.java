@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.factions.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,7 +20,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedFactionsImpl implements Factions {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
@@ -30,11 +30,11 @@ public abstract class GeneratedFactionsImpl implements Factions {
 
     private int    isPublic;
 
-    private byte   lowMapsId;
+    private byte lowMapsId;
 
     private long   lowMapsPosition;
 
-    private byte   highMapsId;
+    private byte highMapsId;
 
     private long   highMapsPosition;
 

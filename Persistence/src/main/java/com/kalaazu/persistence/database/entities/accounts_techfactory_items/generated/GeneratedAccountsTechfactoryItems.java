@@ -2,11 +2,11 @@ package com.kalaazu.persistence.database.entities.accounts_techfactory_items.gen
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsTechfactoryItems;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -33,7 +33,7 @@ public interface GeneratedAccountsTechfactoryItems {
      * can be obtained using the {@link AccountsTechfactoryItems#getId()}
      * method.
      */
-    IntField<AccountsTechfactoryItems, Integer>                           ID                   = IntField.create(
+    IntField<AccountsTechfactoryItems, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsTechfactoryItems::getId,
             AccountsTechfactoryItems::setId,
@@ -46,7 +46,7 @@ public interface GeneratedAccountsTechfactoryItems {
      * can be obtained using the {@link
      * AccountsTechfactoryItems#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsTechfactoryItems, Integer, Accounts>       ACCOUNTS_ID          = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsTechfactoryItems, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsTechfactoryItems::getAccountsId,
             AccountsTechfactoryItems::setAccountsId,
@@ -74,7 +74,7 @@ public interface GeneratedAccountsTechfactoryItems {
      * can be obtained using the {@link AccountsTechfactoryItems#getAmount()}
      * method.
      */
-    ShortField<AccountsTechfactoryItems, Short>                           AMOUNT               = ShortField.create(
+    ShortField<AccountsTechfactoryItems, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
             AccountsTechfactoryItems::getAmount,
             AccountsTechfactoryItems::setAmount,
@@ -87,7 +87,7 @@ public interface GeneratedAccountsTechfactoryItems {
      * can be obtained using the {@link AccountsTechfactoryItems#getDate()}
      * method.
      */
-    ComparableField<AccountsTechfactoryItems, Timestamp, Timestamp>       DATE                 = ComparableField.create(
+    ComparableField<AccountsTechfactoryItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             o -> OptionalUtil.unwrap(o.getDate()),
             AccountsTechfactoryItems::setDate,
@@ -222,7 +222,7 @@ public interface GeneratedAccountsTechfactoryItems {
         AMOUNT("amount"),
         DATE("date");
 
-        private final String                                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsTechfactoryItems> tableIdentifier;
 

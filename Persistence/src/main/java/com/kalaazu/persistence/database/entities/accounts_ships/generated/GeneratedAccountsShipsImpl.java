@@ -22,9 +22,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsShipsImpl implements AccountsShips {
 
-    private int  id;
+    private int id;
 
-    private int  accountsId;
+    private int accountsId;
 
     private byte shipsId;
 
@@ -32,9 +32,9 @@ public abstract class GeneratedAccountsShipsImpl implements AccountsShips {
 
     private long position;
 
-    private int  health;
+    private int health;
 
-    private int  nanohull;
+    private int nanohull;
 
     private byte gfx;
 

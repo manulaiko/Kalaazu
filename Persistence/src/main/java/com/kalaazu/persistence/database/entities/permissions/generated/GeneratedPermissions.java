@@ -25,7 +25,7 @@ public interface GeneratedPermissions {
      * This Field corresponds to the {@link Permissions} field that can be
      * obtained using the {@link Permissions#getId()} method.
      */
-    ByteField<Permissions, Byte>     ID       = ByteField.create(
+    ByteField<Permissions, Byte> ID = ByteField.create(
             Identifier.ID,
             Permissions::getId,
             Permissions::setId,
@@ -37,7 +37,7 @@ public interface GeneratedPermissions {
      * This Field corresponds to the {@link Permissions} field that can be
      * obtained using the {@link Permissions#getName()} method.
      */
-    StringField<Permissions, String> NAME     = StringField.create(
+    StringField<Permissions, String> NAME = StringField.create(
             Identifier.NAME,
             Permissions::getName,
             Permissions::setName,
@@ -117,7 +117,7 @@ public interface GeneratedPermissions {
         NAME("name"),
         CATEGORY("category");
 
-        private final String                       columnId;
+        private final String columnName;
 
         private final TableIdentifier<Permissions> tableIdentifier;
 

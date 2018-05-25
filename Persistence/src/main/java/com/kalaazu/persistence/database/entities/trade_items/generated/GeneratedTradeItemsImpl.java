@@ -24,13 +24,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedTradeItemsImpl implements TradeItems {
 
-    private short   id;
+    private short id;
 
-    private short   itemsId;
+    private short itemsId;
 
     private Integer accountsId;
 
-    private int     price;
+    private int price;
 
     private byte    type;
 

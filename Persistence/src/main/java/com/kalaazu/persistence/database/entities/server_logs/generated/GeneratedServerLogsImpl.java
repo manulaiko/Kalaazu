@@ -19,15 +19,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedServerLogsImpl implements ServerLogs {
 
-    private int       id;
+    private int id;
 
     private Timestamp date;
 
-    private String    level;
+    private String level;
 
-    private String    type;
+    private String type;
 
-    private String    context;
+    private String context;
 
     protected GeneratedServerLogsImpl() {
     }

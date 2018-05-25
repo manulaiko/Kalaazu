@@ -27,6 +27,10 @@ public abstract class GeneratedClansMessagesSqlAdapter implements SqlAdapter<Cla
 
     private final TableIdentifier<ClansMessages> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, MessageStatus> fromStatusHelper;
+
+    private SqlTypeMapperHelper<Byte, MessageStatus> toStatusHelper;
+
     protected GeneratedClansMessagesSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "clans_messages");
     }

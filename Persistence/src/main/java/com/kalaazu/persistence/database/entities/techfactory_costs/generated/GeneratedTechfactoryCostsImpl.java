@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.techfactory_costs.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.TechfactoryCosts;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -21,13 +21,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedTechfactoryCostsImpl implements TechfactoryCosts {
 
-    private byte  id;
+    private byte id;
 
-    private byte  techfactoryItemsId;
+    private byte techfactoryItemsId;
 
     private short itemsId;
 
-    private int   amount;
+    private int amount;
 
     protected GeneratedTechfactoryCostsImpl() {
     }

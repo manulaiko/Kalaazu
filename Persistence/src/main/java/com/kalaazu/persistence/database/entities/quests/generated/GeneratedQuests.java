@@ -2,11 +2,11 @@ package com.kalaazu.persistence.database.entities.quests.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Quests;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableForeignKeyField;
@@ -33,7 +33,7 @@ public interface GeneratedQuests {
      * This Field corresponds to the {@link Quests} field that can be obtained
      * using the {@link Quests#getId()} method.
      */
-    ShortField<Quests, Short>                               ID          = ShortField.create(
+    ShortField<Quests, Short> ID = ShortField.create(
             Identifier.ID,
             Quests::getId,
             Quests::setId,
@@ -45,7 +45,7 @@ public interface GeneratedQuests {
      * This Field corresponds to the {@link Quests} field that can be obtained
      * using the {@link Quests#getLevelsId()} method.
      */
-    ByteForeignKeyField<Quests, Byte, Levels>               LEVELS_ID   = ByteForeignKeyField.create(
+    ByteForeignKeyField<Quests, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             Quests::getLevelsId,
             Quests::setLevelsId,
@@ -58,7 +58,7 @@ public interface GeneratedQuests {
      * This Field corresponds to the {@link Quests} field that can be obtained
      * using the {@link Quests#getQuestsId()} method.
      */
-    ComparableForeignKeyField<Quests, Short, Short, Quests> QUESTS_ID   = ComparableForeignKeyField.create(
+    ComparableForeignKeyField<Quests, Short, Short, Quests> QUESTS_ID = ComparableForeignKeyField.create(
             Identifier.QUESTS_ID,
             o -> OptionalUtil.unwrap(o.getQuestsId()),
             Quests::setQuestsId,
@@ -84,7 +84,7 @@ public interface GeneratedQuests {
      * This Field corresponds to the {@link Quests} field that can be obtained
      * using the {@link Quests#getName()} method.
      */
-    StringField<Quests, String>                             NAME        = StringField.create(
+    StringField<Quests, String> NAME = StringField.create(
             Identifier.NAME,
             Quests::getName,
             Quests::setName,
@@ -220,7 +220,7 @@ public interface GeneratedQuests {
         FACTIONS_ID("factions_id"),
         NAME("name");
 
-        private final String                  columnId;
+        private final String columnName;
 
         private final TableIdentifier<Quests> tableIdentifier;
 

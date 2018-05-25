@@ -26,7 +26,7 @@ public interface GeneratedAccountsConfigurations {
      * This Field corresponds to the {@link AccountsConfigurations} field that
      * can be obtained using the {@link AccountsConfigurations#getId()} method.
      */
-    IntField<AccountsConfigurations, Integer>                            ID                  = IntField.create(
+    IntField<AccountsConfigurations, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsConfigurations::getId,
             AccountsConfigurations::setId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsConfigurations {
      * can be obtained using the {@link
      * AccountsConfigurations#getConfigurationId()} method.
      */
-    ByteField<AccountsConfigurations, Byte>                              CONFIGURATION_ID    = ByteField.create(
+    ByteField<AccountsConfigurations, Byte> CONFIGURATION_ID = ByteField.create(
             Identifier.CONFIGURATION_ID,
             AccountsConfigurations::getConfigurationId,
             AccountsConfigurations::setConfigurationId,
@@ -66,7 +66,7 @@ public interface GeneratedAccountsConfigurations {
      * can be obtained using the {@link AccountsConfigurations#getName()}
      * method.
      */
-    StringField<AccountsConfigurations, String>                          NAME                = StringField.create(
+    StringField<AccountsConfigurations, String> NAME = StringField.create(
             Identifier.NAME,
             AccountsConfigurations::getName,
             AccountsConfigurations::setName,
@@ -79,7 +79,7 @@ public interface GeneratedAccountsConfigurations {
      * can be obtained using the {@link AccountsConfigurations#getShield()}
      * method.
      */
-    IntField<AccountsConfigurations, Integer>                            SHIELD              = IntField.create(
+    IntField<AccountsConfigurations, Integer> SHIELD = IntField.create(
             Identifier.SHIELD,
             AccountsConfigurations::getShield,
             AccountsConfigurations::setShield,
@@ -92,7 +92,7 @@ public interface GeneratedAccountsConfigurations {
      * can be obtained using the {@link AccountsConfigurations#getSpeed()}
      * method.
      */
-    ShortField<AccountsConfigurations, Short>                            SPEED               = ShortField.create(
+    ShortField<AccountsConfigurations, Short> SPEED = ShortField.create(
             Identifier.SPEED,
             AccountsConfigurations::getSpeed,
             AccountsConfigurations::setSpeed,
@@ -105,7 +105,7 @@ public interface GeneratedAccountsConfigurations {
      * can be obtained using the {@link AccountsConfigurations#getDamage()}
      * method.
      */
-    IntField<AccountsConfigurations, Integer>                            DAMAGE              = IntField.create(
+    IntField<AccountsConfigurations, Integer> DAMAGE = IntField.create(
             Identifier.DAMAGE,
             AccountsConfigurations::getDamage,
             AccountsConfigurations::setDamage,
@@ -271,7 +271,7 @@ public interface GeneratedAccountsConfigurations {
         SPEED("speed"),
         DAMAGE("damage");
 
-        private final String                                  columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsConfigurations> tableIdentifier;
 

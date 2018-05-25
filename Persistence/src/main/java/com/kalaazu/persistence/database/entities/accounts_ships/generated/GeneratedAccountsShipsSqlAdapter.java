@@ -25,6 +25,8 @@ public abstract class GeneratedAccountsShipsSqlAdapter implements SqlAdapter<Acc
 
     private final TableIdentifier<AccountsShips> tableIdentifier;
 
+    private SqlTypeMapperHelper<Long, Vector2> positionHelper;
+
     protected GeneratedAccountsShipsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "accounts_ships");
     }

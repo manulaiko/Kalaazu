@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.accounts_hangars.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsHangars;
 import com.kalaazu.persistence.database.entities.AccountsShips;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -33,7 +33,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getId()} method.
      */
-    IntField<AccountsHangars, Integer>                          ID                         = IntField.create(
+    IntField<AccountsHangars, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsHangars::getId,
             AccountsHangars::setId,
@@ -45,7 +45,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsHangars, Integer, Accounts>      ACCOUNTS_ID                = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsHangars, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsHangars::getAccountsId,
             AccountsHangars::setAccountsId,
@@ -58,7 +58,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getAccountsShipsId()} method.
      */
-    IntForeignKeyField<AccountsHangars, Integer, AccountsShips> ACCOUNTS_SHIPS_ID          = IntForeignKeyField.create(
+    ComparableForeignKeyField<AccountsHangars, Integer, Integer, AccountsShips> ACCOUNTS_SHIPS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_SHIPS_ID,
             o -> OptionalUtil.unwrap(o.getAccountsShipsId()),
             AccountsHangars::setAccountsShipsId,
@@ -72,7 +72,7 @@ public interface GeneratedAccountsHangars {
      * obtained using the {@link AccountsHangars#getAccountsConfigurationsId()}
      * method.
      */
-    IntField<AccountsHangars, Integer>                          ACCOUNTS_CONFIGURATIONS_ID = IntField.create(
+    ComparableField<AccountsHangars, Integer, Integer> ACCOUNTS_CONFIGURATIONS_ID = ComparableField.create(
             Identifier.ACCOUNTS_CONFIGURATIONS_ID,
             o -> OptionalUtil.unwrap(o.getAccountsConfigurationsId()),
             AccountsHangars::setAccountsConfigurationsId,
@@ -84,7 +84,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getName()} method.
      */
-    StringField<AccountsHangars, String>                        NAME                       = StringField.create(
+    StringField<AccountsHangars, String> NAME = StringField.create(
             Identifier.NAME,
             AccountsHangars::getName,
             AccountsHangars::setName,
@@ -96,7 +96,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getPriority()} method.
      */
-    ByteField<AccountsHangars, Byte>                            PRIORITY                   = ByteField.create(
+    ComparableField<AccountsHangars, Byte, Byte> PRIORITY = ComparableField.create(
             Identifier.PRIORITY,
             o -> OptionalUtil.unwrap(o.getPriority()),
             AccountsHangars::setPriority,
@@ -108,7 +108,7 @@ public interface GeneratedAccountsHangars {
      * This Field corresponds to the {@link AccountsHangars} field that can be
      * obtained using the {@link AccountsHangars#getDate()} method.
      */
-    ComparableField<AccountsHangars, Timestamp, Integer>        DATE                       = ComparableField.create(
+    ComparableField<AccountsHangars, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsHangars::getDate,
             AccountsHangars::setDate,
@@ -280,7 +280,7 @@ public interface GeneratedAccountsHangars {
         PRIORITY("priority"),
         DATE("date");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsHangars> tableIdentifier;
 

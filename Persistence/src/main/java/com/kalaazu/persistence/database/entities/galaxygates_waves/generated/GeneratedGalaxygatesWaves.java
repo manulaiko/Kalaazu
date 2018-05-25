@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.galaxygates_waves.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -27,7 +27,7 @@ public interface GeneratedGalaxygatesWaves {
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
      * obtained using the {@link GalaxygatesWaves#getId()} method.
      */
-    ByteField<GalaxygatesWaves, Byte>                 ID      = ByteField.create(
+    ByteField<GalaxygatesWaves, Byte> ID = ByteField.create(
             Identifier.ID,
             GalaxygatesWaves::getId,
             GalaxygatesWaves::setId,
@@ -52,7 +52,7 @@ public interface GeneratedGalaxygatesWaves {
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
      * obtained using the {@link GalaxygatesWaves#getSeconds()} method.
      */
-    ByteField<GalaxygatesWaves, Byte>                 SECONDS = ByteField.create(
+    ByteField<GalaxygatesWaves, Byte> SECONDS = ByteField.create(
             Identifier.SECONDS,
             GalaxygatesWaves::getSeconds,
             GalaxygatesWaves::setSeconds,
@@ -64,7 +64,7 @@ public interface GeneratedGalaxygatesWaves {
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
      * obtained using the {@link GalaxygatesWaves#getNpcs()} method.
      */
-    ByteField<GalaxygatesWaves, Byte>                 NPCS    = ByteField.create(
+    ByteField<GalaxygatesWaves, Byte> NPCS = ByteField.create(
             Identifier.NPCS,
             GalaxygatesWaves::getNpcs,
             GalaxygatesWaves::setNpcs,
@@ -162,7 +162,7 @@ public interface GeneratedGalaxygatesWaves {
         SECONDS("seconds"),
         NPCS("npcs");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesWaves> tableIdentifier;
 

@@ -30,7 +30,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link GalaxygatesProbabilities#getId()}
      * method.
      */
-    ByteField<GalaxygatesProbabilities, Byte>                        ID             = ByteField.create(
+    ByteField<GalaxygatesProbabilities, Byte> ID = ByteField.create(
             Identifier.ID,
             GalaxygatesProbabilities::getId,
             GalaxygatesProbabilities::setId,
@@ -57,7 +57,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link GalaxygatesProbabilities#getType()}
      * method.
      */
-    ByteField<GalaxygatesProbabilities, Byte>                        TYPE           = ByteField.create(
+    EnumField<GalaxygatesProbabilities, Byte, GalaxyGateProbabilityType> TYPE = EnumField.create(
             Identifier.TYPE,
             GalaxygatesProbabilities::getType,
             GalaxygatesProbabilities::setType,
@@ -70,7 +70,7 @@ public interface GeneratedGalaxygatesProbabilities {
      * can be obtained using the {@link
      * GalaxygatesProbabilities#getProbability()} method.
      */
-    DoubleField<GalaxygatesProbabilities, Double>                    PROBABILITY    = DoubleField.create(
+    DoubleField<GalaxygatesProbabilities, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
             GalaxygatesProbabilities::getProbability,
             GalaxygatesProbabilities::setProbability,
@@ -173,7 +173,7 @@ public interface GeneratedGalaxygatesProbabilities {
         TYPE("type"),
         PROBABILITY("probability");
 
-        private final String                                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesProbabilities> tableIdentifier;
 

@@ -2,8 +2,9 @@ package com.kalaazu.persistence.database.entities.galaxygates_spins.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesSpins;
 import com.kalaazu.persistence.database.entities.Items;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.kalaazu.persistence.database.mappers.GalaxyGateProbabilityType;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,15 +21,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedGalaxygatesSpinsImpl implements GalaxygatesSpins {
 
-    private byte   id;
+    private byte id;
 
     private byte   type;
 
     private double probability;
 
-    private short  itemsId;
+    private short itemsId;
 
-    private short  amount;
+    private short amount;
 
     protected GeneratedGalaxygatesSpinsImpl() {
     }

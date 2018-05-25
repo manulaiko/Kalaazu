@@ -2,12 +2,12 @@ package com.kalaazu.persistence.database.entities.clans_roles_permissions.genera
 
 import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.ClansRolesPermissions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -33,7 +33,7 @@ public interface GeneratedClansRolesPermissions {
      * This Field corresponds to the {@link ClansRolesPermissions} field that
      * can be obtained using the {@link ClansRolesPermissions#getId()} method.
      */
-    IntField<ClansRolesPermissions, Integer>                       ID             = IntField.create(
+    IntField<ClansRolesPermissions, Integer> ID = IntField.create(
             Identifier.ID,
             ClansRolesPermissions::getId,
             ClansRolesPermissions::setId,
@@ -60,7 +60,7 @@ public interface GeneratedClansRolesPermissions {
      * can be obtained using the {@link
      * ClansRolesPermissions#getPermissionsId()} method.
      */
-    ByteForeignKeyField<ClansRolesPermissions, Byte, Permissions>  PERMISSIONS_ID = ByteForeignKeyField.create(
+    ByteForeignKeyField<ClansRolesPermissions, Byte, Permissions> PERMISSIONS_ID = ByteForeignKeyField.create(
             Identifier.PERMISSIONS_ID,
             ClansRolesPermissions::getPermissionsId,
             ClansRolesPermissions::setPermissionsId,
@@ -187,7 +187,7 @@ public interface GeneratedClansRolesPermissions {
         PERMISSIONS_ID("permissions_id"),
         IS_ENABLED("is_enabled");
 
-        private final String                                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansRolesPermissions> tableIdentifier;
 

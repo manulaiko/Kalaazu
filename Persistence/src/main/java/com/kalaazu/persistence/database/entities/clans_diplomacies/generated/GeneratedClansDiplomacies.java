@@ -33,7 +33,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getId()} method.
      */
-    IntField<ClansDiplomacies, Integer>                     ID            = IntField.create(
+    IntField<ClansDiplomacies, Integer> ID = IntField.create(
             Identifier.ID,
             ClansDiplomacies::getId,
             ClansDiplomacies::setId,
@@ -45,7 +45,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getFromClansId()} method.
      */
-    IntForeignKeyField<ClansDiplomacies, Integer, Clans>    FROM_CLANS_ID = IntForeignKeyField.create(
+    IntForeignKeyField<ClansDiplomacies, Integer, Clans> FROM_CLANS_ID = IntForeignKeyField.create(
             Identifier.FROM_CLANS_ID,
             ClansDiplomacies::getFromClansId,
             ClansDiplomacies::setFromClansId,
@@ -58,7 +58,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getToClansId()} method.
      */
-    IntForeignKeyField<ClansDiplomacies, Integer, Clans>    TO_CLANS_ID   = IntForeignKeyField.create(
+    IntForeignKeyField<ClansDiplomacies, Integer, Clans> TO_CLANS_ID = IntForeignKeyField.create(
             Identifier.TO_CLANS_ID,
             ClansDiplomacies::getToClansId,
             ClansDiplomacies::setToClansId,
@@ -71,7 +71,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getDate()} method.
      */
-    ComparableField<ClansDiplomacies, Timestamp, Timestamp> DATE          = ComparableField.create(
+    ComparableField<ClansDiplomacies, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansDiplomacies::getDate,
             ClansDiplomacies::setDate,
@@ -83,7 +83,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getExpires()} method.
      */
-    ComparableField<ClansDiplomacies, Timestamp, Timestamp> EXPIRES       = ComparableField.create(
+    ComparableField<ClansDiplomacies, Timestamp, Timestamp> EXPIRES = ComparableField.create(
             Identifier.EXPIRES,
             o -> OptionalUtil.unwrap(o.getExpires()),
             ClansDiplomacies::setExpires,
@@ -95,7 +95,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getStatus()} method.
      */
-    ByteField<ClansDiplomacies, Byte>                       STATUS        = ByteField.create(
+    EnumField<ClansDiplomacies, Byte, DiplomacyStatus> STATUS = EnumField.create(
             Identifier.STATUS,
             ClansDiplomacies::getStatus,
             ClansDiplomacies::setStatus,
@@ -107,7 +107,7 @@ public interface GeneratedClansDiplomacies {
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
      * obtained using the {@link ClansDiplomacies#getType()} method.
      */
-    ByteField<ClansDiplomacies, Byte>                       TYPE          = ByteField.create(
+    EnumField<ClansDiplomacies, Byte, DiplomacyType> TYPE = EnumField.create(
             Identifier.TYPE,
             ClansDiplomacies::getType,
             ClansDiplomacies::setType,
@@ -276,7 +276,7 @@ public interface GeneratedClansDiplomacies {
         STATUS("status"),
         TYPE("type");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansDiplomacies> tableIdentifier;
 

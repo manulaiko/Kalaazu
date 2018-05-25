@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.techfactory_costs.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.TechfactoryCosts;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -30,7 +30,7 @@ public interface GeneratedTechfactoryCosts {
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
      * obtained using the {@link TechfactoryCosts#getId()} method.
      */
-    ByteField<TechfactoryCosts, Byte>                             ID                   = ByteField.create(
+    ByteField<TechfactoryCosts, Byte> ID = ByteField.create(
             Identifier.ID,
             TechfactoryCosts::getId,
             TechfactoryCosts::setId,
@@ -56,7 +56,7 @@ public interface GeneratedTechfactoryCosts {
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
      * obtained using the {@link TechfactoryCosts#getItemsId()} method.
      */
-    ShortForeignKeyField<TechfactoryCosts, Short, Items>          ITEMS_ID             = ShortForeignKeyField.create(
+    ShortForeignKeyField<TechfactoryCosts, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             TechfactoryCosts::getItemsId,
             TechfactoryCosts::setItemsId,
@@ -69,7 +69,7 @@ public interface GeneratedTechfactoryCosts {
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
      * obtained using the {@link TechfactoryCosts#getAmount()} method.
      */
-    IntField<TechfactoryCosts, Integer>                           AMOUNT               = IntField.create(
+    IntField<TechfactoryCosts, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
             TechfactoryCosts::getAmount,
             TechfactoryCosts::setAmount,
@@ -180,7 +180,7 @@ public interface GeneratedTechfactoryCosts {
         ITEMS_ID("items_id"),
         AMOUNT("amount");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<TechfactoryCosts> tableIdentifier;
 

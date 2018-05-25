@@ -31,7 +31,7 @@ public interface GeneratedTradeItems {
      * This Field corresponds to the {@link TradeItems} field that can be
      * obtained using the {@link TradeItems#getId()} method.
      */
-    ShortField<TradeItems, Short>                                     ID          = ShortField.create(
+    ShortField<TradeItems, Short> ID = ShortField.create(
             Identifier.ID,
             TradeItems::getId,
             TradeItems::setId,
@@ -43,7 +43,7 @@ public interface GeneratedTradeItems {
      * This Field corresponds to the {@link TradeItems} field that can be
      * obtained using the {@link TradeItems#getItemsId()} method.
      */
-    ShortForeignKeyField<TradeItems, Short, Items>                    ITEMS_ID    = ShortForeignKeyField.create(
+    ShortForeignKeyField<TradeItems, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             TradeItems::getItemsId,
             TradeItems::setItemsId,
@@ -69,7 +69,7 @@ public interface GeneratedTradeItems {
      * This Field corresponds to the {@link TradeItems} field that can be
      * obtained using the {@link TradeItems#getPrice()} method.
      */
-    IntField<TradeItems, Integer>                                     PRICE       = IntField.create(
+    IntField<TradeItems, Integer> PRICE = IntField.create(
             Identifier.PRICE,
             TradeItems::getPrice,
             TradeItems::setPrice,
@@ -81,7 +81,7 @@ public interface GeneratedTradeItems {
      * This Field corresponds to the {@link TradeItems} field that can be
      * obtained using the {@link TradeItems#getType()} method.
      */
-    ByteField<TradeItems, Byte>                                       TYPE        = ByteField.create(
+    EnumField<TradeItems, Byte, TradeType> TYPE = EnumField.create(
             Identifier.TYPE,
             TradeItems::getType,
             TradeItems::setType,
@@ -208,7 +208,7 @@ public interface GeneratedTradeItems {
         PRICE("price"),
         TYPE("type");
 
-        private final String                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<TradeItems> tableIdentifier;
 

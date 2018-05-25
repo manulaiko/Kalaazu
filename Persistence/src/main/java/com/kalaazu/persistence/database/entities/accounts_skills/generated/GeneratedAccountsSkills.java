@@ -1,13 +1,9 @@
 package com.kalaazu.persistence.database.entities.accounts_skills.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsSkills;
-import com.kalaazu.persistence.database.entities.SkilltreeLevels;
-import com.kalaazu.persistence.database.entities.SkilltreeSkills;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -31,7 +27,7 @@ public interface GeneratedAccountsSkills {
      * This Field corresponds to the {@link AccountsSkills} field that can be
      * obtained using the {@link AccountsSkills#getId()} method.
      */
-    IntField<AccountsSkills, Integer>                            ID                  = IntField.create(
+    IntField<AccountsSkills, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsSkills::getId,
             AccountsSkills::setId,
@@ -43,7 +39,7 @@ public interface GeneratedAccountsSkills {
      * This Field corresponds to the {@link AccountsSkills} field that can be
      * obtained using the {@link AccountsSkills#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsSkills, Integer, Accounts>        ACCOUNTS_ID         = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsSkills, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsSkills::getAccountsId,
             AccountsSkills::setAccountsId,
@@ -56,7 +52,7 @@ public interface GeneratedAccountsSkills {
      * This Field corresponds to the {@link AccountsSkills} field that can be
      * obtained using the {@link AccountsSkills#getSkilltreeSkillsId()} method.
      */
-    ByteForeignKeyField<AccountsSkills, Byte, SkilltreeSkills>   SKILLTREE_SKILLS_ID = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsSkills, Byte, SkilltreeSkills> SKILLTREE_SKILLS_ID = ByteForeignKeyField.create(
             Identifier.SKILLTREE_SKILLS_ID,
             AccountsSkills::getSkilltreeSkillsId,
             AccountsSkills::setSkilltreeSkillsId,
@@ -195,7 +191,7 @@ public interface GeneratedAccountsSkills {
         SKILLTREE_SKILLS_ID("skilltree_skills_id"),
         SKILLTREE_LEVELS_ID("skilltree_levels_id");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsSkills> tableIdentifier;
 

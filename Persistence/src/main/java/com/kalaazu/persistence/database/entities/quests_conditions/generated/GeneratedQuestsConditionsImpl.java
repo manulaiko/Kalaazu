@@ -23,15 +23,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedQuestsConditionsImpl implements QuestsConditions {
 
-    private int     id;
+    private int id;
 
     private Integer questsConditionsId;
 
-    private short   questsId;
+    private short questsId;
 
     private byte    type;
 
-    private String  value;
+    private String value;
 
     protected GeneratedQuestsConditionsImpl() {
     }

@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.rewards.generated;
 
 import com.kalaazu.persistence.database.entities.Items;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -22,11 +22,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedRewardsImpl implements Rewards {
 
-    private short  id;
+    private short id;
 
-    private short  itemsId;
+    private short itemsId;
 
-    private int    amount;
+    private int amount;
 
     private double probability;
 

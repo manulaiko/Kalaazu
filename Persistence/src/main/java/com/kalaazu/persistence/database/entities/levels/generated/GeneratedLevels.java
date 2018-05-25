@@ -24,7 +24,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getId()} method.
      */
-    ByteField<Levels, Byte>     ID      = ByteField.create(
+    ByteField<Levels, Byte> ID = ByteField.create(
             Identifier.ID,
             Levels::getId,
             Levels::setId,
@@ -36,7 +36,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getAccount()} method.
      */
-    LongField<Levels, Long>     ACCOUNT = LongField.create(
+    LongField<Levels, Long> ACCOUNT = LongField.create(
             Identifier.ACCOUNT,
             Levels::getAccount,
             Levels::setAccount,
@@ -48,7 +48,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getDrone()} method.
      */
-    ShortField<Levels, Short>   DRONE   = ShortField.create(
+    ShortField<Levels, Short> DRONE = ShortField.create(
             Identifier.DRONE,
             Levels::getDrone,
             Levels::setDrone,
@@ -60,7 +60,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getPet()} method.
      */
-    IntField<Levels, Integer>   PET     = IntField.create(
+    IntField<Levels, Integer> PET = IntField.create(
             Identifier.PET,
             Levels::getPet,
             Levels::setPet,
@@ -72,7 +72,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getDamage()} method.
      */
-    DoubleField<Levels, Double> DAMAGE  = DoubleField.create(
+    DoubleField<Levels, Double> DAMAGE = DoubleField.create(
             Identifier.DAMAGE,
             Levels::getDamage,
             Levels::setDamage,
@@ -84,7 +84,7 @@ public interface GeneratedLevels {
      * This Field corresponds to the {@link Levels} field that can be obtained
      * using the {@link Levels#getShield()} method.
      */
-    DoubleField<Levels, Double> SHIELD  = DoubleField.create(
+    DoubleField<Levels, Double> SHIELD = DoubleField.create(
             Identifier.SHIELD,
             Levels::getShield,
             Levels::setShield,
@@ -209,7 +209,7 @@ public interface GeneratedLevels {
         DAMAGE("damage"),
         SHIELD("shield");
 
-        private final String                  columnId;
+        private final String columnName;
 
         private final TableIdentifier<Levels> tableIdentifier;
 

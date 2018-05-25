@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.galaxygates_stages.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -22,9 +22,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedGalaxygatesStagesImpl implements GalaxygatesStages {
 
-    private int    id;
+    private int id;
 
-    private byte   galaxygatesWavesId;
+    private byte galaxygatesWavesId;
 
     private String comment;
 

@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.g
 
 import com.kalaazu.persistence.database.entities.InvitationCodes;
 import com.kalaazu.persistence.database.entities.InvitationCodesRedeemLogs;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -21,11 +21,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedInvitationCodesRedeemLogsImpl implements InvitationCodesRedeemLogs {
 
-    private int       id;
+    private int id;
 
-    private short     invitationCodesId;
+    private short invitationCodesId;
 
-    private Object    ip;
+    private byte[] ip;
 
     private Timestamp date;
 

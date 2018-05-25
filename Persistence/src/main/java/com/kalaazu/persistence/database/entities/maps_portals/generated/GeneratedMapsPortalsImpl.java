@@ -1,9 +1,10 @@
 package com.kalaazu.persistence.database.entities.maps_portals.generated;
 
+import com.kalaazu.math.Vector2;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsPortals;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;

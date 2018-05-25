@@ -20,9 +20,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsBanksImpl implements AccountsBanks {
 
-    private int  id;
+    private int id;
 
-    private int  accountsId;
+    private int accountsId;
 
     private long credits;
 

@@ -18,11 +18,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedInvitationCodesImpl implements InvitationCodes {
 
-    private short  id;
+    private short id;
 
     private String code;
 
-    private byte   limit;
+    private byte limit;
 
     protected GeneratedInvitationCodesImpl() {
     }

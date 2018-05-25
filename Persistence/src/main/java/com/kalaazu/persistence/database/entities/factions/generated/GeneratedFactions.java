@@ -26,7 +26,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getId()} method.
      */
-    ByteField<Factions, Byte>                 ID                 = ByteField.create(
+    ByteField<Factions, Byte> ID = ByteField.create(
             Identifier.ID,
             Factions::getId,
             Factions::setId,
@@ -38,7 +38,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getName()} method.
      */
-    StringField<Factions, String>             NAME               = StringField.create(
+    StringField<Factions, String> NAME = StringField.create(
             Identifier.NAME,
             Factions::getName,
             Factions::setName,
@@ -50,7 +50,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getTag()} method.
      */
-    StringField<Factions, String>             TAG                = StringField.create(
+    StringField<Factions, String> TAG = StringField.create(
             Identifier.TAG,
             Factions::getTag,
             Factions::setTag,
@@ -62,7 +62,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getDescription()} method.
      */
-    StringField<Factions, String>             DESCRIPTION        = StringField.create(
+    StringField<Factions, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
             Factions::getDescription,
             Factions::setDescription,
@@ -74,7 +74,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getIsPublic()} method.
      */
-    IntField<Factions, Integer>               IS_PUBLIC          = IntField.create(
+    BooleanField<Factions, Integer> IS_PUBLIC = BooleanField.create(
             Identifier.IS_PUBLIC,
             Factions::getIsPublic,
             Factions::setIsPublic,
@@ -86,7 +86,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getLowMapsId()} method.
      */
-    ByteForeignKeyField<Factions, Byte, Maps> LOW_MAPS_ID        = ByteForeignKeyField.create(
+    ByteForeignKeyField<Factions, Byte, Maps> LOW_MAPS_ID = ByteForeignKeyField.create(
             Identifier.LOW_MAPS_ID,
             Factions::getLowMapsId,
             Factions::setLowMapsId,
@@ -99,7 +99,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getLowMapsPosition()} method.
      */
-    LongField<Factions, Long>                 LOW_MAPS_POSITION  = LongField.create(
+    ReferenceField<Factions, Long, Vector2> LOW_MAPS_POSITION = ReferenceField.create(
             Identifier.LOW_MAPS_POSITION,
             Factions::getLowMapsPosition,
             Factions::setLowMapsPosition,
@@ -111,7 +111,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getHighMapsId()} method.
      */
-    ByteForeignKeyField<Factions, Byte, Maps> HIGH_MAPS_ID       = ByteForeignKeyField.create(
+    ByteForeignKeyField<Factions, Byte, Maps> HIGH_MAPS_ID = ByteForeignKeyField.create(
             Identifier.HIGH_MAPS_ID,
             Factions::getHighMapsId,
             Factions::setHighMapsId,
@@ -124,7 +124,7 @@ public interface GeneratedFactions {
      * This Field corresponds to the {@link Factions} field that can be obtained
      * using the {@link Factions#getHighMapsPosition()} method.
      */
-    LongField<Factions, Long>                 HIGH_MAPS_POSITION = LongField.create(
+    ReferenceField<Factions, Long, Vector2> HIGH_MAPS_POSITION = ReferenceField.create(
             Identifier.HIGH_MAPS_POSITION,
             Factions::getHighMapsPosition,
             Factions::setHighMapsPosition,
@@ -330,7 +330,7 @@ public interface GeneratedFactions {
         HIGH_MAPS_ID("high_maps_id"),
         HIGH_MAPS_POSITION("high_maps_position");
 
-        private final String                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<Factions> tableIdentifier;
 

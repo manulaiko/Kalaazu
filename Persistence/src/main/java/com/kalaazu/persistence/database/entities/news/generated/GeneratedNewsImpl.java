@@ -19,17 +19,17 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedNewsImpl implements News {
 
-    private short     id;
+    private short id;
 
     private Timestamp date;
 
-    private String    image;
+    private String image;
 
-    private String    title;
+    private String title;
 
-    private String    teaser;
+    private String teaser;
 
-    private String    text;
+    private String text;
 
     protected GeneratedNewsImpl() {
     }

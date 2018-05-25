@@ -25,6 +25,8 @@ public abstract class GeneratedInvitationCodesRedeemLogsSqlAdapter implements Sq
 
     private final TableIdentifier<InvitationCodesRedeemLogs> tableIdentifier;
 
+    private SqlTypeMapperHelper<Object, byte[]> ipHelper;
+
     protected GeneratedInvitationCodesRedeemLogsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "invitation_codes_redeem_logs");
     }

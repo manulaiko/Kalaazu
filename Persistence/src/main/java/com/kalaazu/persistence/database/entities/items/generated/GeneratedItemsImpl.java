@@ -18,7 +18,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedItemsImpl implements Items {
 
-    private short  id;
+    private short id;
 
     private String name;
 
@@ -26,15 +26,15 @@ public abstract class GeneratedItemsImpl implements Items {
 
     private String description;
 
-    private int    price;
+    private int price;
 
-    private byte   type;
+    private ItemType type;
 
-    private int    isElite;
+    private boolean isElite;
 
-    private int    isEvent;
+    private boolean isEvent;
 
-    private int    isBuyable;
+    private boolean isBuyable;
 
     protected GeneratedItemsImpl() {
     }

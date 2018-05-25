@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.galaxygates_spawns.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -29,7 +29,7 @@ public interface GeneratedGalaxygatesSpawns {
      * This Field corresponds to the {@link GalaxygatesSpawns} field that can be
      * obtained using the {@link GalaxygatesSpawns#getId()} method.
      */
-    IntField<GalaxygatesSpawns, Integer>               ID      = IntField.create(
+    IntField<GalaxygatesSpawns, Integer> ID = IntField.create(
             Identifier.ID,
             GalaxygatesSpawns::getId,
             GalaxygatesSpawns::setId,
@@ -54,7 +54,7 @@ public interface GeneratedGalaxygatesSpawns {
      * This Field corresponds to the {@link GalaxygatesSpawns} field that can be
      * obtained using the {@link GalaxygatesSpawns#getAmount()} method.
      */
-    ByteField<GalaxygatesSpawns, Byte>                 AMOUNT  = ByteField.create(
+    ByteField<GalaxygatesSpawns, Byte> AMOUNT = ByteField.create(
             Identifier.AMOUNT,
             GalaxygatesSpawns::getAmount,
             GalaxygatesSpawns::setAmount,
@@ -134,7 +134,7 @@ public interface GeneratedGalaxygatesSpawns {
         NPCS_ID("npcs_id"),
         AMOUNT("amount");
 
-        private final String                             columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesSpawns> tableIdentifier;
 

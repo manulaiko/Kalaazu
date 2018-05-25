@@ -24,6 +24,12 @@ public abstract class GeneratedFactionsSqlAdapter implements SqlAdapter<Factions
 
     private final TableIdentifier<Factions> tableIdentifier;
 
+    private SqlTypeMapperHelper<Integer, Boolean> isPublicHelper;
+
+    private SqlTypeMapperHelper<Long, Vector2> lowMapsPositionHelper;
+
+    private SqlTypeMapperHelper<Long, Vector2> highMapsPositionHelper;
+
     protected GeneratedFactionsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "factions");
     }

@@ -1,5 +1,6 @@
 package com.kalaazu.persistence.database.entities.moderators_roles_permissions.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.kalaazu.persistence.database.entities.ModeratorsRolesPermissions;
 import com.kalaazu.persistence.database.entities.Permissions;
@@ -7,7 +8,6 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.function.OptionalBoolean;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.BooleanField;
 import com.speedment.runtime.field.ByteField;
@@ -37,7 +37,7 @@ public interface GeneratedModeratorsRolesPermissions {
      * that can be obtained using the {@link ModeratorsRolesPermissions#getId()}
      * method.
      */
-    ByteField<ModeratorsRolesPermissions, Byte>                            ID                  = ByteField.create(
+    ByteField<ModeratorsRolesPermissions, Byte> ID = ByteField.create(
             Identifier.ID,
             ModeratorsRolesPermissions::getId,
             ModeratorsRolesPermissions::setId,
@@ -64,7 +64,7 @@ public interface GeneratedModeratorsRolesPermissions {
      * that can be obtained using the {@link
      * ModeratorsRolesPermissions#getPermissionsId()} method.
      */
-    ByteForeignKeyField<ModeratorsRolesPermissions, Byte, Permissions>     PERMISSIONS_ID      = ByteForeignKeyField.create(
+    ByteForeignKeyField<ModeratorsRolesPermissions, Byte, Permissions> PERMISSIONS_ID = ByteForeignKeyField.create(
             Identifier.PERMISSIONS_ID,
             ModeratorsRolesPermissions::getPermissionsId,
             ModeratorsRolesPermissions::setPermissionsId,
@@ -193,7 +193,7 @@ public interface GeneratedModeratorsRolesPermissions {
         PERMISSIONS_ID("permissions_id"),
         IS_ENABLED("is_enabled");
 
-        private final String                                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<ModeratorsRolesPermissions> tableIdentifier;
 

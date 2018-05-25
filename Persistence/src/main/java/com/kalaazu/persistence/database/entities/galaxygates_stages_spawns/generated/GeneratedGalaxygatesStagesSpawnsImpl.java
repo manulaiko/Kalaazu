@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.gene
 import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
 import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;

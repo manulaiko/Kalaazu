@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.maps_npcs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsNpcs;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;

@@ -1,6 +1,5 @@
 package com.kalaazu.persistence;
 
-import com.kalaazu.eventsystem.Event;
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.eventsystem.EventListener;
 import io.vertx.core.AbstractVerticle;

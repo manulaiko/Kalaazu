@@ -1,9 +1,8 @@
 package com.kalaazu.persistence.database.entities.maps_portals.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.MapsPortals;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

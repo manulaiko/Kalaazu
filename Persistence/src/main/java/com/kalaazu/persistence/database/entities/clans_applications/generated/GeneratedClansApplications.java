@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.clans_applications.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansApplications;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -33,7 +33,7 @@ public interface GeneratedClansApplications {
      * This Field corresponds to the {@link ClansApplications} field that can be
      * obtained using the {@link ClansApplications#getId()} method.
      */
-    IntField<ClansApplications, Integer>                     ID          = IntField.create(
+    IntField<ClansApplications, Integer> ID = IntField.create(
             Identifier.ID,
             ClansApplications::getId,
             ClansApplications::setId,
@@ -45,7 +45,7 @@ public interface GeneratedClansApplications {
      * This Field corresponds to the {@link ClansApplications} field that can be
      * obtained using the {@link ClansApplications#getClansId()} method.
      */
-    IntForeignKeyField<ClansApplications, Integer, Clans>    CLANS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<ClansApplications, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansApplications::getClansId,
             ClansApplications::setClansId,
@@ -71,7 +71,7 @@ public interface GeneratedClansApplications {
      * This Field corresponds to the {@link ClansApplications} field that can be
      * obtained using the {@link ClansApplications#getDate()} method.
      */
-    ComparableField<ClansApplications, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<ClansApplications, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansApplications::getDate,
             ClansApplications::setDate,
@@ -83,7 +83,7 @@ public interface GeneratedClansApplications {
      * This Field corresponds to the {@link ClansApplications} field that can be
      * obtained using the {@link ClansApplications#getText()} method.
      */
-    StringField<ClansApplications, String>                   TEXT        = StringField.create(
+    StringField<ClansApplications, String> TEXT = StringField.create(
             Identifier.TEXT,
             ClansApplications::getText,
             ClansApplications::setText,
@@ -212,7 +212,7 @@ public interface GeneratedClansApplications {
         DATE("date"),
         TEXT("text");
 
-        private final String                             columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansApplications> tableIdentifier;
 

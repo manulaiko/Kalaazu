@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.accounts_history.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsHistory;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -28,7 +28,7 @@ public interface GeneratedAccountsHistory {
      * This Field corresponds to the {@link AccountsHistory} field that can be
      * obtained using the {@link AccountsHistory#getId()} method.
      */
-    IntField<AccountsHistory, Integer>                     ID          = IntField.create(
+    IntField<AccountsHistory, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsHistory::getId,
             AccountsHistory::setId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsHistory {
      * This Field corresponds to the {@link AccountsHistory} field that can be
      * obtained using the {@link AccountsHistory#getType()} method.
      */
-    ByteField<AccountsHistory, Byte>                       TYPE        = ByteField.create(
+    ByteField<AccountsHistory, Byte> TYPE = ByteField.create(
             Identifier.TYPE,
             AccountsHistory::getType,
             AccountsHistory::setType,
@@ -65,7 +65,7 @@ public interface GeneratedAccountsHistory {
      * This Field corresponds to the {@link AccountsHistory} field that can be
      * obtained using the {@link AccountsHistory#getMessage()} method.
      */
-    StringField<AccountsHistory, String>                   MESSAGE     = StringField.create(
+    StringField<AccountsHistory, String> MESSAGE = StringField.create(
             Identifier.MESSAGE,
             AccountsHistory::getMessage,
             AccountsHistory::setMessage,
@@ -77,7 +77,7 @@ public interface GeneratedAccountsHistory {
      * This Field corresponds to the {@link AccountsHistory} field that can be
      * obtained using the {@link AccountsHistory#getAmount()} method.
      */
-    IntField<AccountsHistory, Integer>                     AMOUNT      = IntField.create(
+    IntField<AccountsHistory, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
             AccountsHistory::getAmount,
             AccountsHistory::setAmount,
@@ -89,7 +89,7 @@ public interface GeneratedAccountsHistory {
      * This Field corresponds to the {@link AccountsHistory} field that can be
      * obtained using the {@link AccountsHistory#getDate()} method.
      */
-    ComparableField<AccountsHistory, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<AccountsHistory, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsHistory::getDate,
             AccountsHistory::setDate,
@@ -227,7 +227,7 @@ public interface GeneratedAccountsHistory {
         AMOUNT("amount"),
         DATE("date");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsHistory> tableIdentifier;
 

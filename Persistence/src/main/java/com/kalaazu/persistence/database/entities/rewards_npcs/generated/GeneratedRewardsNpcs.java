@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_npcs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsNpcs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -29,7 +29,7 @@ public interface GeneratedRewardsNpcs {
      * This Field corresponds to the {@link RewardsNpcs} field that can be
      * obtained using the {@link RewardsNpcs#getId()} method.
      */
-    ShortField<RewardsNpcs, Short>                    ID         = ShortField.create(
+    ShortField<RewardsNpcs, Short> ID = ShortField.create(
             Identifier.ID,
             RewardsNpcs::getId,
             RewardsNpcs::setId,
@@ -41,7 +41,7 @@ public interface GeneratedRewardsNpcs {
      * This Field corresponds to the {@link RewardsNpcs} field that can be
      * obtained using the {@link RewardsNpcs#getNpcsId()} method.
      */
-    ByteForeignKeyField<RewardsNpcs, Byte, Npcs>      NPCS_ID    = ByteForeignKeyField.create(
+    ByteForeignKeyField<RewardsNpcs, Byte, Npcs> NPCS_ID = ByteForeignKeyField.create(
             Identifier.NPCS_ID,
             RewardsNpcs::getNpcsId,
             RewardsNpcs::setNpcsId,
@@ -144,7 +144,7 @@ public interface GeneratedRewardsNpcs {
         NPCS_ID("npcs_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                       columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsNpcs> tableIdentifier;
 

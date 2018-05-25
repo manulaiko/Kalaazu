@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.levels_upgrades.generated;
 
 import com.kalaazu.persistence.database.entities.Levels;
 import com.kalaazu.persistence.database.entities.LevelsUpgrades;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -29,7 +29,7 @@ public interface GeneratedLevelsUpgrades {
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
      * obtained using the {@link LevelsUpgrades#getId()} method.
      */
-    IntField<LevelsUpgrades, Integer>                 ID          = IntField.create(
+    IntField<LevelsUpgrades, Integer> ID = IntField.create(
             Identifier.ID,
             LevelsUpgrades::getId,
             LevelsUpgrades::setId,
@@ -41,7 +41,7 @@ public interface GeneratedLevelsUpgrades {
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
      * obtained using the {@link LevelsUpgrades#getLevelsId()} method.
      */
-    ByteForeignKeyField<LevelsUpgrades, Byte, Levels> LEVELS_ID   = ByteForeignKeyField.create(
+    ByteForeignKeyField<LevelsUpgrades, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             LevelsUpgrades::getLevelsId,
             LevelsUpgrades::setLevelsId,
@@ -54,7 +54,7 @@ public interface GeneratedLevelsUpgrades {
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
      * obtained using the {@link LevelsUpgrades#getProbability()} method.
      */
-    ByteField<LevelsUpgrades, Byte>                   PROBABILITY = ByteField.create(
+    ByteField<LevelsUpgrades, Byte> PROBABILITY = ByteField.create(
             Identifier.PROBABILITY,
             LevelsUpgrades::getProbability,
             LevelsUpgrades::setProbability,
@@ -66,7 +66,7 @@ public interface GeneratedLevelsUpgrades {
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
      * obtained using the {@link LevelsUpgrades#getCredits()} method.
      */
-    IntField<LevelsUpgrades, Integer>                 CREDITS     = IntField.create(
+    IntField<LevelsUpgrades, Integer> CREDITS = IntField.create(
             Identifier.CREDITS,
             LevelsUpgrades::getCredits,
             LevelsUpgrades::setCredits,
@@ -78,7 +78,7 @@ public interface GeneratedLevelsUpgrades {
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
      * obtained using the {@link LevelsUpgrades#getUridium()} method.
      */
-    ShortField<LevelsUpgrades, Short>                 URIDIUM     = ShortField.create(
+    ShortField<LevelsUpgrades, Short> URIDIUM = ShortField.create(
             Identifier.URIDIUM,
             LevelsUpgrades::getUridium,
             LevelsUpgrades::setUridium,
@@ -197,7 +197,7 @@ public interface GeneratedLevelsUpgrades {
         CREDITS("credits"),
         URIDIUM("uridium");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<LevelsUpgrades> tableIdentifier;
 

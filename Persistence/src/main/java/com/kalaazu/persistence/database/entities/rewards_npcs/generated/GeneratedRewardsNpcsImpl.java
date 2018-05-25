@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.rewards_npcs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsNpcs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -23,7 +23,7 @@ public abstract class GeneratedRewardsNpcsImpl implements RewardsNpcs {
 
     private short id;
 
-    private byte  npcsId;
+    private byte npcsId;
 
     private short rewardsId;
 

@@ -32,7 +32,7 @@ public interface GeneratedAccountsQuests {
      * This Field corresponds to the {@link AccountsQuests} field that can be
      * obtained using the {@link AccountsQuests#getId()} method.
      */
-    IntField<AccountsQuests, Integer>                     ID           = IntField.create(
+    IntField<AccountsQuests, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsQuests::getId,
             AccountsQuests::setId,
@@ -44,7 +44,7 @@ public interface GeneratedAccountsQuests {
      * This Field corresponds to the {@link AccountsQuests} field that can be
      * obtained using the {@link AccountsQuests#getQuestsId()} method.
      */
-    ShortForeignKeyField<AccountsQuests, Short, Quests>   QUESTS_ID    = ShortForeignKeyField.create(
+    ShortForeignKeyField<AccountsQuests, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
             AccountsQuests::getQuestsId,
             AccountsQuests::setQuestsId,
@@ -57,7 +57,7 @@ public interface GeneratedAccountsQuests {
      * This Field corresponds to the {@link AccountsQuests} field that can be
      * obtained using the {@link AccountsQuests#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsQuests, Integer, Accounts> ACCOUNTS_ID  = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsQuests, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsQuests::getAccountsId,
             AccountsQuests::setAccountsId,
@@ -70,7 +70,7 @@ public interface GeneratedAccountsQuests {
      * This Field corresponds to the {@link AccountsQuests} field that can be
      * obtained using the {@link AccountsQuests#getIsCompleted()} method.
      */
-    IntField<AccountsQuests, Integer>                     IS_COMPLETED = IntField.create(
+    BooleanField<AccountsQuests, Integer> IS_COMPLETED = BooleanField.create(
             Identifier.IS_COMPLETED,
             AccountsQuests::getIsCompleted,
             AccountsQuests::setIsCompleted,
@@ -82,7 +82,7 @@ public interface GeneratedAccountsQuests {
      * This Field corresponds to the {@link AccountsQuests} field that can be
      * obtained using the {@link AccountsQuests#getDate()} method.
      */
-    ComparableField<AccountsQuests, Timestamp, Timestamp> DATE         = ComparableField.create(
+    ComparableField<AccountsQuests, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsQuests::getDate,
             AccountsQuests::setDate,
@@ -213,7 +213,7 @@ public interface GeneratedAccountsQuests {
         IS_COMPLETED("is_completed"),
         DATE("date");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsQuests> tableIdentifier;
 

@@ -26,6 +26,8 @@ public abstract class GeneratedClansSqlAdapter implements SqlAdapter<Clans> {
 
     private final TableIdentifier<Clans> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, ClanStatus> statusHelper;
+
     protected GeneratedClansSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "clans");
     }

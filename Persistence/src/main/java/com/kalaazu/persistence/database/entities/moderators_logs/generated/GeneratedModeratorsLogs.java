@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.moderators_logs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Moderators;
 import com.kalaazu.persistence.database.entities.ModeratorsLogs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
@@ -31,7 +31,7 @@ public interface GeneratedModeratorsLogs {
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
      * obtained using the {@link ModeratorsLogs#getId()} method.
      */
-    IntField<ModeratorsLogs, Integer>                     ID            = IntField.create(
+    IntField<ModeratorsLogs, Integer> ID = IntField.create(
             Identifier.ID,
             ModeratorsLogs::getId,
             ModeratorsLogs::setId,
@@ -56,7 +56,7 @@ public interface GeneratedModeratorsLogs {
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
      * obtained using the {@link ModeratorsLogs#getDate()} method.
      */
-    ComparableField<ModeratorsLogs, Timestamp, Timestamp> DATE          = ComparableField.create(
+    ComparableField<ModeratorsLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ModeratorsLogs::getDate,
             ModeratorsLogs::setDate,
@@ -68,7 +68,7 @@ public interface GeneratedModeratorsLogs {
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
      * obtained using the {@link ModeratorsLogs#getType()} method.
      */
-    StringField<ModeratorsLogs, String>                   TYPE          = StringField.create(
+    StringField<ModeratorsLogs, String> TYPE = StringField.create(
             Identifier.TYPE,
             ModeratorsLogs::getType,
             ModeratorsLogs::setType,
@@ -80,7 +80,7 @@ public interface GeneratedModeratorsLogs {
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
      * obtained using the {@link ModeratorsLogs#getText()} method.
      */
-    StringField<ModeratorsLogs, String>                   TEXT          = StringField.create(
+    StringField<ModeratorsLogs, String> TEXT = StringField.create(
             Identifier.TEXT,
             ModeratorsLogs::getText,
             ModeratorsLogs::setText,
@@ -198,7 +198,7 @@ public interface GeneratedModeratorsLogs {
         TYPE("type"),
         TEXT("text");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<ModeratorsLogs> tableIdentifier;
 

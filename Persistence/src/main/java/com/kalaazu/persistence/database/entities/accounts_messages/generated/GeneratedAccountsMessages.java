@@ -28,7 +28,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getId()} method.
      */
-    IntField<AccountsMessages, Integer>                     ID               = IntField.create(
+    IntField<AccountsMessages, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsMessages::getId,
             AccountsMessages::setId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getFromStatus()} method.
      */
-    ByteField<AccountsMessages, Byte>                       FROM_STATUS      = ByteField.create(
+    EnumField<AccountsMessages, Byte, MessageStatus> FROM_STATUS = EnumField.create(
             Identifier.FROM_STATUS,
             AccountsMessages::getFromStatus,
             AccountsMessages::setFromStatus,
@@ -65,7 +65,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getToAccountsId()} method.
      */
-    IntForeignKeyField<AccountsMessages, Integer, Accounts> TO_ACCOUNTS_ID   = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsMessages, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
             AccountsMessages::getToAccountsId,
             AccountsMessages::setToAccountsId,
@@ -78,7 +78,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getToStatus()} method.
      */
-    ByteField<AccountsMessages, Byte>                       TO_STATUS        = ByteField.create(
+    EnumField<AccountsMessages, Byte, MessageStatus> TO_STATUS = EnumField.create(
             Identifier.TO_STATUS,
             AccountsMessages::getToStatus,
             AccountsMessages::setToStatus,
@@ -90,7 +90,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getDate()} method.
      */
-    ComparableField<AccountsMessages, Timestamp, Timestamp> DATE             = ComparableField.create(
+    ComparableField<AccountsMessages, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsMessages::getDate,
             AccountsMessages::setDate,
@@ -102,7 +102,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getTitle()} method.
      */
-    StringField<AccountsMessages, String>                   TITLE            = StringField.create(
+    StringField<AccountsMessages, String> TITLE = StringField.create(
             Identifier.TITLE,
             AccountsMessages::getTitle,
             AccountsMessages::setTitle,
@@ -114,7 +114,7 @@ public interface GeneratedAccountsMessages {
      * This Field corresponds to the {@link AccountsMessages} field that can be
      * obtained using the {@link AccountsMessages#getText()} method.
      */
-    StringField<AccountsMessages, String>                   TEXT             = StringField.create(
+    StringField<AccountsMessages, String> TEXT = StringField.create(
             Identifier.TEXT,
             AccountsMessages::getText,
             AccountsMessages::setText,
@@ -305,7 +305,7 @@ public interface GeneratedAccountsMessages {
         TITLE("title"),
         TEXT("text");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsMessages> tableIdentifier;
 

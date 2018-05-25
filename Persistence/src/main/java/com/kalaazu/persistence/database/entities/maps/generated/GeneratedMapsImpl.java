@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.maps.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -22,17 +22,17 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedMapsImpl implements Maps {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
-    private Byte   factionsId;
+    private Byte factionsId;
 
     private int    isPvp;
 
     private int    isStarter;
 
-    private long   limits;
+    private long limits;
 
     protected GeneratedMapsImpl() {
     }

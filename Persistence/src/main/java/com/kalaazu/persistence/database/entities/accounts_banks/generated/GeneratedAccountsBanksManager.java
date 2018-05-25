@@ -1,9 +1,8 @@
 package com.kalaazu.persistence.database.entities.accounts_banks.generated;
 
-import com.kalaazu.persistence.database.entities.*;
-import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.config.identifier.TableIdentifier;
+import com.kalaazu.persistence.database.entities.AccountsBanks;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

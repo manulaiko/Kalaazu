@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.accounts_techfactories.generat
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsTechfactories;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,11 +20,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsTechfactoriesImpl implements AccountsTechfactories {
 
-    private int  id;
+    private int id;
 
-    private int  accountsId;
+    private int accountsId;
 
-    private int  slotUnlockPrice;
+    private int slotUnlockPrice;
 
     private byte slotUnlockFactor;
 

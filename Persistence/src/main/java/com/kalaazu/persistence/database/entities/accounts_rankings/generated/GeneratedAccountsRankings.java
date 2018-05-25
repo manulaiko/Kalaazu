@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.accounts_rankings.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsRankings;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.field.ShortField;
@@ -28,7 +28,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getId()} method.
      */
-    IntField<AccountsRankings, Integer>                     ID                  = IntField.create(
+    IntField<AccountsRankings, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsRankings::getId,
             AccountsRankings::setId,
@@ -40,7 +40,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsRankings, Integer, Accounts> ACCOUNTS_ID         = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsRankings, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsRankings::getAccountsId,
             AccountsRankings::setAccountsId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getPoints()} method.
      */
-    IntField<AccountsRankings, Integer>                     POINTS              = IntField.create(
+    IntField<AccountsRankings, Integer> POINTS = IntField.create(
             Identifier.POINTS,
             AccountsRankings::getPoints,
             AccountsRankings::setPoints,
@@ -65,7 +65,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getBestPoints()} method.
      */
-    IntField<AccountsRankings, Integer>                     BEST_POINTS         = IntField.create(
+    IntField<AccountsRankings, Integer> BEST_POINTS = IntField.create(
             Identifier.BEST_POINTS,
             AccountsRankings::getBestPoints,
             AccountsRankings::setBestPoints,
@@ -77,7 +77,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getDestroyedAllies()} method.
      */
-    ShortField<AccountsRankings, Short>                     DESTROYED_ALLIES    = ShortField.create(
+    ShortField<AccountsRankings, Short> DESTROYED_ALLIES = ShortField.create(
             Identifier.DESTROYED_ALLIES,
             AccountsRankings::getDestroyedAllies,
             AccountsRankings::setDestroyedAllies,
@@ -89,7 +89,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getDestroyedPhoenix()} method.
      */
-    ShortField<AccountsRankings, Short>                     DESTROYED_PHOENIX   = ShortField.create(
+    ShortField<AccountsRankings, Short> DESTROYED_PHOENIX = ShortField.create(
             Identifier.DESTROYED_PHOENIX,
             AccountsRankings::getDestroyedPhoenix,
             AccountsRankings::setDestroyedPhoenix,
@@ -101,7 +101,7 @@ public interface GeneratedAccountsRankings {
      * This Field corresponds to the {@link AccountsRankings} field that can be
      * obtained using the {@link AccountsRankings#getDestroyedTimes()} method.
      */
-    ShortField<AccountsRankings, Short>                     DESTROYED_TIMES     = ShortField.create(
+    ShortField<AccountsRankings, Short> DESTROYED_TIMES = ShortField.create(
             Identifier.DESTROYED_TIMES,
             AccountsRankings::getDestroyedTimes,
             AccountsRankings::setDestroyedTimes,
@@ -114,7 +114,7 @@ public interface GeneratedAccountsRankings {
      * obtained using the {@link AccountsRankings#getDestroyedRadiation()}
      * method.
      */
-    ShortField<AccountsRankings, Short>                     DESTROYED_RADIATION = ShortField.create(
+    ShortField<AccountsRankings, Short> DESTROYED_RADIATION = ShortField.create(
             Identifier.DESTROYED_RADIATION,
             AccountsRankings::getDestroyedRadiation,
             AccountsRankings::setDestroyedRadiation,
@@ -299,7 +299,7 @@ public interface GeneratedAccountsRankings {
         DESTROYED_TIMES("destroyed_times"),
         DESTROYED_RADIATION("destroyed_radiation");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsRankings> tableIdentifier;
 

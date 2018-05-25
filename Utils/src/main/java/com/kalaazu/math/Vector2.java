@@ -82,8 +82,8 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * @param l Packed long.
      */
     public Vector2(Long l) {
-        this.x = (float)(l >> 32);
-        this.y = (float)(l.intValue());
+        this.x = (float) (l >> 32);
+        this.y = (float) (l.intValue());
     }
 
     /**
@@ -92,7 +92,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * @return Vector as long.
      */
     public long toLong() {
-        return ((long)this.x << 32) | ((int)this.y & 0xffffffffL);
+        return ((long) this.x << 32) | ((int) this.y & 0xffffffffL);
     }
 
     @Override

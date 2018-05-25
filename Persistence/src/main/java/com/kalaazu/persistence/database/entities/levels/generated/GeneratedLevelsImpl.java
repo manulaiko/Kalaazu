@@ -18,13 +18,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedLevelsImpl implements Levels {
 
-    private byte   id;
+    private byte id;
 
-    private long   account;
+    private long account;
 
-    private short  drone;
+    private short drone;
 
-    private int    pet;
+    private int pet;
 
     private double damage;
 

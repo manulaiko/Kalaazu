@@ -2,9 +2,9 @@ package com.kalaazu.persistence.database.entities.accounts_techfactory_items.gen
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsTechfactoryItems;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.sql.Timestamp;
@@ -24,13 +24,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsTechfactoryItemsImpl implements AccountsTechfactoryItems {
 
-    private int       id;
+    private int id;
 
-    private int       accountsId;
+    private int accountsId;
 
-    private byte      techfactoryItemsId;
+    private byte techfactoryItemsId;
 
-    private short     amount;
+    private short amount;
 
     private Timestamp date;
 

@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="UTF-8"?><diagram program="umlet" version="13.3">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>252</x>
+      <y>0</y>
+      <w>405</w>
+      <h>198</h>
+    </coordinates>
+    <panel_attributes>cms::CMSBuilder
+--
+-eventManager: eventsystem::EventManager
+-persistence: persistence::Persistence
+-viewsPath: String
+-assetsPath: String
+-serverPort: int
+--
++setEventManager(eventsystem::eventManager): CMSBuilder
++setPersistence(persistence::Persistence(): CMSBuilder
++setViewsPath(String): CMSBuilder
++setAssetsPath(String): CMSBuilder
++setServerPort(int): CMSBuilder
++build(): CMS</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>261</x>
+      <y>261</y>
+      <w>378</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>cms::CMS
+--
+-server: cms.server::Server
+-eventManager: eventsystem::EventManager
+--
++CMS(eventsystem::EventManager, persistence::Persistence)
++initialize(String, String, int)
++start()
++stop()
++restart()
++isRunning(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>459</x>
+      <y>189</y>
+      <w>27</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>288</x>
+      <y>495</y>
+      <w>297</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>cms.server::Server
+--
+-viewsPath: String
+-assetsPath: String
+-port: int
+-handlers: List&lt;Triad&gt;
+--
++Server(String, String, int)
++initialize
++start()
++stop()
++isRunning(): boolean</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>414</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>306</y>
+      <w>153</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>cms.events::Listener
+--
+--
++initialize()</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>144</x>
+      <y>333</y>
+      <w>135</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>423</x>
+      <y>414</y>
+      <w>27</w>
+      <h>99</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1044</x>
+      <y>108</y>
+      <w>153</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>/cms.mvc::Component/
+--
+-triad: Triad
+--
++Component(Triad)
++getTriad(): Triad</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>729</x>
+      <y>279</y>
+      <w>297</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>cms.mvc::Controler
+--
+-eventManager: eventsystem::EventManager
+-persistence: persistence::Persistence
+--
++publish(eventsystem::Event)
++index(): HttpServerResponse</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>180</y>
+      <w>252</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>260.0;10.0;260.0;50.0;10.0;50.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>954</x>
+      <y>459</y>
+      <w>297</w>
+      <h>207</h>
+    </coordinates>
+    <panel_attributes>cms.mvc::Triad
+--
+-controller: Controller
+-model: Model
+-presenter: Presenter
+-children: List&lt;Triad&gt;
+-parent: Optional&lt;Triad&gt;
+-eventManager: eventsystem::EventManager
+-persistence: persistence::Persistence
+-context: RoutingContext
+--
++handle(RoutingContext context, boolean end)
++publish(eventsystem::Event)
++getPersistence(): persistence::Persistence
++getEndpoint(): String
++getViewLocation(String name): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1053</x>
+      <y>279</y>
+      <w>117</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>cms.vmc::Model</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1107</x>
+      <y>180</y>
+      <w>27</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1197</x>
+      <y>279</y>
+      <w>207</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>cms.mvc::Presenter
+--
+-theme: cms.mvc::Theme
+--
++getTheme(): Theme
++setTheme(Theme): Presenter
++render(String view): String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1125</x>
+      <y>180</y>
+      <w>198</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0;200.0;50.0;200.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1206</x>
+      <y>360</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;110.0;10.0;80.0;120.0;80.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1098</x>
+      <y>297</y>
+      <w>27</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;180.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>846</x>
+      <y>360</y>
+      <w>171</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>170.0;110.0;170.0;80.0;10.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1116</x>
+      <y>297</y>
+      <w>27</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>873</x>
+      <y>360</y>
+      <w>171</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0;170.0;60.0;170.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1179</x>
+      <y>360</y>
+      <w>126</w>
+      <h>117</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;120.0;60.0;10.0;60.0;10.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>576</x>
+      <y>576</y>
+      <w>396</w>
+      <h>27</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>420.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1215</x>
+      <y>630</y>
+      <w>81</w>
+      <h>81</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;40.0;10.0;70.0;70.0;70.0;70.0;10.0;40.0;10.0</additional_attributes>
+  </element>
+</diagram>

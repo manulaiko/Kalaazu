@@ -18,7 +18,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedPermissionsImpl implements Permissions {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 

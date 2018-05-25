@@ -18,9 +18,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedCollectablesImpl implements Collectables {
 
-    private byte   id;
+    private byte id;
 
-    private byte   gfx;
+    private byte gfx;
 
     private byte   type;
 

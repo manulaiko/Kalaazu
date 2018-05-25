@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.maps_stations.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsStations;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;

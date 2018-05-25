@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.skilltree_unlocks.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeUnlocks;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;

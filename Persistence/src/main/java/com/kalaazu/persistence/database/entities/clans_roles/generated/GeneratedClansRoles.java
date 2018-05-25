@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.clans_roles.generated;
 
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansRoles;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -29,7 +29,7 @@ public interface GeneratedClansRoles {
      * This Field corresponds to the {@link ClansRoles} field that can be
      * obtained using the {@link ClansRoles#getId()} method.
      */
-    IntField<ClansRoles, Integer>                  ID             = IntField.create(
+    IntField<ClansRoles, Integer> ID = IntField.create(
             Identifier.ID,
             ClansRoles::getId,
             ClansRoles::setId,
@@ -41,7 +41,7 @@ public interface GeneratedClansRoles {
      * This Field corresponds to the {@link ClansRoles} field that can be
      * obtained using the {@link ClansRoles#getName()} method.
      */
-    StringField<ClansRoles, String>                NAME           = StringField.create(
+    StringField<ClansRoles, String> NAME = StringField.create(
             Identifier.NAME,
             ClansRoles::getName,
             ClansRoles::setName,
@@ -53,7 +53,7 @@ public interface GeneratedClansRoles {
      * This Field corresponds to the {@link ClansRoles} field that can be
      * obtained using the {@link ClansRoles#getClansId()} method.
      */
-    IntForeignKeyField<ClansRoles, Integer, Clans> CLANS_ID       = IntForeignKeyField.create(
+    IntForeignKeyField<ClansRoles, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansRoles::getClansId,
             ClansRoles::setClansId,
@@ -66,7 +66,7 @@ public interface GeneratedClansRoles {
      * This Field corresponds to the {@link ClansRoles} field that can be
      * obtained using the {@link ClansRoles#getClansRolesId()} method.
      */
-    ComparableField<ClansRoles, Integer, Integer>  CLANS_ROLES_ID = ComparableField.create(
+    ComparableField<ClansRoles, Integer, Integer> CLANS_ROLES_ID = ComparableField.create(
             Identifier.CLANS_ROLES_ID,
             o -> OptionalUtil.unwrap(o.getClansRolesId()),
             ClansRoles::setClansRolesId,
@@ -78,7 +78,7 @@ public interface GeneratedClansRoles {
      * This Field corresponds to the {@link ClansRoles} field that can be
      * obtained using the {@link ClansRoles#getPriority()} method.
      */
-    ByteField<ClansRoles, Byte>                    PRIORITY       = ByteField.create(
+    ByteField<ClansRoles, Byte> PRIORITY = ByteField.create(
             Identifier.PRIORITY,
             ClansRoles::getPriority,
             ClansRoles::setPriority,
@@ -196,7 +196,7 @@ public interface GeneratedClansRoles {
         CLANS_ROLES_ID("clans_roles_id"),
         PRIORITY("priority");
 
-        private final String                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansRoles> tableIdentifier;
 

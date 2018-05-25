@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.users.generated;
 
 import com.kalaazu.persistence.database.entities.InvitationCodes;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Users;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.sql.Timestamp;
@@ -23,23 +23,23 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedUsersImpl implements Users {
 
-    private int       id;
+    private int id;
 
     private Timestamp date;
 
-    private Short     invitationCodesId;
+    private Short invitationCodesId;
 
-    private String    name;
+    private String name;
 
-    private String    password;
+    private String password;
 
-    private String    email;
+    private String email;
 
-    private String    emailVerificationCode;
+    private String emailVerificationCode;
 
     private Timestamp emailVerificationDate;
 
-    private Object    ip;
+    private byte[] ip;
 
     protected GeneratedUsersImpl() {
     }

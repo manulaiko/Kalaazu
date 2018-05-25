@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.clans_news.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansNews;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -32,7 +32,7 @@ public interface GeneratedClansNews {
      * This Field corresponds to the {@link ClansNews} field that can be
      * obtained using the {@link ClansNews#getId()} method.
      */
-    IntField<ClansNews, Integer>                     ID          = IntField.create(
+    IntField<ClansNews, Integer> ID = IntField.create(
             Identifier.ID,
             ClansNews::getId,
             ClansNews::setId,
@@ -57,7 +57,7 @@ public interface GeneratedClansNews {
      * This Field corresponds to the {@link ClansNews} field that can be
      * obtained using the {@link ClansNews#getClansId()} method.
      */
-    IntForeignKeyField<ClansNews, Integer, Clans>    CLANS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<ClansNews, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansNews::getClansId,
             ClansNews::setClansId,
@@ -70,7 +70,7 @@ public interface GeneratedClansNews {
      * This Field corresponds to the {@link ClansNews} field that can be
      * obtained using the {@link ClansNews#getDate()} method.
      */
-    ComparableField<ClansNews, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<ClansNews, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansNews::getDate,
             ClansNews::setDate,
@@ -82,7 +82,7 @@ public interface GeneratedClansNews {
      * This Field corresponds to the {@link ClansNews} field that can be
      * obtained using the {@link ClansNews#getText()} method.
      */
-    StringField<ClansNews, String>                   TEXT        = StringField.create(
+    StringField<ClansNews, String> TEXT = StringField.create(
             Identifier.TEXT,
             ClansNews::getText,
             ClansNews::setText,
@@ -209,7 +209,7 @@ public interface GeneratedClansNews {
         DATE("date"),
         TEXT("text");
 
-        private final String                     columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansNews> tableIdentifier;
 

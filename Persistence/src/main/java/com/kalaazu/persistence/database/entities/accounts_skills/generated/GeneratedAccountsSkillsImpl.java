@@ -1,11 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_skills.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsSkills;
-import com.kalaazu.persistence.database.entities.SkilltreeLevels;
-import com.kalaazu.persistence.database.entities.SkilltreeSkills;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -22,11 +18,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsSkillsImpl implements AccountsSkills {
 
-    private int   id;
+    private int id;
 
-    private int   accountsId;
+    private int accountsId;
 
-    private byte  skilltreeSkillsId;
+    private byte skilltreeSkillsId;
 
     private short skilltreeLevelsId;
 

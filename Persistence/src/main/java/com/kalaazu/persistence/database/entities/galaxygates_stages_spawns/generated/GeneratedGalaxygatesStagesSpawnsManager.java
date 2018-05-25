@@ -1,9 +1,8 @@
 package com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
-import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.field.Field;
 
 import java.util.List;

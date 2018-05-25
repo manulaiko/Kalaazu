@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.vouchers_redeem_logs.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.kalaazu.persistence.database.entities.VouchersRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -33,7 +33,7 @@ public interface GeneratedVouchersRedeemLogs {
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
      * be obtained using the {@link VouchersRedeemLogs#getId()} method.
      */
-    IntField<VouchersRedeemLogs, Integer>                     ID          = IntField.create(
+    IntField<VouchersRedeemLogs, Integer> ID = IntField.create(
             Identifier.ID,
             VouchersRedeemLogs::getId,
             VouchersRedeemLogs::setId,
@@ -71,7 +71,7 @@ public interface GeneratedVouchersRedeemLogs {
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
      * be obtained using the {@link VouchersRedeemLogs#getDate()} method.
      */
-    ComparableField<VouchersRedeemLogs, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<VouchersRedeemLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             VouchersRedeemLogs::getDate,
             VouchersRedeemLogs::setDate,
@@ -182,7 +182,7 @@ public interface GeneratedVouchersRedeemLogs {
         ACCOUNTS_ID("accounts_id"),
         DATE("date");
 
-        private final String                              columnId;
+        private final String columnName;
 
         private final TableIdentifier<VouchersRedeemLogs> tableIdentifier;
 

@@ -32,7 +32,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getId()} method.
      */
-    IntField<ClansMessages, Integer>                                     ID               = IntField.create(
+    IntField<ClansMessages, Integer> ID = IntField.create(
             Identifier.ID,
             ClansMessages::getId,
             ClansMessages::setId,
@@ -44,7 +44,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getClansId()} method.
      */
-    IntForeignKeyField<ClansMessages, Integer, Clans>                    CLANS_ID         = IntForeignKeyField.create(
+    IntForeignKeyField<ClansMessages, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansMessages::getClansId,
             ClansMessages::setClansId,
@@ -57,7 +57,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getFromAccountsId()} method.
      */
-    IntForeignKeyField<ClansMessages, Integer, Accounts>                 FROM_ACCOUNTS_ID = IntForeignKeyField.create(
+    IntForeignKeyField<ClansMessages, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
             ClansMessages::getFromAccountsId,
             ClansMessages::setFromAccountsId,
@@ -70,7 +70,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getFromStatus()} method.
      */
-    ByteField<ClansMessages, Byte>                                       FROM_STATUS      = ByteField.create(
+    EnumField<ClansMessages, Byte, MessageStatus> FROM_STATUS = EnumField.create(
             Identifier.FROM_STATUS,
             ClansMessages::getFromStatus,
             ClansMessages::setFromStatus,
@@ -82,7 +82,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getToAccountsId()} method.
      */
-    ComparableForeignKeyField<ClansMessages, Integer, Integer, Accounts> TO_ACCOUNTS_ID   = ComparableForeignKeyField.create(
+    ComparableForeignKeyField<ClansMessages, Integer, Integer, Accounts> TO_ACCOUNTS_ID = ComparableForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
             o -> OptionalUtil.unwrap(o.getToAccountsId()),
             ClansMessages::setToAccountsId,
@@ -95,7 +95,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getToStatus()} method.
      */
-    ByteField<ClansMessages, Byte>                                       TO_STATUS        = ByteField.create(
+    EnumField<ClansMessages, Byte, MessageStatus> TO_STATUS = EnumField.create(
             Identifier.TO_STATUS,
             ClansMessages::getToStatus,
             ClansMessages::setToStatus,
@@ -107,7 +107,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getTitle()} method.
      */
-    StringField<ClansMessages, String>                                   TITLE            = StringField.create(
+    StringField<ClansMessages, String> TITLE = StringField.create(
             Identifier.TITLE,
             ClansMessages::getTitle,
             ClansMessages::setTitle,
@@ -119,7 +119,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getText()} method.
      */
-    StringField<ClansMessages, String>                                   TEXT             = StringField.create(
+    StringField<ClansMessages, String> TEXT = StringField.create(
             Identifier.TEXT,
             ClansMessages::getText,
             ClansMessages::setText,
@@ -131,7 +131,7 @@ public interface GeneratedClansMessages {
      * This Field corresponds to the {@link ClansMessages} field that can be
      * obtained using the {@link ClansMessages#getDate()} method.
      */
-    ComparableField<ClansMessages, Timestamp, Timestamp>                 DATE             = ComparableField.create(
+    ComparableField<ClansMessages, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansMessages::getDate,
             ClansMessages::setDate,
@@ -350,7 +350,7 @@ public interface GeneratedClansMessages {
         TEXT("text"),
         DATE("date");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansMessages> tableIdentifier;
 

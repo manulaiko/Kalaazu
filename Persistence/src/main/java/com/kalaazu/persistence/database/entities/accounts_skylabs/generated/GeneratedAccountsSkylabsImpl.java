@@ -1,11 +1,7 @@
 package com.kalaazu.persistence.database.entities.accounts_skylabs.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsSkylabs;
-import com.kalaazu.persistence.database.entities.Levels;
-import com.kalaazu.persistence.database.entities.SkylabModules;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.sql.Timestamp;

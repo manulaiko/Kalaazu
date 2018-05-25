@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesGgSpins;
 import com.kalaazu.persistence.database.entities.GalaxygatesSpins;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -23,9 +23,9 @@ public abstract class GeneratedGalaxygatesGgSpinsImpl implements GalaxygatesGgSp
 
     private short id;
 
-    private byte  galaxygatesId;
+    private byte galaxygatesId;
 
-    private byte  galaxygatesSpinsId;
+    private byte galaxygatesSpinsId;
 
     protected GeneratedGalaxygatesGgSpinsImpl() {
     }

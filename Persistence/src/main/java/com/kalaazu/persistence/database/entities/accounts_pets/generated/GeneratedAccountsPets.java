@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.accounts_pets.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsPets;
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -27,7 +27,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getId()} method.
      */
-    IntField<AccountsPets, Integer>                     ID                         = IntField.create(
+    IntField<AccountsPets, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsPets::getId,
             AccountsPets::setId,
@@ -39,7 +39,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsPets, Integer, Accounts> ACCOUNTS_ID                = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsPets, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsPets::getAccountsId,
             AccountsPets::setAccountsId,
@@ -52,7 +52,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getLevelsId()} method.
      */
-    ByteForeignKeyField<AccountsPets, Byte, Levels>     LEVELS_ID                  = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsPets, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             AccountsPets::getLevelsId,
             AccountsPets::setLevelsId,
@@ -65,7 +65,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getName()} method.
      */
-    StringField<AccountsPets, String>                   NAME                       = StringField.create(
+    StringField<AccountsPets, String> NAME = StringField.create(
             Identifier.NAME,
             AccountsPets::getName,
             AccountsPets::setName,
@@ -77,7 +77,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getExperience()} method.
      */
-    IntField<AccountsPets, Integer>                     EXPERIENCE                 = IntField.create(
+    IntField<AccountsPets, Integer> EXPERIENCE = IntField.create(
             Identifier.EXPERIENCE,
             AccountsPets::getExperience,
             AccountsPets::setExperience,
@@ -89,7 +89,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getFuel()} method.
      */
-    IntField<AccountsPets, Integer>                     FUEL                       = IntField.create(
+    IntField<AccountsPets, Integer> FUEL = IntField.create(
             Identifier.FUEL,
             AccountsPets::getFuel,
             AccountsPets::setFuel,
@@ -101,7 +101,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getHealth()} method.
      */
-    IntField<AccountsPets, Integer>                     HEALTH                     = IntField.create(
+    IntField<AccountsPets, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
             AccountsPets::getHealth,
             AccountsPets::setHealth,
@@ -113,7 +113,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsLasersTotal()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_LASERS_TOTAL         = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_LASERS_TOTAL = ByteField.create(
             Identifier.SLOTS_LASERS_TOTAL,
             AccountsPets::getSlotsLasersTotal,
             AccountsPets::setSlotsLasersTotal,
@@ -125,7 +125,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsLasersAvailable()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_LASERS_AVAILABLE     = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_LASERS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_LASERS_AVAILABLE,
             AccountsPets::getSlotsLasersAvailable,
             AccountsPets::setSlotsLasersAvailable,
@@ -137,7 +137,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsGeneratorsTotal()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_GENERATORS_TOTAL     = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_GENERATORS_TOTAL = ByteField.create(
             Identifier.SLOTS_GENERATORS_TOTAL,
             AccountsPets::getSlotsGeneratorsTotal,
             AccountsPets::setSlotsGeneratorsTotal,
@@ -150,7 +150,7 @@ public interface GeneratedAccountsPets {
      * obtained using the {@link AccountsPets#getSlotsGeneratorsAvailable()}
      * method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_GENERATORS_AVAILABLE = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_GENERATORS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_GENERATORS_AVAILABLE,
             AccountsPets::getSlotsGeneratorsAvailable,
             AccountsPets::setSlotsGeneratorsAvailable,
@@ -162,7 +162,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsProtocolsTotal()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_PROTOCOLS_TOTAL      = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_PROTOCOLS_TOTAL = ByteField.create(
             Identifier.SLOTS_PROTOCOLS_TOTAL,
             AccountsPets::getSlotsProtocolsTotal,
             AccountsPets::setSlotsProtocolsTotal,
@@ -175,7 +175,7 @@ public interface GeneratedAccountsPets {
      * obtained using the {@link AccountsPets#getSlotsProtocolsAvailable()}
      * method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_PROTOCOLS_AVAILABLE  = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_PROTOCOLS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_PROTOCOLS_AVAILABLE,
             AccountsPets::getSlotsProtocolsAvailable,
             AccountsPets::setSlotsProtocolsAvailable,
@@ -187,7 +187,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsGearsTotal()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_GEARS_TOTAL          = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_GEARS_TOTAL = ByteField.create(
             Identifier.SLOTS_GEARS_TOTAL,
             AccountsPets::getSlotsGearsTotal,
             AccountsPets::setSlotsGearsTotal,
@@ -199,7 +199,7 @@ public interface GeneratedAccountsPets {
      * This Field corresponds to the {@link AccountsPets} field that can be
      * obtained using the {@link AccountsPets#getSlotsGearsAvailable()} method.
      */
-    ByteField<AccountsPets, Byte>                       SLOTS_GEARS_AVAILABLE      = ByteField.create(
+    ByteField<AccountsPets, Byte> SLOTS_GEARS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_GEARS_AVAILABLE,
             AccountsPets::getSlotsGearsAvailable,
             AccountsPets::setSlotsGearsAvailable,
@@ -535,7 +535,7 @@ public interface GeneratedAccountsPets {
         SLOTS_GEARS_TOTAL("slots_gears_total"),
         SLOTS_GEARS_AVAILABLE("slots_gears_available");
 
-        private final String                        columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsPets> tableIdentifier;
 

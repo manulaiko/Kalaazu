@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_galaxygates.generated;
 
 import com.kalaazu.persistence.database.entities.Galaxygates;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -30,7 +30,7 @@ public interface GeneratedRewardsGalaxygates {
      * This Field corresponds to the {@link RewardsGalaxygates} field that can
      * be obtained using the {@link RewardsGalaxygates#getId()} method.
      */
-    ByteField<RewardsGalaxygates, Byte>                        ID             = ByteField.create(
+    ByteField<RewardsGalaxygates, Byte> ID = ByteField.create(
             Identifier.ID,
             RewardsGalaxygates::getId,
             RewardsGalaxygates::setId,
@@ -56,7 +56,7 @@ public interface GeneratedRewardsGalaxygates {
      * This Field corresponds to the {@link RewardsGalaxygates} field that can
      * be obtained using the {@link RewardsGalaxygates#getRewardsId()} method.
      */
-    ShortForeignKeyField<RewardsGalaxygates, Short, Rewards>   REWARDS_ID     = ShortForeignKeyField.create(
+    ShortForeignKeyField<RewardsGalaxygates, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
             RewardsGalaxygates::getRewardsId,
             RewardsGalaxygates::setRewardsId,
@@ -149,7 +149,7 @@ public interface GeneratedRewardsGalaxygates {
         GALAXYGATES_ID("galaxygates_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                              columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsGalaxygates> tableIdentifier;
 

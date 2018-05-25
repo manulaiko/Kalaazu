@@ -18,23 +18,23 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedNpcsImpl implements Npcs {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
-    private int    health;
+    private int health;
 
-    private int    shield;
+    private int shield;
 
-    private byte   shieldAbsorption;
+    private byte shieldAbsorption;
 
-    private int    damage;
+    private int damage;
 
-    private short  speed;
+    private short speed;
 
-    private byte   gfx;
+    private byte gfx;
 
-    private byte   ai;
+    private byte ai;
 
     protected GeneratedNpcsImpl() {
     }

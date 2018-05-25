@@ -25,6 +25,10 @@ public abstract class GeneratedSkilltreeSkillsSqlAdapter implements SqlAdapter<S
 
     private final TableIdentifier<SkilltreeSkills> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, SkillType> typeHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isAdvancedHelper;
+
     protected GeneratedSkilltreeSkillsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "skilltree_skills");
     }

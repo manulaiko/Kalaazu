@@ -28,7 +28,7 @@ public interface GeneratedAccountsBanks {
      * This Field corresponds to the {@link AccountsBanks} field that can be
      * obtained using the {@link AccountsBanks#getId()} method.
      */
-    IntField<AccountsBanks, Integer>                     ID          = IntField.create(
+    IntField<AccountsBanks, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsBanks::getId,
             AccountsBanks::setId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsBanks {
      * This Field corresponds to the {@link AccountsBanks} field that can be
      * obtained using the {@link AccountsBanks#getCredits()} method.
      */
-    LongField<AccountsBanks, Long>                       CREDITS     = LongField.create(
+    LongField<AccountsBanks, Long> CREDITS = LongField.create(
             Identifier.CREDITS,
             AccountsBanks::getCredits,
             AccountsBanks::setCredits,
@@ -65,7 +65,7 @@ public interface GeneratedAccountsBanks {
      * This Field corresponds to the {@link AccountsBanks} field that can be
      * obtained using the {@link AccountsBanks#getUridium()} method.
      */
-    LongField<AccountsBanks, Long>                       URIDIUM     = LongField.create(
+    LongField<AccountsBanks, Long> URIDIUM = LongField.create(
             Identifier.URIDIUM,
             AccountsBanks::getUridium,
             AccountsBanks::setUridium,
@@ -77,7 +77,7 @@ public interface GeneratedAccountsBanks {
      * This Field corresponds to the {@link AccountsBanks} field that can be
      * obtained using the {@link AccountsBanks#getTaxCredits()} method.
      */
-    ByteField<AccountsBanks, Byte>                       TAX_CREDITS = ByteField.create(
+    ByteField<AccountsBanks, Byte> TAX_CREDITS = ByteField.create(
             Identifier.TAX_CREDITS,
             AccountsBanks::getTaxCredits,
             AccountsBanks::setTaxCredits,
@@ -89,7 +89,7 @@ public interface GeneratedAccountsBanks {
      * This Field corresponds to the {@link AccountsBanks} field that can be
      * obtained using the {@link AccountsBanks#getTaxUridium()} method.
      */
-    ByteField<AccountsBanks, Byte>                       TAX_URIDIUM = ByteField.create(
+    ByteField<AccountsBanks, Byte> TAX_URIDIUM = ByteField.create(
             Identifier.TAX_URIDIUM,
             AccountsBanks::getTaxUridium,
             AccountsBanks::setTaxUridium,
@@ -230,7 +230,7 @@ public interface GeneratedAccountsBanks {
         TAX_CREDITS("tax_credits"),
         TAX_URIDIUM("tax_uridium");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsBanks> tableIdentifier;
 

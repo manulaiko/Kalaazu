@@ -29,7 +29,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getId()} method.
      */
-    ByteField<MapsPortals, Byte>                 ID              = ByteField.create(
+    ByteField<MapsPortals, Byte> ID = ByteField.create(
             Identifier.ID,
             MapsPortals::getId,
             MapsPortals::setId,
@@ -41,7 +41,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getLevelsId()} method.
      */
-    ByteField<MapsPortals, Byte>                 LEVELS_ID       = ByteField.create(
+    ByteField<MapsPortals, Byte> LEVELS_ID = ByteField.create(
             Identifier.LEVELS_ID,
             MapsPortals::getLevelsId,
             MapsPortals::setLevelsId,
@@ -53,7 +53,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getMapsId()} method.
      */
-    ByteForeignKeyField<MapsPortals, Byte, Maps> MAPS_ID         = ByteForeignKeyField.create(
+    ByteForeignKeyField<MapsPortals, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
             MapsPortals::getMapsId,
             MapsPortals::setMapsId,
@@ -66,7 +66,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getPosition()} method.
      */
-    LongField<MapsPortals, Long>                 POSITION        = LongField.create(
+    ReferenceField<MapsPortals, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
             MapsPortals::getPosition,
             MapsPortals::setPosition,
@@ -78,7 +78,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getTargetMapsId()} method.
      */
-    ByteForeignKeyField<MapsPortals, Byte, Maps> TARGET_MAPS_ID  = ByteForeignKeyField.create(
+    ByteForeignKeyField<MapsPortals, Byte, Maps> TARGET_MAPS_ID = ByteForeignKeyField.create(
             Identifier.TARGET_MAPS_ID,
             MapsPortals::getTargetMapsId,
             MapsPortals::setTargetMapsId,
@@ -91,7 +91,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getTargetPosition()} method.
      */
-    LongField<MapsPortals, Long>                 TARGET_POSITION = LongField.create(
+    ReferenceField<MapsPortals, Long, Vector2> TARGET_POSITION = ReferenceField.create(
             Identifier.TARGET_POSITION,
             MapsPortals::getTargetPosition,
             MapsPortals::setTargetPosition,
@@ -103,7 +103,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getIsVisible()} method.
      */
-    IntField<MapsPortals, Integer>               IS_VISIBLE      = IntField.create(
+    BooleanField<MapsPortals, Integer> IS_VISIBLE = BooleanField.create(
             Identifier.IS_VISIBLE,
             MapsPortals::getIsVisible,
             MapsPortals::setIsVisible,
@@ -115,7 +115,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getIsWorking()} method.
      */
-    IntField<MapsPortals, Integer>               IS_WORKING      = IntField.create(
+    BooleanField<MapsPortals, Integer> IS_WORKING = BooleanField.create(
             Identifier.IS_WORKING,
             MapsPortals::getIsWorking,
             MapsPortals::setIsWorking,
@@ -127,7 +127,7 @@ public interface GeneratedMapsPortals {
      * This Field corresponds to the {@link MapsPortals} field that can be
      * obtained using the {@link MapsPortals#getGfx()} method.
      */
-    ByteField<MapsPortals, Byte>                 GFX             = ByteField.create(
+    ByteField<MapsPortals, Byte> GFX = ByteField.create(
             Identifier.GFX,
             MapsPortals::getGfx,
             MapsPortals::setGfx,
@@ -335,7 +335,7 @@ public interface GeneratedMapsPortals {
         IS_WORKING("is_working"),
         GFX("gfx");
 
-        private final String                       columnId;
+        private final String columnName;
 
         private final TableIdentifier<MapsPortals> tableIdentifier;
 

@@ -61,7 +61,8 @@ public interface Role {
     }
 
     private boolean parentCan(Permission permission) {
-        if (!this.getRole().isPresent()) {
+        if (!this.getRole()
+                 .isPresent()) {
             return false;
         }
 

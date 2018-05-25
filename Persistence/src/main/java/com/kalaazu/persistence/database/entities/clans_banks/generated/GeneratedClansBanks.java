@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.clans_banks.generated;
 
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansBanks;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -29,7 +29,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getId()} method.
      */
-    IntField<ClansBanks, Integer>                  ID          = IntField.create(
+    IntField<ClansBanks, Integer> ID = IntField.create(
             Identifier.ID,
             ClansBanks::getId,
             ClansBanks::setId,
@@ -41,7 +41,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getClansId()} method.
      */
-    IntForeignKeyField<ClansBanks, Integer, Clans> CLANS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBanks, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansBanks::getClansId,
             ClansBanks::setClansId,
@@ -54,7 +54,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getCredits()} method.
      */
-    LongField<ClansBanks, Long>                    CREDITS     = LongField.create(
+    LongField<ClansBanks, Long> CREDITS = LongField.create(
             Identifier.CREDITS,
             ClansBanks::getCredits,
             ClansBanks::setCredits,
@@ -66,7 +66,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getUridium()} method.
      */
-    LongField<ClansBanks, Long>                    URIDIUM     = LongField.create(
+    LongField<ClansBanks, Long> URIDIUM = LongField.create(
             Identifier.URIDIUM,
             ClansBanks::getUridium,
             ClansBanks::setUridium,
@@ -78,7 +78,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getTaxCredits()} method.
      */
-    ByteField<ClansBanks, Byte>                    TAX_CREDITS = ByteField.create(
+    ByteField<ClansBanks, Byte> TAX_CREDITS = ByteField.create(
             Identifier.TAX_CREDITS,
             ClansBanks::getTaxCredits,
             ClansBanks::setTaxCredits,
@@ -90,7 +90,7 @@ public interface GeneratedClansBanks {
      * This Field corresponds to the {@link ClansBanks} field that can be
      * obtained using the {@link ClansBanks#getTaxUridium()} method.
      */
-    ByteField<ClansBanks, Byte>                    TAX_URIDIUM = ByteField.create(
+    ByteField<ClansBanks, Byte> TAX_URIDIUM = ByteField.create(
             Identifier.TAX_URIDIUM,
             ClansBanks::getTaxUridium,
             ClansBanks::setTaxUridium,
@@ -227,7 +227,7 @@ public interface GeneratedClansBanks {
         TAX_CREDITS("tax_credits"),
         TAX_URIDIUM("tax_uridium");
 
-        private final String                      columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansBanks> tableIdentifier;
 

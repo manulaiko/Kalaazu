@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.accounts_galaxygates.generated
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsGalaxygates;
 import com.kalaazu.persistence.database.entities.Galaxygates;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -28,7 +28,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getId()} method.
      */
-    IntField<AccountsGalaxygates, Integer>                      ID             = IntField.create(
+    IntField<AccountsGalaxygates, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsGalaxygates::getId,
             AccountsGalaxygates::setId,
@@ -54,7 +54,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsGalaxygates, Integer, Accounts>  ACCOUNTS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsGalaxygates, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsGalaxygates::getAccountsId,
             AccountsGalaxygates::setAccountsId,
@@ -67,7 +67,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getParts()} method.
      */
-    ByteField<AccountsGalaxygates, Byte>                        PARTS          = ByteField.create(
+    ByteField<AccountsGalaxygates, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
             AccountsGalaxygates::getParts,
             AccountsGalaxygates::setParts,
@@ -79,7 +79,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getLifes()} method.
      */
-    ByteField<AccountsGalaxygates, Byte>                        LIFES          = ByteField.create(
+    ByteField<AccountsGalaxygates, Byte> LIFES = ByteField.create(
             Identifier.LIFES,
             AccountsGalaxygates::getLifes,
             AccountsGalaxygates::setLifes,
@@ -91,7 +91,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getWave()} method.
      */
-    ByteField<AccountsGalaxygates, Byte>                        WAVE           = ByteField.create(
+    ByteField<AccountsGalaxygates, Byte> WAVE = ByteField.create(
             Identifier.WAVE,
             AccountsGalaxygates::getWave,
             AccountsGalaxygates::setWave,
@@ -103,7 +103,7 @@ public interface GeneratedAccountsGalaxygates {
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
      * be obtained using the {@link AccountsGalaxygates#getTimes()} method.
      */
-    ShortField<AccountsGalaxygates, Short>                      TIMES          = ShortField.create(
+    ShortField<AccountsGalaxygates, Short> TIMES = ShortField.create(
             Identifier.TIMES,
             AccountsGalaxygates::getTimes,
             AccountsGalaxygates::setTimes,
@@ -274,7 +274,7 @@ public interface GeneratedAccountsGalaxygates {
         WAVE("wave"),
         TIMES("times");
 
-        private final String                               columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsGalaxygates> tableIdentifier;
 

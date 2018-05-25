@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.accounts_hangars.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsHangars;
 import com.kalaazu.persistence.database.entities.AccountsShips;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -24,17 +24,17 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsHangarsImpl implements AccountsHangars {
 
-    private int     id;
+    private int id;
 
-    private int     accountsId;
+    private int accountsId;
 
-    private int     accountsShipsId;
+    private Integer accountsShipsId;
 
-    private int     accountsConfigurationsId;
+    private Integer accountsConfigurationsId;
 
-    private String  name;
+    private String name;
 
-    private byte    priority;
+    private Byte priority;
 
     private Integer date;
 

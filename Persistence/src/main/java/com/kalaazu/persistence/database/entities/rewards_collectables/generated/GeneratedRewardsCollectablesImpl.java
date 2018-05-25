@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.rewards_collectables.generated;
 
 import com.kalaazu.persistence.database.entities.Collectables;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -23,7 +23,7 @@ public abstract class GeneratedRewardsCollectablesImpl implements RewardsCollect
 
     private short id;
 
-    private byte  collectablesId;
+    private byte collectablesId;
 
     private short rewardsId;
 

@@ -18,19 +18,19 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedTechfactoryDronesImpl implements TechfactoryDrones {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
     private String description;
 
-    private byte   time;
+    private byte time;
 
-    private byte   parts;
+    private byte parts;
 
-    private int    price;
+    private int price;
 
-    private byte   factor;
+    private byte factor;
 
     protected GeneratedTechfactoryDronesImpl() {
     }

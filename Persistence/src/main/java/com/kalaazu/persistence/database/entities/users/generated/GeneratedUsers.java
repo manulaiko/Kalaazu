@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.users.generated;
 
 import com.kalaazu.persistence.database.entities.InvitationCodes;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Users;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -30,7 +30,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getId()} method.
      */
-    IntField<Users, Integer>                                        ID                      = IntField.create(
+    IntField<Users, Integer> ID = IntField.create(
             Identifier.ID,
             Users::getId,
             Users::setId,
@@ -42,7 +42,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getDate()} method.
      */
-    ComparableField<Users, Timestamp, Timestamp>                    DATE                    = ComparableField.create(
+    ComparableField<Users, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             Users::getDate,
             Users::setDate,
@@ -54,7 +54,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getInvitationCodesId()} method.
      */
-    ComparableForeignKeyField<Users, Short, Short, InvitationCodes> INVITATION_CODES_ID     = ComparableForeignKeyField.create(
+    ComparableForeignKeyField<Users, Short, Short, InvitationCodes> INVITATION_CODES_ID = ComparableForeignKeyField.create(
             Identifier.INVITATION_CODES_ID,
             o -> OptionalUtil.unwrap(o.getInvitationCodesId()),
             Users::setInvitationCodesId,
@@ -67,7 +67,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getName()} method.
      */
-    StringField<Users, String>                                      NAME                    = StringField.create(
+    StringField<Users, String> NAME = StringField.create(
             Identifier.NAME,
             Users::getName,
             Users::setName,
@@ -79,7 +79,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getPassword()} method.
      */
-    StringField<Users, String>                                      PASSWORD                = StringField.create(
+    StringField<Users, String> PASSWORD = StringField.create(
             Identifier.PASSWORD,
             Users::getPassword,
             Users::setPassword,
@@ -91,7 +91,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getEmail()} method.
      */
-    StringField<Users, String>                                      EMAIL                   = StringField.create(
+    StringField<Users, String> EMAIL = StringField.create(
             Identifier.EMAIL,
             Users::getEmail,
             Users::setEmail,
@@ -103,7 +103,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getEmailVerificationCode()} method.
      */
-    StringField<Users, String>                                      EMAIL_VERIFICATION_CODE = StringField.create(
+    StringField<Users, String> EMAIL_VERIFICATION_CODE = StringField.create(
             Identifier.EMAIL_VERIFICATION_CODE,
             Users::getEmailVerificationCode,
             Users::setEmailVerificationCode,
@@ -115,7 +115,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getEmailVerificationDate()} method.
      */
-    ComparableField<Users, Timestamp, Timestamp>                    EMAIL_VERIFICATION_DATE = ComparableField.create(
+    ComparableField<Users, Timestamp, Timestamp> EMAIL_VERIFICATION_DATE = ComparableField.create(
             Identifier.EMAIL_VERIFICATION_DATE,
             o -> OptionalUtil.unwrap(o.getEmailVerificationDate()),
             Users::setEmailVerificationDate,
@@ -127,7 +127,7 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getIp()} method.
      */
-    ReferenceField<Users, Object, Object>                           IP                      = ReferenceField.create(
+    ReferenceField<Users, Object, byte[]> IP = ReferenceField.create(
             Identifier.IP,
             Users::getIp,
             Users::setIp,
@@ -326,7 +326,7 @@ public interface GeneratedUsers {
         EMAIL_VERIFICATION_DATE("email_verification_date"),
         IP("ip");
 
-        private final String                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<Users> tableIdentifier;
 

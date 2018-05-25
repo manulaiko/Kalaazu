@@ -28,7 +28,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getId()} method.
      */
-    ShortField<News, Short>                     ID     = ShortField.create(
+    ShortField<News, Short> ID = ShortField.create(
             Identifier.ID,
             News::getId,
             News::setId,
@@ -40,7 +40,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getDate()} method.
      */
-    ComparableField<News, Timestamp, Timestamp> DATE   = ComparableField.create(
+    ComparableField<News, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             News::getDate,
             News::setDate,
@@ -52,7 +52,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getImage()} method.
      */
-    StringField<News, String>                   IMAGE  = StringField.create(
+    StringField<News, String> IMAGE = StringField.create(
             Identifier.IMAGE,
             News::getImage,
             News::setImage,
@@ -64,7 +64,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getTitle()} method.
      */
-    StringField<News, String>                   TITLE  = StringField.create(
+    StringField<News, String> TITLE = StringField.create(
             Identifier.TITLE,
             News::getTitle,
             News::setTitle,
@@ -76,7 +76,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getTeaser()} method.
      */
-    StringField<News, String>                   TEASER = StringField.create(
+    StringField<News, String> TEASER = StringField.create(
             Identifier.TEASER,
             News::getTeaser,
             News::setTeaser,
@@ -88,7 +88,7 @@ public interface GeneratedNews {
      * This Field corresponds to the {@link News} field that can be obtained
      * using the {@link News#getText()} method.
      */
-    StringField<News, String>                   TEXT   = StringField.create(
+    StringField<News, String> TEXT = StringField.create(
             Identifier.TEXT,
             News::getText,
             News::setText,
@@ -213,7 +213,7 @@ public interface GeneratedNews {
         TEASER("teaser"),
         TEXT("text");
 
-        private final String                columnId;
+        private final String columnName;
 
         private final TableIdentifier<News> tableIdentifier;
 

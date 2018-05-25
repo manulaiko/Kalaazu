@@ -26,7 +26,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getId()} method.
      */
-    ByteField<SkylabModules, Byte>     ID                = ByteField.create(
+    ByteField<SkylabModules, Byte> ID = ByteField.create(
             Identifier.ID,
             SkylabModules::getId,
             SkylabModules::setId,
@@ -38,7 +38,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getName()} method.
      */
-    StringField<SkylabModules, String> NAME              = StringField.create(
+    StringField<SkylabModules, String> NAME = StringField.create(
             Identifier.NAME,
             SkylabModules::getName,
             SkylabModules::setName,
@@ -50,7 +50,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getProductionFactor()} method.
      */
-    ByteField<SkylabModules, Byte>     PRODUCTION_FACTOR = ByteField.create(
+    ByteField<SkylabModules, Byte> PRODUCTION_FACTOR = ByteField.create(
             Identifier.PRODUCTION_FACTOR,
             SkylabModules::getProductionFactor,
             SkylabModules::setProductionFactor,
@@ -62,7 +62,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getProductionBase()} method.
      */
-    ShortField<SkylabModules, Short>   PRODUCTION_BASE   = ShortField.create(
+    ShortField<SkylabModules, Short> PRODUCTION_BASE = ShortField.create(
             Identifier.PRODUCTION_BASE,
             SkylabModules::getProductionBase,
             SkylabModules::setProductionBase,
@@ -74,7 +74,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getStorageFactor()} method.
      */
-    ShortField<SkylabModules, Short>   STORAGE_FACTOR    = ShortField.create(
+    ShortField<SkylabModules, Short> STORAGE_FACTOR = ShortField.create(
             Identifier.STORAGE_FACTOR,
             SkylabModules::getStorageFactor,
             SkylabModules::setStorageFactor,
@@ -86,7 +86,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getStorageBase()} method.
      */
-    ShortField<SkylabModules, Short>   STORAGE_BASE      = ShortField.create(
+    ShortField<SkylabModules, Short> STORAGE_BASE = ShortField.create(
             Identifier.STORAGE_BASE,
             SkylabModules::getStorageBase,
             SkylabModules::setStorageBase,
@@ -98,7 +98,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getUpgradeFactor()} method.
      */
-    ByteField<SkylabModules, Byte>     UPGRADE_FACTOR    = ByteField.create(
+    ByteField<SkylabModules, Byte> UPGRADE_FACTOR = ByteField.create(
             Identifier.UPGRADE_FACTOR,
             SkylabModules::getUpgradeFactor,
             SkylabModules::setUpgradeFactor,
@@ -110,7 +110,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getUpgradeBase()} method.
      */
-    ShortField<SkylabModules, Short>   UPGRADE_BASE      = ShortField.create(
+    ShortField<SkylabModules, Short> UPGRADE_BASE = ShortField.create(
             Identifier.UPGRADE_BASE,
             SkylabModules::getUpgradeBase,
             SkylabModules::setUpgradeBase,
@@ -122,7 +122,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getEnergyFactor()} method.
      */
-    ByteField<SkylabModules, Byte>     ENERGY_FACTOR     = ByteField.create(
+    ByteField<SkylabModules, Byte> ENERGY_FACTOR = ByteField.create(
             Identifier.ENERGY_FACTOR,
             SkylabModules::getEnergyFactor,
             SkylabModules::setEnergyFactor,
@@ -134,7 +134,7 @@ public interface GeneratedSkylabModules {
      * This Field corresponds to the {@link SkylabModules} field that can be
      * obtained using the {@link SkylabModules#getEnergyBase()} method.
      */
-    ByteField<SkylabModules, Byte>     ENERGY_BASE       = ByteField.create(
+    ByteField<SkylabModules, Byte> ENERGY_BASE = ByteField.create(
             Identifier.ENERGY_BASE,
             SkylabModules::getEnergyBase,
             SkylabModules::setEnergyBase,
@@ -351,7 +351,7 @@ public interface GeneratedSkylabModules {
         ENERGY_FACTOR("energy_factor"),
         ENERGY_BASE("energy_base");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<SkylabModules> tableIdentifier;
 

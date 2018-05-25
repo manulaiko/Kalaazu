@@ -30,7 +30,7 @@ public interface GeneratedQuestsConditions {
      * This Field corresponds to the {@link QuestsConditions} field that can be
      * obtained using the {@link QuestsConditions#getId()} method.
      */
-    IntField<QuestsConditions, Integer>                                             ID                   = IntField.create(
+    IntField<QuestsConditions, Integer> ID = IntField.create(
             Identifier.ID,
             QuestsConditions::getId,
             QuestsConditions::setId,
@@ -56,7 +56,7 @@ public interface GeneratedQuestsConditions {
      * This Field corresponds to the {@link QuestsConditions} field that can be
      * obtained using the {@link QuestsConditions#getQuestsId()} method.
      */
-    ShortForeignKeyField<QuestsConditions, Short, Quests>                           QUESTS_ID            = ShortForeignKeyField.create(
+    ShortForeignKeyField<QuestsConditions, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
             QuestsConditions::getQuestsId,
             QuestsConditions::setQuestsId,
@@ -69,7 +69,7 @@ public interface GeneratedQuestsConditions {
      * This Field corresponds to the {@link QuestsConditions} field that can be
      * obtained using the {@link QuestsConditions#getType()} method.
      */
-    ByteField<QuestsConditions, Byte>                                               TYPE                 = ByteField.create(
+    EnumField<QuestsConditions, Byte, QuestConditionType> TYPE = EnumField.create(
             Identifier.TYPE,
             QuestsConditions::getType,
             QuestsConditions::setType,
@@ -81,7 +81,7 @@ public interface GeneratedQuestsConditions {
      * This Field corresponds to the {@link QuestsConditions} field that can be
      * obtained using the {@link QuestsConditions#getValue()} method.
      */
-    StringField<QuestsConditions, String>                                           VALUE                = StringField.create(
+    StringField<QuestsConditions, String> VALUE = StringField.create(
             Identifier.VALUE,
             QuestsConditions::getValue,
             QuestsConditions::setValue,
@@ -212,7 +212,7 @@ public interface GeneratedQuestsConditions {
         TYPE("type"),
         VALUE("value");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<QuestsConditions> tableIdentifier;
 

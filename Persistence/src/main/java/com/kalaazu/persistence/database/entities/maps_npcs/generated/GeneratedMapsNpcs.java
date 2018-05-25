@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.maps_npcs.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsNpcs;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -28,7 +28,7 @@ public interface GeneratedMapsNpcs {
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
      * using the {@link MapsNpcs#getId()} method.
      */
-    ByteField<MapsNpcs, Byte>                 ID      = ByteField.create(
+    ByteField<MapsNpcs, Byte> ID = ByteField.create(
             Identifier.ID,
             MapsNpcs::getId,
             MapsNpcs::setId,
@@ -66,7 +66,7 @@ public interface GeneratedMapsNpcs {
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
      * using the {@link MapsNpcs#getAmount()} method.
      */
-    ByteField<MapsNpcs, Byte>                 AMOUNT  = ByteField.create(
+    ByteField<MapsNpcs, Byte> AMOUNT = ByteField.create(
             Identifier.AMOUNT,
             MapsNpcs::getAmount,
             MapsNpcs::setAmount,
@@ -173,7 +173,7 @@ public interface GeneratedMapsNpcs {
         NPCS_ID("npcs_id"),
         AMOUNT("amount");
 
-        private final String                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<MapsNpcs> tableIdentifier;
 

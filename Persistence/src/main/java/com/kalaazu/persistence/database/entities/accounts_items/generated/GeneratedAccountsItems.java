@@ -1,13 +1,9 @@
 package com.kalaazu.persistence.database.entities.accounts_items.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsItems;
-import com.kalaazu.persistence.database.entities.Items;
-import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -30,7 +26,7 @@ public interface GeneratedAccountsItems {
      * This Field corresponds to the {@link AccountsItems} field that can be
      * obtained using the {@link AccountsItems#getId()} method.
      */
-    IntField<AccountsItems, Integer>                     ID          = IntField.create(
+    IntField<AccountsItems, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsItems::getId,
             AccountsItems::setId,
@@ -42,7 +38,7 @@ public interface GeneratedAccountsItems {
      * This Field corresponds to the {@link AccountsItems} field that can be
      * obtained using the {@link AccountsItems#getItemsId()} method.
      */
-    ShortForeignKeyField<AccountsItems, Short, Items>    ITEMS_ID    = ShortForeignKeyField.create(
+    ShortForeignKeyField<AccountsItems, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             AccountsItems::getItemsId,
             AccountsItems::setItemsId,
@@ -68,7 +64,7 @@ public interface GeneratedAccountsItems {
      * This Field corresponds to the {@link AccountsItems} field that can be
      * obtained using the {@link AccountsItems#getLevelsId()} method.
      */
-    ByteForeignKeyField<AccountsItems, Byte, Levels>     LEVELS_ID   = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsItems, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             AccountsItems::getLevelsId,
             AccountsItems::setLevelsId,
@@ -81,7 +77,7 @@ public interface GeneratedAccountsItems {
      * This Field corresponds to the {@link AccountsItems} field that can be
      * obtained using the {@link AccountsItems#getDate()} method.
      */
-    ComparableField<AccountsItems, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<AccountsItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsItems::getDate,
             AccountsItems::setDate,
@@ -93,7 +89,7 @@ public interface GeneratedAccountsItems {
      * This Field corresponds to the {@link AccountsItems} field that can be
      * obtained using the {@link AccountsItems#getAmount()} method.
      */
-    LongField<AccountsItems, Long>                       AMOUNT      = LongField.create(
+    LongField<AccountsItems, Long> AMOUNT = LongField.create(
             Identifier.AMOUNT,
             AccountsItems::getAmount,
             AccountsItems::setAmount,
@@ -251,7 +247,7 @@ public interface GeneratedAccountsItems {
         DATE("date"),
         AMOUNT("amount");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsItems> tableIdentifier;
 

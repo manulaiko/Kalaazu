@@ -30,7 +30,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getId()} method.
      */
-    IntField<Accounts, Integer>                            ID                  = IntField.create(
+    IntField<Accounts, Integer> ID = IntField.create(
             Identifier.ID,
             Accounts::getId,
             Accounts::setId,
@@ -42,7 +42,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getUsersId()} method.
      */
-    IntForeignKeyField<Accounts, Integer, Users>           USERS_ID            = IntForeignKeyField.create(
+    IntForeignKeyField<Accounts, Integer, Users> USERS_ID = IntForeignKeyField.create(
             Identifier.USERS_ID,
             Accounts::getUsersId,
             Accounts::setUsersId,
@@ -55,7 +55,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getSessionId()} method.
      */
-    StringField<Accounts, String>                          SESSION_ID          = StringField.create(
+    StringField<Accounts, String> SESSION_ID = StringField.create(
             Identifier.SESSION_ID,
             Accounts::getSessionId,
             Accounts::setSessionId,
@@ -67,7 +67,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getLevelsId()} method.
      */
-    ByteForeignKeyField<Accounts, Byte, Levels>            LEVELS_ID           = ByteForeignKeyField.create(
+    ByteForeignKeyField<Accounts, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             Accounts::getLevelsId,
             Accounts::setLevelsId,
@@ -80,7 +80,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getFactionsId()} method.
      */
-    ByteForeignKeyField<Accounts, Byte, Factions>          FACTIONS_ID         = ByteForeignKeyField.create(
+    ComparableForeignKeyField<Accounts, Byte, Byte, Factions> FACTIONS_ID = ComparableForeignKeyField.create(
             Identifier.FACTIONS_ID,
             o -> OptionalUtil.unwrap(o.getFactionsId()),
             Accounts::setFactionsId,
@@ -106,7 +106,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getClansId()} method.
      */
-    IntForeignKeyField<Accounts, Integer, Clans>           CLANS_ID            = IntForeignKeyField.create(
+    ComparableForeignKeyField<Accounts, Integer, Integer, Clans> CLANS_ID = ComparableForeignKeyField.create(
             Identifier.CLANS_ID,
             o -> OptionalUtil.unwrap(o.getClansId()),
             Accounts::setClansId,
@@ -119,7 +119,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getRanksId()} method.
      */
-    ByteForeignKeyField<Accounts, Byte, Ranks>             RANKS_ID            = ByteForeignKeyField.create(
+    ByteForeignKeyField<Accounts, Byte, Ranks> RANKS_ID = ByteForeignKeyField.create(
             Identifier.RANKS_ID,
             Accounts::getRanksId,
             Accounts::setRanksId,
@@ -132,7 +132,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getName()} method.
      */
-    StringField<Accounts, String>                          NAME                = StringField.create(
+    StringField<Accounts, String> NAME = StringField.create(
             Identifier.NAME,
             Accounts::getName,
             Accounts::setName,
@@ -144,7 +144,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getBanDate()} method.
      */
-    ComparableField<Accounts, Timestamp, Timestamp>        BAN_DATE            = ComparableField.create(
+    ComparableField<Accounts, Timestamp, Timestamp> BAN_DATE = ComparableField.create(
             Identifier.BAN_DATE,
             o -> OptionalUtil.unwrap(o.getBanDate()),
             Accounts::setBanDate,
@@ -156,7 +156,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getPremiumDate()} method.
      */
-    ComparableField<Accounts, Timestamp, Timestamp>        PREMIUM_DATE        = ComparableField.create(
+    ComparableField<Accounts, Timestamp, Timestamp> PREMIUM_DATE = ComparableField.create(
             Identifier.PREMIUM_DATE,
             o -> OptionalUtil.unwrap(o.getPremiumDate()),
             Accounts::setPremiumDate,
@@ -168,7 +168,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getDate()} method.
      */
-    ComparableField<Accounts, Timestamp, Timestamp>        DATE                = ComparableField.create(
+    ComparableField<Accounts, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             Accounts::getDate,
             Accounts::setDate,
@@ -180,7 +180,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getLastLogin()} method.
      */
-    ComparableField<Accounts, Timestamp, Timestamp>        LAST_LOGIN          = ComparableField.create(
+    ComparableField<Accounts, Timestamp, Timestamp> LAST_LOGIN = ComparableField.create(
             Identifier.LAST_LOGIN,
             o -> OptionalUtil.unwrap(o.getLastLogin()),
             Accounts::setLastLogin,
@@ -192,7 +192,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getSkillPointsTotal()} method.
      */
-    ShortField<Accounts, Short>                            SKILL_POINTS_TOTAL  = ShortField.create(
+    ShortField<Accounts, Short> SKILL_POINTS_TOTAL = ShortField.create(
             Identifier.SKILL_POINTS_TOTAL,
             Accounts::getSkillPointsTotal,
             Accounts::setSkillPointsTotal,
@@ -204,7 +204,7 @@ public interface GeneratedAccounts {
      * This Field corresponds to the {@link Accounts} field that can be obtained
      * using the {@link Accounts#getSkillPointsFree()} method.
      */
-    ShortField<Accounts, Short>                            SKILL_POINTS_FREE   = ShortField.create(
+    ShortField<Accounts, Short> SKILL_POINTS_FREE = ShortField.create(
             Identifier.SKILL_POINTS_FREE,
             Accounts::getSkillPointsFree,
             Accounts::setSkillPointsFree,
@@ -567,7 +567,7 @@ public interface GeneratedAccounts {
         SKILL_POINTS_TOTAL("skill_points_total"),
         SKILL_POINTS_FREE("skill_points_free");
 
-        private final String                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<Accounts> tableIdentifier;
 

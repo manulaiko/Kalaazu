@@ -402,7 +402,9 @@ public final class Affine2 implements Serializable {
      */
     public Affine2 inv() {
         float det = det();
-        if (det == 0) throw new RuntimeException("Can't invert a singular affine matrix");
+        if (det == 0) {
+            throw new RuntimeException("Can't invert a singular affine matrix");
+        }
 
         float invDet = 1.0f / det;
 
@@ -592,7 +594,9 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 rotate(float degrees) {
-        if (degrees == 0) return this;
+        if (degrees == 0) {
+            return this;
+        }
 
         float cos = MathUtils.cosDeg(degrees);
         float sin = MathUtils.sinDeg(degrees);
@@ -617,7 +621,9 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 rotateRad(float radians) {
-        if (radians == 0) return this;
+        if (radians == 0) {
+            return this;
+        }
 
         float cos = MathUtils.cos(radians);
         float sin = MathUtils.sin(radians);
@@ -642,7 +648,9 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preRotate(float degrees) {
-        if (degrees == 0) return this;
+        if (degrees == 0) {
+            return this;
+        }
 
         float cos = MathUtils.cosDeg(degrees);
         float sin = MathUtils.sinDeg(degrees);
@@ -671,7 +679,9 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preRotateRad(float radians) {
-        if (radians == 0) return this;
+        if (radians == 0) {
+            return this;
+        }
 
         float cos = MathUtils.cos(radians);
         float sin = MathUtils.sin(radians);

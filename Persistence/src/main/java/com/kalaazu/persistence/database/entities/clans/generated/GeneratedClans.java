@@ -32,7 +32,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getId()} method.
      */
-    IntField<Clans, Integer>                     ID          = IntField.create(
+    IntField<Clans, Integer> ID = IntField.create(
             Identifier.ID,
             Clans::getId,
             Clans::setId,
@@ -57,7 +57,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getFactionsId()} method.
      */
-    ByteField<Clans, Byte>                       FACTIONS_ID = ByteField.create(
+    ComparableField<Clans, Byte, Byte> FACTIONS_ID = ComparableField.create(
             Identifier.FACTIONS_ID,
             o -> OptionalUtil.unwrap(o.getFactionsId()),
             Clans::setFactionsId,
@@ -69,7 +69,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getTag()} method.
      */
-    StringField<Clans, String>                   TAG         = StringField.create(
+    StringField<Clans, String> TAG = StringField.create(
             Identifier.TAG,
             Clans::getTag,
             Clans::setTag,
@@ -81,7 +81,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getName()} method.
      */
-    StringField<Clans, String>                   NAME        = StringField.create(
+    StringField<Clans, String> NAME = StringField.create(
             Identifier.NAME,
             Clans::getName,
             Clans::setName,
@@ -93,7 +93,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getDescription()} method.
      */
-    StringField<Clans, String>                   DESCRIPTION = StringField.create(
+    StringField<Clans, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
             Clans::getDescription,
             Clans::setDescription,
@@ -105,7 +105,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getLogo()} method.
      */
-    StringField<Clans, String>                   LOGO        = StringField.create(
+    StringField<Clans, String> LOGO = StringField.create(
             Identifier.LOGO,
             Clans::getLogo,
             Clans::setLogo,
@@ -117,7 +117,7 @@ public interface GeneratedClans {
      * This Field corresponds to the {@link Clans} field that can be obtained
      * using the {@link Clans#getStatus()} method.
      */
-    ByteField<Clans, Byte>                       STATUS      = ByteField.create(
+    EnumField<Clans, Byte, ClanStatus> STATUS = EnumField.create(
             Identifier.STATUS,
             Clans::getStatus,
             Clans::setStatus,
@@ -290,7 +290,7 @@ public interface GeneratedClans {
         LOGO("logo"),
         STATUS("status");
 
-        private final String                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<Clans> tableIdentifier;
 

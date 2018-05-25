@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.database.entities.galaxygates_spawns.generated;
 
 import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -20,7 +20,7 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedGalaxygatesSpawnsImpl implements GalaxygatesSpawns {
 
-    private int  id;
+    private int id;
 
     private byte npcsId;
 

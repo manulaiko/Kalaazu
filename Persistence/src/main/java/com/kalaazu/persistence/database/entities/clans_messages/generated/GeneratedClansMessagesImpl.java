@@ -25,21 +25,21 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansMessagesImpl implements ClansMessages {
 
-    private int       id;
+    private int id;
 
-    private int       clansId;
+    private int clansId;
 
-    private int       fromAccountsId;
+    private int fromAccountsId;
 
     private byte      fromStatus;
 
-    private Integer   toAccountsId;
+    private Integer toAccountsId;
 
     private byte      toStatus;
 
-    private String    title;
+    private String title;
 
-    private String    text;
+    private String text;
 
     private Timestamp date;
 

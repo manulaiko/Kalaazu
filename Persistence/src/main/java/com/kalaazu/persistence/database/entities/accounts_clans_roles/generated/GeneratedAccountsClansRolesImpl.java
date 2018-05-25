@@ -1,8 +1,10 @@
 package com.kalaazu.persistence.database.entities.accounts_clans_roles.generated;
 
-import com.kalaazu.persistence.database.entities.*;
-import com.speedment.common.annotation.GeneratedCode;
+import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.AccountsClansRoles;
+import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;

@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.galaxygates_gg_waves.generated
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesGgWaves;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -23,9 +23,9 @@ public abstract class GeneratedGalaxygatesGgWavesImpl implements GalaxygatesGgWa
 
     private short id;
 
-    private byte  galaxygatesId;
+    private byte galaxygatesId;
 
-    private byte  galaxygatesWavesId;
+    private byte galaxygatesWavesId;
 
     protected GeneratedGalaxygatesGgWavesImpl() {
     }

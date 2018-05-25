@@ -24,6 +24,8 @@ public abstract class GeneratedRanksSqlAdapter implements SqlAdapter<Ranks> {
 
     private final TableIdentifier<Ranks> tableIdentifier;
 
+    private SqlTypeMapperHelper<Integer, Boolean> isPublicHelper;
+
     protected GeneratedRanksSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "ranks");
     }

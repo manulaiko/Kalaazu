@@ -26,6 +26,8 @@ public abstract class GeneratedMapsStationsSqlAdapter implements SqlAdapter<Maps
 
     private final TableIdentifier<MapsStations> tableIdentifier;
 
+    private SqlTypeMapperHelper<Long, Vector2> positionHelper;
+
     protected GeneratedMapsStationsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "maps_stations");
     }

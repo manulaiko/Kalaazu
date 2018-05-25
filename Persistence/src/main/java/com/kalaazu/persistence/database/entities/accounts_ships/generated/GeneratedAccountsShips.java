@@ -28,7 +28,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getId()} method.
      */
-    IntField<AccountsShips, Integer>                     ID          = IntField.create(
+    IntField<AccountsShips, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsShips::getId,
             AccountsShips::setId,
@@ -53,7 +53,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getShipsId()} method.
      */
-    ByteForeignKeyField<AccountsShips, Byte, Ships>      SHIPS_ID    = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsShips, Byte, Ships> SHIPS_ID = ByteForeignKeyField.create(
             Identifier.SHIPS_ID,
             AccountsShips::getShipsId,
             AccountsShips::setShipsId,
@@ -66,7 +66,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getMapsId()} method.
      */
-    ByteForeignKeyField<AccountsShips, Byte, Maps>       MAPS_ID     = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsShips, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
             AccountsShips::getMapsId,
             AccountsShips::setMapsId,
@@ -79,7 +79,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getPosition()} method.
      */
-    LongField<AccountsShips, Long>                       POSITION    = LongField.create(
+    ReferenceField<AccountsShips, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
             AccountsShips::getPosition,
             AccountsShips::setPosition,
@@ -91,7 +91,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getHealth()} method.
      */
-    IntField<AccountsShips, Integer>                     HEALTH      = IntField.create(
+    IntField<AccountsShips, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
             AccountsShips::getHealth,
             AccountsShips::setHealth,
@@ -103,7 +103,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getNanohull()} method.
      */
-    IntField<AccountsShips, Integer>                     NANOHULL    = IntField.create(
+    IntField<AccountsShips, Integer> NANOHULL = IntField.create(
             Identifier.NANOHULL,
             AccountsShips::getNanohull,
             AccountsShips::setNanohull,
@@ -115,7 +115,7 @@ public interface GeneratedAccountsShips {
      * This Field corresponds to the {@link AccountsShips} field that can be
      * obtained using the {@link AccountsShips#getGfx()} method.
      */
-    ByteField<AccountsShips, Byte>                       GFX         = ByteField.create(
+    ByteField<AccountsShips, Byte> GFX = ByteField.create(
             Identifier.GFX,
             AccountsShips::getGfx,
             AccountsShips::setGfx,
@@ -312,7 +312,7 @@ public interface GeneratedAccountsShips {
         NANOHULL("nanohull"),
         GFX("gfx");
 
-        private final String                         columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsShips> tableIdentifier;
 

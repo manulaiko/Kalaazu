@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.rewards_galaxygates.generated;
 
 import com.kalaazu.persistence.database.entities.Galaxygates;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -21,9 +21,9 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedRewardsGalaxygatesImpl implements RewardsGalaxygates {
 
-    private byte  id;
+    private byte id;
 
-    private byte  galaxygatesId;
+    private byte galaxygatesId;
 
     private short rewardsId;
 

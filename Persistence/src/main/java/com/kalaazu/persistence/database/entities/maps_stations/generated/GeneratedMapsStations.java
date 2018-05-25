@@ -32,7 +32,7 @@ public interface GeneratedMapsStations {
      * This Field corresponds to the {@link MapsStations} field that can be
      * obtained using the {@link MapsStations#getId()} method.
      */
-    ByteField<MapsStations, Byte>                                 ID          = ByteField.create(
+    ByteField<MapsStations, Byte> ID = ByteField.create(
             Identifier.ID,
             MapsStations::getId,
             MapsStations::setId,
@@ -44,7 +44,7 @@ public interface GeneratedMapsStations {
      * This Field corresponds to the {@link MapsStations} field that can be
      * obtained using the {@link MapsStations#getPosition()} method.
      */
-    LongField<MapsStations, Long>                                 POSITION    = LongField.create(
+    ReferenceField<MapsStations, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
             MapsStations::getPosition,
             MapsStations::setPosition,
@@ -56,7 +56,7 @@ public interface GeneratedMapsStations {
      * This Field corresponds to the {@link MapsStations} field that can be
      * obtained using the {@link MapsStations#getMapsId()} method.
      */
-    ComparableForeignKeyField<MapsStations, Byte, Byte, Maps>     MAPS_ID     = ComparableForeignKeyField.create(
+    ComparableForeignKeyField<MapsStations, Byte, Byte, Maps> MAPS_ID = ComparableForeignKeyField.create(
             Identifier.MAPS_ID,
             o -> OptionalUtil.unwrap(o.getMapsId()),
             MapsStations::setMapsId,
@@ -179,7 +179,7 @@ public interface GeneratedMapsStations {
         MAPS_ID("maps_id"),
         FACTIONS_ID("factions_id");
 
-        private final String                        columnId;
+        private final String columnName;
 
         private final TableIdentifier<MapsStations> tableIdentifier;
 

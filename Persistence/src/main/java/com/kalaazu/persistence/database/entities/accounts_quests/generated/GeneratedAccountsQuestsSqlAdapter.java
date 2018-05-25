@@ -25,6 +25,8 @@ public abstract class GeneratedAccountsQuestsSqlAdapter implements SqlAdapter<Ac
 
     private final TableIdentifier<AccountsQuests> tableIdentifier;
 
+    private SqlTypeMapperHelper<Integer, Boolean> isCompletedHelper;
+
     protected GeneratedAccountsQuestsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "accounts_quests");
     }

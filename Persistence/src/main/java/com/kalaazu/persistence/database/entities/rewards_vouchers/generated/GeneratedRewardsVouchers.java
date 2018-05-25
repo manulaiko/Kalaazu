@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_vouchers.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -28,7 +28,7 @@ public interface GeneratedRewardsVouchers {
      * This Field corresponds to the {@link RewardsVouchers} field that can be
      * obtained using the {@link RewardsVouchers#getId()} method.
      */
-    ShortField<RewardsVouchers, Short>                     ID          = ShortField.create(
+    ShortField<RewardsVouchers, Short> ID = ShortField.create(
             Identifier.ID,
             RewardsVouchers::getId,
             RewardsVouchers::setId,
@@ -53,7 +53,7 @@ public interface GeneratedRewardsVouchers {
      * This Field corresponds to the {@link RewardsVouchers} field that can be
      * obtained using the {@link RewardsVouchers#getRewardsId()} method.
      */
-    ShortForeignKeyField<RewardsVouchers, Short, Rewards>  REWARDS_ID  = ShortForeignKeyField.create(
+    ShortForeignKeyField<RewardsVouchers, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
             RewardsVouchers::getRewardsId,
             RewardsVouchers::setRewardsId,
@@ -146,7 +146,7 @@ public interface GeneratedRewardsVouchers {
         VOUCHERS_ID("vouchers_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsVouchers> tableIdentifier;
 

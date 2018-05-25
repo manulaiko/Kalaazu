@@ -26,6 +26,8 @@ public abstract class GeneratedTradeItemsSqlAdapter implements SqlAdapter<TradeI
 
     private final TableIdentifier<TradeItems> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, TradeType> typeHelper;
+
     protected GeneratedTradeItemsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "trade_items");
     }

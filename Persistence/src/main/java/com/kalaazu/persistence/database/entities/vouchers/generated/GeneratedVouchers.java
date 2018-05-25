@@ -26,7 +26,7 @@ public interface GeneratedVouchers {
      * This Field corresponds to the {@link Vouchers} field that can be obtained
      * using the {@link Vouchers#getId()} method.
      */
-    ShortField<Vouchers, Short>   ID    = ShortField.create(
+    ShortField<Vouchers, Short> ID = ShortField.create(
             Identifier.ID,
             Vouchers::getId,
             Vouchers::setId,
@@ -38,7 +38,7 @@ public interface GeneratedVouchers {
      * This Field corresponds to the {@link Vouchers} field that can be obtained
      * using the {@link Vouchers#getCode()} method.
      */
-    StringField<Vouchers, String> CODE  = StringField.create(
+    StringField<Vouchers, String> CODE = StringField.create(
             Identifier.CODE,
             Vouchers::getCode,
             Vouchers::setCode,
@@ -50,7 +50,7 @@ public interface GeneratedVouchers {
      * This Field corresponds to the {@link Vouchers} field that can be obtained
      * using the {@link Vouchers#getLimit()} method.
      */
-    ByteField<Vouchers, Byte>     LIMIT = ByteField.create(
+    ByteField<Vouchers, Byte> LIMIT = ByteField.create(
             Identifier.LIMIT,
             Vouchers::getLimit,
             Vouchers::setLimit,
@@ -118,7 +118,7 @@ public interface GeneratedVouchers {
         CODE("code"),
         LIMIT("limit");
 
-        private final String                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<Vouchers> tableIdentifier;
 

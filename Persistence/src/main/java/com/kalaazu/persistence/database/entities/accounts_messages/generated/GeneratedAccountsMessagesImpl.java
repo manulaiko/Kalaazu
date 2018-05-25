@@ -21,21 +21,21 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsMessagesImpl implements AccountsMessages {
 
-    private int       id;
+    private int id;
 
-    private int       fromAccountsId;
+    private int fromAccountsId;
 
     private byte      fromStatus;
 
-    private int       toAccountsId;
+    private int toAccountsId;
 
     private byte      toStatus;
 
     private Timestamp date;
 
-    private String    title;
+    private String title;
 
-    private String    text;
+    private String text;
 
     protected GeneratedAccountsMessagesImpl() {
     }

@@ -27,6 +27,8 @@ public abstract class GeneratedQuestsConditionsSqlAdapter implements SqlAdapter<
 
     private final TableIdentifier<QuestsConditions> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, QuestConditionType> typeHelper;
+
     protected GeneratedQuestsConditionsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "quests_conditions");
     }

@@ -32,7 +32,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getId()} method.
      */
-    IntField<ClansBanksLogs, Integer>                       ID               = IntField.create(
+    IntField<ClansBanksLogs, Integer> ID = IntField.create(
             Identifier.ID,
             ClansBanksLogs::getId,
             ClansBanksLogs::setId,
@@ -44,7 +44,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getClansBanksId()} method.
      */
-    IntForeignKeyField<ClansBanksLogs, Integer, ClansBanks> CLANS_BANKS_ID   = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBanksLogs, Integer, ClansBanks> CLANS_BANKS_ID = IntForeignKeyField.create(
             Identifier.CLANS_BANKS_ID,
             ClansBanksLogs::getClansBanksId,
             ClansBanksLogs::setClansBanksId,
@@ -57,7 +57,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getFromAccountsId()} method.
      */
-    IntForeignKeyField<ClansBanksLogs, Integer, Accounts>   FROM_ACCOUNTS_ID = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBanksLogs, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
             ClansBanksLogs::getFromAccountsId,
             ClansBanksLogs::setFromAccountsId,
@@ -70,7 +70,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getToAccountsId()} method.
      */
-    IntForeignKeyField<ClansBanksLogs, Integer, Accounts>   TO_ACCOUNTS_ID   = IntForeignKeyField.create(
+    IntForeignKeyField<ClansBanksLogs, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
             ClansBanksLogs::getToAccountsId,
             ClansBanksLogs::setToAccountsId,
@@ -83,7 +83,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getDate()} method.
      */
-    ComparableField<ClansBanksLogs, Timestamp, Timestamp>   DATE             = ComparableField.create(
+    ComparableField<ClansBanksLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansBanksLogs::getDate,
             ClansBanksLogs::setDate,
@@ -95,7 +95,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getType()} method.
      */
-    ByteField<ClansBanksLogs, Byte>                         TYPE             = ByteField.create(
+    EnumField<ClansBanksLogs, Byte, BankLogType> TYPE = EnumField.create(
             Identifier.TYPE,
             ClansBanksLogs::getType,
             ClansBanksLogs::setType,
@@ -107,7 +107,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getAmount()} method.
      */
-    IntField<ClansBanksLogs, Integer>                       AMOUNT           = IntField.create(
+    IntField<ClansBanksLogs, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
             ClansBanksLogs::getAmount,
             ClansBanksLogs::setAmount,
@@ -119,7 +119,7 @@ public interface GeneratedClansBanksLogs {
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
      * obtained using the {@link ClansBanksLogs#getCurrency()} method.
      */
-    ByteField<ClansBanksLogs, Byte>                         CURRENCY         = ByteField.create(
+    EnumField<ClansBanksLogs, Byte, Currency> CURRENCY = EnumField.create(
             Identifier.CURRENCY,
             ClansBanksLogs::getCurrency,
             ClansBanksLogs::setCurrency,
@@ -319,7 +319,7 @@ public interface GeneratedClansBanksLogs {
         AMOUNT("amount"),
         CURRENCY("currency");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansBanksLogs> tableIdentifier;
 

@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.clans_battlestations_items.gen
 import com.kalaazu.persistence.database.entities.AccountsItems;
 import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.ClansBattlestationsItems;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -22,13 +22,13 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansBattlestationsItemsImpl implements ClansBattlestationsItems {
 
-    private int       id;
+    private int id;
 
-    private byte      clansBattlestationsId;
+    private byte clansBattlestationsId;
 
-    private int       accountsItemsId;
+    private int accountsItemsId;
 
-    private byte      slot;
+    private byte slot;
 
     private Timestamp date;
 

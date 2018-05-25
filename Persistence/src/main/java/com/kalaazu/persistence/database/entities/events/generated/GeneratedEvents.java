@@ -30,7 +30,7 @@ public interface GeneratedEvents {
      * This Field corresponds to the {@link Events} field that can be obtained
      * using the {@link Events#getId()} method.
      */
-    IntField<Events, Integer>                     ID          = IntField.create(
+    IntField<Events, Integer> ID = IntField.create(
             Identifier.ID,
             Events::getId,
             Events::setId,
@@ -42,7 +42,7 @@ public interface GeneratedEvents {
      * This Field corresponds to the {@link Events} field that can be obtained
      * using the {@link Events#getName()} method.
      */
-    StringField<Events, String>                   NAME        = StringField.create(
+    StringField<Events, String> NAME = StringField.create(
             Identifier.NAME,
             Events::getName,
             Events::setName,
@@ -54,7 +54,7 @@ public interface GeneratedEvents {
      * This Field corresponds to the {@link Events} field that can be obtained
      * using the {@link Events#getDescription()} method.
      */
-    StringField<Events, String>                   DESCRIPTION = StringField.create(
+    StringField<Events, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
             Events::getDescription,
             Events::setDescription,
@@ -66,7 +66,7 @@ public interface GeneratedEvents {
      * This Field corresponds to the {@link Events} field that can be obtained
      * using the {@link Events#getStartDate()} method.
      */
-    ComparableField<Events, Timestamp, Timestamp> START_DATE  = ComparableField.create(
+    ComparableField<Events, Timestamp, Timestamp> START_DATE = ComparableField.create(
             Identifier.START_DATE,
             o -> OptionalUtil.unwrap(o.getStartDate()),
             Events::setStartDate,
@@ -78,7 +78,7 @@ public interface GeneratedEvents {
      * This Field corresponds to the {@link Events} field that can be obtained
      * using the {@link Events#getEndDate()} method.
      */
-    ComparableField<Events, Timestamp, Timestamp> END_DATE    = ComparableField.create(
+    ComparableField<Events, Timestamp, Timestamp> END_DATE = ComparableField.create(
             Identifier.END_DATE,
             o -> OptionalUtil.unwrap(o.getEndDate()),
             Events::setEndDate,
@@ -184,7 +184,7 @@ public interface GeneratedEvents {
         START_DATE("start_date"),
         END_DATE("end_date");
 
-        private final String                  columnId;
+        private final String columnName;
 
         private final TableIdentifier<Events> tableIdentifier;
 

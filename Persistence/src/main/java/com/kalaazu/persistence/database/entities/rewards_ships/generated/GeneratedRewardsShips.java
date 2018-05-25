@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_ships.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsShips;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -29,7 +29,7 @@ public interface GeneratedRewardsShips {
      * This Field corresponds to the {@link RewardsShips} field that can be
      * obtained using the {@link RewardsShips#getId()} method.
      */
-    ByteField<RewardsShips, Byte>                      ID         = ByteField.create(
+    ByteField<RewardsShips, Byte> ID = ByteField.create(
             Identifier.ID,
             RewardsShips::getId,
             RewardsShips::setId,
@@ -41,7 +41,7 @@ public interface GeneratedRewardsShips {
      * This Field corresponds to the {@link RewardsShips} field that can be
      * obtained using the {@link RewardsShips#getShipsId()} method.
      */
-    ByteForeignKeyField<RewardsShips, Byte, Ships>     SHIPS_ID   = ByteForeignKeyField.create(
+    ByteForeignKeyField<RewardsShips, Byte, Ships> SHIPS_ID = ByteForeignKeyField.create(
             Identifier.SHIPS_ID,
             RewardsShips::getShipsId,
             RewardsShips::setShipsId,
@@ -144,7 +144,7 @@ public interface GeneratedRewardsShips {
         SHIPS_ID("ships_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                        columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsShips> tableIdentifier;
 

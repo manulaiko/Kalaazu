@@ -1,13 +1,9 @@
 package com.kalaazu.persistence.database.entities.accounts_skylabs.generated;
 
-import com.kalaazu.persistence.database.entities.Accounts;
-import com.kalaazu.persistence.database.entities.AccountsSkylabs;
-import com.kalaazu.persistence.database.entities.Levels;
-import com.kalaazu.persistence.database.entities.SkylabModules;
+import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
@@ -35,7 +31,7 @@ public interface GeneratedAccountsSkylabs {
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
      * obtained using the {@link AccountsSkylabs#getId()} method.
      */
-    IntField<AccountsSkylabs, Integer>                        ID                = IntField.create(
+    IntField<AccountsSkylabs, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsSkylabs::getId,
             AccountsSkylabs::setId,
@@ -47,7 +43,7 @@ public interface GeneratedAccountsSkylabs {
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
      * obtained using the {@link AccountsSkylabs#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsSkylabs, Integer, Accounts>    ACCOUNTS_ID       = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsSkylabs, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsSkylabs::getAccountsId,
             AccountsSkylabs::setAccountsId,
@@ -73,7 +69,7 @@ public interface GeneratedAccountsSkylabs {
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
      * obtained using the {@link AccountsSkylabs#getLevelsId()} method.
      */
-    ByteForeignKeyField<AccountsSkylabs, Byte, Levels>        LEVELS_ID         = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsSkylabs, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             AccountsSkylabs::getLevelsId,
             AccountsSkylabs::setLevelsId,
@@ -86,7 +82,7 @@ public interface GeneratedAccountsSkylabs {
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
      * obtained using the {@link AccountsSkylabs#getSpace()} method.
      */
-    IntField<AccountsSkylabs, Integer>                        SPACE             = IntField.create(
+    IntField<AccountsSkylabs, Integer> SPACE = IntField.create(
             Identifier.SPACE,
             AccountsSkylabs::getSpace,
             AccountsSkylabs::setSpace,
@@ -98,7 +94,7 @@ public interface GeneratedAccountsSkylabs {
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
      * obtained using the {@link AccountsSkylabs#getUpgrade()} method.
      */
-    ComparableField<AccountsSkylabs, Timestamp, Timestamp>    UPGRADE           = ComparableField.create(
+    ComparableField<AccountsSkylabs, Timestamp, Timestamp> UPGRADE = ComparableField.create(
             Identifier.UPGRADE,
             o -> OptionalUtil.unwrap(o.getUpgrade()),
             AccountsSkylabs::setUpgrade,
@@ -260,7 +256,7 @@ public interface GeneratedAccountsSkylabs {
         SPACE("space"),
         UPGRADE("upgrade");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsSkylabs> tableIdentifier;
 

@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.rewards_collectables.generated;
 
 import com.kalaazu.persistence.database.entities.Collectables;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
@@ -30,7 +30,7 @@ public interface GeneratedRewardsCollectables {
      * This Field corresponds to the {@link RewardsCollectables} field that can
      * be obtained using the {@link RewardsCollectables#getId()} method.
      */
-    ShortField<RewardsCollectables, Short>                       ID              = ShortField.create(
+    ShortField<RewardsCollectables, Short> ID = ShortField.create(
             Identifier.ID,
             RewardsCollectables::getId,
             RewardsCollectables::setId,
@@ -56,7 +56,7 @@ public interface GeneratedRewardsCollectables {
      * This Field corresponds to the {@link RewardsCollectables} field that can
      * be obtained using the {@link RewardsCollectables#getRewardsId()} method.
      */
-    ShortForeignKeyField<RewardsCollectables, Short, Rewards>    REWARDS_ID      = ShortForeignKeyField.create(
+    ShortForeignKeyField<RewardsCollectables, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
             RewardsCollectables::getRewardsId,
             RewardsCollectables::setRewardsId,
@@ -149,7 +149,7 @@ public interface GeneratedRewardsCollectables {
         COLLECTABLES_ID("collectables_id"),
         REWARDS_ID("rewards_id");
 
-        private final String                               columnId;
+        private final String columnName;
 
         private final TableIdentifier<RewardsCollectables> tableIdentifier;
 

@@ -29,7 +29,7 @@ public interface GeneratedGalaxygatesSpins {
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
      * obtained using the {@link GalaxygatesSpins#getId()} method.
      */
-    ByteField<GalaxygatesSpins, Byte>                    ID          = ByteField.create(
+    ByteField<GalaxygatesSpins, Byte> ID = ByteField.create(
             Identifier.ID,
             GalaxygatesSpins::getId,
             GalaxygatesSpins::setId,
@@ -41,7 +41,7 @@ public interface GeneratedGalaxygatesSpins {
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
      * obtained using the {@link GalaxygatesSpins#getType()} method.
      */
-    ByteField<GalaxygatesSpins, Byte>                    TYPE        = ByteField.create(
+    EnumField<GalaxygatesSpins, Byte, GalaxyGateProbabilityType> TYPE = EnumField.create(
             Identifier.TYPE,
             GalaxygatesSpins::getType,
             GalaxygatesSpins::setType,
@@ -53,7 +53,7 @@ public interface GeneratedGalaxygatesSpins {
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
      * obtained using the {@link GalaxygatesSpins#getProbability()} method.
      */
-    DoubleField<GalaxygatesSpins, Double>                PROBABILITY = DoubleField.create(
+    DoubleField<GalaxygatesSpins, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
             GalaxygatesSpins::getProbability,
             GalaxygatesSpins::setProbability,
@@ -65,7 +65,7 @@ public interface GeneratedGalaxygatesSpins {
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
      * obtained using the {@link GalaxygatesSpins#getItemsId()} method.
      */
-    ShortForeignKeyField<GalaxygatesSpins, Short, Items> ITEMS_ID    = ShortForeignKeyField.create(
+    ShortForeignKeyField<GalaxygatesSpins, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
             GalaxygatesSpins::getItemsId,
             GalaxygatesSpins::setItemsId,
@@ -78,7 +78,7 @@ public interface GeneratedGalaxygatesSpins {
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
      * obtained using the {@link GalaxygatesSpins#getAmount()} method.
      */
-    ShortField<GalaxygatesSpins, Short>                  AMOUNT      = ShortField.create(
+    ShortField<GalaxygatesSpins, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
             GalaxygatesSpins::getAmount,
             GalaxygatesSpins::setAmount,
@@ -197,7 +197,7 @@ public interface GeneratedGalaxygatesSpins {
         ITEMS_ID("items_id"),
         AMOUNT("amount");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesSpins> tableIdentifier;
 

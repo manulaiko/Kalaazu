@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.rewards_vouchers.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.util.Objects;
 import java.util.StringJoiner;

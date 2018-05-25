@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.clans_ranking.generated;
 
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansRanking;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -27,7 +27,7 @@ public interface GeneratedClansRanking {
      * This Field corresponds to the {@link ClansRanking} field that can be
      * obtained using the {@link ClansRanking#getId()} method.
      */
-    IntField<ClansRanking, Integer>                  ID          = IntField.create(
+    IntField<ClansRanking, Integer> ID = IntField.create(
             Identifier.ID,
             ClansRanking::getId,
             ClansRanking::setId,
@@ -39,7 +39,7 @@ public interface GeneratedClansRanking {
      * This Field corresponds to the {@link ClansRanking} field that can be
      * obtained using the {@link ClansRanking#getClansId()} method.
      */
-    IntForeignKeyField<ClansRanking, Integer, Clans> CLANS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<ClansRanking, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
             ClansRanking::getClansId,
             ClansRanking::setClansId,
@@ -52,7 +52,7 @@ public interface GeneratedClansRanking {
      * This Field corresponds to the {@link ClansRanking} field that can be
      * obtained using the {@link ClansRanking#getPoints()} method.
      */
-    IntField<ClansRanking, Integer>                  POINTS      = IntField.create(
+    IntField<ClansRanking, Integer> POINTS = IntField.create(
             Identifier.POINTS,
             ClansRanking::getPoints,
             ClansRanking::setPoints,
@@ -64,7 +64,7 @@ public interface GeneratedClansRanking {
      * This Field corresponds to the {@link ClansRanking} field that can be
      * obtained using the {@link ClansRanking#getBestPoints()} method.
      */
-    IntField<ClansRanking, Integer>                  BEST_POINTS = IntField.create(
+    IntField<ClansRanking, Integer> BEST_POINTS = IntField.create(
             Identifier.BEST_POINTS,
             ClansRanking::getBestPoints,
             ClansRanking::setBestPoints,
@@ -163,7 +163,7 @@ public interface GeneratedClansRanking {
         POINTS("points"),
         BEST_POINTS("best_points");
 
-        private final String                        columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansRanking> tableIdentifier;
 

@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.galaxygates_stages_spawns.gene
 import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
 import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -29,7 +29,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      * This Field corresponds to the {@link GalaxygatesStagesSpawns} field that
      * can be obtained using the {@link GalaxygatesStagesSpawns#getId()} method.
      */
-    IntField<GalaxygatesStagesSpawns, Integer>                              ID                    = IntField.create(
+    IntField<GalaxygatesStagesSpawns, Integer> ID = IntField.create(
             Identifier.ID,
             GalaxygatesStagesSpawns::getId,
             GalaxygatesStagesSpawns::setId,
@@ -151,7 +151,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
         GALAXYGATES_STAGES_ID("galaxygates_stages_id"),
         GALAXYGATES_SPAWNS_ID("galaxygates_spawns_id");
 
-        private final String                                   columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesStagesSpawns> tableIdentifier;
 

@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.clans_applications.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansApplications;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -22,15 +22,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansApplicationsImpl implements ClansApplications {
 
-    private int       id;
+    private int id;
 
-    private int       clansId;
+    private int clansId;
 
-    private int       accountsId;
+    private int accountsId;
 
     private Timestamp date;
 
-    private String    text;
+    private String text;
 
     protected GeneratedClansApplicationsImpl() {
     }

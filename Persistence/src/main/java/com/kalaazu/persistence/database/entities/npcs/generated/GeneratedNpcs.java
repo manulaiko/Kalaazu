@@ -27,7 +27,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getId()} method.
      */
-    ByteField<Npcs, Byte>     ID                = ByteField.create(
+    ByteField<Npcs, Byte> ID = ByteField.create(
             Identifier.ID,
             Npcs::getId,
             Npcs::setId,
@@ -39,7 +39,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getName()} method.
      */
-    StringField<Npcs, String> NAME              = StringField.create(
+    StringField<Npcs, String> NAME = StringField.create(
             Identifier.NAME,
             Npcs::getName,
             Npcs::setName,
@@ -51,7 +51,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getHealth()} method.
      */
-    IntField<Npcs, Integer>   HEALTH            = IntField.create(
+    IntField<Npcs, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
             Npcs::getHealth,
             Npcs::setHealth,
@@ -63,7 +63,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getShield()} method.
      */
-    IntField<Npcs, Integer>   SHIELD            = IntField.create(
+    IntField<Npcs, Integer> SHIELD = IntField.create(
             Identifier.SHIELD,
             Npcs::getShield,
             Npcs::setShield,
@@ -75,7 +75,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getShieldAbsorption()} method.
      */
-    ByteField<Npcs, Byte>     SHIELD_ABSORPTION = ByteField.create(
+    ByteField<Npcs, Byte> SHIELD_ABSORPTION = ByteField.create(
             Identifier.SHIELD_ABSORPTION,
             Npcs::getShieldAbsorption,
             Npcs::setShieldAbsorption,
@@ -87,7 +87,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getDamage()} method.
      */
-    IntField<Npcs, Integer>   DAMAGE            = IntField.create(
+    IntField<Npcs, Integer> DAMAGE = IntField.create(
             Identifier.DAMAGE,
             Npcs::getDamage,
             Npcs::setDamage,
@@ -99,7 +99,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getSpeed()} method.
      */
-    ShortField<Npcs, Short>   SPEED             = ShortField.create(
+    ShortField<Npcs, Short> SPEED = ShortField.create(
             Identifier.SPEED,
             Npcs::getSpeed,
             Npcs::setSpeed,
@@ -111,7 +111,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getGfx()} method.
      */
-    ByteField<Npcs, Byte>     GFX               = ByteField.create(
+    ByteField<Npcs, Byte> GFX = ByteField.create(
             Identifier.GFX,
             Npcs::getGfx,
             Npcs::setGfx,
@@ -123,7 +123,7 @@ public interface GeneratedNpcs {
      * This Field corresponds to the {@link Npcs} field that can be obtained
      * using the {@link Npcs#getAi()} method.
      */
-    ByteField<Npcs, Byte>     AI                = ByteField.create(
+    ByteField<Npcs, Byte> AI = ByteField.create(
             Identifier.AI,
             Npcs::getAi,
             Npcs::setAi,
@@ -307,7 +307,7 @@ public interface GeneratedNpcs {
         GFX("gfx"),
         AI("ai");
 
-        private final String                columnId;
+        private final String columnName;
 
         private final TableIdentifier<Npcs> tableIdentifier;
 

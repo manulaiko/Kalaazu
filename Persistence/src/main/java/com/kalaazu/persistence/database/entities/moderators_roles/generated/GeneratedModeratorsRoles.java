@@ -29,7 +29,7 @@ public interface GeneratedModeratorsRoles {
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
      * obtained using the {@link ModeratorsRoles#getId()} method.
      */
-    ByteField<ModeratorsRoles, Byte>             ID                  = ByteField.create(
+    ByteField<ModeratorsRoles, Byte> ID = ByteField.create(
             Identifier.ID,
             ModeratorsRoles::getId,
             ModeratorsRoles::setId,
@@ -41,7 +41,7 @@ public interface GeneratedModeratorsRoles {
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
      * obtained using the {@link ModeratorsRoles#getName()} method.
      */
-    StringField<ModeratorsRoles, String>         NAME                = StringField.create(
+    StringField<ModeratorsRoles, String> NAME = StringField.create(
             Identifier.NAME,
             ModeratorsRoles::getName,
             ModeratorsRoles::setName,
@@ -65,7 +65,7 @@ public interface GeneratedModeratorsRoles {
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
      * obtained using the {@link ModeratorsRoles#getPriority()} method.
      */
-    ByteField<ModeratorsRoles, Byte>             PRIORITY            = ByteField.create(
+    ByteField<ModeratorsRoles, Byte> PRIORITY = ByteField.create(
             Identifier.PRIORITY,
             ModeratorsRoles::getPriority,
             ModeratorsRoles::setPriority,
@@ -155,7 +155,7 @@ public interface GeneratedModeratorsRoles {
         MODERATORS_ROLES_ID("moderators_roles_id"),
         PRIORITY("priority");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<ModeratorsRoles> tableIdentifier;
 

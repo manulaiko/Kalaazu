@@ -27,6 +27,8 @@ public abstract class GeneratedClansBattlestationsSqlAdapter implements SqlAdapt
 
     private final TableIdentifier<ClansBattlestations> tableIdentifier;
 
+    private SqlTypeMapperHelper<Long, Vector2> positionHelper;
+
     protected GeneratedClansBattlestationsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "clans_battlestations");
     }

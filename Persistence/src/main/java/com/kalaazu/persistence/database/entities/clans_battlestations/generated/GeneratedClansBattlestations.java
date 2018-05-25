@@ -33,7 +33,7 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getId()} method.
      */
-    ByteField<ClansBattlestations, Byte>                       ID       = ByteField.create(
+    ByteField<ClansBattlestations, Byte> ID = ByteField.create(
             Identifier.ID,
             ClansBattlestations::getId,
             ClansBattlestations::setId,
@@ -58,7 +58,7 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getMapsId()} method.
      */
-    ByteForeignKeyField<ClansBattlestations, Byte, Maps>       MAPS_ID  = ByteForeignKeyField.create(
+    ByteForeignKeyField<ClansBattlestations, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
             ClansBattlestations::getMapsId,
             ClansBattlestations::setMapsId,
@@ -71,7 +71,7 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getName()} method.
      */
-    StringField<ClansBattlestations, String>                   NAME     = StringField.create(
+    StringField<ClansBattlestations, String> NAME = StringField.create(
             Identifier.NAME,
             ClansBattlestations::getName,
             ClansBattlestations::setName,
@@ -83,7 +83,7 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getPosition()} method.
      */
-    LongField<ClansBattlestations, Long>                       POSITION = LongField.create(
+    ReferenceField<ClansBattlestations, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
             ClansBattlestations::getPosition,
             ClansBattlestations::setPosition,
@@ -95,7 +95,7 @@ public interface GeneratedClansBattlestations {
      * This Field corresponds to the {@link ClansBattlestations} field that can
      * be obtained using the {@link ClansBattlestations#getDate()} method.
      */
-    ComparableField<ClansBattlestations, Timestamp, Timestamp> DATE     = ComparableField.create(
+    ComparableField<ClansBattlestations, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             o -> OptionalUtil.unwrap(o.getDate()),
             ClansBattlestations::setDate,
@@ -245,7 +245,7 @@ public interface GeneratedClansBattlestations {
         POSITION("position"),
         DATE("date");
 
-        private final String                               columnId;
+        private final String columnName;
 
         private final TableIdentifier<ClansBattlestations> tableIdentifier;
 

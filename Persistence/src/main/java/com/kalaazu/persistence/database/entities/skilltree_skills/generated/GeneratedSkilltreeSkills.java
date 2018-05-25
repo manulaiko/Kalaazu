@@ -26,7 +26,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getId()} method.
      */
-    ByteField<SkilltreeSkills, Byte>     ID           = ByteField.create(
+    ByteField<SkilltreeSkills, Byte> ID = ByteField.create(
             Identifier.ID,
             SkilltreeSkills::getId,
             SkilltreeSkills::setId,
@@ -38,7 +38,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getName()} method.
      */
-    StringField<SkilltreeSkills, String> NAME         = StringField.create(
+    StringField<SkilltreeSkills, String> NAME = StringField.create(
             Identifier.NAME,
             SkilltreeSkills::getName,
             SkilltreeSkills::setName,
@@ -50,7 +50,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getDescription()} method.
      */
-    StringField<SkilltreeSkills, String> DESCRIPTION  = StringField.create(
+    StringField<SkilltreeSkills, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
             SkilltreeSkills::getDescription,
             SkilltreeSkills::setDescription,
@@ -62,7 +62,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getType()} method.
      */
-    ByteField<SkilltreeSkills, Byte>     TYPE         = ByteField.create(
+    EnumField<SkilltreeSkills, Byte, SkillType> TYPE = EnumField.create(
             Identifier.TYPE,
             SkilltreeSkills::getType,
             SkilltreeSkills::setType,
@@ -74,7 +74,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getIsAdvanced()} method.
      */
-    IntField<SkilltreeSkills, Integer>   IS_ADVANCED  = IntField.create(
+    BooleanField<SkilltreeSkills, Integer> IS_ADVANCED = BooleanField.create(
             Identifier.IS_ADVANCED,
             SkilltreeSkills::getIsAdvanced,
             SkilltreeSkills::setIsAdvanced,
@@ -86,7 +86,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getBonusType()} method.
      */
-    StringField<SkilltreeSkills, String> BONUS_TYPE   = StringField.create(
+    StringField<SkilltreeSkills, String> BONUS_TYPE = StringField.create(
             Identifier.BONUS_TYPE,
             SkilltreeSkills::getBonusType,
             SkilltreeSkills::setBonusType,
@@ -98,7 +98,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getBonusAmount()} method.
      */
-    IntField<SkilltreeSkills, Integer>   BONUS_AMOUNT = IntField.create(
+    IntField<SkilltreeSkills, Integer> BONUS_AMOUNT = IntField.create(
             Identifier.BONUS_AMOUNT,
             SkilltreeSkills::getBonusAmount,
             SkilltreeSkills::setBonusAmount,
@@ -110,7 +110,7 @@ public interface GeneratedSkilltreeSkills {
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
      * obtained using the {@link SkilltreeSkills#getBonusFactor()} method.
      */
-    ByteField<SkilltreeSkills, Byte>     BONUS_FACTOR = ByteField.create(
+    ByteField<SkilltreeSkills, Byte> BONUS_FACTOR = ByteField.create(
             Identifier.BONUS_FACTOR,
             SkilltreeSkills::getBonusFactor,
             SkilltreeSkills::setBonusFactor,
@@ -283,7 +283,7 @@ public interface GeneratedSkilltreeSkills {
         BONUS_AMOUNT("bonus_amount"),
         BONUS_FACTOR("bonus_factor");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<SkilltreeSkills> tableIdentifier;
 

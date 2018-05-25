@@ -22,11 +22,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansImpl implements Clans {
 
-    private int    id;
+    private int id;
 
-    private int    accountsId;
+    private int accountsId;
 
-    private byte   factionsId;
+    private Byte factionsId;
 
     private String tag;
 

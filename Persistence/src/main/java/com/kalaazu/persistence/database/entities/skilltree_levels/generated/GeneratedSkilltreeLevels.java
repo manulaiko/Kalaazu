@@ -1,12 +1,12 @@
 package com.kalaazu.persistence.database.entities.skilltree_levels.generated;
 
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeSkills;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
@@ -30,7 +30,7 @@ public interface GeneratedSkilltreeLevels {
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
      * obtained using the {@link SkilltreeLevels#getId()} method.
      */
-    ShortField<SkilltreeLevels, Short>                          ID                  = ShortField.create(
+    ShortField<SkilltreeLevels, Short> ID = ShortField.create(
             Identifier.ID,
             SkilltreeLevels::getId,
             SkilltreeLevels::setId,
@@ -55,7 +55,7 @@ public interface GeneratedSkilltreeLevels {
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
      * obtained using the {@link SkilltreeLevels#getLevelsId()} method.
      */
-    ByteForeignKeyField<SkilltreeLevels, Byte, Levels>          LEVELS_ID           = ByteForeignKeyField.create(
+    ByteForeignKeyField<SkilltreeLevels, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             SkilltreeLevels::getLevelsId,
             SkilltreeLevels::setLevelsId,
@@ -68,7 +68,7 @@ public interface GeneratedSkilltreeLevels {
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
      * obtained using the {@link SkilltreeLevels#getCredits()} method.
      */
-    IntField<SkilltreeLevels, Integer>                          CREDITS             = IntField.create(
+    IntField<SkilltreeLevels, Integer> CREDITS = IntField.create(
             Identifier.CREDITS,
             SkilltreeLevels::getCredits,
             SkilltreeLevels::setCredits,
@@ -80,7 +80,7 @@ public interface GeneratedSkilltreeLevels {
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
      * obtained using the {@link SkilltreeLevels#getSeprom()} method.
      */
-    ShortField<SkilltreeLevels, Short>                          SEPROM              = ShortField.create(
+    ShortField<SkilltreeLevels, Short> SEPROM = ShortField.create(
             Identifier.SEPROM,
             SkilltreeLevels::getSeprom,
             SkilltreeLevels::setSeprom,
@@ -92,7 +92,7 @@ public interface GeneratedSkilltreeLevels {
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
      * obtained using the {@link SkilltreeLevels#getPoints()} method.
      */
-    ByteField<SkilltreeLevels, Byte>                            POINTS              = ByteField.create(
+    ByteField<SkilltreeLevels, Byte> POINTS = ByteField.create(
             Identifier.POINTS,
             SkilltreeLevels::getPoints,
             SkilltreeLevels::setPoints,
@@ -242,7 +242,7 @@ public interface GeneratedSkilltreeLevels {
         SEPROM("seprom"),
         POINTS("points");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<SkilltreeLevels> tableIdentifier;
 

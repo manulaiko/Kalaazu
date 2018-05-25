@@ -28,6 +28,10 @@ public abstract class GeneratedAccountsBanksLogsSqlAdapter implements SqlAdapter
 
     private final TableIdentifier<AccountsBanksLogs> tableIdentifier;
 
+    private SqlTypeMapperHelper<Byte, BankLogType> typeHelper;
+
+    private SqlTypeMapperHelper<Byte, Currency> currencyHelper;
+
     protected GeneratedAccountsBanksLogsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "accounts_banks_logs");
     }

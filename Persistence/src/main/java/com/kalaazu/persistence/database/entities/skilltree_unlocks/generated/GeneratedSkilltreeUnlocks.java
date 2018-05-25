@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.skilltree_unlocks.generated;
 
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeUnlocks;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.ShortForeignKeyField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -27,7 +27,7 @@ public interface GeneratedSkilltreeUnlocks {
      * This Field corresponds to the {@link SkilltreeUnlocks} field that can be
      * obtained using the {@link SkilltreeUnlocks#getId()} method.
      */
-    ShortField<SkilltreeUnlocks, Short>                            ID                           = ShortField.create(
+    ShortField<SkilltreeUnlocks, Short> ID = ShortField.create(
             Identifier.ID,
             SkilltreeUnlocks::getId,
             SkilltreeUnlocks::setId,
@@ -40,7 +40,7 @@ public interface GeneratedSkilltreeUnlocks {
      * obtained using the {@link SkilltreeUnlocks#getUpgradeSkilltreeLevelsId()}
      * method.
      */
-    ShortForeignKeyField<SkilltreeUnlocks, Short, SkilltreeLevels> UPGRADE_SKILLTREE_LEVELS_ID  = ShortForeignKeyField.create(
+    ShortForeignKeyField<SkilltreeUnlocks, Short, SkilltreeLevels> UPGRADE_SKILLTREE_LEVELS_ID = ShortForeignKeyField.create(
             Identifier.UPGRADE_SKILLTREE_LEVELS_ID,
             SkilltreeUnlocks::getUpgradeSkilltreeLevelsId,
             SkilltreeUnlocks::setUpgradeSkilltreeLevelsId,
@@ -149,7 +149,7 @@ public interface GeneratedSkilltreeUnlocks {
         UPGRADE_SKILLTREE_LEVELS_ID("upgrade_skilltree_levels_id"),
         REQUIRED_SKILLTREE_LEVELS_ID("required_skilltree_levels_id");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<SkilltreeUnlocks> tableIdentifier;
 

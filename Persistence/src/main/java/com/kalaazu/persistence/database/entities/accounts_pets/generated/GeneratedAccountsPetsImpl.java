@@ -3,8 +3,8 @@ package com.kalaazu.persistence.database.entities.accounts_pets.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsPets;
 import com.kalaazu.persistence.database.entities.Levels;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -21,35 +21,35 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsPetsImpl implements AccountsPets {
 
-    private int    id;
+    private int id;
 
-    private int    accountsId;
+    private int accountsId;
 
-    private byte   levelsId;
+    private byte levelsId;
 
     private String name;
 
-    private int    experience;
+    private int experience;
 
-    private int    fuel;
+    private int fuel;
 
-    private int    health;
+    private int health;
 
-    private byte   slotsLasersTotal;
+    private byte slotsLasersTotal;
 
-    private byte   slotsLasersAvailable;
+    private byte slotsLasersAvailable;
 
-    private byte   slotsGeneratorsTotal;
+    private byte slotsGeneratorsTotal;
 
-    private byte   slotsGeneratorsAvailable;
+    private byte slotsGeneratorsAvailable;
 
-    private byte   slotsProtocolsTotal;
+    private byte slotsProtocolsTotal;
 
-    private byte   slotsProtocolsAvailable;
+    private byte slotsProtocolsAvailable;
 
-    private byte   slotsGearsTotal;
+    private byte slotsGearsTotal;
 
-    private byte   slotsGearsAvailable;
+    private byte slotsGearsAvailable;
 
     protected GeneratedAccountsPetsImpl() {
     }

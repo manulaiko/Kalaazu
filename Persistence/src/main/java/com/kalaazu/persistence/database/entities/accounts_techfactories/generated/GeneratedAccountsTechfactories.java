@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.accounts_techfactories.generat
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsTechfactories;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -29,7 +29,7 @@ public interface GeneratedAccountsTechfactories {
      * This Field corresponds to the {@link AccountsTechfactories} field that
      * can be obtained using the {@link AccountsTechfactories#getId()} method.
      */
-    IntField<AccountsTechfactories, Integer>                     ID                 = IntField.create(
+    IntField<AccountsTechfactories, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsTechfactories::getId,
             AccountsTechfactories::setId,
@@ -42,7 +42,7 @@ public interface GeneratedAccountsTechfactories {
      * can be obtained using the {@link AccountsTechfactories#getAccountsId()}
      * method.
      */
-    IntForeignKeyField<AccountsTechfactories, Integer, Accounts> ACCOUNTS_ID        = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsTechfactories, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsTechfactories::getAccountsId,
             AccountsTechfactories::setAccountsId,
@@ -56,7 +56,7 @@ public interface GeneratedAccountsTechfactories {
      * can be obtained using the {@link
      * AccountsTechfactories#getSlotUnlockPrice()} method.
      */
-    IntField<AccountsTechfactories, Integer>                     SLOT_UNLOCK_PRICE  = IntField.create(
+    IntField<AccountsTechfactories, Integer> SLOT_UNLOCK_PRICE = IntField.create(
             Identifier.SLOT_UNLOCK_PRICE,
             AccountsTechfactories::getSlotUnlockPrice,
             AccountsTechfactories::setSlotUnlockPrice,
@@ -69,7 +69,7 @@ public interface GeneratedAccountsTechfactories {
      * can be obtained using the {@link
      * AccountsTechfactories#getSlotUnlockFactor()} method.
      */
-    ByteField<AccountsTechfactories, Byte>                       SLOT_UNLOCK_FACTOR = ByteField.create(
+    ByteField<AccountsTechfactories, Byte> SLOT_UNLOCK_FACTOR = ByteField.create(
             Identifier.SLOT_UNLOCK_FACTOR,
             AccountsTechfactories::getSlotUnlockFactor,
             AccountsTechfactories::setSlotUnlockFactor,
@@ -82,7 +82,7 @@ public interface GeneratedAccountsTechfactories {
      * can be obtained using the {@link AccountsTechfactories#getSlots()}
      * method.
      */
-    ByteField<AccountsTechfactories, Byte>                       SLOTS              = ByteField.create(
+    ByteField<AccountsTechfactories, Byte> SLOTS = ByteField.create(
             Identifier.SLOTS,
             AccountsTechfactories::getSlots,
             AccountsTechfactories::setSlots,
@@ -205,7 +205,7 @@ public interface GeneratedAccountsTechfactories {
         SLOT_UNLOCK_FACTOR("slot_unlock_factor"),
         SLOTS("slots");
 
-        private final String                                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsTechfactories> tableIdentifier;
 

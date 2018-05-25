@@ -1,10 +1,10 @@
 package com.kalaazu.persistence.database.entities.vouchers_redeem_logs.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.kalaazu.persistence.database.entities.VouchersRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
-import com.kalaazu.persistence.database.entities.Manager;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -22,11 +22,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedVouchersRedeemLogsImpl implements VouchersRedeemLogs {
 
-    private int       id;
+    private int id;
 
-    private short     vouchersId;
+    private short vouchersId;
 
-    private int       accountsId;
+    private int accountsId;
 
     private Timestamp date;
 

@@ -2,7 +2,6 @@ package com.kalaazu.persistence.database.entities.galaxygates_waves;
 
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.GalaxygatesStages;
-import com.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.galaxygates_waves.generated.GeneratedGalaxygatesWavesImpl;

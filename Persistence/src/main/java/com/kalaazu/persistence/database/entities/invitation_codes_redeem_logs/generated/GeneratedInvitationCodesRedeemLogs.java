@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.g
 
 import com.kalaazu.persistence.database.entities.InvitationCodes;
 import com.kalaazu.persistence.database.entities.InvitationCodesRedeemLogs;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.ReferenceField;
@@ -33,7 +33,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      * that can be obtained using the {@link InvitationCodesRedeemLogs#getId()}
      * method.
      */
-    IntField<InvitationCodesRedeemLogs, Integer>                            ID                  = IntField.create(
+    IntField<InvitationCodesRedeemLogs, Integer> ID = IntField.create(
             Identifier.ID,
             InvitationCodesRedeemLogs::getId,
             InvitationCodesRedeemLogs::setId,
@@ -60,7 +60,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      * that can be obtained using the {@link InvitationCodesRedeemLogs#getIp()}
      * method.
      */
-    ReferenceField<InvitationCodesRedeemLogs, Object, Object>               IP                  = ReferenceField.create(
+    ReferenceField<InvitationCodesRedeemLogs, Object, byte[]> IP = ReferenceField.create(
             Identifier.IP,
             InvitationCodesRedeemLogs::getIp,
             InvitationCodesRedeemLogs::setIp,
@@ -73,7 +73,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      * that can be obtained using the {@link
      * InvitationCodesRedeemLogs#getDate()} method.
      */
-    ComparableField<InvitationCodesRedeemLogs, Timestamp, Timestamp>        DATE                = ComparableField.create(
+    ComparableField<InvitationCodesRedeemLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             InvitationCodesRedeemLogs::getDate,
             InvitationCodesRedeemLogs::setDate,
@@ -177,7 +177,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
         IP("ip"),
         DATE("date");
 
-        private final String                                     columnId;
+        private final String columnName;
 
         private final TableIdentifier<InvitationCodesRedeemLogs> tableIdentifier;
 

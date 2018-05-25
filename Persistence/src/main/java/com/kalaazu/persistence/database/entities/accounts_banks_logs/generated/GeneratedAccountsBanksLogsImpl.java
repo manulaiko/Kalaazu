@@ -23,21 +23,21 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLogs {
 
-    private int       id;
+    private int id;
 
-    private int       fromAccountsId;
+    private int fromAccountsId;
 
-    private int       toAccountsId;
+    private int toAccountsId;
 
     private Timestamp date;
 
     private byte      type;
 
-    private int       amount;
+    private int amount;
 
-    private byte      currency;
+    private Currency currency;
 
-    private int       accountsBanksId;
+    private Integer accountsBanksId;
 
     protected GeneratedAccountsBanksLogsImpl() {
     }

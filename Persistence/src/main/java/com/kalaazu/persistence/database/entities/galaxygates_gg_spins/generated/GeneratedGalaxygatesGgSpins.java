@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.galaxygates_gg_spins.generated
 import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesGgSpins;
 import com.kalaazu.persistence.database.entities.GalaxygatesSpins;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -29,7 +29,7 @@ public interface GeneratedGalaxygatesGgSpins {
      * This Field corresponds to the {@link GalaxygatesGgSpins} field that can
      * be obtained using the {@link GalaxygatesGgSpins#getId()} method.
      */
-    ShortField<GalaxygatesGgSpins, Short>                           ID                   = ShortField.create(
+    ShortField<GalaxygatesGgSpins, Short> ID = ShortField.create(
             Identifier.ID,
             GalaxygatesGgSpins::getId,
             GalaxygatesGgSpins::setId,
@@ -42,7 +42,7 @@ public interface GeneratedGalaxygatesGgSpins {
      * be obtained using the {@link GalaxygatesGgSpins#getGalaxygatesId()}
      * method.
      */
-    ByteForeignKeyField<GalaxygatesGgSpins, Byte, Galaxygates>      GALAXYGATES_ID       = ByteForeignKeyField.create(
+    ByteForeignKeyField<GalaxygatesGgSpins, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
             GalaxygatesGgSpins::getGalaxygatesId,
             GalaxygatesGgSpins::setGalaxygatesId,
@@ -150,7 +150,7 @@ public interface GeneratedGalaxygatesGgSpins {
         GALAXYGATES_ID("galaxygates_id"),
         GALAXYGATES_SPINS_ID("galaxygates_spins_id");
 
-        private final String                              columnId;
+        private final String columnName;
 
         private final TableIdentifier<GalaxygatesGgSpins> tableIdentifier;
 

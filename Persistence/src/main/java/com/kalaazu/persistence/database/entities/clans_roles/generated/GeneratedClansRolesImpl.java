@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.clans_roles.generated;
 
 import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansRoles;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
 
 import java.util.Objects;
@@ -22,15 +22,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansRolesImpl implements ClansRoles {
 
-    private int     id;
+    private int id;
 
-    private String  name;
+    private String name;
 
-    private int     clansId;
+    private int clansId;
 
     private Integer clansRolesId;
 
-    private byte    priority;
+    private byte priority;
 
     protected GeneratedClansRolesImpl() {
     }

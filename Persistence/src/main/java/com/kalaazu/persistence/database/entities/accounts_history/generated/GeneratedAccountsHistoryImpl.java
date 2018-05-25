@@ -2,8 +2,8 @@ package com.kalaazu.persistence.database.entities.accounts_history.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsHistory;
-import com.speedment.common.annotation.GeneratedCode;
 import com.kalaazu.persistence.database.entities.Manager;
+import com.speedment.common.annotation.GeneratedCode;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -21,15 +21,15 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedAccountsHistoryImpl implements AccountsHistory {
 
-    private int       id;
+    private int id;
 
-    private int       accountsId;
+    private int accountsId;
 
-    private byte      type;
+    private byte type;
 
-    private String    message;
+    private String message;
 
-    private int       amount;
+    private int amount;
 
     private Timestamp date;
 

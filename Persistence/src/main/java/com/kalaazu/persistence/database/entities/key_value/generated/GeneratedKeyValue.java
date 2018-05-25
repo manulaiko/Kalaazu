@@ -24,7 +24,7 @@ public interface GeneratedKeyValue {
      * This Field corresponds to the {@link KeyValue} field that can be obtained
      * using the {@link KeyValue#getKey()} method.
      */
-    StringField<KeyValue, String> KEY   = StringField.create(
+    StringField<KeyValue, String> KEY = StringField.create(
             Identifier.KEY,
             KeyValue::getKey,
             KeyValue::setKey,
@@ -85,7 +85,7 @@ public interface GeneratedKeyValue {
         KEY("key"),
         VALUE("value");
 
-        private final String                    columnId;
+        private final String columnName;
 
         private final TableIdentifier<KeyValue> tableIdentifier;
 

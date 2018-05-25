@@ -24,6 +24,14 @@ public abstract class GeneratedMapsPortalsSqlAdapter implements SqlAdapter<MapsP
 
     private final TableIdentifier<MapsPortals> tableIdentifier;
 
+    private SqlTypeMapperHelper<Long, Vector2> positionHelper;
+
+    private SqlTypeMapperHelper<Long, Vector2> targetPositionHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isVisibleHelper;
+
+    private SqlTypeMapperHelper<Integer, Boolean> isWorkingHelper;
+
     protected GeneratedMapsPortalsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "maps_portals");
     }

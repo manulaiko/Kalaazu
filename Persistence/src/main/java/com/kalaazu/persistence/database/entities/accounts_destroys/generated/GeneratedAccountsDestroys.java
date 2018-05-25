@@ -2,10 +2,10 @@ package com.kalaazu.persistence.database.entities.accounts_destroys.generated;
 
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsDestroys;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
@@ -29,7 +29,7 @@ public interface GeneratedAccountsDestroys {
      * This Field corresponds to the {@link AccountsDestroys} field that can be
      * obtained using the {@link AccountsDestroys#getId()} method.
      */
-    IntField<AccountsDestroys, Integer>                     ID          = IntField.create(
+    IntField<AccountsDestroys, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsDestroys::getId,
             AccountsDestroys::setId,
@@ -54,7 +54,7 @@ public interface GeneratedAccountsDestroys {
      * This Field corresponds to the {@link AccountsDestroys} field that can be
      * obtained using the {@link AccountsDestroys#getShipsId()} method.
      */
-    ByteField<AccountsDestroys, Byte>                       SHIPS_ID    = ByteField.create(
+    ByteField<AccountsDestroys, Byte> SHIPS_ID = ByteField.create(
             Identifier.SHIPS_ID,
             AccountsDestroys::getShipsId,
             AccountsDestroys::setShipsId,
@@ -66,7 +66,7 @@ public interface GeneratedAccountsDestroys {
      * This Field corresponds to the {@link AccountsDestroys} field that can be
      * obtained using the {@link AccountsDestroys#getPoints()} method.
      */
-    ShortField<AccountsDestroys, Short>                     POINTS      = ShortField.create(
+    ShortField<AccountsDestroys, Short> POINTS = ShortField.create(
             Identifier.POINTS,
             AccountsDestroys::getPoints,
             AccountsDestroys::setPoints,
@@ -78,7 +78,7 @@ public interface GeneratedAccountsDestroys {
      * This Field corresponds to the {@link AccountsDestroys} field that can be
      * obtained using the {@link AccountsDestroys#getAmount()} method.
      */
-    ShortField<AccountsDestroys, Short>                     AMOUNT      = ShortField.create(
+    ShortField<AccountsDestroys, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
             AccountsDestroys::getAmount,
             AccountsDestroys::setAmount,
@@ -197,7 +197,7 @@ public interface GeneratedAccountsDestroys {
         POINTS("points"),
         AMOUNT("amount");
 
-        private final String                            columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsDestroys> tableIdentifier;
 

@@ -1,11 +1,11 @@
 package com.kalaazu.persistence.database.entities.maps.generated;
 
 import com.kalaazu.persistence.database.entities.Factions;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
@@ -29,7 +29,7 @@ public interface GeneratedMaps {
      * This Field corresponds to the {@link Maps} field that can be obtained
      * using the {@link Maps#getId()} method.
      */
-    ByteField<Maps, Byte>                                 ID          = ByteField.create(
+    ByteField<Maps, Byte> ID = ByteField.create(
             Identifier.ID,
             Maps::getId,
             Maps::setId,
@@ -41,7 +41,7 @@ public interface GeneratedMaps {
      * This Field corresponds to the {@link Maps} field that can be obtained
      * using the {@link Maps#getName()} method.
      */
-    StringField<Maps, String>                             NAME        = StringField.create(
+    StringField<Maps, String> NAME = StringField.create(
             Identifier.NAME,
             Maps::getName,
             Maps::setName,
@@ -66,7 +66,7 @@ public interface GeneratedMaps {
      * This Field corresponds to the {@link Maps} field that can be obtained
      * using the {@link Maps#getIsPvp()} method.
      */
-    IntField<Maps, Integer>                               IS_PVP      = IntField.create(
+    BooleanField<Maps, Integer> IS_PVP = BooleanField.create(
             Identifier.IS_PVP,
             Maps::getIsPvp,
             Maps::setIsPvp,
@@ -78,7 +78,7 @@ public interface GeneratedMaps {
      * This Field corresponds to the {@link Maps} field that can be obtained
      * using the {@link Maps#getIsStarter()} method.
      */
-    IntField<Maps, Integer>                               IS_STARTER  = IntField.create(
+    BooleanField<Maps, Integer> IS_STARTER = BooleanField.create(
             Identifier.IS_STARTER,
             Maps::getIsStarter,
             Maps::setIsStarter,
@@ -90,7 +90,7 @@ public interface GeneratedMaps {
      * This Field corresponds to the {@link Maps} field that can be obtained
      * using the {@link Maps#getLimits()} method.
      */
-    LongField<Maps, Long>                                 LIMITS      = LongField.create(
+    LongField<Maps, Long> LIMITS = LongField.create(
             Identifier.LIMITS,
             Maps::getLimits,
             Maps::setLimits,
@@ -225,7 +225,7 @@ public interface GeneratedMaps {
         IS_STARTER("is_starter"),
         LIMITS("limits");
 
-        private final String                columnId;
+        private final String columnName;
 
         private final TableIdentifier<Maps> tableIdentifier;
 

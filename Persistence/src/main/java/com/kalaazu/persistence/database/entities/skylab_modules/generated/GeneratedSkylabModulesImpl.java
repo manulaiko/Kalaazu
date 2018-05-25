@@ -18,25 +18,25 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedSkylabModulesImpl implements SkylabModules {
 
-    private byte   id;
+    private byte id;
 
     private String name;
 
-    private byte   productionFactor;
+    private byte productionFactor;
 
-    private short  productionBase;
+    private short productionBase;
 
-    private short  storageFactor;
+    private short storageFactor;
 
-    private short  storageBase;
+    private short storageBase;
 
-    private byte   upgradeFactor;
+    private byte upgradeFactor;
 
-    private short  upgradeBase;
+    private short upgradeBase;
 
-    private byte   energyFactor;
+    private byte energyFactor;
 
-    private byte   energyBase;
+    private byte energyBase;
 
     protected GeneratedSkylabModulesImpl() {
     }

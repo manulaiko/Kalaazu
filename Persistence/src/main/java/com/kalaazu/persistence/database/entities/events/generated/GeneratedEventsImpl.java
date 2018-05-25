@@ -21,11 +21,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedEventsImpl implements Events {
 
-    private int       id;
+    private int id;
 
-    private String    name;
+    private String name;
 
-    private String    description;
+    private String description;
 
     private Timestamp startDate;
 

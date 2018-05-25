@@ -26,7 +26,7 @@ public interface GeneratedInvitationCodes {
      * This Field corresponds to the {@link InvitationCodes} field that can be
      * obtained using the {@link InvitationCodes#getId()} method.
      */
-    ShortField<InvitationCodes, Short>   ID    = ShortField.create(
+    ShortField<InvitationCodes, Short> ID = ShortField.create(
             Identifier.ID,
             InvitationCodes::getId,
             InvitationCodes::setId,
@@ -38,7 +38,7 @@ public interface GeneratedInvitationCodes {
      * This Field corresponds to the {@link InvitationCodes} field that can be
      * obtained using the {@link InvitationCodes#getCode()} method.
      */
-    StringField<InvitationCodes, String> CODE  = StringField.create(
+    StringField<InvitationCodes, String> CODE = StringField.create(
             Identifier.CODE,
             InvitationCodes::getCode,
             InvitationCodes::setCode,
@@ -50,7 +50,7 @@ public interface GeneratedInvitationCodes {
      * This Field corresponds to the {@link InvitationCodes} field that can be
      * obtained using the {@link InvitationCodes#getLimit()} method.
      */
-    ByteField<InvitationCodes, Byte>     LIMIT = ByteField.create(
+    ByteField<InvitationCodes, Byte> LIMIT = ByteField.create(
             Identifier.LIMIT,
             InvitationCodes::getLimit,
             InvitationCodes::setLimit,
@@ -118,7 +118,7 @@ public interface GeneratedInvitationCodes {
         CODE("code"),
         LIMIT("limit");
 
-        private final String                           columnId;
+        private final String columnName;
 
         private final TableIdentifier<InvitationCodes> tableIdentifier;
 

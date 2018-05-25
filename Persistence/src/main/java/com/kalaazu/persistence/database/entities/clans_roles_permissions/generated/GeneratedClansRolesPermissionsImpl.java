@@ -24,11 +24,11 @@ import java.util.StringJoiner;
 @GeneratedCode("Speedment")
 public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPermissions {
 
-    private int     id;
+    private int id;
 
-    private int     clansRolesId;
+    private int clansRolesId;
 
-    private byte    permissionsId;
+    private byte permissionsId;
 
     private boolean isEnabled;
 

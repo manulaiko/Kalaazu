@@ -27,7 +27,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getId()} method.
      */
-    ShortField<Items, Short>   ID          = ShortField.create(
+    ShortField<Items, Short> ID = ShortField.create(
             Identifier.ID,
             Items::getId,
             Items::setId,
@@ -39,7 +39,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getName()} method.
      */
-    StringField<Items, String> NAME        = StringField.create(
+    StringField<Items, String> NAME = StringField.create(
             Identifier.NAME,
             Items::getName,
             Items::setName,
@@ -51,7 +51,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getCategory()} method.
      */
-    ByteField<Items, Byte>     CATEGORY    = ByteField.create(
+    EnumField<Items, Byte, ItemCategory> CATEGORY = EnumField.create(
             Identifier.CATEGORY,
             Items::getCategory,
             Items::setCategory,
@@ -75,7 +75,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getPrice()} method.
      */
-    IntField<Items, Integer>   PRICE       = IntField.create(
+    IntField<Items, Integer> PRICE = IntField.create(
             Identifier.PRICE,
             Items::getPrice,
             Items::setPrice,
@@ -87,7 +87,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getType()} method.
      */
-    ByteField<Items, Byte>     TYPE        = ByteField.create(
+    EnumField<Items, Byte, ItemType> TYPE = EnumField.create(
             Identifier.TYPE,
             Items::getType,
             Items::setType,
@@ -99,7 +99,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getIsElite()} method.
      */
-    IntField<Items, Integer>   IS_ELITE    = IntField.create(
+    BooleanField<Items, Integer> IS_ELITE = BooleanField.create(
             Identifier.IS_ELITE,
             Items::getIsElite,
             Items::setIsElite,
@@ -111,7 +111,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getIsEvent()} method.
      */
-    IntField<Items, Integer>   IS_EVENT    = IntField.create(
+    BooleanField<Items, Integer> IS_EVENT = BooleanField.create(
             Identifier.IS_EVENT,
             Items::getIsEvent,
             Items::setIsEvent,
@@ -123,7 +123,7 @@ public interface GeneratedItems {
      * This Field corresponds to the {@link Items} field that can be obtained
      * using the {@link Items#getIsBuyable()} method.
      */
-    IntField<Items, Integer>   IS_BUYABLE  = IntField.create(
+    BooleanField<Items, Integer> IS_BUYABLE = BooleanField.create(
             Identifier.IS_BUYABLE,
             Items::getIsBuyable,
             Items::setIsBuyable,
@@ -305,7 +305,7 @@ public interface GeneratedItems {
         IS_EVENT("is_event"),
         IS_BUYABLE("is_buyable");
 
-        private final String                 columnId;
+        private final String columnName;
 
         private final TableIdentifier<Items> tableIdentifier;
 

@@ -27,7 +27,7 @@ public interface GeneratedAccountsClansRoles {
      * This Field corresponds to the {@link AccountsClansRoles} field that can
      * be obtained using the {@link AccountsClansRoles#getId()} method.
      */
-    IntField<AccountsClansRoles, Integer>                       ID             = IntField.create(
+    IntField<AccountsClansRoles, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsClansRoles::getId,
             AccountsClansRoles::setId,
@@ -39,7 +39,7 @@ public interface GeneratedAccountsClansRoles {
      * This Field corresponds to the {@link AccountsClansRoles} field that can
      * be obtained using the {@link AccountsClansRoles#getAccountsId()} method.
      */
-    IntForeignKeyField<AccountsClansRoles, Integer, Accounts>   ACCOUNTS_ID    = IntForeignKeyField.create(
+    IntForeignKeyField<AccountsClansRoles, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
             AccountsClansRoles::getAccountsId,
             AccountsClansRoles::setAccountsId,
@@ -146,7 +146,7 @@ public interface GeneratedAccountsClansRoles {
         ACCOUNTS_ID("accounts_id"),
         CLANS_ROLES_ID("clans_roles_id");
 
-        private final String                              columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsClansRoles> tableIdentifier;
 

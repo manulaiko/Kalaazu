@@ -3,10 +3,10 @@ package com.kalaazu.persistence.database.entities.accounts_drones.generated;
 import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsDrones;
 import com.kalaazu.persistence.database.entities.Levels;
+import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
 
@@ -29,7 +29,7 @@ public interface GeneratedAccountsDrones {
      * This Field corresponds to the {@link AccountsDrones} field that can be
      * obtained using the {@link AccountsDrones#getId()} method.
      */
-    IntField<AccountsDrones, Integer>                     ID          = IntField.create(
+    IntField<AccountsDrones, Integer> ID = IntField.create(
             Identifier.ID,
             AccountsDrones::getId,
             AccountsDrones::setId,
@@ -54,7 +54,7 @@ public interface GeneratedAccountsDrones {
      * This Field corresponds to the {@link AccountsDrones} field that can be
      * obtained using the {@link AccountsDrones#getLevelsId()} method.
      */
-    ByteForeignKeyField<AccountsDrones, Byte, Levels>     LEVELS_ID   = ByteForeignKeyField.create(
+    ByteForeignKeyField<AccountsDrones, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
             AccountsDrones::getLevelsId,
             AccountsDrones::setLevelsId,
@@ -67,7 +67,7 @@ public interface GeneratedAccountsDrones {
      * This Field corresponds to the {@link AccountsDrones} field that can be
      * obtained using the {@link AccountsDrones#getExperience()} method.
      */
-    ShortField<AccountsDrones, Short>                     EXPERIENCE  = ShortField.create(
+    ShortField<AccountsDrones, Short> EXPERIENCE = ShortField.create(
             Identifier.EXPERIENCE,
             AccountsDrones::getExperience,
             AccountsDrones::setExperience,
@@ -79,7 +79,7 @@ public interface GeneratedAccountsDrones {
      * This Field corresponds to the {@link AccountsDrones} field that can be
      * obtained using the {@link AccountsDrones#getDate()} method.
      */
-    ComparableField<AccountsDrones, Timestamp, Timestamp> DATE        = ComparableField.create(
+    ComparableField<AccountsDrones, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsDrones::getDate,
             AccountsDrones::setDate,
@@ -210,7 +210,7 @@ public interface GeneratedAccountsDrones {
         EXPERIENCE("experience"),
         DATE("date");
 
-        private final String                          columnId;
+        private final String columnName;
 
         private final TableIdentifier<AccountsDrones> tableIdentifier;
 
