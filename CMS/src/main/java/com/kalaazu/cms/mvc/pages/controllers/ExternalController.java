@@ -6,7 +6,7 @@ import com.kalaazu.cms.mvc.pages.models.ExternalModel;
 import com.kalaazu.cms.mvc.pages.presenters.ExternalPresenter;
 import com.kalaazu.cms.server.Post;
 import com.kalaazu.cms.server.Request;
-import io.vertx.core.http.HttpServerRequest;
+import io.vertx.ext.web.RoutingContext;
 
 /**
  * External page controller.
@@ -30,7 +30,7 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
 
     @Override
     @Request
-    public String index(HttpServerRequest request) {
+    public String index(RoutingContext request) {
         return super.getTriad()
                     .getPresenter()
                     .render("index");
@@ -42,7 +42,7 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
      * @param request HTTP request.
      */
     @Post
-    public String login(HttpServerRequest request) {
+    public String login(RoutingContext request) {
         var result = new ResultResponse(true, "Couldn't perform login!");
 
         return result.toString();

@@ -1,7 +1,7 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.Request;
-import io.vertx.core.http.HttpServerRequest;
+import io.vertx.ext.web.RoutingContext;
 
 /**
  * Controller component.
@@ -33,7 +33,7 @@ public class Controller<M extends Model, P extends Presenter, C extends Controll
      * @return The response.
      */
     @Request
-    public String index(HttpServerRequest request) {
+    public String index(RoutingContext request) {
         return "The requested page does not exist!";
     }
 

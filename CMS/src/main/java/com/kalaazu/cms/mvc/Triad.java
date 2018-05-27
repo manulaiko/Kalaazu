@@ -1,7 +1,6 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.*;
-import io.vertx.core.http.HttpServerRequest;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.RoutingContext;
@@ -174,7 +173,7 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
         var response = "";
         try {
-            response = (String) handler.invoke(this.getController(), context.request());
+            response = (String) handler.invoke(this.getController(), context);
         } catch (Exception e) {
             Triad.logger.debug("Couldn't invoke method!", e);
         }
@@ -246,7 +245,7 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
 
         try {
             correct = (
-                    method.getParameterTypes()[0] == HttpServerRequest.class &&
+                    method.getParameterTypes()[0] == RoutingContext.class &&
                     method.getReturnType() == String.class
             );
         } catch (Exception ignored) {

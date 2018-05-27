@@ -34,6 +34,7 @@ public class Launcher extends AbstractVerticle {
 
         this.opts = new DeploymentOptions();
         this.opts.setWorker(true);
+        this.opts.setConfig(config());
 
         this.startPersistence();
         this.startCMS();
