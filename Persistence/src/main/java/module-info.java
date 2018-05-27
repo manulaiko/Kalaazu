@@ -1,6 +1,7 @@
 module kalaazu.persistence {
     exports com.kalaazu.persistence;
     exports com.kalaazu.persistence.database.entities;
+    exports com.kalaazu.persistence.eventsystem.events;
 
     opens com.kalaazu.persistence.database.entities.accounts to injector;
     opens com.kalaazu.persistence.database.entities.accounts_banks to injector;

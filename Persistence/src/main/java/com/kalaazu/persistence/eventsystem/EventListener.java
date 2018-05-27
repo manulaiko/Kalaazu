@@ -22,5 +22,6 @@ public class EventListener extends com.kalaazu.eventsystem.EventListener {
         super.addHandler(CreateEvent.class, new CreateHandler());
         super.addHandler(UpdateEvent.class, new UpdateHandler());
         super.addHandler(DeleteEvent.class, new DeleteHandler());
+        super.addHandler(RegisterEvent.class, new RegisterHandler());
     }
 }

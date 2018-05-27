@@ -1,6 +1,7 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.Request;
+import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
 /**
@@ -35,6 +36,61 @@ public class Controller<M extends Model, P extends Presenter, C extends Controll
     @Request
     public String index(RoutingContext request) {
         return "The requested page does not exist!";
+    }
+
+    /**
+     * Ends the request with an error.
+     *
+     * @param request Request to end.
+     * @param s       Error message.
+     *
+     * @return Null
+     */
+    protected String endError(RoutingContext request, String s) {
+        return this.end(request, new ResultResponse(true, s));
+    }
+
+    /**
+     * Ends the request with the given result.
+     *
+     * @param request Request to end.
+     * @param result  Result to send.
+     *
+     * @return Null.
+     */
+    protected String end(RoutingContext request, ResultResponse result) {
+        request.response()
+               .putHeader("Content-Type", "application/json")
+               .end(result.toString());
+
+        return null;
+    }
+
+    /**
+     * Ends the request with a custom object.
+     *
+     * If the object is a string, it will be sent as is,
+     * if not it will be mapped to JSON.
+     *
+     * @param request Request to end.
+     * @param result  Result to send.
+     *
+     * @return Null.
+     */
+    protected String end(RoutingContext request, Object result) {
+        var response = "";
+        if (result instanceof String) {
+            response = (String) result;
+        } else {
+            response = JsonObject.mapFrom(result)
+                                 .encode();
+        }
+
+        request.response()
+               .putHeader("Content-Type", "application/json")
+               .end(response);
+
+        return null;
     }
 
     /**

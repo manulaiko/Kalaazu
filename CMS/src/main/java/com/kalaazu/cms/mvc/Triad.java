@@ -1,6 +1,7 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.*;
+import io.vertx.core.Vertx;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.RoutingContext;
@@ -135,6 +136,26 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
      * @param context The HTTP request context.
      */
     public void handle(RoutingContext context) {
+        Vertx.currentContext()
+             .executeBlocking(h -> {
+                 this.route(context);
+             }, h -> {
+                 if (context.response()
+                            .ended()) {
+                     return;
+                 }
+
+                 context.response()
+                        .end("");
+             });
+    }
+
+    /**
+     * Routes the request through the registered handlers.
+     *
+     * @param context The HTTP request context.
+     */
+    private void route(RoutingContext context) {
         var uri = context.request()
                          .uri()
                          .split("/");
@@ -175,8 +196,10 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
         try {
             response = (String) handler.invoke(this.getController(), context);
         } catch (Exception e) {
-            Triad.logger.debug("Couldn't invoke method!", e);
+            Triad.logger.warn("Couldn't invoke method!", e.getCause());
         }
+
+        Triad.logger.info("Finish handler");
 
         if (response == null) {
             return;
