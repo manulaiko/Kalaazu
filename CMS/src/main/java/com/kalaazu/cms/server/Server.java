@@ -119,7 +119,7 @@ public class Server {
         this.router.route("/*")
                    .handler(c -> {
                        var r = c.request();
-                       Server.logger.debug(r.method() + ": " + r.uri());
+                       Server.logger.info(r.method() + ": " + r.uri());
 
                        c.next();
                    });

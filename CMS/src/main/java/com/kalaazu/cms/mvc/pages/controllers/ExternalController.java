@@ -45,6 +45,10 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
     public String login(RoutingContext request) {
         var result = new ResultResponse(true, "Couldn't perform login!");
 
-        return result.toString();
+        request.response()
+               .putHeader("Content-Type", "application/json")
+               .end(result.toString());
+
+        return null;
     }
 }

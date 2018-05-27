@@ -178,6 +178,10 @@ public abstract class Triad<M extends Model, P extends Presenter, C extends Cont
             Triad.logger.debug("Couldn't invoke method!", e);
         }
 
+        if (response == null) {
+            return;
+        }
+
         context.response()
                .putHeader("Content-Type", "text/html")
                .end(response);
