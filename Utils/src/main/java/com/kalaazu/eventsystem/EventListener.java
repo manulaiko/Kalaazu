@@ -1,7 +1,9 @@
 package com.kalaazu.eventsystem;
 
 import io.vertx.core.Handler;
+import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.Message;
+import io.vertx.core.json.JsonObject;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,63 +29,29 @@ import java.util.Map;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public abstract class EventListener implements Handler<Message<Object>> {
-    /**
-     * Events that this listener can handle.
-     */
-    private Map<Class<? extends Event>, Handler> handlers = new HashMap<>();
-
-    /**
-     * Constructor.
-     */
-    public EventListener() {
-        this.initialize();
-    }
-
+public abstract class EventListener {
     /**
      * Initializes the event handlers.
      */
     public abstract void initialize();
 
-    @Override
-    public void handle(Message<Object> event) {
-        var handler = this.handlers.getOrDefault(
-                event.body()
-                     .getClass(),
-                null
-        );
-
-        if (handler == null) {
-            event.fail(-1, "No handler registered for this event!");
-
-            return;
-        }
-
-        //noinspection unchecked
-        handler.handle(event);
-    }
+    /**
+     * Returns the listener domain name.
+     *
+     * @return Listener domain name.
+     */
+    public abstract String getDomain();
 
     /**
      * Adds a new handler to the list.
      *
-     * @param clazz   Event type that can be handled.
+     * @param event   Event name.
      * @param handler Handler to call.
      */
-    public void addHandler(Class<? extends Event> clazz, Handler handler) {
-        if (!clazz.isInstance(handler)) {
-            return;
-        }
-
-        this.handlers.put(clazz, handler);
-    }
-
-    /**
-     * Removes a handler from the list.
-     *
-     * @param clazz   Event type that can be handled.
-     * @param handler Handler to remove.
-     */
-    public void removeHandler(Class<? extends Event> clazz, Handler handler) {
-        this.handlers.remove(clazz);
+    public void addHandler(String event, Handler<Message<JsonObject>> handler) {
+        Vertx.currentContext()
+             .owner()
+             .eventBus()
+             .consumer(this.getDomain() + "." + event, handler);
     }
 }

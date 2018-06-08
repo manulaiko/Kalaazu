@@ -8,6 +8,7 @@ import com.kalaazu.cms.mvc.pages.presenters.ExternalPresenter;
 import com.kalaazu.cms.server.Post;
 import com.kalaazu.cms.server.Request;
 import io.vertx.core.Vertx;
+import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.RoutingContext;
@@ -87,11 +88,14 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
         }
 
         ExternalController.logger.info("Sending event...");
-        var event = new RegisterEvent(username, password);
+        var event = new JsonObject();
+        event.put("username", username);
+        event.put("password", password);
+
         Vertx.currentContext()
              .owner()
              .eventBus()
-             .send("persistence", event, h -> {
+             .send("persistence.register", event, h -> {
                  ExternalController.logger.info("Response received!");
                  super.end(request, h.result()
                                      .body());

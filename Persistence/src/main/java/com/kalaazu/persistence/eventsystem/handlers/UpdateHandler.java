@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
+import com.kalaazu.eventsystem.Handler;
 import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.eventsystem.events.UpdateEvent;
-import io.vertx.core.Handler;
-import io.vertx.core.eventbus.Message;
+import com.kalaazu.persistence.database.entities.Entity;
+import io.vertx.core.json.JsonObject;
 
 /**
  * Update handler.
@@ -13,19 +13,18 @@ import io.vertx.core.eventbus.Message;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public class UpdateHandler implements Handler<Message<UpdateEvent>> {
+public class UpdateHandler extends Handler {
     @Override
-    public void handle(Message<UpdateEvent> event) {
-        try {
-            event.reply(
-                    Database.getInstance()
-                            .update(
-                                    event.body()
-                                         .getEntity()
-                            )
-            );
-        } catch (Exception e) {
-            event.fail(0, e.getMessage());
-        }
+    public void handle() throws ClassNotFoundException {
+        String     entity = super.get("entity");
+        JsonObject data   = super.get("data");
+
+        var type   = (Class<? extends Entity>) Class.forName(entity);
+        var insert = data.mapTo(type);
+
+        var r = Database.getInstance()
+                        .update(insert);
+
+        super.reply(JsonObject.mapFrom(r));
     }
 }

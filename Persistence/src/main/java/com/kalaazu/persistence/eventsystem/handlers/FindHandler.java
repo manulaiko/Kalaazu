@@ -1,9 +1,9 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
+import com.kalaazu.eventsystem.Handler;
 import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.eventsystem.events.FindEvent;
-import io.vertx.core.Handler;
-import io.vertx.core.eventbus.Message;
+import com.kalaazu.persistence.database.entities.Entity;
+import io.vertx.core.json.JsonObject;
 
 /**
  * Find handler.
@@ -13,21 +13,17 @@ import io.vertx.core.eventbus.Message;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public class FindHandler implements Handler<Message<FindEvent>> {
+public class FindHandler extends Handler {
     @Override
-    public void handle(Message<FindEvent> event) {
-        try {
-            event.reply(
-                    Database.getInstance()
-                            .find(
-                                    event.body()
-                                         .getId(),
-                                    event.body()
-                                         .getEntity()
-                            )
-            );
-        } catch (Exception e) {
-            event.fail(0, e.getMessage());
-        }
+    public void handle() throws ClassNotFoundException {
+        int    id     = super.get("id");
+        String entity = super.get("entity");
+
+        var type = (Class<? extends Entity>) Class.forName(entity);
+
+        var r = Database.getInstance()
+                        .find(id, type);
+
+        super.reply(JsonObject.mapFrom(r));
     }
 }

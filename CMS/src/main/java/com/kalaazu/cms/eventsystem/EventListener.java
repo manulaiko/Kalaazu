@@ -9,11 +9,13 @@ package com.kalaazu.cms.eventsystem;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 public class EventListener extends com.kalaazu.eventsystem.EventListener {
-    /**
-     * Initializes the event handlers.
-     */
     @Override
     public void initialize() {
 
+    }
+
+    @Override
+    public String getDomain() {
+        return "cms";
     }
 }

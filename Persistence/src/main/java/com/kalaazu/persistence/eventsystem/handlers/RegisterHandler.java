@@ -1,8 +1,7 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
-import com.kalaazu.persistence.eventsystem.events.RegisterEvent;
-import io.vertx.core.Handler;
-import io.vertx.core.eventbus.Message;
+import com.kalaazu.eventsystem.Handler;
+import io.vertx.core.json.JsonObject;
 
 /**
  * Register handler.
@@ -12,9 +11,9 @@ import io.vertx.core.eventbus.Message;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public class RegisterHandler implements Handler<Message<RegisterEvent>> {
+public class RegisterHandler extends Handler {
     @Override
-    public void handle(Message<RegisterEvent> event) {
-        event.reply("{\"isError\":true,\"message\":\"Yep\"}");
+    public void handle() {
+        super.reply(new JsonObject("{\"isError\":true,\"message\":\"Yep\"}"));
     }
 }

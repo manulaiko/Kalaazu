@@ -56,9 +56,7 @@ public class CMS extends AbstractVerticle {
 
         CMS.logger.info("Starting event listener...");
         var listener = new EventListener();
-
-        vertx.eventBus()
-             .consumer("cms", listener);
+        listener.initialize();
 
         CMS.logger.info("CMS started!");
 
