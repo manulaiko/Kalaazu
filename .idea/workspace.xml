@@ -2,33 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eaef968c-8022-4bee-aa08-a11efbc4221e" name="Default" comment="Create register handler&#10;&#10;Gotta make the MessageCodec to send POJO through the event bus.">
-      <change afterPath="$PROJECT_DIR$/Launcher/src/test/java/EventBus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Utils/src/main/java/com/kalaazu/eventsystem/Handler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileContent/annotation-processors.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileContent/annotation-processors.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileContent/fileContent.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.7/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/CMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/CMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/eventsystem/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/eventsystem/EventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/src/main/java/com/kalaazu/cms/mvc/pages/controllers/ExternalController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMS/src/test/java/InstanceServer.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/CMS/www/public_html/External.html" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/www/public_html/External.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CMS/www/public_html/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/CMS/www/public_html/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Persistence.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/Persistence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/EventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/AllHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/AllHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/CreateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/CreateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/DeleteHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/DeleteHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/FindHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/FindHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/RegisterHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/RegisterHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/UpdateHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/java/com/kalaazu/persistence/eventsystem/handlers/UpdateHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utils/src/main/java/com/kalaazu/eventsystem/EventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/Utils/src/main/java/com/kalaazu/eventsystem/EventListener.java" afterDir="false" />
     </list>
     <list id="c4a9e5f9-8fc9-4d0f-bf42-b43e97ded77c" name="Revert: Updated speedment entities" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -1831,7 +1807,7 @@
         <observation name="typedSelect" value="73.0" />
       </dailyData>
       <dailyData date="8-6-2018">
-        <observation name="cancelled" value="562.0" />
+        <observation name="cancelled" value="682.0" />
         <observation name="explicitSelect" value="46.0" />
         <observation name="typedSelect" value="91.0" />
       </dailyData>
@@ -1861,7 +1837,7 @@
         <observation name="count" value="1148.0" />
       </dailyData>
       <dailyData date="8-6-2018">
-        <observation name="count" value="699.0" />
+        <observation name="count" value="819.0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
@@ -2968,7 +2944,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Configure logger to use SLF4J" />
     <MESSAGE value="Create HTTP server&#10;&#10;Runs on a separated verticle with high availability." />
     <MESSAGE value="Simplify HTTP server&#10;&#10;Pass JSON config to deployment instantiation." />
     <MESSAGE value="Add event bus" />
@@ -2993,7 +2968,8 @@
     <MESSAGE value="Change request handler, fix config&#10;&#10;The request handlers now accept a RoutingContext instead of an&#10;HttpServerRequest.&#10;Fixed the verticles not having the same configuration instance." />
     <MESSAGE value="Handlers can end the request&#10;&#10;If a request handler returns null, it will assume the handler properly&#10;called the `HttpServerResponse.end` method." />
     <MESSAGE value="Create register handler&#10;&#10;Gotta make the MessageCodec to send POJO through the event bus." />
-    <option name="LAST_COMMIT_MESSAGE" value="Create register handler&#10;&#10;Gotta make the MessageCodec to send POJO through the event bus." />
+    <MESSAGE value="Reworked event system&#10;&#10;Handlers are registered in their own consumers and the event is a&#10;JsonObject with the data." />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked event system&#10;&#10;Handlers are registered in their own consumers and the event is a&#10;JsonObject with the data." />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
