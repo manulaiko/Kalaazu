@@ -5,6 +5,7 @@ import com.speedment.runtime.core.ApplicationBuilder;
 import com.speedment.runtime.core.component.transaction.Transaction;
 import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
+import com.speedment.runtime.field.ComparableField;
 import io.vertx.core.json.JsonArray;
 
 import java.util.Optional;
@@ -125,6 +126,22 @@ public class Database {
     }
 
     /**
+     * Find and returns all entities with the given field.
+     *
+     * @param field Field instance.
+     * @param value Field value.
+     * @param type  Entity type.
+     *
+     * @return Stream of entities.
+     */
+    public <T extends Entity> Stream<T> all(ComparableField field, Comparable value, Class<T> type) {
+        return (Stream<T>) this.getDb()
+                               .manager(type)
+                               .stream()
+                               .filter(field.equal(value));
+    }
+
+    /**
      * Finds and returns an entity by its id.
      *
      * @param id   Entity id.
@@ -136,6 +153,20 @@ public class Database {
         return (Optional<T>) this.getDb()
                                  .manager(type)
                                  .byId(id);
+    }
+
+    /**
+     * Finds and returns an entity by the specified field.
+     *
+     * @param field Field type.
+     * @param value Field value.
+     * @param type  Entity type.
+     *
+     * @return Entity with `id`.
+     */
+    public <T extends Entity> Optional<T> find(ComparableField field, Comparable value, Class<T> type) {
+        return this.all(field, value, type)
+                   .findFirst();
     }
 
     /**
