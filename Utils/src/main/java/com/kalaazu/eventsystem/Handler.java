@@ -76,4 +76,17 @@ public abstract class Handler implements io.vertx.core.Handler<Message<JsonObjec
     public Message<JsonObject> getEvent() {
         return event;
     }
+
+    /**
+     * Returns an error result with the specified message.
+     *
+     * @param message Error message.
+     */
+    protected void fail(String message) {
+        var json = new JsonObject();
+        json.put("isError", true)
+            .put("message", message);
+
+        this.reply(json);
+    }
 }
