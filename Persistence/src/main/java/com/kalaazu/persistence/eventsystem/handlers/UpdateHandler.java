@@ -23,7 +23,7 @@ public class UpdateHandler extends Handler {
         var insert = data.mapTo(type);
 
         var r = Database.getInstance()
-                        .update(insert);
+                        .update(insert, (Class<Entity>) type);
 
         super.reply(JsonObject.mapFrom(r));
     }

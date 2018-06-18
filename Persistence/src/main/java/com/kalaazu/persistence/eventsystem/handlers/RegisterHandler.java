@@ -41,9 +41,9 @@ public class RegisterHandler extends Handler {
         String username       = super.get("username");
         String password       = super.get("password");
         String email          = super.get("email");
-        byte[] ip             = super.get("ip");
+        String ip             = super.get("ip");
         String invitationCode = super.get("invitationCode");
-        byte   factionsID     = super.get("factionsID");
+        byte   factionsID     = super.get("factionId");
 
         if (username.length() <= 4) {
             super.fail("Username can't be shorter than 4 chars!");
@@ -111,6 +111,8 @@ public class RegisterHandler extends Handler {
         var message = new AccountsMessagesImpl();
         message.setToStatus(MessageStatus.UNREAD)
                .setToAccountsId(account.getId())
+               .setFromAccountsId(1) // System
+               .setFromStatus(MessageStatus.DELETED)
                .setTitle("Welcome to Kalaazu!")
                .setText(
                        "Hello space pilot!\n" +
@@ -120,6 +122,9 @@ public class RegisterHandler extends Handler {
                        "\n" +
                        "-Kalaazu dev. team."
                );
+
+        Database.getInstance()
+                .create(message, AccountsMessages.class);
     }
 
     /**
@@ -136,16 +141,18 @@ public class RegisterHandler extends Handler {
 
         configurations.add(
                 new AccountsConfigurationsImpl().setConfigurationId((byte) 1)
+                                                .setName("Configuration 1")
                                                 .setAccountsHangarsId(hangar.getId())
         );
         configurations.add(
                 new AccountsConfigurationsImpl().setConfigurationId((byte) 2)
+                                                .setName("Configuration 2")
                                                 .setAccountsHangarsId(hangar.getId())
         );
 
         configurations.forEach(c -> {
             c = Database.getInstance()
-                        .create(c);
+                        .create(c, AccountsConfigurations.class);
 
             for (AccountsItems i: items) {
                 var cItem = new AccountsConfigurationsAccountsItemsImpl();
@@ -158,7 +165,7 @@ public class RegisterHandler extends Handler {
                         i.getItemsId() == 121
                 ) {
                     Database.getInstance()
-                            .create(cItem);
+                            .create(cItem, AccountsConfigurationsAccountsItems.class);
                 }
             }
 
@@ -190,7 +197,7 @@ public class RegisterHandler extends Handler {
             .setPosition(faction.getLowMapsPosition());
 
         return Database.getInstance()
-                       .create(ship);
+                       .create(ship, AccountsShips.class);
     }
 
     /**
@@ -203,10 +210,11 @@ public class RegisterHandler extends Handler {
     private AccountsHangars addHangar(Accounts account, AccountsShips ship) {
         var hangar = new AccountsHangarsImpl();
         hangar.setAccountsId(account.getId())
+              .setName("HANGAR")
               .setAccountsShipsId(ship.getId());
 
         return Database.getInstance()
-                       .create(hangar);
+                       .create(hangar, AccountsHangars.class);
     }
 
     /**
@@ -287,10 +295,11 @@ public class RegisterHandler extends Handler {
         );
 
         items.forEach(i -> {
-            i.setAccountsId(account.getId());
+            i.setAccountsId(account.getId())
+             .setLevelsId((byte) 1);
 
             Database.getInstance()
-                    .create(i);
+                    .create(i, AccountsItems.class);
         });
 
         return items;
@@ -311,10 +320,11 @@ public class RegisterHandler extends Handler {
                .setName(user.getName())
                .setFactionsId(factionsID)
                .setLevelsId((byte) 1)
+               .setRanksId((byte) 1)
                .setSessionId(StringUtils.sessionId());
 
         return Database.getInstance()
-                       .create(account);
+                       .create(account, Accounts.class);
     }
 
     /**
@@ -324,7 +334,7 @@ public class RegisterHandler extends Handler {
      *
      * @return Code's ID.
      */
-    private InvitationCodes findInvitationCode(String invitationCode, byte[] ip) {
+    private InvitationCodes findInvitationCode(String invitationCode, String ip) {
         var code = Database.getInstance()
                            .find(InvitationCodes.CODE, invitationCode, InvitationCodes.class);
 
@@ -334,7 +344,7 @@ public class RegisterHandler extends Handler {
                                   .filter(InvitationCodesRedeemLogs.INVITATION_CODES_ID.equal(c.getId()))
                                   .count();
 
-            if (redeems >= c.getLimit()) {
+            if (c.getLimit() >= 0 && redeems >= c.getLimit()) {
                 c = InvitationCodes.INVALID_CODE;
 
                 return;
@@ -342,10 +352,10 @@ public class RegisterHandler extends Handler {
 
             var log = new InvitationCodesRedeemLogsImpl();
             log.setInvitationCodesId(c.getId())
-               .setIp(ip);
+               .setIp(ip.getBytes());
 
             Database.getInstance()
-                    .create(log);
+                    .create(log, InvitationCodesRedeemLogs.class);
         });
 
         return code.orElse(InvitationCodes.INVALID_CODE);
@@ -362,7 +372,7 @@ public class RegisterHandler extends Handler {
      *
      * @return User entity.
      */
-    private Users addUser(String username, String password, String email, byte[] ip, short invitationCodeId) {
+    private Users addUser(String username, String password, String email, String ip, short invitationCodeId) {
         var user = new UsersImpl();
 
         if (invitationCodeId > 0) {
@@ -370,10 +380,12 @@ public class RegisterHandler extends Handler {
         }
 
         user.setName(username)
+            .setPassword(StringUtils.hash(password))
             .setEmail(email)
-            .setIp(ip);
+            .setEmailVerificationCode(StringUtils.random(32))
+            .setIp(ip.getBytes());
 
         return Database.getInstance()
-                       .create(user);
+                       .create(user, Users.class);
     }
 }

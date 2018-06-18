@@ -4,4 +4,5 @@ module kalaazu.utils {
     exports com.kalaazu.util;
 
     requires vertx.core;
+    requires de.mkammerer.argon2;
 }

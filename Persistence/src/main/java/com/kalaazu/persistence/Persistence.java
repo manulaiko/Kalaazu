@@ -45,7 +45,21 @@ public class Persistence extends AbstractVerticle {
         var database = config().getString("persistence.database", "kalaazu");
         var username = config().getString("persistence.username", "manulaiko");
         var password = config().getString("persistence.password", "");
-        var logTypes = config().getJsonArray("persistence.logTypes", new JsonArray());
+        var logTypes = config().getJsonArray(
+                "persistence.logTypes",
+                new JsonArray(
+                        "[\n" +
+                        "    \"APPLICATION_BUILDER\",\n" +
+                        "    \"CONNECTION\",\n" +
+                        "    \"PERSIST\",\n" +
+                        "    \"REMOVE\",\n" +
+                        "    \"STREAM\",\n" +
+                        "    \"STREAM_OPTIMIZER\",\n" +
+                        "    \"TRANSACTION\",\n" +
+                        "    \"UPDATE\"\n" +
+                        "  ]"
+                )
+        );
 
         Persistence.logger.info("Initializing database...");
         var db = new Database();

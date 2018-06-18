@@ -113,6 +113,10 @@ public final class KalaazuApplicationImpl extends GeneratedKalaazuApplicationImp
 
     @Override
     public <T extends Entity> Manager<T> manager(Class<? extends Entity> type) {
+        if (type.getName()
+                .endsWith("Impl")) {
+            type = (Class<? extends Entity>) type.getInterfaces()[0];
+        }
         return this.managers.get(type);
     }
 

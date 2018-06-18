@@ -1,5 +1,8 @@
 package com.kalaazu.util;
 
+import de.mkammerer.argon2.Argon2;
+import de.mkammerer.argon2.Argon2Factory;
+
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.regex.Pattern;
 
@@ -16,6 +19,11 @@ public class StringUtils {
      * Email regex.
      */
     private static Pattern pattern = Pattern.compile("^[A-Za-z0-9._]{1,16}+@{1}+[a-z]{1,7}\\.[a-z]{1,3}$");
+
+    /**
+     * Argon instance.
+     */
+    private static Argon2 argon = Argon2Factory.create();
 
     /**
      * Checks that string is a valid email.
@@ -67,5 +75,28 @@ public class StringUtils {
         }
 
         return sb.toString();
+    }
+
+    /**
+     * Hashes a string with Argon2.
+     *
+     * @param s String to hash.
+     *
+     * @return Hashed string.
+     */
+    public static String hash(String s) {
+        return StringUtils.argon.hash(2, 65536, 1, s);
+    }
+
+    /**
+     * Verifies a hash.
+     *
+     * @param hash     Hashed string.
+     * @param password String to verify.
+     *
+     * @return Whether `string` is `hash` or not.
+     */
+    public static boolean verify(String hash, String password) {
+        return StringUtils.argon.verify(hash, password);
     }
 }

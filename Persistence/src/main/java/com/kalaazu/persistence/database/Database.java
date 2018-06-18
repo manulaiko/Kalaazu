@@ -96,6 +96,8 @@ public class Database {
 
             builder.withConnectionUrl(url)
                    .withUsername(this.getUsername())
+                   .withParam("db.mysql.collationName", "utf8mb4_general_ci")
+                   .withParam("db.mysql.binaryCollationName", "utf8mb4_bin")
                    .withPassword(this.getPassword());
 
             this.getLogTypes()
@@ -176,9 +178,9 @@ public class Database {
      *
      * @return Inserted entity.
      */
-    public <T extends Entity> T create(T entity) {
+    public <T extends Entity> T create(T entity, Class<T> type) {
         return (T) this.getDb()
-                       .manager(entity.getClass())
+                       .manager(type)
                        .persist(entity);
     }
 
@@ -189,9 +191,9 @@ public class Database {
      *
      * @return Updated entity.
      */
-    public <T extends Entity> T update(T entity) {
+    public <T extends Entity> T update(T entity, Class<T> type) {
         return (T) this.getDb()
-                       .manager(entity.getClass())
+                       .manager(type)
                        .update(entity);
     }
 

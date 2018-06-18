@@ -23,7 +23,7 @@ public class CreateHandler extends Handler {
         var insert = data.mapTo(type);
 
         var r = Database.getInstance()
-                        .create(insert);
+                        .create(insert, (Class<Entity>) type);
 
         super.reply(JsonObject.mapFrom(r));
     }
