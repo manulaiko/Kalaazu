@@ -4,12 +4,16 @@ import com.kalaazu.eventsystem.Handler;
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.database.entities.*;
 import com.kalaazu.persistence.database.entities.accounts.AccountsImpl;
+import com.kalaazu.persistence.database.entities.accounts_banks.AccountsBanksImpl;
 import com.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurationsImpl;
 import com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItemsImpl;
+import com.kalaazu.persistence.database.entities.accounts_galaxygates.AccountsGalaxygatesImpl;
 import com.kalaazu.persistence.database.entities.accounts_hangars.AccountsHangarsImpl;
 import com.kalaazu.persistence.database.entities.accounts_items.AccountsItemsImpl;
 import com.kalaazu.persistence.database.entities.accounts_messages.AccountsMessagesImpl;
+import com.kalaazu.persistence.database.entities.accounts_rankings.AccountsRankingsImpl;
 import com.kalaazu.persistence.database.entities.accounts_ships.AccountsShipsImpl;
+import com.kalaazu.persistence.database.entities.accounts_techfactories.AccountsTechfactoriesImpl;
 import com.kalaazu.persistence.database.entities.factions.FactionsImpl;
 import com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogsImpl;
 import com.kalaazu.persistence.database.entities.ships.ShipsImpl;
@@ -86,12 +90,74 @@ public class RegisterHandler extends Handler {
         var ship           = this.addShip(account);
         var hangar         = this.addHangar(account, ship);
         var configurations = this.addConfigurations(account, hangar, items);
+        this.addGalaxyGates(account);
+        this.addTechfactories(account);
+        this.addBank(account);
+        this.addRanking(account);
         this.addMessage(account);
 
         super.reply(
                 new JsonObject().put("isError", false)
                                 .put("sessionId", account.getSessionId())
         );
+    }
+
+    /**
+     * Adds the techfactory to the account.
+     *
+     * @param account New account
+     */
+    private void addTechfactories(Accounts account) {
+        var techfactory = new AccountsTechfactoriesImpl();
+        techfactory.setAccountsId(account.getId());
+
+        Database.getInstance()
+                .create(techfactory, AccountsTechfactories.class);
+    }
+
+    /**
+     * Adds the ranking to the account.
+     *
+     * @param account New account.
+     */
+    private void addRanking(Accounts account) {
+        var ranking = new AccountsRankingsImpl();
+        ranking.setAccountsId(account.getId());
+
+        Database.getInstance()
+                .create(ranking, AccountsRankings.class);
+    }
+
+    /**
+     * Adds the galaxy gates to the account.
+     *
+     * @param account New account.
+     */
+    private void addGalaxyGates(Accounts account) {
+        var gates = Database.getInstance()
+                            .all(Galaxygates.class);
+
+        gates.forEach(gg -> {
+            var gate = new AccountsGalaxygatesImpl();
+            gate.setAccountsId(account.getId())
+                .setGalaxygatesId(gg.getId());
+
+            Database.getInstance()
+                    .create(gate, AccountsGalaxygates.class);
+        });
+    }
+
+    /**
+     * Adds the bank to the account.
+     *
+     * @param account New account.
+     */
+    private void addBank(Accounts account) {
+        var bank = new AccountsBanksImpl();
+        bank.setAccountsId(account.getId());
+
+        Database.getInstance()
+                .create(bank, AccountsBanks.class);
     }
 
     @Override
@@ -345,6 +411,7 @@ public class RegisterHandler extends Handler {
                                   .count();
 
             if (c.getLimit() >= 0 && redeems >= c.getLimit()) {
+                //noinspection UnusedAssignment
                 c = InvitationCodes.INVALID_CODE;
 
                 return;

@@ -8,6 +8,7 @@ import com.speedment.runtime.core.component.transaction.TransactionHandler;
 import com.speedment.runtime.field.ComparableField;
 import io.vertx.core.json.JsonArray;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -175,6 +176,7 @@ public class Database {
      * Inserts a new entity.
      *
      * @param entity Entity to create.
+     * @param type   Entity type.
      *
      * @return Inserted entity.
      */
@@ -188,6 +190,7 @@ public class Database {
      * Updates an entity.
      *
      * @param entity Entity to save.
+     * @param type   Entity type.
      *
      * @return Updated entity.
      */
