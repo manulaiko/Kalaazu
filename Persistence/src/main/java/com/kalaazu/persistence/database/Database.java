@@ -8,7 +8,6 @@ import com.speedment.runtime.core.component.transaction.TransactionHandler;
 import com.speedment.runtime.field.ComparableField;
 import io.vertx.core.json.JsonArray;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;

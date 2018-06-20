@@ -7,7 +7,7 @@ CREATE TABLE `invitation_codes_redeem_logs` (
   COMMENT 'Primary Key.',
   `invitation_codes_id` smallint      NOT NULL
   COMMENT 'Invitation code ID.',
-  `ip`                  varbinary(16) NOT NULL
+  `ip`                  varchar(45) NOT NULL
   COMMENT 'IP that redeemed the code.',
   `date`                timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP
   COMMENT 'Date when the code was redeemed.',

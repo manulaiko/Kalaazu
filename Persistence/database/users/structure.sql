@@ -11,15 +11,15 @@ CREATE TABLE `users` (
   COMMENT 'Invitation code used to register',
   `name`                    varchar(255)  NOT NULL DEFAULT ''
   COMMENT 'User name.',
-  `password`                varchar(40)   NOT NULL DEFAULT ''
-  COMMENT 'Password hash (sha1).',
+  `password`                varchar(255)   NOT NULL DEFAULT ''
+  COMMENT 'Password hash (argon).',
   `email`                   varchar(255)  NOT NULL DEFAULT ''
   COMMENT 'User email.',
   `email_verification_code` varchar(32)   NOT NULL DEFAULT ''
   COMMENT 'Email verification code.',
   `email_verification_date` timestamp     NULL     DEFAULT NULL
   COMMENT 'Date when the user verified its email.',
-  `ip`                      varbinary(16) NOT NULL DEFAULT ''
+  `ip`                      varchar(45) NOT NULL DEFAULT ''
   COMMENT 'Registration IP.',
 
   CONSTRAINT `users_pk` PRIMARY KEY (`id`)

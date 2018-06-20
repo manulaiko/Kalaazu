@@ -11,13 +11,13 @@ CREATE TABLE `accounts` (
   COMMENT 'Session ID.',
   `levels_id`           tinyint      NOT NULL DEFAULT 1
   COMMENT 'Current level.',
-  `factions_id`         tinyint      NULL     DEFAULT NULL
+  `factions_id`         tinyint      NOT NULL
   COMMENT 'Faction that the account belongs to.',
   `accounts_hangars_id` int          NULL     DEFAULT NULL
   COMMENT 'Active hangar.',
   `clans_id`            int          NULL     DEFAULT NULL,
   `ranks_id`            tinyint      NOT NULL DEFAULT 1,
-  `name`                varchar(255) NOT NULL DEFAULT ''
+  `name`                varchar(255) NOT NULL
   COMMENT 'In game name.',
   `ban_date`            timestamp    NULL     DEFAULT NULL
   COMMENT 'Ban expiration date.',
@@ -39,7 +39,7 @@ CREATE TABLE `accounts` (
 
 CREATE UNIQUE INDEX `accounts_session_id_idx`
   ON `accounts` (`session_id`);
-CREATE INDEX `accounts_name_idx`
+CREATE UNIQUE INDEX `accounts_name_idx`
   ON `accounts` (`name`);
 CREATE INDEX `accounts_ranks_id_idx`
   ON `accounts` (`ranks_id`);

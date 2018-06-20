@@ -5,7 +5,7 @@
 CREATE TABLE `accounts_messages` (
   `id`               int          NOT NULL AUTO_INCREMENT
   COMMENT 'Primary Key.',
-  `from_accounts_id` int          NOT NULL,
+  `from_accounts_id` int          NOT NULL DEFAULT 1,
   `from_status`      tinyint      NOT NULL DEFAULT 1
   COMMENT '0 = unread, 1 = read, 2 = deleted.',
   `to_accounts_id`   int          NOT NULL,

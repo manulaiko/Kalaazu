@@ -1,6 +1,5 @@
 package com.kalaazu.cms.mvc.pages.controllers;
 
-import com.kalaazu.persistence.eventsystem.events.RegisterEvent;
 import com.kalaazu.cms.mvc.Controller;
 import com.kalaazu.cms.mvc.Triad;
 import com.kalaazu.cms.mvc.pages.models.ExternalModel;
