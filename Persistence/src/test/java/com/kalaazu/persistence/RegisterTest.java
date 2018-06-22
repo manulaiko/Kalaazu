@@ -33,7 +33,7 @@ public class RegisterTest {
                                        .put("password", password)
                                        .put("email", email)
                                        .put("ip", ip)
-                                       .put("factionId", factionID)
+                                       .put("factionsId", factionID)
                                        .put("invitationCode", invitationCode);
 
             logger.info(json);

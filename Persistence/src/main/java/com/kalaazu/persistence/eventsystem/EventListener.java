@@ -19,6 +19,7 @@ public class EventListener extends com.kalaazu.eventsystem.EventListener {
         super.addHandler("update", new UpdateHandler());
         super.addHandler("delete", new DeleteHandler());
         super.addHandler("register", new RegisterHandler());
+        super.addHandler("create_account", new CreateAccountHandler());
     }
 
     @Override
