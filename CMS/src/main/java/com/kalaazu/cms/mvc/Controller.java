@@ -1,6 +1,10 @@
 package com.kalaazu.cms.mvc;
 
 import com.kalaazu.cms.server.Request;
+import io.vertx.core.AsyncResult;
+import io.vertx.core.Handler;
+import io.vertx.core.Vertx;
+import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
 import io.vertx.ext.web.RoutingContext;
 
@@ -91,6 +95,33 @@ public class Controller<M extends Model, P extends Presenter, C extends Controll
                .end(response);
 
         return null;
+    }
+
+    /**
+     * Sends an event through the event bus.
+     *
+     * @param address Event address.
+     * @param params  Event params.
+     * @param handler Response handler.
+     */
+    public void event(String address, JsonObject params, Handler<AsyncResult<Message<JsonObject>>> handler) {
+        Vertx.currentContext()
+             .owner()
+             .eventBus()
+             .send(address, params, handler);
+    }
+
+    /**
+     * Fires an event and forwards the result to the request.
+     *
+     * @param address Event address.
+     * @param params  Event params.
+     * @param request Request to end.
+     */
+    public void endEvent(String address, JsonObject params, RoutingContext request) {
+        this.event(address, params, h -> this.end(
+                request, h.result()
+                          .body()));
     }
 
     /**

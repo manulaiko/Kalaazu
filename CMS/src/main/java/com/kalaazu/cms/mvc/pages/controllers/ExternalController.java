@@ -6,7 +6,6 @@ import com.kalaazu.cms.mvc.pages.models.ExternalModel;
 import com.kalaazu.cms.mvc.pages.presenters.ExternalPresenter;
 import com.kalaazu.cms.server.Post;
 import com.kalaazu.cms.server.Request;
-import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
@@ -79,26 +78,38 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
         var r      = request.request();
         var result = new ResultResponse(true, "Couldn't perform register!");
 
-        var username = r.getParam("username");
-        var password = r.getParam("password");
+        var username       = r.getParam("username");
+        var password       = r.getParam("password");
+        var email          = r.getParam("email");
+        var invitationCode = r.getParam("invitationCode");
 
-        if (username.isEmpty() || password.isEmpty()) {
-            return super.endError(request, "Username/password can't be empty!");
+        byte factionsId;
+        try {
+            factionsId = Byte.parseByte(r.getParam("factionsId"));
+        } catch (Exception e) {
+            return super.endError(request, "Nice try ;)");
+        }
+
+        if (
+                username.isEmpty() ||
+                password.isEmpty() ||
+                email.isEmpty() ||
+                invitationCode.isEmpty()
+        ) {
+            return super.endError(request, "Please, fill the form properly.");
         }
 
         ExternalController.logger.info("Sending event...");
         var event = new JsonObject();
-        event.put("username", username);
-        event.put("password", password);
+        event.put("username", username)
+             .put("password", password)
+             .put("email", email)
+             .put("invitationCode", invitationCode)
+             .put("factionsId", factionsId)
+             .put("ip", r.remoteAddress()
+                         .host());
 
-        Vertx.currentContext()
-             .owner()
-             .eventBus()
-             .send("persistence.register", event, h -> {
-                 ExternalController.logger.info("Response received!");
-                 super.end(request, h.result()
-                                     .body());
-             });
+        super.endEvent("persistence.register", event, request);
 
         return null;
     }
