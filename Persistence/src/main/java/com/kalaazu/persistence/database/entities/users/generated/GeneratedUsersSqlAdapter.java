@@ -5,12 +5,9 @@ import com.kalaazu.persistence.database.entities.users.UsersImpl;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.injector.annotation.ExecuteBefore;
 import com.speedment.common.injector.annotation.WithState;
-import com.speedment.runtime.config.Project;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.ProjectComponent;
 import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
 import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.component.sql.SqlTypeMapperHelper;
 import com.speedment.runtime.core.exception.SpeedmentException;
 
 import java.sql.ResultSet;
@@ -32,8 +29,6 @@ import static com.speedment.runtime.core.internal.util.sql.ResultSetUtil.getShor
 public abstract class GeneratedUsersSqlAdapter {
 
     private final TableIdentifier<Users> tableIdentifier;
-
-    private SqlTypeMapperHelper<Object, byte[]> ipHelper;
 
     protected GeneratedUsersSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "users");
@@ -59,7 +54,7 @@ public abstract class GeneratedUsersSqlAdapter {
             entity.setEmail(resultSet.getString(6));
             entity.setEmailVerificationCode(resultSet.getString(7));
             entity.setEmailVerificationDate(resultSet.getTimestamp(8));
-            entity.setIp(ipHelper.apply(resultSet.getObject(9)));
+            entity.setIp(resultSet.getString(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }
@@ -68,11 +63,5 @@ public abstract class GeneratedUsersSqlAdapter {
 
     protected UsersImpl createEntity() {
         return new UsersImpl();
-    }
-
-    @ExecuteBefore(RESOLVED)
-    void createHelpers(ProjectComponent projectComponent) {
-        final Project project = projectComponent.getProject();
-        ipHelper = SqlTypeMapperHelper.create(project, Users.IP, Users.class);
     }
 }

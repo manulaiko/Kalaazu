@@ -5,12 +5,9 @@ import com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.In
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.common.injector.annotation.ExecuteBefore;
 import com.speedment.common.injector.annotation.WithState;
-import com.speedment.runtime.config.Project;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.component.ProjectComponent;
 import com.speedment.runtime.core.component.sql.SqlPersistenceComponent;
 import com.speedment.runtime.core.component.sql.SqlStreamSupplierComponent;
-import com.speedment.runtime.core.component.sql.SqlTypeMapperHelper;
 import com.speedment.runtime.core.exception.SpeedmentException;
 
 import java.sql.ResultSet;
@@ -33,8 +30,6 @@ public abstract class GeneratedInvitationCodesRedeemLogsSqlAdapter {
 
     private final TableIdentifier<InvitationCodesRedeemLogs> tableIdentifier;
 
-    private SqlTypeMapperHelper<Object, byte[]> ipHelper;
-
     protected GeneratedInvitationCodesRedeemLogsSqlAdapter() {
         this.tableIdentifier = TableIdentifier.of("kalaazu", "kalaazu", "invitation_codes_redeem_logs");
     }
@@ -53,7 +48,7 @@ public abstract class GeneratedInvitationCodesRedeemLogsSqlAdapter {
         try {
             entity.setId(resultSet.getInt(1));
             entity.setInvitationCodesId(resultSet.getShort(2));
-            entity.setIp(ipHelper.apply(resultSet.getObject(3)));
+            entity.setIp(resultSet.getString(3));
             entity.setDate(resultSet.getTimestamp(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
@@ -63,11 +58,5 @@ public abstract class GeneratedInvitationCodesRedeemLogsSqlAdapter {
 
     protected InvitationCodesRedeemLogsImpl createEntity() {
         return new InvitationCodesRedeemLogsImpl();
-    }
-
-    @ExecuteBefore(RESOLVED)
-    void createHelpers(ProjectComponent projectComponent) {
-        final Project project = projectComponent.getProject();
-        ipHelper = SqlTypeMapperHelper.create(project, InvitationCodesRedeemLogs.IP, InvitationCodesRedeemLogs.class);
     }
 }

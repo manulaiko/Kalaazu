@@ -39,7 +39,7 @@ public abstract class GeneratedUsersImpl implements Users {
 
     private Timestamp emailVerificationDate;
 
-    private byte[] ip;
+    private String ip;
 
     protected GeneratedUsersImpl() {
 
@@ -86,7 +86,7 @@ public abstract class GeneratedUsersImpl implements Users {
     }
 
     @Override
-    public byte[] getIp() {
+    public String getIp() {
         return ip;
     }
 
@@ -139,7 +139,7 @@ public abstract class GeneratedUsersImpl implements Users {
     }
 
     @Override
-    public Users setIp(byte... ip) {
+    public Users setIp(String ip) {
         this.ip = ip;
         return this;
     }

@@ -25,7 +25,7 @@ public abstract class GeneratedInvitationCodesRedeemLogsImpl implements Invitati
 
     private short invitationCodesId;
 
-    private byte[] ip;
+    private String ip;
 
     private Timestamp date;
 
@@ -44,7 +44,7 @@ public abstract class GeneratedInvitationCodesRedeemLogsImpl implements Invitati
     }
 
     @Override
-    public byte[] getIp() {
+    public String getIp() {
         return ip;
     }
 
@@ -66,7 +66,7 @@ public abstract class GeneratedInvitationCodesRedeemLogsImpl implements Invitati
     }
 
     @Override
-    public InvitationCodesRedeemLogs setIp(byte... ip) {
+    public InvitationCodesRedeemLogs setIp(String ip) {
         this.ip = ip;
         return this;
     }

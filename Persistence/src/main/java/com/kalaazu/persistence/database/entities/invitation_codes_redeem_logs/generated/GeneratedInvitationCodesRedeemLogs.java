@@ -6,12 +6,8 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.field.ComparableField;
-import com.speedment.runtime.field.IntField;
-import com.speedment.runtime.field.ReferenceField;
-import com.speedment.runtime.field.ShortForeignKeyField;
+import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
-import com.speedment.runtime.typemapper.other.BinaryToByteArrayMapper;
 
 import java.sql.Timestamp;
 
@@ -61,12 +57,13 @@ public interface GeneratedInvitationCodesRedeemLogs {
      * that can be obtained using the {@link InvitationCodesRedeemLogs#getIp()}
      * method.
      */
-    ReferenceField<InvitationCodesRedeemLogs, Object, byte[]> IP = ReferenceField.create(
+
+    StringField<InvitationCodesRedeemLogs, String> IP = StringField.create(
             Identifier.IP,
             InvitationCodesRedeemLogs::getIp,
             InvitationCodesRedeemLogs::setIp,
-            new BinaryToByteArrayMapper(),
-            false
+            TypeMapper.identity(),
+            true
     );
 
     /**
@@ -107,7 +104,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the ip of this InvitationCodesRedeemLogs
      */
-    byte[] getIp();
+    String getIp();
 
     /**
      * Returns the date of this InvitationCodesRedeemLogs. The date field
@@ -147,7 +144,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setIp(byte... ip);
+    InvitationCodesRedeemLogs setIp(String ip);
 
     /**
      * Sets the date of this InvitationCodesRedeemLogs. The date field

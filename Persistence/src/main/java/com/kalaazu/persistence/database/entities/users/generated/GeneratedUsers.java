@@ -9,7 +9,6 @@ import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
 import com.speedment.runtime.typemapper.TypeMapper;
-import com.speedment.runtime.typemapper.other.BinaryToByteArrayMapper;
 
 import java.sql.Timestamp;
 import java.util.Optional;
@@ -128,11 +127,11 @@ public interface GeneratedUsers {
      * This Field corresponds to the {@link Users} field that can be obtained
      * using the {@link Users#getIp()} method.
      */
-    ReferenceField<Users, Object, byte[]> IP = ReferenceField.create(
+    StringField<Users, String> IP = StringField.create(
             Identifier.IP,
             Users::getIp,
             Users::setIp,
-            new BinaryToByteArrayMapper(),
+            TypeMapper.identity(),
             false
     );
 
@@ -209,7 +208,7 @@ public interface GeneratedUsers {
      *
      * @return the ip of this Users
      */
-    byte[] getIp();
+    String getIp();
 
     /**
      * Sets the id of this Users. The id field corresponds to the database
@@ -302,7 +301,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setIp(byte... ip);
+    Users setIp(String ip);
 
     /**
      * Queries the specified manager for the referenced InvitationCodes. If no
