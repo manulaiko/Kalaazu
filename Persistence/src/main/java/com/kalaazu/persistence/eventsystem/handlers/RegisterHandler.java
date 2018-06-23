@@ -28,6 +28,7 @@ public class RegisterHandler extends Handler {
 
     @Override
     public void handle() {
+        RegisterHandler.logger.info(super.getEvent().body());
         String username       = super.get("username");
         String password       = super.get("password");
         String email          = super.get("email");

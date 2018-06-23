@@ -99,7 +99,7 @@ public class ExternalController extends Controller<ExternalModel, ExternalPresen
             return super.endError(request, "Please, fill the form properly.");
         }
 
-        ExternalController.logger.info("Sending event...");
+        ExternalController.logger.info("Sending event ...");
         var event = new JsonObject();
         event.put("username", username)
              .put("password", password)

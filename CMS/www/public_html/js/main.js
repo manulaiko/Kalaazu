@@ -5,10 +5,11 @@ var results  = document.getElementById("results");
  * if successfull
  *
  * @param Request request  Request to exectue.
+ * @param object  data     Request data.
  * @param string  redirect URL to redirecto if success.
  */
-function execute(request, redirect) {
-    fetch(request, getData()).then(function(response) {
+function execute(request, data, redirect) {
+    fetch(request, data).then(function(response) {
         return response.json()
     }).then(function(json) {
         if (!json.isError) {

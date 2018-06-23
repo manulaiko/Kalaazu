@@ -11,3 +11,15 @@ body {
     border-radius: .5%;
     background-color: rgba(255, 255, 255, 0.4);
 }
+
+.is-invisible {
+  display: none;
+}
+
+.tabs li + li {
+  margin-top: 0px;
+}
+
+.tabs a {
+  border-bottom: solid #dbdbdb;
+}
