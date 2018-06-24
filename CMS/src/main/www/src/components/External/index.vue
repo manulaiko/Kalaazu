@@ -32,6 +32,9 @@
 <script>
 import ExternalLogin from './Login'
 import ExternalRegister from './Register'
+import { store } from '@/store'
+
+store.commit('SET_LAYOUT', 'simple-layout')
 
 export default {
   data() {

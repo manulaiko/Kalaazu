@@ -33,6 +33,10 @@ export default new Router({
       path: '/External',
       component: External,
       beforeEnter: redirectInternal
+    },
+    {
+      path: '*',
+      component: NotFound
     }
   ]
 })
