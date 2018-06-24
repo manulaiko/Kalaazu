@@ -7,10 +7,11 @@
 <script>
 import AppLayout from './layouts/AppLayout'
 import SimpleLayout from './layouts/SimpleLayout'
+
 export default {
   computed: {
     layout() {
-      return this.$store.getters.layout
+      return this.$store.state.layout
     }
   },
   components: {

@@ -21,10 +21,5 @@ export const store = new Vuex.Store({
     ADD_NOTIFICATION(state, payload) {
       state.notifications.push(payload)
     }
-  },
-  getters: {
-    layout(state) {
-      return state.layout
-    }
   }
 })

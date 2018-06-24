@@ -12,10 +12,6 @@ body {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-.is-invisible {
-  display: none;
-}
-
 .tabs li + li {
   margin-top: 0px;
 }
