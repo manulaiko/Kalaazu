@@ -10,7 +10,7 @@
         </div>
         <div class="field">
             <p class="control has-icons-left">
-                <input class="input" entity="password" placeholder="Password" v-model="username">
+                <input class="input" entity="password" placeholder="Password" v-model="password">
                 <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                 </span>
@@ -23,6 +23,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -37,19 +39,26 @@ export default {
      * Submits the form.
      */
     execute: function() {
-      /* var data = new FormData()
-      data.set('username', this.login_username)
-      data.set('password', this.login_password)
+      this.$set(this.$data, 'submit', 'Logging in...')
 
-      var request = new Request('/External/login')
+      axios.get('http://localhost/External/login.php', {
+        params: {
+          username: this.username,
+          password: this.password
+        }
+      }).then(r => {
+        if(r.data.isError) {
+          this.$notify({
+            type: 'error',
+            text: r.data.message
+          })
+        } else {
+          this.$store.state.sessionId = r.data.sessionId
+          this.$router.push('/Internal/Start')
+        }
 
-      this.$set(this.$data, 'login_submit', 'Logging in...')
-
-      execute(request, {
-        method: 'GET',
-        body: data,
-        cache: 'no-cache'
-      }, '/Internal/Start') */
+        this.$set(this.$data, 'submit', 'Login')
+      });
     }
   }
 }

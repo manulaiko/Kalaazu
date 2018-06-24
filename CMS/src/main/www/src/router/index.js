@@ -6,16 +6,8 @@ import External from '@/components/External'
 
 Vue.use(Router)
 
-function redirectInternal(to, from, next) {
-  if (store.state.user != null) {
-    next("/Internal/Start")
-  }
-
-  next()
-}
-
 function redirectExternal(to, from, next) {
-  if (store.state.user == null) {
+  if (store.state.sessionId == null) {
     next("/External")
   }
 
@@ -27,12 +19,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      beforeEnter: redirectExternal
+      beforeEnter(to, from, next) {
+        if (store.state.sessionId == null) {
+          next("/External")
+        } else {
+          nex("/Internal")
+        }
+      }
     },
     {
       path: '/External',
       component: External,
-      beforeEnter: redirectInternal
+      beforeEnter(to, from, next) {
+        if (store.state.sessionId != null) {
+          next("/Internal/Start")
+        }
+
+        next()
+      }
     },
     {
       path: '*',

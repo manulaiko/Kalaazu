@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
   data() {
     return {
@@ -66,22 +68,29 @@ export default {
      * Submits the form.
      */
     execute: function() {
-      /* var data = new FormData()
-      data.set('username', this.username)
-      data.set('password', this.password)
-      data.set('email', this.email)
-      data.set('invitationCode', this.code)
-      data.set('factionsId', this.faction)
-
-      var request = new Request('/External/register')
-
       this.$set(this.$data, 'submit', 'Registering...')
 
-      execute(request, {
-        method: 'GET',
-        body: data,
-        cache: 'no-cache'
-      }, '/Internal/Start') */
+      axios.get('http://localhost/External/register.php', {
+        params: {
+          username: this.username,
+          password: this.password,
+          email: this.email,
+          code: this.code,
+          faction: this.faction
+        }
+      }).then(r => {
+        if(r.data.isError) {
+          this.$notify({
+            type: 'error',
+            text: r.data.message
+          })
+        } else {
+          this.$store.state.sessionId = r.data.sessionId
+          this.$router.push('/Internal/Start')
+        }
+      });
+
+      this.$set(this.$data, 'submit', 'Register')
     }
   }
 }
