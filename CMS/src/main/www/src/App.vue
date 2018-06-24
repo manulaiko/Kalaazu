@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <notifications position="top center"/>
     <component v-bind:is="layout"></component>
   </v-app>
 </template>
