@@ -1,23 +1,11 @@
 <template>
-  <v-app>
+  <div>
     <notifications position="top center"/>
-    <component v-bind:is="layout"></component>
-  </v-app>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import AppLayout from './layouts/AppLayout'
-import SimpleLayout from './layouts/SimpleLayout'
-
 export default {
-  computed: {
-    layout() {
-      return this.$store.state.layout
-    }
-  },
-  components: {
-    'app-layout': AppLayout,
-    'simple-layout': SimpleLayout
-  }
 }
 </script>

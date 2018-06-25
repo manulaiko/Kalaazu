@@ -19,10 +19,6 @@
 </template>
 
 <script>
-import { store } from '@/store'
-
-store.commit('SET_LAYOUT', (store.state.user != null) ? 'app-layout' : 'simple-layout')
-
 export default {
   methods: {
     goHome() {
