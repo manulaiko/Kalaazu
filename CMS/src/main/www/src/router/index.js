@@ -40,7 +40,7 @@ export default new Router({
       },
       children: [
         { path: '', beforeEnter(to, from, next) { next('Start') } },
-        { path: 'Starts', component: () => import('@/components/Internal/Start') },
+        { path: 'Start', component: () => import('@/components/Internal/Start') },
         { path: '*', component: () => import('@/components/NotFound') }
       ]
     },
