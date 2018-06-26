@@ -7,4 +7,5 @@ module kalaazu.cms {
     requires vertx.web;
     requires vertx.core;
     requires pebble;
+    requires vertx.bridge.common;
 }

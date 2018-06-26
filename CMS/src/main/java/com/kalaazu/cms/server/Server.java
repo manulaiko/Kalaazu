@@ -1,8 +1,5 @@
 package com.kalaazu.cms.server;
 
-import com.kalaazu.cms.mvc.Triad;
-import com.kalaazu.cms.mvc.View;
-import com.kalaazu.cms.mvc.pages.External;
 import io.vertx.core.AsyncResult;
 import io.vertx.core.Handler;
 import io.vertx.core.Vertx;
@@ -12,9 +9,6 @@ import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
-
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Server class.
@@ -34,11 +28,6 @@ public class Server {
      * Server host.
      */
     private final String host;
-
-    /**
-     * The path to the views.
-     */
-    private String viewsPath;
 
     /**
      * The path to the static assets.
@@ -61,44 +50,31 @@ public class Server {
     private HttpServer server;
 
     /**
-     * Registered triads.
+     * The Vertx instance.
      */
-    private List<Triad> triads = new ArrayList<>();
+    private Vertx vertx;
 
     /**
      * Constructor.
      *
      * @param port       Port to listen for HTTP requests.
      * @param host       Server host.
-     * @param viewsPath  Path to the views.
      * @param assetsPath Path to the static assets.
+     * @param vertx      Vertx instance.
      */
-    public Server(int port, String host, String viewsPath, String assetsPath) {
+    public Server(int port, String host, String assetsPath, Vertx vertx) {
         this.port = port;
         this.host = host;
-        this.viewsPath = viewsPath;
         this.assetsPath = assetsPath;
+        this.vertx = vertx;
     }
 
     /**
      * Initializes the HTTP server.
      */
     public void initialize() {
-        View.viewsPath = this.viewsPath;
-
-        var url = "http://" + this.host;
-        if (this.port != 80) {
-            url += ":" + this.port;
-        }
-        url += "/";
-
-        View.globalVariables.put("URL", url);
-
-        var vertx = Vertx.currentContext()
-                         .owner();
-
-        this.router = Router.router(vertx);
-        this.server = vertx.createHttpServer();
+        this.router = Router.router(this.vertx);
+        this.server = this.vertx.createHttpServer();
 
         this.registerRoutes();
 
@@ -112,32 +88,13 @@ public class Server {
      * Registers the route handlers in the router.
      */
     private void registerRoutes() {
-        this.registerTriads();
-
         this.router.route("/*")
                    .handler(BodyHandler.create());
+
+        this.router.route("/eventbus/*")
+                   .handler(Bridge.create((this.vertx)));
         this.router.route("/*")
-                   .handler(c -> {
-                       var r = c.request();
-                       Server.logger.info(r.method() + ": " + r.uri());
-
-                       c.next();
-                   });
-
-        this.triads.forEach(t -> this.router.route(t.getEndpoint() + "/*")
-                                            .handler(t::handle));
-        this.router.route("/assets/*")
                    .handler(StaticHandler.create(this.assetsPath));
-
-        this.router.route("/")
-                   .handler(c -> c.reroute("/External"));
-    }
-
-    /**
-     * Registers the Triad instances.
-     */
-    private void registerTriads() {
-        this.triads.add(new External());
     }
 
     /**
@@ -194,7 +151,6 @@ public class Server {
      * Checks if the server is running.
      */
     public boolean isRunning() {
-        // TODO there's no way to know if it's actually running.
-        return this.server.actualPort() > 0;
+        return this.server.actualPort() != 0;
     }
 }
