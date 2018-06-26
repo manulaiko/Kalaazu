@@ -14,11 +14,6 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-start">
-          <carousel :auto="3000" :watch-items="news" :loop="true" class="navbar-item" >
-            <carousel-item v-for="(item, index) in news">
-              <a class="navbar-item" @click.prevent="showNews(item)">{{item.title}}</a>
-            </carousel-item>
-          </carousel>
         </div>
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
@@ -34,7 +29,7 @@
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">
-                test
+              test
             </a>
             <div class="navbar-dropdown">
               <div class="block block-drop-shadow">
@@ -95,53 +90,17 @@
 </template>
 
 <script>
-import { Carousel, CarouselItem } from 'vue-l-carousel'
-
-export default {
-  data() {
-    return {
-      news: [
-        {
-          id: 1,
-          title: "News 1",
-          text: "News 1 text"
-        },
-        {
-          id: 2,
-          title: "News 2",
-          text: "News 2 text"
-        },
-        {
-          id: 3,
-          title: "News 3",
-          text: "News 3 text"
-        },
-        {
-          id: 4,
-          title: "News 4",
-          text: "News 4 text"
-        },
-      ]
-    }
-  },
-  components: {
-    'carousel': Carousel,
-    'carousel-item': CarouselItem
-  },
-  methods: {
-    showNews(news) {
-      console.log(news)
-    }
+  export default {
   }
-}
 </script>
 
 <style>
-nav {
-  position: fixed;
-  min-height: 40px
-}
-#page {
-  padding-top: 25px;
-}
+  nav {
+    position: fixed;
+    min-height: 40px
+  }
+
+  #page {
+    padding-top: 25px;
+  }
 </style>

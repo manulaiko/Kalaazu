@@ -34,7 +34,7 @@ public class RegisterHandler extends Handler {
         String email          = super.get("email");
         String ip             = super.get("ip");
         String invitationCode = super.get("invitationCode");
-        byte   factionsID     = super.get("factionsId");
+        byte   factionsID     = Byte.parseByte(super.get("factionsId"));
 
         if (username.length() <= 4) {
             super.fail("Username can't be shorter than 4 chars!");

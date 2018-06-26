@@ -72,8 +72,9 @@
           username: this.username,
           password: this.password,
           email: this.email,
-          code: this.code,
-          faction: this.faction
+          invitationCode: this.code,
+          factionsId: this.faction,
+          ip: '0.0.0.0'
         };
         this.$eventBus.send('persistence.register', data, (err, res) => {
           this.$set(this.$data, 'submit', 'Register');
@@ -92,6 +93,8 @@
               type: 'error',
               text: res.body.message
             });
+
+            return;
           }
 
           this.$store.state.sessionId = res.body.sessionId;
