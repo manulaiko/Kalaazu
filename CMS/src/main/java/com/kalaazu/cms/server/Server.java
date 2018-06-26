@@ -32,7 +32,7 @@ public class Server {
     /**
      * The path to the static assets.
      */
-    private String assetsPath;
+    private String webRoot;
 
     /**
      * The port to listen.
@@ -57,15 +57,15 @@ public class Server {
     /**
      * Constructor.
      *
-     * @param port       Port to listen for HTTP requests.
-     * @param host       Server host.
-     * @param assetsPath Path to the static assets.
-     * @param vertx      Vertx instance.
+     * @param port    Port to listen for HTTP requests.
+     * @param host    Server host.
+     * @param webRoot Path to the static assets.
+     * @param vertx   Vertx instance.
      */
-    public Server(int port, String host, String assetsPath, Vertx vertx) {
+    public Server(int port, String host, String webRoot, Vertx vertx) {
         this.port = port;
         this.host = host;
-        this.assetsPath = assetsPath;
+        this.webRoot = webRoot;
         this.vertx = vertx;
     }
 
@@ -94,7 +94,7 @@ public class Server {
         this.router.route("/eventbus/*")
                    .handler(Bridge.create((this.vertx)));
         this.router.route("/*")
-                   .handler(StaticHandler.create(this.assetsPath));
+                   .handler(StaticHandler.create(this.webRoot));
     }
 
     /**

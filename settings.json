@@ -15,6 +15,5 @@
     "TRANSACTION",
     "UPDATE"
   ],
-  "cms.viewsPath": "CMS/www/views",
-  "cms.assetsPath": "CMS/www/public_html"
+  "cms.webRoot": "CMS/src/main/www"
 }
