@@ -12,8 +12,10 @@
                         </h2>
                         <div class="tabs is-centered " id="nav">
                             <ul>
-                                <li :class="{'is-active': active == 'login'}"><a @click.prevent="open('login')">Login</a></li>
-                                <li :class="{'is-active': active == 'register'}"><a @click.prevent="open('register')">Register</a></li>
+                              <li :class="{'is-active': active === 'login'}"><a @click.prevent="open('login')">Login</a>
+                              </li>
+                              <li :class="{'is-active': active === 'register'}"><a @click.prevent="open('register')">Register</a>
+                              </li>
                             </ul>
                         </div>
                         <div id="form">

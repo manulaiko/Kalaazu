@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="content navbar" role="navigation" aria-label="main navigation">
+    <nav class="content navbar is-transparent" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a href="Internal/Start" class="navbar-item">
           Start
@@ -15,20 +15,30 @@
       <div class="navbar-menu">
         <div class="navbar-start">
           <slider height="auto" width="500px" :control-btn="false" :indicators="false" class="navbar-item">
-            <slider-item v-for="(i, index) in news" :key="index">
-              <p @click.prevent="showNews(i)" class="navbar-item">{{ i.title }}</p>
+            <slider-item v-for="(n, i) in news" :key="i">
+              <p @click.prevent="showNews(n)" class="navbar-item">{{ n.title }}</p>
             </slider-item>
           </slider>
         </div>
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">
-              <span class="fa fa-envelope"></span>
-              <small class="circle-warning top-right">1</small>
+              <span class="has-text-warning" v-if="messages.length !== 0">
+                <i class="fa fa-envelope"></i>
+                 {{ messages.length }}
+              </span>
+              <i class="fa fa-envelope" v-else></i>
             </a>
-            <div class="navbar-dropdown">
-              <div class="navbar-item">
-                <h4><a href="Internal/Messages/1">New message</a></h4>
+            <div class="navbar-dropdown is-right content">
+              <div class="navbar-item" v-for="(m, i) in messages" :key="i">
+                <div>
+                  <h6 @click.prevent="$router.push('/Internal/Messaging/'+ m.id)">{{ m.title.wrap(20) }}</h6>
+                  <p>{{ m.text.wrap(40) }}</p>
+                  <small>By <a @click.prevent="$router.push('/Internal/User/'+ m.from_accounts_id)">{{ m.author }}</a>,
+                    {{ m.time }}
+                  </small>
+                </div>
+                <hr class="navbar-divider" v-if="i < messages.length"/>
               </div>
             </div>
           </div>
@@ -36,7 +46,7 @@
             <a href="#" class="navbar-link">
               test
             </a>
-            <div class="navbar-dropdown">
+            <div class="navbar-dropdown is-right content">
               <div class="block block-drop-shadow">
                 <div class="head np">
                   <div class="user">
@@ -109,6 +119,24 @@
           {
             title: 'No',
             text: 'Hue'
+          }
+        ],
+        messages: [
+          {
+            id: 1,
+            title: 'Message 1',
+            text: 'Message 1 text',
+            from_accounts_id: 1,
+            author: 'System',
+            time: '2 hours ago'
+          },
+          {
+            id: 2,
+            title: 'Message 2 with long title',
+            text: 'apiebrnpaioenrobainerbainerb<br/>boernaoernboinerbapaiernbpaienrbinaepirbpaienrb<br/>pienrbpainerbpainerbin<oienrboi<nr><oienrb</nr>',
+            from_accounts_id: 1,
+            author: 'System',
+            time: '3 hours ago'
           }
         ]
       }

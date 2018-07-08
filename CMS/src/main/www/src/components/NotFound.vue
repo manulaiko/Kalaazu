@@ -10,7 +10,8 @@
                         <h2 class="subtitle">
                           You just got 404'ed
                         </h2>
-                        <a class="button is-info is-inverted is-outlined" @click.prevent="goHome()">Home</a>
+                      <a class="button is-info is-inverted is-outlined"
+                         @click.prevent="$router.push('/External')">Home</a>
                     </div>
                 </div>
             </div>
@@ -20,10 +21,5 @@
 
 <script>
 export default {
-  methods: {
-    goHome() {
-      this.$router.push('/')
-    }
-  }
 }
 </script>
