@@ -14,6 +14,11 @@
       </div>
       <div class="navbar-menu">
         <div class="navbar-start">
+          <slider height="auto" width="500px" :control-btn="false" :indicators="false" class="navbar-item">
+            <slider-item v-for="(i, index) in news" :key="index">
+              <p @click.prevent="showNews(i)" class="navbar-item">{{ i.title }}</p>
+            </slider-item>
+          </slider>
         </div>
         <div class="navbar-end">
           <div class="navbar-item has-dropdown is-hoverable">
@@ -84,13 +89,42 @@
       </div>
     </nav>
     <div id="page" class="is-fullheight">
+      <v-dialog/>
       <router-view></router-view>
     </div>
   </div>
 </template>
 
 <script>
+  import {Slider, SliderItem} from 'vue-easy-slider'
+
   export default {
+    data: function () {
+      return {
+        news: [
+          {
+            title: 'Hi',
+            text: 'Yes'
+          },
+          {
+            title: 'No',
+            text: 'Hue'
+          }
+        ]
+      }
+    },
+    components: {
+      Slider,
+      SliderItem
+    },
+    methods: {
+      showNews(news) {
+        this.$modal.show('dialog', {
+          title: news.title,
+          text: news.text
+        });
+      }
+    }
   }
 </script>
 

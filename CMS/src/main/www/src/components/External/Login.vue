@@ -43,7 +43,7 @@
           username: this.username,
           password: this.password
         };
-        this.$eventBus.send('persistence.login', data, (err, res) => {
+        /*this.$eventBus.send('persistence.login', data, (err, res) => {
           this.$set(this.$data, 'submit', 'Login');
 
           if (err != null) {
@@ -66,7 +66,9 @@
 
           this.$store.state.sessionId = res.body.sessionId;
           this.$router.push('/Internal/Start');
-        });
+        });*/
+        this.$store.state.sessionId = "0";
+        this.$router.push('/Internal/Start');
       }
     }
   }
