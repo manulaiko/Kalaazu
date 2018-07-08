@@ -44,46 +44,30 @@
           </div>
           <div class="navbar-item has-dropdown is-hoverable">
             <a href="#" class="navbar-link">
-              test
+              {{ account.name }}
             </a>
             <div class="navbar-dropdown is-right content">
-              <div class="block block-drop-shadow">
-                <div class="head np">
-                  <div class="user">
-                    <div class="info">
-                      <img src="img/logob.png" class="img-circle img-thumbnail">
-                      <a href="#" class="informer informer-one">
-                        <span>10002000</span> Experience
-                      </a>
-                      <a href="#" class="informer informer-two">
-                        <span>20000</span> Honor
-                      </a>
-                      <a href="#" class="informer informer-three">
-                        <span>1000000</span> Credits
-                      </a>
-                      <a href="#" class="informer informer-four">
-                        <span>1000</span> Uridium
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="block block-drop-shadow page-navigation-hide">
-                <div class="head bg-dot20">
-                  <div class="side pull-left">
-                    <div class="head-panel nm">
-                      <div class="hp-info hp-simple pull-left hp-inline">
-                        <span class="hp-sm">Level</span>
-                        <span class="hp-sm">Experience needed for next level</span>
+              <div class="navbar-item">
+                <div class="card">
+                  <div class="card-content">
+                    <div class="media">
+                      <div class="media-left">
+                        <figure class="image is-48x48">
+                          <img :src="'/img/rank/' + account.rank_id + '.jpg'">
+                        </figure>
+                      </div>
+                      <div class="media-content">
+                        <p class="title is-4">{{ account.rank_name }}</p>
+                        <p class="title is-6">Level {{ account.level }}</p>
+                        <p class="subtitle is-6">{{ account.next_level_exp }} experience points for next level</p>
                       </div>
                     </div>
-                  </div>
-                  <div class="side pull-right">
-                    <div class="head-panel nm">
-                      <div class="hp-info hp-simple pull-left hp-inline">
-                        <span class="hp-sm">1</span>
-                        <span class="hp-sm">0</span>
-                      </div>
+
+                    <div class="content">
+                      <p>{{ account.experience }} experience points</p>
+                      <p>{{ account.honor }} honor points</p>
+                      <p>{{ account.uridium }} uridium</p>
+                      <p>{{ account.credits }} credits</p>
                     </div>
                   </div>
                 </div>
@@ -91,8 +75,8 @@
             </div>
           </div>
           <div class="navbar-item">
-            <a href="Internal/Logout">
-              <i class="fa fa-sign-out"></i> Logout
+            <a @click.prevent="$router.push('/External')">
+              <i class="fas fa-sign-out-alt"></i> Logout
             </a>
           </div>
         </div>
@@ -138,7 +122,19 @@
             author: 'System',
             time: '3 hours ago'
           }
-        ]
+        ],
+        account: {
+          id: 1,
+          name: 'test',
+          rank_id: 1,
+          rank_name: 'Basic space pilot',
+          level: 1,
+          next_level_exp: 10000,
+          experience: 0,
+          honor: 0,
+          credits: 40000,
+          uridium: 10000
+        }
       }
     },
     components: {
@@ -164,5 +160,11 @@
 
   #page {
     padding-top: 25px;
+  }
+
+  .card {
+    background-color: transparent;
+    color: inherit;
+    box-shadow: none;
   }
 </style>
