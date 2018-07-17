@@ -82,9 +82,19 @@
         </div>
       </div>
     </nav>
-    <div id="page" class="is-fullheight">
-      <v-dialog/>
-      <router-view></router-view>
+    <div class="columns is-fullheight">
+      <div class="column is-2 is-sidebar-menu is-hidden-mobile">
+        <aside class="menu content">
+          <ul class="menu-list">
+            <li><a @click.prevent="$router.push('/Internal/Start')"><i class="fa fa-home"></i> Home</a></li>
+            <li><a @click.prevent="$router.push('/Internal/Map')"><i class="fa fa-rocket"></i> Map</a></li>
+          </ul>
+        </aside>
+      </div>
+      <div class="column is-main-content">
+        <v-dialog/>
+        <router-view/>
+      </div>
     </div>
   </div>
 </template>
@@ -158,8 +168,12 @@
     min-height: 40px
   }
 
-  #page {
-    padding-top: 25px;
+  .menu-list {
+    margin-left: 0 !important;
+  }
+
+  .menu-list li {
+    list-style: none;
   }
 
   .card {
