@@ -2,4 +2,5 @@ dependencies {
     compile project(":Utils")
     compile project(":Persistence")
     compile group: 'io.vertx', name: 'vertx-web', version: '3.5.1'
+    compile group: 'com.fizzed', name: 'rocker-runtime', version: '0.24.0'
 }

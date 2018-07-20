@@ -45,9 +45,9 @@ public class CMS extends AbstractVerticle {
     public void start(Future<Void> startFuture) {
         CMS.logger.info("Starting web server...");
 
-        var port    = config().getInteger("cms.port", 8080);
+        var port    = config().getInteger("cms.port", 80);
         var host    = config().getString("cms.host", "localhost");
-        var webRoot = config().getString("cms.webRoot", "src/main/www");
+        var webRoot = config().getString("cms.webRoot", "src/main/www/dist");
 
         this.server = new Server(port, host, webRoot, super.vertx);
 

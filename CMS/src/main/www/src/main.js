@@ -8,7 +8,7 @@ import VModal from 'vue-js-modal'
 
 Vue.config.productionTip = false;
 Vue.use(Notifications);
-Vue.use(VertxEventBus, {path: '/eventbus', port: 8080});
+Vue.use(VertxEventBus, {path: '/eventbus', port: 80});
 Vue.use(VModal, {dialog: true});
 
 new Vue({

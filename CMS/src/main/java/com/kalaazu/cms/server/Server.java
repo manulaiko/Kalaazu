@@ -10,6 +10,8 @@ import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
 
+import java.nio.file.Paths;
+
 /**
  * Server class.
  * =============
@@ -89,12 +91,17 @@ public class Server {
      */
     private void registerRoutes() {
         this.router.route("/*")
-                   .handler(BodyHandler.create());
+                   .handler(BodyHandler.create())
+                   .handler(h -> {
+                       Server.logger.info(h.request()
+                                           .uri());
+                       h.next();
+                   })
+                   .handler(new DynamicHandler(Paths.get(this.webRoot), this.host))
+                   .handler(StaticHandler.create(this.webRoot));
 
         this.router.route("/eventbus/*")
-                   .handler(Bridge.create((this.vertx)));
-        this.router.route("/*")
-                   .handler(StaticHandler.create(this.webRoot));
+                   .handler(Bridge.create(this.vertx));
     }
 
     /**

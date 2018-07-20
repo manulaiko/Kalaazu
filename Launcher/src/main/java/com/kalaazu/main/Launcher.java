@@ -36,8 +36,10 @@ public class Launcher extends AbstractVerticle {
         this.opts.setWorker(true);
         this.opts.setConfig(config());
 
-        this.startPersistence();
-        this.startCMS();
+        Launcher.logger.info("Starting Persistence module...");
+        vertx.deployVerticle(new Persistence(), this.opts, h -> {
+            this.startCMS();
+        });
     }
 
     /**
@@ -47,15 +49,6 @@ public class Launcher extends AbstractVerticle {
         System.setProperty("vertx.logger-delegate-factory-class-name", "io.vertx.core.logging.SLF4JLogDelegateFactory");
         System.setProperty("org.slf4j.simpleLogger.defaultLogLevel", config().getString("logLevel", "DEBUG"));
         Launcher.logger = LoggerFactory.getLogger(Launcher.class);
-    }
-
-    /**
-     * Starts and deploys the persistence verticle.
-     */
-    public void startPersistence() {
-        Launcher.logger.info("Starting Persistence module...");
-
-        vertx.deployVerticle(new Persistence(), this.opts);
     }
 
     /**

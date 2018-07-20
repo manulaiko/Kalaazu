@@ -7,4 +7,5 @@ module kalaazu.cms {
     requires vertx.web;
     requires vertx.core;
     requires vertx.bridge.common;
+    requires rocker.runtime;
 }

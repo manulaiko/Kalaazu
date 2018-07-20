@@ -15,5 +15,5 @@
     "TRANSACTION",
     "UPDATE"
   ],
-  "cms.webRoot": "CMS/src/main/www"
+  "cms.webRoot": "CMS/src/main/www/dist"
 }
