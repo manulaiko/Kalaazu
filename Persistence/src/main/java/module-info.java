@@ -194,4 +194,5 @@ module kalaazu.persistence {
     requires mapstream;
     requires singleton.stream;
     requires tuple;
+    requires lombok;
 }

@@ -35,7 +35,7 @@ public final class TechfactoryCostsImpl
 
         this.techfactoryItem = super.findTechfactoryItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(TechfactoryItems.class)
         );
 
@@ -50,7 +50,7 @@ public final class TechfactoryCostsImpl
 
         this.item = super.findItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Items.class)
         );
 

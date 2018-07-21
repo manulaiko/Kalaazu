@@ -37,7 +37,7 @@ public final class TradeItemsImpl
 
         this.item = super.findItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Items.class)
         );
         return this.item;
@@ -51,7 +51,7 @@ public final class TradeItemsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 

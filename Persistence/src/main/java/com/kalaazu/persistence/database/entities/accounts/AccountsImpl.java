@@ -147,7 +147,7 @@ public final class AccountsImpl
 
         this.user = super.findUsersId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Users.class)
         );
 
@@ -162,7 +162,7 @@ public final class AccountsImpl
 
         this.level = super.findLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Levels.class)
         );
 
@@ -177,7 +177,7 @@ public final class AccountsImpl
 
         this.faction = super.findFactionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Factions.class)
         );
 
@@ -192,7 +192,7 @@ public final class AccountsImpl
 
         this.hangar = super.findAccountsHangarsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(AccountsHangars.class)
         );
 
@@ -207,7 +207,7 @@ public final class AccountsImpl
 
         this.clan = super.findClansId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Clans.class)
         );
 
@@ -222,7 +222,7 @@ public final class AccountsImpl
 
         this.rank = super.findRanksId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Ranks.class)
         );
 

@@ -117,6 +117,7 @@ public final class KalaazuApplicationImpl extends GeneratedKalaazuApplicationImp
                 .endsWith("Impl")) {
             type = (Class<? extends Entity>) type.getInterfaces()[0];
         }
+
         return this.managers.get(type);
     }
 

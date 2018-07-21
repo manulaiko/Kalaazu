@@ -7,12 +7,15 @@ import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
 import com.speedment.runtime.field.ComparableField;
 import io.vertx.core.json.JsonArray;
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Data;
+import lombok.Setter;
 
 import java.util.Optional;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Stream;
-
 
 /**
  * Database class.
@@ -23,6 +26,8 @@ import java.util.stream.Stream;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @SuppressWarnings("unchecked")
+@Data
+@Builder
 public class Database {
     //////////////////////////////////
     // Static methods and properties//
@@ -50,6 +55,7 @@ public class Database {
     /**
      * Speedment db instance.
      */
+    @Setter(AccessLevel.NONE)
     private KalaazuApplication db;
 
     /**
@@ -86,28 +92,28 @@ public class Database {
      * Initializes the connection with the database.
      */
     public void initialize() {
-        if (this.getDb() != null) {
+        if (this.db() != null) {
             return;
         }
 
         try {
-            var url     = "jdbc:mariadb://" + this.getHost() + ":" + this.getPort() + "/" + this.getDatabase();
+            var url     = "jdbc:mariadb://" + this.host() + ":" + this.port() + "/" + this.database();
             var builder = new KalaazuApplicationBuilder();
 
             builder.withConnectionUrl(url)
-                   .withUsername(this.getUsername())
+                   .withUsername(this.username())
                    .withParam("db.mysql.collationName", "utf8mb4_general_ci")
                    .withParam("db.mysql.binaryCollationName", "utf8mb4_bin")
-                   .withPassword(this.getPassword());
+                   .withPassword(this.password());
 
-            this.getLogTypes()
+            this.logTypes()
                 .forEach(
                         l -> builder.withLogging(ApplicationBuilder.LogType.valueOf(l.toString()))
                 );
 
             this.db = builder.build();
 
-            this.getDb()
+            this.db()
                 .initialize();
         } catch (Throwable ex) {
             throw new ExceptionInInitializerError(ex);
@@ -122,7 +128,7 @@ public class Database {
      * @return Stream of entities.
      */
     public <T extends Entity> Stream<T> all(Class<T> type) {
-        return (Stream<T>) this.getDb()
+        return (Stream<T>) this.db()
                                .manager(type)
                                .stream();
     }
@@ -137,7 +143,7 @@ public class Database {
      * @return Stream of entities.
      */
     public <T extends Entity> Stream<T> all(ComparableField field, Comparable value, Class<T> type) {
-        return (Stream<T>) this.getDb()
+        return (Stream<T>) this.db()
                                .manager(type)
                                .stream()
                                .filter(field.equal(value));
@@ -152,7 +158,7 @@ public class Database {
      * @return Entity with `id`.
      */
     public <T extends Entity> Optional<T> find(int id, Class<T> type) {
-        return (Optional<T>) this.getDb()
+        return (Optional<T>) this.db()
                                  .manager(type)
                                  .byId(id);
     }
@@ -180,7 +186,7 @@ public class Database {
      * @return Inserted entity.
      */
     public <T extends Entity> T create(T entity, Class<T> type) {
-        return (T) this.getDb()
+        return (T) this.db()
                        .manager(type)
                        .persist(entity);
     }
@@ -194,7 +200,7 @@ public class Database {
      * @return Updated entity.
      */
     public <T extends Entity> T update(T entity, Class<T> type) {
-        return (T) this.getDb()
+        return (T) this.db()
                        .manager(type)
                        .update(entity);
     }
@@ -205,7 +211,7 @@ public class Database {
      * @param entity Entity to delete.
      */
     public void delete(Entity entity) {
-        this.getDb()
+        this.db()
             .manager(entity.getClass())
             .remove(entity);
     }
@@ -238,74 +244,8 @@ public class Database {
      * @return Transaction handler.
      */
     public TransactionHandler transaction() {
-        return this.getDb()
+        return this.db()
                    .getOrThrow(TransactionComponent.class)
                    .createTransactionHandler();
     }
-
-    //<editor-fold desc="Getters and setters">
-    public String getHost() {
-        return host;
-    }
-
-    public Database setHost(String host) {
-        this.host = host;
-
-        return this;
-    }
-
-    public int getPort() {
-        return port;
-    }
-
-    public Database setPort(int port) {
-        this.port = port;
-
-        return this;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public Database setUsername(String username) {
-        this.username = username;
-
-        return this;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public Database setPassword(String password) {
-        this.password = password;
-
-        return this;
-    }
-
-    public String getDatabase() {
-        return database;
-    }
-
-    public Database setDatabase(String database) {
-        this.database = database;
-
-        return this;
-    }
-
-    public KalaazuApplication getDb() {
-        return db;
-    }
-
-    public JsonArray getLogTypes() {
-        return logTypes;
-    }
-
-    public Database setLogTypes(JsonArray logTypes) {
-        this.logTypes = logTypes;
-
-        return this;
-    }
-    //</editor-fold>
 }

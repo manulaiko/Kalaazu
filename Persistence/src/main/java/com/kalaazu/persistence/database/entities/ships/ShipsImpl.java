@@ -29,7 +29,7 @@ public final class ShipsImpl
 
         this.item = super.findItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Items.class)
         );
 

@@ -38,7 +38,7 @@ public final class AccountsBanksImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 

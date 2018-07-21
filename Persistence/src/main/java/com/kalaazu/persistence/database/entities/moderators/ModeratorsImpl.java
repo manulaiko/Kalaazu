@@ -58,7 +58,7 @@ public final class ModeratorsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -73,7 +73,7 @@ public final class ModeratorsImpl
 
         this.role = super.findModeratorsRolesId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ModeratorsRoles.class)
         );
 

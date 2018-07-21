@@ -15,7 +15,7 @@ public class EventListener extends com.kalaazu.eventsystem.EventListener {
     }
 
     @Override
-    public String getDomain() {
+    public String domain() {
         return "cms";
     }
 }

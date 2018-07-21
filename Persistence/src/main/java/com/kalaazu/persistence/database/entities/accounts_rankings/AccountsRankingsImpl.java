@@ -29,7 +29,7 @@ public final class AccountsRankingsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 

@@ -29,7 +29,7 @@ public final class GalaxygatesSpinsImpl
 
         this.item = super.findItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Items.class)
         );
 

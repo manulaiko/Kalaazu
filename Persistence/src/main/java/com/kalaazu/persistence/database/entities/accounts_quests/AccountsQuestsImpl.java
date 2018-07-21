@@ -35,7 +35,7 @@ public final class AccountsQuestsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -50,7 +50,7 @@ public final class AccountsQuestsImpl
 
         this.quest = super.findQuestsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Quests.class)
         );
 

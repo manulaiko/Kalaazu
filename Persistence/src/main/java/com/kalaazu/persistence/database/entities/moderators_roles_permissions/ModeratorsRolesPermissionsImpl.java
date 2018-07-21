@@ -35,7 +35,7 @@ public final class ModeratorsRolesPermissionsImpl
 
         this.role = super.findModeratorsRolesId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ModeratorsRoles.class)
         );
 
@@ -50,7 +50,7 @@ public final class ModeratorsRolesPermissionsImpl
 
         this.permission = super.findPermissionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Permissions.class)
         );
 

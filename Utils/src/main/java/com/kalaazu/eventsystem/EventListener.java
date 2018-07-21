@@ -5,9 +5,6 @@ import io.vertx.core.Vertx;
 import io.vertx.core.eventbus.Message;
 import io.vertx.core.json.JsonObject;
 
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Event listener.
  * ===============
@@ -40,7 +37,7 @@ public abstract class EventListener {
      *
      * @return Listener domain name.
      */
-    public abstract String getDomain();
+    public abstract String domain();
 
     /**
      * Adds a new handler to the list.
@@ -52,6 +49,6 @@ public abstract class EventListener {
         Vertx.currentContext()
              .owner()
              .eventBus()
-             .consumer(this.getDomain() + "." + event, handler);
+             .consumer(this.domain() + "." + event, handler);
     }
 }

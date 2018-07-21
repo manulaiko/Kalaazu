@@ -37,7 +37,7 @@ public final class MapsStationsImpl
 
         this.faction = super.findFactionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Factions.class)
         );
 
@@ -52,7 +52,7 @@ public final class MapsStationsImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

@@ -61,7 +61,7 @@ public final class AccountsConfigurationsImpl
 
         this.hangar = super.findAccountsHangarsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(AccountsHangars.class)
         );
 

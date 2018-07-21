@@ -53,7 +53,7 @@ public final class MapsPortalsImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 
@@ -68,7 +68,7 @@ public final class MapsPortalsImpl
 
         this.targetMap = super.findTargetMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

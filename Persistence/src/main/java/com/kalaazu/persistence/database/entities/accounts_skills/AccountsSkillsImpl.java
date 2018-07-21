@@ -41,7 +41,7 @@ public final class AccountsSkillsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -56,7 +56,7 @@ public final class AccountsSkillsImpl
 
         this.skill = super.findSkilltreeSkillsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(SkilltreeSkills.class)
         );
 
@@ -71,7 +71,7 @@ public final class AccountsSkillsImpl
 
         this.level = super.findSkilltreeLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(SkilltreeLevels.class)
         );
 

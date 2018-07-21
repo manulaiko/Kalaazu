@@ -47,7 +47,7 @@ public final class GalaxygatesImpl
 
         this.wave = super.findGalaxygatesWavesId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(GalaxygatesWaves.class)
         );
 

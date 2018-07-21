@@ -41,7 +41,7 @@ public final class AccountsShipsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class
                         )
         );
@@ -57,7 +57,7 @@ public final class AccountsShipsImpl
 
         this.ship = super.findShipsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Ships.class)
         );
 
@@ -72,7 +72,7 @@ public final class AccountsShipsImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

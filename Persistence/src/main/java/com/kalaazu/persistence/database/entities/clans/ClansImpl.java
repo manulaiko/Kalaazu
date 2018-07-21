@@ -57,7 +57,7 @@ public final class ClansImpl
 
         this.owner = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 

@@ -38,7 +38,7 @@ public final class ClansBanksImpl
 
         this.clan = super.findClansId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Clans.class)
         );
 

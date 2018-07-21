@@ -50,7 +50,7 @@ public final class QuestsImpl
 
         this.level = super.findLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Levels.class)
         );
 
@@ -65,7 +65,7 @@ public final class QuestsImpl
 
         this.quest = super.findQuestsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Quests.class)
         );
 
@@ -80,7 +80,7 @@ public final class QuestsImpl
 
         this.faction = super.findFactionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Factions.class)
         );
 

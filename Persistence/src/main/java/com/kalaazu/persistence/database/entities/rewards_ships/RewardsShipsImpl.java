@@ -35,7 +35,7 @@ public final class RewardsShipsImpl
 
         this.rewards = super.findRewardsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Rewards.class)
         );
 
@@ -50,7 +50,7 @@ public final class RewardsShipsImpl
 
         this.ship = super.findShipsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Ships.class)
         );
 

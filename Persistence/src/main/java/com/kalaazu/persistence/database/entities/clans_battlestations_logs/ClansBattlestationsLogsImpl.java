@@ -35,7 +35,7 @@ public final class ClansBattlestationsLogsImpl
 
         this.clan = super.findClansId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Clans.class)
         );
 
@@ -50,7 +50,7 @@ public final class ClansBattlestationsLogsImpl
 
         this.battlestation = super.findClansBattlestationsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ClansBattlestations.class)
         );
 

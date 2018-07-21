@@ -40,7 +40,7 @@ public final class ClansBanksLogsImpl
 
         this.bank = super.findClansBanksId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ClansBanksLogs.class)
         );
 
@@ -55,7 +55,7 @@ public final class ClansBanksLogsImpl
 
         this.author = super.findFromAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -70,7 +70,7 @@ public final class ClansBanksLogsImpl
 
         this.destination = super.findToAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 

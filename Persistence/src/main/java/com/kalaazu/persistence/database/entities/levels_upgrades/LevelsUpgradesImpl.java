@@ -29,7 +29,7 @@ public final class LevelsUpgradesImpl
 
         this.level = super.findLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Levels.class)
         );
 

@@ -38,7 +38,7 @@ public final class GalaxygatesWavesImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

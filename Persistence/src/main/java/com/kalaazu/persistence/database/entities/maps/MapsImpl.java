@@ -47,7 +47,7 @@ public final class MapsImpl
 
         this.faction = super.findFactionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Factions.class)
         );
 

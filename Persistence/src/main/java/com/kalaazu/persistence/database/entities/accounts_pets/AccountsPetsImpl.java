@@ -35,7 +35,7 @@ public final class AccountsPetsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -50,7 +50,7 @@ public final class AccountsPetsImpl
 
         this.level = super.findLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Levels.class)
         );
 

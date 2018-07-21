@@ -35,7 +35,7 @@ public final class AccountsTechfactoryItemsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -50,7 +50,7 @@ public final class AccountsTechfactoryItemsImpl
 
         this.item = super.findTechfactoryItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(TechfactoryItems.class)
         );
 

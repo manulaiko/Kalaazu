@@ -35,7 +35,7 @@ public final class ClansBattlestationsItemsImpl
 
         this.battlestation = super.findClansBattlestationsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ClansBattlestations.class)
         );
 
@@ -50,7 +50,7 @@ public final class ClansBattlestationsItemsImpl
 
         this.item = super.findAccountsItemsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(AccountsItems.class)
         );
 

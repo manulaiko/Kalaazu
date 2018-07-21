@@ -57,21 +57,21 @@ public class Persistence extends AbstractVerticle {
                         "    \"STREAM_OPTIMIZER\",\n" +
                         "    \"TRANSACTION\",\n" +
                         "    \"UPDATE\"\n" +
-                        "  ]"
+                        "]"
                 )
         );
 
         Persistence.logger.info("Initializing database...");
-        var db = new Database();
+        var db = Database.builder()
+                         .host(host)
+                         .port(port)
+                         .database(database)
+                         .username(username)
+                         .password(password)
+                         .logTypes(logTypes)
+                         .build();
 
-        db.setHost(host)
-          .setPort(port)
-          .setDatabase(database)
-          .setUsername(username)
-          .setPassword(password)
-          .setLogTypes(logTypes)
-          .initialize();
-
+        db.initialize();
         Database.setInstance(db);
 
         Persistence.logger.info("Initializing event listener...");

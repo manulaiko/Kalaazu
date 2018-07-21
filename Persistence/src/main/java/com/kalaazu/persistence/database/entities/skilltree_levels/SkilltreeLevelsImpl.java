@@ -35,7 +35,7 @@ public final class SkilltreeLevelsImpl
 
         this.skill = super.findSkilltreeSkillsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(SkilltreeSkills.class)
         );
 
@@ -50,7 +50,7 @@ public final class SkilltreeLevelsImpl
 
         this.level = super.findLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Levels.class)
         );
 

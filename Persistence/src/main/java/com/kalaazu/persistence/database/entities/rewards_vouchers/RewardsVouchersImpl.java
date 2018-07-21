@@ -35,7 +35,7 @@ public final class RewardsVouchersImpl
 
         this.reward = super.findRewardsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Rewards.class)
         );
 
@@ -50,7 +50,7 @@ public final class RewardsVouchersImpl
 
         this.voucher = super.findVouchersId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Vouchers.class)
         );
 

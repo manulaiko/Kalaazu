@@ -34,7 +34,7 @@ public final class FactionsImpl
 
         this.lowerMap = super.findLowMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 
@@ -49,7 +49,7 @@ public final class FactionsImpl
 
         this.highMap = super.findHighMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

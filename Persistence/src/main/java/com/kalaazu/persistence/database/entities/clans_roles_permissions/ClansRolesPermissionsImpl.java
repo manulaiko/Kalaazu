@@ -36,7 +36,7 @@ public final class ClansRolesPermissionsImpl
 
         this.role = super.findClansRolesId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ModeratorsRoles.class)
         );
 
@@ -51,7 +51,7 @@ public final class ClansRolesPermissionsImpl
 
         this.permission = super.findPermissionsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Permissions.class)
         );
 

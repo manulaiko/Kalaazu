@@ -34,7 +34,7 @@ public final class SkilltreeUnlocksImpl
 
         this.upgrade = super.findUpgradeSkilltreeLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(SkilltreeLevels.class)
         );
 
@@ -49,7 +49,7 @@ public final class SkilltreeUnlocksImpl
 
         this.required = super.findRequiredSkilltreeLevelsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(SkilltreeLevels.class)
         );
 

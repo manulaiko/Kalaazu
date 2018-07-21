@@ -45,7 +45,7 @@ public final class ClansBattlestationsImpl
 
         this.clan = super.findClansId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Clans.class)
         );
 
@@ -60,7 +60,7 @@ public final class ClansBattlestationsImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 

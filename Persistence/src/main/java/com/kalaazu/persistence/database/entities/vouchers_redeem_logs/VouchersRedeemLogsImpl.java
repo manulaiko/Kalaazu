@@ -36,7 +36,7 @@ public final class VouchersRedeemLogsImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
         return this.account;
@@ -50,7 +50,7 @@ public final class VouchersRedeemLogsImpl
 
         this.voucher = super.findVouchersId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Vouchers.class)
         );
         return this.voucher;

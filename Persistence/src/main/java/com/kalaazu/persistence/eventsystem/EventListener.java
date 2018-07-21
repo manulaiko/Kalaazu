@@ -1,6 +1,7 @@
 package com.kalaazu.persistence.eventsystem;
 
 import com.kalaazu.persistence.eventsystem.handlers.*;
+import lombok.Data;
 
 /**
  * Event listener.
@@ -10,7 +11,10 @@ import com.kalaazu.persistence.eventsystem.handlers.*;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@Data
 public class EventListener extends com.kalaazu.eventsystem.EventListener {
+    private final String domain = "persistence";
+
     @Override
     public void initialize() {
         super.addHandler("find", new FindHandler());
@@ -20,10 +24,5 @@ public class EventListener extends com.kalaazu.eventsystem.EventListener {
         super.addHandler("delete", new DeleteHandler());
         super.addHandler("register", new RegisterHandler());
         super.addHandler("create_account", new CreateAccountHandler());
-    }
-
-    @Override
-    public String getDomain() {
-        return "persistence";
     }
 }

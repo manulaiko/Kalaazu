@@ -29,7 +29,7 @@ public final class GalaxygatesSpawnsImpl
 
         this.npc = super.findNpcsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Npcs.class)
         );
 

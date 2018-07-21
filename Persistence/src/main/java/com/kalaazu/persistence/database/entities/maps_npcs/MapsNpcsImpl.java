@@ -35,7 +35,7 @@ public final class MapsNpcsImpl
 
         this.map = super.findMapsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Maps.class)
         );
 
@@ -50,7 +50,7 @@ public final class MapsNpcsImpl
 
         this.npc = super.findNpcsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Npcs.class)
         );
 

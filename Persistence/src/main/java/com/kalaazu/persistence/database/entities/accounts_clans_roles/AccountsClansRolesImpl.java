@@ -35,7 +35,7 @@ public final class AccountsClansRolesImpl
 
         this.account = super.findAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -50,7 +50,7 @@ public final class AccountsClansRolesImpl
 
         this.role = super.findClansRolesId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(ClansRoles.class)
         );
 

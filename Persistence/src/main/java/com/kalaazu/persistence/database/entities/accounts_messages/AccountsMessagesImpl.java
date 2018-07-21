@@ -34,7 +34,7 @@ public final class AccountsMessagesImpl
 
         this.author = super.findFromAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
@@ -49,7 +49,7 @@ public final class AccountsMessagesImpl
 
         this.destination = super.findToAccountsId(
                 Database.getInstance()
-                        .getDb()
+                        .db()
                         .manager(Accounts.class)
         );
 
