@@ -33,8 +33,8 @@ public class Launcher extends AbstractVerticle {
         Launcher.logger.info("Starting Kalaazu...");
 
         this.opts = new DeploymentOptions();
-        this.opts.setWorker(true);
-        this.opts.setConfig(config());
+        this.opts.setWorker(true)
+                 .setConfig(config());
 
         Launcher.logger.info("Starting Persistence module...");
         vertx.deployVerticle(new Persistence(), this.opts, h -> {

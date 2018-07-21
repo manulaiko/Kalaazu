@@ -16,6 +16,8 @@
 
 package com.kalaazu.math;
 
+import lombok.AllArgsConstructor;
+
 import java.util.Random;
 
 /**
@@ -29,8 +31,8 @@ import java.util.Random;
  * @author Inferno
  * @author davebaol
  */
+@AllArgsConstructor
 public class RandomXS128 extends Random {
-
     /**
      * Normalization constant for double.
      */
@@ -71,16 +73,6 @@ public class RandomXS128 extends Random {
     }
 
     /**
-     * Creates a new random number generator using two {@code long} seeds.
-     *
-     * @param seed0 the first part of the initial seed
-     * @param seed1 the second part of the initial seed
-     */
-    public RandomXS128(long seed0, long seed1) {
-        setState(seed0, seed1);
-    }
-
-    /**
      * Returns the next pseudo-random, uniformly distributed {@code long} value from this random number generator's sequence.
      * <p>
      * Subclasses should override this, as this is used by all other methods.
@@ -91,6 +83,7 @@ public class RandomXS128 extends Random {
         final long s0 = this.seed1;
         this.seed0 = s0;
         s1 ^= s1 << 23;
+
         return (this.seed1 = (s1 ^ s0 ^ (s1 >>> 17) ^ (s0 >>> 26))) + s0;
     }
 
@@ -142,6 +135,7 @@ public class RandomXS128 extends Random {
         if (n <= 0) {
             throw new IllegalArgumentException("n must be positive");
         }
+
         while (true) {
             final long bits  = nextLong() >>> 1;
             final long value = bits % n;

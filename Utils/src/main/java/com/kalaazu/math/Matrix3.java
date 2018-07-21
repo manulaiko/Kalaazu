@@ -83,6 +83,7 @@ public class Matrix3 implements Serializable {
         val[M02] = 0;
         val[M12] = 0;
         val[M22] = 1;
+
         return this;
     }
 
@@ -246,8 +247,8 @@ public class Matrix3 implements Serializable {
         val[M11] = 1;
         val[M21] = 0;
 
-        val[M02] = translation.x;
-        val[M12] = translation.y;
+        val[M02] = translation.getX();
+        val[M12] = translation.getY();
         val[M22] = 1;
 
         return this;
@@ -284,15 +285,16 @@ public class Matrix3 implements Serializable {
      */
     public Matrix3 setToScaling(Vector2 scale) {
         float[] val = this.val;
-        val[M00] = scale.x;
+        val[M00] = scale.getX();
         val[M10] = 0;
         val[M20] = 0;
         val[M01] = 0;
-        val[M11] = scale.y;
+        val[M11] = scale.getY();
         val[M21] = 0;
         val[M02] = 0;
         val[M12] = 0;
         val[M22] = 1;
+
         return this;
     }
 
@@ -407,8 +409,8 @@ public class Matrix3 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Matrix3 trn(Vector2 vector) {
-        val[M02] += vector.x;
-        val[M12] += vector.y;
+        val[M02] += vector.getX();
+        val[M12] += vector.getY();
         return this;
     }
 
@@ -470,8 +472,8 @@ public class Matrix3 implements Serializable {
         tmp[M11] = 1;
         tmp[M21] = 0;
 
-        tmp[M02] = translation.x;
-        tmp[M12] = translation.y;
+        tmp[M02] = translation.getX();
+        tmp[M12] = translation.getY();
         tmp[M22] = 1;
         mul(val, tmp);
         return this;
@@ -554,11 +556,11 @@ public class Matrix3 implements Serializable {
      */
     public Matrix3 scale(Vector2 scale) {
         float[] tmp = this.tmp;
-        tmp[M00] = scale.x;
+        tmp[M00] = scale.getX();
         tmp[M10] = 0;
         tmp[M20] = 0;
         tmp[M01] = 0;
-        tmp[M11] = scale.y;
+        tmp[M11] = scale.getY();
         tmp[M21] = 0;
         tmp[M02] = 0;
         tmp[M12] = 0;
@@ -577,15 +579,15 @@ public class Matrix3 implements Serializable {
     }
 
     public Vector2 getTranslation(Vector2 position) {
-        position.x = val[M02];
-        position.y = val[M12];
+        position.setX(val[M02]);
+        position.setY(val[M12]);
         return position;
     }
 
     public Vector2 getScale(Vector2 scale) {
         float[] val = this.val;
-        scale.x = (float) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]);
-        scale.y = (float) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]);
+        scale.setX((float) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]));
+        scale.setY((float) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]));
         return scale;
     }
 
@@ -618,8 +620,9 @@ public class Matrix3 implements Serializable {
      * @return This matrix for the purpose of chaining methods together.
      */
     public Matrix3 scl(Vector2 scale) {
-        val[M00] *= scale.x;
-        val[M11] *= scale.y;
+        val[M00] *= scale.getX();
+        val[M11] *= scale.getY();
+
         return this;
     }
 

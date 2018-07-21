@@ -5,4 +5,5 @@ module kalaazu.utils {
 
     requires vertx.core;
     requires de.mkammerer.argon2;
+    requires lombok;
 }

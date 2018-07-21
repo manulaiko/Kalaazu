@@ -117,11 +117,14 @@ public final class MathUtils {
             if (y > 0f) {
                 return PI / 2;
             }
+
             if (y == 0f) {
                 return 0f;
             }
+
             return -PI / 2;
         }
+
         final float atan, z = y / x;
         if (Math.abs(z) < 1f) {
             atan = z / (1f + 0.28f * z * z);
@@ -132,9 +135,11 @@ public final class MathUtils {
                         : PI
                 );
             }
+
             return atan;
         }
         atan = PI / 2 - z / (z * z + 0.28f);
+
         return y < 0f
                ? atan - PI
                : atan;
@@ -263,6 +268,7 @@ public final class MathUtils {
         if (u <= (mode - min) / d) {
             return min + (float) Math.sqrt(u * d * (mode - min));
         }
+
         return max - (float) Math.sqrt((1 - u) * d * (max - mode));
     }
 
@@ -275,12 +281,14 @@ public final class MathUtils {
         if (value == 0) {
             return 1;
         }
+
         value--;
         value |= value >> 1;
         value |= value >> 2;
         value |= value >> 4;
         value |= value >> 8;
         value |= value >> 16;
+
         return value + 1;
     }
 
@@ -294,9 +302,11 @@ public final class MathUtils {
         if (value < min) {
             return min;
         }
+
         if (value > max) {
             return max;
         }
+
         return value;
     }
 
@@ -304,9 +314,11 @@ public final class MathUtils {
         if (value < min) {
             return min;
         }
+
         if (value > max) {
             return max;
         }
+
         return value;
     }
 
@@ -314,9 +326,11 @@ public final class MathUtils {
         if (value < min) {
             return min;
         }
+
         if (value > max) {
             return max;
         }
+
         return value;
     }
 
@@ -324,9 +338,11 @@ public final class MathUtils {
         if (value < min) {
             return min;
         }
+
         if (value > max) {
             return max;
         }
+
         return value;
     }
 
@@ -334,9 +350,11 @@ public final class MathUtils {
         if (value < min) {
             return min;
         }
+
         if (value > max) {
             return max;
         }
+
         return value;
     }
 
@@ -361,6 +379,7 @@ public final class MathUtils {
      */
     public static float lerpAngle(float fromRadians, float toRadians, float progress) {
         float delta = ((toRadians - fromRadians + PI2 + PI) % PI2) - PI;
+
         return (fromRadians + delta * progress + PI2) % PI2;
     }
 
@@ -376,6 +395,7 @@ public final class MathUtils {
      */
     public static float lerpAngleDeg(float fromDegrees, float toDegrees, float progress) {
         float delta = ((toDegrees - fromDegrees + 360 + 180) % 360) - 180;
+
         return (fromDegrees + delta * progress + 360) % 360;
     }
 

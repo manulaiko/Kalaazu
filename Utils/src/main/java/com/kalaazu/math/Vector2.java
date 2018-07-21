@@ -18,11 +18,18 @@ package com.kalaazu.math;
 
 import java.io.Serializable;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 /**
  * Encapsulates a 2D vector. Allows chaining methods by returning a reference to itself
  *
  * @author badlogicgames@gmail.com
  */
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Vector2 implements Serializable, Vector<Vector2> {
     private static final long serialVersionUID = 913902788239530931L;
 
@@ -30,30 +37,13 @@ public class Vector2 implements Serializable, Vector<Vector2> {
 
     /**
      * the x-component of this vector
-     **/
-    public float x;
+     */
+    private float x;
 
     /**
      * the y-component of this vector
-     **/
-    public float y;
-
-    /**
-     * Constructs a new vector at (0,0)
      */
-    public Vector2() {
-    }
-
-    /**
-     * Constructs a vector with the given components
-     *
-     * @param x The x-component
-     * @param y The y-component
-     */
-    public Vector2(float x, float y) {
-        this.x = x;
-        this.y = y;
-    }
+    private float y;
 
     /**
      * Constructs a vector from the given vector
@@ -122,6 +112,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 set(Vector2 v) {
         x = v.x;
         y = v.y;
+
         return this;
     }
 
@@ -136,6 +127,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 set(float x, float y) {
         this.x = x;
         this.y = y;
+
         return this;
     }
 
@@ -143,6 +135,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 sub(Vector2 v) {
         x -= v.x;
         y -= v.y;
+
         return this;
     }
 
@@ -157,6 +150,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 sub(float x, float y) {
         this.x -= x;
         this.y -= y;
+
         return this;
     }
 
@@ -167,6 +161,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
             x /= len;
             y /= len;
         }
+
         return this;
     }
 
@@ -174,6 +169,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 add(Vector2 v) {
         x += v.x;
         y += v.y;
+
         return this;
     }
 
@@ -188,6 +184,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 add(float x, float y) {
         this.x += x;
         this.y += y;
+
         return this;
     }
 
@@ -208,6 +205,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 scl(float scalar) {
         x *= scalar;
         y *= scalar;
+
         return this;
     }
 
@@ -219,6 +217,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 scl(float x, float y) {
         this.x *= x;
         this.y *= y;
+
         return this;
     }
 
@@ -226,6 +225,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 scl(Vector2 v) {
         this.x *= v.x;
         this.y *= v.y;
+
         return this;
     }
 
@@ -233,6 +233,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 mulAdd(Vector2 vec, float scalar) {
         this.x += vec.x * scalar;
         this.y += vec.y * scalar;
+
         return this;
     }
 
@@ -240,12 +241,14 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 mulAdd(Vector2 vec, Vector2 mulVec) {
         this.x += vec.x * mulVec.x;
         this.y += vec.y * mulVec.y;
+
         return this;
     }
 
     public static float dst(float x1, float y1, float x2, float y2) {
         final float x_d = x2 - x1;
         final float y_d = y2 - y1;
+
         return (float) Math.sqrt(x_d * x_d + y_d * y_d);
     }
 
@@ -253,6 +256,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public float dst(Vector2 v) {
         final float x_d = v.x - x;
         final float y_d = v.y - y;
+
         return (float) Math.sqrt(x_d * x_d + y_d * y_d);
     }
 
@@ -265,12 +269,14 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public float dst(float x, float y) {
         final float x_d = x - this.x;
         final float y_d = y - this.y;
+
         return (float) Math.sqrt(x_d * x_d + y_d * y_d);
     }
 
     public static float dst2(float x1, float y1, float x2, float y2) {
         final float x_d = x2 - x1;
         final float y_d = y2 - y1;
+
         return x_d * x_d + y_d * y_d;
     }
 
@@ -278,6 +284,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public float dst2(Vector2 v) {
         final float x_d = v.x - x;
         final float y_d = v.y - y;
+
         return x_d * x_d + y_d * y_d;
     }
 
@@ -290,6 +297,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public float dst2(float x, float y) {
         final float x_d = x - this.x;
         final float y_d = y - this.y;
+
         return x_d * x_d + y_d * y_d;
     }
 
@@ -304,6 +312,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         if (len2 > limit2) {
             return scl((float) Math.sqrt(limit2 / len2));
         }
+
         return this;
     }
 
@@ -313,14 +322,17 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         if (len2 == 0f) {
             return this;
         }
+
         float max2 = max * max;
         if (len2 > max2) {
             return scl((float) Math.sqrt(max2 / len2));
         }
+
         float min2 = min * min;
         if (len2 < min2) {
             return scl((float) Math.sqrt(min2 / len2));
         }
+
         return this;
     }
 
@@ -335,6 +347,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         if (oldLen2 == 0 || oldLen2 == len2) {
             return this;
         }
+
         return scl((float) Math.sqrt(len2 / oldLen2));
     }
 
@@ -361,11 +374,13 @@ public class Vector2 implements Serializable, Vector<Vector2> {
             try {
                 float x = Float.parseFloat(v.substring(1, s));
                 float y = Float.parseFloat(v.substring(s + 1, v.length() - 1));
+
                 return this.set(x, y);
             } catch (NumberFormatException ex) {
                 // Throw a GdxRuntimeException
             }
         }
+
         throw new RuntimeException("Malformed Vector2: " + v);
     }
 
@@ -381,6 +396,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         float y = this.x * mat.val[1] + this.y * mat.val[4] + mat.val[7];
         this.x = x;
         this.y = y;
+
         return this;
     }
 
@@ -416,6 +432,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         if (angle < 0) {
             angle += 360;
         }
+
         return angle;
     }
 
@@ -560,24 +577,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        Vector2 other = (Vector2) obj;
-        if (NumberUtils.floatToIntBits(x) == NumberUtils.floatToIntBits(other.x)) {
-            return NumberUtils.floatToIntBits(y) == NumberUtils.floatToIntBits(other.y);
-        }
-        return false;
-    }
-
-    @Override
     public boolean epsilonEquals(Vector2 other, float epsilon) {
         if (other == null) {
             return false;
@@ -697,6 +696,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 setZero() {
         this.x = 0;
         this.y = 0;
+
         return this;
     }
 }
