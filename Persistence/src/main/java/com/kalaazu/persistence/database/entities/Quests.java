@@ -19,26 +19,26 @@ public interface Quests extends GeneratedQuests, Entity<Short> {
      *
      * @return Required level.
      */
-    Levels getLevel();
+    Levels level();
 
     /**
      * Returns the required quest.
      *
      * @return Required quest.
      */
-    Optional<Quests> getQuest();
+    Optional<Quests> quest();
 
     /**
      * Returns the required faction.
      *
      * @return Required faction.
      */
-    Optional<Factions> getFaction();
+    Optional<Factions> faction();
 
     /**
      * Returns the required conditions.
      *
      * @return Required conditions.
      */
-    List<QuestsConditions> getConditions();
+    List<QuestsConditions> conditions();
 }

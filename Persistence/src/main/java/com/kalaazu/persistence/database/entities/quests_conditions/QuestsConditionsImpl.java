@@ -29,7 +29,7 @@ public final class QuestsConditionsImpl
     public Quests quest;
 
     @Override
-    public Optional<QuestsConditions> getCondition() {
+    public Optional<QuestsConditions> condition() {
         if (this.condition != null) {
             return this.condition;
         }
@@ -44,7 +44,7 @@ public final class QuestsConditionsImpl
     }
 
     @Override
-    public Quests getQuest() {
+    public Quests quest() {
         if (this.quest != null) {
             return this.quest;
         }

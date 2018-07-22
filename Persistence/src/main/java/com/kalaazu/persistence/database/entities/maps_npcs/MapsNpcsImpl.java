@@ -28,7 +28,7 @@ public final class MapsNpcsImpl
     private Npcs npc;
 
     @Override
-    public Maps getMap() {
+    public Maps map() {
         if (this.map != null) {
             return this.map;
         }
@@ -43,7 +43,7 @@ public final class MapsNpcsImpl
     }
 
     @Override
-    public Npcs getNpc() {
+    public Npcs npc() {
         if (this.npc != null) {
             return this.npc;
         }

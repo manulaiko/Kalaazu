@@ -55,7 +55,7 @@ public final class MapsImpl
     }
 
     @Override
-    public List<MapsNpcs> getNpcs() {
+    public List<MapsNpcs> npcs() {
         if (this.npcs != null) {
             return this.npcs;
         }
@@ -69,7 +69,7 @@ public final class MapsImpl
     }
 
     @Override
-    public List<MapsPortals> getPortals() {
+    public List<MapsPortals> portals() {
         if (this.portals != null) {
             return this.portals;
         }
@@ -83,7 +83,7 @@ public final class MapsImpl
     }
 
     @Override
-    public List<MapsStations> getStations() {
+    public List<MapsStations> stations() {
         if (this.stations != null) {
             return this.stations;
         }

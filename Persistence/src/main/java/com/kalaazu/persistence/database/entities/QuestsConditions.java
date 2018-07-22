@@ -18,12 +18,12 @@ public interface QuestsConditions extends GeneratedQuestsConditions, Entity<Inte
      *
      * @return Required quest condition.
      */
-    Optional<QuestsConditions> getCondition();
+    Optional<QuestsConditions> condition();
 
     /**
      * Returns the quest.
      *
      * @return The quest.
      */
-    Quests getQuest();
+    Quests quest();
 }

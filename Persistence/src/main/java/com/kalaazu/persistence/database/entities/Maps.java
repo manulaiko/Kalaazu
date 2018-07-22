@@ -26,19 +26,19 @@ public interface Maps extends GeneratedMaps, Entity<Byte> {
      *
      * @return Npcs.
      */
-    List<MapsNpcs> getNpcs();
+    List<MapsNpcs> npcs();
 
     /**
      * Returns the portals on map.
      *
      * @return Portals.
      */
-    List<MapsPortals> getPortals();
+    List<MapsPortals> portals();
 
     /**
      * Returns the stations on map.
      *
      * @return Stations.
      */
-    List<MapsStations> getStations();
+    List<MapsStations> stations();
 }

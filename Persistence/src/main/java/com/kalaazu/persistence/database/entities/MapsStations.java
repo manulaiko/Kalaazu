@@ -18,12 +18,12 @@ public interface MapsStations extends GeneratedMapsStations, Entity<Byte> {
      *
      * @return The faction.
      */
-    Optional<Factions> getFaction();
+    Optional<Factions> faction();
 
     /**
      * Returns the map in which the station is located.
      *
      * @return The map.
      */
-    Optional<Maps> getMap();
+    Optional<Maps> map();
 }

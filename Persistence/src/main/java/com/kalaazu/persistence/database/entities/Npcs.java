@@ -18,5 +18,5 @@ public interface Npcs extends GeneratedNpcs, Entity<Byte> {
      *
      * @return The rewards.
      */
-    List<Rewards> getRewards();
+    List<Rewards> rewards();
 }

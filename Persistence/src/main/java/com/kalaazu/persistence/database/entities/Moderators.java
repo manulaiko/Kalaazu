@@ -18,19 +18,19 @@ public interface Moderators extends GeneratedModerators, Entity<Byte> {
      *
      * @return Log entries.
      */
-    List<ModeratorsLogs> getLogs();
+    List<ModeratorsLogs> logs();
 
     /**
      * Returns the account of this moderator.
      *
      * @return Moderator's account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the moderator role.
      *
      * @return Moderator role.
      */
-    ModeratorsRoles getRole();
+    ModeratorsRoles role();
 }

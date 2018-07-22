@@ -30,7 +30,7 @@ public final class MapsStationsImpl
     private Optional<Maps> map;
 
     @Override
-    public Optional<Factions> getFaction() {
+    public Optional<Factions> faction() {
         if (this.faction != null) {
             return this.faction;
         }
@@ -45,7 +45,7 @@ public final class MapsStationsImpl
     }
 
     @Override
-    public Optional<Maps> getMap() {
+    public Optional<Maps> map() {
         if (this.map != null) {
             return this.map;
         }

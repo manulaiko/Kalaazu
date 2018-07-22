@@ -16,5 +16,5 @@ public interface ModeratorsLogs extends GeneratedModeratorsLogs, Entity<Integer>
      *
      * @return The moderator.
      */
-    Moderators getModerator();
+    Moderators moderator();
 }

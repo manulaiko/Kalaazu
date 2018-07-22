@@ -43,7 +43,7 @@ public final class QuestsImpl
     private List<QuestsConditions> conditions;
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }
@@ -58,7 +58,7 @@ public final class QuestsImpl
     }
 
     @Override
-    public Optional<Quests> getQuest() {
+    public Optional<Quests> quest() {
         if (this.quest != null) {
             return this.quest;
         }
@@ -73,7 +73,7 @@ public final class QuestsImpl
     }
 
     @Override
-    public Optional<Factions> getFaction() {
+    public Optional<Factions> faction() {
         if (this.faction != null) {
             return this.faction;
         }
@@ -88,7 +88,7 @@ public final class QuestsImpl
     }
 
     @Override
-    public List<QuestsConditions> getConditions() {
+    public List<QuestsConditions> conditions() {
         if (this.conditions != null) {
             return this.conditions;
         }

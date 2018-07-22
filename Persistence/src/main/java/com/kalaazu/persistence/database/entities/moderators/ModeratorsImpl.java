@@ -37,7 +37,7 @@ public final class ModeratorsImpl
     private ModeratorsRoles role;
 
     @Override
-    public List<ModeratorsLogs> getLogs() {
+    public List<ModeratorsLogs> logs() {
         if (this.logs != null) {
             return this.logs;
         }
@@ -51,7 +51,7 @@ public final class ModeratorsImpl
     }
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -66,7 +66,7 @@ public final class ModeratorsImpl
     }
 
     @Override
-    public ModeratorsRoles getRole() {
+    public ModeratorsRoles role() {
         if (this.role != null) {
             return this.role;
         }

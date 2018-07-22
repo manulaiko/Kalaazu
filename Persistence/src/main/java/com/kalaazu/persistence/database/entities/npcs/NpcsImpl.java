@@ -26,7 +26,7 @@ public final class NpcsImpl
     private List<Rewards> rewards;
 
     @Override
-    public List<Rewards> getRewards() {
+    public List<Rewards> rewards() {
         if (this.rewards != null) {
             return this.rewards;
         }

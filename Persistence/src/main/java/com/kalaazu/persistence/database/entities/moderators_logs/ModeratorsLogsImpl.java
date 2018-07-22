@@ -22,7 +22,7 @@ public final class ModeratorsLogsImpl
     private Moderators moderator;
 
     @Override
-    public Moderators getModerator() {
+    public Moderators moderator() {
         if (this.moderator != null) {
             return this.moderator;
         }

@@ -16,12 +16,12 @@ public interface MapsNpcs extends GeneratedMapsNpcs, Entity<Byte> {
      *
      * @return The map.
      */
-    Maps getMap();
+    Maps map();
 
     /**
      * Returns the NPC type.
      *
      * @return The NPC.
      */
-    Npcs getNpc();
+    Npcs npc();
 }

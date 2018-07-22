@@ -16,19 +16,19 @@ public interface MapsPortals extends GeneratedMapsPortals, Entity<Byte> {
      *
      * @return Required level.
      */
-    Levels getLevel();
+    Levels level();
 
     /**
      * Returns the map in which the portal is located.
      *
      * @return Current map.
      */
-    Maps getMap();
+    Maps map();
 
     /**
      * Returns the target map.
      *
      * @return Target map.
      */
-    Maps getTargetMap();
+    Maps targetMap();
 }

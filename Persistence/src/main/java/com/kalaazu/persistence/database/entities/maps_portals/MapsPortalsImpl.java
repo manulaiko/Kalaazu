@@ -33,7 +33,7 @@ public final class MapsPortalsImpl
     private Maps targetMap;
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }
@@ -46,7 +46,7 @@ public final class MapsPortalsImpl
     }
 
     @Override
-    public Maps getMap() {
+    public Maps map() {
         if (this.map != null) {
             return this.map;
         }
@@ -61,7 +61,7 @@ public final class MapsPortalsImpl
     }
 
     @Override
-    public Maps getTargetMap() {
+    public Maps targetMap() {
         if (this.targetMap != null) {
             return this.targetMap;
         }
