@@ -31,7 +31,7 @@ public final class GalaxygatesWavesImpl
     private List<GalaxygatesStages> stages;
 
     @Override
-    public Maps getMap() {
+    public Maps map() {
         if (this.map != null) {
             return this.map;
         }
@@ -46,7 +46,7 @@ public final class GalaxygatesWavesImpl
     }
 
     @Override
-    public List<GalaxygatesStages> getStages() {
+    public List<GalaxygatesStages> stages() {
         if (this.stages != null) {
             return this.stages;
         }

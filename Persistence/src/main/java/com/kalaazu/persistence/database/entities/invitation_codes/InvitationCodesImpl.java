@@ -25,7 +25,7 @@ public final class InvitationCodesImpl
     private List<InvitationCodesRedeemLogs> logs;
 
     @Override
-    public List<InvitationCodesRedeemLogs> getLogs() {
+    public List<InvitationCodesRedeemLogs> logs() {
         if (this.logs != null) {
             return this.logs;
         }

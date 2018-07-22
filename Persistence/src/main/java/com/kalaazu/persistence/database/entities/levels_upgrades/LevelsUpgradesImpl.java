@@ -22,7 +22,7 @@ public final class LevelsUpgradesImpl
     private Levels level;
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }

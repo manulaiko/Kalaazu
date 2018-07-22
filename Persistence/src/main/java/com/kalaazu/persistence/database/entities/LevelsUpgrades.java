@@ -16,5 +16,5 @@ public interface LevelsUpgrades extends GeneratedLevelsUpgrades, Entity<Integer>
      *
      * @return The level.
      */
-    Levels getLevel();
+    Levels level();
 }

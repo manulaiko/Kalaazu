@@ -28,7 +28,7 @@ public final class GalaxygatesGgWavesImpl
     private GalaxygatesWaves wave;
 
     @Override
-    public Galaxygates getGalaxygate() {
+    public Galaxygates galaxygate() {
         if (this.galaxygate != null) {
             return this.galaxygate;
         }
@@ -43,7 +43,7 @@ public final class GalaxygatesGgWavesImpl
     }
 
     @Override
-    public GalaxygatesWaves getWave() {
+    public GalaxygatesWaves wave() {
         if (this.wave != null) {
             return this.wave;
         }

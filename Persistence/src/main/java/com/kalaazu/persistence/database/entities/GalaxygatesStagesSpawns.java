@@ -16,12 +16,12 @@ public interface GalaxygatesStagesSpawns extends GeneratedGalaxygatesStagesSpawn
      *
      * @return The stage.
      */
-    GalaxygatesStages getStage();
+    GalaxygatesStages stage();
 
     /**
      * Returns the spawn.
      *
      * @return The spawn.
      */
-    GalaxygatesSpawns getSpawn();
+    GalaxygatesSpawns spawn();
 }

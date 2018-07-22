@@ -21,5 +21,5 @@ public interface InvitationCodes extends GeneratedInvitationCodes, Entity<Short>
      *
      * @return Redeem logs.
      */
-    List<InvitationCodesRedeemLogs> getLogs();
+    List<InvitationCodesRedeemLogs> logs();
 }

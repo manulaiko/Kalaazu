@@ -18,12 +18,12 @@ public interface GalaxygatesStages extends GeneratedGalaxygatesStages, Entity<In
      *
      * @return The wave.
      */
-    GalaxygatesWaves getWave();
+    GalaxygatesWaves wave();
 
     /**
      * Returns the spawns of this stage.
      *
      * @return Npc spawns.
      */
-    List<GalaxygatesSpawns> getSpawns();
+    List<GalaxygatesSpawns> spawns();
 }

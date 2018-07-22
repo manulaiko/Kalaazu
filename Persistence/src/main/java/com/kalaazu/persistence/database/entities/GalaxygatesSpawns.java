@@ -16,5 +16,5 @@ public interface GalaxygatesSpawns extends GeneratedGalaxygatesSpawns, Entity<In
      *
      * @return The npc.
      */
-    Npcs getNpc();
+    Npcs npc();
 }

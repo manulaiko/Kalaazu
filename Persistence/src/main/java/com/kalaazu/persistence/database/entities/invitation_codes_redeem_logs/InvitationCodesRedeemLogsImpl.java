@@ -22,7 +22,7 @@ public final class InvitationCodesRedeemLogsImpl
     private InvitationCodes invitationCode;
 
     @Override
-    public InvitationCodes getInvitationCode() {
+    public InvitationCodes invitationCode() {
         if (this.invitationCode != null) {
             return this.invitationCode;
         }

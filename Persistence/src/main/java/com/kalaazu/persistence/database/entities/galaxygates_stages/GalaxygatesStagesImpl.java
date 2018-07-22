@@ -32,7 +32,7 @@ public final class GalaxygatesStagesImpl
     private List<GalaxygatesSpawns> spawns;
 
     @Override
-    public GalaxygatesWaves getWave() {
+    public GalaxygatesWaves wave() {
         if (this.wave != null) {
             return this.wave;
         }
@@ -47,7 +47,7 @@ public final class GalaxygatesStagesImpl
     }
 
     @Override
-    public List<GalaxygatesSpawns> getSpawns() {
+    public List<GalaxygatesSpawns> spawns() {
         if (this.spawns != null) {
             return this.spawns;
         }
@@ -55,7 +55,7 @@ public final class GalaxygatesStagesImpl
         this.spawns = Database.getInstance()
                               .all(GalaxygatesStagesSpawns.class)
                               .filter(GalaxygatesStagesSpawns.GALAXYGATES_STAGES_ID.equal(super.getId()))
-                              .map(GalaxygatesStagesSpawns::getSpawn)
+                              .map(GalaxygatesStagesSpawns::spawn)
                               .collect(Collectors.toList());
 
         return this.spawns;

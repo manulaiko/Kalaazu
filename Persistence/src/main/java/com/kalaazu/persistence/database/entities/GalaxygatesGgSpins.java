@@ -16,12 +16,12 @@ public interface GalaxygatesGgSpins extends GeneratedGalaxygatesGgSpins, Entity<
      *
      * @return The galaxygate.
      */
-    Galaxygates getGalaxygate();
+    Galaxygates galaxygate();
 
     /**
      * Returns the spin.
      *
      * @return The spin.
      */
-    GalaxygatesSpins getSpin();
+    GalaxygatesSpins spin();
 }

@@ -19,26 +19,26 @@ public interface Galaxygates extends GeneratedGalaxygates, Entity<Byte> {
      *
      * @return Starting wave.
      */
-    Optional<GalaxygatesWaves> getWave();
+    Optional<GalaxygatesWaves> wave();
 
     /**
      * Returns the waves.
      *
      * @return The waves.
      */
-    List<GalaxygatesWaves> getWaves();
+    List<GalaxygatesWaves> waves();
 
     /**
      * Returns the spins.
      *
      * @return The spins.
      */
-    List<GalaxygatesSpins> getSpins();
+    List<GalaxygatesSpins> spins();
 
     /**
      * Returns the spin probabilities.
      *
      * @return Spin probabilities.
      */
-    List<GalaxygatesProbabilities> getProbabilities();
+    List<GalaxygatesProbabilities> probabilities();
 }

@@ -40,7 +40,7 @@ public final class GalaxygatesImpl
     private List<GalaxygatesProbabilities> probabilities;
 
     @Override
-    public Optional<GalaxygatesWaves> getWave() {
+    public Optional<GalaxygatesWaves> wave() {
         if (this.wave != null) {
             return this.wave;
         }
@@ -55,7 +55,7 @@ public final class GalaxygatesImpl
     }
 
     @Override
-    public List<GalaxygatesWaves> getWaves() {
+    public List<GalaxygatesWaves> waves() {
         if (this.waves != null) {
             return this.waves;
         }
@@ -63,14 +63,14 @@ public final class GalaxygatesImpl
         this.waves = Database.getInstance()
                              .all(GalaxygatesGgWaves.class)
                              .filter(GalaxygatesGgWaves.GALAXYGATES_ID.equal(super.getId()))
-                             .map(GalaxygatesGgWaves::getWave)
+                             .map(GalaxygatesGgWaves::wave)
                              .collect(Collectors.toList());
 
         return this.waves;
     }
 
     @Override
-    public List<GalaxygatesSpins> getSpins() {
+    public List<GalaxygatesSpins> spins() {
         if (this.spins != null) {
             return this.spins;
         }
@@ -78,14 +78,14 @@ public final class GalaxygatesImpl
         this.spins = Database.getInstance()
                              .all(GalaxygatesGgSpins.class)
                              .filter(GalaxygatesGgSpins.GALAXYGATES_ID.equal(super.getId()))
-                             .map(GalaxygatesGgSpins::getSpin)
+                             .map(GalaxygatesGgSpins::spin)
                              .collect(Collectors.toList());
 
         return this.spins;
     }
 
     @Override
-    public List<GalaxygatesProbabilities> getProbabilities() {
+    public List<GalaxygatesProbabilities> probabilities() {
         if (this.probabilities != null) {
             return this.probabilities;
         }

@@ -28,7 +28,7 @@ public final class GalaxygatesGgSpinsImpl
     private GalaxygatesSpins spin;
 
     @Override
-    public Galaxygates getGalaxygate() {
+    public Galaxygates galaxygate() {
         if (this.galaxygate != null) {
             return this.galaxygate;
         }
@@ -43,7 +43,7 @@ public final class GalaxygatesGgSpinsImpl
     }
 
     @Override
-    public GalaxygatesSpins getSpin() {
+    public GalaxygatesSpins spin() {
         if (this.spin != null) {
             return this.spin;
         }

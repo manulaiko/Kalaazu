@@ -18,12 +18,12 @@ public interface GalaxygatesWaves extends GeneratedGalaxygatesWaves, Entity<Byte
      *
      * @return The map.
      */
-    Maps getMap();
+    Maps map();
 
     /**
      * Returns the stages of this wave.
      *
      * @return Spawn stages.
      */
-    List<GalaxygatesStages> getStages();
+    List<GalaxygatesStages> stages();
 }

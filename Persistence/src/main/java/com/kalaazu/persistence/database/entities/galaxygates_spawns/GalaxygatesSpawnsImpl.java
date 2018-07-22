@@ -22,7 +22,7 @@ public final class GalaxygatesSpawnsImpl
     private Npcs npc;
 
     @Override
-    public Npcs getNpc() {
+    public Npcs npc() {
         if (this.npc != null) {
             return this.npc;
         }

@@ -22,7 +22,7 @@ public final class GalaxygatesProbabilitiesImpl
     private Galaxygates galaxygate;
 
     @Override
-    public Galaxygates getGalaxygate() {
+    public Galaxygates galaxygate() {
         if (this.galaxygate != null) {
             return this.galaxygate;
         }

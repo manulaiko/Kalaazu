@@ -16,5 +16,5 @@ public interface GalaxygatesProbabilities extends GeneratedGalaxygatesProbabilit
      *
      * @return The galaxygate.
      */
-    Galaxygates getGalaxygate();
+    Galaxygates galaxygate();
 }

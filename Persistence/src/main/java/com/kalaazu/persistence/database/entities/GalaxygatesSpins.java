@@ -16,5 +16,5 @@ public interface GalaxygatesSpins extends GeneratedGalaxygatesSpins, Entity<Byte
      *
      * @return The item.
      */
-    Items getItem();
+    Items item();
 }

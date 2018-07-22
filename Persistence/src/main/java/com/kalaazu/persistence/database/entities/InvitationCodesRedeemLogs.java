@@ -16,5 +16,5 @@ public interface InvitationCodesRedeemLogs extends GeneratedInvitationCodesRedee
      *
      * @return The invitation code.
      */
-    InvitationCodes getInvitationCode();
+    InvitationCodes invitationCode();
 }

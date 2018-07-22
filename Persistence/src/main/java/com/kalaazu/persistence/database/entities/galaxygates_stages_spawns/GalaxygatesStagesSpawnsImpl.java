@@ -28,7 +28,7 @@ public final class GalaxygatesStagesSpawnsImpl
     private GalaxygatesSpawns spawn;
 
     @Override
-    public GalaxygatesStages getStage() {
+    public GalaxygatesStages stage() {
         if (this.stage != null) {
             return this.stage;
         }
@@ -43,7 +43,7 @@ public final class GalaxygatesStagesSpawnsImpl
     }
 
     @Override
-    public GalaxygatesSpawns getSpawn() {
+    public GalaxygatesSpawns spawn() {
         if (this.spawn != null) {
             return this.spawn;
         }

@@ -16,12 +16,12 @@ public interface GalaxygatesGgWaves extends GeneratedGalaxygatesGgWaves, Entity<
      *
      * @return The galaxygate.
      */
-    Galaxygates getGalaxygate();
+    Galaxygates galaxygate();
 
     /**
      * Returns the wave.
      *
      * @return The wave.
      */
-    GalaxygatesWaves getWave();
+    GalaxygatesWaves wave();
 }
