@@ -18,40 +18,40 @@ public interface AccountsConfigurations extends GeneratedAccountsConfigurations,
      *
      * @return The hangar.
      */
-    AccountsHangars getHangar();
+    AccountsHangars hangar();
 
     /**
      * Returns the equipped items.
      *
      * @return Equipped items.
      */
-    List<AccountsConfigurationsAccountsItems> getItems();
+    List<AccountsConfigurationsAccountsItems> items();
 
     /**
      * Returns the equipped lasers.
      *
      * @return Equipped lasers.
      */
-    List<AccountsItems> getLasers();
+    List<AccountsItems> lasers();
 
     /**
      * Returns the equipped hellstorms.
      *
      * @return Equipped hellstorms.
      */
-    List<AccountsItems> getHellstorms();
+    List<AccountsItems> hellstorms();
 
     /**
      * Returns the equipped generators.
      *
      * @return Equipped generators.
      */
-    List<AccountsItems> getGenerators();
+    List<AccountsItems> generators();
 
     /**
      * Returns the equipped extras.
      *
      * @return The equipped extras.
      */
-    List<AccountsItems> getExtras();
+    List<AccountsItems> extras();
 }

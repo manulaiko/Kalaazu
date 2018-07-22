@@ -16,19 +16,19 @@ public interface AccountsItems extends GeneratedAccountsItems, Entity<Integer> {
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the item.
      *
      * @return The item.
      */
-    Items getItem();
+    Items item();
 
     /**
      * Returns the level.
      *
      * @return The level.
      */
-    Levels getLevel();
+    Levels level();
 }

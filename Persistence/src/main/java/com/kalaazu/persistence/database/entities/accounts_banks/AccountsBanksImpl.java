@@ -31,7 +31,7 @@ public final class AccountsBanksImpl
     private List<AccountsBanksLogs> logs;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -46,7 +46,7 @@ public final class AccountsBanksImpl
     }
 
     @Override
-    public List<AccountsBanksLogs> getLogs() {
+    public List<AccountsBanksLogs> logs() {
         if (this.logs != null) {
             return this.logs;
         }

@@ -16,12 +16,12 @@ public interface AccountsTechfactoryItems extends GeneratedAccountsTechfactoryIt
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the item.
      *
      * @return The item.
      */
-    TechfactoryItems getItem();
+    TechfactoryItems item();
 }

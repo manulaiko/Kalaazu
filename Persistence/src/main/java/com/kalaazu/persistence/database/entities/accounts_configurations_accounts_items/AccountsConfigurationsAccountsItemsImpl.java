@@ -38,7 +38,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
     private Optional<AccountsDrones> drone;
 
     @Override
-    public AccountsConfigurations getConfiguration() {
+    public AccountsConfigurations configuration() {
         if (this.configuration != null) {
             return this.configuration;
         }
@@ -53,7 +53,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
     }
 
     @Override
-    public AccountsItems getItem() {
+    public AccountsItems item() {
         if (this.item != null) {
             return this.item;
         }
@@ -68,7 +68,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
     }
 
     @Override
-    public Optional<AccountsPets> getPet() {
+    public Optional<AccountsPets> pet() {
         if (this.pet != null) {
             return this.pet;
         }
@@ -83,7 +83,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
     }
 
     @Override
-    public Optional<AccountsDrones> getDrone() {
+    public Optional<AccountsDrones> drone() {
         if (this.drone != null) {
             return this.drone;
         }

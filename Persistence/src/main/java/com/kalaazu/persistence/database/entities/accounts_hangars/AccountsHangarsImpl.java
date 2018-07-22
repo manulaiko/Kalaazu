@@ -36,7 +36,7 @@ public final class AccountsHangarsImpl
     private Optional<AccountsConfigurations> configuration;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -51,7 +51,7 @@ public final class AccountsHangarsImpl
     }
 
     @Override
-    public Optional<AccountsShips> getShip() {
+    public Optional<AccountsShips> ship() {
         if (this.ship != null) {
             return this.ship;
         }
@@ -66,7 +66,7 @@ public final class AccountsHangarsImpl
     }
 
     @Override
-    public Optional<AccountsConfigurations> getConfiguration() {
+    public Optional<AccountsConfigurations> configuration() {
         if (this.configuration != null) {
             return this.configuration;
         }

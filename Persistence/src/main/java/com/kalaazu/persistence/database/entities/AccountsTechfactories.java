@@ -16,5 +16,5 @@ public interface AccountsTechfactories extends GeneratedAccountsTechfactories, E
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 }

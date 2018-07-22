@@ -28,7 +28,7 @@ public final class AccountsClansRolesImpl
     private ClansRoles role;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -43,7 +43,7 @@ public final class AccountsClansRolesImpl
     }
 
     @Override
-    public ClansRoles getRole() {
+    public ClansRoles role() {
         if (this.role != null) {
             return this.role;
         }

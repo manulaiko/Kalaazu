@@ -34,7 +34,7 @@ public final class AccountsShipsImpl
     private Maps map;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -50,7 +50,7 @@ public final class AccountsShipsImpl
     }
 
     @Override
-    public Ships getShip() {
+    public Ships ship() {
         if (this.ship != null) {
             return this.ship;
         }
@@ -65,7 +65,7 @@ public final class AccountsShipsImpl
     }
 
     @Override
-    public Maps getMap() {
+    public Maps map() {
         if (this.map != null) {
             return this.map;
         }

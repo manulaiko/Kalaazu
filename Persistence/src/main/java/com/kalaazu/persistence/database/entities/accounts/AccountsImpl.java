@@ -140,7 +140,7 @@ public final class AccountsImpl
     private List<ClansMessages> clanMessages;
 
     @Override
-    public Users getUser() {
+    public Users user() {
         if (this.user != null) {
             return this.user;
         }
@@ -155,7 +155,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }
@@ -170,7 +170,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Optional<Factions> getFaction() {
+    public Optional<Factions> faction() {
         if (this.faction != null) {
             return this.faction;
         }
@@ -185,7 +185,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Optional<AccountsHangars> getHangar() {
+    public Optional<AccountsHangars> hangar() {
         if (this.hangar != null) {
             return this.hangar;
         }
@@ -200,7 +200,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Optional<Clans> getClan() {
+    public Optional<Clans> clan() {
         if (this.clan != null) {
             return this.clan;
         }
@@ -215,7 +215,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Ranks getRank() {
+    public Ranks rank() {
         if (this.rank != null) {
             return this.rank;
         }
@@ -230,7 +230,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<ClansRoles> getClanRoles() {
+    public List<ClansRoles> clanRoles() {
         if (this.clanRoles != null) {
             return this.clanRoles;
         }
@@ -238,14 +238,14 @@ public final class AccountsImpl
         this.clanRoles = Database.getInstance()
                                  .all(AccountsClansRoles.class)
                                  .filter(AccountsClansRoles.ACCOUNTS_ID.equal(super.getId()))
-                                 .map(AccountsClansRoles::getRole)
+                                 .map(AccountsClansRoles::role)
                                  .collect(Collectors.toList());
 
         return this.clanRoles;
     }
 
     @Override
-    public List<AccountsDestroys> getDestroys() {
+    public List<AccountsDestroys> destroys() {
         if (this.destroys != null) {
             return this.destroys;
         }
@@ -259,7 +259,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsDrones> getDrones() {
+    public List<AccountsDrones> drones() {
         if (this.drones != null) {
             return this.drones;
         }
@@ -273,7 +273,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsGalaxygates> getGalaxygates() {
+    public List<AccountsGalaxygates> galaxygates() {
         if (this.galaxygates != null) {
             return this.galaxygates;
         }
@@ -287,7 +287,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsHangars> getHangars() {
+    public List<AccountsHangars> hangars() {
         if (this.hangars != null) {
             return this.hangars;
         }
@@ -301,7 +301,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsHistory> getHistories() {
+    public List<AccountsHistory> histories() {
         if (this.histories != null) {
             return this.histories;
         }
@@ -315,7 +315,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsItems> getItems() {
+    public List<AccountsItems> items() {
         if (this.items != null) {
             return this.items;
         }
@@ -329,7 +329,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsMessages> getMessages() {
+    public List<AccountsMessages> messages() {
         if (this.messages != null) {
             return this.messages;
         }
@@ -345,7 +345,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public Optional<AccountsPets> getPet() {
+    public Optional<AccountsPets> pet() {
         if (this.pet != null) {
             return this.pet;
         }
@@ -359,7 +359,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsQuests> getQuest() {
+    public List<AccountsQuests> quests() {
         if (this.quest != null) {
             return this.quest;
         }
@@ -373,7 +373,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public AccountsRankings getRanking() {
+    public AccountsRankings ranking() {
         if (this.ranking != null) {
             return this.ranking;
         }
@@ -388,7 +388,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsShips> getShips() {
+    public List<AccountsShips> ships() {
         if (this.ships != null) {
             return this.ships;
         }
@@ -402,7 +402,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsSkills> getSkills() {
+    public List<AccountsSkills> skills() {
         if (this.skills != null) {
             return this.skills;
         }
@@ -416,7 +416,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsSkylabs> getSkylabs() {
+    public List<AccountsSkylabs> skylabs() {
         if (this.skylabs != null) {
             return this.skylabs;
         }
@@ -430,7 +430,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsTechfactories> getTechfactories() {
+    public List<AccountsTechfactories> techfactories() {
         if (this.techfactories != null) {
             return this.techfactories;
         }
@@ -444,7 +444,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<AccountsTechfactoryItems> getTechfactoryItems() {
+    public List<AccountsTechfactoryItems> techfactoryItems() {
         if (this.techfactoryItems != null) {
             return this.techfactoryItems;
         }
@@ -458,7 +458,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<ClansApplications> getClanApplications() {
+    public List<ClansApplications> clanApplications() {
         if (this.clanApplications != null) {
             return this.clanApplications;
         }
@@ -472,7 +472,7 @@ public final class AccountsImpl
     }
 
     @Override
-    public List<ClansMessages> getClanMessages() {
+    public List<ClansMessages> clanMessages() {
         if (this.clanMessages != null) {
             return this.clanMessages;
         }

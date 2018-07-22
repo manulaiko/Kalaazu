@@ -28,7 +28,7 @@ public final class AccountsTechfactoryItemsImpl
     private TechfactoryItems item;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -43,7 +43,7 @@ public final class AccountsTechfactoryItemsImpl
     }
 
     @Override
-    public TechfactoryItems getItem() {
+    public TechfactoryItems item() {
         if (this.item != null) {
             return this.item;
         }

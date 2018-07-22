@@ -16,12 +16,12 @@ public interface AccountsGalaxygates extends GeneratedAccountsGalaxygates, Entit
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the galaxygate.
      *
      * @return The galaxygate.
      */
-    Galaxygates getGalaxygate();
+    Galaxygates galaxygate();
 }

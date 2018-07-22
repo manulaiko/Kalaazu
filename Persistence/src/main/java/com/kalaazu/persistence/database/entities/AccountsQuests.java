@@ -16,12 +16,12 @@ public interface AccountsQuests extends GeneratedAccountsQuests, Entity<Integer>
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the quest.
      *
      * @return The quest.
      */
-    Quests getQuest();
+    Quests quest();
 }

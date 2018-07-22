@@ -16,19 +16,19 @@ public interface AccountsSkills extends GeneratedAccountsSkills, Entity<Integer>
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the skill.
      *
      * @return The skill.
      */
-    SkilltreeSkills getSkill();
+    SkilltreeSkills skill();
 
     /**
      * Returns the skill level.
      *
      * @return Skill level.
      */
-    SkilltreeLevels getLevel();
+    SkilltreeLevels level();
 }

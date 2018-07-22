@@ -16,12 +16,12 @@ public interface AccountsMessages extends GeneratedAccountsMessages, Entity<Inte
      *
      * @return The author.
      */
-    Accounts getAuthor();
+    Accounts from();
 
     /**
      * Returns the destination.
      *
      * @return The destination.
      */
-    Accounts getDestination();
+    Accounts to();
 }

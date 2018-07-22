@@ -22,7 +22,7 @@ public final class AccountsRankingsImpl
     private Accounts account;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }

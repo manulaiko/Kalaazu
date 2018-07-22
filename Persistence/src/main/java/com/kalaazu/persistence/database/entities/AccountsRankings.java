@@ -16,5 +16,5 @@ public interface AccountsRankings extends GeneratedAccountsRankings, Entity<Inte
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 }

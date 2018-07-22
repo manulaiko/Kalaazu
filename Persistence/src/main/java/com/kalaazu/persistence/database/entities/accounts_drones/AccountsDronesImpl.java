@@ -30,7 +30,7 @@ public final class AccountsDronesImpl
     private Levels level;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -45,7 +45,7 @@ public final class AccountsDronesImpl
     }
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }

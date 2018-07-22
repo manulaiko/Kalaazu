@@ -54,7 +54,7 @@ public final class AccountsConfigurationsImpl
     private List<AccountsItems> extras;
 
     @Override
-    public AccountsHangars getHangar() {
+    public AccountsHangars hangar() {
         if (this.hangar != null) {
             return this.hangar;
         }
@@ -69,7 +69,7 @@ public final class AccountsConfigurationsImpl
     }
 
     @Override
-    public List<AccountsConfigurationsAccountsItems> getItems() {
+    public List<AccountsConfigurationsAccountsItems> items() {
         if (this.items != null) {
             return this.items;
         }
@@ -84,7 +84,7 @@ public final class AccountsConfigurationsImpl
     }
 
     @Override
-    public List<AccountsItems> getLasers() {
+    public List<AccountsItems> lasers() {
         if (this.lasers != null) {
             return this.lasers;
         }
@@ -95,7 +95,7 @@ public final class AccountsConfigurationsImpl
     }
 
     @Override
-    public List<AccountsItems> getHellstorms() {
+    public List<AccountsItems> hellstorms() {
         if (this.hellstorms != null) {
             return this.hellstorms;
         }
@@ -106,7 +106,7 @@ public final class AccountsConfigurationsImpl
     }
 
     @Override
-    public List<AccountsItems> getGenerators() {
+    public List<AccountsItems> generators() {
         if (this.generators != null) {
             return this.generators;
         }
@@ -117,7 +117,7 @@ public final class AccountsConfigurationsImpl
     }
 
     @Override
-    public List<AccountsItems> getExtras() {
+    public List<AccountsItems> extras() {
         if (this.extras != null) {
             return this.extras;
         }
@@ -152,12 +152,12 @@ public final class AccountsConfigurationsImpl
      * @return Items of given type.
      */
     private List<AccountsItems> find(ItemType type) {
-        var items = this.getItems();
+        var items = this.items();
 
         return items.stream()
-                    .map(AccountsConfigurationsAccountsItems::getItem)
+                    .map(AccountsConfigurationsAccountsItems::item)
                     .filter(
-                            i -> i.getItem()
+                            i -> i.item()
                                   .getType() == type
                     )
                     .collect(Collectors.toList());

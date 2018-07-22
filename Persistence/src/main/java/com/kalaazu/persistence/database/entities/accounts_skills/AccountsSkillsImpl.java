@@ -34,7 +34,7 @@ public final class AccountsSkillsImpl
     private SkilltreeLevels level;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -49,7 +49,7 @@ public final class AccountsSkillsImpl
     }
 
     @Override
-    public SkilltreeSkills getSkill() {
+    public SkilltreeSkills skill() {
         if (this.skill != null) {
             return this.skill;
         }
@@ -64,7 +64,7 @@ public final class AccountsSkillsImpl
     }
 
     @Override
-    public SkilltreeLevels getLevel() {
+    public SkilltreeLevels level() {
         if (this.level != null) {
             return this.level;
         }

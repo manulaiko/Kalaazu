@@ -28,7 +28,7 @@ public final class AccountsGalaxygatesImpl
     private Galaxygates galaxygate;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -43,7 +43,7 @@ public final class AccountsGalaxygatesImpl
     }
 
     @Override
-    public Galaxygates getGalaxygate() {
+    public Galaxygates galaxygate() {
         if (this.galaxygate != null) {
             return this.galaxygate;
         }

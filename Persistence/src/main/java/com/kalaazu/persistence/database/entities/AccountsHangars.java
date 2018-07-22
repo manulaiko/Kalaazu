@@ -18,19 +18,19 @@ public interface AccountsHangars extends GeneratedAccountsHangars, Entity<Intege
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the active ship.
      *
      * @return Active ship.
      */
-    Optional<AccountsShips> getShip();
+    Optional<AccountsShips> ship();
 
     /**
      * Returns the active configuration.
      *
      * @return Active configuration.
      */
-    Optional<AccountsConfigurations> getConfiguration();
+    Optional<AccountsConfigurations> configuration();
 }

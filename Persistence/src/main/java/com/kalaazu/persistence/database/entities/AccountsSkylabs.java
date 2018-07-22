@@ -16,19 +16,19 @@ public interface AccountsSkylabs extends GeneratedAccountsSkylabs, Entity<Intege
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the module.
      *
      * @return The module.
      */
-    SkylabModules getModule();
+    SkylabModules module();
 
     /**
      * Returns the module level.
      *
      * @return Module level.
      */
-    Levels getLevel();
+    Levels level();
 }

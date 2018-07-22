@@ -17,12 +17,12 @@ public interface AccountsDestroys extends GeneratedAccountsDestroys, Entity<Inte
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the ship.
      *
      * @return The ship.
      */
-    Ships getShip();
+    Ships ship();
 }

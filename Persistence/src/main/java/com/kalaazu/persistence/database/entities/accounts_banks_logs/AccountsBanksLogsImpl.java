@@ -35,7 +35,7 @@ public final class AccountsBanksLogsImpl
     private Optional<AccountsBanks> bank;
 
     @Override
-    public Accounts getAuthor() {
+    public Accounts from() {
         if (this.author != null) {
             return this.author;
         }
@@ -50,7 +50,7 @@ public final class AccountsBanksLogsImpl
     }
 
     @Override
-    public Accounts getDestination() {
+    public Accounts to() {
         if (this.destination != null) {
             return this.destination;
         }
@@ -65,7 +65,7 @@ public final class AccountsBanksLogsImpl
     }
 
     @Override
-    public Optional<AccountsBanks> getBank() {
+    public Optional<AccountsBanks> bank() {
         if (this.bank != null) {
             return this.bank;
         }

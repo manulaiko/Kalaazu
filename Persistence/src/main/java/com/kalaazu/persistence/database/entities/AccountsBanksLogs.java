@@ -18,19 +18,19 @@ public interface AccountsBanksLogs extends GeneratedAccountsBanksLogs, Entity<In
      *
      * @return The author.
      */
-    Accounts getAuthor();
+    Accounts from();
 
     /**
      * Returns the destination account.
      *
      * @return Destination account.
      */
-    Accounts getDestination();
+    Accounts to();
 
     /**
      * Returns the bank.
      *
      * @return The bank.
      */
-    Optional<AccountsBanks> getBank();
+    Optional<AccountsBanks> bank();
 }

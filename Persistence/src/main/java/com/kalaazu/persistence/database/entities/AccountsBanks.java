@@ -18,12 +18,12 @@ public interface AccountsBanks extends GeneratedAccountsBanks, Entity<Integer> {
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the transaction logs.
      *
      * @return The logs.
      */
-    List<AccountsBanksLogs> getLogs();
+    List<AccountsBanksLogs> logs();
 }

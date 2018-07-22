@@ -34,7 +34,7 @@ public final class AccountsSkylabsImpl
     private Levels level;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -49,7 +49,7 @@ public final class AccountsSkylabsImpl
     }
 
     @Override
-    public SkylabModules getModule() {
+    public SkylabModules module() {
         if (this.module != null) {
             return this.module;
         }
@@ -64,7 +64,7 @@ public final class AccountsSkylabsImpl
     }
 
     @Override
-    public Levels getLevel() {
+    public Levels level() {
         if (this.level != null) {
             return this.level;
         }

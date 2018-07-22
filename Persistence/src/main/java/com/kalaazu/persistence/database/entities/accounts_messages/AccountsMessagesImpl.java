@@ -27,7 +27,7 @@ public final class AccountsMessagesImpl
     private Accounts destination;
 
     @Override
-    public Accounts getAuthor() {
+    public Accounts from() {
         if (this.author != null) {
             return this.author;
         }
@@ -42,7 +42,7 @@ public final class AccountsMessagesImpl
     }
 
     @Override
-    public Accounts getDestination() {
+    public Accounts to() {
         if (this.destination != null) {
             return this.destination;
         }

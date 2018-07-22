@@ -28,7 +28,7 @@ public final class AccountsQuestsImpl
     private Quests quest;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -43,7 +43,7 @@ public final class AccountsQuestsImpl
     }
 
     @Override
-    public Quests getQuest() {
+    public Quests quest() {
         if (this.quest != null) {
             return this.quest;
         }

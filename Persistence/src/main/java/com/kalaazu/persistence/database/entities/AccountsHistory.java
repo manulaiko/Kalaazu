@@ -16,5 +16,5 @@ public interface AccountsHistory extends GeneratedAccountsHistory, Entity<Intege
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 }

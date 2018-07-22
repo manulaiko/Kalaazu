@@ -16,12 +16,12 @@ public interface AccountsClansRoles extends GeneratedAccountsClansRoles, Entity<
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the role.
      *
      * @return The role.
      */
-    ClansRoles getRole();
+    ClansRoles role();
 }

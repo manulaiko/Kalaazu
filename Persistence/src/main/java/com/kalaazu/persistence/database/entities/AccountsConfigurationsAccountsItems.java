@@ -18,26 +18,26 @@ public interface AccountsConfigurationsAccountsItems extends GeneratedAccountsCo
      *
      * @return The configuration.
      */
-    AccountsConfigurations getConfiguration();
+    AccountsConfigurations configuration();
 
     /**
      * Returns the item.
      *
      * @return The item.
      */
-    AccountsItems getItem();
+    AccountsItems item();
 
     /**
      * Returns the pet.
      *
      * @return The pet.
      */
-    Optional<AccountsPets> getPet();
+    Optional<AccountsPets> pet();
 
     /**
      * Returns the drone.
      *
      * @return The drone.
      */
-    Optional<AccountsDrones> getDrone();
+    Optional<AccountsDrones> drone();
 }

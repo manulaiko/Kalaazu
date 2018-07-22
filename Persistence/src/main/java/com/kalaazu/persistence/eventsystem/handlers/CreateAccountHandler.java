@@ -221,7 +221,7 @@ public class CreateAccountHandler extends Handler {
         var phoenix = Database.getInstance()
                               .find(1, Ships.class)
                               .orElse(new ShipsImpl());
-        var faction = account.getFaction()
+        var faction = account.faction()
                              .orElse(new FactionsImpl());
         var ship = new AccountsShipsImpl();
 

@@ -16,12 +16,12 @@ public interface AccountsDrones extends GeneratedAccountsDrones, Entity<Integer>
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the level.
      *
      * @return The level.
      */
-    Levels getLevel();
+    Levels level();
 }

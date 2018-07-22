@@ -16,19 +16,19 @@ public interface AccountsShips extends GeneratedAccountsShips, Entity<Integer> {
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the ship.
      *
      * @return The ship.
      */
-    Ships getShip();
+    Ships ship();
 
     /**
      * Returns the map where the ship is located.
      *
      * @return The map.
      */
-    Maps getMap();
+    Maps map();
 }
