@@ -18,12 +18,12 @@ public interface ClansBanks extends GeneratedClansBanks, Entity<Integer> {
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 
     /**
      * Returns the transaction logs.
      *
      * @return Transaction logs.
      */
-    List<ClansBanksLogs> getLogs();
+    List<ClansBanksLogs> logs();
 }

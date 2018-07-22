@@ -27,7 +27,7 @@ public final class ClansDiplomaciesImpl
     private Clans destination;
 
     @Override
-    public Clans getAuthor() {
+    public Clans from() {
         if (this.author != null) {
             return this.author;
         }
@@ -42,7 +42,7 @@ public final class ClansDiplomaciesImpl
     }
 
     @Override
-    public Clans getDestination() {
+    public Clans to() {
         if (this.destination != null) {
             return this.destination;
         }

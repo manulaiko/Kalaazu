@@ -18,19 +18,21 @@ public interface ClansMessages extends GeneratedClansMessages, Entity<Integer> {
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 
     /**
      * Returns the author.
      *
      * @return The author.
      */
-    Accounts getAuthor();
+    Accounts from();
 
     /**
      * Returns the destination account.
      *
+     * If empty, it's a circular message.
+     *
      * @return Destination account.
      */
-    Optional<Accounts> getDestination();
+    Optional<Accounts> to();
 }

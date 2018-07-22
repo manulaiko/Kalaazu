@@ -28,7 +28,7 @@ public final class ClansBattlestationsItemsImpl
     private AccountsItems item;
 
     @Override
-    public ClansBattlestations getBattlestation() {
+    public ClansBattlestations battlestation() {
         if (this.battlestation != null) {
             return this.battlestation;
         }
@@ -43,7 +43,7 @@ public final class ClansBattlestationsItemsImpl
     }
 
     @Override
-    public AccountsItems getItem() {
+    public AccountsItems item() {
         if (this.item != null) {
             return this.item;
         }

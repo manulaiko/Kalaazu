@@ -22,7 +22,7 @@ public final class ClansRankingImpl
     private Clans clan;
 
     @Override
-    public Clans getClan() {
+    public Clans clan() {
         if (this.clan != null) {
             return this.clan;
         }

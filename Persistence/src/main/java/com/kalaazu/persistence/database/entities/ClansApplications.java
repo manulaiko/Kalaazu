@@ -16,12 +16,12 @@ public interface ClansApplications extends GeneratedClansApplications, Entity<In
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 
     /**
      * Returns the account.
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 }

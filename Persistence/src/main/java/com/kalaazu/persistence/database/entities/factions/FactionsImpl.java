@@ -27,7 +27,7 @@ public final class FactionsImpl
     private Maps highMap;
 
     @Override
-    public Maps getLowMap() {
+    public Maps lowMap() {
         if (this.lowerMap != null) {
             return this.lowerMap;
         }
@@ -42,7 +42,7 @@ public final class FactionsImpl
     }
 
     @Override
-    public Maps getHighMap() {
+    public Maps highMap() {
         if (this.highMap != null) {
             return this.highMap;
         }

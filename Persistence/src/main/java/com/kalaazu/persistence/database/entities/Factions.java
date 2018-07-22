@@ -16,12 +16,12 @@ public interface Factions extends GeneratedFactions, Entity<Byte> {
      *
      * @return Low map.
      */
-    Maps getLowMap();
+    Maps lowMap();
 
     /**
      * Returns the home high map.
      *
      * @return High map.
      */
-    Maps getHighMap();
+    Maps highMap();
 }

@@ -16,12 +16,12 @@ public interface ClansBattlestationsLogs extends GeneratedClansBattlestationsLog
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 
     /**
      * Returns the battlestation.
      *
      * @return The battlestation.
      */
-    ClansBattlestations getBattlestation();
+    ClansBattlestations battlestation();
 }

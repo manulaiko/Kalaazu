@@ -33,7 +33,7 @@ public final class ClansBanksLogsImpl
     private Accounts destination;
 
     @Override
-    public ClansBanks getBank() {
+    public ClansBanks bank() {
         if (this.bank != null) {
             return this.bank;
         }
@@ -48,7 +48,7 @@ public final class ClansBanksLogsImpl
     }
 
     @Override
-    public Accounts getAuthor() {
+    public Accounts from() {
         if (this.author != null) {
             return this.author;
         }
@@ -63,7 +63,7 @@ public final class ClansBanksLogsImpl
     }
 
     @Override
-    public Accounts getDestination() {
+    public Accounts to() {
         if (this.destination != null) {
             return this.destination;
         }

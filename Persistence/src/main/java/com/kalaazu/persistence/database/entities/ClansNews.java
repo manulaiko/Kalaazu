@@ -16,12 +16,12 @@ public interface ClansNews extends GeneratedClansNews, Entity<Integer> {
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 
     /**
      * Returns the account.
      *
      * @return The account.
      */
-    Accounts getAccount();
+    Accounts account();
 }

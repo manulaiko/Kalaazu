@@ -19,40 +19,40 @@ public interface Clans extends GeneratedClans, Entity<Integer> {
      *
      * @return Clan owner.
      */
-    Accounts getOwner();
+    Accounts owner();
 
     /**
      * Returns the faction affiliation of this clan.
      *
      * @return The faction.
      */
-    Optional<Factions> getFaction();
+    Optional<Factions> faction();
 
     /**
      * Returns the applications to this clan.
      *
      * @return The applications.
      */
-    List<ClansApplications> getApplications();
+    List<ClansApplications> applications();
 
     /**
      * Returns the diplomacies of this clan.
      *
      * @return The diplomacies.
      */
-    List<ClansDiplomacies> getDiplomacies();
+    List<ClansDiplomacies> diplomacies();
 
     /**
      * Returns the banks of this clan.
      *
      * @return The banks.
      */
-    List<ClansBanks> getBanks();
+    List<ClansBanks> banks();
 
     /**
      * Returns the battlestations owned by this clan.
      *
      * @return Clan's battlestations.
      */
-    List<ClansBattlestations> getBattlestations();
+    List<ClansBattlestations> battlestations();
 }

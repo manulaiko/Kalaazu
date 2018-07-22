@@ -16,12 +16,12 @@ public interface ClansDiplomacies extends GeneratedClansDiplomacies, Entity<Inte
      *
      * @return Author clan.
      */
-    Clans getAuthor();
+    Clans from();
 
     /**
      * Returns the destination clan.
      *
      * @return Destination clan.
      */
-    Clans getDestination();
+    Clans to();
 }

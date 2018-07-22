@@ -38,7 +38,7 @@ public final class ClansBattlestationsImpl
     private List<ClansBattlestationsLogs> logs;
 
     @Override
-    public Optional<Clans> getClan() {
+    public Optional<Clans> clan() {
         if (this.clan != null) {
             return this.clan;
         }
@@ -53,7 +53,7 @@ public final class ClansBattlestationsImpl
     }
 
     @Override
-    public Maps getMap() {
+    public Maps map() {
         if (this.map != null) {
             return this.map;
         }
@@ -68,7 +68,7 @@ public final class ClansBattlestationsImpl
     }
 
     @Override
-    public List<ClansBattlestationsLogs> getLogs() {
+    public List<ClansBattlestationsLogs> logs() {
         if (this.logs != null) {
             return this.logs;
         }

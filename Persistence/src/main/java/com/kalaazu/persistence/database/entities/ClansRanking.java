@@ -16,5 +16,5 @@ public interface ClansRanking extends GeneratedClansRanking, Entity<Integer> {
      *
      * @return The clan.
      */
-    Clans getClan();
+    Clans clan();
 }

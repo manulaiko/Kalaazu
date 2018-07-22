@@ -35,7 +35,7 @@ public final class ClansMessagesImpl
     private Optional<Accounts> destination;
 
     @Override
-    public Clans getClan() {
+    public Clans clan() {
         if (this.clan != null) {
             return this.clan;
         }
@@ -50,7 +50,7 @@ public final class ClansMessagesImpl
     }
 
     @Override
-    public Accounts getAuthor() {
+    public Accounts from() {
         if (this.author != null) {
             return this.author;
         }
@@ -65,7 +65,7 @@ public final class ClansMessagesImpl
     }
 
     @Override
-    public Optional<Accounts> getDestination() {
+    public Optional<Accounts> to() {
         if (this.destination != null) {
             return this.destination;
         }

@@ -28,7 +28,7 @@ public final class ClansBattlestationsLogsImpl
     private ClansBattlestations battlestation;
 
     @Override
-    public Clans getClan() {
+    public Clans clan() {
         if (this.clan != null) {
             return this.clan;
         }
@@ -43,7 +43,7 @@ public final class ClansBattlestationsLogsImpl
     }
 
     @Override
-    public ClansBattlestations getBattlestation() {
+    public ClansBattlestations battlestation() {
         if (this.battlestation != null) {
             return this.battlestation;
         }

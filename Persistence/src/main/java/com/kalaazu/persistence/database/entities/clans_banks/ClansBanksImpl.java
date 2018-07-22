@@ -31,7 +31,7 @@ public final class ClansBanksImpl
     private List<ClansBanksLogs> logs;
 
     @Override
-    public Clans getClan() {
+    public Clans clan() {
         if (this.clan != null) {
             return this.clan;
         }
@@ -46,7 +46,7 @@ public final class ClansBanksImpl
     }
 
     @Override
-    public List<ClansBanksLogs> getLogs() {
+    public List<ClansBanksLogs> logs() {
         if (this.logs != null) {
             return this.logs;
         }

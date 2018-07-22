@@ -18,5 +18,5 @@ public interface Collectables extends GeneratedCollectables, Entity<Byte> {
      *
      * @return Collectable rewards.
      */
-    List<Rewards> getRewards();
+    List<Rewards> rewards();
 }

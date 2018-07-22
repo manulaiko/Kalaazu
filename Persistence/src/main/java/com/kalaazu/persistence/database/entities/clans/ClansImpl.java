@@ -50,7 +50,7 @@ public final class ClansImpl
     private List<ClansBattlestations> battlestations;
 
     @Override
-    public Accounts getOwner() {
+    public Accounts owner() {
         if (this.owner != null) {
             return this.owner;
         }
@@ -65,7 +65,7 @@ public final class ClansImpl
     }
 
     @Override
-    public Optional<Factions> getFaction() {
+    public Optional<Factions> faction() {
         if (this.faction != null) {
             return this.faction;
         }
@@ -78,7 +78,7 @@ public final class ClansImpl
     }
 
     @Override
-    public List<ClansApplications> getApplications() {
+    public List<ClansApplications> applications() {
         if (this.applications != null) {
             return this.applications;
         }
@@ -92,7 +92,7 @@ public final class ClansImpl
     }
 
     @Override
-    public List<ClansDiplomacies> getDiplomacies() {
+    public List<ClansDiplomacies> diplomacies() {
         if (this.diplomacies != null) {
             return this.diplomacies;
         }
@@ -110,7 +110,7 @@ public final class ClansImpl
     }
 
     @Override
-    public List<ClansBanks> getBanks() {
+    public List<ClansBanks> banks() {
         if (this.banks != null) {
             return this.banks;
         }
@@ -124,7 +124,7 @@ public final class ClansImpl
     }
 
     @Override
-    public List<ClansBattlestations> getBattlestations() {
+    public List<ClansBattlestations> battlestations() {
         if (this.battlestations != null) {
             return this.battlestations;
         }

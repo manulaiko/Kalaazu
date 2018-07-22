@@ -16,12 +16,12 @@ public interface ClansBattlestationsItems extends GeneratedClansBattlestationsIt
      *
      * @return The battlestation.
      */
-    ClansBattlestations getBattlestation();
+    ClansBattlestations battlestation();
 
     /**
      * Returns the item.
      *
      * @return Equipped item.
      */
-    AccountsItems getItem();
+    AccountsItems item();
 }

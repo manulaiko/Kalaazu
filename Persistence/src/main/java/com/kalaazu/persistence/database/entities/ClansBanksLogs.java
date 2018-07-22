@@ -16,19 +16,19 @@ public interface ClansBanksLogs extends GeneratedClansBanksLogs, Entity<Integer>
      *
      * @return The bank.
      */
-    ClansBanks getBank();
+    ClansBanks bank();
 
     /**
      * Returns the author.
      *
      * @return The author.
      */
-    Accounts getAuthor();
+    Accounts from();
 
     /**
      * Returns the destination account.
      *
      * @return Destination account.
      */
-    Accounts getDestination();
+    Accounts to();
 }

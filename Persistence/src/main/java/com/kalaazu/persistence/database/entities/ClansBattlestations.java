@@ -19,19 +19,19 @@ public interface ClansBattlestations extends GeneratedClansBattlestations, Entit
      *
      * @return The clan.
      */
-    Optional<Clans> getClan();
+    Optional<Clans> clan();
 
     /**
      * Returns the map.
      *
      * @return The map.
      */
-    Maps getMap();
+    Maps map();
 
     /**
      * Returns the logs for this cbs.
      *
      * @return The logs.
      */
-    List<ClansBattlestationsLogs> getLogs();
+    List<ClansBattlestationsLogs> logs();
 }
