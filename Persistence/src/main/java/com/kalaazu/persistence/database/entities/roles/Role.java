@@ -17,14 +17,14 @@ public interface Role {
      *
      * @return Parent role.
      */
-    Optional<? extends Role> getRole();
+    Optional<? extends Role> role();
 
     /**
      * Returns role's permissions.
      *
      * @return Role's permissions.
      */
-    List<? extends RolePermission> getPermissions();
+    List<? extends RolePermission> permissions();
 
     /**
      * Checks if the give permission is allowed.
@@ -41,7 +41,7 @@ public interface Role {
         }
 
         var enabled = p.get()
-                       .getIsEnabled();
+                       .enabled();
 
         if (enabled.isPresent()) {
             return enabled.getAsBoolean();
@@ -51,8 +51,8 @@ public interface Role {
     }
 
     private Optional<RolePermission> findPermission(Permission permissions) {
-        for (RolePermission p : this.getPermissions()) {
-            if (p.getPermissionsId() == permissions.getId()) {
+        for (RolePermission p : this.permissions()) {
+            if (p.permissionId() == permissions.id()) {
                 return Optional.of(p);
             }
         }
@@ -61,12 +61,12 @@ public interface Role {
     }
 
     private boolean parentCan(Permission permission) {
-        if (!this.getRole()
+        if (!this.role()
                  .isPresent()) {
             return false;
         }
 
-        return this.getRole()
+        return this.role()
                    .get()
                    .can(permission);
     }

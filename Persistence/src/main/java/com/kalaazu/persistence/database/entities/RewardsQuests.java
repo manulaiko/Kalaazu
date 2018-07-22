@@ -16,12 +16,12 @@ public interface RewardsQuests extends GeneratedRewardsQuests, Entity<Short> {
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the quest.
      *
      * @return The quest.
      */
-    Quests getQuest();
+    Quests quest();
 }

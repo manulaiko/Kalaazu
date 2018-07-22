@@ -32,7 +32,7 @@ public final class VouchersImpl
     private List<Rewards> rewards;
 
     @Override
-    public List<VouchersRedeemLogs> getRedeemLogs() {
+    public List<VouchersRedeemLogs> logs() {
         if (this.redeemLogs != null) {
             return this.redeemLogs;
         }
@@ -46,7 +46,7 @@ public final class VouchersImpl
     }
 
     @Override
-    public List<Rewards> getRewards() {
+    public List<Rewards> rewards() {
         if (this.rewards != null) {
             return this.rewards;
         }
@@ -54,7 +54,7 @@ public final class VouchersImpl
         this.rewards = Database.getInstance()
                                .all(RewardsVouchers.class)
                                .filter(RewardsVouchers.VOUCHERS_ID.equal(super.getId()))
-                               .map(RewardsVouchers::getReward)
+                               .map(RewardsVouchers::reward)
                                .collect(Collectors.toList());
 
         return this.rewards;

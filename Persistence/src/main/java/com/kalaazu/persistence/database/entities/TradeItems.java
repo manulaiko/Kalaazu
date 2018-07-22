@@ -18,12 +18,12 @@ public interface TradeItems extends GeneratedTradeItems, Entity<Short> {
      *
      * @return The item.
      */
-    Items getItem();
+    Items item();
 
     /**
      * Returns the max bidder.
      *
      * @return Max bidder.
      */
-    Optional<Accounts> getAccount();
+    Optional<Accounts> account();
 }

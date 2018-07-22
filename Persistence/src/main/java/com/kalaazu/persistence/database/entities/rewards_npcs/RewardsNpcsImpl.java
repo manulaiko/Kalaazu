@@ -28,7 +28,7 @@ public final class RewardsNpcsImpl
     private Npcs npc;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.reward != null) {
             return this.reward;
         }
@@ -43,7 +43,7 @@ public final class RewardsNpcsImpl
     }
 
     @Override
-    public Npcs getNpc() {
+    public Npcs npc() {
         if (this.npc != null) {
             return this.npc;
         }

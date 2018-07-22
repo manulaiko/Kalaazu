@@ -17,5 +17,5 @@ public interface Rewards extends GeneratedRewards, Entity<Short> {
      *
      * @return The item
      */
-    Items getItem();
+    Items item();
 }

@@ -28,7 +28,7 @@ public final class ModeratorsRolesPermissionsImpl
     private Permissions permission;
 
     @Override
-    public ModeratorsRoles getRole() {
+    public ModeratorsRoles role() {
         if (this.role != null) {
             return this.role;
         }
@@ -43,7 +43,7 @@ public final class ModeratorsRolesPermissionsImpl
     }
 
     @Override
-    public Permissions getPermission() {
+    public Permissions permission() {
         if (this.permission != null) {
             return this.permission;
         }
@@ -58,7 +58,7 @@ public final class ModeratorsRolesPermissionsImpl
     }
 
     @Override
-    public int getRolesId() {
+    public int roleId() {
         return super.getModeratorsRolesId();
     }
 }

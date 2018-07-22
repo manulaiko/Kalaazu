@@ -16,12 +16,12 @@ public interface SkilltreeLevels extends GeneratedSkilltreeLevels, Entity<Short>
      *
      * @return The skill.
      */
-    SkilltreeSkills getSkill();
+    SkilltreeSkills skill();
 
     /**
      * Returns the level.
      *
      * @return The level.
      */
-    Levels getLevel();
+    Levels level();
 }

@@ -31,7 +31,7 @@ public final class ClansRolesImpl
     private List<ClansRolesPermissions> permissions;
 
     @Override
-    public Optional<ClansRoles> getRole() {
+    public Optional<ClansRoles> role() {
         if (this.role != null) {
             return this.role;
         }
@@ -44,7 +44,7 @@ public final class ClansRolesImpl
     }
 
     @Override
-    public List<ClansRolesPermissions> getPermissions() {
+    public List<ClansRolesPermissions> permissions() {
         if (this.permissions != null) {
             return this.permissions;
         }

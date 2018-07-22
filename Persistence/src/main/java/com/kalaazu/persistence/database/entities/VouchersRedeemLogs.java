@@ -16,12 +16,12 @@ public interface VouchersRedeemLogs extends GeneratedVouchersRedeemLogs, Entity<
      *
      * @return Account instance.
      */
-    Accounts getAccount();
+    Accounts account();
 
     /**
      * Returns the voucher instance.
      *
      * @return Voucher instance.
      */
-    Vouchers getVoucher();
+    Vouchers voucher();
 }

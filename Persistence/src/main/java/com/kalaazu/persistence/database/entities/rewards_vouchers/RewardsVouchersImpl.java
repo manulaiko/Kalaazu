@@ -28,7 +28,7 @@ public final class RewardsVouchersImpl
     private Vouchers voucher;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.reward != null) {
             return this.reward;
         }
@@ -43,7 +43,7 @@ public final class RewardsVouchersImpl
     }
 
     @Override
-    public Vouchers getVoucher() {
+    public Vouchers voucher() {
         if (this.voucher != null) {
             return this.voucher;
         }

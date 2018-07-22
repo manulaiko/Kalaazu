@@ -28,7 +28,7 @@ public final class RewardsGalaxygatesImpl
     private Galaxygates galaxyGate;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.reward != null) {
             return this.reward;
         }
@@ -43,7 +43,7 @@ public final class RewardsGalaxygatesImpl
     }
 
     @Override
-    public Galaxygates getGalaxyGate() {
+    public Galaxygates galaxygate() {
         if (this.galaxyGate != null) {
             return this.galaxyGate;
         }

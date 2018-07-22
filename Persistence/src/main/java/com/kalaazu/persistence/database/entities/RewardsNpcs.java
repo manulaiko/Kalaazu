@@ -16,12 +16,12 @@ public interface RewardsNpcs extends GeneratedRewardsNpcs, Entity<Short> {
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the NPC.
      *
      * @return The npc.
      */
-    Npcs getNpc();
+    Npcs npc();
 }

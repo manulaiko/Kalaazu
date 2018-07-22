@@ -19,7 +19,7 @@ public interface Users extends GeneratedUsers, Entity<Integer> {
      *
      * @return This user's accounts.
      */
-    List<Accounts> getAccounts();
+    List<Accounts> account();
 
     /**
      * Returns the invitation code associated
@@ -27,12 +27,12 @@ public interface Users extends GeneratedUsers, Entity<Integer> {
      *
      * @return Invitation code.
      */
-    Optional<InvitationCodes> getInvitationCode();
+    Optional<InvitationCodes> invitationCode();
 
     /**
      * Returns the last used account.
      *
      * @return Last used account.
      */
-    Accounts getLastUsedAccount();
+    Accounts lastUsedAccount();
 }

@@ -27,7 +27,7 @@ public final class SkilltreeUnlocksImpl
     private SkilltreeLevels required;
 
     @Override
-    public SkilltreeLevels getUpgrade() {
+    public SkilltreeLevels upgrade() {
         if (this.upgrade != null) {
             return this.upgrade;
         }
@@ -42,7 +42,7 @@ public final class SkilltreeUnlocksImpl
     }
 
     @Override
-    public SkilltreeLevels getRequired() {
+    public SkilltreeLevels required() {
         if (this.required != null) {
             return this.required;
         }

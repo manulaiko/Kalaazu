@@ -28,7 +28,7 @@ public final class RewardsShipsImpl
     private Ships ship;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.rewards != null) {
             return this.rewards;
         }
@@ -43,7 +43,7 @@ public final class RewardsShipsImpl
     }
 
     @Override
-    public Ships getShip() {
+    public Ships ship() {
         if (this.ship != null) {
             return this.ship;
         }

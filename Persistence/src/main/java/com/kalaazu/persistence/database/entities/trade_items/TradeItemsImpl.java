@@ -30,7 +30,7 @@ public final class TradeItemsImpl
     private Optional<Accounts> account;
 
     @Override
-    public Items getItem() {
+    public Items item() {
         if (this.item != null) {
             return item;
         }
@@ -44,7 +44,7 @@ public final class TradeItemsImpl
     }
 
     @Override
-    public Optional<Accounts> getAccount() {
+    public Optional<Accounts> account() {
         if (this.account != null) {
             return this.account;
         }

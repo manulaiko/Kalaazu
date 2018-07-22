@@ -28,7 +28,7 @@ public final class TechfactoryCostsImpl
     private Items item;
 
     @Override
-    public TechfactoryItems getTechfactoryItem() {
+    public TechfactoryItems techfactoryItem() {
         if (this.techfactoryItem != null) {
             return this.techfactoryItem;
         }
@@ -43,7 +43,7 @@ public final class TechfactoryCostsImpl
     }
 
     @Override
-    public Items getItem() {
+    public Items item() {
         if (this.item != null) {
             return this.item;
         }

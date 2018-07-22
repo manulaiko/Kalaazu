@@ -18,5 +18,5 @@ public interface SkilltreeSkills extends GeneratedSkilltreeSkills, Entity<Byte> 
      *
      * @return Skill levels.
      */
-    List<SkilltreeLevels> getLevels();
+    List<SkilltreeLevels> levels();
 }

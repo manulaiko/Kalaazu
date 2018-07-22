@@ -16,12 +16,12 @@ public interface RewardsGalaxygates extends GeneratedRewardsGalaxygates, Entity<
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the galaxy gate.
      *
      * @return The galaxy gate.
      */
-    Galaxygates getGalaxyGate();
+    Galaxygates galaxygate();
 }

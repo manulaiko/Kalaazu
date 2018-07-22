@@ -16,12 +16,12 @@ public interface SkilltreeUnlocks extends GeneratedSkilltreeUnlocks, Entity<Shor
      *
      * @return Skill to upgrade.
      */
-    SkilltreeLevels getUpgrade();
+    SkilltreeLevels upgrade();
 
     /**
      * Returns the required skill.
      *
      * @return Required skill.
      */
-    SkilltreeLevels getRequired();
+    SkilltreeLevels required();
 }

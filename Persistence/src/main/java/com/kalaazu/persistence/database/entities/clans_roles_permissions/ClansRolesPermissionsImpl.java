@@ -29,7 +29,7 @@ public final class ClansRolesPermissionsImpl
     private Permissions permission;
 
     @Override
-    public ClansRoles getRole() {
+    public ClansRoles role() {
         if (this.role != null) {
             return this.role;
         }
@@ -44,7 +44,7 @@ public final class ClansRolesPermissionsImpl
     }
 
     @Override
-    public Permissions getPermission() {
+    public Permissions permission() {
         if (this.permission != null) {
             return this.permission;
         }
@@ -59,7 +59,7 @@ public final class ClansRolesPermissionsImpl
     }
 
     @Override
-    public int getRolesId() {
+    public int roleId() {
         return super.getClansRolesId();
     }
 }

@@ -46,12 +46,12 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
     }
 
     @Override
-    public byte getPermissionsId() {
+    public byte permissionId() {
         return permissionsId;
     }
 
     @Override
-    public OptionalBoolean getIsEnabled() {
+    public OptionalBoolean enabled() {
         return OptionalUtil.ofNullable(isEnabled);
     }
 
@@ -90,7 +90,7 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
     @Override
     public Permissions findPermissionsId(Manager<Permissions> foreignManager) {
         return foreignManager.stream()
-                             .filter(Permissions.ID.equal(getPermissionsId()))
+                             .filter(Permissions.ID.equal(permissionId()))
                              .findAny()
                              .orElse(null);
     }
@@ -100,8 +100,8 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
         final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
         sj.add("id = " + Objects.toString(getId()));
         sj.add("clansRolesId = " + Objects.toString(getClansRolesId()));
-        sj.add("permissionsId = " + Objects.toString(getPermissionsId()));
-        sj.add("isEnabled = " + Objects.toString(OptionalUtil.unwrap(getIsEnabled())));
+        sj.add("permissionsId = " + Objects.toString(permissionId()));
+        sj.add("isEnabled = " + Objects.toString(OptionalUtil.unwrap(enabled())));
         return "ClansRolesPermissionsImpl " + sj.toString();
     }
 
@@ -120,10 +120,10 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
         if (this.getClansRolesId() != thatClansRolesPermissions.getClansRolesId()) {
             return false;
         }
-        if (this.getPermissionsId() != thatClansRolesPermissions.getPermissionsId()) {
+        if (this.permissionId() != thatClansRolesPermissions.getPermissionsId()) {
             return false;
         }
-        if (this.getIsEnabled() != thatClansRolesPermissions.getIsEnabled()) {
+        if (this.enabled() != thatClansRolesPermissions.getIsEnabled()) {
             return false;
         }
         return true;
@@ -134,8 +134,8 @@ public abstract class GeneratedClansRolesPermissionsImpl implements ClansRolesPe
         int hash = 7;
         hash = 31 * hash + Integer.hashCode(getId());
         hash = 31 * hash + Integer.hashCode(getClansRolesId());
-        hash = 31 * hash + Byte.hashCode(getPermissionsId());
-        hash = 31 * hash + Boolean.hashCode(getIsEnabled().orElse(false));
+        hash = 31 * hash + Byte.hashCode(permissionId());
+        hash = 31 * hash + Boolean.hashCode(enabled().orElse(false));
         return hash;
     }
 }

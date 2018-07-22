@@ -28,7 +28,7 @@ public final class RewardsQuestsImpl
     private Quests quest;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.reward != null) {
             return this.reward;
         }
@@ -43,7 +43,7 @@ public final class RewardsQuestsImpl
     }
 
     @Override
-    public Quests getQuest() {
+    public Quests quest() {
         if (this.quest != null) {
             return this.quest;
         }

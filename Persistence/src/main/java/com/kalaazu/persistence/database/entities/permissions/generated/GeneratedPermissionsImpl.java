@@ -29,7 +29,7 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
     }
 
     @Override
-    public Byte getId() {
+    public Byte id() {
         return id;
     }
 
@@ -64,7 +64,7 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
     @Override
     public String toString() {
         final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
+        sj.add("id = " + Objects.toString(id()));
         sj.add("name = " + Objects.toString(getName()));
         sj.add("category = " + Objects.toString(getCategory()));
         return "PermissionsImpl " + sj.toString();
@@ -79,7 +79,7 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
             return false;
         }
         final Permissions thatPermissions = (Permissions) that;
-        if (this.getId() != thatPermissions.getId()) {
+        if (this.id() != thatPermissions.getId()) {
             return false;
         }
         if (!Objects.equals(this.getName(), thatPermissions.getName())) {
@@ -94,7 +94,7 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
+        hash = 31 * hash + Byte.hashCode(id());
         hash = 31 * hash + Objects.hashCode(getName());
         hash = 31 * hash + Objects.hashCode(getCategory());
         return hash;

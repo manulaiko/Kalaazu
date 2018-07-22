@@ -16,12 +16,12 @@ public interface RewardsVouchers extends GeneratedRewardsVouchers, Entity<Short>
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the voucher.
      *
      * @return The voucher.
      */
-    Vouchers getVoucher();
+    Vouchers voucher();
 }

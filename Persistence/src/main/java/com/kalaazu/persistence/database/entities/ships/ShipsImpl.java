@@ -22,7 +22,7 @@ public final class ShipsImpl
     private Items item;
 
     @Override
-    public Items getItem() {
+    public Items item() {
         if (this.item != null) {
             return this.item;
         }

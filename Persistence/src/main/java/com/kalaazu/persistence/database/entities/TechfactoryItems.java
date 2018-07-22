@@ -18,5 +18,5 @@ public interface TechfactoryItems extends GeneratedTechfactoryItems, Entity<Byte
      *
      * @return Production costs.
      */
-    List<TechfactoryCosts> getCosts();
+    List<TechfactoryCosts> costs();
 }

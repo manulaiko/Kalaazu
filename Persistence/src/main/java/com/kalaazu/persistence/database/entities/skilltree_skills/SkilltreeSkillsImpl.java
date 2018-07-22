@@ -25,7 +25,7 @@ public final class SkilltreeSkillsImpl
     private List<SkilltreeLevels> levels;
 
     @Override
-    public List<SkilltreeLevels> getLevels() {
+    public List<SkilltreeLevels> levels() {
         if (this.levels != null) {
             return this.levels;
         }

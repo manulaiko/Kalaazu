@@ -28,7 +28,7 @@ public final class VouchersRedeemLogsImpl
     private Vouchers voucher;
 
     @Override
-    public Accounts getAccount() {
+    public Accounts account() {
         if (this.account != null) {
             return this.account;
         }
@@ -43,7 +43,7 @@ public final class VouchersRedeemLogsImpl
     }
 
     @Override
-    public Vouchers getVoucher() {
+    public Vouchers voucher() {
         if (this.voucher != null) {
             return this.voucher;
         }

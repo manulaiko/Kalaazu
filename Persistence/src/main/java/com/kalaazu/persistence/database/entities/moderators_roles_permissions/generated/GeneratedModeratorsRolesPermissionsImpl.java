@@ -46,12 +46,12 @@ public abstract class GeneratedModeratorsRolesPermissionsImpl implements Moderat
     }
 
     @Override
-    public byte getPermissionsId() {
+    public byte permissionId() {
         return permissionsId;
     }
 
     @Override
-    public OptionalBoolean getIsEnabled() {
+    public OptionalBoolean enabled() {
         return OptionalUtil.ofNullable(isEnabled);
     }
 
@@ -90,7 +90,7 @@ public abstract class GeneratedModeratorsRolesPermissionsImpl implements Moderat
     @Override
     public Permissions findPermissionsId(Manager<Permissions> foreignManager) {
         return foreignManager.stream()
-                             .filter(Permissions.ID.equal(getPermissionsId()))
+                             .filter(Permissions.ID.equal(permissionId()))
                              .findAny()
                              .orElse(null);
     }
@@ -100,8 +100,8 @@ public abstract class GeneratedModeratorsRolesPermissionsImpl implements Moderat
         final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
         sj.add("id = " + Objects.toString(getId()));
         sj.add("moderatorsRolesId = " + Objects.toString(getModeratorsRolesId()));
-        sj.add("permissionsId = " + Objects.toString(getPermissionsId()));
-        sj.add("isEnabled = " + Objects.toString(OptionalUtil.unwrap(getIsEnabled())));
+        sj.add("permissionsId = " + Objects.toString(permissionId()));
+        sj.add("isEnabled = " + Objects.toString(OptionalUtil.unwrap(enabled())));
         return "ModeratorsRolesPermissionsImpl " + sj.toString();
     }
 
@@ -120,10 +120,10 @@ public abstract class GeneratedModeratorsRolesPermissionsImpl implements Moderat
         if (this.getModeratorsRolesId() != thatModeratorsRolesPermissions.getModeratorsRolesId()) {
             return false;
         }
-        if (this.getPermissionsId() != thatModeratorsRolesPermissions.getPermissionsId()) {
+        if (this.permissionId() != thatModeratorsRolesPermissions.getPermissionsId()) {
             return false;
         }
-        if (this.getIsEnabled() != thatModeratorsRolesPermissions.getIsEnabled()) {
+        if (this.enabled() != thatModeratorsRolesPermissions.getIsEnabled()) {
             return false;
         }
         return true;
@@ -134,8 +134,8 @@ public abstract class GeneratedModeratorsRolesPermissionsImpl implements Moderat
         int hash = 7;
         hash = 31 * hash + Byte.hashCode(getId());
         hash = 31 * hash + Byte.hashCode(getModeratorsRolesId());
-        hash = 31 * hash + Byte.hashCode(getPermissionsId());
-        hash = 31 * hash + Boolean.hashCode(getIsEnabled().orElse(false));
+        hash = 31 * hash + Byte.hashCode(permissionId());
+        hash = 31 * hash + Boolean.hashCode(enabled().orElse(false));
         return hash;
     }
 }

@@ -29,7 +29,7 @@ public final class RewardsCollectablesImpl
     private Collectables collectable;
 
     @Override
-    public Rewards getReward() {
+    public Rewards reward() {
         if (this.reward != null) {
             return this.reward;
         }
@@ -44,7 +44,7 @@ public final class RewardsCollectablesImpl
     }
 
     @Override
-    public Collectables getCollectable() {
+    public Collectables collectable() {
         if (this.collectable != null) {
             return this.collectable;
         }

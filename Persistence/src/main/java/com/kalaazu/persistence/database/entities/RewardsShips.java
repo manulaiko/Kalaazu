@@ -16,12 +16,12 @@ public interface RewardsShips extends GeneratedRewardsShips, Entity<Byte> {
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the ship.
      *
      * @return The ship.
      */
-    Ships getShip();
+    Ships ship();
 }

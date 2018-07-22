@@ -16,12 +16,12 @@ public interface TechfactoryCosts extends GeneratedTechfactoryCosts, Entity<Byte
      *
      * @return Techfactory item.
      */
-    TechfactoryItems getTechfactoryItem();
+    TechfactoryItems techfactoryItem();
 
     /**
      * Returns the item.
      *
      * @return Item.
      */
-    Items getItem();
+    Items item();
 }

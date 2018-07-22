@@ -31,7 +31,7 @@ public final class ModeratorsRolesImpl
     private List<ModeratorsRolesPermissions> permissions;
 
     @Override
-    public Optional<ModeratorsRoles> getRole() {
+    public Optional<ModeratorsRoles> role() {
         if (this.role != null) {
             return this.role;
         }
@@ -44,7 +44,7 @@ public final class ModeratorsRolesImpl
     }
 
     @Override
-    public List<ModeratorsRolesPermissions> getPermissions() {
+    public List<ModeratorsRolesPermissions> permissions() {
         if (this.permissions != null) {
             return this.permissions;
         }

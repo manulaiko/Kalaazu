@@ -37,7 +37,7 @@ public final class UsersImpl
     private Accounts lastUsedAccount;
 
     @Override
-    public List<Accounts> getAccounts() {
+    public List<Accounts> account() {
         if (this.accounts != null) {
             return this.accounts;
         }
@@ -51,7 +51,7 @@ public final class UsersImpl
     }
 
     @Override
-    public Optional<InvitationCodes> getInvitationCode() {
+    public Optional<InvitationCodes> invitationCode() {
         if (this.invitationCode != null) {
             return this.invitationCode;
         }
@@ -66,12 +66,12 @@ public final class UsersImpl
     }
 
     @Override
-    public Accounts getLastUsedAccount() {
+    public Accounts lastUsedAccount() {
         if (this.lastUsedAccount != null) {
             return this.lastUsedAccount;
         }
 
-        this.lastUsedAccount = this.getAccounts()
+        this.lastUsedAccount = this.account()
                                    .stream()
                                    .max(Accounts.LAST_LOGIN.comparator())
                                    .orElse(null);

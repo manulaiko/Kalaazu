@@ -16,5 +16,5 @@ public interface Ships extends GeneratedShips, Entity<Byte> {
      *
      * @return Ship item.
      */
-    Items getItem();
+    Items item();
 }

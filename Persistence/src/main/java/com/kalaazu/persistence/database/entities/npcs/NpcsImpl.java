@@ -34,7 +34,7 @@ public final class NpcsImpl
         this.rewards = Database.getInstance()
                                .all(RewardsNpcs.class)
                                .filter(RewardsNpcs.NPCS_ID.equal(super.getId()))
-                               .map(RewardsNpcs::getReward)
+                               .map(RewardsNpcs::reward)
                                .collect(Collectors.toList());
 
         return this.rewards;

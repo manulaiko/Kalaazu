@@ -16,12 +16,12 @@ public interface RewardsCollectables extends GeneratedRewardsCollectables, Entit
      *
      * @return The reward.
      */
-    Rewards getReward();
+    Rewards reward();
 
     /**
      * Returns the collectable.
      *
      * @return The collectable.
      */
-    Collectables getCollectable();
+    Collectables collectable();
 }

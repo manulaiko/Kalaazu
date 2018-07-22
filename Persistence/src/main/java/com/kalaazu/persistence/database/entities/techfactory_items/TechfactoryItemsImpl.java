@@ -25,7 +25,7 @@ public final class TechfactoryItemsImpl
     private List<TechfactoryCosts> costs;
 
     @Override
-    public List<TechfactoryCosts> getCosts() {
+    public List<TechfactoryCosts> costs() {
         if (this.costs != null) {
             return this.costs;
         }

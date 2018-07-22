@@ -17,33 +17,33 @@ public interface RolePermission {
      *
      * @return The role.
      */
-    Role getRole();
+    Role role();
 
     /**
      * Returns the role ID.
      *
      * @return Role ID.
      */
-    int getRolesId();
+    int roleId();
 
     /**
      * Returns the permission.
      *
      * @return The permission.
      */
-    Permissions getPermission();
+    Permissions permission();
 
     /**
      * Returns the permission ID.
      *
      * @return Permission ID.
      */
-    byte getPermissionsId();
+    byte permissionId();
 
     /**
      * Returns whether the permission is enabled or not.
      *
      * @return Whether the permission is enabled or not.
      */
-    OptionalBoolean getIsEnabled();
+    OptionalBoolean enabled();
 }

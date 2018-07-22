@@ -12,5 +12,5 @@ public interface Permission {
     /**
      * Returns the permission ID.
      */
-    Byte getId();
+    Byte id();
 }
