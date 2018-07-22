@@ -49,7 +49,11 @@ public class CMS extends AbstractVerticle {
         var host    = config().getString("cms.host", "localhost");
         var webRoot = config().getString("cms.webRoot", "src/main/www/dist");
 
-        this.server = new Server(port, host, webRoot, super.vertx);
+        this.server = Server.builder()
+                            .host(host)
+                            .port(port)
+                            .webRoot(webRoot)
+                            .build();
 
         this.server.initialize();
 
@@ -65,7 +69,7 @@ public class CMS extends AbstractVerticle {
     /**
      * Stops the server.
      */
-    public void stop() {
+    public void stopServer() {
         CMS.logger.info("Stopping web server...");
         this.server.stop();
     }
@@ -73,7 +77,7 @@ public class CMS extends AbstractVerticle {
     /**
      * Starts the server.
      */
-    public void start() {
+    public void startServer() {
         CMS.logger.info("Starting web server...");
         this.server.start();
     }
@@ -81,7 +85,7 @@ public class CMS extends AbstractVerticle {
     /**
      * Restarts the server.
      */
-    public void restart() {
+    public void restartServer() {
         this.server.restart();
     }
 

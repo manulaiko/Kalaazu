@@ -9,6 +9,7 @@ import io.vertx.core.logging.LoggerFactory;
 import io.vertx.ext.web.Router;
 import io.vertx.ext.web.handler.BodyHandler;
 import io.vertx.ext.web.handler.StaticHandler;
+import lombok.Builder;
 
 import java.nio.file.Paths;
 
@@ -20,6 +21,7 @@ import java.nio.file.Paths;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@Builder
 public class Server {
     /**
      * Console logger.
@@ -29,7 +31,7 @@ public class Server {
     /**
      * Server host.
      */
-    private final String host;
+    private String host;
 
     /**
      * The path to the static assets.
@@ -55,21 +57,6 @@ public class Server {
      * The Vertx instance.
      */
     private Vertx vertx;
-
-    /**
-     * Constructor.
-     *
-     * @param port    Port to listen for HTTP requests.
-     * @param host    Server host.
-     * @param webRoot Path to the static assets.
-     * @param vertx   Vertx instance.
-     */
-    public Server(int port, String host, String webRoot, Vertx vertx) {
-        this.port = port;
-        this.host = host;
-        this.webRoot = webRoot;
-        this.vertx = vertx;
-    }
 
     /**
      * Initializes the HTTP server.

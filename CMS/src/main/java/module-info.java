@@ -8,4 +8,5 @@ module kalaazu.cms {
     requires vertx.core;
     requires vertx.bridge.common;
     requires rocker.runtime;
+    requires lombok;
 }
