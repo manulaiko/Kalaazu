@@ -8,6 +8,7 @@ import com.kalaazu.persistence.database.mappers.BankLogType;
 import com.kalaazu.persistence.database.mappers.Currency;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -25,9 +26,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLogs {
 
-    private int id;
+    private Integer id;
 
     private int fromAccountsId;
 
@@ -48,97 +50,15 @@ public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLog
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getFromAccountsId() {
-        return fromAccountsId;
-    }
-
-    @Override
-    public int getToAccountsId() {
-        return toAccountsId;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public BankLogType getType() {
-        return type;
-    }
-
-    @Override
-    public int getAmount() {
-        return amount;
-    }
-
-    @Override
-    public Currency getCurrency() {
-        return currency;
-    }
-
-    @Override
-    public OptionalInt getAccountsBanksId() {
+    public OptionalInt accountsBanksId() {
         return OptionalUtil.ofNullable(accountsBanksId);
     }
 
-    @Override
-    public AccountsBanksLogs setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setFromAccountsId(int fromAccountsId) {
-        this.fromAccountsId = fromAccountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setToAccountsId(int toAccountsId) {
-        this.toAccountsId = toAccountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setType(BankLogType type) {
-        this.type = type;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setAmount(int amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setCurrency(Currency currency) {
-        this.currency = currency;
-        return this;
-    }
-
-    @Override
-    public AccountsBanksLogs setAccountsBanksId(Integer accountsBanksId) {
-        this.accountsBanksId = accountsBanksId;
-        return this;
-    }
 
     @Override
     public Accounts findFromAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getFromAccountsId()))
+                             .filter(Accounts.ID.equal(fromAccountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -146,34 +66,20 @@ public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLog
     @Override
     public Accounts findToAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getToAccountsId()))
+                             .filter(Accounts.ID.equal(toAccountsId()))
                              .findAny()
                              .orElse(null);
     }
 
     @Override
     public Optional<AccountsBanks> findAccountsBanksId(Manager<AccountsBanks> foreignManager) {
-        if (getAccountsBanksId().isPresent()) {
+        if (accountsBanksId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(AccountsBanks.ID.equal(getAccountsBanksId().getAsInt()))
+                                 .filter(AccountsBanks.ID.equal(accountsBanksId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
         }
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("fromAccountsId = " + Objects.toString(getFromAccountsId()));
-        sj.add("toAccountsId = " + Objects.toString(getToAccountsId()));
-        sj.add("date = " + Objects.toString(getDate()));
-        sj.add("type = " + Objects.toString(getType()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        sj.add("currency = " + Objects.toString(getCurrency()));
-        sj.add("accountsBanksId = " + Objects.toString(OptionalUtil.unwrap(getAccountsBanksId())));
-        return "AccountsBanksLogsImpl " + sj.toString();
     }
 
     @Override
@@ -185,44 +91,30 @@ public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLog
             return false;
         }
         final AccountsBanksLogs thatAccountsBanksLogs = (AccountsBanksLogs) that;
-        if (this.getId() != thatAccountsBanksLogs.getId()) {
+        if (this.id() != thatAccountsBanksLogs.id()) {
             return false;
         }
-        if (this.getFromAccountsId() != thatAccountsBanksLogs.getFromAccountsId()) {
+        if (this.fromAccountsId() != thatAccountsBanksLogs.fromAccountsId()) {
             return false;
         }
-        if (this.getToAccountsId() != thatAccountsBanksLogs.getToAccountsId()) {
+        if (this.toAccountsId() != thatAccountsBanksLogs.toAccountsId()) {
             return false;
         }
-        if (!Objects.equals(this.getDate(), thatAccountsBanksLogs.getDate())) {
+        if (!Objects.equals(this.date(), thatAccountsBanksLogs.date())) {
             return false;
         }
-        if (!Objects.equals(this.getType(), thatAccountsBanksLogs.getType())) {
+        if (!Objects.equals(this.type(), thatAccountsBanksLogs.type())) {
             return false;
         }
-        if (this.getAmount() != thatAccountsBanksLogs.getAmount()) {
+        if (this.amount() != thatAccountsBanksLogs.amount()) {
             return false;
         }
-        if (!Objects.equals(this.getCurrency(), thatAccountsBanksLogs.getCurrency())) {
+        if (!Objects.equals(this.currency(), thatAccountsBanksLogs.currency())) {
             return false;
         }
-        if (!Objects.equals(this.getAccountsBanksId(), thatAccountsBanksLogs.getAccountsBanksId())) {
+        if (!Objects.equals(this.accountsBanksId(), thatAccountsBanksLogs.accountsBanksId())) {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getFromAccountsId());
-        hash = 31 * hash + Integer.hashCode(getToAccountsId());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        hash = 31 * hash + Objects.hashCode(getType());
-        hash = 31 * hash + Integer.hashCode(getAmount());
-        hash = 31 * hash + Objects.hashCode(getCurrency());
-        hash = 31 * hash + Objects.hashCode(getAccountsBanksId());
-        return hash;
     }
 }

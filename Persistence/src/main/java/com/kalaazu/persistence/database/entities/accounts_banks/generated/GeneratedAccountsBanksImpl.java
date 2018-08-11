@@ -4,6 +4,7 @@ import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsBanks;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -18,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsBanksImpl implements AccountsBanks {
 
-    private int id;
+    private Integer id;
 
     private int accountsId;
 
@@ -37,89 +39,11 @@ public abstract class GeneratedAccountsBanksImpl implements AccountsBanks {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public long getCredits() {
-        return credits;
-    }
-
-    @Override
-    public long getUridium() {
-        return uridium;
-    }
-
-    @Override
-    public byte getTaxCredits() {
-        return taxCredits;
-    }
-
-    @Override
-    public byte getTaxUridium() {
-        return taxUridium;
-    }
-
-    @Override
-    public AccountsBanks setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsBanks setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsBanks setCredits(long credits) {
-        this.credits = credits;
-        return this;
-    }
-
-    @Override
-    public AccountsBanks setUridium(long uridium) {
-        this.uridium = uridium;
-        return this;
-    }
-
-    @Override
-    public AccountsBanks setTaxCredits(byte taxCredits) {
-        this.taxCredits = taxCredits;
-        return this;
-    }
-
-    @Override
-    public AccountsBanks setTaxUridium(byte taxUridium) {
-        this.taxUridium = taxUridium;
-        return this;
-    }
-
-    @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("credits = " + Objects.toString(getCredits()));
-        sj.add("uridium = " + Objects.toString(getUridium()));
-        sj.add("taxCredits = " + Objects.toString(getTaxCredits()));
-        sj.add("taxUridium = " + Objects.toString(getTaxUridium()));
-        return "AccountsBanksImpl " + sj.toString();
     }
 
     @Override
@@ -131,36 +55,24 @@ public abstract class GeneratedAccountsBanksImpl implements AccountsBanks {
             return false;
         }
         final AccountsBanks thatAccountsBanks = (AccountsBanks) that;
-        if (this.getId() != thatAccountsBanks.getId()) {
+        if (this.id() != thatAccountsBanks.id()) {
             return false;
         }
-        if (this.getAccountsId() != thatAccountsBanks.getAccountsId()) {
+        if (this.accountsId() != thatAccountsBanks.accountsId()) {
             return false;
         }
-        if (this.getCredits() != thatAccountsBanks.getCredits()) {
+        if (this.credits() != thatAccountsBanks.credits()) {
             return false;
         }
-        if (this.getUridium() != thatAccountsBanks.getUridium()) {
+        if (this.uridium() != thatAccountsBanks.uridium()) {
             return false;
         }
-        if (this.getTaxCredits() != thatAccountsBanks.getTaxCredits()) {
+        if (this.taxCredits() != thatAccountsBanks.taxCredits()) {
             return false;
         }
-        if (this.getTaxUridium() != thatAccountsBanks.getTaxUridium()) {
+        if (this.taxUridium() != thatAccountsBanks.taxUridium()) {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Long.hashCode(getCredits());
-        hash = 31 * hash + Long.hashCode(getUridium());
-        hash = 31 * hash + Byte.hashCode(getTaxCredits());
-        hash = 31 * hash + Byte.hashCode(getTaxUridium());
-        return hash;
     }
 }

@@ -27,24 +27,24 @@ public interface GeneratedAccountsBanks {
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getId()} method.
+     * obtained using the {@link AccountsBanks#id()} method.
      */
     IntField<AccountsBanks, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsBanks::getId,
-            AccountsBanks::setId,
+            AccountsBanks::id,
+            AccountsBanks::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getAccountsId()} method.
+     * obtained using the {@link AccountsBanks#accountsId()} method.
      */
     IntForeignKeyField<AccountsBanks, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsBanks::getAccountsId,
-            AccountsBanks::setAccountsId,
+            AccountsBanks::accountsId,
+            AccountsBanks::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -52,48 +52,48 @@ public interface GeneratedAccountsBanks {
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getCredits()} method.
+     * obtained using the {@link AccountsBanks#credits()} method.
      */
     LongField<AccountsBanks, Long> CREDITS = LongField.create(
             Identifier.CREDITS,
-            AccountsBanks::getCredits,
-            AccountsBanks::setCredits,
+            AccountsBanks::credits,
+            AccountsBanks::credits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getUridium()} method.
+     * obtained using the {@link AccountsBanks#uridium()} method.
      */
     LongField<AccountsBanks, Long> URIDIUM = LongField.create(
             Identifier.URIDIUM,
-            AccountsBanks::getUridium,
-            AccountsBanks::setUridium,
+            AccountsBanks::uridium,
+            AccountsBanks::uridium,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getTaxCredits()} method.
+     * obtained using the {@link AccountsBanks#taxCredits()} method.
      */
     ByteField<AccountsBanks, Byte> TAX_CREDITS = ByteField.create(
             Identifier.TAX_CREDITS,
-            AccountsBanks::getTaxCredits,
-            AccountsBanks::setTaxCredits,
+            AccountsBanks::taxCredits,
+            AccountsBanks::taxCredits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanks} field that can be
-     * obtained using the {@link AccountsBanks#getTaxUridium()} method.
+     * obtained using the {@link AccountsBanks#taxUridium()} method.
      */
     ByteField<AccountsBanks, Byte> TAX_URIDIUM = ByteField.create(
             Identifier.TAX_URIDIUM,
-            AccountsBanks::getTaxUridium,
-            AccountsBanks::setTaxUridium,
+            AccountsBanks::taxUridium,
+            AccountsBanks::taxUridium,
             TypeMapper.primitive(),
             false
     );
@@ -104,7 +104,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return the id of this AccountsBanks
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsBanks. The accountsId field
@@ -113,7 +113,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return the accountsId of this AccountsBanks
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the credits of this AccountsBanks. The credits field corresponds
@@ -121,7 +121,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return the credits of this AccountsBanks
      */
-    long getCredits();
+    long credits();
 
     /**
      * Returns the uridium of this AccountsBanks. The uridium field corresponds
@@ -129,7 +129,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return the uridium of this AccountsBanks
      */
-    long getUridium();
+    long uridium();
 
     /**
      * Returns the taxCredits of this AccountsBanks. The taxCredits field
@@ -138,7 +138,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return the taxCredits of this AccountsBanks
      */
-    byte getTaxCredits();
+    byte taxCredits();
 
     /**
      * Returns the taxUridium of this AccountsBanks. The taxUridium field
@@ -147,20 +147,20 @@ public interface GeneratedAccountsBanks {
      *
      * @return the taxUridium of this AccountsBanks
      */
-    byte getTaxUridium();
+    byte taxUridium();
 
     /**
-     * Sets the id of this AccountsBanks. The id field corresponds to the
+     * s the id of this AccountsBanks. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_banks.id.
      *
      * @param id to set of this AccountsBanks
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setId(int id);
+    AccountsBanks id(Integer id);
 
     /**
-     * Sets the accountsId of this AccountsBanks. The accountsId field
+     * s the accountsId of this AccountsBanks. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_banks.accounts_id.
      *
@@ -168,30 +168,30 @@ public interface GeneratedAccountsBanks {
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setAccountsId(int accountsId);
+    AccountsBanks accountsId(int accountsId);
 
     /**
-     * Sets the credits of this AccountsBanks. The credits field corresponds to
+     * s the credits of this AccountsBanks. The credits field corresponds to
      * the database column kalaazu.kalaazu.accounts_banks.credits.
      *
      * @param credits to set of this AccountsBanks
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setCredits(long credits);
+    AccountsBanks credits(long credits);
 
     /**
-     * Sets the uridium of this AccountsBanks. The uridium field corresponds to
+     * s the uridium of this AccountsBanks. The uridium field corresponds to
      * the database column kalaazu.kalaazu.accounts_banks.uridium.
      *
      * @param uridium to set of this AccountsBanks
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setUridium(long uridium);
+    AccountsBanks uridium(long uridium);
 
     /**
-     * Sets the taxCredits of this AccountsBanks. The taxCredits field
+     * s the taxCredits of this AccountsBanks. The taxCredits field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_banks.tax_credits.
      *
@@ -199,10 +199,10 @@ public interface GeneratedAccountsBanks {
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setTaxCredits(byte taxCredits);
+    AccountsBanks taxCredits(byte taxCredits);
 
     /**
-     * Sets the taxUridium of this AccountsBanks. The taxUridium field
+     * s the taxUridium of this AccountsBanks. The taxUridium field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_banks.tax_uridium.
      *
@@ -210,7 +210,7 @@ public interface GeneratedAccountsBanks {
      *
      * @return this AccountsBanks instance
      */
-    AccountsBanks setTaxUridium(byte taxUridium);
+    AccountsBanks taxUridium(byte taxUridium);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

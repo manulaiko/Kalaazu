@@ -13,6 +13,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -35,24 +36,24 @@ public interface GeneratedAccountsBanksLogs {
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getId()} method.
+     * obtained using the {@link AccountsBanksLogs#id()} method.
      */
     IntField<AccountsBanksLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsBanksLogs::getId,
-            AccountsBanksLogs::setId,
+            AccountsBanksLogs::id,
+            AccountsBanksLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getFromAccountsId()} method.
+     * obtained using the {@link AccountsBanksLogs#fromAccountsId()} method.
      */
     IntForeignKeyField<AccountsBanksLogs, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
-            AccountsBanksLogs::getFromAccountsId,
-            AccountsBanksLogs::setFromAccountsId,
+            AccountsBanksLogs::fromAccountsId,
+            AccountsBanksLogs::fromAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -60,12 +61,12 @@ public interface GeneratedAccountsBanksLogs {
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getToAccountsId()} method.
+     * obtained using the {@link AccountsBanksLogs#toAccountsId()} method.
      */
     IntForeignKeyField<AccountsBanksLogs, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
-            AccountsBanksLogs::getToAccountsId,
-            AccountsBanksLogs::setToAccountsId,
+            AccountsBanksLogs::toAccountsId,
+            AccountsBanksLogs::toAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -73,24 +74,24 @@ public interface GeneratedAccountsBanksLogs {
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getDate()} method.
+     * obtained using the {@link AccountsBanksLogs#date()} method.
      */
     ComparableField<AccountsBanksLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsBanksLogs::getDate,
-            AccountsBanksLogs::setDate,
+            AccountsBanksLogs::date,
+            (ReferenceSetter<AccountsBanksLogs, Timestamp>) AccountsBanksLogs::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getType()} method.
+     * obtained using the {@link AccountsBanksLogs#type()} method.
      */
     EnumField<AccountsBanksLogs, Byte, BankLogType> TYPE = EnumField.create(
             Identifier.TYPE,
-            AccountsBanksLogs::getType,
-            AccountsBanksLogs::setType,
+            AccountsBanksLogs::type,
+            AccountsBanksLogs::type,
             new BankLogTypeMapper(),
             BankLogType::name,
             BankLogType::valueOf,
@@ -99,24 +100,24 @@ public interface GeneratedAccountsBanksLogs {
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getAmount()} method.
+     * obtained using the {@link AccountsBanksLogs#amount()} method.
      */
     IntField<AccountsBanksLogs, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
-            AccountsBanksLogs::getAmount,
-            AccountsBanksLogs::setAmount,
+            AccountsBanksLogs::amount,
+            AccountsBanksLogs::amount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getCurrency()} method.
+     * obtained using the {@link AccountsBanksLogs#currency()} method.
      */
     EnumField<AccountsBanksLogs, Byte, Currency> CURRENCY = EnumField.create(
             Identifier.CURRENCY,
-            AccountsBanksLogs::getCurrency,
-            AccountsBanksLogs::setCurrency,
+            AccountsBanksLogs::currency,
+            AccountsBanksLogs::currency,
             new CurrencyMapper(),
             Currency::name,
             Currency::valueOf,
@@ -125,12 +126,12 @@ public interface GeneratedAccountsBanksLogs {
 
     /**
      * This Field corresponds to the {@link AccountsBanksLogs} field that can be
-     * obtained using the {@link AccountsBanksLogs#getAccountsBanksId()} method.
+     * obtained using the {@link AccountsBanksLogs#accountsBanksId()} method.
      */
     ComparableForeignKeyField<AccountsBanksLogs, Integer, Integer, AccountsBanks> ACCOUNTS_BANKS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_BANKS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsBanksId()),
-            AccountsBanksLogs::setAccountsBanksId,
+            o -> OptionalUtil.unwrap(o.accountsBanksId()),
+            AccountsBanksLogs::accountsBanksId,
             AccountsBanks.ID,
             TypeMapper.identity(),
             false
@@ -142,7 +143,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the id of this AccountsBanksLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the fromAccountsId of this AccountsBanksLogs. The fromAccountsId
@@ -151,7 +152,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the fromAccountsId of this AccountsBanksLogs
      */
-    int getFromAccountsId();
+    int fromAccountsId();
 
     /**
      * Returns the toAccountsId of this AccountsBanksLogs. The toAccountsId
@@ -160,7 +161,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the toAccountsId of this AccountsBanksLogs
      */
-    int getToAccountsId();
+    int toAccountsId();
 
     /**
      * Returns the date of this AccountsBanksLogs. The date field corresponds to
@@ -168,7 +169,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the date of this AccountsBanksLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the type of this AccountsBanksLogs. The type field corresponds to
@@ -176,7 +177,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the type of this AccountsBanksLogs
      */
-    BankLogType getType();
+    BankLogType type();
 
     /**
      * Returns the amount of this AccountsBanksLogs. The amount field
@@ -185,7 +186,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the amount of this AccountsBanksLogs
      */
-    int getAmount();
+    int amount();
 
     /**
      * Returns the currency of this AccountsBanksLogs. The currency field
@@ -194,7 +195,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the currency of this AccountsBanksLogs
      */
-    Currency getCurrency();
+    Currency currency();
 
     /**
      * Returns the accountsBanksId of this AccountsBanksLogs. The
@@ -203,20 +204,20 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return the accountsBanksId of this AccountsBanksLogs
      */
-    OptionalInt getAccountsBanksId();
+    OptionalInt accountsBanksId();
 
     /**
-     * Sets the id of this AccountsBanksLogs. The id field corresponds to the
+     * s the id of this AccountsBanksLogs. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_banks_logs.id.
      *
      * @param id to set of this AccountsBanksLogs
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setId(int id);
+    AccountsBanksLogs id(Integer id);
 
     /**
-     * Sets the fromAccountsId of this AccountsBanksLogs. The fromAccountsId
+     * s the fromAccountsId of this AccountsBanksLogs. The fromAccountsId
      * field corresponds to the database column
      * kalaazu.kalaazu.accounts_banks_logs.from_accounts_id.
      *
@@ -224,10 +225,10 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setFromAccountsId(int fromAccountsId);
+    AccountsBanksLogs fromAccountsId(int fromAccountsId);
 
     /**
-     * Sets the toAccountsId of this AccountsBanksLogs. The toAccountsId field
+     * s the toAccountsId of this AccountsBanksLogs. The toAccountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_banks_logs.to_accounts_id.
      *
@@ -235,40 +236,40 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setToAccountsId(int toAccountsId);
+    AccountsBanksLogs toAccountsId(int toAccountsId);
 
     /**
-     * Sets the date of this AccountsBanksLogs. The date field corresponds to
+     * s the date of this AccountsBanksLogs. The date field corresponds to
      * the database column kalaazu.kalaazu.accounts_banks_logs.date.
      *
      * @param date to set of this AccountsBanksLogs
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setDate(Timestamp date);
+    AccountsBanksLogs date(Timestamp date);
 
     /**
-     * Sets the type of this AccountsBanksLogs. The type field corresponds to
+     * s the type of this AccountsBanksLogs. The type field corresponds to
      * the database column kalaazu.kalaazu.accounts_banks_logs.type.
      *
      * @param type to set of this AccountsBanksLogs
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setType(BankLogType type);
+    AccountsBanksLogs type(BankLogType type);
 
     /**
-     * Sets the amount of this AccountsBanksLogs. The amount field corresponds
+     * s the amount of this AccountsBanksLogs. The amount field corresponds
      * to the database column kalaazu.kalaazu.accounts_banks_logs.amount.
      *
      * @param amount to set of this AccountsBanksLogs
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setAmount(int amount);
+    AccountsBanksLogs amount(int amount);
 
     /**
-     * Sets the currency of this AccountsBanksLogs. The currency field
+     * s the currency of this AccountsBanksLogs. The currency field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_banks_logs.currency.
      *
@@ -276,10 +277,10 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setCurrency(Currency currency);
+    AccountsBanksLogs currency(Currency currency);
 
     /**
-     * Sets the accountsBanksId of this AccountsBanksLogs. The accountsBanksId
+     * s the accountsBanksId of this AccountsBanksLogs. The accountsBanksId
      * field corresponds to the database column
      * kalaazu.kalaazu.accounts_banks_logs.accounts_banks_id.
      *
@@ -287,7 +288,7 @@ public interface GeneratedAccountsBanksLogs {
      *
      * @return this AccountsBanksLogs instance
      */
-    AccountsBanksLogs setAccountsBanksId(Integer accountsBanksId);
+    AccountsBanksLogs accountsBanksId(Integer accountsBanksId);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
