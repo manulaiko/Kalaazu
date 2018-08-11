@@ -5,6 +5,7 @@ import com.kalaazu.persistence.database.entities.AccountsClansRoles;
 import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -19,9 +20,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsClansRolesImpl implements AccountsClansRoles {
 
-    private int id;
+    private Integer id;
 
     private int accountsId;
 
@@ -32,42 +34,9 @@ public abstract class GeneratedAccountsClansRolesImpl implements AccountsClansRo
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public int getClansRolesId() {
-        return clansRolesId;
-    }
-
-    @Override
-    public AccountsClansRoles setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsClansRoles setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsClansRoles setClansRolesId(int clansRolesId) {
-        this.clansRolesId = clansRolesId;
-        return this;
-    }
-
-    @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +44,8 @@ public abstract class GeneratedAccountsClansRolesImpl implements AccountsClansRo
     @Override
     public ClansRoles findClansRolesId(Manager<ClansRoles> foreignManager) {
         return foreignManager.stream()
-                             .filter(ClansRoles.ID.equal(getClansRolesId()))
+                             .filter(ClansRoles.ID.equal(clansRolesId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("clansRolesId = " + Objects.toString(getClansRolesId()));
-        return "AccountsClansRolesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsClansRoles)) {
-            return false;
-        }
-        final AccountsClansRoles thatAccountsClansRoles = (AccountsClansRoles) that;
-        if (this.getId() != thatAccountsClansRoles.getId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatAccountsClansRoles.getAccountsId()) {
-            return false;
-        }
-        if (this.getClansRolesId() != thatAccountsClansRoles.getClansRolesId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Integer.hashCode(getClansRolesId());
-        return hash;
     }
 }

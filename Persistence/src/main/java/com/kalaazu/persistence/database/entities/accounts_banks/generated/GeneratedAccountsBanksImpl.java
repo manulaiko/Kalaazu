@@ -45,34 +45,4 @@ public abstract class GeneratedAccountsBanksImpl implements AccountsBanks {
                              .findAny()
                              .orElse(null);
     }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsBanks)) {
-            return false;
-        }
-        final AccountsBanks thatAccountsBanks = (AccountsBanks) that;
-        if (this.id() != thatAccountsBanks.id()) {
-            return false;
-        }
-        if (this.accountsId() != thatAccountsBanks.accountsId()) {
-            return false;
-        }
-        if (this.credits() != thatAccountsBanks.credits()) {
-            return false;
-        }
-        if (this.uridium() != thatAccountsBanks.uridium()) {
-            return false;
-        }
-        if (this.taxCredits() != thatAccountsBanks.taxCredits()) {
-            return false;
-        }
-        if (this.taxUridium() != thatAccountsBanks.taxUridium()) {
-            return false;
-        }
-        return true;
-    }
 }

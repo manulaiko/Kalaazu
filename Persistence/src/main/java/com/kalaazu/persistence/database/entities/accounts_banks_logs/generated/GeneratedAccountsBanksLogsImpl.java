@@ -81,40 +81,4 @@ public abstract class GeneratedAccountsBanksLogsImpl implements AccountsBanksLog
             return Optional.empty();
         }
     }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsBanksLogs)) {
-            return false;
-        }
-        final AccountsBanksLogs thatAccountsBanksLogs = (AccountsBanksLogs) that;
-        if (this.id() != thatAccountsBanksLogs.id()) {
-            return false;
-        }
-        if (this.fromAccountsId() != thatAccountsBanksLogs.fromAccountsId()) {
-            return false;
-        }
-        if (this.toAccountsId() != thatAccountsBanksLogs.toAccountsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.date(), thatAccountsBanksLogs.date())) {
-            return false;
-        }
-        if (!Objects.equals(this.type(), thatAccountsBanksLogs.type())) {
-            return false;
-        }
-        if (this.amount() != thatAccountsBanksLogs.amount()) {
-            return false;
-        }
-        if (!Objects.equals(this.currency(), thatAccountsBanksLogs.currency())) {
-            return false;
-        }
-        if (!Objects.equals(this.accountsBanksId(), thatAccountsBanksLogs.accountsBanksId())) {
-            return false;
-        }
-        return true;
-    }
 }

@@ -27,24 +27,24 @@ public interface GeneratedAccountsClansRoles {
 
     /**
      * This Field corresponds to the {@link AccountsClansRoles} field that can
-     * be obtained using the {@link AccountsClansRoles#getId()} method.
+     * be obtained using the {@link AccountsClansRoles#id()} method.
      */
     IntField<AccountsClansRoles, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsClansRoles::getId,
-            AccountsClansRoles::setId,
+            AccountsClansRoles::id,
+            AccountsClansRoles::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsClansRoles} field that can
-     * be obtained using the {@link AccountsClansRoles#getAccountsId()} method.
+     * be obtained using the {@link AccountsClansRoles#accountsId()} method.
      */
     IntForeignKeyField<AccountsClansRoles, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsClansRoles::getAccountsId,
-            AccountsClansRoles::setAccountsId,
+            AccountsClansRoles::accountsId,
+            AccountsClansRoles::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -52,13 +52,13 @@ public interface GeneratedAccountsClansRoles {
 
     /**
      * This Field corresponds to the {@link AccountsClansRoles} field that can
-     * be obtained using the {@link AccountsClansRoles#getClansRolesId()}
+     * be obtained using the {@link AccountsClansRoles#clansRolesId()}
      * method.
      */
     IntForeignKeyField<AccountsClansRoles, Integer, ClansRoles> CLANS_ROLES_ID = IntForeignKeyField.create(
             Identifier.CLANS_ROLES_ID,
-            AccountsClansRoles::getClansRolesId,
-            AccountsClansRoles::setClansRolesId,
+            AccountsClansRoles::clansRolesId,
+            AccountsClansRoles::clansRolesId,
             ClansRoles.ID,
             TypeMapper.primitive(),
             false
@@ -70,7 +70,7 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return the id of this AccountsClansRoles
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsClansRoles. The accountsId field
@@ -79,7 +79,7 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return the accountsId of this AccountsClansRoles
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the clansRolesId of this AccountsClansRoles. The clansRolesId
@@ -88,20 +88,20 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return the clansRolesId of this AccountsClansRoles
      */
-    int getClansRolesId();
+    int clansRolesId();
 
     /**
-     * Sets the id of this AccountsClansRoles. The id field corresponds to the
+     * s the id of this AccountsClansRoles. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_clans_roles.id.
      *
      * @param id to set of this AccountsClansRoles
      *
      * @return this AccountsClansRoles instance
      */
-    AccountsClansRoles setId(int id);
+    AccountsClansRoles id(Integer id);
 
     /**
-     * Sets the accountsId of this AccountsClansRoles. The accountsId field
+     * s the accountsId of this AccountsClansRoles. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_clans_roles.accounts_id.
      *
@@ -109,10 +109,10 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return this AccountsClansRoles instance
      */
-    AccountsClansRoles setAccountsId(int accountsId);
+    AccountsClansRoles accountsId(int accountsId);
 
     /**
-     * Sets the clansRolesId of this AccountsClansRoles. The clansRolesId field
+     * s the clansRolesId of this AccountsClansRoles. The clansRolesId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_clans_roles.clans_roles_id.
      *
@@ -120,7 +120,7 @@ public interface GeneratedAccountsClansRoles {
      *
      * @return this AccountsClansRoles instance
      */
-    AccountsClansRoles setClansRolesId(int clansRolesId);
+    AccountsClansRoles clansRolesId(int clansRolesId);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
