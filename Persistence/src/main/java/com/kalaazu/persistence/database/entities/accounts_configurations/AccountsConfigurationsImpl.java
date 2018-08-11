@@ -77,7 +77,7 @@ public final class AccountsConfigurationsImpl
         this.items = Database.getInstance()
                              .all(AccountsConfigurationsAccountsItems.class)
                              .filter(AccountsConfigurationsAccountsItems.ACCOUNTS_CONFIGURATIONS_ID.equal(
-                                     super.getId()))
+                                     super.id()))
                              .collect(Collectors.toList());
 
         return items;

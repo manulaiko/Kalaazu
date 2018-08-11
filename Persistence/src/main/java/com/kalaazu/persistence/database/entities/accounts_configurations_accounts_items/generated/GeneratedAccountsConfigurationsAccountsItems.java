@@ -30,12 +30,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
     /**
      * This Field corresponds to the {@link AccountsConfigurationsAccountsItems}
      * field that can be obtained using the {@link
-     * AccountsConfigurationsAccountsItems#getId()} method.
+     * AccountsConfigurationsAccountsItems#id()} method.
      */
     IntField<AccountsConfigurationsAccountsItems, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsConfigurationsAccountsItems::getId,
-            AccountsConfigurationsAccountsItems::setId,
+            AccountsConfigurationsAccountsItems::id,
+            AccountsConfigurationsAccountsItems::id,
             TypeMapper.primitive(),
             true
     );
@@ -43,13 +43,13 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
     /**
      * This Field corresponds to the {@link AccountsConfigurationsAccountsItems}
      * field that can be obtained using the {@link
-     * AccountsConfigurationsAccountsItems#getAccountsConfigurationsId()}
+     * AccountsConfigurationsAccountsItems#accountsConfigurationsId()}
      * method.
      */
     IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsConfigurations> ACCOUNTS_CONFIGURATIONS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_CONFIGURATIONS_ID,
-            AccountsConfigurationsAccountsItems::getAccountsConfigurationsId,
-            AccountsConfigurationsAccountsItems::setAccountsConfigurationsId,
+            AccountsConfigurationsAccountsItems::accountsConfigurationsId,
+            AccountsConfigurationsAccountsItems::accountsConfigurationsId,
             AccountsConfigurations.ID,
             TypeMapper.primitive(),
             false
@@ -58,12 +58,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
     /**
      * This Field corresponds to the {@link AccountsConfigurationsAccountsItems}
      * field that can be obtained using the {@link
-     * AccountsConfigurationsAccountsItems#getAccountsItemsId()} method.
+     * AccountsConfigurationsAccountsItems#accountsItemsId()} method.
      */
     IntForeignKeyField<AccountsConfigurationsAccountsItems, Integer, AccountsItems> ACCOUNTS_ITEMS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ITEMS_ID,
-            AccountsConfigurationsAccountsItems::getAccountsItemsId,
-            AccountsConfigurationsAccountsItems::setAccountsItemsId,
+            AccountsConfigurationsAccountsItems::accountsItemsId,
+            AccountsConfigurationsAccountsItems::accountsItemsId,
             AccountsItems.ID,
             TypeMapper.primitive(),
             false
@@ -72,12 +72,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
     /**
      * This Field corresponds to the {@link AccountsConfigurationsAccountsItems}
      * field that can be obtained using the {@link
-     * AccountsConfigurationsAccountsItems#getAccountsDronesId()} method.
+     * AccountsConfigurationsAccountsItems#accountsDronesId()} method.
      */
     ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsDrones> ACCOUNTS_DRONES_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_DRONES_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsDronesId()),
-            AccountsConfigurationsAccountsItems::setAccountsDronesId,
+            o -> OptionalUtil.unwrap(o.accountsDronesId()),
+            AccountsConfigurationsAccountsItems::accountsDronesId,
             AccountsDrones.ID,
             TypeMapper.identity(),
             false
@@ -86,12 +86,12 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
     /**
      * This Field corresponds to the {@link AccountsConfigurationsAccountsItems}
      * field that can be obtained using the {@link
-     * AccountsConfigurationsAccountsItems#getAccountsPetsId()} method.
+     * AccountsConfigurationsAccountsItems#accountsPetsId()} method.
      */
     ComparableForeignKeyField<AccountsConfigurationsAccountsItems, Integer, Integer, AccountsPets> ACCOUNTS_PETS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_PETS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsPetsId()),
-            AccountsConfigurationsAccountsItems::setAccountsPetsId,
+            o -> OptionalUtil.unwrap(o.accountsPetsId()),
+            AccountsConfigurationsAccountsItems::accountsPetsId,
             AccountsPets.ID,
             TypeMapper.identity(),
             false
@@ -104,7 +104,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return the id of this AccountsConfigurationsAccountsItems
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsConfigurationsId of this
@@ -115,7 +115,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * @return the accountsConfigurationsId of this
      * AccountsConfigurationsAccountsItems
      */
-    int getAccountsConfigurationsId();
+    int accountsConfigurationsId();
 
     /**
      * Returns the accountsItemsId of this AccountsConfigurationsAccountsItems.
@@ -124,7 +124,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return the accountsItemsId of this AccountsConfigurationsAccountsItems
      */
-    int getAccountsItemsId();
+    int accountsItemsId();
 
     /**
      * Returns the accountsDronesId of this AccountsConfigurationsAccountsItems.
@@ -133,7 +133,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return the accountsDronesId of this AccountsConfigurationsAccountsItems
      */
-    OptionalInt getAccountsDronesId();
+    OptionalInt accountsDronesId();
 
     /**
      * Returns the accountsPetsId of this AccountsConfigurationsAccountsItems.
@@ -142,10 +142,10 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return the accountsPetsId of this AccountsConfigurationsAccountsItems
      */
-    OptionalInt getAccountsPetsId();
+    OptionalInt accountsPetsId();
 
     /**
-     * Sets the id of this AccountsConfigurationsAccountsItems. The id field
+     * s the id of this AccountsConfigurationsAccountsItems. The id field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations_accounts_items.id.
      *
@@ -153,10 +153,10 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setId(int id);
+    AccountsConfigurationsAccountsItems id(Integer id);
 
     /**
-     * Sets the accountsConfigurationsId of this
+     * s the accountsConfigurationsId of this
      * AccountsConfigurationsAccountsItems. The accountsConfigurationsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations_accounts_items.accounts_configurations_id.
@@ -167,10 +167,10 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      * @return this AccountsConfigurationsAccountsItems
      * instance
      */
-    AccountsConfigurationsAccountsItems setAccountsConfigurationsId(int accountsConfigurationsId);
+    AccountsConfigurationsAccountsItems accountsConfigurationsId(int accountsConfigurationsId);
 
     /**
-     * Sets the accountsItemsId of this AccountsConfigurationsAccountsItems. The
+     * s the accountsItemsId of this AccountsConfigurationsAccountsItems. The
      * accountsItemsId field corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations_accounts_items.accounts_items_id.
      *
@@ -178,10 +178,10 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsItemsId(int accountsItemsId);
+    AccountsConfigurationsAccountsItems accountsItemsId(int accountsItemsId);
 
     /**
-     * Sets the accountsDronesId of this AccountsConfigurationsAccountsItems.
+     * s the accountsDronesId of this AccountsConfigurationsAccountsItems.
      * The accountsDronesId field corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations_accounts_items.accounts_drones_id.
      *
@@ -190,10 +190,10 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsDronesId(Integer accountsDronesId);
+    AccountsConfigurationsAccountsItems accountsDronesId(Integer accountsDronesId);
 
     /**
-     * Sets the accountsPetsId of this AccountsConfigurationsAccountsItems. The
+     * s the accountsPetsId of this AccountsConfigurationsAccountsItems. The
      * accountsPetsId field corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations_accounts_items.accounts_pets_id.
      *
@@ -201,7 +201,7 @@ public interface GeneratedAccountsConfigurationsAccountsItems {
      *
      * @return this AccountsConfigurationsAccountsItems instance
      */
-    AccountsConfigurationsAccountsItems setAccountsPetsId(Integer accountsPetsId);
+    AccountsConfigurationsAccountsItems accountsPetsId(Integer accountsPetsId);
 
     /**
      * Queries the specified manager for the referenced AccountsConfigurations.

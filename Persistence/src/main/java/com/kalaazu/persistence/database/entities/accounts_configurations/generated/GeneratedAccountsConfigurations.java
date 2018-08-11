@@ -25,12 +25,12 @@ public interface GeneratedAccountsConfigurations {
 
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
-     * can be obtained using the {@link AccountsConfigurations#getId()} method.
+     * can be obtained using the {@link AccountsConfigurations#id()} method.
      */
     IntField<AccountsConfigurations, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsConfigurations::getId,
-            AccountsConfigurations::setId,
+            AccountsConfigurations::id,
+            AccountsConfigurations::id,
             TypeMapper.primitive(),
             true
     );
@@ -38,12 +38,12 @@ public interface GeneratedAccountsConfigurations {
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
      * can be obtained using the {@link
-     * AccountsConfigurations#getAccountsHangarsId()} method.
+     * AccountsConfigurations#accountsHangarsId()} method.
      */
     IntForeignKeyField<AccountsConfigurations, Integer, AccountsHangars> ACCOUNTS_HANGARS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_HANGARS_ID,
-            AccountsConfigurations::getAccountsHangarsId,
-            AccountsConfigurations::setAccountsHangarsId,
+            AccountsConfigurations::accountsHangarsId,
+            AccountsConfigurations::accountsHangarsId,
             AccountsHangars.ID,
             TypeMapper.primitive(),
             false
@@ -52,64 +52,64 @@ public interface GeneratedAccountsConfigurations {
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
      * can be obtained using the {@link
-     * AccountsConfigurations#getConfigurationId()} method.
+     * AccountsConfigurations#configurationId()} method.
      */
     ByteField<AccountsConfigurations, Byte> CONFIGURATION_ID = ByteField.create(
             Identifier.CONFIGURATION_ID,
-            AccountsConfigurations::getConfigurationId,
-            AccountsConfigurations::setConfigurationId,
+            AccountsConfigurations::configurationId,
+            AccountsConfigurations::configurationId,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
-     * can be obtained using the {@link AccountsConfigurations#getName()}
+     * can be obtained using the {@link AccountsConfigurations#name()}
      * method.
      */
     StringField<AccountsConfigurations, String> NAME = StringField.create(
             Identifier.NAME,
-            AccountsConfigurations::getName,
-            AccountsConfigurations::setName,
+            AccountsConfigurations::name,
+            AccountsConfigurations::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
-     * can be obtained using the {@link AccountsConfigurations#getShield()}
+     * can be obtained using the {@link AccountsConfigurations#shield()}
      * method.
      */
     IntField<AccountsConfigurations, Integer> SHIELD = IntField.create(
             Identifier.SHIELD,
-            AccountsConfigurations::getShield,
-            AccountsConfigurations::setShield,
+            AccountsConfigurations::shield,
+            AccountsConfigurations::shield,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
-     * can be obtained using the {@link AccountsConfigurations#getSpeed()}
+     * can be obtained using the {@link AccountsConfigurations#speed()}
      * method.
      */
     ShortField<AccountsConfigurations, Short> SPEED = ShortField.create(
             Identifier.SPEED,
-            AccountsConfigurations::getSpeed,
-            AccountsConfigurations::setSpeed,
+            AccountsConfigurations::speed,
+            AccountsConfigurations::speed,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsConfigurations} field that
-     * can be obtained using the {@link AccountsConfigurations#getDamage()}
+     * can be obtained using the {@link AccountsConfigurations#damage()}
      * method.
      */
     IntField<AccountsConfigurations, Integer> DAMAGE = IntField.create(
             Identifier.DAMAGE,
-            AccountsConfigurations::getDamage,
-            AccountsConfigurations::setDamage,
+            AccountsConfigurations::damage,
+            AccountsConfigurations::damage,
             TypeMapper.primitive(),
             false
     );
@@ -120,7 +120,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the id of this AccountsConfigurations
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsHangarsId of this AccountsConfigurations. The
@@ -129,7 +129,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the accountsHangarsId of this AccountsConfigurations
      */
-    int getAccountsHangarsId();
+    int accountsHangarsId();
 
     /**
      * Returns the configurationId of this AccountsConfigurations. The
@@ -138,7 +138,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the configurationId of this AccountsConfigurations
      */
-    byte getConfigurationId();
+    byte configurationId();
 
     /**
      * Returns the name of this AccountsConfigurations. The name field
@@ -147,7 +147,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the name of this AccountsConfigurations
      */
-    String getName();
+    String name();
 
     /**
      * Returns the shield of this AccountsConfigurations. The shield field
@@ -156,7 +156,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the shield of this AccountsConfigurations
      */
-    int getShield();
+    int shield();
 
     /**
      * Returns the speed of this AccountsConfigurations. The speed field
@@ -165,7 +165,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the speed of this AccountsConfigurations
      */
-    short getSpeed();
+    short speed();
 
     /**
      * Returns the damage of this AccountsConfigurations. The damage field
@@ -174,20 +174,20 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return the damage of this AccountsConfigurations
      */
-    int getDamage();
+    int damage();
 
     /**
-     * Sets the id of this AccountsConfigurations. The id field corresponds to
+     * s the id of this AccountsConfigurations. The id field corresponds to
      * the database column kalaazu.kalaazu.accounts_configurations.id.
      *
      * @param id to set of this AccountsConfigurations
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setId(int id);
+    AccountsConfigurations id(Integer id);
 
     /**
-     * Sets the accountsHangarsId of this AccountsConfigurations. The
+     * s the accountsHangarsId of this AccountsConfigurations. The
      * accountsHangarsId field corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations.accounts_hangars_id.
      *
@@ -195,10 +195,10 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setAccountsHangarsId(int accountsHangarsId);
+    AccountsConfigurations accountsHangarsId(int accountsHangarsId);
 
     /**
-     * Sets the configurationId of this AccountsConfigurations. The
+     * s the configurationId of this AccountsConfigurations. The
      * configurationId field corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations.configuration_id.
      *
@@ -206,20 +206,20 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setConfigurationId(byte configurationId);
+    AccountsConfigurations configurationId(byte configurationId);
 
     /**
-     * Sets the name of this AccountsConfigurations. The name field corresponds
+     * s the name of this AccountsConfigurations. The name field corresponds
      * to the database column kalaazu.kalaazu.accounts_configurations.name.
      *
      * @param name to set of this AccountsConfigurations
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setName(String name);
+    AccountsConfigurations name(String name);
 
     /**
-     * Sets the shield of this AccountsConfigurations. The shield field
+     * s the shield of this AccountsConfigurations. The shield field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations.shield.
      *
@@ -227,10 +227,10 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setShield(int shield);
+    AccountsConfigurations shield(int shield);
 
     /**
-     * Sets the speed of this AccountsConfigurations. The speed field
+     * s the speed of this AccountsConfigurations. The speed field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations.speed.
      *
@@ -238,10 +238,10 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setSpeed(short speed);
+    AccountsConfigurations speed(short speed);
 
     /**
-     * Sets the damage of this AccountsConfigurations. The damage field
+     * s the damage of this AccountsConfigurations. The damage field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_configurations.damage.
      *
@@ -249,7 +249,7 @@ public interface GeneratedAccountsConfigurations {
      *
      * @return this AccountsConfigurations instance
      */
-    AccountsConfigurations setDamage(int damage);
+    AccountsConfigurations damage(int damage);
 
     /**
      * Queries the specified manager for the referenced AccountsHangars. If no
