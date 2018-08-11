@@ -5,6 +5,7 @@ import com.kalaazu.persistence.database.entities.AccountsDrones;
 import com.kalaazu.persistence.database.entities.Levels;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -20,9 +21,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsDronesImpl implements AccountsDrones {
 
-    private int id;
+    private Integer id;
 
     private int accountsId;
 
@@ -37,64 +39,9 @@ public abstract class GeneratedAccountsDronesImpl implements AccountsDrones {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public short getExperience() {
-        return experience;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public AccountsDrones setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsDrones setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsDrones setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public AccountsDrones setExperience(short experience) {
-        this.experience = experience;
-        return this;
-    }
-
-    @Override
-    public AccountsDrones setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -102,57 +49,8 @@ public abstract class GeneratedAccountsDronesImpl implements AccountsDrones {
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("experience = " + Objects.toString(getExperience()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "AccountsDronesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsDrones)) {
-            return false;
-        }
-        final AccountsDrones thatAccountsDrones = (AccountsDrones) that;
-        if (this.getId() != thatAccountsDrones.getId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatAccountsDrones.getAccountsId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatAccountsDrones.getLevelsId()) {
-            return false;
-        }
-        if (this.getExperience() != thatAccountsDrones.getExperience()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatAccountsDrones.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Short.hashCode(getExperience());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

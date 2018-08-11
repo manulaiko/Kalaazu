@@ -49,7 +49,7 @@ public final class AccountsDestroysImpl
         }
 
         this.ship = Database.getInstance()
-                            .find(super.getShipsId(), Ships.class)
+                            .find(super.shipsId(), Ships.class)
                             .orElse(null);
 
         return this.ship;

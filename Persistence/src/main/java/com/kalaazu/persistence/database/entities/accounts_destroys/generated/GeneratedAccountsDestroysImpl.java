@@ -4,6 +4,7 @@ import com.kalaazu.persistence.database.entities.Accounts;
 import com.kalaazu.persistence.database.entities.AccountsDestroys;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -18,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsDestroysImpl implements AccountsDestroys {
 
-    private int id;
+    private Integer id;
 
     private int accountsId;
 
@@ -35,114 +37,10 @@ public abstract class GeneratedAccountsDestroysImpl implements AccountsDestroys 
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public byte getShipsId() {
-        return shipsId;
-    }
-
-    @Override
-    public short getPoints() {
-        return points;
-    }
-
-    @Override
-    public short getAmount() {
-        return amount;
-    }
-
-    @Override
-    public AccountsDestroys setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsDestroys setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsDestroys setShipsId(byte shipsId) {
-        this.shipsId = shipsId;
-        return this;
-    }
-
-    @Override
-    public AccountsDestroys setPoints(short points) {
-        this.points = points;
-        return this;
-    }
-
-    @Override
-    public AccountsDestroys setAmount(short amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("shipsId = " + Objects.toString(getShipsId()));
-        sj.add("points = " + Objects.toString(getPoints()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        return "AccountsDestroysImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsDestroys)) {
-            return false;
-        }
-        final AccountsDestroys thatAccountsDestroys = (AccountsDestroys) that;
-        if (this.getId() != thatAccountsDestroys.getId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatAccountsDestroys.getAccountsId()) {
-            return false;
-        }
-        if (this.getShipsId() != thatAccountsDestroys.getShipsId()) {
-            return false;
-        }
-        if (this.getPoints() != thatAccountsDestroys.getPoints()) {
-            return false;
-        }
-        if (this.getAmount() != thatAccountsDestroys.getAmount()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Byte.hashCode(getShipsId());
-        hash = 31 * hash + Short.hashCode(getPoints());
-        hash = 31 * hash + Short.hashCode(getAmount());
-        return hash;
     }
 }

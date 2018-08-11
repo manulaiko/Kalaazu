@@ -27,24 +27,24 @@ public interface GeneratedAccountsDestroys {
 
     /**
      * This Field corresponds to the {@link AccountsDestroys} field that can be
-     * obtained using the {@link AccountsDestroys#getId()} method.
+     * obtained using the {@link AccountsDestroys#id()} method.
      */
     IntField<AccountsDestroys, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsDestroys::getId,
-            AccountsDestroys::setId,
+            AccountsDestroys::id,
+            AccountsDestroys::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsDestroys} field that can be
-     * obtained using the {@link AccountsDestroys#getAccountsId()} method.
+     * obtained using the {@link AccountsDestroys#accountsId()} method.
      */
     IntForeignKeyField<AccountsDestroys, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsDestroys::getAccountsId,
-            AccountsDestroys::setAccountsId,
+            AccountsDestroys::accountsId,
+            AccountsDestroys::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -52,36 +52,36 @@ public interface GeneratedAccountsDestroys {
 
     /**
      * This Field corresponds to the {@link AccountsDestroys} field that can be
-     * obtained using the {@link AccountsDestroys#getShipsId()} method.
+     * obtained using the {@link AccountsDestroys#shipsId()} method.
      */
     ByteField<AccountsDestroys, Byte> SHIPS_ID = ByteField.create(
             Identifier.SHIPS_ID,
-            AccountsDestroys::getShipsId,
-            AccountsDestroys::setShipsId,
+            AccountsDestroys::shipsId,
+            AccountsDestroys::shipsId,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsDestroys} field that can be
-     * obtained using the {@link AccountsDestroys#getPoints()} method.
+     * obtained using the {@link AccountsDestroys#points()} method.
      */
     ShortField<AccountsDestroys, Short> POINTS = ShortField.create(
             Identifier.POINTS,
-            AccountsDestroys::getPoints,
-            AccountsDestroys::setPoints,
+            AccountsDestroys::points,
+            AccountsDestroys::points,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsDestroys} field that can be
-     * obtained using the {@link AccountsDestroys#getAmount()} method.
+     * obtained using the {@link AccountsDestroys#amount()} method.
      */
     ShortField<AccountsDestroys, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
-            AccountsDestroys::getAmount,
-            AccountsDestroys::setAmount,
+            AccountsDestroys::amount,
+            AccountsDestroys::amount,
             TypeMapper.primitive(),
             false
     );
@@ -92,7 +92,7 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the id of this AccountsDestroys
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsDestroys. The accountsId field
@@ -101,7 +101,7 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the accountsId of this AccountsDestroys
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the shipsId of this AccountsDestroys. The shipsId field
@@ -110,7 +110,7 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the shipsId of this AccountsDestroys
      */
-    byte getShipsId();
+    byte shipsId();
 
     /**
      * Returns the points of this AccountsDestroys. The points field corresponds
@@ -118,7 +118,7 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the points of this AccountsDestroys
      */
-    short getPoints();
+    short points();
 
     /**
      * Returns the amount of this AccountsDestroys. The amount field corresponds
@@ -126,20 +126,20 @@ public interface GeneratedAccountsDestroys {
      *
      * @return the amount of this AccountsDestroys
      */
-    short getAmount();
+    short amount();
 
     /**
-     * Sets the id of this AccountsDestroys. The id field corresponds to the
+     * s the id of this AccountsDestroys. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_destroys.id.
      *
      * @param id to set of this AccountsDestroys
      *
      * @return this AccountsDestroys instance
      */
-    AccountsDestroys setId(int id);
+    AccountsDestroys id(Integer id);
 
     /**
-     * Sets the accountsId of this AccountsDestroys. The accountsId field
+     * s the accountsId of this AccountsDestroys. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_destroys.accounts_id.
      *
@@ -147,37 +147,37 @@ public interface GeneratedAccountsDestroys {
      *
      * @return this AccountsDestroys instance
      */
-    AccountsDestroys setAccountsId(int accountsId);
+    AccountsDestroys accountsId(int accountsId);
 
     /**
-     * Sets the shipsId of this AccountsDestroys. The shipsId field corresponds
+     * s the shipsId of this AccountsDestroys. The shipsId field corresponds
      * to the database column kalaazu.kalaazu.accounts_destroys.ships_id.
      *
      * @param shipsId to set of this AccountsDestroys
      *
      * @return this AccountsDestroys instance
      */
-    AccountsDestroys setShipsId(byte shipsId);
+    AccountsDestroys shipsId(byte shipsId);
 
     /**
-     * Sets the points of this AccountsDestroys. The points field corresponds to
+     * s the points of this AccountsDestroys. The points field corresponds to
      * the database column kalaazu.kalaazu.accounts_destroys.points.
      *
      * @param points to set of this AccountsDestroys
      *
      * @return this AccountsDestroys instance
      */
-    AccountsDestroys setPoints(short points);
+    AccountsDestroys points(short points);
 
     /**
-     * Sets the amount of this AccountsDestroys. The amount field corresponds to
+     * s the amount of this AccountsDestroys. The amount field corresponds to
      * the database column kalaazu.kalaazu.accounts_destroys.amount.
      *
      * @param amount to set of this AccountsDestroys
      *
      * @return this AccountsDestroys instance
      */
-    AccountsDestroys setAmount(short amount);
+    AccountsDestroys amount(short amount);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

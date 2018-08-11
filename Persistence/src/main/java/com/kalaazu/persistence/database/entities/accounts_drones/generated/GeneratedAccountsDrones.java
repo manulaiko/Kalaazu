@@ -8,6 +8,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -27,24 +28,24 @@ public interface GeneratedAccountsDrones {
 
     /**
      * This Field corresponds to the {@link AccountsDrones} field that can be
-     * obtained using the {@link AccountsDrones#getId()} method.
+     * obtained using the {@link AccountsDrones#id()} method.
      */
     IntField<AccountsDrones, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsDrones::getId,
-            AccountsDrones::setId,
+            AccountsDrones::id,
+            AccountsDrones::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsDrones} field that can be
-     * obtained using the {@link AccountsDrones#getAccountsId()} method.
+     * obtained using the {@link AccountsDrones#accountsId()} method.
      */
     IntForeignKeyField<AccountsDrones, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsDrones::getAccountsId,
-            AccountsDrones::setAccountsId,
+            AccountsDrones::accountsId,
+            AccountsDrones::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -52,12 +53,12 @@ public interface GeneratedAccountsDrones {
 
     /**
      * This Field corresponds to the {@link AccountsDrones} field that can be
-     * obtained using the {@link AccountsDrones#getLevelsId()} method.
+     * obtained using the {@link AccountsDrones#levelsId()} method.
      */
     ByteForeignKeyField<AccountsDrones, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            AccountsDrones::getLevelsId,
-            AccountsDrones::setLevelsId,
+            AccountsDrones::levelsId,
+            AccountsDrones::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -65,24 +66,24 @@ public interface GeneratedAccountsDrones {
 
     /**
      * This Field corresponds to the {@link AccountsDrones} field that can be
-     * obtained using the {@link AccountsDrones#getExperience()} method.
+     * obtained using the {@link AccountsDrones#experience()} method.
      */
     ShortField<AccountsDrones, Short> EXPERIENCE = ShortField.create(
             Identifier.EXPERIENCE,
-            AccountsDrones::getExperience,
-            AccountsDrones::setExperience,
+            AccountsDrones::experience,
+            AccountsDrones::experience,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsDrones} field that can be
-     * obtained using the {@link AccountsDrones#getDate()} method.
+     * obtained using the {@link AccountsDrones#date()} method.
      */
     ComparableField<AccountsDrones, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsDrones::getDate,
-            AccountsDrones::setDate,
+            AccountsDrones::date,
+            (ReferenceSetter<AccountsDrones, Timestamp>) AccountsDrones::date,
             TypeMapper.identity(),
             false
     );
@@ -93,7 +94,7 @@ public interface GeneratedAccountsDrones {
      *
      * @return the id of this AccountsDrones
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsDrones. The accountsId field
@@ -102,7 +103,7 @@ public interface GeneratedAccountsDrones {
      *
      * @return the accountsId of this AccountsDrones
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the levelsId of this AccountsDrones. The levelsId field
@@ -111,7 +112,7 @@ public interface GeneratedAccountsDrones {
      *
      * @return the levelsId of this AccountsDrones
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the experience of this AccountsDrones. The experience field
@@ -120,7 +121,7 @@ public interface GeneratedAccountsDrones {
      *
      * @return the experience of this AccountsDrones
      */
-    short getExperience();
+    short experience();
 
     /**
      * Returns the date of this AccountsDrones. The date field corresponds to
@@ -128,20 +129,20 @@ public interface GeneratedAccountsDrones {
      *
      * @return the date of this AccountsDrones
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
-     * Sets the id of this AccountsDrones. The id field corresponds to the
+     * s the id of this AccountsDrones. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_drones.id.
      *
      * @param id to set of this AccountsDrones
      *
      * @return this AccountsDrones instance
      */
-    AccountsDrones setId(int id);
+    AccountsDrones id(Integer id);
 
     /**
-     * Sets the accountsId of this AccountsDrones. The accountsId field
+     * s the accountsId of this AccountsDrones. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_drones.accounts_id.
      *
@@ -149,20 +150,20 @@ public interface GeneratedAccountsDrones {
      *
      * @return this AccountsDrones instance
      */
-    AccountsDrones setAccountsId(int accountsId);
+    AccountsDrones accountsId(int accountsId);
 
     /**
-     * Sets the levelsId of this AccountsDrones. The levelsId field corresponds
+     * s the levelsId of this AccountsDrones. The levelsId field corresponds
      * to the database column kalaazu.kalaazu.accounts_drones.levels_id.
      *
      * @param levelsId to set of this AccountsDrones
      *
      * @return this AccountsDrones instance
      */
-    AccountsDrones setLevelsId(byte levelsId);
+    AccountsDrones levelsId(byte levelsId);
 
     /**
-     * Sets the experience of this AccountsDrones. The experience field
+     * s the experience of this AccountsDrones. The experience field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_drones.experience.
      *
@@ -170,17 +171,17 @@ public interface GeneratedAccountsDrones {
      *
      * @return this AccountsDrones instance
      */
-    AccountsDrones setExperience(short experience);
+    AccountsDrones experience(short experience);
 
     /**
-     * Sets the date of this AccountsDrones. The date field corresponds to the
+     * s the date of this AccountsDrones. The date field corresponds to the
      * database column kalaazu.kalaazu.accounts_drones.date.
      *
      * @param date to set of this AccountsDrones
      *
      * @return this AccountsDrones instance
      */
-    AccountsDrones setDate(Timestamp date);
+    AccountsDrones date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
