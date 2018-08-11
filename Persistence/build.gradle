@@ -1,11 +1,3 @@
-description = ''
-
-repositories {
-    flatDir {
-        dirs 'lib'
-    }
-}
-
 dependencies {
     compile project(':Utils')
     compile group: 'com.speedment', name: 'runtime', version: '3.0.22'

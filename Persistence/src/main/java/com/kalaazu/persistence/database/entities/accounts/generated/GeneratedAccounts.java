@@ -6,6 +6,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -27,24 +28,24 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getId()} method.
+     * using the {@link Accounts#id()} method.
      */
     IntField<Accounts, Integer> ID = IntField.create(
             Identifier.ID,
-            Accounts::getId,
-            Accounts::setId,
+            Accounts::id,
+            Accounts::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getUsersId()} method.
+     * using the {@link Accounts#usersId()} method.
      */
     IntForeignKeyField<Accounts, Integer, Users> USERS_ID = IntForeignKeyField.create(
             Identifier.USERS_ID,
-            Accounts::getUsersId,
-            Accounts::setUsersId,
+            Accounts::usersId,
+            Accounts::usersId,
             Users.ID,
             TypeMapper.primitive(),
             false
@@ -52,24 +53,24 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getSessionId()} method.
+     * using the {@link Accounts#sessionId()} method.
      */
     StringField<Accounts, String> SESSION_ID = StringField.create(
             Identifier.SESSION_ID,
-            Accounts::getSessionId,
-            Accounts::setSessionId,
+            Accounts::sessionId,
+            Accounts::sessionId,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getLevelsId()} method.
+     * using the {@link Accounts#levelsId()} method.
      */
     ByteForeignKeyField<Accounts, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            Accounts::getLevelsId,
-            Accounts::setLevelsId,
+            Accounts::levelsId,
+            Accounts::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -77,12 +78,12 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getFactionsId()} method.
+     * using the {@link Accounts#factionsId()} method.
      */
     ComparableForeignKeyField<Accounts, Byte, Byte, Factions> FACTIONS_ID = ComparableForeignKeyField.create(
             Identifier.FACTIONS_ID,
-            o -> OptionalUtil.unwrap(o.getFactionsId()),
-            Accounts::setFactionsId,
+            o -> OptionalUtil.unwrap(o.factionsId()),
+            Accounts::factionsId,
             Factions.ID,
             TypeMapper.identity(),
             false
@@ -90,12 +91,12 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getAccountsHangarsId()} method.
+     * using the {@link Accounts#accountsHangarsId()} method.
      */
     ComparableForeignKeyField<Accounts, Integer, Integer, AccountsHangars> ACCOUNTS_HANGARS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_HANGARS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsHangarsId()),
-            Accounts::setAccountsHangarsId,
+            o -> OptionalUtil.unwrap(o.accountsHangarsId()),
+            Accounts::accountsHangarsId,
             AccountsHangars.ID,
             TypeMapper.identity(),
             false
@@ -103,12 +104,12 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getClansId()} method.
+     * using the {@link Accounts#clansId()} method.
      */
     ComparableForeignKeyField<Accounts, Integer, Integer, Clans> CLANS_ID = ComparableForeignKeyField.create(
             Identifier.CLANS_ID,
-            o -> OptionalUtil.unwrap(o.getClansId()),
-            Accounts::setClansId,
+            o -> OptionalUtil.unwrap(o.clansId()),
+            Accounts::clansId,
             Clans.ID,
             TypeMapper.identity(),
             false
@@ -116,12 +117,12 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getRanksId()} method.
+     * using the {@link Accounts#ranksId()} method.
      */
     ByteForeignKeyField<Accounts, Byte, Ranks> RANKS_ID = ByteForeignKeyField.create(
             Identifier.RANKS_ID,
-            Accounts::getRanksId,
-            Accounts::setRanksId,
+            Accounts::ranksId,
+            Accounts::ranksId,
             Ranks.ID,
             TypeMapper.primitive(),
             false
@@ -129,84 +130,84 @@ public interface GeneratedAccounts {
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getName()} method.
+     * using the {@link Accounts#name()} method.
      */
     StringField<Accounts, String> NAME = StringField.create(
             Identifier.NAME,
-            Accounts::getName,
-            Accounts::setName,
+            Accounts::name,
+            Accounts::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getBanDate()} method.
+     * using the {@link Accounts#banDate()} method.
      */
     ComparableField<Accounts, Timestamp, Timestamp> BAN_DATE = ComparableField.create(
             Identifier.BAN_DATE,
-            o -> OptionalUtil.unwrap(o.getBanDate()),
-            Accounts::setBanDate,
+            o -> OptionalUtil.unwrap(o.banDate()),
+            (ReferenceSetter<Accounts, Timestamp>) Accounts::banDate,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getPremiumDate()} method.
+     * using the {@link Accounts#premiumDate()} method.
      */
     ComparableField<Accounts, Timestamp, Timestamp> PREMIUM_DATE = ComparableField.create(
             Identifier.PREMIUM_DATE,
-            o -> OptionalUtil.unwrap(o.getPremiumDate()),
-            Accounts::setPremiumDate,
+            o -> OptionalUtil.unwrap(o.premiumDate()),
+            (ReferenceSetter<Accounts, Timestamp>) Accounts::premiumDate,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getDate()} method.
+     * using the {@link Accounts#date()} method.
      */
     ComparableField<Accounts, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            Accounts::getDate,
-            Accounts::setDate,
+            Accounts::date,
+            (ReferenceSetter<Accounts, Timestamp>) Accounts::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getLastLogin()} method.
+     * using the {@link Accounts#lastLogin()} method.
      */
     ComparableField<Accounts, Timestamp, Timestamp> LAST_LOGIN = ComparableField.create(
             Identifier.LAST_LOGIN,
-            o -> OptionalUtil.unwrap(o.getLastLogin()),
-            Accounts::setLastLogin,
+            o -> OptionalUtil.unwrap(o.lastLogin()),
+            (ReferenceSetter<Accounts, Timestamp>) Accounts::lastLogin,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getSkillPointsTotal()} method.
+     * using the {@link Accounts#skillPointsTotal()} method.
      */
     ShortField<Accounts, Short> SKILL_POINTS_TOTAL = ShortField.create(
             Identifier.SKILL_POINTS_TOTAL,
-            Accounts::getSkillPointsTotal,
-            Accounts::setSkillPointsTotal,
+            Accounts::skillPointsTotal,
+            Accounts::skillPointsTotal,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Accounts} field that can be obtained
-     * using the {@link Accounts#getSkillPointsFree()} method.
+     * using the {@link Accounts#skillPointsFree()} method.
      */
     ShortField<Accounts, Short> SKILL_POINTS_FREE = ShortField.create(
             Identifier.SKILL_POINTS_FREE,
-            Accounts::getSkillPointsFree,
-            Accounts::setSkillPointsFree,
+            Accounts::skillPointsFree,
+            Accounts::skillPointsFree,
             TypeMapper.primitive(),
             false
     );
@@ -217,7 +218,7 @@ public interface GeneratedAccounts {
      *
      * @return the id of this Accounts
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the usersId of this Accounts. The usersId field corresponds to
@@ -225,7 +226,7 @@ public interface GeneratedAccounts {
      *
      * @return the usersId of this Accounts
      */
-    int getUsersId();
+    int usersId();
 
     /**
      * Returns the sessionId of this Accounts. The sessionId field corresponds
@@ -233,7 +234,7 @@ public interface GeneratedAccounts {
      *
      * @return the sessionId of this Accounts
      */
-    String getSessionId();
+    String sessionId();
 
     /**
      * Returns the levelsId of this Accounts. The levelsId field corresponds to
@@ -241,7 +242,7 @@ public interface GeneratedAccounts {
      *
      * @return the levelsId of this Accounts
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the factionsId of this Accounts. The factionsId field corresponds
@@ -249,7 +250,7 @@ public interface GeneratedAccounts {
      *
      * @return the factionsId of this Accounts
      */
-    Optional<Byte> getFactionsId();
+    Optional<Byte> factionsId();
 
     /**
      * Returns the accountsHangarsId of this Accounts. The accountsHangarsId
@@ -258,7 +259,7 @@ public interface GeneratedAccounts {
      *
      * @return the accountsHangarsId of this Accounts
      */
-    OptionalInt getAccountsHangarsId();
+    OptionalInt accountsHangarsId();
 
     /**
      * Returns the clansId of this Accounts. The clansId field corresponds to
@@ -266,7 +267,7 @@ public interface GeneratedAccounts {
      *
      * @return the clansId of this Accounts
      */
-    OptionalInt getClansId();
+    OptionalInt clansId();
 
     /**
      * Returns the ranksId of this Accounts. The ranksId field corresponds to
@@ -274,7 +275,7 @@ public interface GeneratedAccounts {
      *
      * @return the ranksId of this Accounts
      */
-    byte getRanksId();
+    byte ranksId();
 
     /**
      * Returns the name of this Accounts. The name field corresponds to the
@@ -282,7 +283,7 @@ public interface GeneratedAccounts {
      *
      * @return the name of this Accounts
      */
-    String getName();
+    String name();
 
     /**
      * Returns the banDate of this Accounts. The banDate field corresponds to
@@ -290,7 +291,7 @@ public interface GeneratedAccounts {
      *
      * @return the banDate of this Accounts
      */
-    Optional<Timestamp> getBanDate();
+    Optional<Timestamp> banDate();
 
     /**
      * Returns the premiumDate of this Accounts. The premiumDate field
@@ -298,7 +299,7 @@ public interface GeneratedAccounts {
      *
      * @return the premiumDate of this Accounts
      */
-    Optional<Timestamp> getPremiumDate();
+    Optional<Timestamp> premiumDate();
 
     /**
      * Returns the date of this Accounts. The date field corresponds to the
@@ -306,7 +307,7 @@ public interface GeneratedAccounts {
      *
      * @return the date of this Accounts
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the lastLogin of this Accounts. The lastLogin field corresponds
@@ -314,7 +315,7 @@ public interface GeneratedAccounts {
      *
      * @return the lastLogin of this Accounts
      */
-    Optional<Timestamp> getLastLogin();
+    Optional<Timestamp> lastLogin();
 
     /**
      * Returns the skillPointsTotal of this Accounts. The skillPointsTotal field
@@ -323,7 +324,7 @@ public interface GeneratedAccounts {
      *
      * @return the skillPointsTotal of this Accounts
      */
-    short getSkillPointsTotal();
+    short skillPointsTotal();
 
     /**
      * Returns the skillPointsFree of this Accounts. The skillPointsFree field
@@ -332,60 +333,60 @@ public interface GeneratedAccounts {
      *
      * @return the skillPointsFree of this Accounts
      */
-    short getSkillPointsFree();
+    short skillPointsFree();
 
     /**
-     * Sets the id of this Accounts. The id field corresponds to the database
+     * s the id of this Accounts. The id field corresponds to the database
      * column kalaazu.kalaazu.accounts.id.
      *
      * @param id to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setId(int id);
+    Accounts id(Integer id);
 
     /**
-     * Sets the usersId of this Accounts. The usersId field corresponds to the
+     * s the usersId of this Accounts. The usersId field corresponds to the
      * database column kalaazu.kalaazu.accounts.users_id.
      *
      * @param usersId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setUsersId(int usersId);
+    Accounts usersId(int usersId);
 
     /**
-     * Sets the sessionId of this Accounts. The sessionId field corresponds to
+     * s the sessionId of this Accounts. The sessionId field corresponds to
      * the database column kalaazu.kalaazu.accounts.session_id.
      *
      * @param sessionId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setSessionId(String sessionId);
+    Accounts sessionId(String sessionId);
 
     /**
-     * Sets the levelsId of this Accounts. The levelsId field corresponds to the
+     * s the levelsId of this Accounts. The levelsId field corresponds to the
      * database column kalaazu.kalaazu.accounts.levels_id.
      *
      * @param levelsId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setLevelsId(byte levelsId);
+    Accounts levelsId(byte levelsId);
 
     /**
-     * Sets the factionsId of this Accounts. The factionsId field corresponds to
+     * s the factionsId of this Accounts. The factionsId field corresponds to
      * the database column kalaazu.kalaazu.accounts.factions_id.
      *
      * @param factionsId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setFactionsId(Byte factionsId);
+    Accounts factionsId(Byte factionsId);
 
     /**
-     * Sets the accountsHangarsId of this Accounts. The accountsHangarsId field
+     * s the accountsHangarsId of this Accounts. The accountsHangarsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts.accounts_hangars_id.
      *
@@ -393,80 +394,80 @@ public interface GeneratedAccounts {
      *
      * @return this Accounts instance
      */
-    Accounts setAccountsHangarsId(Integer accountsHangarsId);
+    Accounts accountsHangarsId(Integer accountsHangarsId);
 
     /**
-     * Sets the clansId of this Accounts. The clansId field corresponds to the
+     * s the clansId of this Accounts. The clansId field corresponds to the
      * database column kalaazu.kalaazu.accounts.clans_id.
      *
      * @param clansId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setClansId(Integer clansId);
+    Accounts clansId(Integer clansId);
 
     /**
-     * Sets the ranksId of this Accounts. The ranksId field corresponds to the
+     * s the ranksId of this Accounts. The ranksId field corresponds to the
      * database column kalaazu.kalaazu.accounts.ranks_id.
      *
      * @param ranksId to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setRanksId(byte ranksId);
+    Accounts ranksId(byte ranksId);
 
     /**
-     * Sets the name of this Accounts. The name field corresponds to the
+     * s the name of this Accounts. The name field corresponds to the
      * database column kalaazu.kalaazu.accounts.name.
      *
      * @param name to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setName(String name);
+    Accounts name(String name);
 
     /**
-     * Sets the banDate of this Accounts. The banDate field corresponds to the
+     * s the banDate of this Accounts. The banDate field corresponds to the
      * database column kalaazu.kalaazu.accounts.ban_date.
      *
      * @param banDate to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setBanDate(Timestamp banDate);
+    Accounts banDate(Timestamp banDate);
 
     /**
-     * Sets the premiumDate of this Accounts. The premiumDate field corresponds
+     * s the premiumDate of this Accounts. The premiumDate field corresponds
      * to the database column kalaazu.kalaazu.accounts.premium_date.
      *
      * @param premiumDate to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setPremiumDate(Timestamp premiumDate);
+    Accounts premiumDate(Timestamp premiumDate);
 
     /**
-     * Sets the date of this Accounts. The date field corresponds to the
+     * s the date of this Accounts. The date field corresponds to the
      * database column kalaazu.kalaazu.accounts.date.
      *
      * @param date to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setDate(Timestamp date);
+    Accounts date(Timestamp date);
 
     /**
-     * Sets the lastLogin of this Accounts. The lastLogin field corresponds to
+     * s the lastLogin of this Accounts. The lastLogin field corresponds to
      * the database column kalaazu.kalaazu.accounts.last_login.
      *
      * @param lastLogin to set of this Accounts
      *
      * @return this Accounts instance
      */
-    Accounts setLastLogin(Timestamp lastLogin);
+    Accounts lastLogin(Timestamp lastLogin);
 
     /**
-     * Sets the skillPointsTotal of this Accounts. The skillPointsTotal field
+     * s the skillPointsTotal of this Accounts. The skillPointsTotal field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts.skill_points_total.
      *
@@ -474,10 +475,10 @@ public interface GeneratedAccounts {
      *
      * @return this Accounts instance
      */
-    Accounts setSkillPointsTotal(short skillPointsTotal);
+    Accounts skillPointsTotal(short skillPointsTotal);
 
     /**
-     * Sets the skillPointsFree of this Accounts. The skillPointsFree field
+     * s the skillPointsFree of this Accounts. The skillPointsFree field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts.skill_points_free.
      *
@@ -485,7 +486,7 @@ public interface GeneratedAccounts {
      *
      * @return this Accounts instance
      */
-    Accounts setSkillPointsFree(short skillPointsFree);
+    Accounts skillPointsFree(short skillPointsFree);
 
     /**
      * Queries the specified manager for the referenced Users. If no such Users

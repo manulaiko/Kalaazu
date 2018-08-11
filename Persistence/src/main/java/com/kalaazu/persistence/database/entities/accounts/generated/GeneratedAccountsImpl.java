@@ -3,6 +3,7 @@ package com.kalaazu.persistence.database.entities.accounts.generated;
 import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -20,9 +21,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsImpl implements Accounts {
 
-    private int id;
+    private Integer id;
 
     private int usersId;
 
@@ -57,174 +59,40 @@ public abstract class GeneratedAccountsImpl implements Accounts {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getUsersId() {
-        return usersId;
-    }
-
-    @Override
-    public String getSessionId() {
-        return sessionId;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public Optional<Byte> getFactionsId() {
+    public Optional<Byte> factionsId() {
         return Optional.ofNullable(factionsId);
     }
 
     @Override
-    public OptionalInt getAccountsHangarsId() {
+    public OptionalInt accountsHangarsId() {
         return OptionalUtil.ofNullable(accountsHangarsId);
     }
 
     @Override
-    public OptionalInt getClansId() {
+    public OptionalInt clansId() {
         return OptionalUtil.ofNullable(clansId);
     }
 
     @Override
-    public byte getRanksId() {
-        return ranksId;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Optional<Timestamp> getBanDate() {
+    public Optional<Timestamp> banDate() {
         return Optional.ofNullable(banDate);
     }
 
     @Override
-    public Optional<Timestamp> getPremiumDate() {
+    public Optional<Timestamp> premiumDate() {
         return Optional.ofNullable(premiumDate);
     }
 
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
 
     @Override
-    public Optional<Timestamp> getLastLogin() {
+    public Optional<Timestamp> lastLogin() {
         return Optional.ofNullable(lastLogin);
-    }
-
-    @Override
-    public short getSkillPointsTotal() {
-        return skillPointsTotal;
-    }
-
-    @Override
-    public short getSkillPointsFree() {
-        return skillPointsFree;
-    }
-
-    @Override
-    public Accounts setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Accounts setUsersId(int usersId) {
-        this.usersId = usersId;
-        return this;
-    }
-
-    @Override
-    public Accounts setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-        return this;
-    }
-
-    @Override
-    public Accounts setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public Accounts setFactionsId(Byte factionsId) {
-        this.factionsId = factionsId;
-        return this;
-    }
-
-    @Override
-    public Accounts setAccountsHangarsId(Integer accountsHangarsId) {
-        this.accountsHangarsId = accountsHangarsId;
-        return this;
-    }
-
-    @Override
-    public Accounts setClansId(Integer clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public Accounts setRanksId(byte ranksId) {
-        this.ranksId = ranksId;
-        return this;
-    }
-
-    @Override
-    public Accounts setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public Accounts setBanDate(Timestamp banDate) {
-        this.banDate = banDate;
-        return this;
-    }
-
-    @Override
-    public Accounts setPremiumDate(Timestamp premiumDate) {
-        this.premiumDate = premiumDate;
-        return this;
-    }
-
-    @Override
-    public Accounts setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
-    public Accounts setLastLogin(Timestamp lastLogin) {
-        this.lastLogin = lastLogin;
-        return this;
-    }
-
-    @Override
-    public Accounts setSkillPointsTotal(short skillPointsTotal) {
-        this.skillPointsTotal = skillPointsTotal;
-        return this;
-    }
-
-    @Override
-    public Accounts setSkillPointsFree(short skillPointsFree) {
-        this.skillPointsFree = skillPointsFree;
-        return this;
     }
 
     @Override
     public Users findUsersId(Manager<Users> foreignManager) {
         return foreignManager.stream()
-                             .filter(Users.ID.equal(getUsersId()))
+                             .filter(Users.ID.equal(usersId()))
                              .findAny()
                              .orElse(null);
     }
@@ -232,16 +100,16 @@ public abstract class GeneratedAccountsImpl implements Accounts {
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
     }
 
     @Override
     public Optional<Factions> findFactionsId(Manager<Factions> foreignManager) {
-        if (getFactionsId().isPresent()) {
+        if (factionsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Factions.ID.equal(getFactionsId().get()))
+                                 .filter(Factions.ID.equal(factionsId().get()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -250,9 +118,9 @@ public abstract class GeneratedAccountsImpl implements Accounts {
 
     @Override
     public Optional<AccountsHangars> findAccountsHangarsId(Manager<AccountsHangars> foreignManager) {
-        if (getAccountsHangarsId().isPresent()) {
+        if (accountsHangarsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(AccountsHangars.ID.equal(getAccountsHangarsId().getAsInt()))
+                                 .filter(AccountsHangars.ID.equal(accountsHangarsId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -261,9 +129,9 @@ public abstract class GeneratedAccountsImpl implements Accounts {
 
     @Override
     public Optional<Clans> findClansId(Manager<Clans> foreignManager) {
-        if (getClansId().isPresent()) {
+        if (clansId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Clans.ID.equal(getClansId().getAsInt()))
+                                 .filter(Clans.ID.equal(clansId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -273,30 +141,9 @@ public abstract class GeneratedAccountsImpl implements Accounts {
     @Override
     public Ranks findRanksId(Manager<Ranks> foreignManager) {
         return foreignManager.stream()
-                             .filter(Ranks.ID.equal(getRanksId()))
+                             .filter(Ranks.ID.equal(ranksId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("usersId = " + Objects.toString(getUsersId()));
-        sj.add("sessionId = " + Objects.toString(getSessionId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("factionsId = " + Objects.toString(OptionalUtil.unwrap(getFactionsId())));
-        sj.add("accountsHangarsId = " + Objects.toString(OptionalUtil.unwrap(getAccountsHangarsId())));
-        sj.add("clansId = " + Objects.toString(OptionalUtil.unwrap(getClansId())));
-        sj.add("ranksId = " + Objects.toString(getRanksId()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("banDate = " + Objects.toString(OptionalUtil.unwrap(getBanDate())));
-        sj.add("premiumDate = " + Objects.toString(OptionalUtil.unwrap(getPremiumDate())));
-        sj.add("date = " + Objects.toString(getDate()));
-        sj.add("lastLogin = " + Objects.toString(OptionalUtil.unwrap(getLastLogin())));
-        sj.add("skillPointsTotal = " + Objects.toString(getSkillPointsTotal()));
-        sj.add("skillPointsFree = " + Objects.toString(getSkillPointsFree()));
-        return "AccountsImpl " + sj.toString();
     }
 
     @Override
@@ -308,72 +155,51 @@ public abstract class GeneratedAccountsImpl implements Accounts {
             return false;
         }
         final Accounts thatAccounts = (Accounts) that;
-        if (this.getId() != thatAccounts.getId()) {
+        if (this.id() != thatAccounts.id()) {
             return false;
         }
-        if (this.getUsersId() != thatAccounts.getUsersId()) {
+        if (this.usersId() != thatAccounts.usersId()) {
             return false;
         }
-        if (!Objects.equals(this.getSessionId(), thatAccounts.getSessionId())) {
+        if (!Objects.equals(this.sessionId(), thatAccounts.sessionId())) {
             return false;
         }
-        if (this.getLevelsId() != thatAccounts.getLevelsId()) {
+        if (this.levelsId() != thatAccounts.levelsId()) {
             return false;
         }
-        if (!Objects.equals(this.getFactionsId(), thatAccounts.getFactionsId())) {
+        if (!Objects.equals(this.factionsId(), thatAccounts.factionsId())) {
             return false;
         }
-        if (!Objects.equals(this.getAccountsHangarsId(), thatAccounts.getAccountsHangarsId())) {
+        if (!Objects.equals(this.accountsHangarsId(), thatAccounts.accountsHangarsId())) {
             return false;
         }
-        if (!Objects.equals(this.getClansId(), thatAccounts.getClansId())) {
+        if (!Objects.equals(this.clansId(), thatAccounts.clansId())) {
             return false;
         }
-        if (this.getRanksId() != thatAccounts.getRanksId()) {
+        if (this.ranksId() != thatAccounts.ranksId()) {
             return false;
         }
-        if (!Objects.equals(this.getName(), thatAccounts.getName())) {
+        if (!Objects.equals(this.name(), thatAccounts.name())) {
             return false;
         }
-        if (!Objects.equals(this.getBanDate(), thatAccounts.getBanDate())) {
+        if (!Objects.equals(this.banDate(), thatAccounts.banDate())) {
             return false;
         }
-        if (!Objects.equals(this.getPremiumDate(), thatAccounts.getPremiumDate())) {
+        if (!Objects.equals(this.premiumDate(), thatAccounts.premiumDate())) {
             return false;
         }
-        if (!Objects.equals(this.getDate(), thatAccounts.getDate())) {
+        if (!Objects.equals(this.date(), thatAccounts.date())) {
             return false;
         }
-        if (!Objects.equals(this.getLastLogin(), thatAccounts.getLastLogin())) {
+        if (!Objects.equals(this.lastLogin(), thatAccounts.lastLogin())) {
             return false;
         }
-        if (this.getSkillPointsTotal() != thatAccounts.getSkillPointsTotal()) {
+        if (this.skillPointsTotal() != thatAccounts.skillPointsTotal()) {
             return false;
         }
-        if (this.getSkillPointsFree() != thatAccounts.getSkillPointsFree()) {
+        if (this.skillPointsFree() != thatAccounts.skillPointsFree()) {
             return false;
         }
         return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getUsersId());
-        hash = 31 * hash + Objects.hashCode(getSessionId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Objects.hashCode(getFactionsId());
-        hash = 31 * hash + Objects.hashCode(getAccountsHangarsId());
-        hash = 31 * hash + Objects.hashCode(getClansId());
-        hash = 31 * hash + Byte.hashCode(getRanksId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getBanDate());
-        hash = 31 * hash + Objects.hashCode(getPremiumDate());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        hash = 31 * hash + Objects.hashCode(getLastLogin());
-        hash = 31 * hash + Short.hashCode(getSkillPointsTotal());
-        hash = 31 * hash + Short.hashCode(getSkillPointsFree());
-        return hash;
     }
 }
