@@ -26,25 +26,25 @@ public interface GeneratedAccountsGalaxygates {
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getId()} method.
+     * be obtained using the {@link AccountsGalaxygates#id()} method.
      */
     IntField<AccountsGalaxygates, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsGalaxygates::getId,
-            AccountsGalaxygates::setId,
+            AccountsGalaxygates::id,
+            AccountsGalaxygates::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getGalaxygatesId()}
+     * be obtained using the {@link AccountsGalaxygates#galaxygatesId()}
      * method.
      */
     ByteForeignKeyField<AccountsGalaxygates, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
-            AccountsGalaxygates::getGalaxygatesId,
-            AccountsGalaxygates::setGalaxygatesId,
+            AccountsGalaxygates::galaxygatesId,
+            AccountsGalaxygates::galaxygatesId,
             Galaxygates.ID,
             TypeMapper.primitive(),
             false
@@ -52,12 +52,12 @@ public interface GeneratedAccountsGalaxygates {
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getAccountsId()} method.
+     * be obtained using the {@link AccountsGalaxygates#accountsId()} method.
      */
     IntForeignKeyField<AccountsGalaxygates, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsGalaxygates::getAccountsId,
-            AccountsGalaxygates::setAccountsId,
+            AccountsGalaxygates::accountsId,
+            AccountsGalaxygates::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -65,48 +65,48 @@ public interface GeneratedAccountsGalaxygates {
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getParts()} method.
+     * be obtained using the {@link AccountsGalaxygates#parts()} method.
      */
     ByteField<AccountsGalaxygates, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
-            AccountsGalaxygates::getParts,
-            AccountsGalaxygates::setParts,
+            AccountsGalaxygates::parts,
+            AccountsGalaxygates::parts,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getLifes()} method.
+     * be obtained using the {@link AccountsGalaxygates#lifes()} method.
      */
     ByteField<AccountsGalaxygates, Byte> LIFES = ByteField.create(
             Identifier.LIFES,
-            AccountsGalaxygates::getLifes,
-            AccountsGalaxygates::setLifes,
+            AccountsGalaxygates::lifes,
+            AccountsGalaxygates::lifes,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getWave()} method.
+     * be obtained using the {@link AccountsGalaxygates#wave()} method.
      */
     ByteField<AccountsGalaxygates, Byte> WAVE = ByteField.create(
             Identifier.WAVE,
-            AccountsGalaxygates::getWave,
-            AccountsGalaxygates::setWave,
+            AccountsGalaxygates::wave,
+            AccountsGalaxygates::wave,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsGalaxygates} field that can
-     * be obtained using the {@link AccountsGalaxygates#getTimes()} method.
+     * be obtained using the {@link AccountsGalaxygates#times()} method.
      */
     ShortField<AccountsGalaxygates, Short> TIMES = ShortField.create(
             Identifier.TIMES,
-            AccountsGalaxygates::getTimes,
-            AccountsGalaxygates::setTimes,
+            AccountsGalaxygates::times,
+            AccountsGalaxygates::times,
             TypeMapper.primitive(),
             false
     );
@@ -117,7 +117,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the id of this AccountsGalaxygates
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the galaxygatesId of this AccountsGalaxygates. The galaxygatesId
@@ -126,7 +126,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the galaxygatesId of this AccountsGalaxygates
      */
-    byte getGalaxygatesId();
+    byte galaxygatesId();
 
     /**
      * Returns the accountsId of this AccountsGalaxygates. The accountsId field
@@ -135,7 +135,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the accountsId of this AccountsGalaxygates
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the parts of this AccountsGalaxygates. The parts field
@@ -144,7 +144,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the parts of this AccountsGalaxygates
      */
-    byte getParts();
+    byte parts();
 
     /**
      * Returns the lifes of this AccountsGalaxygates. The lifes field
@@ -153,7 +153,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the lifes of this AccountsGalaxygates
      */
-    byte getLifes();
+    byte lifes();
 
     /**
      * Returns the wave of this AccountsGalaxygates. The wave field corresponds
@@ -161,7 +161,7 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the wave of this AccountsGalaxygates
      */
-    byte getWave();
+    byte wave();
 
     /**
      * Returns the times of this AccountsGalaxygates. The times field
@@ -170,20 +170,20 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return the times of this AccountsGalaxygates
      */
-    short getTimes();
+    short times();
 
     /**
-     * Sets the id of this AccountsGalaxygates. The id field corresponds to the
+     * s the id of this AccountsGalaxygates. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_galaxygates.id.
      *
      * @param id to set of this AccountsGalaxygates
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setId(int id);
+    AccountsGalaxygates id(Integer id);
 
     /**
-     * Sets the galaxygatesId of this AccountsGalaxygates. The galaxygatesId
+     * s the galaxygatesId of this AccountsGalaxygates. The galaxygatesId
      * field corresponds to the database column
      * kalaazu.kalaazu.accounts_galaxygates.galaxygates_id.
      *
@@ -191,10 +191,10 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setGalaxygatesId(byte galaxygatesId);
+    AccountsGalaxygates galaxygatesId(byte galaxygatesId);
 
     /**
-     * Sets the accountsId of this AccountsGalaxygates. The accountsId field
+     * s the accountsId of this AccountsGalaxygates. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_galaxygates.accounts_id.
      *
@@ -202,47 +202,47 @@ public interface GeneratedAccountsGalaxygates {
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setAccountsId(int accountsId);
+    AccountsGalaxygates accountsId(int accountsId);
 
     /**
-     * Sets the parts of this AccountsGalaxygates. The parts field corresponds
+     * s the parts of this AccountsGalaxygates. The parts field corresponds
      * to the database column kalaazu.kalaazu.accounts_galaxygates.parts.
      *
      * @param parts to set of this AccountsGalaxygates
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setParts(byte parts);
+    AccountsGalaxygates parts(byte parts);
 
     /**
-     * Sets the lifes of this AccountsGalaxygates. The lifes field corresponds
+     * s the lifes of this AccountsGalaxygates. The lifes field corresponds
      * to the database column kalaazu.kalaazu.accounts_galaxygates.lifes.
      *
      * @param lifes to set of this AccountsGalaxygates
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setLifes(byte lifes);
+    AccountsGalaxygates lifes(byte lifes);
 
     /**
-     * Sets the wave of this AccountsGalaxygates. The wave field corresponds to
+     * s the wave of this AccountsGalaxygates. The wave field corresponds to
      * the database column kalaazu.kalaazu.accounts_galaxygates.wave.
      *
      * @param wave to set of this AccountsGalaxygates
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setWave(byte wave);
+    AccountsGalaxygates wave(byte wave);
 
     /**
-     * Sets the times of this AccountsGalaxygates. The times field corresponds
+     * s the times of this AccountsGalaxygates. The times field corresponds
      * to the database column kalaazu.kalaazu.accounts_galaxygates.times.
      *
      * @param times to set of this AccountsGalaxygates
      *
      * @return this AccountsGalaxygates instance
      */
-    AccountsGalaxygates setTimes(short times);
+    AccountsGalaxygates times(short times);
 
     /**
      * Queries the specified manager for the referenced Galaxygates. If no such

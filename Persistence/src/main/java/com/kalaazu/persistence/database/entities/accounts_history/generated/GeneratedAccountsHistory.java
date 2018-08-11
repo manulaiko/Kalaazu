@@ -7,6 +7,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -26,24 +27,24 @@ public interface GeneratedAccountsHistory {
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getId()} method.
+     * obtained using the {@link AccountsHistory#id()} method.
      */
     IntField<AccountsHistory, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsHistory::getId,
-            AccountsHistory::setId,
+            AccountsHistory::id,
+            AccountsHistory::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getAccountsId()} method.
+     * obtained using the {@link AccountsHistory#accountsId()} method.
      */
     IntForeignKeyField<AccountsHistory, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsHistory::getAccountsId,
-            AccountsHistory::setAccountsId,
+            AccountsHistory::accountsId,
+            AccountsHistory::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -51,48 +52,48 @@ public interface GeneratedAccountsHistory {
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getType()} method.
+     * obtained using the {@link AccountsHistory#type()} method.
      */
     ByteField<AccountsHistory, Byte> TYPE = ByteField.create(
             Identifier.TYPE,
-            AccountsHistory::getType,
-            AccountsHistory::setType,
+            AccountsHistory::type,
+            AccountsHistory::type,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getMessage()} method.
+     * obtained using the {@link AccountsHistory#message()} method.
      */
     StringField<AccountsHistory, String> MESSAGE = StringField.create(
             Identifier.MESSAGE,
-            AccountsHistory::getMessage,
-            AccountsHistory::setMessage,
+            AccountsHistory::message,
+            AccountsHistory::message,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getAmount()} method.
+     * obtained using the {@link AccountsHistory#amount()} method.
      */
     IntField<AccountsHistory, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
-            AccountsHistory::getAmount,
-            AccountsHistory::setAmount,
+            AccountsHistory::amount,
+            AccountsHistory::amount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHistory} field that can be
-     * obtained using the {@link AccountsHistory#getDate()} method.
+     * obtained using the {@link AccountsHistory#date()} method.
      */
     ComparableField<AccountsHistory, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsHistory::getDate,
-            AccountsHistory::setDate,
+            AccountsHistory::date,
+            (ReferenceSetter<AccountsHistory, Timestamp>) AccountsHistory::date,
             TypeMapper.identity(),
             false
     );
@@ -103,7 +104,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the id of this AccountsHistory
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsHistory. The accountsId field
@@ -112,7 +113,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the accountsId of this AccountsHistory
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the type of this AccountsHistory. The type field corresponds to
@@ -120,7 +121,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the type of this AccountsHistory
      */
-    byte getType();
+    byte type();
 
     /**
      * Returns the message of this AccountsHistory. The message field
@@ -129,7 +130,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the message of this AccountsHistory
      */
-    String getMessage();
+    String message();
 
     /**
      * Returns the amount of this AccountsHistory. The amount field corresponds
@@ -137,7 +138,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the amount of this AccountsHistory
      */
-    int getAmount();
+    int amount();
 
     /**
      * Returns the date of this AccountsHistory. The date field corresponds to
@@ -145,7 +146,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return the date of this AccountsHistory
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this AccountsHistory. The id field corresponds to the
@@ -155,7 +156,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setId(int id);
+    AccountsHistory id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsHistory. The accountsId field
@@ -166,7 +167,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setAccountsId(int accountsId);
+    AccountsHistory accountsId(int accountsId);
 
     /**
      * Sets the type of this AccountsHistory. The type field corresponds to the
@@ -176,7 +177,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setType(byte type);
+    AccountsHistory type(byte type);
 
     /**
      * Sets the message of this AccountsHistory. The message field corresponds
@@ -186,7 +187,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setMessage(String message);
+    AccountsHistory message(String message);
 
     /**
      * Sets the amount of this AccountsHistory. The amount field corresponds to
@@ -196,7 +197,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setAmount(int amount);
+    AccountsHistory amount(int amount);
 
     /**
      * Sets the date of this AccountsHistory. The date field corresponds to the
@@ -206,7 +207,7 @@ public interface GeneratedAccountsHistory {
      *
      * @return this AccountsHistory instance
      */
-    AccountsHistory setDate(Timestamp date);
+    AccountsHistory date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

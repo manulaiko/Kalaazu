@@ -9,6 +9,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -30,24 +31,24 @@ public interface GeneratedAccountsHangars {
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getId()} method.
+     * obtained using the {@link AccountsHangars#id()} method.
      */
     IntField<AccountsHangars, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsHangars::getId,
-            AccountsHangars::setId,
+            AccountsHangars::id,
+            AccountsHangars::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getAccountsId()} method.
+     * obtained using the {@link AccountsHangars#accountsId()} method.
      */
     IntForeignKeyField<AccountsHangars, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsHangars::getAccountsId,
-            AccountsHangars::setAccountsId,
+            AccountsHangars::accountsId,
+            AccountsHangars::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -55,12 +56,12 @@ public interface GeneratedAccountsHangars {
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getAccountsShipsId()} method.
+     * obtained using the {@link AccountsHangars#accountsShipsId()} method.
      */
     ComparableForeignKeyField<AccountsHangars, Integer, Integer, AccountsShips> ACCOUNTS_SHIPS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_SHIPS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsShipsId()),
-            AccountsHangars::setAccountsShipsId,
+            o -> OptionalUtil.unwrap(o.accountsShipsId()),
+            AccountsHangars::accountsShipsId,
             AccountsShips.ID,
             TypeMapper.identity(),
             false
@@ -68,49 +69,49 @@ public interface GeneratedAccountsHangars {
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getAccountsConfigurationsId()}
+     * obtained using the {@link AccountsHangars#accountsConfigurationsId()}
      * method.
      */
     ComparableField<AccountsHangars, Integer, Integer> ACCOUNTS_CONFIGURATIONS_ID = ComparableField.create(
             Identifier.ACCOUNTS_CONFIGURATIONS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsConfigurationsId()),
-            AccountsHangars::setAccountsConfigurationsId,
+            o -> OptionalUtil.unwrap(o.accountsConfigurationsId()),
+            (ReferenceSetter<AccountsHangars, Integer>) AccountsHangars::accountsConfigurationsId,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getName()} method.
+     * obtained using the {@link AccountsHangars#name()} method.
      */
     StringField<AccountsHangars, String> NAME = StringField.create(
             Identifier.NAME,
-            AccountsHangars::getName,
-            AccountsHangars::setName,
+            AccountsHangars::name,
+            AccountsHangars::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getPriority()} method.
+     * obtained using the {@link AccountsHangars#priority()} method.
      */
     ComparableField<AccountsHangars, Byte, Byte> PRIORITY = ComparableField.create(
             Identifier.PRIORITY,
-            o -> OptionalUtil.unwrap(o.getPriority()),
-            AccountsHangars::setPriority,
+            o -> OptionalUtil.unwrap(o.priority()),
+            (ReferenceSetter<AccountsHangars, Byte>) AccountsHangars::priority,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsHangars} field that can be
-     * obtained using the {@link AccountsHangars#getDate()} method.
+     * obtained using the {@link AccountsHangars#date()} method.
      */
     ComparableField<AccountsHangars, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsHangars::getDate,
-            AccountsHangars::setDate,
+            AccountsHangars::date,
+            (ReferenceSetter<AccountsHangars, Timestamp>) AccountsHangars::date,
             TypeMapper.identity(),
             false
     );
@@ -121,7 +122,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the id of this AccountsHangars
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsHangars. The accountsId field
@@ -130,7 +131,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the accountsId of this AccountsHangars
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the accountsShipsId of this AccountsHangars. The accountsShipsId
@@ -139,7 +140,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the accountsShipsId of this AccountsHangars
      */
-    OptionalInt getAccountsShipsId();
+    OptionalInt accountsShipsId();
 
     /**
      * Returns the accountsConfigurationsId of this AccountsHangars. The
@@ -148,7 +149,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the accountsConfigurationsId of this AccountsHangars
      */
-    OptionalInt getAccountsConfigurationsId();
+    OptionalInt accountsConfigurationsId();
 
     /**
      * Returns the name of this AccountsHangars. The name field corresponds to
@@ -156,7 +157,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the name of this AccountsHangars
      */
-    String getName();
+    String name();
 
     /**
      * Returns the priority of this AccountsHangars. The priority field
@@ -165,7 +166,7 @@ public interface GeneratedAccountsHangars {
      *
      * @return the priority of this AccountsHangars
      */
-    Optional<Byte> getPriority();
+    Optional<Byte> priority();
 
     /**
      * Returns the date of this AccountsHangars. The date field corresponds to
@@ -173,20 +174,20 @@ public interface GeneratedAccountsHangars {
      *
      * @return the date of this AccountsHangars
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
-     * Sets the id of this AccountsHangars. The id field corresponds to the
+     * s the id of this AccountsHangars. The id field corresponds to the
      * database column kalaazu.kalaazu.accounts_hangars.id.
      *
      * @param id to set of this AccountsHangars
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setId(int id);
+    AccountsHangars id(Integer id);
 
     /**
-     * Sets the accountsId of this AccountsHangars. The accountsId field
+     * s the accountsId of this AccountsHangars. The accountsId field
      * corresponds to the database column
      * kalaazu.kalaazu.accounts_hangars.accounts_id.
      *
@@ -194,10 +195,10 @@ public interface GeneratedAccountsHangars {
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setAccountsId(int accountsId);
+    AccountsHangars accountsId(int accountsId);
 
     /**
-     * Sets the accountsShipsId of this AccountsHangars. The accountsShipsId
+     * s the accountsShipsId of this AccountsHangars. The accountsShipsId
      * field corresponds to the database column
      * kalaazu.kalaazu.accounts_hangars.accounts_ships_id.
      *
@@ -205,10 +206,10 @@ public interface GeneratedAccountsHangars {
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setAccountsShipsId(Integer accountsShipsId);
+    AccountsHangars accountsShipsId(Integer accountsShipsId);
 
     /**
-     * Sets the accountsConfigurationsId of this AccountsHangars. The
+     * s the accountsConfigurationsId of this AccountsHangars. The
      * accountsConfigurationsId field corresponds to the database column
      * kalaazu.kalaazu.accounts_hangars.accounts_configurations_id.
      *
@@ -216,37 +217,37 @@ public interface GeneratedAccountsHangars {
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setAccountsConfigurationsId(Integer accountsConfigurationsId);
+    AccountsHangars accountsConfigurationsId(Integer accountsConfigurationsId);
 
     /**
-     * Sets the name of this AccountsHangars. The name field corresponds to the
+     * s the name of this AccountsHangars. The name field corresponds to the
      * database column kalaazu.kalaazu.accounts_hangars.name.
      *
      * @param name to set of this AccountsHangars
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setName(String name);
+    AccountsHangars name(String name);
 
     /**
-     * Sets the priority of this AccountsHangars. The priority field corresponds
+     * s the priority of this AccountsHangars. The priority field corresponds
      * to the database column kalaazu.kalaazu.accounts_hangars.priority.
      *
      * @param priority to set of this AccountsHangars
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setPriority(Byte priority);
+    AccountsHangars priority(Byte priority);
 
     /**
-     * Sets the date of this AccountsHangars. The date field corresponds to the
+     * s the date of this AccountsHangars. The date field corresponds to the
      * database column kalaazu.kalaazu.accounts_hangars.date.
      *
      * @param date to set of this AccountsHangars
      *
      * @return this AccountsHangars instance
      */
-    AccountsHangars setDate(Timestamp date);
+    AccountsHangars date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
