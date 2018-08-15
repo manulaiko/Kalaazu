@@ -15,6 +15,7 @@ import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.EnumField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -35,24 +36,24 @@ public interface GeneratedClansDiplomacies {
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getId()} method.
+     * obtained using the {@link ClansDiplomacies#id()} method.
      */
     IntField<ClansDiplomacies, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansDiplomacies::getId,
-            ClansDiplomacies::setId,
+            ClansDiplomacies::id,
+            ClansDiplomacies::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getFromClansId()} method.
+     * obtained using the {@link ClansDiplomacies#fromClansId()} method.
      */
     IntForeignKeyField<ClansDiplomacies, Integer, Clans> FROM_CLANS_ID = IntForeignKeyField.create(
             Identifier.FROM_CLANS_ID,
-            ClansDiplomacies::getFromClansId,
-            ClansDiplomacies::setFromClansId,
+            ClansDiplomacies::fromClansId,
+            ClansDiplomacies::fromClansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -60,12 +61,12 @@ public interface GeneratedClansDiplomacies {
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getToClansId()} method.
+     * obtained using the {@link ClansDiplomacies#toClansId()} method.
      */
     IntForeignKeyField<ClansDiplomacies, Integer, Clans> TO_CLANS_ID = IntForeignKeyField.create(
             Identifier.TO_CLANS_ID,
-            ClansDiplomacies::getToClansId,
-            ClansDiplomacies::setToClansId,
+            ClansDiplomacies::toClansId,
+            ClansDiplomacies::toClansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -73,36 +74,36 @@ public interface GeneratedClansDiplomacies {
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getDate()} method.
+     * obtained using the {@link ClansDiplomacies#date()} method.
      */
     ComparableField<ClansDiplomacies, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansDiplomacies::getDate,
-            ClansDiplomacies::setDate,
+            ClansDiplomacies::date,
+            (ReferenceSetter<ClansDiplomacies, Timestamp>) ClansDiplomacies::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getExpires()} method.
+     * obtained using the {@link ClansDiplomacies#expires()} method.
      */
     ComparableField<ClansDiplomacies, Timestamp, Timestamp> EXPIRES = ComparableField.create(
             Identifier.EXPIRES,
-            o -> OptionalUtil.unwrap(o.getExpires()),
-            ClansDiplomacies::setExpires,
+            o -> OptionalUtil.unwrap(o.expires()),
+            (ReferenceSetter<ClansDiplomacies, Timestamp>) ClansDiplomacies::expires,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getStatus()} method.
+     * obtained using the {@link ClansDiplomacies#status()} method.
      */
     EnumField<ClansDiplomacies, Byte, DiplomacyStatus> STATUS = EnumField.create(
             Identifier.STATUS,
-            ClansDiplomacies::getStatus,
-            ClansDiplomacies::setStatus,
+            ClansDiplomacies::status,
+            ClansDiplomacies::status,
             new DiplomacyStatusMapper(),
             DiplomacyStatus::name,
             DiplomacyStatus::valueOf,
@@ -111,12 +112,12 @@ public interface GeneratedClansDiplomacies {
 
     /**
      * This Field corresponds to the {@link ClansDiplomacies} field that can be
-     * obtained using the {@link ClansDiplomacies#getType()} method.
+     * obtained using the {@link ClansDiplomacies#type()} method.
      */
     EnumField<ClansDiplomacies, Byte, DiplomacyType> TYPE = EnumField.create(
             Identifier.TYPE,
-            ClansDiplomacies::getType,
-            ClansDiplomacies::setType,
+            ClansDiplomacies::type,
+            ClansDiplomacies::type,
             new DiplomacyTypeMapper(),
             DiplomacyType::name,
             DiplomacyType::valueOf,
@@ -129,7 +130,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the id of this ClansDiplomacies
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the fromClansId of this ClansDiplomacies. The fromClansId field
@@ -138,7 +139,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the fromClansId of this ClansDiplomacies
      */
-    int getFromClansId();
+    int fromClansId();
 
     /**
      * Returns the toClansId of this ClansDiplomacies. The toClansId field
@@ -147,7 +148,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the toClansId of this ClansDiplomacies
      */
-    int getToClansId();
+    int toClansId();
 
     /**
      * Returns the date of this ClansDiplomacies. The date field corresponds to
@@ -155,7 +156,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the date of this ClansDiplomacies
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the expires of this ClansDiplomacies. The expires field
@@ -164,7 +165,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the expires of this ClansDiplomacies
      */
-    Optional<Timestamp> getExpires();
+    Optional<Timestamp> expires();
 
     /**
      * Returns the status of this ClansDiplomacies. The status field corresponds
@@ -172,7 +173,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the status of this ClansDiplomacies
      */
-    DiplomacyStatus getStatus();
+    DiplomacyStatus status();
 
     /**
      * Returns the type of this ClansDiplomacies. The type field corresponds to
@@ -180,7 +181,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return the type of this ClansDiplomacies
      */
-    DiplomacyType getType();
+    DiplomacyType type();
 
     /**
      * Sets the id of this ClansDiplomacies. The id field corresponds to the
@@ -190,7 +191,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setId(int id);
+    ClansDiplomacies id(Integer id);
 
     /**
      * Sets the fromClansId of this ClansDiplomacies. The fromClansId field
@@ -201,7 +202,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setFromClansId(int fromClansId);
+    ClansDiplomacies fromClansId(int fromClansId);
 
     /**
      * Sets the toClansId of this ClansDiplomacies. The toClansId field
@@ -212,7 +213,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setToClansId(int toClansId);
+    ClansDiplomacies toClansId(int toClansId);
 
     /**
      * Sets the date of this ClansDiplomacies. The date field corresponds to the
@@ -222,7 +223,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setDate(Timestamp date);
+    ClansDiplomacies date(Timestamp date);
 
     /**
      * Sets the expires of this ClansDiplomacies. The expires field corresponds
@@ -232,7 +233,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setExpires(Timestamp expires);
+    ClansDiplomacies expires(Timestamp expires);
 
     /**
      * Sets the status of this ClansDiplomacies. The status field corresponds to
@@ -242,7 +243,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setStatus(DiplomacyStatus status);
+    ClansDiplomacies status(DiplomacyStatus status);
 
     /**
      * Sets the type of this ClansDiplomacies. The type field corresponds to the
@@ -252,7 +253,7 @@ public interface GeneratedClansDiplomacies {
      *
      * @return this ClansDiplomacies instance
      */
-    ClansDiplomacies setType(DiplomacyType type);
+    ClansDiplomacies type(DiplomacyType type);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

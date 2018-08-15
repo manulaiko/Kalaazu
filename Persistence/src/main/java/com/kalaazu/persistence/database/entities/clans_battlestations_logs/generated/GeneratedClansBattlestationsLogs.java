@@ -8,6 +8,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -28,25 +29,25 @@ public interface GeneratedClansBattlestationsLogs {
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
-     * can be obtained using the {@link ClansBattlestationsLogs#getId()} method.
+     * can be obtained using the {@link ClansBattlestationsLogs#id()} method.
      */
     IntField<ClansBattlestationsLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansBattlestationsLogs::getId,
-            ClansBattlestationsLogs::setId,
+            ClansBattlestationsLogs::id,
+            ClansBattlestationsLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
-     * can be obtained using the {@link ClansBattlestationsLogs#getClansId()}
+     * can be obtained using the {@link ClansBattlestationsLogs#clansId()}
      * method.
      */
     IntForeignKeyField<ClansBattlestationsLogs, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansBattlestationsLogs::getClansId,
-            ClansBattlestationsLogs::setClansId,
+            ClansBattlestationsLogs::clansId,
+            ClansBattlestationsLogs::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -55,12 +56,12 @@ public interface GeneratedClansBattlestationsLogs {
     /**
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
      * can be obtained using the {@link
-     * ClansBattlestationsLogs#getClansBattlestationsId()} method.
+     * ClansBattlestationsLogs#clansBattlestationsId()} method.
      */
     ByteForeignKeyField<ClansBattlestationsLogs, Byte, ClansBattlestations> CLANS_BATTLESTATIONS_ID = ByteForeignKeyField.create(
             Identifier.CLANS_BATTLESTATIONS_ID,
-            ClansBattlestationsLogs::getClansBattlestationsId,
-            ClansBattlestationsLogs::setClansBattlestationsId,
+            ClansBattlestationsLogs::clansBattlestationsId,
+            ClansBattlestationsLogs::clansBattlestationsId,
             ClansBattlestations.ID,
             TypeMapper.primitive(),
             false
@@ -68,26 +69,26 @@ public interface GeneratedClansBattlestationsLogs {
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
-     * can be obtained using the {@link ClansBattlestationsLogs#getMessage()}
+     * can be obtained using the {@link ClansBattlestationsLogs#message()}
      * method.
      */
     StringField<ClansBattlestationsLogs, String> MESSAGE = StringField.create(
             Identifier.MESSAGE,
-            ClansBattlestationsLogs::getMessage,
-            ClansBattlestationsLogs::setMessage,
+            ClansBattlestationsLogs::message,
+            ClansBattlestationsLogs::message,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsLogs} field that
-     * can be obtained using the {@link ClansBattlestationsLogs#getDate()}
+     * can be obtained using the {@link ClansBattlestationsLogs#date()}
      * method.
      */
     ComparableField<ClansBattlestationsLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansBattlestationsLogs::getDate,
-            ClansBattlestationsLogs::setDate,
+            ClansBattlestationsLogs::date,
+            (ReferenceSetter<ClansBattlestationsLogs, Timestamp>) ClansBattlestationsLogs::date,
             TypeMapper.identity(),
             false
     );
@@ -98,7 +99,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the id of this ClansBattlestationsLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansId of this ClansBattlestationsLogs. The clansId field
@@ -107,7 +108,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the clansId of this ClansBattlestationsLogs
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the clansBattlestationsId of this ClansBattlestationsLogs. The
@@ -116,7 +117,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the clansBattlestationsId of this ClansBattlestationsLogs
      */
-    byte getClansBattlestationsId();
+    byte clansBattlestationsId();
 
     /**
      * Returns the message of this ClansBattlestationsLogs. The message field
@@ -125,7 +126,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the message of this ClansBattlestationsLogs
      */
-    String getMessage();
+    String message();
 
     /**
      * Returns the date of this ClansBattlestationsLogs. The date field
@@ -134,7 +135,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return the date of this ClansBattlestationsLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this ClansBattlestationsLogs. The id field corresponds to
@@ -144,7 +145,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return this ClansBattlestationsLogs instance
      */
-    ClansBattlestationsLogs setId(int id);
+    ClansBattlestationsLogs id(Integer id);
 
     /**
      * Sets the clansId of this ClansBattlestationsLogs. The clansId field
@@ -155,7 +156,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return this ClansBattlestationsLogs instance
      */
-    ClansBattlestationsLogs setClansId(int clansId);
+    ClansBattlestationsLogs clansId(int clansId);
 
     /**
      * Sets the clansBattlestationsId of this ClansBattlestationsLogs. The
@@ -166,7 +167,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return this ClansBattlestationsLogs instance
      */
-    ClansBattlestationsLogs setClansBattlestationsId(byte clansBattlestationsId);
+    ClansBattlestationsLogs clansBattlestationsId(byte clansBattlestationsId);
 
     /**
      * Sets the message of this ClansBattlestationsLogs. The message field
@@ -177,7 +178,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return this ClansBattlestationsLogs instance
      */
-    ClansBattlestationsLogs setMessage(String message);
+    ClansBattlestationsLogs message(String message);
 
     /**
      * Sets the date of this ClansBattlestationsLogs. The date field corresponds
@@ -187,7 +188,7 @@ public interface GeneratedClansBattlestationsLogs {
      *
      * @return this ClansBattlestationsLogs instance
      */
-    ClansBattlestationsLogs setDate(Timestamp date);
+    ClansBattlestationsLogs date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

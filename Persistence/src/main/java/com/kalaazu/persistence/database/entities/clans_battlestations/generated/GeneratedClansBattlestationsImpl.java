@@ -7,12 +7,11 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.OptionalInt;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -24,9 +23,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansBattlestationsImpl implements ClansBattlestations {
 
-    private byte id;
+    private Byte id;
 
     private Integer clansId;
 
@@ -43,76 +43,20 @@ public abstract class GeneratedClansBattlestationsImpl implements ClansBattlesta
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public OptionalInt getClansId() {
+    public OptionalInt clansId() {
         return OptionalUtil.ofNullable(clansId);
     }
 
     @Override
-    public byte getMapsId() {
-        return mapsId;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Vector2 getPosition() {
-        return position;
-    }
-
-    @Override
-    public Optional<Timestamp> getDate() {
+    public Optional<Timestamp> date() {
         return Optional.ofNullable(date);
     }
 
     @Override
-    public ClansBattlestations setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestations setClansId(Integer clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestations setMapsId(byte mapsId) {
-        this.mapsId = mapsId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestations setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestations setPosition(Vector2 position) {
-        this.position = position;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestations setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public Optional<Clans> findClansId(Manager<Clans> foreignManager) {
-        if (getClansId().isPresent()) {
+        if (clansId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Clans.ID.equal(getClansId().getAsInt()))
+                                 .filter(Clans.ID.equal(clansId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -122,62 +66,8 @@ public abstract class GeneratedClansBattlestationsImpl implements ClansBattlesta
     @Override
     public Maps findMapsId(Manager<Maps> foreignManager) {
         return foreignManager.stream()
-                             .filter(Maps.ID.equal(getMapsId()))
+                             .filter(Maps.ID.equal(mapsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("clansId = " + Objects.toString(OptionalUtil.unwrap(getClansId())));
-        sj.add("mapsId = " + Objects.toString(getMapsId()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("position = " + Objects.toString(getPosition()));
-        sj.add("date = " + Objects.toString(OptionalUtil.unwrap(getDate())));
-        return "ClansBattlestationsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansBattlestations)) {
-            return false;
-        }
-        final ClansBattlestations thatClansBattlestations = (ClansBattlestations) that;
-        if (this.getId() != thatClansBattlestations.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getClansId(), thatClansBattlestations.getClansId())) {
-            return false;
-        }
-        if (this.getMapsId() != thatClansBattlestations.getMapsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatClansBattlestations.getName())) {
-            return false;
-        }
-        if (!Objects.equals(this.getPosition(), thatClansBattlestations.getPosition())) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatClansBattlestations.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getClansId());
-        hash = 31 * hash + Byte.hashCode(getMapsId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getPosition());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

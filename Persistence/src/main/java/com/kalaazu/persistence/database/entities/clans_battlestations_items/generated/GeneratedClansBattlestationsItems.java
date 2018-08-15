@@ -8,6 +8,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -28,13 +29,13 @@ public interface GeneratedClansBattlestationsItems {
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsItems} field that
-     * can be obtained using the {@link ClansBattlestationsItems#getId()}
+     * can be obtained using the {@link ClansBattlestationsItems#id()}
      * method.
      */
     IntField<ClansBattlestationsItems, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansBattlestationsItems::getId,
-            ClansBattlestationsItems::setId,
+            ClansBattlestationsItems::id,
+            ClansBattlestationsItems::id,
             TypeMapper.primitive(),
             true
     );
@@ -42,12 +43,12 @@ public interface GeneratedClansBattlestationsItems {
     /**
      * This Field corresponds to the {@link ClansBattlestationsItems} field that
      * can be obtained using the {@link
-     * ClansBattlestationsItems#getClansBattlestationsId()} method.
+     * ClansBattlestationsItems#clansBattlestationsId()} method.
      */
     ByteForeignKeyField<ClansBattlestationsItems, Byte, ClansBattlestations> CLANS_BATTLESTATIONS_ID = ByteForeignKeyField.create(
             Identifier.CLANS_BATTLESTATIONS_ID,
-            ClansBattlestationsItems::getClansBattlestationsId,
-            ClansBattlestationsItems::setClansBattlestationsId,
+            ClansBattlestationsItems::clansBattlestationsId,
+            ClansBattlestationsItems::clansBattlestationsId,
             ClansBattlestations.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +57,12 @@ public interface GeneratedClansBattlestationsItems {
     /**
      * This Field corresponds to the {@link ClansBattlestationsItems} field that
      * can be obtained using the {@link
-     * ClansBattlestationsItems#getAccountsItemsId()} method.
+     * ClansBattlestationsItems#accountsItemsId()} method.
      */
     IntForeignKeyField<ClansBattlestationsItems, Integer, AccountsItems> ACCOUNTS_ITEMS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ITEMS_ID,
-            ClansBattlestationsItems::getAccountsItemsId,
-            ClansBattlestationsItems::setAccountsItemsId,
+            ClansBattlestationsItems::accountsItemsId,
+            ClansBattlestationsItems::accountsItemsId,
             AccountsItems.ID,
             TypeMapper.primitive(),
             false
@@ -69,26 +70,26 @@ public interface GeneratedClansBattlestationsItems {
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsItems} field that
-     * can be obtained using the {@link ClansBattlestationsItems#getSlot()}
+     * can be obtained using the {@link ClansBattlestationsItems#slot()}
      * method.
      */
     ByteField<ClansBattlestationsItems, Byte> SLOT = ByteField.create(
             Identifier.SLOT,
-            ClansBattlestationsItems::getSlot,
-            ClansBattlestationsItems::setSlot,
+            ClansBattlestationsItems::slot,
+            ClansBattlestationsItems::slot,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestationsItems} field that
-     * can be obtained using the {@link ClansBattlestationsItems#getDate()}
+     * can be obtained using the {@link ClansBattlestationsItems#date()}
      * method.
      */
     ComparableField<ClansBattlestationsItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansBattlestationsItems::getDate,
-            ClansBattlestationsItems::setDate,
+            ClansBattlestationsItems::date,
+            (ReferenceSetter<ClansBattlestationsItems, Timestamp>) ClansBattlestationsItems::date,
             TypeMapper.identity(),
             false
     );
@@ -99,7 +100,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return the id of this ClansBattlestationsItems
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansBattlestationsId of this ClansBattlestationsItems. The
@@ -108,7 +109,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return the clansBattlestationsId of this ClansBattlestationsItems
      */
-    byte getClansBattlestationsId();
+    byte clansBattlestationsId();
 
     /**
      * Returns the accountsItemsId of this ClansBattlestationsItems. The
@@ -117,7 +118,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return the accountsItemsId of this ClansBattlestationsItems
      */
-    int getAccountsItemsId();
+    int accountsItemsId();
 
     /**
      * Returns the slot of this ClansBattlestationsItems. The slot field
@@ -126,7 +127,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return the slot of this ClansBattlestationsItems
      */
-    byte getSlot();
+    byte slot();
 
     /**
      * Returns the date of this ClansBattlestationsItems. The date field
@@ -135,7 +136,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return the date of this ClansBattlestationsItems
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this ClansBattlestationsItems. The id field corresponds to
@@ -145,7 +146,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return this ClansBattlestationsItems instance
      */
-    ClansBattlestationsItems setId(int id);
+    ClansBattlestationsItems id(Integer id);
 
     /**
      * Sets the clansBattlestationsId of this ClansBattlestationsItems. The
@@ -156,7 +157,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return this ClansBattlestationsItems instance
      */
-    ClansBattlestationsItems setClansBattlestationsId(byte clansBattlestationsId);
+    ClansBattlestationsItems clansBattlestationsId(byte clansBattlestationsId);
 
     /**
      * Sets the accountsItemsId of this ClansBattlestationsItems. The
@@ -167,7 +168,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return this ClansBattlestationsItems instance
      */
-    ClansBattlestationsItems setAccountsItemsId(int accountsItemsId);
+    ClansBattlestationsItems accountsItemsId(int accountsItemsId);
 
     /**
      * Sets the slot of this ClansBattlestationsItems. The slot field
@@ -178,7 +179,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return this ClansBattlestationsItems instance
      */
-    ClansBattlestationsItems setSlot(byte slot);
+    ClansBattlestationsItems slot(byte slot);
 
     /**
      * Sets the date of this ClansBattlestationsItems. The date field
@@ -189,7 +190,7 @@ public interface GeneratedClansBattlestationsItems {
      *
      * @return this ClansBattlestationsItems instance
      */
-    ClansBattlestationsItems setDate(Timestamp date);
+    ClansBattlestationsItems date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced ClansBattlestations. If

@@ -5,10 +5,9 @@ import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.ClansBattlestationsLogs;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansBattlestationsLogsImpl implements ClansBattlestationsLogs {
 
-    private int id;
+    private Integer id;
 
     private int clansId;
 
@@ -37,64 +37,9 @@ public abstract class GeneratedClansBattlestationsLogsImpl implements ClansBattl
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getClansId() {
-        return clansId;
-    }
-
-    @Override
-    public byte getClansBattlestationsId() {
-        return clansBattlestationsId;
-    }
-
-    @Override
-    public String getMessage() {
-        return message;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public ClansBattlestationsLogs setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsLogs setClansId(int clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsLogs setClansBattlestationsId(byte clansBattlestationsId) {
-        this.clansBattlestationsId = clansBattlestationsId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsLogs setMessage(String message) {
-        this.message = message;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsLogs setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public Clans findClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getClansId()))
+                             .filter(Clans.ID.equal(clansId()))
                              .findAny()
                              .orElse(null);
     }
@@ -102,57 +47,8 @@ public abstract class GeneratedClansBattlestationsLogsImpl implements ClansBattl
     @Override
     public ClansBattlestations findClansBattlestationsId(Manager<ClansBattlestations> foreignManager) {
         return foreignManager.stream()
-                             .filter(ClansBattlestations.ID.equal(getClansBattlestationsId()))
+                             .filter(ClansBattlestations.ID.equal(clansBattlestationsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("clansId = " + Objects.toString(getClansId()));
-        sj.add("clansBattlestationsId = " + Objects.toString(getClansBattlestationsId()));
-        sj.add("message = " + Objects.toString(getMessage()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "ClansBattlestationsLogsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansBattlestationsLogs)) {
-            return false;
-        }
-        final ClansBattlestationsLogs thatClansBattlestationsLogs = (ClansBattlestationsLogs) that;
-        if (this.getId() != thatClansBattlestationsLogs.getId()) {
-            return false;
-        }
-        if (this.getClansId() != thatClansBattlestationsLogs.getClansId()) {
-            return false;
-        }
-        if (this.getClansBattlestationsId() != thatClansBattlestationsLogs.getClansBattlestationsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getMessage(), thatClansBattlestationsLogs.getMessage())) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatClansBattlestationsLogs.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getClansId());
-        hash = 31 * hash + Byte.hashCode(getClansBattlestationsId());
-        hash = 31 * hash + Objects.hashCode(getMessage());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

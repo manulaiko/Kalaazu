@@ -6,12 +6,10 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.mappers.DiplomacyStatus;
 import com.kalaazu.persistence.database.mappers.DiplomacyType;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
 import java.util.Optional;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -23,9 +21,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansDiplomaciesImpl implements ClansDiplomacies {
 
-    private int id;
+    private Integer id;
 
     private int fromClansId;
 
@@ -44,86 +43,14 @@ public abstract class GeneratedClansDiplomaciesImpl implements ClansDiplomacies 
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getFromClansId() {
-        return fromClansId;
-    }
-
-    @Override
-    public int getToClansId() {
-        return toClansId;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public Optional<Timestamp> getExpires() {
+    public Optional<Timestamp> expires() {
         return Optional.ofNullable(expires);
-    }
-
-    @Override
-    public DiplomacyStatus getStatus() {
-        return status;
-    }
-
-    @Override
-    public DiplomacyType getType() {
-        return type;
-    }
-
-    @Override
-    public ClansDiplomacies setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setFromClansId(int fromClansId) {
-        this.fromClansId = fromClansId;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setToClansId(int toClansId) {
-        this.toClansId = toClansId;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setExpires(Timestamp expires) {
-        this.expires = expires;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setStatus(DiplomacyStatus status) {
-        this.status = status;
-        return this;
-    }
-
-    @Override
-    public ClansDiplomacies setType(DiplomacyType type) {
-        this.type = type;
-        return this;
     }
 
     @Override
     public Clans findFromClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getFromClansId()))
+                             .filter(Clans.ID.equal(fromClansId()))
                              .findAny()
                              .orElse(null);
     }
@@ -131,67 +58,8 @@ public abstract class GeneratedClansDiplomaciesImpl implements ClansDiplomacies 
     @Override
     public Clans findToClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getToClansId()))
+                             .filter(Clans.ID.equal(toClansId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("fromClansId = " + Objects.toString(getFromClansId()));
-        sj.add("toClansId = " + Objects.toString(getToClansId()));
-        sj.add("date = " + Objects.toString(getDate()));
-        sj.add("expires = " + Objects.toString(OptionalUtil.unwrap(getExpires())));
-        sj.add("status = " + Objects.toString(getStatus()));
-        sj.add("type = " + Objects.toString(getType()));
-        return "ClansDiplomaciesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansDiplomacies)) {
-            return false;
-        }
-        final ClansDiplomacies thatClansDiplomacies = (ClansDiplomacies) that;
-        if (this.getId() != thatClansDiplomacies.getId()) {
-            return false;
-        }
-        if (this.getFromClansId() != thatClansDiplomacies.getFromClansId()) {
-            return false;
-        }
-        if (this.getToClansId() != thatClansDiplomacies.getToClansId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatClansDiplomacies.getDate())) {
-            return false;
-        }
-        if (!Objects.equals(this.getExpires(), thatClansDiplomacies.getExpires())) {
-            return false;
-        }
-        if (!Objects.equals(this.getStatus(), thatClansDiplomacies.getStatus())) {
-            return false;
-        }
-        if (!Objects.equals(this.getType(), thatClansDiplomacies.getType())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getFromClansId());
-        hash = 31 * hash + Integer.hashCode(getToClansId());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        hash = 31 * hash + Objects.hashCode(getExpires());
-        hash = 31 * hash + Objects.hashCode(getStatus());
-        hash = 31 * hash + Objects.hashCode(getType());
-        return hash;
     }
 }

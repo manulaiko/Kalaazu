@@ -11,6 +11,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -33,24 +34,24 @@ public interface GeneratedClansBattlestations {
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getId()} method.
+     * be obtained using the {@link ClansBattlestations#id()} method.
      */
     ByteField<ClansBattlestations, Byte> ID = ByteField.create(
             Identifier.ID,
-            ClansBattlestations::getId,
-            ClansBattlestations::setId,
+            ClansBattlestations::id,
+            ClansBattlestations::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getClansId()} method.
+     * be obtained using the {@link ClansBattlestations#clansId()} method.
      */
     ComparableForeignKeyField<ClansBattlestations, Integer, Integer, Clans> CLANS_ID = ComparableForeignKeyField.create(
             Identifier.CLANS_ID,
-            o -> OptionalUtil.unwrap(o.getClansId()),
-            ClansBattlestations::setClansId,
+            o -> OptionalUtil.unwrap(o.clansId()),
+            ClansBattlestations::clansId,
             Clans.ID,
             TypeMapper.identity(),
             false
@@ -58,12 +59,12 @@ public interface GeneratedClansBattlestations {
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getMapsId()} method.
+     * be obtained using the {@link ClansBattlestations#mapsId()} method.
      */
     ByteForeignKeyField<ClansBattlestations, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
-            ClansBattlestations::getMapsId,
-            ClansBattlestations::setMapsId,
+            ClansBattlestations::mapsId,
+            ClansBattlestations::mapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -71,36 +72,36 @@ public interface GeneratedClansBattlestations {
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getName()} method.
+     * be obtained using the {@link ClansBattlestations#name()} method.
      */
     StringField<ClansBattlestations, String> NAME = StringField.create(
             Identifier.NAME,
-            ClansBattlestations::getName,
-            ClansBattlestations::setName,
+            ClansBattlestations::name,
+            ClansBattlestations::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getPosition()} method.
+     * be obtained using the {@link ClansBattlestations#position()} method.
      */
     ReferenceField<ClansBattlestations, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
-            ClansBattlestations::getPosition,
-            ClansBattlestations::setPosition,
+            ClansBattlestations::position,
+            ClansBattlestations::position,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBattlestations} field that can
-     * be obtained using the {@link ClansBattlestations#getDate()} method.
+     * be obtained using the {@link ClansBattlestations#date()} method.
      */
     ComparableField<ClansBattlestations, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            o -> OptionalUtil.unwrap(o.getDate()),
-            ClansBattlestations::setDate,
+            o -> OptionalUtil.unwrap(o.date()),
+            (ReferenceSetter<ClansBattlestations, Timestamp>) ClansBattlestations::date,
             TypeMapper.identity(),
             false
     );
@@ -111,7 +112,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the id of this ClansBattlestations
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the clansId of this ClansBattlestations. The clansId field
@@ -120,7 +121,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the clansId of this ClansBattlestations
      */
-    OptionalInt getClansId();
+    OptionalInt clansId();
 
     /**
      * Returns the mapsId of this ClansBattlestations. The mapsId field
@@ -129,7 +130,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the mapsId of this ClansBattlestations
      */
-    byte getMapsId();
+    byte mapsId();
 
     /**
      * Returns the name of this ClansBattlestations. The name field corresponds
@@ -137,7 +138,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the name of this ClansBattlestations
      */
-    String getName();
+    String name();
 
     /**
      * Returns the position of this ClansBattlestations. The position field
@@ -146,7 +147,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the position of this ClansBattlestations
      */
-    Vector2 getPosition();
+    Vector2 position();
 
     /**
      * Returns the date of this ClansBattlestations. The date field corresponds
@@ -154,7 +155,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return the date of this ClansBattlestations
      */
-    Optional<Timestamp> getDate();
+    Optional<Timestamp> date();
 
     /**
      * Sets the id of this ClansBattlestations. The id field corresponds to the
@@ -164,7 +165,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setId(byte id);
+    ClansBattlestations id(Byte id);
 
     /**
      * Sets the clansId of this ClansBattlestations. The clansId field
@@ -175,7 +176,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setClansId(Integer clansId);
+    ClansBattlestations clansId(Integer clansId);
 
     /**
      * Sets the mapsId of this ClansBattlestations. The mapsId field corresponds
@@ -185,7 +186,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setMapsId(byte mapsId);
+    ClansBattlestations mapsId(byte mapsId);
 
     /**
      * Sets the name of this ClansBattlestations. The name field corresponds to
@@ -195,7 +196,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setName(String name);
+    ClansBattlestations name(String name);
 
     /**
      * Sets the position of this ClansBattlestations. The position field
@@ -206,7 +207,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setPosition(Vector2 position);
+    ClansBattlestations position(Vector2 position);
 
     /**
      * Sets the date of this ClansBattlestations. The date field corresponds to
@@ -216,7 +217,7 @@ public interface GeneratedClansBattlestations {
      *
      * @return this ClansBattlestations instance
      */
-    ClansBattlestations setDate(Timestamp date);
+    ClansBattlestations date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

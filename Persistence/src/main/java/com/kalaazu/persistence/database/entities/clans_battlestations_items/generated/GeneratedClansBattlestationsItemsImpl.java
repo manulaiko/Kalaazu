@@ -5,10 +5,9 @@ import com.kalaazu.persistence.database.entities.ClansBattlestations;
 import com.kalaazu.persistence.database.entities.ClansBattlestationsItems;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansBattlestationsItemsImpl implements ClansBattlestationsItems {
 
-    private int id;
+    private Integer id;
 
     private byte clansBattlestationsId;
 
@@ -37,64 +37,9 @@ public abstract class GeneratedClansBattlestationsItemsImpl implements ClansBatt
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public byte getClansBattlestationsId() {
-        return clansBattlestationsId;
-    }
-
-    @Override
-    public int getAccountsItemsId() {
-        return accountsItemsId;
-    }
-
-    @Override
-    public byte getSlot() {
-        return slot;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public ClansBattlestationsItems setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsItems setClansBattlestationsId(byte clansBattlestationsId) {
-        this.clansBattlestationsId = clansBattlestationsId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsItems setAccountsItemsId(int accountsItemsId) {
-        this.accountsItemsId = accountsItemsId;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsItems setSlot(byte slot) {
-        this.slot = slot;
-        return this;
-    }
-
-    @Override
-    public ClansBattlestationsItems setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public ClansBattlestations findClansBattlestationsId(Manager<ClansBattlestations> foreignManager) {
         return foreignManager.stream()
-                             .filter(ClansBattlestations.ID.equal(getClansBattlestationsId()))
+                             .filter(ClansBattlestations.ID.equal(clansBattlestationsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -102,57 +47,8 @@ public abstract class GeneratedClansBattlestationsItemsImpl implements ClansBatt
     @Override
     public AccountsItems findAccountsItemsId(Manager<AccountsItems> foreignManager) {
         return foreignManager.stream()
-                             .filter(AccountsItems.ID.equal(getAccountsItemsId()))
+                             .filter(AccountsItems.ID.equal(accountsItemsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("clansBattlestationsId = " + Objects.toString(getClansBattlestationsId()));
-        sj.add("accountsItemsId = " + Objects.toString(getAccountsItemsId()));
-        sj.add("slot = " + Objects.toString(getSlot()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "ClansBattlestationsItemsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansBattlestationsItems)) {
-            return false;
-        }
-        final ClansBattlestationsItems thatClansBattlestationsItems = (ClansBattlestationsItems) that;
-        if (this.getId() != thatClansBattlestationsItems.getId()) {
-            return false;
-        }
-        if (this.getClansBattlestationsId() != thatClansBattlestationsItems.getClansBattlestationsId()) {
-            return false;
-        }
-        if (this.getAccountsItemsId() != thatClansBattlestationsItems.getAccountsItemsId()) {
-            return false;
-        }
-        if (this.getSlot() != thatClansBattlestationsItems.getSlot()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatClansBattlestationsItems.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getClansBattlestationsId());
-        hash = 31 * hash + Integer.hashCode(getAccountsItemsId());
-        hash = 31 * hash + Byte.hashCode(getSlot());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }
