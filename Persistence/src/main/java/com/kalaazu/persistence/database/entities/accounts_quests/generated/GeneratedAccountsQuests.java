@@ -28,24 +28,24 @@ public interface GeneratedAccountsQuests {
 
     /**
      * This Field corresponds to the {@link AccountsQuests} field that can be
-     * obtained using the {@link AccountsQuests#getId()} method.
+     * obtained using the {@link AccountsQuests#id()} method.
      */
     IntField<AccountsQuests, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsQuests::getId,
-            AccountsQuests::setId,
+            AccountsQuests::id,
+            AccountsQuests::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsQuests} field that can be
-     * obtained using the {@link AccountsQuests#getQuestsId()} method.
+     * obtained using the {@link AccountsQuests#questsId()} method.
      */
     ShortForeignKeyField<AccountsQuests, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
-            AccountsQuests::getQuestsId,
-            AccountsQuests::setQuestsId,
+            AccountsQuests::questsId,
+            AccountsQuests::questsId,
             Quests.ID,
             TypeMapper.primitive(),
             false
@@ -53,12 +53,12 @@ public interface GeneratedAccountsQuests {
 
     /**
      * This Field corresponds to the {@link AccountsQuests} field that can be
-     * obtained using the {@link AccountsQuests#getAccountsId()} method.
+     * obtained using the {@link AccountsQuests#accountsId()} method.
      */
     IntForeignKeyField<AccountsQuests, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsQuests::getAccountsId,
-            AccountsQuests::setAccountsId,
+            AccountsQuests::accountsId,
+            AccountsQuests::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -66,24 +66,24 @@ public interface GeneratedAccountsQuests {
 
     /**
      * This Field corresponds to the {@link AccountsQuests} field that can be
-     * obtained using the {@link AccountsQuests#getIsCompleted()} method.
+     * obtained using the {@link AccountsQuests#isCompleted()} method.
      */
     BooleanField<AccountsQuests, Integer> IS_COMPLETED = BooleanField.create(
             Identifier.IS_COMPLETED,
-            AccountsQuests::getIsCompleted,
-            AccountsQuests::setIsCompleted,
+            AccountsQuests::isCompleted,
+            AccountsQuests::isCompleted,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsQuests} field that can be
-     * obtained using the {@link AccountsQuests#getDate()} method.
+     * obtained using the {@link AccountsQuests#date()} method.
      */
     ComparableField<AccountsQuests, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsQuests::getDate,
-            AccountsQuests::setDate,
+            AccountsQuests::date,
+            AccountsQuests::date,
             TypeMapper.identity(),
             false
     );
@@ -94,7 +94,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the id of this AccountsQuests
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the questsId of this AccountsQuests. The questsId field
@@ -103,7 +103,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the questsId of this AccountsQuests
      */
-    short getQuestsId();
+    short questsId();
 
     /**
      * Returns the accountsId of this AccountsQuests. The accountsId field
@@ -112,7 +112,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the accountsId of this AccountsQuests
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the isCompleted of this AccountsQuests. The isCompleted field
@@ -121,7 +121,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the isCompleted of this AccountsQuests
      */
-    boolean getIsCompleted();
+    boolean isCompleted();
 
     /**
      * Returns the date of this AccountsQuests. The date field corresponds to
@@ -129,7 +129,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return the date of this AccountsQuests
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this AccountsQuests. The id field corresponds to the
@@ -139,7 +139,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return this AccountsQuests instance
      */
-    AccountsQuests setId(int id);
+    AccountsQuests id(Integer id);
 
     /**
      * Sets the questsId of this AccountsQuests. The questsId field corresponds
@@ -149,7 +149,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return this AccountsQuests instance
      */
-    AccountsQuests setQuestsId(short questsId);
+    AccountsQuests questsId(short questsId);
 
     /**
      * Sets the accountsId of this AccountsQuests. The accountsId field
@@ -160,7 +160,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return this AccountsQuests instance
      */
-    AccountsQuests setAccountsId(int accountsId);
+    AccountsQuests accountsId(int accountsId);
 
     /**
      * Sets the isCompleted of this AccountsQuests. The isCompleted field
@@ -171,7 +171,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return this AccountsQuests instance
      */
-    AccountsQuests setIsCompleted(boolean isCompleted);
+    AccountsQuests isCompleted(boolean isCompleted);
 
     /**
      * Sets the date of this AccountsQuests. The date field corresponds to the
@@ -181,7 +181,7 @@ public interface GeneratedAccountsQuests {
      *
      * @return this AccountsQuests instance
      */
-    AccountsQuests setDate(Timestamp date);
+    AccountsQuests date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Quests. If no such

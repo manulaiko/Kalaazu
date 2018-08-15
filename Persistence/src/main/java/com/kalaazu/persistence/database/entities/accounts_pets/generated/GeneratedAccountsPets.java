@@ -25,24 +25,24 @@ public interface GeneratedAccountsPets {
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getId()} method.
+     * obtained using the {@link AccountsPets#id()} method.
      */
     IntField<AccountsPets, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsPets::getId,
-            AccountsPets::setId,
+            AccountsPets::id,
+            AccountsPets::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getAccountsId()} method.
+     * obtained using the {@link AccountsPets#accountsId()} method.
      */
     IntForeignKeyField<AccountsPets, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsPets::getAccountsId,
-            AccountsPets::setAccountsId,
+            AccountsPets::accountsId,
+            AccountsPets::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -50,12 +50,12 @@ public interface GeneratedAccountsPets {
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getLevelsId()} method.
+     * obtained using the {@link AccountsPets#levelsId()} method.
      */
     ByteForeignKeyField<AccountsPets, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            AccountsPets::getLevelsId,
-            AccountsPets::setLevelsId,
+            AccountsPets::levelsId,
+            AccountsPets::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -63,146 +63,146 @@ public interface GeneratedAccountsPets {
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getName()} method.
+     * obtained using the {@link AccountsPets#name()} method.
      */
     StringField<AccountsPets, String> NAME = StringField.create(
             Identifier.NAME,
-            AccountsPets::getName,
-            AccountsPets::setName,
+            AccountsPets::name,
+            AccountsPets::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getExperience()} method.
+     * obtained using the {@link AccountsPets#experience()} method.
      */
     IntField<AccountsPets, Integer> EXPERIENCE = IntField.create(
             Identifier.EXPERIENCE,
-            AccountsPets::getExperience,
-            AccountsPets::setExperience,
+            AccountsPets::experience,
+            AccountsPets::experience,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getFuel()} method.
+     * obtained using the {@link AccountsPets#fuel()} method.
      */
     IntField<AccountsPets, Integer> FUEL = IntField.create(
             Identifier.FUEL,
-            AccountsPets::getFuel,
-            AccountsPets::setFuel,
+            AccountsPets::fuel,
+            AccountsPets::fuel,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getHealth()} method.
+     * obtained using the {@link AccountsPets#health()} method.
      */
     IntField<AccountsPets, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
-            AccountsPets::getHealth,
-            AccountsPets::setHealth,
+            AccountsPets::health,
+            AccountsPets::health,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsLasersTotal()} method.
+     * obtained using the {@link AccountsPets#slotsLasersTotal()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_LASERS_TOTAL = ByteField.create(
             Identifier.SLOTS_LASERS_TOTAL,
-            AccountsPets::getSlotsLasersTotal,
-            AccountsPets::setSlotsLasersTotal,
+            AccountsPets::slotsLasersTotal,
+            AccountsPets::slotsLasersTotal,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsLasersAvailable()} method.
+     * obtained using the {@link AccountsPets#slotsLasersAvailable()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_LASERS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_LASERS_AVAILABLE,
-            AccountsPets::getSlotsLasersAvailable,
-            AccountsPets::setSlotsLasersAvailable,
+            AccountsPets::slotsLasersAvailable,
+            AccountsPets::slotsLasersAvailable,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsGeneratorsTotal()} method.
+     * obtained using the {@link AccountsPets#slotsGeneratorsTotal()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_GENERATORS_TOTAL = ByteField.create(
             Identifier.SLOTS_GENERATORS_TOTAL,
-            AccountsPets::getSlotsGeneratorsTotal,
-            AccountsPets::setSlotsGeneratorsTotal,
+            AccountsPets::slotsGeneratorsTotal,
+            AccountsPets::slotsGeneratorsTotal,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsGeneratorsAvailable()}
+     * obtained using the {@link AccountsPets#slotsGeneratorsAvailable()}
      * method.
      */
     ByteField<AccountsPets, Byte> SLOTS_GENERATORS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_GENERATORS_AVAILABLE,
-            AccountsPets::getSlotsGeneratorsAvailable,
-            AccountsPets::setSlotsGeneratorsAvailable,
+            AccountsPets::slotsGeneratorsAvailable,
+            AccountsPets::slotsGeneratorsAvailable,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsProtocolsTotal()} method.
+     * obtained using the {@link AccountsPets#slotsProtocolsTotal()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_PROTOCOLS_TOTAL = ByteField.create(
             Identifier.SLOTS_PROTOCOLS_TOTAL,
-            AccountsPets::getSlotsProtocolsTotal,
-            AccountsPets::setSlotsProtocolsTotal,
+            AccountsPets::slotsProtocolsTotal,
+            AccountsPets::slotsProtocolsTotal,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsProtocolsAvailable()}
+     * obtained using the {@link AccountsPets#slotsProtocolsAvailable()}
      * method.
      */
     ByteField<AccountsPets, Byte> SLOTS_PROTOCOLS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_PROTOCOLS_AVAILABLE,
-            AccountsPets::getSlotsProtocolsAvailable,
-            AccountsPets::setSlotsProtocolsAvailable,
+            AccountsPets::slotsProtocolsAvailable,
+            AccountsPets::slotsProtocolsAvailable,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsGearsTotal()} method.
+     * obtained using the {@link AccountsPets#slotsGearsTotal()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_GEARS_TOTAL = ByteField.create(
             Identifier.SLOTS_GEARS_TOTAL,
-            AccountsPets::getSlotsGearsTotal,
-            AccountsPets::setSlotsGearsTotal,
+            AccountsPets::slotsGearsTotal,
+            AccountsPets::slotsGearsTotal,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsPets} field that can be
-     * obtained using the {@link AccountsPets#getSlotsGearsAvailable()} method.
+     * obtained using the {@link AccountsPets#slotsGearsAvailable()} method.
      */
     ByteField<AccountsPets, Byte> SLOTS_GEARS_AVAILABLE = ByteField.create(
             Identifier.SLOTS_GEARS_AVAILABLE,
-            AccountsPets::getSlotsGearsAvailable,
-            AccountsPets::setSlotsGearsAvailable,
+            AccountsPets::slotsGearsAvailable,
+            AccountsPets::slotsGearsAvailable,
             TypeMapper.primitive(),
             false
     );
@@ -213,7 +213,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the id of this AccountsPets
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsPets. The accountsId field
@@ -222,7 +222,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the accountsId of this AccountsPets
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the levelsId of this AccountsPets. The levelsId field corresponds
@@ -230,7 +230,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the levelsId of this AccountsPets
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the name of this AccountsPets. The name field corresponds to the
@@ -238,7 +238,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the name of this AccountsPets
      */
-    String getName();
+    String name();
 
     /**
      * Returns the experience of this AccountsPets. The experience field
@@ -247,7 +247,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the experience of this AccountsPets
      */
-    int getExperience();
+    int experience();
 
     /**
      * Returns the fuel of this AccountsPets. The fuel field corresponds to the
@@ -255,7 +255,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the fuel of this AccountsPets
      */
-    int getFuel();
+    int fuel();
 
     /**
      * Returns the health of this AccountsPets. The health field corresponds to
@@ -263,7 +263,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the health of this AccountsPets
      */
-    int getHealth();
+    int health();
 
     /**
      * Returns the slotsLasersTotal of this AccountsPets. The slotsLasersTotal
@@ -272,7 +272,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsLasersTotal of this AccountsPets
      */
-    byte getSlotsLasersTotal();
+    byte slotsLasersTotal();
 
     /**
      * Returns the slotsLasersAvailable of this AccountsPets. The
@@ -281,7 +281,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsLasersAvailable of this AccountsPets
      */
-    byte getSlotsLasersAvailable();
+    byte slotsLasersAvailable();
 
     /**
      * Returns the slotsGeneratorsTotal of this AccountsPets. The
@@ -290,7 +290,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsGeneratorsTotal of this AccountsPets
      */
-    byte getSlotsGeneratorsTotal();
+    byte slotsGeneratorsTotal();
 
     /**
      * Returns the slotsGeneratorsAvailable of this AccountsPets. The
@@ -299,7 +299,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsGeneratorsAvailable of this AccountsPets
      */
-    byte getSlotsGeneratorsAvailable();
+    byte slotsGeneratorsAvailable();
 
     /**
      * Returns the slotsProtocolsTotal of this AccountsPets. The
@@ -308,7 +308,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsProtocolsTotal of this AccountsPets
      */
-    byte getSlotsProtocolsTotal();
+    byte slotsProtocolsTotal();
 
     /**
      * Returns the slotsProtocolsAvailable of this AccountsPets. The
@@ -317,7 +317,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsProtocolsAvailable of this AccountsPets
      */
-    byte getSlotsProtocolsAvailable();
+    byte slotsProtocolsAvailable();
 
     /**
      * Returns the slotsGearsTotal of this AccountsPets. The slotsGearsTotal
@@ -326,7 +326,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsGearsTotal of this AccountsPets
      */
-    byte getSlotsGearsTotal();
+    byte slotsGearsTotal();
 
     /**
      * Returns the slotsGearsAvailable of this AccountsPets. The
@@ -335,7 +335,7 @@ public interface GeneratedAccountsPets {
      *
      * @return the slotsGearsAvailable of this AccountsPets
      */
-    byte getSlotsGearsAvailable();
+    byte slotsGearsAvailable();
 
     /**
      * Sets the id of this AccountsPets. The id field corresponds to the
@@ -345,7 +345,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setId(int id);
+    AccountsPets id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsPets. The accountsId field
@@ -356,7 +356,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setAccountsId(int accountsId);
+    AccountsPets accountsId(int accountsId);
 
     /**
      * Sets the levelsId of this AccountsPets. The levelsId field corresponds to
@@ -366,7 +366,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setLevelsId(byte levelsId);
+    AccountsPets levelsId(byte levelsId);
 
     /**
      * Sets the name of this AccountsPets. The name field corresponds to the
@@ -376,7 +376,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setName(String name);
+    AccountsPets name(String name);
 
     /**
      * Sets the experience of this AccountsPets. The experience field
@@ -387,7 +387,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setExperience(int experience);
+    AccountsPets experience(int experience);
 
     /**
      * Sets the fuel of this AccountsPets. The fuel field corresponds to the
@@ -397,7 +397,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setFuel(int fuel);
+    AccountsPets fuel(int fuel);
 
     /**
      * Sets the health of this AccountsPets. The health field corresponds to the
@@ -407,7 +407,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setHealth(int health);
+    AccountsPets health(int health);
 
     /**
      * Sets the slotsLasersTotal of this AccountsPets. The slotsLasersTotal
@@ -418,7 +418,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsLasersTotal(byte slotsLasersTotal);
+    AccountsPets slotsLasersTotal(byte slotsLasersTotal);
 
     /**
      * Sets the slotsLasersAvailable of this AccountsPets. The
@@ -429,7 +429,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsLasersAvailable(byte slotsLasersAvailable);
+    AccountsPets slotsLasersAvailable(byte slotsLasersAvailable);
 
     /**
      * Sets the slotsGeneratorsTotal of this AccountsPets. The
@@ -440,7 +440,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsGeneratorsTotal(byte slotsGeneratorsTotal);
+    AccountsPets slotsGeneratorsTotal(byte slotsGeneratorsTotal);
 
     /**
      * Sets the slotsGeneratorsAvailable of this AccountsPets. The
@@ -451,7 +451,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsGeneratorsAvailable(byte slotsGeneratorsAvailable);
+    AccountsPets slotsGeneratorsAvailable(byte slotsGeneratorsAvailable);
 
     /**
      * Sets the slotsProtocolsTotal of this AccountsPets. The
@@ -462,7 +462,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsProtocolsTotal(byte slotsProtocolsTotal);
+    AccountsPets slotsProtocolsTotal(byte slotsProtocolsTotal);
 
     /**
      * Sets the slotsProtocolsAvailable of this AccountsPets. The
@@ -473,7 +473,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsProtocolsAvailable(byte slotsProtocolsAvailable);
+    AccountsPets slotsProtocolsAvailable(byte slotsProtocolsAvailable);
 
     /**
      * Sets the slotsGearsTotal of this AccountsPets. The slotsGearsTotal field
@@ -484,7 +484,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsGearsTotal(byte slotsGearsTotal);
+    AccountsPets slotsGearsTotal(byte slotsGearsTotal);
 
     /**
      * Sets the slotsGearsAvailable of this AccountsPets. The
@@ -495,7 +495,7 @@ public interface GeneratedAccountsPets {
      *
      * @return this AccountsPets instance
      */
-    AccountsPets setSlotsGearsAvailable(byte slotsGearsAvailable);
+    AccountsPets slotsGearsAvailable(byte slotsGearsAvailable);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

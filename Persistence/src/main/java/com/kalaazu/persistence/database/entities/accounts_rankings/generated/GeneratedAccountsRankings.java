@@ -26,24 +26,24 @@ public interface GeneratedAccountsRankings {
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getId()} method.
+     * obtained using the {@link AccountsRankings#id()} method.
      */
     IntField<AccountsRankings, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsRankings::getId,
-            AccountsRankings::setId,
+            AccountsRankings::id,
+            AccountsRankings::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getAccountsId()} method.
+     * obtained using the {@link AccountsRankings#accountsId()} method.
      */
     IntForeignKeyField<AccountsRankings, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsRankings::getAccountsId,
-            AccountsRankings::setAccountsId,
+            AccountsRankings::accountsId,
+            AccountsRankings::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             true
@@ -51,73 +51,73 @@ public interface GeneratedAccountsRankings {
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getPoints()} method.
+     * obtained using the {@link AccountsRankings#points()} method.
      */
     IntField<AccountsRankings, Integer> POINTS = IntField.create(
             Identifier.POINTS,
-            AccountsRankings::getPoints,
-            AccountsRankings::setPoints,
+            AccountsRankings::points,
+            AccountsRankings::points,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getBestPoints()} method.
+     * obtained using the {@link AccountsRankings#bestPoints()} method.
      */
     IntField<AccountsRankings, Integer> BEST_POINTS = IntField.create(
             Identifier.BEST_POINTS,
-            AccountsRankings::getBestPoints,
-            AccountsRankings::setBestPoints,
+            AccountsRankings::bestPoints,
+            AccountsRankings::bestPoints,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getDestroyedAllies()} method.
+     * obtained using the {@link AccountsRankings#destroyedAllies()} method.
      */
     ShortField<AccountsRankings, Short> DESTROYED_ALLIES = ShortField.create(
             Identifier.DESTROYED_ALLIES,
-            AccountsRankings::getDestroyedAllies,
-            AccountsRankings::setDestroyedAllies,
+            AccountsRankings::destroyedAllies,
+            AccountsRankings::destroyedAllies,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getDestroyedPhoenix()} method.
+     * obtained using the {@link AccountsRankings#destroyedPhoenix()} method.
      */
     ShortField<AccountsRankings, Short> DESTROYED_PHOENIX = ShortField.create(
             Identifier.DESTROYED_PHOENIX,
-            AccountsRankings::getDestroyedPhoenix,
-            AccountsRankings::setDestroyedPhoenix,
+            AccountsRankings::destroyedPhoenix,
+            AccountsRankings::destroyedPhoenix,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getDestroyedTimes()} method.
+     * obtained using the {@link AccountsRankings#destroyedTimes()} method.
      */
     ShortField<AccountsRankings, Short> DESTROYED_TIMES = ShortField.create(
             Identifier.DESTROYED_TIMES,
-            AccountsRankings::getDestroyedTimes,
-            AccountsRankings::setDestroyedTimes,
+            AccountsRankings::destroyedTimes,
+            AccountsRankings::destroyedTimes,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsRankings} field that can be
-     * obtained using the {@link AccountsRankings#getDestroyedRadiation()}
+     * obtained using the {@link AccountsRankings#destroyedRadiation()}
      * method.
      */
     ShortField<AccountsRankings, Short> DESTROYED_RADIATION = ShortField.create(
             Identifier.DESTROYED_RADIATION,
-            AccountsRankings::getDestroyedRadiation,
-            AccountsRankings::setDestroyedRadiation,
+            AccountsRankings::destroyedRadiation,
+            AccountsRankings::destroyedRadiation,
             TypeMapper.primitive(),
             false
     );
@@ -128,7 +128,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the id of this AccountsRankings
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsRankings. The accountsId field
@@ -137,7 +137,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the accountsId of this AccountsRankings
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the points of this AccountsRankings. The points field corresponds
@@ -145,7 +145,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the points of this AccountsRankings
      */
-    int getPoints();
+    int points();
 
     /**
      * Returns the bestPoints of this AccountsRankings. The bestPoints field
@@ -154,7 +154,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the bestPoints of this AccountsRankings
      */
-    int getBestPoints();
+    int bestPoints();
 
     /**
      * Returns the destroyedAllies of this AccountsRankings. The destroyedAllies
@@ -163,7 +163,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the destroyedAllies of this AccountsRankings
      */
-    short getDestroyedAllies();
+    short destroyedAllies();
 
     /**
      * Returns the destroyedPhoenix of this AccountsRankings. The
@@ -172,7 +172,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the destroyedPhoenix of this AccountsRankings
      */
-    short getDestroyedPhoenix();
+    short destroyedPhoenix();
 
     /**
      * Returns the destroyedTimes of this AccountsRankings. The destroyedTimes
@@ -181,7 +181,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the destroyedTimes of this AccountsRankings
      */
-    short getDestroyedTimes();
+    short destroyedTimes();
 
     /**
      * Returns the destroyedRadiation of this AccountsRankings. The
@@ -190,7 +190,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return the destroyedRadiation of this AccountsRankings
      */
-    short getDestroyedRadiation();
+    short destroyedRadiation();
 
     /**
      * Sets the id of this AccountsRankings. The id field corresponds to the
@@ -200,7 +200,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setId(int id);
+    AccountsRankings id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsRankings. The accountsId field
@@ -211,7 +211,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setAccountsId(int accountsId);
+    AccountsRankings accountsId(int accountsId);
 
     /**
      * Sets the points of this AccountsRankings. The points field corresponds to
@@ -221,7 +221,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setPoints(int points);
+    AccountsRankings points(int points);
 
     /**
      * Sets the bestPoints of this AccountsRankings. The bestPoints field
@@ -232,7 +232,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setBestPoints(int bestPoints);
+    AccountsRankings bestPoints(int bestPoints);
 
     /**
      * Sets the destroyedAllies of this AccountsRankings. The destroyedAllies
@@ -243,7 +243,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setDestroyedAllies(short destroyedAllies);
+    AccountsRankings destroyedAllies(short destroyedAllies);
 
     /**
      * Sets the destroyedPhoenix of this AccountsRankings. The destroyedPhoenix
@@ -254,7 +254,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setDestroyedPhoenix(short destroyedPhoenix);
+    AccountsRankings destroyedPhoenix(short destroyedPhoenix);
 
     /**
      * Sets the destroyedTimes of this AccountsRankings. The destroyedTimes
@@ -265,7 +265,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setDestroyedTimes(short destroyedTimes);
+    AccountsRankings destroyedTimes(short destroyedTimes);
 
     /**
      * Sets the destroyedRadiation of this AccountsRankings. The
@@ -276,7 +276,7 @@ public interface GeneratedAccountsRankings {
      *
      * @return this AccountsRankings instance
      */
-    AccountsRankings setDestroyedRadiation(short destroyedRadiation);
+    AccountsRankings destroyedRadiation(short destroyedRadiation);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

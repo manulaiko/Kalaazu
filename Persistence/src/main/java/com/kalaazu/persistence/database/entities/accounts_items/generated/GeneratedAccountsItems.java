@@ -24,24 +24,24 @@ public interface GeneratedAccountsItems {
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getId()} method.
+     * obtained using the {@link AccountsItems#id()} method.
      */
     IntField<AccountsItems, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsItems::getId,
-            AccountsItems::setId,
+            AccountsItems::id,
+            AccountsItems::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getItemsId()} method.
+     * obtained using the {@link AccountsItems#itemsId()} method.
      */
     ShortForeignKeyField<AccountsItems, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            AccountsItems::getItemsId,
-            AccountsItems::setItemsId,
+            AccountsItems::itemsId,
+            AccountsItems::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -49,12 +49,12 @@ public interface GeneratedAccountsItems {
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getAccountsId()} method.
+     * obtained using the {@link AccountsItems#accountsId()} method.
      */
     IntForeignKeyField<AccountsItems, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsItems::getAccountsId,
-            AccountsItems::setAccountsId,
+            AccountsItems::accountsId,
+            AccountsItems::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -62,12 +62,12 @@ public interface GeneratedAccountsItems {
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getLevelsId()} method.
+     * obtained using the {@link AccountsItems#levelsId()} method.
      */
     ByteForeignKeyField<AccountsItems, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            AccountsItems::getLevelsId,
-            AccountsItems::setLevelsId,
+            AccountsItems::levelsId,
+            AccountsItems::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -75,24 +75,24 @@ public interface GeneratedAccountsItems {
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getDate()} method.
+     * obtained using the {@link AccountsItems#date()} method.
      */
     ComparableField<AccountsItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsItems::getDate,
-            AccountsItems::setDate,
+            AccountsItems::date,
+            AccountsItems::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsItems} field that can be
-     * obtained using the {@link AccountsItems#getAmount()} method.
+     * obtained using the {@link AccountsItems#amount()} method.
      */
     LongField<AccountsItems, Long> AMOUNT = LongField.create(
             Identifier.AMOUNT,
-            AccountsItems::getAmount,
-            AccountsItems::setAmount,
+            AccountsItems::amount,
+            AccountsItems::amount,
             TypeMapper.primitive(),
             false
     );
@@ -103,7 +103,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the id of this AccountsItems
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the itemsId of this AccountsItems. The itemsId field corresponds
@@ -111,7 +111,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the itemsId of this AccountsItems
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the accountsId of this AccountsItems. The accountsId field
@@ -120,7 +120,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the accountsId of this AccountsItems
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the levelsId of this AccountsItems. The levelsId field
@@ -129,7 +129,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the levelsId of this AccountsItems
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the date of this AccountsItems. The date field corresponds to the
@@ -137,7 +137,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the date of this AccountsItems
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the amount of this AccountsItems. The amount field corresponds to
@@ -145,7 +145,7 @@ public interface GeneratedAccountsItems {
      *
      * @return the amount of this AccountsItems
      */
-    long getAmount();
+    long amount();
 
     /**
      * Sets the id of this AccountsItems. The id field corresponds to the
@@ -155,7 +155,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setId(int id);
+    AccountsItems id(Integer id);
 
     /**
      * Sets the itemsId of this AccountsItems. The itemsId field corresponds to
@@ -165,7 +165,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setItemsId(short itemsId);
+    AccountsItems itemsId(short itemsId);
 
     /**
      * Sets the accountsId of this AccountsItems. The accountsId field
@@ -176,7 +176,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setAccountsId(int accountsId);
+    AccountsItems accountsId(int accountsId);
 
     /**
      * Sets the levelsId of this AccountsItems. The levelsId field corresponds
@@ -186,7 +186,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setLevelsId(byte levelsId);
+    AccountsItems levelsId(byte levelsId);
 
     /**
      * Sets the date of this AccountsItems. The date field corresponds to the
@@ -196,7 +196,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setDate(Timestamp date);
+    AccountsItems date(Timestamp date);
 
     /**
      * Sets the amount of this AccountsItems. The amount field corresponds to
@@ -206,7 +206,7 @@ public interface GeneratedAccountsItems {
      *
      * @return this AccountsItems instance
      */
-    AccountsItems setAmount(long amount);
+    AccountsItems amount(long amount);
 
     /**
      * Queries the specified manager for the referenced Items. If no such Items

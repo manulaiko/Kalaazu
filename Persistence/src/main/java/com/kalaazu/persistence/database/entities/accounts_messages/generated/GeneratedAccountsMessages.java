@@ -28,24 +28,24 @@ public interface GeneratedAccountsMessages {
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getId()} method.
+     * obtained using the {@link AccountsMessages#id()} method.
      */
     IntField<AccountsMessages, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsMessages::getId,
-            AccountsMessages::setId,
+            AccountsMessages::id,
+            AccountsMessages::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getFromAccountsId()} method.
+     * obtained using the {@link AccountsMessages#fromAccountsId()} method.
      */
     IntForeignKeyField<AccountsMessages, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
-            AccountsMessages::getFromAccountsId,
-            AccountsMessages::setFromAccountsId,
+            AccountsMessages::fromAccountsId,
+            AccountsMessages::fromAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -53,12 +53,12 @@ public interface GeneratedAccountsMessages {
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getFromStatus()} method.
+     * obtained using the {@link AccountsMessages#fromStatus()} method.
      */
     EnumField<AccountsMessages, Byte, MessageStatus> FROM_STATUS = EnumField.create(
             Identifier.FROM_STATUS,
-            AccountsMessages::getFromStatus,
-            AccountsMessages::setFromStatus,
+            AccountsMessages::fromStatus,
+            AccountsMessages::fromStatus,
             new MessageStatusMapper(),
             MessageStatus::name,
             MessageStatus::valueOf,
@@ -67,12 +67,12 @@ public interface GeneratedAccountsMessages {
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getToAccountsId()} method.
+     * obtained using the {@link AccountsMessages#toAccountsId()} method.
      */
     IntForeignKeyField<AccountsMessages, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
-            AccountsMessages::getToAccountsId,
-            AccountsMessages::setToAccountsId,
+            AccountsMessages::toAccountsId,
+            AccountsMessages::toAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -80,12 +80,12 @@ public interface GeneratedAccountsMessages {
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getToStatus()} method.
+     * obtained using the {@link AccountsMessages#toStatus()} method.
      */
     EnumField<AccountsMessages, Byte, MessageStatus> TO_STATUS = EnumField.create(
             Identifier.TO_STATUS,
-            AccountsMessages::getToStatus,
-            AccountsMessages::setToStatus,
+            AccountsMessages::toStatus,
+            AccountsMessages::toStatus,
             new MessageStatusMapper(),
             MessageStatus::name,
             MessageStatus::valueOf,
@@ -94,36 +94,36 @@ public interface GeneratedAccountsMessages {
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getDate()} method.
+     * obtained using the {@link AccountsMessages#date()} method.
      */
     ComparableField<AccountsMessages, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            AccountsMessages::getDate,
-            AccountsMessages::setDate,
+            AccountsMessages::date,
+            AccountsMessages::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getTitle()} method.
+     * obtained using the {@link AccountsMessages#title()} method.
      */
     StringField<AccountsMessages, String> TITLE = StringField.create(
             Identifier.TITLE,
-            AccountsMessages::getTitle,
-            AccountsMessages::setTitle,
+            AccountsMessages::title,
+            AccountsMessages::title,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsMessages} field that can be
-     * obtained using the {@link AccountsMessages#getText()} method.
+     * obtained using the {@link AccountsMessages#text()} method.
      */
     StringField<AccountsMessages, String> TEXT = StringField.create(
             Identifier.TEXT,
-            AccountsMessages::getText,
-            AccountsMessages::setText,
+            AccountsMessages::text,
+            AccountsMessages::text,
             TypeMapper.identity(),
             false
     );
@@ -134,7 +134,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the id of this AccountsMessages
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the fromAccountsId of this AccountsMessages. The fromAccountsId
@@ -143,7 +143,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the fromAccountsId of this AccountsMessages
      */
-    int getFromAccountsId();
+    int fromAccountsId();
 
     /**
      * Returns the fromStatus of this AccountsMessages. The fromStatus field
@@ -152,7 +152,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the fromStatus of this AccountsMessages
      */
-    MessageStatus getFromStatus();
+    MessageStatus fromStatus();
 
     /**
      * Returns the toAccountsId of this AccountsMessages. The toAccountsId field
@@ -161,7 +161,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the toAccountsId of this AccountsMessages
      */
-    int getToAccountsId();
+    int toAccountsId();
 
     /**
      * Returns the toStatus of this AccountsMessages. The toStatus field
@@ -170,7 +170,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the toStatus of this AccountsMessages
      */
-    MessageStatus getToStatus();
+    MessageStatus toStatus();
 
     /**
      * Returns the date of this AccountsMessages. The date field corresponds to
@@ -178,7 +178,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the date of this AccountsMessages
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the title of this AccountsMessages. The title field corresponds
@@ -186,7 +186,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the title of this AccountsMessages
      */
-    String getTitle();
+    String title();
 
     /**
      * Returns the text of this AccountsMessages. The text field corresponds to
@@ -194,7 +194,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return the text of this AccountsMessages
      */
-    String getText();
+    String text();
 
     /**
      * Sets the id of this AccountsMessages. The id field corresponds to the
@@ -204,7 +204,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setId(int id);
+    AccountsMessages id(Integer id);
 
     /**
      * Sets the fromAccountsId of this AccountsMessages. The fromAccountsId
@@ -215,7 +215,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setFromAccountsId(int fromAccountsId);
+    AccountsMessages fromAccountsId(int fromAccountsId);
 
     /**
      * Sets the fromStatus of this AccountsMessages. The fromStatus field
@@ -226,7 +226,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setFromStatus(MessageStatus fromStatus);
+    AccountsMessages fromStatus(MessageStatus fromStatus);
 
     /**
      * Sets the toAccountsId of this AccountsMessages. The toAccountsId field
@@ -237,7 +237,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setToAccountsId(int toAccountsId);
+    AccountsMessages toAccountsId(int toAccountsId);
 
     /**
      * Sets the toStatus of this AccountsMessages. The toStatus field
@@ -248,7 +248,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setToStatus(MessageStatus toStatus);
+    AccountsMessages toStatus(MessageStatus toStatus);
 
     /**
      * Sets the date of this AccountsMessages. The date field corresponds to the
@@ -258,7 +258,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setDate(Timestamp date);
+    AccountsMessages date(Timestamp date);
 
     /**
      * Sets the title of this AccountsMessages. The title field corresponds to
@@ -268,7 +268,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setTitle(String title);
+    AccountsMessages title(String title);
 
     /**
      * Sets the text of this AccountsMessages. The text field corresponds to the
@@ -278,7 +278,7 @@ public interface GeneratedAccountsMessages {
      *
      * @return this AccountsMessages instance
      */
-    AccountsMessages setText(String text);
+    AccountsMessages text(String text);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

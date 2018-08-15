@@ -2,10 +2,9 @@ package com.kalaazu.persistence.database.entities.accounts_items.generated;
 
 import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -17,9 +16,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsItemsImpl implements AccountsItems {
 
-    private int id;
+    private Integer id;
 
     private short itemsId;
 
@@ -36,75 +36,9 @@ public abstract class GeneratedAccountsItemsImpl implements AccountsItems {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public short getItemsId() {
-        return itemsId;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public long getAmount() {
-        return amount;
-    }
-
-    @Override
-    public AccountsItems setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsItems setItemsId(short itemsId) {
-        this.itemsId = itemsId;
-        return this;
-    }
-
-    @Override
-    public AccountsItems setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsItems setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public AccountsItems setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
-    public AccountsItems setAmount(long amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
     public Items findItemsId(Manager<Items> foreignManager) {
         return foreignManager.stream()
-                             .filter(Items.ID.equal(getItemsId()))
+                             .filter(Items.ID.equal(itemsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -112,7 +46,7 @@ public abstract class GeneratedAccountsItemsImpl implements AccountsItems {
     @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -120,62 +54,8 @@ public abstract class GeneratedAccountsItemsImpl implements AccountsItems {
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("itemsId = " + Objects.toString(getItemsId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("date = " + Objects.toString(getDate()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        return "AccountsItemsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsItems)) {
-            return false;
-        }
-        final AccountsItems thatAccountsItems = (AccountsItems) that;
-        if (this.getId() != thatAccountsItems.getId()) {
-            return false;
-        }
-        if (this.getItemsId() != thatAccountsItems.getItemsId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatAccountsItems.getAccountsId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatAccountsItems.getLevelsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatAccountsItems.getDate())) {
-            return false;
-        }
-        if (this.getAmount() != thatAccountsItems.getAmount()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Short.hashCode(getItemsId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        hash = 31 * hash + Long.hashCode(getAmount());
-        return hash;
     }
 }
