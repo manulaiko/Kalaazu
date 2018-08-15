@@ -9,6 +9,7 @@ import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -29,24 +30,24 @@ public interface GeneratedAccountsSkylabs {
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getId()} method.
+     * obtained using the {@link AccountsSkylabs#id()} method.
      */
     IntField<AccountsSkylabs, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsSkylabs::getId,
-            AccountsSkylabs::setId,
+            AccountsSkylabs::id,
+            AccountsSkylabs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getAccountsId()} method.
+     * obtained using the {@link AccountsSkylabs#accountsId()} method.
      */
     IntForeignKeyField<AccountsSkylabs, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsSkylabs::getAccountsId,
-            AccountsSkylabs::setAccountsId,
+            AccountsSkylabs::accountsId,
+            AccountsSkylabs::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +55,12 @@ public interface GeneratedAccountsSkylabs {
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getSkylabModulesId()} method.
+     * obtained using the {@link AccountsSkylabs#skylabModulesId()} method.
      */
     ByteForeignKeyField<AccountsSkylabs, Byte, SkylabModules> SKYLAB_MODULES_ID = ByteForeignKeyField.create(
             Identifier.SKYLAB_MODULES_ID,
-            AccountsSkylabs::getSkylabModulesId,
-            AccountsSkylabs::setSkylabModulesId,
+            AccountsSkylabs::skylabModulesId,
+            AccountsSkylabs::skylabModulesId,
             SkylabModules.ID,
             TypeMapper.primitive(),
             false
@@ -67,12 +68,12 @@ public interface GeneratedAccountsSkylabs {
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getLevelsId()} method.
+     * obtained using the {@link AccountsSkylabs#levelsId()} method.
      */
     ByteForeignKeyField<AccountsSkylabs, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            AccountsSkylabs::getLevelsId,
-            AccountsSkylabs::setLevelsId,
+            AccountsSkylabs::levelsId,
+            AccountsSkylabs::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -80,24 +81,24 @@ public interface GeneratedAccountsSkylabs {
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getSpace()} method.
+     * obtained using the {@link AccountsSkylabs#space()} method.
      */
     IntField<AccountsSkylabs, Integer> SPACE = IntField.create(
             Identifier.SPACE,
-            AccountsSkylabs::getSpace,
-            AccountsSkylabs::setSpace,
+            AccountsSkylabs::space,
+            AccountsSkylabs::space,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsSkylabs} field that can be
-     * obtained using the {@link AccountsSkylabs#getUpgrade()} method.
+     * obtained using the {@link AccountsSkylabs#upgrade()} method.
      */
     ComparableField<AccountsSkylabs, Timestamp, Timestamp> UPGRADE = ComparableField.create(
             Identifier.UPGRADE,
-            o -> OptionalUtil.unwrap(o.getUpgrade()),
-            AccountsSkylabs::setUpgrade,
+            o -> OptionalUtil.unwrap(o.upgrade()),
+            (ReferenceSetter<AccountsSkylabs, Timestamp>) AccountsSkylabs::upgrade,
             TypeMapper.identity(),
             false
     );
@@ -108,7 +109,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the id of this AccountsSkylabs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsSkylabs. The accountsId field
@@ -117,7 +118,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the accountsId of this AccountsSkylabs
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the skylabModulesId of this AccountsSkylabs. The skylabModulesId
@@ -126,7 +127,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the skylabModulesId of this AccountsSkylabs
      */
-    byte getSkylabModulesId();
+    byte skylabModulesId();
 
     /**
      * Returns the levelsId of this AccountsSkylabs. The levelsId field
@@ -135,7 +136,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the levelsId of this AccountsSkylabs
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the space of this AccountsSkylabs. The space field corresponds to
@@ -143,7 +144,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the space of this AccountsSkylabs
      */
-    int getSpace();
+    int space();
 
     /**
      * Returns the upgrade of this AccountsSkylabs. The upgrade field
@@ -152,7 +153,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return the upgrade of this AccountsSkylabs
      */
-    Optional<Timestamp> getUpgrade();
+    Optional<Timestamp> upgrade();
 
     /**
      * Sets the id of this AccountsSkylabs. The id field corresponds to the
@@ -162,7 +163,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setId(int id);
+    AccountsSkylabs id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsSkylabs. The accountsId field
@@ -173,7 +174,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setAccountsId(int accountsId);
+    AccountsSkylabs accountsId(int accountsId);
 
     /**
      * Sets the skylabModulesId of this AccountsSkylabs. The skylabModulesId
@@ -184,7 +185,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setSkylabModulesId(byte skylabModulesId);
+    AccountsSkylabs skylabModulesId(byte skylabModulesId);
 
     /**
      * Sets the levelsId of this AccountsSkylabs. The levelsId field corresponds
@@ -194,7 +195,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setLevelsId(byte levelsId);
+    AccountsSkylabs levelsId(byte levelsId);
 
     /**
      * Sets the space of this AccountsSkylabs. The space field corresponds to
@@ -204,7 +205,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setSpace(int space);
+    AccountsSkylabs space(int space);
 
     /**
      * Sets the upgrade of this AccountsSkylabs. The upgrade field corresponds
@@ -214,7 +215,7 @@ public interface GeneratedAccountsSkylabs {
      *
      * @return this AccountsSkylabs instance
      */
-    AccountsSkylabs setUpgrade(Timestamp upgrade);
+    AccountsSkylabs upgrade(Timestamp upgrade);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

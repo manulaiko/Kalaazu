@@ -25,24 +25,24 @@ public interface GeneratedAccountsSkills {
 
     /**
      * This Field corresponds to the {@link AccountsSkills} field that can be
-     * obtained using the {@link AccountsSkills#getId()} method.
+     * obtained using the {@link AccountsSkills#id()} method.
      */
     IntField<AccountsSkills, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsSkills::getId,
-            AccountsSkills::setId,
+            AccountsSkills::id,
+            AccountsSkills::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsSkills} field that can be
-     * obtained using the {@link AccountsSkills#getAccountsId()} method.
+     * obtained using the {@link AccountsSkills#accountsId()} method.
      */
     IntForeignKeyField<AccountsSkills, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsSkills::getAccountsId,
-            AccountsSkills::setAccountsId,
+            AccountsSkills::accountsId,
+            AccountsSkills::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -50,12 +50,12 @@ public interface GeneratedAccountsSkills {
 
     /**
      * This Field corresponds to the {@link AccountsSkills} field that can be
-     * obtained using the {@link AccountsSkills#getSkilltreeSkillsId()} method.
+     * obtained using the {@link AccountsSkills#skilltreeSkillsId()} method.
      */
     ByteForeignKeyField<AccountsSkills, Byte, SkilltreeSkills> SKILLTREE_SKILLS_ID = ByteForeignKeyField.create(
             Identifier.SKILLTREE_SKILLS_ID,
-            AccountsSkills::getSkilltreeSkillsId,
-            AccountsSkills::setSkilltreeSkillsId,
+            AccountsSkills::skilltreeSkillsId,
+            AccountsSkills::skilltreeSkillsId,
             SkilltreeSkills.ID,
             TypeMapper.primitive(),
             false
@@ -63,12 +63,12 @@ public interface GeneratedAccountsSkills {
 
     /**
      * This Field corresponds to the {@link AccountsSkills} field that can be
-     * obtained using the {@link AccountsSkills#getSkilltreeLevelsId()} method.
+     * obtained using the {@link AccountsSkills#skilltreeLevelsId()} method.
      */
     ShortForeignKeyField<AccountsSkills, Short, SkilltreeLevels> SKILLTREE_LEVELS_ID = ShortForeignKeyField.create(
             Identifier.SKILLTREE_LEVELS_ID,
-            AccountsSkills::getSkilltreeLevelsId,
-            AccountsSkills::setSkilltreeLevelsId,
+            AccountsSkills::skilltreeLevelsId,
+            AccountsSkills::skilltreeLevelsId,
             SkilltreeLevels.ID,
             TypeMapper.primitive(),
             false
@@ -80,7 +80,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return the id of this AccountsSkills
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsSkills. The accountsId field
@@ -89,7 +89,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return the accountsId of this AccountsSkills
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the skilltreeSkillsId of this AccountsSkills. The
@@ -98,7 +98,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return the skilltreeSkillsId of this AccountsSkills
      */
-    byte getSkilltreeSkillsId();
+    byte skilltreeSkillsId();
 
     /**
      * Returns the skilltreeLevelsId of this AccountsSkills. The
@@ -107,7 +107,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return the skilltreeLevelsId of this AccountsSkills
      */
-    short getSkilltreeLevelsId();
+    short skilltreeLevelsId();
 
     /**
      * Sets the id of this AccountsSkills. The id field corresponds to the
@@ -117,7 +117,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return this AccountsSkills instance
      */
-    AccountsSkills setId(int id);
+    AccountsSkills id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsSkills. The accountsId field
@@ -128,7 +128,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return this AccountsSkills instance
      */
-    AccountsSkills setAccountsId(int accountsId);
+    AccountsSkills accountsId(int accountsId);
 
     /**
      * Sets the skilltreeSkillsId of this AccountsSkills. The skilltreeSkillsId
@@ -139,7 +139,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return this AccountsSkills instance
      */
-    AccountsSkills setSkilltreeSkillsId(byte skilltreeSkillsId);
+    AccountsSkills skilltreeSkillsId(byte skilltreeSkillsId);
 
     /**
      * Sets the skilltreeLevelsId of this AccountsSkills. The skilltreeLevelsId
@@ -150,7 +150,7 @@ public interface GeneratedAccountsSkills {
      *
      * @return this AccountsSkills instance
      */
-    AccountsSkills setSkilltreeLevelsId(short skilltreeLevelsId);
+    AccountsSkills skilltreeLevelsId(short skilltreeLevelsId);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

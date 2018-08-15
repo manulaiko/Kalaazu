@@ -42,8 +42,7 @@ public final class AccountsShipsImpl
         this.account = super.findAccountsId(
                 Database.getInstance()
                         .db()
-                        .manager(Accounts.class
-                        )
+                        .manager(Accounts.class)
         );
 
         return this.account;

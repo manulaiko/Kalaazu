@@ -9,6 +9,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -30,13 +31,13 @@ public interface GeneratedAccountsTechfactoryItems {
 
     /**
      * This Field corresponds to the {@link AccountsTechfactoryItems} field that
-     * can be obtained using the {@link AccountsTechfactoryItems#getId()}
+     * can be obtained using the {@link AccountsTechfactoryItems#id()}
      * method.
      */
     IntField<AccountsTechfactoryItems, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsTechfactoryItems::getId,
-            AccountsTechfactoryItems::setId,
+            AccountsTechfactoryItems::id,
+            AccountsTechfactoryItems::id,
             TypeMapper.primitive(),
             true
     );
@@ -44,12 +45,12 @@ public interface GeneratedAccountsTechfactoryItems {
     /**
      * This Field corresponds to the {@link AccountsTechfactoryItems} field that
      * can be obtained using the {@link
-     * AccountsTechfactoryItems#getAccountsId()} method.
+     * AccountsTechfactoryItems#accountsId()} method.
      */
     IntForeignKeyField<AccountsTechfactoryItems, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsTechfactoryItems::getAccountsId,
-            AccountsTechfactoryItems::setAccountsId,
+            AccountsTechfactoryItems::accountsId,
+            AccountsTechfactoryItems::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -58,12 +59,12 @@ public interface GeneratedAccountsTechfactoryItems {
     /**
      * This Field corresponds to the {@link AccountsTechfactoryItems} field that
      * can be obtained using the {@link
-     * AccountsTechfactoryItems#getTechfactoryItemsId()} method.
+     * AccountsTechfactoryItems#techfactoryItemsId()} method.
      */
     ByteForeignKeyField<AccountsTechfactoryItems, Byte, TechfactoryItems> TECHFACTORY_ITEMS_ID = ByteForeignKeyField.create(
             Identifier.TECHFACTORY_ITEMS_ID,
-            AccountsTechfactoryItems::getTechfactoryItemsId,
-            AccountsTechfactoryItems::setTechfactoryItemsId,
+            AccountsTechfactoryItems::techfactoryItemsId,
+            AccountsTechfactoryItems::techfactoryItemsId,
             TechfactoryItems.ID,
             TypeMapper.primitive(),
             false
@@ -71,26 +72,26 @@ public interface GeneratedAccountsTechfactoryItems {
 
     /**
      * This Field corresponds to the {@link AccountsTechfactoryItems} field that
-     * can be obtained using the {@link AccountsTechfactoryItems#getAmount()}
+     * can be obtained using the {@link AccountsTechfactoryItems#amount()}
      * method.
      */
     ShortField<AccountsTechfactoryItems, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
-            AccountsTechfactoryItems::getAmount,
-            AccountsTechfactoryItems::setAmount,
+            AccountsTechfactoryItems::amount,
+            AccountsTechfactoryItems::amount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsTechfactoryItems} field that
-     * can be obtained using the {@link AccountsTechfactoryItems#getDate()}
+     * can be obtained using the {@link AccountsTechfactoryItems#date()}
      * method.
      */
     ComparableField<AccountsTechfactoryItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            o -> OptionalUtil.unwrap(o.getDate()),
-            AccountsTechfactoryItems::setDate,
+            o -> OptionalUtil.unwrap(o.date()),
+            (ReferenceSetter<AccountsTechfactoryItems, Timestamp>) AccountsTechfactoryItems::date,
             TypeMapper.identity(),
             false
     );
@@ -101,7 +102,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return the id of this AccountsTechfactoryItems
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsTechfactoryItems. The accountsId
@@ -110,7 +111,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return the accountsId of this AccountsTechfactoryItems
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the techfactoryItemsId of this AccountsTechfactoryItems. The
@@ -119,7 +120,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return the techfactoryItemsId of this AccountsTechfactoryItems
      */
-    byte getTechfactoryItemsId();
+    byte techfactoryItemsId();
 
     /**
      * Returns the amount of this AccountsTechfactoryItems. The amount field
@@ -128,7 +129,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return the amount of this AccountsTechfactoryItems
      */
-    short getAmount();
+    short amount();
 
     /**
      * Returns the date of this AccountsTechfactoryItems. The date field
@@ -137,7 +138,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return the date of this AccountsTechfactoryItems
      */
-    Optional<Timestamp> getDate();
+    Optional<Timestamp> date();
 
     /**
      * Sets the id of this AccountsTechfactoryItems. The id field corresponds to
@@ -147,7 +148,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return this AccountsTechfactoryItems instance
      */
-    AccountsTechfactoryItems setId(int id);
+    AccountsTechfactoryItems id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsTechfactoryItems. The accountsId
@@ -158,7 +159,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return this AccountsTechfactoryItems instance
      */
-    AccountsTechfactoryItems setAccountsId(int accountsId);
+    AccountsTechfactoryItems accountsId(int accountsId);
 
     /**
      * Sets the techfactoryItemsId of this AccountsTechfactoryItems. The
@@ -169,7 +170,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return this AccountsTechfactoryItems instance
      */
-    AccountsTechfactoryItems setTechfactoryItemsId(byte techfactoryItemsId);
+    AccountsTechfactoryItems techfactoryItemsId(byte techfactoryItemsId);
 
     /**
      * Sets the amount of this AccountsTechfactoryItems. The amount field
@@ -180,7 +181,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return this AccountsTechfactoryItems instance
      */
-    AccountsTechfactoryItems setAmount(short amount);
+    AccountsTechfactoryItems amount(short amount);
 
     /**
      * Sets the date of this AccountsTechfactoryItems. The date field
@@ -191,7 +192,7 @@ public interface GeneratedAccountsTechfactoryItems {
      *
      * @return this AccountsTechfactoryItems instance
      */
-    AccountsTechfactoryItems setDate(Timestamp date);
+    AccountsTechfactoryItems date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

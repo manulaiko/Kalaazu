@@ -24,24 +24,24 @@ public interface GeneratedAccountsShips {
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getId()} method.
+     * obtained using the {@link AccountsShips#id()} method.
      */
     IntField<AccountsShips, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsShips::getId,
-            AccountsShips::setId,
+            AccountsShips::id,
+            AccountsShips::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getAccountsId()} method.
+     * obtained using the {@link AccountsShips#accountsId()} method.
      */
     IntForeignKeyField<AccountsShips, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsShips::getAccountsId,
-            AccountsShips::setAccountsId,
+            AccountsShips::accountsId,
+            AccountsShips::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -49,12 +49,12 @@ public interface GeneratedAccountsShips {
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getShipsId()} method.
+     * obtained using the {@link AccountsShips#shipsId()} method.
      */
     ByteForeignKeyField<AccountsShips, Byte, Ships> SHIPS_ID = ByteForeignKeyField.create(
             Identifier.SHIPS_ID,
-            AccountsShips::getShipsId,
-            AccountsShips::setShipsId,
+            AccountsShips::shipsId,
+            AccountsShips::shipsId,
             Ships.ID,
             TypeMapper.primitive(),
             false
@@ -62,12 +62,12 @@ public interface GeneratedAccountsShips {
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getMapsId()} method.
+     * obtained using the {@link AccountsShips#mapsId()} method.
      */
     ByteForeignKeyField<AccountsShips, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
-            AccountsShips::getMapsId,
-            AccountsShips::setMapsId,
+            AccountsShips::mapsId,
+            AccountsShips::mapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -75,48 +75,48 @@ public interface GeneratedAccountsShips {
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getPosition()} method.
+     * obtained using the {@link AccountsShips#position()} method.
      */
     ReferenceField<AccountsShips, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
-            AccountsShips::getPosition,
-            AccountsShips::setPosition,
+            AccountsShips::position,
+            AccountsShips::position,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getHealth()} method.
+     * obtained using the {@link AccountsShips#health()} method.
      */
     IntField<AccountsShips, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
-            AccountsShips::getHealth,
-            AccountsShips::setHealth,
+            AccountsShips::health,
+            AccountsShips::health,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getNanohull()} method.
+     * obtained using the {@link AccountsShips#nanohull()} method.
      */
     IntField<AccountsShips, Integer> NANOHULL = IntField.create(
             Identifier.NANOHULL,
-            AccountsShips::getNanohull,
-            AccountsShips::setNanohull,
+            AccountsShips::nanohull,
+            AccountsShips::nanohull,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsShips} field that can be
-     * obtained using the {@link AccountsShips#getGfx()} method.
+     * obtained using the {@link AccountsShips#gfx()} method.
      */
     ByteField<AccountsShips, Byte> GFX = ByteField.create(
             Identifier.GFX,
-            AccountsShips::getGfx,
-            AccountsShips::setGfx,
+            AccountsShips::gfx,
+            AccountsShips::gfx,
             TypeMapper.primitive(),
             false
     );
@@ -127,7 +127,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the id of this AccountsShips
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsShips. The accountsId field
@@ -136,7 +136,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the accountsId of this AccountsShips
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the shipsId of this AccountsShips. The shipsId field corresponds
@@ -144,7 +144,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the shipsId of this AccountsShips
      */
-    byte getShipsId();
+    byte shipsId();
 
     /**
      * Returns the mapsId of this AccountsShips. The mapsId field corresponds to
@@ -152,7 +152,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the mapsId of this AccountsShips
      */
-    byte getMapsId();
+    byte mapsId();
 
     /**
      * Returns the position of this AccountsShips. The position field
@@ -161,7 +161,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the position of this AccountsShips
      */
-    Vector2 getPosition();
+    Vector2 position();
 
     /**
      * Returns the health of this AccountsShips. The health field corresponds to
@@ -169,7 +169,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the health of this AccountsShips
      */
-    int getHealth();
+    int health();
 
     /**
      * Returns the nanohull of this AccountsShips. The nanohull field
@@ -178,7 +178,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the nanohull of this AccountsShips
      */
-    int getNanohull();
+    int nanohull();
 
     /**
      * Returns the gfx of this AccountsShips. The gfx field corresponds to the
@@ -186,7 +186,7 @@ public interface GeneratedAccountsShips {
      *
      * @return the gfx of this AccountsShips
      */
-    byte getGfx();
+    byte gfx();
 
     /**
      * Sets the id of this AccountsShips. The id field corresponds to the
@@ -196,7 +196,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setId(int id);
+    AccountsShips id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsShips. The accountsId field
@@ -207,7 +207,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setAccountsId(int accountsId);
+    AccountsShips accountsId(int accountsId);
 
     /**
      * Sets the shipsId of this AccountsShips. The shipsId field corresponds to
@@ -217,7 +217,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setShipsId(byte shipsId);
+    AccountsShips shipsId(byte shipsId);
 
     /**
      * Sets the mapsId of this AccountsShips. The mapsId field corresponds to
@@ -227,7 +227,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setMapsId(byte mapsId);
+    AccountsShips mapsId(byte mapsId);
 
     /**
      * Sets the position of this AccountsShips. The position field corresponds
@@ -237,7 +237,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setPosition(Vector2 position);
+    AccountsShips position(Vector2 position);
 
     /**
      * Sets the health of this AccountsShips. The health field corresponds to
@@ -247,7 +247,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setHealth(int health);
+    AccountsShips health(int health);
 
     /**
      * Sets the nanohull of this AccountsShips. The nanohull field corresponds
@@ -257,7 +257,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setNanohull(int nanohull);
+    AccountsShips nanohull(int nanohull);
 
     /**
      * Sets the gfx of this AccountsShips. The gfx field corresponds to the
@@ -267,7 +267,7 @@ public interface GeneratedAccountsShips {
      *
      * @return this AccountsShips instance
      */
-    AccountsShips setGfx(byte gfx);
+    AccountsShips gfx(byte gfx);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

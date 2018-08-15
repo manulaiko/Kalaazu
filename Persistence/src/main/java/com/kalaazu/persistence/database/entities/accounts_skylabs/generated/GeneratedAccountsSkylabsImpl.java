@@ -3,6 +3,7 @@ package com.kalaazu.persistence.database.entities.accounts_skylabs.generated;
 import com.kalaazu.persistence.database.entities.*;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
 import java.util.Objects;
@@ -19,9 +20,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedAccountsSkylabsImpl implements AccountsSkylabs {
 
-    private int id;
+    private Integer id;
 
     private int accountsId;
 
@@ -38,75 +40,14 @@ public abstract class GeneratedAccountsSkylabsImpl implements AccountsSkylabs {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public byte getSkylabModulesId() {
-        return skylabModulesId;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public int getSpace() {
-        return space;
-    }
-
-    @Override
-    public Optional<Timestamp> getUpgrade() {
+    public Optional<Timestamp> upgrade() {
         return Optional.ofNullable(upgrade);
-    }
-
-    @Override
-    public AccountsSkylabs setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public AccountsSkylabs setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public AccountsSkylabs setSkylabModulesId(byte skylabModulesId) {
-        this.skylabModulesId = skylabModulesId;
-        return this;
-    }
-
-    @Override
-    public AccountsSkylabs setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public AccountsSkylabs setSpace(int space) {
-        this.space = space;
-        return this;
-    }
-
-    @Override
-    public AccountsSkylabs setUpgrade(Timestamp upgrade) {
-        this.upgrade = upgrade;
-        return this;
     }
 
     @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -114,7 +55,7 @@ public abstract class GeneratedAccountsSkylabsImpl implements AccountsSkylabs {
     @Override
     public SkylabModules findSkylabModulesId(Manager<SkylabModules> foreignManager) {
         return foreignManager.stream()
-                             .filter(SkylabModules.ID.equal(getSkylabModulesId()))
+                             .filter(SkylabModules.ID.equal(skylabModulesId()))
                              .findAny()
                              .orElse(null);
     }
@@ -122,62 +63,8 @@ public abstract class GeneratedAccountsSkylabsImpl implements AccountsSkylabs {
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("skylabModulesId = " + Objects.toString(getSkylabModulesId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("space = " + Objects.toString(getSpace()));
-        sj.add("upgrade = " + Objects.toString(OptionalUtil.unwrap(getUpgrade())));
-        return "AccountsSkylabsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof AccountsSkylabs)) {
-            return false;
-        }
-        final AccountsSkylabs thatAccountsSkylabs = (AccountsSkylabs) that;
-        if (this.getId() != thatAccountsSkylabs.getId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatAccountsSkylabs.getAccountsId()) {
-            return false;
-        }
-        if (this.getSkylabModulesId() != thatAccountsSkylabs.getSkylabModulesId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatAccountsSkylabs.getLevelsId()) {
-            return false;
-        }
-        if (this.getSpace() != thatAccountsSkylabs.getSpace()) {
-            return false;
-        }
-        if (!Objects.equals(this.getUpgrade(), thatAccountsSkylabs.getUpgrade())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Byte.hashCode(getSkylabModulesId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Integer.hashCode(getSpace());
-        hash = 31 * hash + Objects.hashCode(getUpgrade());
-        return hash;
     }
 }

@@ -27,25 +27,25 @@ public interface GeneratedAccountsTechfactories {
 
     /**
      * This Field corresponds to the {@link AccountsTechfactories} field that
-     * can be obtained using the {@link AccountsTechfactories#getId()} method.
+     * can be obtained using the {@link AccountsTechfactories#id()} method.
      */
     IntField<AccountsTechfactories, Integer> ID = IntField.create(
             Identifier.ID,
-            AccountsTechfactories::getId,
-            AccountsTechfactories::setId,
+            AccountsTechfactories::id,
+            AccountsTechfactories::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link AccountsTechfactories} field that
-     * can be obtained using the {@link AccountsTechfactories#getAccountsId()}
+     * can be obtained using the {@link AccountsTechfactories#accountsId()}
      * method.
      */
     IntForeignKeyField<AccountsTechfactories, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            AccountsTechfactories::getAccountsId,
-            AccountsTechfactories::setAccountsId,
+            AccountsTechfactories::accountsId,
+            AccountsTechfactories::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +54,12 @@ public interface GeneratedAccountsTechfactories {
     /**
      * This Field corresponds to the {@link AccountsTechfactories} field that
      * can be obtained using the {@link
-     * AccountsTechfactories#getSlotUnlockPrice()} method.
+     * AccountsTechfactories#slotUnlockPrice()} method.
      */
     IntField<AccountsTechfactories, Integer> SLOT_UNLOCK_PRICE = IntField.create(
             Identifier.SLOT_UNLOCK_PRICE,
-            AccountsTechfactories::getSlotUnlockPrice,
-            AccountsTechfactories::setSlotUnlockPrice,
+            AccountsTechfactories::slotUnlockPrice,
+            AccountsTechfactories::slotUnlockPrice,
             TypeMapper.primitive(),
             false
     );
@@ -67,25 +67,25 @@ public interface GeneratedAccountsTechfactories {
     /**
      * This Field corresponds to the {@link AccountsTechfactories} field that
      * can be obtained using the {@link
-     * AccountsTechfactories#getSlotUnlockFactor()} method.
+     * AccountsTechfactories#slotUnlockFactor()} method.
      */
     ByteField<AccountsTechfactories, Byte> SLOT_UNLOCK_FACTOR = ByteField.create(
             Identifier.SLOT_UNLOCK_FACTOR,
-            AccountsTechfactories::getSlotUnlockFactor,
-            AccountsTechfactories::setSlotUnlockFactor,
+            AccountsTechfactories::slotUnlockFactor,
+            AccountsTechfactories::slotUnlockFactor,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link AccountsTechfactories} field that
-     * can be obtained using the {@link AccountsTechfactories#getSlots()}
+     * can be obtained using the {@link AccountsTechfactories#slots()}
      * method.
      */
     ByteField<AccountsTechfactories, Byte> SLOTS = ByteField.create(
             Identifier.SLOTS,
-            AccountsTechfactories::getSlots,
-            AccountsTechfactories::setSlots,
+            AccountsTechfactories::slots,
+            AccountsTechfactories::slots,
             TypeMapper.primitive(),
             false
     );
@@ -96,7 +96,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return the id of this AccountsTechfactories
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this AccountsTechfactories. The accountsId
@@ -105,7 +105,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return the accountsId of this AccountsTechfactories
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the slotUnlockPrice of this AccountsTechfactories. The
@@ -114,7 +114,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return the slotUnlockPrice of this AccountsTechfactories
      */
-    int getSlotUnlockPrice();
+    int slotUnlockPrice();
 
     /**
      * Returns the slotUnlockFactor of this AccountsTechfactories. The
@@ -123,7 +123,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return the slotUnlockFactor of this AccountsTechfactories
      */
-    byte getSlotUnlockFactor();
+    byte slotUnlockFactor();
 
     /**
      * Returns the slots of this AccountsTechfactories. The slots field
@@ -132,7 +132,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return the slots of this AccountsTechfactories
      */
-    byte getSlots();
+    byte slots();
 
     /**
      * Sets the id of this AccountsTechfactories. The id field corresponds to
@@ -142,7 +142,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return this AccountsTechfactories instance
      */
-    AccountsTechfactories setId(int id);
+    AccountsTechfactories id(Integer id);
 
     /**
      * Sets the accountsId of this AccountsTechfactories. The accountsId field
@@ -153,7 +153,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return this AccountsTechfactories instance
      */
-    AccountsTechfactories setAccountsId(int accountsId);
+    AccountsTechfactories accountsId(int accountsId);
 
     /**
      * Sets the slotUnlockPrice of this AccountsTechfactories. The
@@ -164,7 +164,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return this AccountsTechfactories instance
      */
-    AccountsTechfactories setSlotUnlockPrice(int slotUnlockPrice);
+    AccountsTechfactories slotUnlockPrice(int slotUnlockPrice);
 
     /**
      * Sets the slotUnlockFactor of this AccountsTechfactories. The
@@ -175,7 +175,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return this AccountsTechfactories instance
      */
-    AccountsTechfactories setSlotUnlockFactor(byte slotUnlockFactor);
+    AccountsTechfactories slotUnlockFactor(byte slotUnlockFactor);
 
     /**
      * Sets the slots of this AccountsTechfactories. The slots field corresponds
@@ -185,7 +185,7 @@ public interface GeneratedAccountsTechfactories {
      *
      * @return this AccountsTechfactories instance
      */
-    AccountsTechfactories setSlots(byte slots);
+    AccountsTechfactories slots(byte slots);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such
