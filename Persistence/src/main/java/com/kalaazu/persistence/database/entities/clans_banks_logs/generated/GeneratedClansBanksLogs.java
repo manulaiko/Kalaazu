@@ -15,6 +15,7 @@ import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.EnumField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -34,24 +35,24 @@ public interface GeneratedClansBanksLogs {
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getId()} method.
+     * obtained using the {@link ClansBanksLogs#id()} method.
      */
     IntField<ClansBanksLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansBanksLogs::getId,
-            ClansBanksLogs::setId,
+            ClansBanksLogs::id,
+            ClansBanksLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getClansBanksId()} method.
+     * obtained using the {@link ClansBanksLogs#clansBanksId()} method.
      */
     IntForeignKeyField<ClansBanksLogs, Integer, ClansBanks> CLANS_BANKS_ID = IntForeignKeyField.create(
             Identifier.CLANS_BANKS_ID,
-            ClansBanksLogs::getClansBanksId,
-            ClansBanksLogs::setClansBanksId,
+            ClansBanksLogs::clansBanksId,
+            ClansBanksLogs::clansBanksId,
             ClansBanks.ID,
             TypeMapper.primitive(),
             false
@@ -59,12 +60,12 @@ public interface GeneratedClansBanksLogs {
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getFromAccountsId()} method.
+     * obtained using the {@link ClansBanksLogs#fromAccountsId()} method.
      */
     IntForeignKeyField<ClansBanksLogs, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
-            ClansBanksLogs::getFromAccountsId,
-            ClansBanksLogs::setFromAccountsId,
+            ClansBanksLogs::fromAccountsId,
+            ClansBanksLogs::fromAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -72,12 +73,12 @@ public interface GeneratedClansBanksLogs {
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getToAccountsId()} method.
+     * obtained using the {@link ClansBanksLogs#toAccountsId()} method.
      */
     IntForeignKeyField<ClansBanksLogs, Integer, Accounts> TO_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
-            ClansBanksLogs::getToAccountsId,
-            ClansBanksLogs::setToAccountsId,
+            ClansBanksLogs::toAccountsId,
+            ClansBanksLogs::toAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -85,24 +86,24 @@ public interface GeneratedClansBanksLogs {
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getDate()} method.
+     * obtained using the {@link ClansBanksLogs#date()} method.
      */
     ComparableField<ClansBanksLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansBanksLogs::getDate,
-            ClansBanksLogs::setDate,
+            ClansBanksLogs::date,
+            (ReferenceSetter<ClansBanksLogs, Timestamp>) ClansBanksLogs::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getType()} method.
+     * obtained using the {@link ClansBanksLogs#type()} method.
      */
     EnumField<ClansBanksLogs, Byte, BankLogType> TYPE = EnumField.create(
             Identifier.TYPE,
-            ClansBanksLogs::getType,
-            ClansBanksLogs::setType,
+            ClansBanksLogs::type,
+            ClansBanksLogs::type,
             new BankLogTypeMapper(),
             BankLogType::name,
             BankLogType::valueOf,
@@ -111,24 +112,24 @@ public interface GeneratedClansBanksLogs {
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getAmount()} method.
+     * obtained using the {@link ClansBanksLogs#amount()} method.
      */
     IntField<ClansBanksLogs, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
-            ClansBanksLogs::getAmount,
-            ClansBanksLogs::setAmount,
+            ClansBanksLogs::amount,
+            ClansBanksLogs::amount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBanksLogs} field that can be
-     * obtained using the {@link ClansBanksLogs#getCurrency()} method.
+     * obtained using the {@link ClansBanksLogs#currency()} method.
      */
     EnumField<ClansBanksLogs, Byte, Currency> CURRENCY = EnumField.create(
             Identifier.CURRENCY,
-            ClansBanksLogs::getCurrency,
-            ClansBanksLogs::setCurrency,
+            ClansBanksLogs::currency,
+            ClansBanksLogs::currency,
             new CurrencyMapper(),
             Currency::name,
             Currency::valueOf,
@@ -141,7 +142,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the id of this ClansBanksLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansBanksId of this ClansBanksLogs. The clansBanksId field
@@ -150,7 +151,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the clansBanksId of this ClansBanksLogs
      */
-    int getClansBanksId();
+    int clansBanksId();
 
     /**
      * Returns the fromAccountsId of this ClansBanksLogs. The fromAccountsId
@@ -159,7 +160,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the fromAccountsId of this ClansBanksLogs
      */
-    int getFromAccountsId();
+    int fromAccountsId();
 
     /**
      * Returns the toAccountsId of this ClansBanksLogs. The toAccountsId field
@@ -168,7 +169,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the toAccountsId of this ClansBanksLogs
      */
-    int getToAccountsId();
+    int toAccountsId();
 
     /**
      * Returns the date of this ClansBanksLogs. The date field corresponds to
@@ -176,7 +177,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the date of this ClansBanksLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the type of this ClansBanksLogs. The type field corresponds to
@@ -184,7 +185,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the type of this ClansBanksLogs
      */
-    BankLogType getType();
+    BankLogType type();
 
     /**
      * Returns the amount of this ClansBanksLogs. The amount field corresponds
@@ -192,7 +193,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the amount of this ClansBanksLogs
      */
-    int getAmount();
+    int amount();
 
     /**
      * Returns the currency of this ClansBanksLogs. The currency field
@@ -201,7 +202,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return the currency of this ClansBanksLogs
      */
-    Currency getCurrency();
+    Currency currency();
 
     /**
      * Sets the id of this ClansBanksLogs. The id field corresponds to the
@@ -211,7 +212,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setId(int id);
+    ClansBanksLogs id(Integer id);
 
     /**
      * Sets the clansBanksId of this ClansBanksLogs. The clansBanksId field
@@ -222,7 +223,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setClansBanksId(int clansBanksId);
+    ClansBanksLogs clansBanksId(int clansBanksId);
 
     /**
      * Sets the fromAccountsId of this ClansBanksLogs. The fromAccountsId field
@@ -233,7 +234,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setFromAccountsId(int fromAccountsId);
+    ClansBanksLogs fromAccountsId(int fromAccountsId);
 
     /**
      * Sets the toAccountsId of this ClansBanksLogs. The toAccountsId field
@@ -244,7 +245,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setToAccountsId(int toAccountsId);
+    ClansBanksLogs toAccountsId(int toAccountsId);
 
     /**
      * Sets the date of this ClansBanksLogs. The date field corresponds to the
@@ -254,7 +255,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setDate(Timestamp date);
+    ClansBanksLogs date(Timestamp date);
 
     /**
      * Sets the type of this ClansBanksLogs. The type field corresponds to the
@@ -264,7 +265,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setType(BankLogType type);
+    ClansBanksLogs type(BankLogType type);
 
     /**
      * Sets the amount of this ClansBanksLogs. The amount field corresponds to
@@ -274,7 +275,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setAmount(int amount);
+    ClansBanksLogs amount(int amount);
 
     /**
      * Sets the currency of this ClansBanksLogs. The currency field corresponds
@@ -284,7 +285,7 @@ public interface GeneratedClansBanksLogs {
      *
      * @return this ClansBanksLogs instance
      */
-    ClansBanksLogs setCurrency(Currency currency);
+    ClansBanksLogs currency(Currency currency);
 
     /**
      * Queries the specified manager for the referenced ClansBanks. If no such

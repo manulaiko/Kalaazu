@@ -27,24 +27,24 @@ public interface GeneratedClansBanks {
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getId()} method.
+     * obtained using the {@link ClansBanks#id()} method.
      */
     IntField<ClansBanks, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansBanks::getId,
-            ClansBanks::setId,
+            ClansBanks::id,
+            ClansBanks::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getClansId()} method.
+     * obtained using the {@link ClansBanks#clansId()} method.
      */
     IntForeignKeyField<ClansBanks, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansBanks::getClansId,
-            ClansBanks::setClansId,
+            ClansBanks::clansId,
+            ClansBanks::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             true
@@ -52,48 +52,48 @@ public interface GeneratedClansBanks {
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getCredits()} method.
+     * obtained using the {@link ClansBanks#credits()} method.
      */
     LongField<ClansBanks, Long> CREDITS = LongField.create(
             Identifier.CREDITS,
-            ClansBanks::getCredits,
-            ClansBanks::setCredits,
+            ClansBanks::credits,
+            ClansBanks::credits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getUridium()} method.
+     * obtained using the {@link ClansBanks#uridium()} method.
      */
     LongField<ClansBanks, Long> URIDIUM = LongField.create(
             Identifier.URIDIUM,
-            ClansBanks::getUridium,
-            ClansBanks::setUridium,
+            ClansBanks::uridium,
+            ClansBanks::uridium,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getTaxCredits()} method.
+     * obtained using the {@link ClansBanks#taxCredits()} method.
      */
     ByteField<ClansBanks, Byte> TAX_CREDITS = ByteField.create(
             Identifier.TAX_CREDITS,
-            ClansBanks::getTaxCredits,
-            ClansBanks::setTaxCredits,
+            ClansBanks::taxCredits,
+            ClansBanks::taxCredits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansBanks} field that can be
-     * obtained using the {@link ClansBanks#getTaxUridium()} method.
+     * obtained using the {@link ClansBanks#taxUridium()} method.
      */
     ByteField<ClansBanks, Byte> TAX_URIDIUM = ByteField.create(
             Identifier.TAX_URIDIUM,
-            ClansBanks::getTaxUridium,
-            ClansBanks::setTaxUridium,
+            ClansBanks::taxUridium,
+            ClansBanks::taxUridium,
             TypeMapper.primitive(),
             false
     );
@@ -104,7 +104,7 @@ public interface GeneratedClansBanks {
      *
      * @return the id of this ClansBanks
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansId of this ClansBanks. The clansId field corresponds to
@@ -112,7 +112,7 @@ public interface GeneratedClansBanks {
      *
      * @return the clansId of this ClansBanks
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the credits of this ClansBanks. The credits field corresponds to
@@ -120,7 +120,7 @@ public interface GeneratedClansBanks {
      *
      * @return the credits of this ClansBanks
      */
-    long getCredits();
+    long credits();
 
     /**
      * Returns the uridium of this ClansBanks. The uridium field corresponds to
@@ -128,7 +128,7 @@ public interface GeneratedClansBanks {
      *
      * @return the uridium of this ClansBanks
      */
-    long getUridium();
+    long uridium();
 
     /**
      * Returns the taxCredits of this ClansBanks. The taxCredits field
@@ -137,7 +137,7 @@ public interface GeneratedClansBanks {
      *
      * @return the taxCredits of this ClansBanks
      */
-    byte getTaxCredits();
+    byte taxCredits();
 
     /**
      * Returns the taxUridium of this ClansBanks. The taxUridium field
@@ -146,7 +146,7 @@ public interface GeneratedClansBanks {
      *
      * @return the taxUridium of this ClansBanks
      */
-    byte getTaxUridium();
+    byte taxUridium();
 
     /**
      * Sets the id of this ClansBanks. The id field corresponds to the database
@@ -156,7 +156,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setId(int id);
+    ClansBanks id(Integer id);
 
     /**
      * Sets the clansId of this ClansBanks. The clansId field corresponds to the
@@ -166,7 +166,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setClansId(int clansId);
+    ClansBanks clansId(int clansId);
 
     /**
      * Sets the credits of this ClansBanks. The credits field corresponds to the
@@ -176,7 +176,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setCredits(long credits);
+    ClansBanks credits(long credits);
 
     /**
      * Sets the uridium of this ClansBanks. The uridium field corresponds to the
@@ -186,7 +186,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setUridium(long uridium);
+    ClansBanks uridium(long uridium);
 
     /**
      * Sets the taxCredits of this ClansBanks. The taxCredits field corresponds
@@ -196,7 +196,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setTaxCredits(byte taxCredits);
+    ClansBanks taxCredits(byte taxCredits);
 
     /**
      * Sets the taxUridium of this ClansBanks. The taxUridium field corresponds
@@ -206,7 +206,7 @@ public interface GeneratedClansBanks {
      *
      * @return this ClansBanks instance
      */
-    ClansBanks setTaxUridium(byte taxUridium);
+    ClansBanks taxUridium(byte taxUridium);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

@@ -11,6 +11,7 @@ import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -31,24 +32,24 @@ public interface GeneratedClansApplications {
 
     /**
      * This Field corresponds to the {@link ClansApplications} field that can be
-     * obtained using the {@link ClansApplications#getId()} method.
+     * obtained using the {@link ClansApplications#id()} method.
      */
     IntField<ClansApplications, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansApplications::getId,
-            ClansApplications::setId,
+            ClansApplications::id,
+            ClansApplications::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansApplications} field that can be
-     * obtained using the {@link ClansApplications#getClansId()} method.
+     * obtained using the {@link ClansApplications#clansId()} method.
      */
     IntForeignKeyField<ClansApplications, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansApplications::getClansId,
-            ClansApplications::setClansId,
+            ClansApplications::clansId,
+            ClansApplications::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +57,12 @@ public interface GeneratedClansApplications {
 
     /**
      * This Field corresponds to the {@link ClansApplications} field that can be
-     * obtained using the {@link ClansApplications#getAccountsId()} method.
+     * obtained using the {@link ClansApplications#accountsId()} method.
      */
     IntForeignKeyField<ClansApplications, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            ClansApplications::getAccountsId,
-            ClansApplications::setAccountsId,
+            ClansApplications::accountsId,
+            ClansApplications::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -69,24 +70,24 @@ public interface GeneratedClansApplications {
 
     /**
      * This Field corresponds to the {@link ClansApplications} field that can be
-     * obtained using the {@link ClansApplications#getDate()} method.
+     * obtained using the {@link ClansApplications#date()} method.
      */
     ComparableField<ClansApplications, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansApplications::getDate,
-            ClansApplications::setDate,
+            ClansApplications::date,
+            (ReferenceSetter<ClansApplications, Timestamp>) ClansApplications::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansApplications} field that can be
-     * obtained using the {@link ClansApplications#getText()} method.
+     * obtained using the {@link ClansApplications#text()} method.
      */
     StringField<ClansApplications, String> TEXT = StringField.create(
             Identifier.TEXT,
-            ClansApplications::getText,
-            ClansApplications::setText,
+            ClansApplications::text,
+            ClansApplications::text,
             TypeMapper.identity(),
             false
     );
@@ -97,7 +98,7 @@ public interface GeneratedClansApplications {
      *
      * @return the id of this ClansApplications
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansId of this ClansApplications. The clansId field
@@ -106,7 +107,7 @@ public interface GeneratedClansApplications {
      *
      * @return the clansId of this ClansApplications
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the accountsId of this ClansApplications. The accountsId field
@@ -115,7 +116,7 @@ public interface GeneratedClansApplications {
      *
      * @return the accountsId of this ClansApplications
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the date of this ClansApplications. The date field corresponds to
@@ -123,7 +124,7 @@ public interface GeneratedClansApplications {
      *
      * @return the date of this ClansApplications
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the text of this ClansApplications. The text field corresponds to
@@ -131,7 +132,7 @@ public interface GeneratedClansApplications {
      *
      * @return the text of this ClansApplications
      */
-    String getText();
+    String text();
 
     /**
      * Sets the id of this ClansApplications. The id field corresponds to the
@@ -141,7 +142,7 @@ public interface GeneratedClansApplications {
      *
      * @return this ClansApplications instance
      */
-    ClansApplications setId(int id);
+    ClansApplications id(Integer id);
 
     /**
      * Sets the clansId of this ClansApplications. The clansId field corresponds
@@ -151,7 +152,7 @@ public interface GeneratedClansApplications {
      *
      * @return this ClansApplications instance
      */
-    ClansApplications setClansId(int clansId);
+    ClansApplications clansId(int clansId);
 
     /**
      * Sets the accountsId of this ClansApplications. The accountsId field
@@ -162,7 +163,7 @@ public interface GeneratedClansApplications {
      *
      * @return this ClansApplications instance
      */
-    ClansApplications setAccountsId(int accountsId);
+    ClansApplications accountsId(int accountsId);
 
     /**
      * Sets the date of this ClansApplications. The date field corresponds to
@@ -172,7 +173,7 @@ public interface GeneratedClansApplications {
      *
      * @return this ClansApplications instance
      */
-    ClansApplications setDate(Timestamp date);
+    ClansApplications date(Timestamp date);
 
     /**
      * Sets the text of this ClansApplications. The text field corresponds to
@@ -182,7 +183,7 @@ public interface GeneratedClansApplications {
      *
      * @return this ClansApplications instance
      */
-    ClansApplications setText(String text);
+    ClansApplications text(String text);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

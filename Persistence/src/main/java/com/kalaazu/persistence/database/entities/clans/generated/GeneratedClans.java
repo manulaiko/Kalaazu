@@ -10,6 +10,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.util.Optional;
@@ -29,24 +30,24 @@ public interface GeneratedClans {
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getId()} method.
+     * using the {@link Clans#id()} method.
      */
     IntField<Clans, Integer> ID = IntField.create(
             Identifier.ID,
-            Clans::getId,
-            Clans::setId,
+            Clans::id,
+            Clans::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getAccountsId()} method.
+     * using the {@link Clans#accountsId()} method.
      */
     IntForeignKeyField<Clans, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            Clans::getAccountsId,
-            Clans::setAccountsId,
+            Clans::accountsId,
+            Clans::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -54,72 +55,72 @@ public interface GeneratedClans {
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getFactionsId()} method.
+     * using the {@link Clans#factionsId()} method.
      */
     ComparableField<Clans, Byte, Byte> FACTIONS_ID = ComparableField.create(
             Identifier.FACTIONS_ID,
-            o -> OptionalUtil.unwrap(o.getFactionsId()),
-            Clans::setFactionsId,
+            o -> OptionalUtil.unwrap(o.factionsId()),
+            (ReferenceSetter<Clans, Byte>) Clans::factionsId,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getTag()} method.
+     * using the {@link Clans#tag()} method.
      */
     StringField<Clans, String> TAG = StringField.create(
             Identifier.TAG,
-            Clans::getTag,
-            Clans::setTag,
+            Clans::tag,
+            Clans::tag,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getName()} method.
+     * using the {@link Clans#name()} method.
      */
     StringField<Clans, String> NAME = StringField.create(
             Identifier.NAME,
-            Clans::getName,
-            Clans::setName,
+            Clans::name,
+            Clans::name,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getDescription()} method.
+     * using the {@link Clans#description()} method.
      */
     StringField<Clans, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            Clans::getDescription,
-            Clans::setDescription,
+            Clans::description,
+            Clans::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getLogo()} method.
+     * using the {@link Clans#logo()} method.
      */
     StringField<Clans, String> LOGO = StringField.create(
             Identifier.LOGO,
-            Clans::getLogo,
-            Clans::setLogo,
+            Clans::logo,
+            Clans::logo,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Clans} field that can be obtained
-     * using the {@link Clans#getStatus()} method.
+     * using the {@link Clans#status()} method.
      */
     EnumField<Clans, Byte, ClanStatus> STATUS = EnumField.create(
             Identifier.STATUS,
-            Clans::getStatus,
-            Clans::setStatus,
+            Clans::status,
+            Clans::status,
             new ClanStatusMapper(),
             ClanStatus::name,
             ClanStatus::valueOf,
@@ -132,7 +133,7 @@ public interface GeneratedClans {
      *
      * @return the id of this Clans
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this Clans. The accountsId field corresponds to
@@ -140,7 +141,7 @@ public interface GeneratedClans {
      *
      * @return the accountsId of this Clans
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the factionsId of this Clans. The factionsId field corresponds to
@@ -148,7 +149,7 @@ public interface GeneratedClans {
      *
      * @return the factionsId of this Clans
      */
-    Optional<Byte> getFactionsId();
+    Optional<Byte> factionsId();
 
     /**
      * Returns the tag of this Clans. The tag field corresponds to the database
@@ -156,7 +157,7 @@ public interface GeneratedClans {
      *
      * @return the tag of this Clans
      */
-    String getTag();
+    String tag();
 
     /**
      * Returns the name of this Clans. The name field corresponds to the
@@ -164,7 +165,7 @@ public interface GeneratedClans {
      *
      * @return the name of this Clans
      */
-    String getName();
+    String name();
 
     /**
      * Returns the description of this Clans. The description field corresponds
@@ -172,7 +173,7 @@ public interface GeneratedClans {
      *
      * @return the description of this Clans
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the logo of this Clans. The logo field corresponds to the
@@ -180,7 +181,7 @@ public interface GeneratedClans {
      *
      * @return the logo of this Clans
      */
-    String getLogo();
+    String logo();
 
     /**
      * Returns the status of this Clans. The status field corresponds to the
@@ -188,7 +189,7 @@ public interface GeneratedClans {
      *
      * @return the status of this Clans
      */
-    ClanStatus getStatus();
+    ClanStatus status();
 
     /**
      * Sets the id of this Clans. The id field corresponds to the database
@@ -198,7 +199,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setId(int id);
+    Clans id(Integer id);
 
     /**
      * Sets the accountsId of this Clans. The accountsId field corresponds to
@@ -208,7 +209,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setAccountsId(int accountsId);
+    Clans accountsId(int accountsId);
 
     /**
      * Sets the factionsId of this Clans. The factionsId field corresponds to
@@ -218,7 +219,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setFactionsId(Byte factionsId);
+    Clans factionsId(Byte factionsId);
 
     /**
      * Sets the tag of this Clans. The tag field corresponds to the database
@@ -228,7 +229,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setTag(String tag);
+    Clans tag(String tag);
 
     /**
      * Sets the name of this Clans. The name field corresponds to the database
@@ -238,7 +239,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setName(String name);
+    Clans name(String name);
 
     /**
      * Sets the description of this Clans. The description field corresponds to
@@ -248,7 +249,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setDescription(String description);
+    Clans description(String description);
 
     /**
      * Sets the logo of this Clans. The logo field corresponds to the database
@@ -258,7 +259,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setLogo(String logo);
+    Clans logo(String logo);
 
     /**
      * Sets the status of this Clans. The status field corresponds to the
@@ -268,7 +269,7 @@ public interface GeneratedClans {
      *
      * @return this Clans instance
      */
-    Clans setStatus(ClanStatus status);
+    Clans status(ClanStatus status);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

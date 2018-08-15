@@ -71,7 +71,7 @@ public final class ClansImpl
         }
 
         this.faction = Database.getInstance()
-                               .find(super.getFactionsId()
+                               .find(super.factionsId()
                                           .orElse((byte) 0), Factions.class);
 
         return this.faction;
@@ -85,7 +85,7 @@ public final class ClansImpl
 
         this.applications = Database.getInstance()
                                     .all(ClansApplications.class)
-                                    .filter(ClansApplications.CLANS_ID.equal(super.getId()))
+                                    .filter(ClansApplications.CLANS_ID.equal(super.id()))
                                     .collect(Collectors.toList());
 
         return this.applications;
@@ -100,9 +100,9 @@ public final class ClansImpl
         this.diplomacies = Database.getInstance()
                                    .all(ClansDiplomacies.class)
                                    .filter(
-                                           ClansDiplomacies.FROM_CLANS_ID.equal(super.getId())
+                                           ClansDiplomacies.FROM_CLANS_ID.equal(super.id())
                                                                          .or(ClansDiplomacies.TO_CLANS_ID.equal(
-                                                                                 super.getId()))
+                                                                                 super.id()))
                                    )
                                    .collect(Collectors.toList());
 
@@ -117,7 +117,7 @@ public final class ClansImpl
 
         this.banks = Database.getInstance()
                              .all(ClansBanks.class)
-                             .filter(ClansBanks.CLANS_ID.equal(super.getId()))
+                             .filter(ClansBanks.CLANS_ID.equal(super.id()))
                              .collect(Collectors.toList());
 
         return this.banks;
@@ -131,7 +131,7 @@ public final class ClansImpl
 
         this.battlestations = Database.getInstance()
                                       .all(ClansBattlestations.class)
-                                      .filter(ClansBattlestations.CLANS_ID.equal(super.getId()))
+                                      .filter(ClansBattlestations.CLANS_ID.equal(super.id()))
                                       .collect(Collectors.toList());
 
         return this.battlestations;
