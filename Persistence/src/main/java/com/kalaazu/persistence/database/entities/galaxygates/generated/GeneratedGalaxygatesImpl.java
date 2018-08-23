@@ -4,11 +4,9 @@ import com.kalaazu.persistence.database.entities.Galaxygates;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
-import java.util.Objects;
 import java.util.Optional;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +18,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedGalaxygatesImpl implements Galaxygates {
 
-    private byte id;
+    private Byte id;
 
     private String name;
 
@@ -35,101 +34,18 @@ public abstract class GeneratedGalaxygatesImpl implements Galaxygates {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Optional<Byte> getGalaxygatesWavesId() {
+    public Optional<Byte> galaxygatesWavesId() {
         return Optional.ofNullable(galaxygatesWavesId);
     }
 
     @Override
-    public byte getParts() {
-        return parts;
-    }
-
-    @Override
-    public Galaxygates setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Galaxygates setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public Galaxygates setGalaxygatesWavesId(Byte galaxygatesWavesId) {
-        this.galaxygatesWavesId = galaxygatesWavesId;
-        return this;
-    }
-
-    @Override
-    public Galaxygates setParts(byte parts) {
-        this.parts = parts;
-        return this;
-    }
-
-    @Override
     public Optional<GalaxygatesWaves> findGalaxygatesWavesId(Manager<GalaxygatesWaves> foreignManager) {
-        if (getGalaxygatesWavesId().isPresent()) {
+        if (galaxygatesWavesId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(GalaxygatesWaves.ID.equal(getGalaxygatesWavesId().get()))
+                                 .filter(GalaxygatesWaves.ID.equal(galaxygatesWavesId().get()))
                                  .findAny();
         } else {
             return Optional.empty();
         }
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("galaxygatesWavesId = " + Objects.toString(OptionalUtil.unwrap(getGalaxygatesWavesId())));
-        sj.add("parts = " + Objects.toString(getParts()));
-        return "GalaxygatesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Galaxygates)) {
-            return false;
-        }
-        final Galaxygates thatGalaxygates = (Galaxygates) that;
-        if (this.getId() != thatGalaxygates.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatGalaxygates.getName())) {
-            return false;
-        }
-        if (!Objects.equals(this.getGalaxygatesWavesId(), thatGalaxygates.getGalaxygatesWavesId())) {
-            return false;
-        }
-        if (this.getParts() != thatGalaxygates.getParts()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getGalaxygatesWavesId());
-        hash = 31 * hash + Byte.hashCode(getParts());
-        return hash;
     }
 }

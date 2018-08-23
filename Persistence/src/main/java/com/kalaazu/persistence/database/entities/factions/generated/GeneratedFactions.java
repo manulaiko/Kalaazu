@@ -27,72 +27,72 @@ public interface GeneratedFactions {
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getId()} method.
+     * using the {@link Factions#id()} method.
      */
     ByteField<Factions, Byte> ID = ByteField.create(
             Identifier.ID,
-            Factions::getId,
-            Factions::setId,
+            Factions::id,
+            Factions::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getName()} method.
+     * using the {@link Factions#name()} method.
      */
     StringField<Factions, String> NAME = StringField.create(
             Identifier.NAME,
-            Factions::getName,
-            Factions::setName,
+            Factions::name,
+            Factions::name,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getTag()} method.
+     * using the {@link Factions#tag()} method.
      */
     StringField<Factions, String> TAG = StringField.create(
             Identifier.TAG,
-            Factions::getTag,
-            Factions::setTag,
+            Factions::tag,
+            Factions::tag,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getDescription()} method.
+     * using the {@link Factions#description()} method.
      */
     StringField<Factions, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            Factions::getDescription,
-            Factions::setDescription,
+            Factions::description,
+            Factions::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getIsPublic()} method.
+     * using the {@link Factions#isPublic()} method.
      */
     BooleanField<Factions, Integer> IS_PUBLIC = BooleanField.create(
             Identifier.IS_PUBLIC,
-            Factions::getIsPublic,
-            Factions::setIsPublic,
+            Factions::isPublic,
+            Factions::isPublic,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getLowMapsId()} method.
+     * using the {@link Factions#lowMapsId()} method.
      */
     ByteForeignKeyField<Factions, Byte, Maps> LOW_MAPS_ID = ByteForeignKeyField.create(
             Identifier.LOW_MAPS_ID,
-            Factions::getLowMapsId,
-            Factions::setLowMapsId,
+            Factions::lowMapsId,
+            Factions::lowMapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -100,24 +100,24 @@ public interface GeneratedFactions {
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getLowMapsPosition()} method.
+     * using the {@link Factions#lowMapsPosition()} method.
      */
     ReferenceField<Factions, Long, Vector2> LOW_MAPS_POSITION = ReferenceField.create(
             Identifier.LOW_MAPS_POSITION,
-            Factions::getLowMapsPosition,
-            Factions::setLowMapsPosition,
+            Factions::lowMapsPosition,
+            Factions::lowMapsPosition,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getHighMapsId()} method.
+     * using the {@link Factions#highMapsId()} method.
      */
     ByteForeignKeyField<Factions, Byte, Maps> HIGH_MAPS_ID = ByteForeignKeyField.create(
             Identifier.HIGH_MAPS_ID,
-            Factions::getHighMapsId,
-            Factions::setHighMapsId,
+            Factions::highMapsId,
+            Factions::highMapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -125,12 +125,12 @@ public interface GeneratedFactions {
 
     /**
      * This Field corresponds to the {@link Factions} field that can be obtained
-     * using the {@link Factions#getHighMapsPosition()} method.
+     * using the {@link Factions#highMapsPosition()} method.
      */
     ReferenceField<Factions, Long, Vector2> HIGH_MAPS_POSITION = ReferenceField.create(
             Identifier.HIGH_MAPS_POSITION,
-            Factions::getHighMapsPosition,
-            Factions::setHighMapsPosition,
+            Factions::highMapsPosition,
+            Factions::highMapsPosition,
             new Vector2Mapper(),
             false
     );
@@ -141,7 +141,7 @@ public interface GeneratedFactions {
      *
      * @return the id of this Factions
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Factions. The name field corresponds to the
@@ -149,7 +149,7 @@ public interface GeneratedFactions {
      *
      * @return the name of this Factions
      */
-    String getName();
+    String name();
 
     /**
      * Returns the tag of this Factions. The tag field corresponds to the
@@ -157,7 +157,7 @@ public interface GeneratedFactions {
      *
      * @return the tag of this Factions
      */
-    String getTag();
+    String tag();
 
     /**
      * Returns the description of this Factions. The description field
@@ -165,7 +165,7 @@ public interface GeneratedFactions {
      *
      * @return the description of this Factions
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the isPublic of this Factions. The isPublic field corresponds to
@@ -173,7 +173,7 @@ public interface GeneratedFactions {
      *
      * @return the isPublic of this Factions
      */
-    boolean getIsPublic();
+    boolean isPublic();
 
     /**
      * Returns the lowMapsId of this Factions. The lowMapsId field corresponds
@@ -181,7 +181,7 @@ public interface GeneratedFactions {
      *
      * @return the lowMapsId of this Factions
      */
-    byte getLowMapsId();
+    byte lowMapsId();
 
     /**
      * Returns the lowMapsPosition of this Factions. The lowMapsPosition field
@@ -190,7 +190,7 @@ public interface GeneratedFactions {
      *
      * @return the lowMapsPosition of this Factions
      */
-    Vector2 getLowMapsPosition();
+    Vector2 lowMapsPosition();
 
     /**
      * Returns the highMapsId of this Factions. The highMapsId field corresponds
@@ -198,7 +198,7 @@ public interface GeneratedFactions {
      *
      * @return the highMapsId of this Factions
      */
-    byte getHighMapsId();
+    byte highMapsId();
 
     /**
      * Returns the highMapsPosition of this Factions. The highMapsPosition field
@@ -207,7 +207,7 @@ public interface GeneratedFactions {
      *
      * @return the highMapsPosition of this Factions
      */
-    Vector2 getHighMapsPosition();
+    Vector2 highMapsPosition();
 
     /**
      * Sets the id of this Factions. The id field corresponds to the database
@@ -217,7 +217,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setId(byte id);
+    Factions id(Byte id);
 
     /**
      * Sets the name of this Factions. The name field corresponds to the
@@ -227,7 +227,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setName(String name);
+    Factions name(String name);
 
     /**
      * Sets the tag of this Factions. The tag field corresponds to the database
@@ -237,7 +237,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setTag(String tag);
+    Factions tag(String tag);
 
     /**
      * Sets the description of this Factions. The description field corresponds
@@ -247,7 +247,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setDescription(String description);
+    Factions description(String description);
 
     /**
      * Sets the isPublic of this Factions. The isPublic field corresponds to the
@@ -257,7 +257,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setIsPublic(boolean isPublic);
+    Factions isPublic(boolean isPublic);
 
     /**
      * Sets the lowMapsId of this Factions. The lowMapsId field corresponds to
@@ -267,7 +267,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setLowMapsId(byte lowMapsId);
+    Factions lowMapsId(byte lowMapsId);
 
     /**
      * Sets the lowMapsPosition of this Factions. The lowMapsPosition field
@@ -278,7 +278,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setLowMapsPosition(Vector2 lowMapsPosition);
+    Factions lowMapsPosition(Vector2 lowMapsPosition);
 
     /**
      * Sets the highMapsId of this Factions. The highMapsId field corresponds to
@@ -288,7 +288,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setHighMapsId(byte highMapsId);
+    Factions highMapsId(byte highMapsId);
 
     /**
      * Sets the highMapsPosition of this Factions. The highMapsPosition field
@@ -299,7 +299,7 @@ public interface GeneratedFactions {
      *
      * @return this Factions instance
      */
-    Factions setHighMapsPosition(Vector2 highMapsPosition);
+    Factions highMapsPosition(Vector2 highMapsPosition);
 
     /**
      * Queries the specified manager for the referenced Maps. If no such Maps

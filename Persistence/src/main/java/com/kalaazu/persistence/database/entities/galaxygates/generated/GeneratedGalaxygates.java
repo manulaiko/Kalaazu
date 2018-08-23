@@ -29,36 +29,36 @@ public interface GeneratedGalaxygates {
 
     /**
      * This Field corresponds to the {@link Galaxygates} field that can be
-     * obtained using the {@link Galaxygates#getId()} method.
+     * obtained using the {@link Galaxygates#id()} method.
      */
     ByteField<Galaxygates, Byte> ID = ByteField.create(
             Identifier.ID,
-            Galaxygates::getId,
-            Galaxygates::setId,
+            Galaxygates::id,
+            Galaxygates::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Galaxygates} field that can be
-     * obtained using the {@link Galaxygates#getName()} method.
+     * obtained using the {@link Galaxygates#name()} method.
      */
     StringField<Galaxygates, String> NAME = StringField.create(
             Identifier.NAME,
-            Galaxygates::getName,
-            Galaxygates::setName,
+            Galaxygates::name,
+            Galaxygates::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Galaxygates} field that can be
-     * obtained using the {@link Galaxygates#getGalaxygatesWavesId()} method.
+     * obtained using the {@link Galaxygates#galaxygatesWavesId()} method.
      */
     ComparableForeignKeyField<Galaxygates, Byte, Byte, GalaxygatesWaves> GALAXYGATES_WAVES_ID = ComparableForeignKeyField.create(
             Identifier.GALAXYGATES_WAVES_ID,
-            o -> OptionalUtil.unwrap(o.getGalaxygatesWavesId()),
-            Galaxygates::setGalaxygatesWavesId,
+            o -> OptionalUtil.unwrap(o.galaxygatesWavesId()),
+            Galaxygates::galaxygatesWavesId,
             GalaxygatesWaves.ID,
             TypeMapper.identity(),
             false
@@ -66,12 +66,12 @@ public interface GeneratedGalaxygates {
 
     /**
      * This Field corresponds to the {@link Galaxygates} field that can be
-     * obtained using the {@link Galaxygates#getParts()} method.
+     * obtained using the {@link Galaxygates#parts()} method.
      */
     ByteField<Galaxygates, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
-            Galaxygates::getParts,
-            Galaxygates::setParts,
+            Galaxygates::parts,
+            Galaxygates::parts,
             TypeMapper.primitive(),
             false
     );
@@ -82,7 +82,7 @@ public interface GeneratedGalaxygates {
      *
      * @return the id of this Galaxygates
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Galaxygates. The name field corresponds to the
@@ -90,7 +90,7 @@ public interface GeneratedGalaxygates {
      *
      * @return the name of this Galaxygates
      */
-    String getName();
+    String name();
 
     /**
      * Returns the galaxygatesWavesId of this Galaxygates. The
@@ -99,7 +99,7 @@ public interface GeneratedGalaxygates {
      *
      * @return the galaxygatesWavesId of this Galaxygates
      */
-    Optional<Byte> getGalaxygatesWavesId();
+    Optional<Byte> galaxygatesWavesId();
 
     /**
      * Returns the parts of this Galaxygates. The parts field corresponds to the
@@ -107,7 +107,7 @@ public interface GeneratedGalaxygates {
      *
      * @return the parts of this Galaxygates
      */
-    byte getParts();
+    byte parts();
 
     /**
      * Sets the id of this Galaxygates. The id field corresponds to the database
@@ -117,7 +117,7 @@ public interface GeneratedGalaxygates {
      *
      * @return this Galaxygates instance
      */
-    Galaxygates setId(byte id);
+    Galaxygates id(Byte id);
 
     /**
      * Sets the name of this Galaxygates. The name field corresponds to the
@@ -127,7 +127,7 @@ public interface GeneratedGalaxygates {
      *
      * @return this Galaxygates instance
      */
-    Galaxygates setName(String name);
+    Galaxygates name(String name);
 
     /**
      * Sets the galaxygatesWavesId of this Galaxygates. The galaxygatesWavesId
@@ -138,7 +138,7 @@ public interface GeneratedGalaxygates {
      *
      * @return this Galaxygates instance
      */
-    Galaxygates setGalaxygatesWavesId(Byte galaxygatesWavesId);
+    Galaxygates galaxygatesWavesId(Byte galaxygatesWavesId);
 
     /**
      * Sets the parts of this Galaxygates. The parts field corresponds to the
@@ -148,7 +148,7 @@ public interface GeneratedGalaxygates {
      *
      * @return this Galaxygates instance
      */
-    Galaxygates setParts(byte parts);
+    Galaxygates parts(byte parts);
 
     /**
      * Queries the specified manager for the referenced GalaxygatesWaves. If no

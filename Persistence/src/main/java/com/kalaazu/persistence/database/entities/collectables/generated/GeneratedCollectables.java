@@ -26,36 +26,36 @@ public interface GeneratedCollectables {
 
     /**
      * This Field corresponds to the {@link Collectables} field that can be
-     * obtained using the {@link Collectables#getId()} method.
+     * obtained using the {@link Collectables#id()} method.
      */
     ByteField<Collectables, Byte> ID = ByteField.create(
             Identifier.ID,
-            Collectables::getId,
-            Collectables::setId,
+            Collectables::id,
+            Collectables::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Collectables} field that can be
-     * obtained using the {@link Collectables#getGfx()} method.
+     * obtained using the {@link Collectables#gfx()} method.
      */
     ByteField<Collectables, Byte> GFX = ByteField.create(
             Identifier.GFX,
-            Collectables::getGfx,
-            Collectables::setGfx,
+            Collectables::gfx,
+            Collectables::gfx,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Collectables} field that can be
-     * obtained using the {@link Collectables#getType()} method.
+     * obtained using the {@link Collectables#type()} method.
      */
     EnumField<Collectables, Byte, CollectableType> TYPE = EnumField.create(
             Identifier.TYPE,
-            Collectables::getType,
-            Collectables::setType,
+            Collectables::type,
+            Collectables::type,
             new CollectableTypeMapper(),
             CollectableType::name,
             CollectableType::valueOf,
@@ -64,12 +64,12 @@ public interface GeneratedCollectables {
 
     /**
      * This Field corresponds to the {@link Collectables} field that can be
-     * obtained using the {@link Collectables#getName()} method.
+     * obtained using the {@link Collectables#name()} method.
      */
     StringField<Collectables, String> NAME = StringField.create(
             Identifier.NAME,
-            Collectables::getName,
-            Collectables::setName,
+            Collectables::name,
+            Collectables::name,
             TypeMapper.identity(),
             false
     );
@@ -80,7 +80,7 @@ public interface GeneratedCollectables {
      *
      * @return the id of this Collectables
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the gfx of this Collectables. The gfx field corresponds to the
@@ -88,7 +88,7 @@ public interface GeneratedCollectables {
      *
      * @return the gfx of this Collectables
      */
-    byte getGfx();
+    byte gfx();
 
     /**
      * Returns the type of this Collectables. The type field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedCollectables {
      *
      * @return the type of this Collectables
      */
-    CollectableType getType();
+    CollectableType type();
 
     /**
      * Returns the name of this Collectables. The name field corresponds to the
@@ -104,7 +104,7 @@ public interface GeneratedCollectables {
      *
      * @return the name of this Collectables
      */
-    String getName();
+    String name();
 
     /**
      * Sets the id of this Collectables. The id field corresponds to the
@@ -114,7 +114,7 @@ public interface GeneratedCollectables {
      *
      * @return this Collectables instance
      */
-    Collectables setId(byte id);
+    Collectables id(Byte id);
 
     /**
      * Sets the gfx of this Collectables. The gfx field corresponds to the
@@ -124,7 +124,7 @@ public interface GeneratedCollectables {
      *
      * @return this Collectables instance
      */
-    Collectables setGfx(byte gfx);
+    Collectables gfx(byte gfx);
 
     /**
      * Sets the type of this Collectables. The type field corresponds to the
@@ -134,7 +134,7 @@ public interface GeneratedCollectables {
      *
      * @return this Collectables instance
      */
-    Collectables setType(CollectableType type);
+    Collectables type(CollectableType type);
 
     /**
      * Sets the name of this Collectables. The name field corresponds to the
@@ -144,7 +144,7 @@ public interface GeneratedCollectables {
      *
      * @return this Collectables instance
      */
-    Collectables setName(String name);
+    Collectables name(String name);
 
     enum Identifier implements ColumnIdentifier<Collectables> {
 

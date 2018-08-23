@@ -28,60 +28,60 @@ public interface GeneratedEvents {
 
     /**
      * This Field corresponds to the {@link Events} field that can be obtained
-     * using the {@link Events#getId()} method.
+     * using the {@link Events#id()} method.
      */
     IntField<Events, Integer> ID = IntField.create(
             Identifier.ID,
-            Events::getId,
-            Events::setId,
+            Events::id,
+            Events::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Events} field that can be obtained
-     * using the {@link Events#getName()} method.
+     * using the {@link Events#name()} method.
      */
     StringField<Events, String> NAME = StringField.create(
             Identifier.NAME,
-            Events::getName,
-            Events::setName,
+            Events::name,
+            Events::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Events} field that can be obtained
-     * using the {@link Events#getDescription()} method.
+     * using the {@link Events#description()} method.
      */
     StringField<Events, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            Events::getDescription,
-            Events::setDescription,
+            Events::description,
+            Events::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Events} field that can be obtained
-     * using the {@link Events#getStartDate()} method.
+     * using the {@link Events#startDate()} method.
      */
     ComparableField<Events, Timestamp, Timestamp> START_DATE = ComparableField.create(
             Identifier.START_DATE,
-            o -> OptionalUtil.unwrap(o.getStartDate()),
-            Events::setStartDate,
+            o -> OptionalUtil.unwrap(o.startDate()),
+            Events::startDate,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Events} field that can be obtained
-     * using the {@link Events#getEndDate()} method.
+     * using the {@link Events#endDate()} method.
      */
     ComparableField<Events, Timestamp, Timestamp> END_DATE = ComparableField.create(
             Identifier.END_DATE,
-            o -> OptionalUtil.unwrap(o.getEndDate()),
-            Events::setEndDate,
+            o -> OptionalUtil.unwrap(o.endDate()),
+            Events::endDate,
             TypeMapper.identity(),
             false
     );
@@ -92,7 +92,7 @@ public interface GeneratedEvents {
      *
      * @return the id of this Events
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the name of this Events. The name field corresponds to the
@@ -100,7 +100,7 @@ public interface GeneratedEvents {
      *
      * @return the name of this Events
      */
-    String getName();
+    String name();
 
     /**
      * Returns the description of this Events. The description field corresponds
@@ -108,7 +108,7 @@ public interface GeneratedEvents {
      *
      * @return the description of this Events
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the startDate of this Events. The startDate field corresponds to
@@ -116,7 +116,7 @@ public interface GeneratedEvents {
      *
      * @return the startDate of this Events
      */
-    Optional<Timestamp> getStartDate();
+    Optional<Timestamp> startDate();
 
     /**
      * Returns the endDate of this Events. The endDate field corresponds to the
@@ -124,7 +124,7 @@ public interface GeneratedEvents {
      *
      * @return the endDate of this Events
      */
-    Optional<Timestamp> getEndDate();
+    Optional<Timestamp> endDate();
 
     /**
      * Sets the id of this Events. The id field corresponds to the database
@@ -134,7 +134,7 @@ public interface GeneratedEvents {
      *
      * @return this Events instance
      */
-    Events setId(int id);
+    Events id(Integer id);
 
     /**
      * Sets the name of this Events. The name field corresponds to the database
@@ -144,7 +144,7 @@ public interface GeneratedEvents {
      *
      * @return this Events instance
      */
-    Events setName(String name);
+    Events name(String name);
 
     /**
      * Sets the description of this Events. The description field corresponds to
@@ -154,7 +154,7 @@ public interface GeneratedEvents {
      *
      * @return this Events instance
      */
-    Events setDescription(String description);
+    Events description(String description);
 
     /**
      * Sets the startDate of this Events. The startDate field corresponds to the
@@ -164,7 +164,7 @@ public interface GeneratedEvents {
      *
      * @return this Events instance
      */
-    Events setStartDate(Timestamp startDate);
+    Events startDate(Timestamp startDate);
 
     /**
      * Sets the endDate of this Events. The endDate field corresponds to the
@@ -174,7 +174,7 @@ public interface GeneratedEvents {
      *
      * @return this Events instance
      */
-    Events setEndDate(Timestamp endDate);
+    Events endDate(Timestamp endDate);
 
     enum Identifier implements ColumnIdentifier<Events> {
 
