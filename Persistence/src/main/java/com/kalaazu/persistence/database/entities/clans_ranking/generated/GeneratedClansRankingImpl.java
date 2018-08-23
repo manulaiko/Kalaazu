@@ -4,6 +4,7 @@ import com.kalaazu.persistence.database.entities.Clans;
 import com.kalaazu.persistence.database.entities.ClansRanking;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -18,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansRankingImpl implements ClansRanking {
 
-    private int id;
+    private Integer id;
 
     private int clansId;
 
@@ -33,98 +35,10 @@ public abstract class GeneratedClansRankingImpl implements ClansRanking {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getClansId() {
-        return clansId;
-    }
-
-    @Override
-    public int getPoints() {
-        return points;
-    }
-
-    @Override
-    public int getBestPoints() {
-        return bestPoints;
-    }
-
-    @Override
-    public ClansRanking setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansRanking setClansId(int clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public ClansRanking setPoints(int points) {
-        this.points = points;
-        return this;
-    }
-
-    @Override
-    public ClansRanking setBestPoints(int bestPoints) {
-        this.bestPoints = bestPoints;
-        return this;
-    }
-
-    @Override
     public Clans findClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getClansId()))
+                             .filter(Clans.ID.equal(clansId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("clansId = " + Objects.toString(getClansId()));
-        sj.add("points = " + Objects.toString(getPoints()));
-        sj.add("bestPoints = " + Objects.toString(getBestPoints()));
-        return "ClansRankingImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansRanking)) {
-            return false;
-        }
-        final ClansRanking thatClansRanking = (ClansRanking) that;
-        if (this.getId() != thatClansRanking.getId()) {
-            return false;
-        }
-        if (this.getClansId() != thatClansRanking.getClansId()) {
-            return false;
-        }
-        if (this.getPoints() != thatClansRanking.getPoints()) {
-            return false;
-        }
-        if (this.getBestPoints() != thatClansRanking.getBestPoints()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getClansId());
-        hash = 31 * hash + Integer.hashCode(getPoints());
-        hash = 31 * hash + Integer.hashCode(getBestPoints());
-        return hash;
     }
 }

@@ -6,6 +6,7 @@ import com.kalaazu.persistence.database.entities.ClansRolesPermissions;
 import com.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.kalaazu.persistence.database.entities.Permissions;
 import com.kalaazu.persistence.database.entities.clans_roles_permissions.generated.GeneratedClansRolesPermissionsImpl;
+import com.speedment.common.function.OptionalBoolean;
 
 /**
  * The default implementation of the {@link
@@ -60,6 +61,6 @@ public final class ClansRolesPermissionsImpl
 
     @Override
     public int roleId() {
-        return super.getClansRolesId();
+        return super.clansRolesId();
     }
 }

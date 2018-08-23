@@ -37,7 +37,7 @@ public final class ClansRolesImpl
         }
 
         this.role = Database.getInstance()
-                            .find(super.getClansRolesId()
+                            .find(super.clansRolesId()
                                        .orElse(0), ClansRoles.class);
 
         return this.role;
@@ -51,7 +51,7 @@ public final class ClansRolesImpl
 
         this.permissions = Database.getInstance()
                                    .all(ClansRolesPermissions.class)
-                                   .filter(ClansRolesPermissions.CLANS_ROLES_ID.equal(super.getId()))
+                                   .filter(ClansRolesPermissions.CLANS_ROLES_ID.equal(super.id()))
                                    .collect(Collectors.toList());
 
         return this.permissions;

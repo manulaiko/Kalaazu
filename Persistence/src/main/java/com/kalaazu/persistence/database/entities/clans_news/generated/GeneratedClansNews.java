@@ -11,6 +11,7 @@ import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -30,24 +31,24 @@ public interface GeneratedClansNews {
 
     /**
      * This Field corresponds to the {@link ClansNews} field that can be
-     * obtained using the {@link ClansNews#getId()} method.
+     * obtained using the {@link ClansNews#id()} method.
      */
     IntField<ClansNews, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansNews::getId,
-            ClansNews::setId,
+            ClansNews::id,
+            ClansNews::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansNews} field that can be
-     * obtained using the {@link ClansNews#getAccountsId()} method.
+     * obtained using the {@link ClansNews#accountsId()} method.
      */
     IntForeignKeyField<ClansNews, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            ClansNews::getAccountsId,
-            ClansNews::setAccountsId,
+            ClansNews::accountsId,
+            ClansNews::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -55,12 +56,12 @@ public interface GeneratedClansNews {
 
     /**
      * This Field corresponds to the {@link ClansNews} field that can be
-     * obtained using the {@link ClansNews#getClansId()} method.
+     * obtained using the {@link ClansNews#clansId()} method.
      */
     IntForeignKeyField<ClansNews, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansNews::getClansId,
-            ClansNews::setClansId,
+            ClansNews::clansId,
+            ClansNews::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -68,24 +69,24 @@ public interface GeneratedClansNews {
 
     /**
      * This Field corresponds to the {@link ClansNews} field that can be
-     * obtained using the {@link ClansNews#getDate()} method.
+     * obtained using the {@link ClansNews#date()} method.
      */
     ComparableField<ClansNews, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansNews::getDate,
-            ClansNews::setDate,
+            ClansNews::date,
+            (ReferenceSetter<ClansNews, Timestamp>) ClansNews::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansNews} field that can be
-     * obtained using the {@link ClansNews#getText()} method.
+     * obtained using the {@link ClansNews#text()} method.
      */
     StringField<ClansNews, String> TEXT = StringField.create(
             Identifier.TEXT,
-            ClansNews::getText,
-            ClansNews::setText,
+            ClansNews::text,
+            ClansNews::text,
             TypeMapper.identity(),
             false
     );
@@ -96,7 +97,7 @@ public interface GeneratedClansNews {
      *
      * @return the id of this ClansNews
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the accountsId of this ClansNews. The accountsId field
@@ -105,7 +106,7 @@ public interface GeneratedClansNews {
      *
      * @return the accountsId of this ClansNews
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the clansId of this ClansNews. The clansId field corresponds to
@@ -113,7 +114,7 @@ public interface GeneratedClansNews {
      *
      * @return the clansId of this ClansNews
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the date of this ClansNews. The date field corresponds to the
@@ -121,7 +122,7 @@ public interface GeneratedClansNews {
      *
      * @return the date of this ClansNews
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the text of this ClansNews. The text field corresponds to the
@@ -129,7 +130,7 @@ public interface GeneratedClansNews {
      *
      * @return the text of this ClansNews
      */
-    String getText();
+    String text();
 
     /**
      * Sets the id of this ClansNews. The id field corresponds to the database
@@ -139,7 +140,7 @@ public interface GeneratedClansNews {
      *
      * @return this ClansNews instance
      */
-    ClansNews setId(int id);
+    ClansNews id(Integer id);
 
     /**
      * Sets the accountsId of this ClansNews. The accountsId field corresponds
@@ -149,7 +150,7 @@ public interface GeneratedClansNews {
      *
      * @return this ClansNews instance
      */
-    ClansNews setAccountsId(int accountsId);
+    ClansNews accountsId(int accountsId);
 
     /**
      * Sets the clansId of this ClansNews. The clansId field corresponds to the
@@ -159,7 +160,7 @@ public interface GeneratedClansNews {
      *
      * @return this ClansNews instance
      */
-    ClansNews setClansId(int clansId);
+    ClansNews clansId(int clansId);
 
     /**
      * Sets the date of this ClansNews. The date field corresponds to the
@@ -169,7 +170,7 @@ public interface GeneratedClansNews {
      *
      * @return this ClansNews instance
      */
-    ClansNews setDate(Timestamp date);
+    ClansNews date(Timestamp date);
 
     /**
      * Sets the text of this ClansNews. The text field corresponds to the
@@ -179,7 +180,7 @@ public interface GeneratedClansNews {
      *
      * @return this ClansNews instance
      */
-    ClansNews setText(String text);
+    ClansNews text(String text);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

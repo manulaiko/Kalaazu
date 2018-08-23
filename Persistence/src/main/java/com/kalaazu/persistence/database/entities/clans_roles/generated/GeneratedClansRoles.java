@@ -27,36 +27,36 @@ public interface GeneratedClansRoles {
 
     /**
      * This Field corresponds to the {@link ClansRoles} field that can be
-     * obtained using the {@link ClansRoles#getId()} method.
+     * obtained using the {@link ClansRoles#id()} method.
      */
     IntField<ClansRoles, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansRoles::getId,
-            ClansRoles::setId,
+            ClansRoles::id,
+            ClansRoles::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansRoles} field that can be
-     * obtained using the {@link ClansRoles#getName()} method.
+     * obtained using the {@link ClansRoles#name()} method.
      */
     StringField<ClansRoles, String> NAME = StringField.create(
             Identifier.NAME,
-            ClansRoles::getName,
-            ClansRoles::setName,
+            ClansRoles::name,
+            ClansRoles::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansRoles} field that can be
-     * obtained using the {@link ClansRoles#getClansId()} method.
+     * obtained using the {@link ClansRoles#clansId()} method.
      */
     IntForeignKeyField<ClansRoles, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansRoles::getClansId,
-            ClansRoles::setClansId,
+            ClansRoles::clansId,
+            ClansRoles::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -64,24 +64,24 @@ public interface GeneratedClansRoles {
 
     /**
      * This Field corresponds to the {@link ClansRoles} field that can be
-     * obtained using the {@link ClansRoles#getClansRolesId()} method.
+     * obtained using the {@link ClansRoles#clansRolesId()} method.
      */
     ComparableField<ClansRoles, Integer, Integer> CLANS_ROLES_ID = ComparableField.create(
             Identifier.CLANS_ROLES_ID,
-            o -> OptionalUtil.unwrap(o.getClansRolesId()),
-            ClansRoles::setClansRolesId,
+            o -> OptionalUtil.unwrap(o.clansRolesId()),
+            ClansRoles::clansRolesId,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansRoles} field that can be
-     * obtained using the {@link ClansRoles#getPriority()} method.
+     * obtained using the {@link ClansRoles#priority()} method.
      */
     ByteField<ClansRoles, Byte> PRIORITY = ByteField.create(
             Identifier.PRIORITY,
-            ClansRoles::getPriority,
-            ClansRoles::setPriority,
+            ClansRoles::priority,
+            ClansRoles::priority,
             TypeMapper.primitive(),
             false
     );
@@ -92,7 +92,7 @@ public interface GeneratedClansRoles {
      *
      * @return the id of this ClansRoles
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the name of this ClansRoles. The name field corresponds to the
@@ -100,7 +100,7 @@ public interface GeneratedClansRoles {
      *
      * @return the name of this ClansRoles
      */
-    String getName();
+    String name();
 
     /**
      * Returns the clansId of this ClansRoles. The clansId field corresponds to
@@ -108,7 +108,7 @@ public interface GeneratedClansRoles {
      *
      * @return the clansId of this ClansRoles
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the clansRolesId of this ClansRoles. The clansRolesId field
@@ -117,7 +117,7 @@ public interface GeneratedClansRoles {
      *
      * @return the clansRolesId of this ClansRoles
      */
-    OptionalInt getClansRolesId();
+    OptionalInt clansRolesId();
 
     /**
      * Returns the priority of this ClansRoles. The priority field corresponds
@@ -125,7 +125,7 @@ public interface GeneratedClansRoles {
      *
      * @return the priority of this ClansRoles
      */
-    byte getPriority();
+    byte priority();
 
     /**
      * Sets the id of this ClansRoles. The id field corresponds to the database
@@ -135,7 +135,7 @@ public interface GeneratedClansRoles {
      *
      * @return this ClansRoles instance
      */
-    ClansRoles setId(int id);
+    ClansRoles id(Integer id);
 
     /**
      * Sets the name of this ClansRoles. The name field corresponds to the
@@ -145,7 +145,7 @@ public interface GeneratedClansRoles {
      *
      * @return this ClansRoles instance
      */
-    ClansRoles setName(String name);
+    ClansRoles name(String name);
 
     /**
      * Sets the clansId of this ClansRoles. The clansId field corresponds to the
@@ -155,7 +155,7 @@ public interface GeneratedClansRoles {
      *
      * @return this ClansRoles instance
      */
-    ClansRoles setClansId(int clansId);
+    ClansRoles clansId(int clansId);
 
     /**
      * Sets the clansRolesId of this ClansRoles. The clansRolesId field
@@ -166,7 +166,7 @@ public interface GeneratedClansRoles {
      *
      * @return this ClansRoles instance
      */
-    ClansRoles setClansRolesId(Integer clansRolesId);
+    ClansRoles clansRolesId(Integer clansRolesId);
 
     /**
      * Sets the priority of this ClansRoles. The priority field corresponds to
@@ -176,7 +176,7 @@ public interface GeneratedClansRoles {
      *
      * @return this ClansRoles instance
      */
-    ClansRoles setPriority(byte priority);
+    ClansRoles priority(byte priority);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

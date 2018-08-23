@@ -32,25 +32,25 @@ public interface GeneratedClansRolesPermissions {
 
     /**
      * This Field corresponds to the {@link ClansRolesPermissions} field that
-     * can be obtained using the {@link ClansRolesPermissions#getId()} method.
+     * can be obtained using the {@link ClansRolesPermissions#id()} method.
      */
     IntField<ClansRolesPermissions, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansRolesPermissions::getId,
-            ClansRolesPermissions::setId,
+            ClansRolesPermissions::id,
+            ClansRolesPermissions::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansRolesPermissions} field that
-     * can be obtained using the {@link ClansRolesPermissions#getClansRolesId()}
+     * can be obtained using the {@link ClansRolesPermissions#clansRolesId()}
      * method.
      */
     IntForeignKeyField<ClansRolesPermissions, Integer, ClansRoles> CLANS_ROLES_ID = IntForeignKeyField.create(
             Identifier.CLANS_ROLES_ID,
-            ClansRolesPermissions::getClansRolesId,
-            ClansRolesPermissions::setClansRolesId,
+            ClansRolesPermissions::clansRolesId,
+            ClansRolesPermissions::clansRolesId,
             ClansRoles.ID,
             TypeMapper.primitive(),
             false
@@ -59,12 +59,12 @@ public interface GeneratedClansRolesPermissions {
     /**
      * This Field corresponds to the {@link ClansRolesPermissions} field that
      * can be obtained using the {@link
-     * ClansRolesPermissions#getPermissionsId()} method.
+     * ClansRolesPermissions#permissionsId()} method.
      */
     ByteForeignKeyField<ClansRolesPermissions, Byte, Permissions> PERMISSIONS_ID = ByteForeignKeyField.create(
             Identifier.PERMISSIONS_ID,
-            ClansRolesPermissions::getPermissionsId,
-            ClansRolesPermissions::setPermissionsId,
+            ClansRolesPermissions::permissionsId,
+            ClansRolesPermissions::permissionsId,
             Permissions.ID,
             TypeMapper.primitive(),
             false
@@ -72,13 +72,13 @@ public interface GeneratedClansRolesPermissions {
 
     /**
      * This Field corresponds to the {@link ClansRolesPermissions} field that
-     * can be obtained using the {@link ClansRolesPermissions#getIsEnabled()}
+     * can be obtained using the {@link ClansRolesPermissions#isEnabled()}
      * method.
      */
     BooleanField<ClansRolesPermissions, Integer> IS_ENABLED = BooleanField.create(
             Identifier.IS_ENABLED,
-            o -> OptionalUtil.unwrap(o.getIsEnabled()),
-            ClansRolesPermissions::setIsEnabled,
+            o -> OptionalUtil.unwrap(o.isEnabled()),
+            ClansRolesPermissions::isEnabled,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
@@ -89,7 +89,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return the id of this ClansRolesPermissions
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansRolesId of this ClansRolesPermissions. The clansRolesId
@@ -98,7 +98,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return the clansRolesId of this ClansRolesPermissions
      */
-    int getClansRolesId();
+    int clansRolesId();
 
     /**
      * Returns the permissionsId of this ClansRolesPermissions. The
@@ -107,7 +107,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return the permissionsId of this ClansRolesPermissions
      */
-    byte getPermissionsId();
+    byte permissionsId();
 
     /**
      * Returns the isEnabled of this ClansRolesPermissions. The isEnabled field
@@ -116,7 +116,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return the isEnabled of this ClansRolesPermissions
      */
-    OptionalBoolean getIsEnabled();
+    OptionalBoolean isEnabled();
 
     /**
      * Sets the id of this ClansRolesPermissions. The id field corresponds to
@@ -126,7 +126,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return this ClansRolesPermissions instance
      */
-    ClansRolesPermissions setId(int id);
+    ClansRolesPermissions id(Integer id);
 
     /**
      * Sets the clansRolesId of this ClansRolesPermissions. The clansRolesId
@@ -137,7 +137,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return this ClansRolesPermissions instance
      */
-    ClansRolesPermissions setClansRolesId(int clansRolesId);
+    ClansRolesPermissions clansRolesId(int clansRolesId);
 
     /**
      * Sets the permissionsId of this ClansRolesPermissions. The permissionsId
@@ -148,7 +148,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return this ClansRolesPermissions instance
      */
-    ClansRolesPermissions setPermissionsId(byte permissionsId);
+    ClansRolesPermissions permissionsId(byte permissionsId);
 
     /**
      * Sets the isEnabled of this ClansRolesPermissions. The isEnabled field
@@ -159,7 +159,7 @@ public interface GeneratedClansRolesPermissions {
      *
      * @return this ClansRolesPermissions instance
      */
-    ClansRolesPermissions setIsEnabled(boolean isEnabled);
+    ClansRolesPermissions isEnabled(boolean isEnabled);
 
     /**
      * Queries the specified manager for the referenced ClansRoles. If no such

@@ -38,12 +38,12 @@ public interface RolePermission {
      *
      * @return Permission ID.
      */
-    byte permissionId();
+    byte permissionsId();
 
     /**
      * Returns whether the permission is enabled or not.
      *
      * @return Whether the permission is enabled or not.
      */
-    OptionalBoolean enabled();
+    OptionalBoolean isEnabled();
 }

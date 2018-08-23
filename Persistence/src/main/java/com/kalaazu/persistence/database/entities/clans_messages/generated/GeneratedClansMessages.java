@@ -32,24 +32,24 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getId()} method.
+     * obtained using the {@link ClansMessages#id()} method.
      */
     IntField<ClansMessages, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansMessages::getId,
-            ClansMessages::setId,
+            ClansMessages::id,
+            ClansMessages::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getClansId()} method.
+     * obtained using the {@link ClansMessages#clansId()} method.
      */
     IntForeignKeyField<ClansMessages, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansMessages::getClansId,
-            ClansMessages::setClansId,
+            ClansMessages::clansId,
+            ClansMessages::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             false
@@ -57,12 +57,12 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getFromAccountsId()} method.
+     * obtained using the {@link ClansMessages#fromAccountsId()} method.
      */
     IntForeignKeyField<ClansMessages, Integer, Accounts> FROM_ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.FROM_ACCOUNTS_ID,
-            ClansMessages::getFromAccountsId,
-            ClansMessages::setFromAccountsId,
+            ClansMessages::fromAccountsId,
+            ClansMessages::fromAccountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -70,12 +70,12 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getFromStatus()} method.
+     * obtained using the {@link ClansMessages#fromStatus()} method.
      */
     EnumField<ClansMessages, Byte, MessageStatus> FROM_STATUS = EnumField.create(
             Identifier.FROM_STATUS,
-            ClansMessages::getFromStatus,
-            ClansMessages::setFromStatus,
+            ClansMessages::fromStatus,
+            ClansMessages::fromStatus,
             new MessageStatusMapper(),
             MessageStatus::name,
             MessageStatus::valueOf,
@@ -84,12 +84,12 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getToAccountsId()} method.
+     * obtained using the {@link ClansMessages#toAccountsId()} method.
      */
     ComparableForeignKeyField<ClansMessages, Integer, Integer, Accounts> TO_ACCOUNTS_ID = ComparableForeignKeyField.create(
             Identifier.TO_ACCOUNTS_ID,
-            o -> OptionalUtil.unwrap(o.getToAccountsId()),
-            ClansMessages::setToAccountsId,
+            o -> OptionalUtil.unwrap(o.toAccountsId()),
+            ClansMessages::toAccountsId,
             Accounts.ID,
             TypeMapper.identity(),
             false
@@ -97,12 +97,12 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getToStatus()} method.
+     * obtained using the {@link ClansMessages#toStatus()} method.
      */
     EnumField<ClansMessages, Byte, MessageStatus> TO_STATUS = EnumField.create(
             Identifier.TO_STATUS,
-            ClansMessages::getToStatus,
-            ClansMessages::setToStatus,
+            ClansMessages::toStatus,
+            ClansMessages::toStatus,
             new MessageStatusMapper(),
             MessageStatus::name,
             MessageStatus::valueOf,
@@ -111,36 +111,36 @@ public interface GeneratedClansMessages {
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getTitle()} method.
+     * obtained using the {@link ClansMessages#title()} method.
      */
     StringField<ClansMessages, String> TITLE = StringField.create(
             Identifier.TITLE,
-            ClansMessages::getTitle,
-            ClansMessages::setTitle,
+            ClansMessages::title,
+            ClansMessages::title,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getText()} method.
+     * obtained using the {@link ClansMessages#text()} method.
      */
     StringField<ClansMessages, String> TEXT = StringField.create(
             Identifier.TEXT,
-            ClansMessages::getText,
-            ClansMessages::setText,
+            ClansMessages::text,
+            ClansMessages::text,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansMessages} field that can be
-     * obtained using the {@link ClansMessages#getDate()} method.
+     * obtained using the {@link ClansMessages#date()} method.
      */
     ComparableField<ClansMessages, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ClansMessages::getDate,
-            ClansMessages::setDate,
+            ClansMessages::date,
+            ClansMessages::date,
             TypeMapper.identity(),
             false
     );
@@ -151,7 +151,7 @@ public interface GeneratedClansMessages {
      *
      * @return the id of this ClansMessages
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansId of this ClansMessages. The clansId field corresponds
@@ -159,7 +159,7 @@ public interface GeneratedClansMessages {
      *
      * @return the clansId of this ClansMessages
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the fromAccountsId of this ClansMessages. The fromAccountsId
@@ -168,7 +168,7 @@ public interface GeneratedClansMessages {
      *
      * @return the fromAccountsId of this ClansMessages
      */
-    int getFromAccountsId();
+    int fromAccountsId();
 
     /**
      * Returns the fromStatus of this ClansMessages. The fromStatus field
@@ -177,7 +177,7 @@ public interface GeneratedClansMessages {
      *
      * @return the fromStatus of this ClansMessages
      */
-    MessageStatus getFromStatus();
+    MessageStatus fromStatus();
 
     /**
      * Returns the toAccountsId of this ClansMessages. The toAccountsId field
@@ -186,7 +186,7 @@ public interface GeneratedClansMessages {
      *
      * @return the toAccountsId of this ClansMessages
      */
-    OptionalInt getToAccountsId();
+    OptionalInt toAccountsId();
 
     /**
      * Returns the toStatus of this ClansMessages. The toStatus field
@@ -195,7 +195,7 @@ public interface GeneratedClansMessages {
      *
      * @return the toStatus of this ClansMessages
      */
-    MessageStatus getToStatus();
+    MessageStatus toStatus();
 
     /**
      * Returns the title of this ClansMessages. The title field corresponds to
@@ -203,7 +203,7 @@ public interface GeneratedClansMessages {
      *
      * @return the title of this ClansMessages
      */
-    String getTitle();
+    String title();
 
     /**
      * Returns the text of this ClansMessages. The text field corresponds to the
@@ -211,7 +211,7 @@ public interface GeneratedClansMessages {
      *
      * @return the text of this ClansMessages
      */
-    String getText();
+    String text();
 
     /**
      * Returns the date of this ClansMessages. The date field corresponds to the
@@ -219,7 +219,7 @@ public interface GeneratedClansMessages {
      *
      * @return the date of this ClansMessages
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this ClansMessages. The id field corresponds to the
@@ -229,7 +229,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setId(int id);
+    ClansMessages id(Integer id);
 
     /**
      * Sets the clansId of this ClansMessages. The clansId field corresponds to
@@ -239,7 +239,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setClansId(int clansId);
+    ClansMessages clansId(int clansId);
 
     /**
      * Sets the fromAccountsId of this ClansMessages. The fromAccountsId field
@@ -250,7 +250,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setFromAccountsId(int fromAccountsId);
+    ClansMessages fromAccountsId(int fromAccountsId);
 
     /**
      * Sets the fromStatus of this ClansMessages. The fromStatus field
@@ -261,7 +261,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setFromStatus(MessageStatus fromStatus);
+    ClansMessages fromStatus(MessageStatus fromStatus);
 
     /**
      * Sets the toAccountsId of this ClansMessages. The toAccountsId field
@@ -272,7 +272,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setToAccountsId(Integer toAccountsId);
+    ClansMessages toAccountsId(Integer toAccountsId);
 
     /**
      * Sets the toStatus of this ClansMessages. The toStatus field corresponds
@@ -282,7 +282,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setToStatus(MessageStatus toStatus);
+    ClansMessages toStatus(MessageStatus toStatus);
 
     /**
      * Sets the title of this ClansMessages. The title field corresponds to the
@@ -292,7 +292,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setTitle(String title);
+    ClansMessages title(String title);
 
     /**
      * Sets the text of this ClansMessages. The text field corresponds to the
@@ -302,7 +302,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setText(String text);
+    ClansMessages text(String text);
 
     /**
      * Sets the date of this ClansMessages. The date field corresponds to the
@@ -312,7 +312,7 @@ public interface GeneratedClansMessages {
      *
      * @return this ClansMessages instance
      */
-    ClansMessages setDate(Timestamp date);
+    ClansMessages date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

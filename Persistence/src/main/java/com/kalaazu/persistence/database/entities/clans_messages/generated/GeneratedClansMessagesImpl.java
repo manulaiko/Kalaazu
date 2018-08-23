@@ -7,12 +7,11 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.mappers.MessageStatus;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.OptionalInt;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -24,9 +23,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansMessagesImpl implements ClansMessages {
 
-    private int id;
+    private Integer id;
 
     private int clansId;
 
@@ -49,108 +49,15 @@ public abstract class GeneratedClansMessagesImpl implements ClansMessages {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getClansId() {
-        return clansId;
-    }
-
-    @Override
-    public int getFromAccountsId() {
-        return fromAccountsId;
-    }
-
-    @Override
-    public MessageStatus getFromStatus() {
-        return fromStatus;
-    }
-
-    @Override
-    public OptionalInt getToAccountsId() {
+    public OptionalInt toAccountsId() {
         return OptionalUtil.ofNullable(toAccountsId);
     }
 
-    @Override
-    public MessageStatus getToStatus() {
-        return toStatus;
-    }
-
-    @Override
-    public String getTitle() {
-        return title;
-    }
-
-    @Override
-    public String getText() {
-        return text;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public ClansMessages setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setClansId(int clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setFromAccountsId(int fromAccountsId) {
-        this.fromAccountsId = fromAccountsId;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setFromStatus(MessageStatus fromStatus) {
-        this.fromStatus = fromStatus;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setToAccountsId(Integer toAccountsId) {
-        this.toAccountsId = toAccountsId;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setToStatus(MessageStatus toStatus) {
-        this.toStatus = toStatus;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setTitle(String title) {
-        this.title = title;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setText(String text) {
-        this.text = text;
-        return this;
-    }
-
-    @Override
-    public ClansMessages setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
 
     @Override
     public Clans findClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getClansId()))
+                             .filter(Clans.ID.equal(clansId()))
                              .findAny()
                              .orElse(null);
     }
@@ -158,88 +65,19 @@ public abstract class GeneratedClansMessagesImpl implements ClansMessages {
     @Override
     public Accounts findFromAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getFromAccountsId()))
+                             .filter(Accounts.ID.equal(fromAccountsId()))
                              .findAny()
                              .orElse(null);
     }
 
     @Override
     public Optional<Accounts> findToAccountsId(Manager<Accounts> foreignManager) {
-        if (getToAccountsId().isPresent()) {
+        if (toAccountsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Accounts.ID.equal(getToAccountsId().getAsInt()))
+                                 .filter(Accounts.ID.equal(toAccountsId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
         }
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("clansId = " + Objects.toString(getClansId()));
-        sj.add("fromAccountsId = " + Objects.toString(getFromAccountsId()));
-        sj.add("fromStatus = " + Objects.toString(getFromStatus()));
-        sj.add("toAccountsId = " + Objects.toString(OptionalUtil.unwrap(getToAccountsId())));
-        sj.add("toStatus = " + Objects.toString(getToStatus()));
-        sj.add("title = " + Objects.toString(getTitle()));
-        sj.add("text = " + Objects.toString(getText()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "ClansMessagesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansMessages)) {
-            return false;
-        }
-        final ClansMessages thatClansMessages = (ClansMessages) that;
-        if (this.getId() != thatClansMessages.getId()) {
-            return false;
-        }
-        if (this.getClansId() != thatClansMessages.getClansId()) {
-            return false;
-        }
-        if (this.getFromAccountsId() != thatClansMessages.getFromAccountsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getFromStatus(), thatClansMessages.getFromStatus())) {
-            return false;
-        }
-        if (!Objects.equals(this.getToAccountsId(), thatClansMessages.getToAccountsId())) {
-            return false;
-        }
-        if (!Objects.equals(this.getToStatus(), thatClansMessages.getToStatus())) {
-            return false;
-        }
-        if (!Objects.equals(this.getTitle(), thatClansMessages.getTitle())) {
-            return false;
-        }
-        if (!Objects.equals(this.getText(), thatClansMessages.getText())) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatClansMessages.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getClansId());
-        hash = 31 * hash + Integer.hashCode(getFromAccountsId());
-        hash = 31 * hash + Objects.hashCode(getFromStatus());
-        hash = 31 * hash + Objects.hashCode(getToAccountsId());
-        hash = 31 * hash + Objects.hashCode(getToStatus());
-        hash = 31 * hash + Objects.hashCode(getTitle());
-        hash = 31 * hash + Objects.hashCode(getText());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

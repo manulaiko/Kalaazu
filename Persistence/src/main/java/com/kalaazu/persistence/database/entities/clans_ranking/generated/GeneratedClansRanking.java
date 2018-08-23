@@ -25,24 +25,24 @@ public interface GeneratedClansRanking {
 
     /**
      * This Field corresponds to the {@link ClansRanking} field that can be
-     * obtained using the {@link ClansRanking#getId()} method.
+     * obtained using the {@link ClansRanking#id()} method.
      */
     IntField<ClansRanking, Integer> ID = IntField.create(
             Identifier.ID,
-            ClansRanking::getId,
-            ClansRanking::setId,
+            ClansRanking::id,
+            ClansRanking::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ClansRanking} field that can be
-     * obtained using the {@link ClansRanking#getClansId()} method.
+     * obtained using the {@link ClansRanking#clansId()} method.
      */
     IntForeignKeyField<ClansRanking, Integer, Clans> CLANS_ID = IntForeignKeyField.create(
             Identifier.CLANS_ID,
-            ClansRanking::getClansId,
-            ClansRanking::setClansId,
+            ClansRanking::clansId,
+            ClansRanking::clansId,
             Clans.ID,
             TypeMapper.primitive(),
             true
@@ -50,24 +50,24 @@ public interface GeneratedClansRanking {
 
     /**
      * This Field corresponds to the {@link ClansRanking} field that can be
-     * obtained using the {@link ClansRanking#getPoints()} method.
+     * obtained using the {@link ClansRanking#points()} method.
      */
     IntField<ClansRanking, Integer> POINTS = IntField.create(
             Identifier.POINTS,
-            ClansRanking::getPoints,
-            ClansRanking::setPoints,
+            ClansRanking::points,
+            ClansRanking::points,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ClansRanking} field that can be
-     * obtained using the {@link ClansRanking#getBestPoints()} method.
+     * obtained using the {@link ClansRanking#bestPoints()} method.
      */
     IntField<ClansRanking, Integer> BEST_POINTS = IntField.create(
             Identifier.BEST_POINTS,
-            ClansRanking::getBestPoints,
-            ClansRanking::setBestPoints,
+            ClansRanking::bestPoints,
+            ClansRanking::bestPoints,
             TypeMapper.primitive(),
             false
     );
@@ -78,7 +78,7 @@ public interface GeneratedClansRanking {
      *
      * @return the id of this ClansRanking
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the clansId of this ClansRanking. The clansId field corresponds
@@ -86,7 +86,7 @@ public interface GeneratedClansRanking {
      *
      * @return the clansId of this ClansRanking
      */
-    int getClansId();
+    int clansId();
 
     /**
      * Returns the points of this ClansRanking. The points field corresponds to
@@ -94,7 +94,7 @@ public interface GeneratedClansRanking {
      *
      * @return the points of this ClansRanking
      */
-    int getPoints();
+    int points();
 
     /**
      * Returns the bestPoints of this ClansRanking. The bestPoints field
@@ -103,7 +103,7 @@ public interface GeneratedClansRanking {
      *
      * @return the bestPoints of this ClansRanking
      */
-    int getBestPoints();
+    int bestPoints();
 
     /**
      * Sets the id of this ClansRanking. The id field corresponds to the
@@ -113,7 +113,7 @@ public interface GeneratedClansRanking {
      *
      * @return this ClansRanking instance
      */
-    ClansRanking setId(int id);
+    ClansRanking id(Integer id);
 
     /**
      * Sets the clansId of this ClansRanking. The clansId field corresponds to
@@ -123,7 +123,7 @@ public interface GeneratedClansRanking {
      *
      * @return this ClansRanking instance
      */
-    ClansRanking setClansId(int clansId);
+    ClansRanking clansId(int clansId);
 
     /**
      * Sets the points of this ClansRanking. The points field corresponds to the
@@ -133,7 +133,7 @@ public interface GeneratedClansRanking {
      *
      * @return this ClansRanking instance
      */
-    ClansRanking setPoints(int points);
+    ClansRanking points(int points);
 
     /**
      * Sets the bestPoints of this ClansRanking. The bestPoints field
@@ -144,7 +144,7 @@ public interface GeneratedClansRanking {
      *
      * @return this ClansRanking instance
      */
-    ClansRanking setBestPoints(int bestPoints);
+    ClansRanking bestPoints(int bestPoints);
 
     /**
      * Queries the specified manager for the referenced Clans. If no such Clans

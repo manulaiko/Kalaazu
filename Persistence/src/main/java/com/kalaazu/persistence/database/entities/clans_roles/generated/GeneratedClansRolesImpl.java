@@ -5,6 +5,7 @@ import com.kalaazu.persistence.database.entities.ClansRoles;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.OptionalInt;
@@ -20,9 +21,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedClansRolesImpl implements ClansRoles {
 
-    private int id;
+    private Integer id;
 
     private String name;
 
@@ -37,114 +39,15 @@ public abstract class GeneratedClansRolesImpl implements ClansRoles {
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public int getClansId() {
-        return clansId;
-    }
-
-    @Override
-    public OptionalInt getClansRolesId() {
+    public OptionalInt clansRolesId() {
         return OptionalUtil.ofNullable(clansRolesId);
-    }
-
-    @Override
-    public byte getPriority() {
-        return priority;
-    }
-
-    @Override
-    public ClansRoles setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public ClansRoles setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public ClansRoles setClansId(int clansId) {
-        this.clansId = clansId;
-        return this;
-    }
-
-    @Override
-    public ClansRoles setClansRolesId(Integer clansRolesId) {
-        this.clansRolesId = clansRolesId;
-        return this;
-    }
-
-    @Override
-    public ClansRoles setPriority(byte priority) {
-        this.priority = priority;
-        return this;
     }
 
     @Override
     public Clans findClansId(Manager<Clans> foreignManager) {
         return foreignManager.stream()
-                             .filter(Clans.ID.equal(getClansId()))
+                             .filter(Clans.ID.equal(clansId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("clansId = " + Objects.toString(getClansId()));
-        sj.add("clansRolesId = " + Objects.toString(OptionalUtil.unwrap(getClansRolesId())));
-        sj.add("priority = " + Objects.toString(getPriority()));
-        return "ClansRolesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof ClansRoles)) {
-            return false;
-        }
-        final ClansRoles thatClansRoles = (ClansRoles) that;
-        if (this.getId() != thatClansRoles.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatClansRoles.getName())) {
-            return false;
-        }
-        if (this.getClansId() != thatClansRoles.getClansId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getClansRolesId(), thatClansRoles.getClansRolesId())) {
-            return false;
-        }
-        if (this.getPriority() != thatClansRoles.getPriority()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Integer.hashCode(getClansId());
-        hash = 31 * hash + Objects.hashCode(getClansRolesId());
-        hash = 31 * hash + Byte.hashCode(getPriority());
-        return hash;
     }
 }
