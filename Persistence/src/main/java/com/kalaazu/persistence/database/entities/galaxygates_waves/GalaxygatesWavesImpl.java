@@ -53,7 +53,7 @@ public final class GalaxygatesWavesImpl
 
         this.stages = Database.getInstance()
                               .all(GalaxygatesStages.class)
-                              .filter(GalaxygatesStages.GALAXYGATES_WAVES_ID.equal(super.getId()))
+                              .filter(GalaxygatesStages.GALAXYGATES_WAVES_ID.equal(super.id()))
                               .collect(Collectors.toList());
 
         return this.stages;

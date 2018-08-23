@@ -4,10 +4,9 @@ import com.kalaazu.persistence.database.entities.InvitationCodes;
 import com.kalaazu.persistence.database.entities.InvitationCodesRedeemLogs;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +18,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedInvitationCodesRedeemLogsImpl implements InvitationCodesRedeemLogs {
 
-    private int id;
+    private Integer id;
 
     private short invitationCodesId;
 
@@ -34,98 +34,10 @@ public abstract class GeneratedInvitationCodesRedeemLogsImpl implements Invitati
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public short getInvitationCodesId() {
-        return invitationCodesId;
-    }
-
-    @Override
-    public String getIp() {
-        return ip;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public InvitationCodesRedeemLogs setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public InvitationCodesRedeemLogs setInvitationCodesId(short invitationCodesId) {
-        this.invitationCodesId = invitationCodesId;
-        return this;
-    }
-
-    @Override
-    public InvitationCodesRedeemLogs setIp(String ip) {
-        this.ip = ip;
-        return this;
-    }
-
-    @Override
-    public InvitationCodesRedeemLogs setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public InvitationCodes findInvitationCodesId(Manager<InvitationCodes> foreignManager) {
         return foreignManager.stream()
-                             .filter(InvitationCodes.ID.equal(getInvitationCodesId()))
+                             .filter(InvitationCodes.ID.equal(invitationCodesId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("invitationCodesId = " + Objects.toString(getInvitationCodesId()));
-        sj.add("ip = " + Objects.toString(getIp()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "InvitationCodesRedeemLogsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof InvitationCodesRedeemLogs)) {
-            return false;
-        }
-        final InvitationCodesRedeemLogs thatInvitationCodesRedeemLogs = (InvitationCodesRedeemLogs) that;
-        if (this.getId() != thatInvitationCodesRedeemLogs.getId()) {
-            return false;
-        }
-        if (this.getInvitationCodesId() != thatInvitationCodesRedeemLogs.getInvitationCodesId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getIp(), thatInvitationCodesRedeemLogs.getIp())) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatInvitationCodesRedeemLogs.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Short.hashCode(getInvitationCodesId());
-        hash = 31 * hash + Objects.hashCode(getIp());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

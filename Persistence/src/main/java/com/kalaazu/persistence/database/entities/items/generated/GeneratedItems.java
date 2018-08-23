@@ -27,36 +27,36 @@ public interface GeneratedItems {
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getId()} method.
+     * using the {@link Items#id()} method.
      */
     ShortField<Items, Short> ID = ShortField.create(
             Identifier.ID,
-            Items::getId,
-            Items::setId,
+            Items::id,
+            Items::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getName()} method.
+     * using the {@link Items#name()} method.
      */
     StringField<Items, String> NAME = StringField.create(
             Identifier.NAME,
-            Items::getName,
-            Items::setName,
+            Items::name,
+            Items::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getCategory()} method.
+     * using the {@link Items#category()} method.
      */
     EnumField<Items, Byte, ItemCategory> CATEGORY = EnumField.create(
             Identifier.CATEGORY,
-            Items::getCategory,
-            Items::setCategory,
+            Items::category,
+            Items::category,
             new ItemCategoryMapper(),
             ItemCategory::name,
             ItemCategory::valueOf,
@@ -65,36 +65,36 @@ public interface GeneratedItems {
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getDescription()} method.
+     * using the {@link Items#description()} method.
      */
     StringField<Items, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            Items::getDescription,
-            Items::setDescription,
+            Items::description,
+            Items::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getPrice()} method.
+     * using the {@link Items#price()} method.
      */
     IntField<Items, Integer> PRICE = IntField.create(
             Identifier.PRICE,
-            Items::getPrice,
-            Items::setPrice,
+            Items::price,
+            Items::price,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getType()} method.
+     * using the {@link Items#type()} method.
      */
     EnumField<Items, Byte, ItemType> TYPE = EnumField.create(
             Identifier.TYPE,
-            Items::getType,
-            Items::setType,
+            Items::type,
+            Items::type,
             new ItemTypeMapper(),
             ItemType::name,
             ItemType::valueOf,
@@ -103,36 +103,36 @@ public interface GeneratedItems {
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getIsElite()} method.
+     * using the {@link Items#isElite()} method.
      */
     BooleanField<Items, Integer> IS_ELITE = BooleanField.create(
             Identifier.IS_ELITE,
-            Items::getIsElite,
-            Items::setIsElite,
+            Items::isElite,
+            Items::isElite,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getIsEvent()} method.
+     * using the {@link Items#isEvent()} method.
      */
     BooleanField<Items, Integer> IS_EVENT = BooleanField.create(
             Identifier.IS_EVENT,
-            Items::getIsEvent,
-            Items::setIsEvent,
+            Items::isEvent,
+            Items::isEvent,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Items} field that can be obtained
-     * using the {@link Items#getIsBuyable()} method.
+     * using the {@link Items#isBuyable()} method.
      */
     BooleanField<Items, Integer> IS_BUYABLE = BooleanField.create(
             Identifier.IS_BUYABLE,
-            Items::getIsBuyable,
-            Items::setIsBuyable,
+            Items::isBuyable,
+            Items::isBuyable,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
@@ -143,7 +143,7 @@ public interface GeneratedItems {
      *
      * @return the id of this Items
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the name of this Items. The name field corresponds to the
@@ -151,7 +151,7 @@ public interface GeneratedItems {
      *
      * @return the name of this Items
      */
-    String getName();
+    String name();
 
     /**
      * Returns the category of this Items. The category field corresponds to the
@@ -159,7 +159,7 @@ public interface GeneratedItems {
      *
      * @return the category of this Items
      */
-    ItemCategory getCategory();
+    ItemCategory category();
 
     /**
      * Returns the description of this Items. The description field corresponds
@@ -167,7 +167,7 @@ public interface GeneratedItems {
      *
      * @return the description of this Items
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the price of this Items. The price field corresponds to the
@@ -175,7 +175,7 @@ public interface GeneratedItems {
      *
      * @return the price of this Items
      */
-    int getPrice();
+    int price();
 
     /**
      * Returns the type of this Items. The type field corresponds to the
@@ -183,7 +183,7 @@ public interface GeneratedItems {
      *
      * @return the type of this Items
      */
-    ItemType getType();
+    ItemType type();
 
     /**
      * Returns the isElite of this Items. The isElite field corresponds to the
@@ -191,7 +191,7 @@ public interface GeneratedItems {
      *
      * @return the isElite of this Items
      */
-    boolean getIsElite();
+    boolean isElite();
 
     /**
      * Returns the isEvent of this Items. The isEvent field corresponds to the
@@ -199,7 +199,7 @@ public interface GeneratedItems {
      *
      * @return the isEvent of this Items
      */
-    boolean getIsEvent();
+    boolean isEvent();
 
     /**
      * Returns the isBuyable of this Items. The isBuyable field corresponds to
@@ -207,7 +207,7 @@ public interface GeneratedItems {
      *
      * @return the isBuyable of this Items
      */
-    boolean getIsBuyable();
+    boolean isBuyable();
 
     /**
      * Sets the id of this Items. The id field corresponds to the database
@@ -217,7 +217,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setId(short id);
+    Items id(Short id);
 
     /**
      * Sets the name of this Items. The name field corresponds to the database
@@ -227,7 +227,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setName(String name);
+    Items name(String name);
 
     /**
      * Sets the category of this Items. The category field corresponds to the
@@ -237,7 +237,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setCategory(ItemCategory category);
+    Items category(ItemCategory category);
 
     /**
      * Sets the description of this Items. The description field corresponds to
@@ -247,7 +247,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setDescription(String description);
+    Items description(String description);
 
     /**
      * Sets the price of this Items. The price field corresponds to the database
@@ -257,7 +257,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setPrice(int price);
+    Items price(int price);
 
     /**
      * Sets the type of this Items. The type field corresponds to the database
@@ -267,7 +267,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setType(ItemType type);
+    Items type(ItemType type);
 
     /**
      * Sets the isElite of this Items. The isElite field corresponds to the
@@ -277,7 +277,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setIsElite(boolean isElite);
+    Items isElite(boolean isElite);
 
     /**
      * Sets the isEvent of this Items. The isEvent field corresponds to the
@@ -287,7 +287,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setIsEvent(boolean isEvent);
+    Items isEvent(boolean isEvent);
 
     /**
      * Sets the isBuyable of this Items. The isBuyable field corresponds to the
@@ -297,7 +297,7 @@ public interface GeneratedItems {
      *
      * @return this Items instance
      */
-    Items setIsBuyable(boolean isBuyable);
+    Items isBuyable(boolean isBuyable);
 
     enum Identifier implements ColumnIdentifier<Items> {
 

@@ -2,9 +2,7 @@ package com.kalaazu.persistence.database.entities.invitation_codes.generated;
 
 import com.kalaazu.persistence.database.entities.InvitationCodes;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -16,9 +14,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedInvitationCodesImpl implements InvitationCodes {
 
-    private short id;
+    private Short id;
 
     private String code;
 
@@ -26,77 +25,5 @@ public abstract class GeneratedInvitationCodesImpl implements InvitationCodes {
 
     protected GeneratedInvitationCodesImpl() {
 
-    }
-
-    @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public String getCode() {
-        return code;
-    }
-
-    @Override
-    public byte getLimit() {
-        return limit;
-    }
-
-    @Override
-    public InvitationCodes setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public InvitationCodes setCode(String code) {
-        this.code = code;
-        return this;
-    }
-
-    @Override
-    public InvitationCodes setLimit(byte limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("code = " + Objects.toString(getCode()));
-        sj.add("limit = " + Objects.toString(getLimit()));
-        return "InvitationCodesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof InvitationCodes)) {
-            return false;
-        }
-        final InvitationCodes thatInvitationCodes = (InvitationCodes) that;
-        if (this.getId() != thatInvitationCodes.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getCode(), thatInvitationCodes.getCode())) {
-            return false;
-        }
-        if (this.getLimit() != thatInvitationCodes.getLimit()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getCode());
-        hash = 31 * hash + Byte.hashCode(getLimit());
-        return hash;
     }
 }

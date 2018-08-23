@@ -24,36 +24,36 @@ public interface GeneratedInvitationCodes {
 
     /**
      * This Field corresponds to the {@link InvitationCodes} field that can be
-     * obtained using the {@link InvitationCodes#getId()} method.
+     * obtained using the {@link InvitationCodes#id()} method.
      */
     ShortField<InvitationCodes, Short> ID = ShortField.create(
             Identifier.ID,
-            InvitationCodes::getId,
-            InvitationCodes::setId,
+            InvitationCodes::id,
+            InvitationCodes::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link InvitationCodes} field that can be
-     * obtained using the {@link InvitationCodes#getCode()} method.
+     * obtained using the {@link InvitationCodes#code()} method.
      */
     StringField<InvitationCodes, String> CODE = StringField.create(
             Identifier.CODE,
-            InvitationCodes::getCode,
-            InvitationCodes::setCode,
+            InvitationCodes::code,
+            InvitationCodes::code,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link InvitationCodes} field that can be
-     * obtained using the {@link InvitationCodes#getLimit()} method.
+     * obtained using the {@link InvitationCodes#limit()} method.
      */
     ByteField<InvitationCodes, Byte> LIMIT = ByteField.create(
             Identifier.LIMIT,
-            InvitationCodes::getLimit,
-            InvitationCodes::setLimit,
+            InvitationCodes::limit,
+            InvitationCodes::limit,
             TypeMapper.primitive(),
             false
     );
@@ -64,7 +64,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return the id of this InvitationCodes
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the code of this InvitationCodes. The code field corresponds to
@@ -72,7 +72,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return the code of this InvitationCodes
      */
-    String getCode();
+    String code();
 
     /**
      * Returns the limit of this InvitationCodes. The limit field corresponds to
@@ -80,7 +80,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return the limit of this InvitationCodes
      */
-    byte getLimit();
+    byte limit();
 
     /**
      * Sets the id of this InvitationCodes. The id field corresponds to the
@@ -90,7 +90,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return this InvitationCodes instance
      */
-    InvitationCodes setId(short id);
+    InvitationCodes id(Short id);
 
     /**
      * Sets the code of this InvitationCodes. The code field corresponds to the
@@ -100,7 +100,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return this InvitationCodes instance
      */
-    InvitationCodes setCode(String code);
+    InvitationCodes code(String code);
 
     /**
      * Sets the limit of this InvitationCodes. The limit field corresponds to
@@ -110,7 +110,7 @@ public interface GeneratedInvitationCodes {
      *
      * @return this InvitationCodes instance
      */
-    InvitationCodes setLimit(byte limit);
+    InvitationCodes limit(byte limit);
 
     enum Identifier implements ColumnIdentifier<InvitationCodes> {
 

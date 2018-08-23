@@ -7,6 +7,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -27,13 +28,13 @@ public interface GeneratedInvitationCodesRedeemLogs {
 
     /**
      * This Field corresponds to the {@link InvitationCodesRedeemLogs} field
-     * that can be obtained using the {@link InvitationCodesRedeemLogs#getId()}
+     * that can be obtained using the {@link InvitationCodesRedeemLogs#id()}
      * method.
      */
     IntField<InvitationCodesRedeemLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            InvitationCodesRedeemLogs::getId,
-            InvitationCodesRedeemLogs::setId,
+            InvitationCodesRedeemLogs::id,
+            InvitationCodesRedeemLogs::id,
             TypeMapper.primitive(),
             true
     );
@@ -41,12 +42,12 @@ public interface GeneratedInvitationCodesRedeemLogs {
     /**
      * This Field corresponds to the {@link InvitationCodesRedeemLogs} field
      * that can be obtained using the {@link
-     * InvitationCodesRedeemLogs#getInvitationCodesId()} method.
+     * InvitationCodesRedeemLogs#invitationCodesId()} method.
      */
     ShortForeignKeyField<InvitationCodesRedeemLogs, Short, InvitationCodes> INVITATION_CODES_ID = ShortForeignKeyField.create(
             Identifier.INVITATION_CODES_ID,
-            InvitationCodesRedeemLogs::getInvitationCodesId,
-            InvitationCodesRedeemLogs::setInvitationCodesId,
+            InvitationCodesRedeemLogs::invitationCodesId,
+            InvitationCodesRedeemLogs::invitationCodesId,
             InvitationCodes.ID,
             TypeMapper.primitive(),
             false
@@ -54,14 +55,14 @@ public interface GeneratedInvitationCodesRedeemLogs {
 
     /**
      * This Field corresponds to the {@link InvitationCodesRedeemLogs} field
-     * that can be obtained using the {@link InvitationCodesRedeemLogs#getIp()}
+     * that can be obtained using the {@link InvitationCodesRedeemLogs#ip()}
      * method.
      */
 
     StringField<InvitationCodesRedeemLogs, String> IP = StringField.create(
             Identifier.IP,
-            InvitationCodesRedeemLogs::getIp,
-            InvitationCodesRedeemLogs::setIp,
+            InvitationCodesRedeemLogs::ip,
+            InvitationCodesRedeemLogs::ip,
             TypeMapper.identity(),
             true
     );
@@ -69,12 +70,12 @@ public interface GeneratedInvitationCodesRedeemLogs {
     /**
      * This Field corresponds to the {@link InvitationCodesRedeemLogs} field
      * that can be obtained using the {@link
-     * InvitationCodesRedeemLogs#getDate()} method.
+     * InvitationCodesRedeemLogs#date()} method.
      */
     ComparableField<InvitationCodesRedeemLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            InvitationCodesRedeemLogs::getDate,
-            InvitationCodesRedeemLogs::setDate,
+            InvitationCodesRedeemLogs::date,
+            (ReferenceSetter<InvitationCodesRedeemLogs, Timestamp>) InvitationCodesRedeemLogs::date,
             TypeMapper.identity(),
             false
     );
@@ -86,7 +87,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the id of this InvitationCodesRedeemLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the invitationCodesId of this InvitationCodesRedeemLogs. The
@@ -95,7 +96,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the invitationCodesId of this InvitationCodesRedeemLogs
      */
-    short getInvitationCodesId();
+    short invitationCodesId();
 
     /**
      * Returns the ip of this InvitationCodesRedeemLogs. The ip field
@@ -104,7 +105,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the ip of this InvitationCodesRedeemLogs
      */
-    String getIp();
+    String ip();
 
     /**
      * Returns the date of this InvitationCodesRedeemLogs. The date field
@@ -113,7 +114,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return the date of this InvitationCodesRedeemLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this InvitationCodesRedeemLogs. The id field corresponds
@@ -123,7 +124,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setId(int id);
+    InvitationCodesRedeemLogs id(Integer id);
 
     /**
      * Sets the invitationCodesId of this InvitationCodesRedeemLogs. The
@@ -134,7 +135,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setInvitationCodesId(short invitationCodesId);
+    InvitationCodesRedeemLogs invitationCodesId(short invitationCodesId);
 
     /**
      * Sets the ip of this InvitationCodesRedeemLogs. The ip field corresponds
@@ -144,7 +145,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setIp(String ip);
+    InvitationCodesRedeemLogs ip(String ip);
 
     /**
      * Sets the date of this InvitationCodesRedeemLogs. The date field
@@ -155,7 +156,7 @@ public interface GeneratedInvitationCodesRedeemLogs {
      *
      * @return this InvitationCodesRedeemLogs instance
      */
-    InvitationCodesRedeemLogs setDate(Timestamp date);
+    InvitationCodesRedeemLogs date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced InvitationCodes. If no

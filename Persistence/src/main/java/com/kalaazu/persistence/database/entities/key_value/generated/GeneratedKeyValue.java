@@ -22,24 +22,24 @@ public interface GeneratedKeyValue {
 
     /**
      * This Field corresponds to the {@link KeyValue} field that can be obtained
-     * using the {@link KeyValue#getKey()} method.
+     * using the {@link KeyValue#key()} method.
      */
     StringField<KeyValue, String> KEY = StringField.create(
             Identifier.KEY,
-            KeyValue::getKey,
-            KeyValue::setKey,
+            KeyValue::key,
+            KeyValue::key,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link KeyValue} field that can be obtained
-     * using the {@link KeyValue#getValue()} method.
+     * using the {@link KeyValue#value()} method.
      */
     StringField<KeyValue, String> VALUE = StringField.create(
             Identifier.VALUE,
-            KeyValue::getValue,
-            KeyValue::setValue,
+            KeyValue::value,
+            KeyValue::value,
             TypeMapper.identity(),
             false
     );
@@ -50,7 +50,7 @@ public interface GeneratedKeyValue {
      *
      * @return the key of this KeyValue
      */
-    String getKey();
+    String key();
 
     /**
      * Returns the value of this KeyValue. The value field corresponds to the
@@ -58,7 +58,7 @@ public interface GeneratedKeyValue {
      *
      * @return the value of this KeyValue
      */
-    String getValue();
+    String value();
 
     /**
      * Sets the key of this KeyValue. The key field corresponds to the database
@@ -68,7 +68,7 @@ public interface GeneratedKeyValue {
      *
      * @return this KeyValue instance
      */
-    KeyValue setKey(String key);
+    KeyValue key(String key);
 
     /**
      * Sets the value of this KeyValue. The value field corresponds to the
@@ -78,7 +78,7 @@ public interface GeneratedKeyValue {
      *
      * @return this KeyValue instance
      */
-    KeyValue setValue(String value);
+    KeyValue value(String value);
 
     enum Identifier implements ColumnIdentifier<KeyValue> {
 

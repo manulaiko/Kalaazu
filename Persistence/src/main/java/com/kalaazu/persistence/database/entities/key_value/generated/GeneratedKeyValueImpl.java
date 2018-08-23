@@ -2,9 +2,7 @@ package com.kalaazu.persistence.database.entities.key_value.generated;
 
 import com.kalaazu.persistence.database.entities.KeyValue;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -16,6 +14,7 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedKeyValueImpl implements KeyValue {
 
     private String key;
@@ -24,61 +23,5 @@ public abstract class GeneratedKeyValueImpl implements KeyValue {
 
     protected GeneratedKeyValueImpl() {
 
-    }
-
-    @Override
-    public String getKey() {
-        return key;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public KeyValue setKey(String key) {
-        this.key = key;
-        return this;
-    }
-
-    @Override
-    public KeyValue setValue(String value) {
-        this.value = value;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("key = " + Objects.toString(getKey()));
-        sj.add("value = " + Objects.toString(getValue()));
-        return "KeyValueImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof KeyValue)) {
-            return false;
-        }
-        final KeyValue thatKeyValue = (KeyValue) that;
-        if (!Objects.equals(this.getKey(), thatKeyValue.getKey())) {
-            return false;
-        }
-        if (!Objects.equals(this.getValue(), thatKeyValue.getValue())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Objects.hashCode(getKey());
-        hash = 31 * hash + Objects.hashCode(getValue());
-        return hash;
     }
 }
