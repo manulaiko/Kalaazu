@@ -27,25 +27,25 @@ public interface GeneratedGalaxygatesGgSpins {
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgSpins} field that can
-     * be obtained using the {@link GalaxygatesGgSpins#getId()} method.
+     * be obtained using the {@link GalaxygatesGgSpins#id()} method.
      */
     ShortField<GalaxygatesGgSpins, Short> ID = ShortField.create(
             Identifier.ID,
-            GalaxygatesGgSpins::getId,
-            GalaxygatesGgSpins::setId,
+            GalaxygatesGgSpins::id,
+            GalaxygatesGgSpins::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgSpins} field that can
-     * be obtained using the {@link GalaxygatesGgSpins#getGalaxygatesId()}
+     * be obtained using the {@link GalaxygatesGgSpins#galaxygatesId()}
      * method.
      */
     ByteForeignKeyField<GalaxygatesGgSpins, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
-            GalaxygatesGgSpins::getGalaxygatesId,
-            GalaxygatesGgSpins::setGalaxygatesId,
+            GalaxygatesGgSpins::galaxygatesId,
+            GalaxygatesGgSpins::galaxygatesId,
             Galaxygates.ID,
             TypeMapper.primitive(),
             false
@@ -53,13 +53,13 @@ public interface GeneratedGalaxygatesGgSpins {
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgSpins} field that can
-     * be obtained using the {@link GalaxygatesGgSpins#getGalaxygatesSpinsId()}
+     * be obtained using the {@link GalaxygatesGgSpins#galaxygatesSpinsId()}
      * method.
      */
     ByteForeignKeyField<GalaxygatesGgSpins, Byte, GalaxygatesSpins> GALAXYGATES_SPINS_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_SPINS_ID,
-            GalaxygatesGgSpins::getGalaxygatesSpinsId,
-            GalaxygatesGgSpins::setGalaxygatesSpinsId,
+            GalaxygatesGgSpins::galaxygatesSpinsId,
+            GalaxygatesGgSpins::galaxygatesSpinsId,
             GalaxygatesSpins.ID,
             TypeMapper.primitive(),
             false
@@ -71,7 +71,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return the id of this GalaxygatesGgSpins
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the galaxygatesId of this GalaxygatesGgSpins. The galaxygatesId
@@ -80,7 +80,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return the galaxygatesId of this GalaxygatesGgSpins
      */
-    byte getGalaxygatesId();
+    byte galaxygatesId();
 
     /**
      * Returns the galaxygatesSpinsId of this GalaxygatesGgSpins. The
@@ -89,7 +89,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return the galaxygatesSpinsId of this GalaxygatesGgSpins
      */
-    byte getGalaxygatesSpinsId();
+    byte galaxygatesSpinsId();
 
     /**
      * Sets the id of this GalaxygatesGgSpins. The id field corresponds to the
@@ -99,7 +99,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return this GalaxygatesGgSpins instance
      */
-    GalaxygatesGgSpins setId(short id);
+    GalaxygatesGgSpins id(Short id);
 
     /**
      * Sets the galaxygatesId of this GalaxygatesGgSpins. The galaxygatesId
@@ -110,7 +110,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return this GalaxygatesGgSpins instance
      */
-    GalaxygatesGgSpins setGalaxygatesId(byte galaxygatesId);
+    GalaxygatesGgSpins galaxygatesId(byte galaxygatesId);
 
     /**
      * Sets the galaxygatesSpinsId of this GalaxygatesGgSpins. The
@@ -121,7 +121,7 @@ public interface GeneratedGalaxygatesGgSpins {
      *
      * @return this GalaxygatesGgSpins instance
      */
-    GalaxygatesGgSpins setGalaxygatesSpinsId(byte galaxygatesSpinsId);
+    GalaxygatesGgSpins galaxygatesSpinsId(byte galaxygatesSpinsId);
 
     /**
      * Queries the specified manager for the referenced Galaxygates. If no such

@@ -27,25 +27,25 @@ public interface GeneratedGalaxygatesGgWaves {
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgWaves} field that can
-     * be obtained using the {@link GalaxygatesGgWaves#getId()} method.
+     * be obtained using the {@link GalaxygatesGgWaves#id()} method.
      */
     ShortField<GalaxygatesGgWaves, Short> ID = ShortField.create(
             Identifier.ID,
-            GalaxygatesGgWaves::getId,
-            GalaxygatesGgWaves::setId,
+            GalaxygatesGgWaves::id,
+            GalaxygatesGgWaves::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgWaves} field that can
-     * be obtained using the {@link GalaxygatesGgWaves#getGalaxygatesId()}
+     * be obtained using the {@link GalaxygatesGgWaves#galaxygatesId()}
      * method.
      */
     ByteForeignKeyField<GalaxygatesGgWaves, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
-            GalaxygatesGgWaves::getGalaxygatesId,
-            GalaxygatesGgWaves::setGalaxygatesId,
+            GalaxygatesGgWaves::galaxygatesId,
+            GalaxygatesGgWaves::galaxygatesId,
             Galaxygates.ID,
             TypeMapper.primitive(),
             false
@@ -53,13 +53,13 @@ public interface GeneratedGalaxygatesGgWaves {
 
     /**
      * This Field corresponds to the {@link GalaxygatesGgWaves} field that can
-     * be obtained using the {@link GalaxygatesGgWaves#getGalaxygatesWavesId()}
+     * be obtained using the {@link GalaxygatesGgWaves#galaxygatesWavesId()}
      * method.
      */
     ByteForeignKeyField<GalaxygatesGgWaves, Byte, GalaxygatesWaves> GALAXYGATES_WAVES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_WAVES_ID,
-            GalaxygatesGgWaves::getGalaxygatesWavesId,
-            GalaxygatesGgWaves::setGalaxygatesWavesId,
+            GalaxygatesGgWaves::galaxygatesWavesId,
+            GalaxygatesGgWaves::galaxygatesWavesId,
             GalaxygatesWaves.ID,
             TypeMapper.primitive(),
             false
@@ -71,7 +71,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return the id of this GalaxygatesGgWaves
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the galaxygatesId of this GalaxygatesGgWaves. The galaxygatesId
@@ -80,7 +80,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return the galaxygatesId of this GalaxygatesGgWaves
      */
-    byte getGalaxygatesId();
+    byte galaxygatesId();
 
     /**
      * Returns the galaxygatesWavesId of this GalaxygatesGgWaves. The
@@ -89,7 +89,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return the galaxygatesWavesId of this GalaxygatesGgWaves
      */
-    byte getGalaxygatesWavesId();
+    byte galaxygatesWavesId();
 
     /**
      * Sets the id of this GalaxygatesGgWaves. The id field corresponds to the
@@ -99,7 +99,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return this GalaxygatesGgWaves instance
      */
-    GalaxygatesGgWaves setId(short id);
+    GalaxygatesGgWaves id(Short id);
 
     /**
      * Sets the galaxygatesId of this GalaxygatesGgWaves. The galaxygatesId
@@ -110,7 +110,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return this GalaxygatesGgWaves instance
      */
-    GalaxygatesGgWaves setGalaxygatesId(byte galaxygatesId);
+    GalaxygatesGgWaves galaxygatesId(byte galaxygatesId);
 
     /**
      * Sets the galaxygatesWavesId of this GalaxygatesGgWaves. The
@@ -121,7 +121,7 @@ public interface GeneratedGalaxygatesGgWaves {
      *
      * @return this GalaxygatesGgWaves instance
      */
-    GalaxygatesGgWaves setGalaxygatesWavesId(byte galaxygatesWavesId);
+    GalaxygatesGgWaves galaxygatesWavesId(byte galaxygatesWavesId);
 
     /**
      * Queries the specified manager for the referenced Galaxygates. If no such

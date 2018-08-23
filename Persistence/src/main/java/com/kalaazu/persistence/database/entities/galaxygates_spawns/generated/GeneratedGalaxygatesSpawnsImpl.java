@@ -4,9 +4,7 @@ import com.kalaazu.persistence.database.entities.GalaxygatesSpawns;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -18,9 +16,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedGalaxygatesSpawnsImpl implements GalaxygatesSpawns {
 
-    private int id;
+    private Integer id;
 
     private byte npcsId;
 
@@ -31,82 +30,10 @@ public abstract class GeneratedGalaxygatesSpawnsImpl implements GalaxygatesSpawn
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public byte getNpcsId() {
-        return npcsId;
-    }
-
-    @Override
-    public byte getAmount() {
-        return amount;
-    }
-
-    @Override
-    public GalaxygatesSpawns setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesSpawns setNpcsId(byte npcsId) {
-        this.npcsId = npcsId;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesSpawns setAmount(byte amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
     public Npcs findNpcsId(Manager<Npcs> foreignManager) {
         return foreignManager.stream()
-                             .filter(Npcs.ID.equal(getNpcsId()))
+                             .filter(Npcs.ID.equal(npcsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("npcsId = " + Objects.toString(getNpcsId()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        return "GalaxygatesSpawnsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof GalaxygatesSpawns)) {
-            return false;
-        }
-        final GalaxygatesSpawns thatGalaxygatesSpawns = (GalaxygatesSpawns) that;
-        if (this.getId() != thatGalaxygatesSpawns.getId()) {
-            return false;
-        }
-        if (this.getNpcsId() != thatGalaxygatesSpawns.getNpcsId()) {
-            return false;
-        }
-        if (this.getAmount() != thatGalaxygatesSpawns.getAmount()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getNpcsId());
-        hash = 31 * hash + Byte.hashCode(getAmount());
-        return hash;
     }
 }

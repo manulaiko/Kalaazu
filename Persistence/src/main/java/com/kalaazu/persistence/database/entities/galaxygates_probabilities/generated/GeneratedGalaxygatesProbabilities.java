@@ -30,13 +30,13 @@ public interface GeneratedGalaxygatesProbabilities {
 
     /**
      * This Field corresponds to the {@link GalaxygatesProbabilities} field that
-     * can be obtained using the {@link GalaxygatesProbabilities#getId()}
+     * can be obtained using the {@link GalaxygatesProbabilities#id()}
      * method.
      */
     ByteField<GalaxygatesProbabilities, Byte> ID = ByteField.create(
             Identifier.ID,
-            GalaxygatesProbabilities::getId,
-            GalaxygatesProbabilities::setId,
+            GalaxygatesProbabilities::id,
+            GalaxygatesProbabilities::id,
             TypeMapper.primitive(),
             true
     );
@@ -44,12 +44,12 @@ public interface GeneratedGalaxygatesProbabilities {
     /**
      * This Field corresponds to the {@link GalaxygatesProbabilities} field that
      * can be obtained using the {@link
-     * GalaxygatesProbabilities#getGalaxygatesId()} method.
+     * GalaxygatesProbabilities#galaxygatesId()} method.
      */
     ByteForeignKeyField<GalaxygatesProbabilities, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
-            GalaxygatesProbabilities::getGalaxygatesId,
-            GalaxygatesProbabilities::setGalaxygatesId,
+            GalaxygatesProbabilities::galaxygatesId,
+            GalaxygatesProbabilities::galaxygatesId,
             Galaxygates.ID,
             TypeMapper.primitive(),
             false
@@ -57,13 +57,13 @@ public interface GeneratedGalaxygatesProbabilities {
 
     /**
      * This Field corresponds to the {@link GalaxygatesProbabilities} field that
-     * can be obtained using the {@link GalaxygatesProbabilities#getType()}
+     * can be obtained using the {@link GalaxygatesProbabilities#type()}
      * method.
      */
     EnumField<GalaxygatesProbabilities, Byte, GalaxyGateProbabilityType> TYPE = EnumField.create(
             Identifier.TYPE,
-            GalaxygatesProbabilities::getType,
-            GalaxygatesProbabilities::setType,
+            GalaxygatesProbabilities::type,
+            GalaxygatesProbabilities::type,
             new GalaxyGateProbabilityTypeMapper(),
             GalaxyGateProbabilityType::name,
             GalaxyGateProbabilityType::valueOf,
@@ -73,12 +73,12 @@ public interface GeneratedGalaxygatesProbabilities {
     /**
      * This Field corresponds to the {@link GalaxygatesProbabilities} field that
      * can be obtained using the {@link
-     * GalaxygatesProbabilities#getProbability()} method.
+     * GalaxygatesProbabilities#probability()} method.
      */
     DoubleField<GalaxygatesProbabilities, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
-            GalaxygatesProbabilities::getProbability,
-            GalaxygatesProbabilities::setProbability,
+            GalaxygatesProbabilities::probability,
+            GalaxygatesProbabilities::probability,
             TypeMapper.primitive(),
             false
     );
@@ -89,7 +89,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the id of this GalaxygatesProbabilities
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the galaxygatesId of this GalaxygatesProbabilities. The
@@ -98,7 +98,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the galaxygatesId of this GalaxygatesProbabilities
      */
-    byte getGalaxygatesId();
+    byte galaxygatesId();
 
     /**
      * Returns the type of this GalaxygatesProbabilities. The type field
@@ -107,7 +107,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the type of this GalaxygatesProbabilities
      */
-    GalaxyGateProbabilityType getType();
+    GalaxyGateProbabilityType type();
 
     /**
      * Returns the probability of this GalaxygatesProbabilities. The probability
@@ -116,7 +116,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return the probability of this GalaxygatesProbabilities
      */
-    double getProbability();
+    double probability();
 
     /**
      * Sets the id of this GalaxygatesProbabilities. The id field corresponds to
@@ -126,7 +126,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setId(byte id);
+    GalaxygatesProbabilities id(Byte id);
 
     /**
      * Sets the galaxygatesId of this GalaxygatesProbabilities. The
@@ -137,7 +137,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setGalaxygatesId(byte galaxygatesId);
+    GalaxygatesProbabilities galaxygatesId(byte galaxygatesId);
 
     /**
      * Sets the type of this GalaxygatesProbabilities. The type field
@@ -148,7 +148,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setType(GalaxyGateProbabilityType type);
+    GalaxygatesProbabilities type(GalaxyGateProbabilityType type);
 
     /**
      * Sets the probability of this GalaxygatesProbabilities. The probability
@@ -159,7 +159,7 @@ public interface GeneratedGalaxygatesProbabilities {
      *
      * @return this GalaxygatesProbabilities instance
      */
-    GalaxygatesProbabilities setProbability(double probability);
+    GalaxygatesProbabilities probability(double probability);
 
     /**
      * Queries the specified manager for the referenced Galaxygates. If no such

@@ -27,24 +27,24 @@ public interface GeneratedGalaxygatesSpawns {
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpawns} field that can be
-     * obtained using the {@link GalaxygatesSpawns#getId()} method.
+     * obtained using the {@link GalaxygatesSpawns#id()} method.
      */
     IntField<GalaxygatesSpawns, Integer> ID = IntField.create(
             Identifier.ID,
-            GalaxygatesSpawns::getId,
-            GalaxygatesSpawns::setId,
+            GalaxygatesSpawns::id,
+            GalaxygatesSpawns::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpawns} field that can be
-     * obtained using the {@link GalaxygatesSpawns#getNpcsId()} method.
+     * obtained using the {@link GalaxygatesSpawns#npcsId()} method.
      */
     ByteForeignKeyField<GalaxygatesSpawns, Byte, Npcs> NPCS_ID = ByteForeignKeyField.create(
             Identifier.NPCS_ID,
-            GalaxygatesSpawns::getNpcsId,
-            GalaxygatesSpawns::setNpcsId,
+            GalaxygatesSpawns::npcsId,
+            GalaxygatesSpawns::npcsId,
             Npcs.ID,
             TypeMapper.primitive(),
             false
@@ -52,12 +52,12 @@ public interface GeneratedGalaxygatesSpawns {
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpawns} field that can be
-     * obtained using the {@link GalaxygatesSpawns#getAmount()} method.
+     * obtained using the {@link GalaxygatesSpawns#amount()} method.
      */
     ByteField<GalaxygatesSpawns, Byte> AMOUNT = ByteField.create(
             Identifier.AMOUNT,
-            GalaxygatesSpawns::getAmount,
-            GalaxygatesSpawns::setAmount,
+            GalaxygatesSpawns::amount,
+            GalaxygatesSpawns::amount,
             TypeMapper.primitive(),
             false
     );
@@ -68,7 +68,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return the id of this GalaxygatesSpawns
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the npcsId of this GalaxygatesSpawns. The npcsId field
@@ -77,7 +77,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return the npcsId of this GalaxygatesSpawns
      */
-    byte getNpcsId();
+    byte npcsId();
 
     /**
      * Returns the amount of this GalaxygatesSpawns. The amount field
@@ -86,7 +86,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return the amount of this GalaxygatesSpawns
      */
-    byte getAmount();
+    byte amount();
 
     /**
      * Sets the id of this GalaxygatesSpawns. The id field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return this GalaxygatesSpawns instance
      */
-    GalaxygatesSpawns setId(int id);
+    GalaxygatesSpawns id(Integer id);
 
     /**
      * Sets the npcsId of this GalaxygatesSpawns. The npcsId field corresponds
@@ -106,7 +106,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return this GalaxygatesSpawns instance
      */
-    GalaxygatesSpawns setNpcsId(byte npcsId);
+    GalaxygatesSpawns npcsId(byte npcsId);
 
     /**
      * Sets the amount of this GalaxygatesSpawns. The amount field corresponds
@@ -116,7 +116,7 @@ public interface GeneratedGalaxygatesSpawns {
      *
      * @return this GalaxygatesSpawns instance
      */
-    GalaxygatesSpawns setAmount(byte amount);
+    GalaxygatesSpawns amount(byte amount);
 
     /**
      * Queries the specified manager for the referenced Npcs. If no such Npcs
