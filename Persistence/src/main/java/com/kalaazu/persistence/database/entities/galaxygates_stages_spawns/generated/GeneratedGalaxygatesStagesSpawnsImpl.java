@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesStagesSpawns;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedGalaxygatesStagesSpawnsImpl implements GalaxygatesStagesSpawns {
 
-    private int id;
+    private Integer id;
 
     private int galaxygatesStagesId;
 
@@ -32,42 +31,9 @@ public abstract class GeneratedGalaxygatesStagesSpawnsImpl implements Galaxygate
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public int getGalaxygatesStagesId() {
-        return galaxygatesStagesId;
-    }
-
-    @Override
-    public int getGalaxygatesSpawnsId() {
-        return galaxygatesSpawnsId;
-    }
-
-    @Override
-    public GalaxygatesStagesSpawns setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesStagesSpawns setGalaxygatesStagesId(int galaxygatesStagesId) {
-        this.galaxygatesStagesId = galaxygatesStagesId;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesStagesSpawns setGalaxygatesSpawnsId(int galaxygatesSpawnsId) {
-        this.galaxygatesSpawnsId = galaxygatesSpawnsId;
-        return this;
-    }
-
-    @Override
     public GalaxygatesStages findGalaxygatesStagesId(Manager<GalaxygatesStages> foreignManager) {
         return foreignManager.stream()
-                             .filter(GalaxygatesStages.ID.equal(getGalaxygatesStagesId()))
+                             .filter(GalaxygatesStages.ID.equal(galaxygatesStagesId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +41,8 @@ public abstract class GeneratedGalaxygatesStagesSpawnsImpl implements Galaxygate
     @Override
     public GalaxygatesSpawns findGalaxygatesSpawnsId(Manager<GalaxygatesSpawns> foreignManager) {
         return foreignManager.stream()
-                             .filter(GalaxygatesSpawns.ID.equal(getGalaxygatesSpawnsId()))
+                             .filter(GalaxygatesSpawns.ID.equal(galaxygatesSpawnsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("galaxygatesStagesId = " + Objects.toString(getGalaxygatesStagesId()));
-        sj.add("galaxygatesSpawnsId = " + Objects.toString(getGalaxygatesSpawnsId()));
-        return "GalaxygatesStagesSpawnsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof GalaxygatesStagesSpawns)) {
-            return false;
-        }
-        final GalaxygatesStagesSpawns thatGalaxygatesStagesSpawns = (GalaxygatesStagesSpawns) that;
-        if (this.getId() != thatGalaxygatesStagesSpawns.getId()) {
-            return false;
-        }
-        if (this.getGalaxygatesStagesId() != thatGalaxygatesStagesSpawns.getGalaxygatesStagesId()) {
-            return false;
-        }
-        if (this.getGalaxygatesSpawnsId() != thatGalaxygatesStagesSpawns.getGalaxygatesSpawnsId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getGalaxygatesStagesId());
-        hash = 31 * hash + Integer.hashCode(getGalaxygatesSpawnsId());
-        return hash;
     }
 }

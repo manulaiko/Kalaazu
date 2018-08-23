@@ -4,9 +4,7 @@ import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -18,9 +16,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedGalaxygatesWavesImpl implements GalaxygatesWaves {
 
-    private byte id;
+    private Byte id;
 
     private byte mapsId;
 
@@ -33,98 +32,10 @@ public abstract class GeneratedGalaxygatesWavesImpl implements GalaxygatesWaves 
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public byte getMapsId() {
-        return mapsId;
-    }
-
-    @Override
-    public byte getSeconds() {
-        return seconds;
-    }
-
-    @Override
-    public byte getNpcs() {
-        return npcs;
-    }
-
-    @Override
-    public GalaxygatesWaves setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesWaves setMapsId(byte mapsId) {
-        this.mapsId = mapsId;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesWaves setSeconds(byte seconds) {
-        this.seconds = seconds;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesWaves setNpcs(byte npcs) {
-        this.npcs = npcs;
-        return this;
-    }
-
-    @Override
     public Maps findMapsId(Manager<Maps> foreignManager) {
         return foreignManager.stream()
-                             .filter(Maps.ID.equal(getMapsId()))
+                             .filter(Maps.ID.equal(mapsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("mapsId = " + Objects.toString(getMapsId()));
-        sj.add("seconds = " + Objects.toString(getSeconds()));
-        sj.add("npcs = " + Objects.toString(getNpcs()));
-        return "GalaxygatesWavesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof GalaxygatesWaves)) {
-            return false;
-        }
-        final GalaxygatesWaves thatGalaxygatesWaves = (GalaxygatesWaves) that;
-        if (this.getId() != thatGalaxygatesWaves.getId()) {
-            return false;
-        }
-        if (this.getMapsId() != thatGalaxygatesWaves.getMapsId()) {
-            return false;
-        }
-        if (this.getSeconds() != thatGalaxygatesWaves.getSeconds()) {
-            return false;
-        }
-        if (this.getNpcs() != thatGalaxygatesWaves.getNpcs()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getMapsId());
-        hash = 31 * hash + Byte.hashCode(getSeconds());
-        hash = 31 * hash + Byte.hashCode(getNpcs());
-        return hash;
     }
 }

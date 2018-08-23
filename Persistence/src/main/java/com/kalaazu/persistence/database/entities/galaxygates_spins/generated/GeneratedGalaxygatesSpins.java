@@ -26,24 +26,24 @@ public interface GeneratedGalaxygatesSpins {
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
-     * obtained using the {@link GalaxygatesSpins#getId()} method.
+     * obtained using the {@link GalaxygatesSpins#id()} method.
      */
     ByteField<GalaxygatesSpins, Byte> ID = ByteField.create(
             Identifier.ID,
-            GalaxygatesSpins::getId,
-            GalaxygatesSpins::setId,
+            GalaxygatesSpins::id,
+            GalaxygatesSpins::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
-     * obtained using the {@link GalaxygatesSpins#getType()} method.
+     * obtained using the {@link GalaxygatesSpins#type()} method.
      */
     EnumField<GalaxygatesSpins, Byte, GalaxyGateProbabilityType> TYPE = EnumField.create(
             Identifier.TYPE,
-            GalaxygatesSpins::getType,
-            GalaxygatesSpins::setType,
+            GalaxygatesSpins::type,
+            GalaxygatesSpins::type,
             new GalaxyGateProbabilityTypeMapper(),
             GalaxyGateProbabilityType::name,
             GalaxyGateProbabilityType::valueOf,
@@ -52,24 +52,24 @@ public interface GeneratedGalaxygatesSpins {
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
-     * obtained using the {@link GalaxygatesSpins#getProbability()} method.
+     * obtained using the {@link GalaxygatesSpins#probability()} method.
      */
     DoubleField<GalaxygatesSpins, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
-            GalaxygatesSpins::getProbability,
-            GalaxygatesSpins::setProbability,
+            GalaxygatesSpins::probability,
+            GalaxygatesSpins::probability,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
-     * obtained using the {@link GalaxygatesSpins#getItemsId()} method.
+     * obtained using the {@link GalaxygatesSpins#itemsId()} method.
      */
     ShortForeignKeyField<GalaxygatesSpins, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            GalaxygatesSpins::getItemsId,
-            GalaxygatesSpins::setItemsId,
+            GalaxygatesSpins::itemsId,
+            GalaxygatesSpins::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -77,12 +77,12 @@ public interface GeneratedGalaxygatesSpins {
 
     /**
      * This Field corresponds to the {@link GalaxygatesSpins} field that can be
-     * obtained using the {@link GalaxygatesSpins#getAmount()} method.
+     * obtained using the {@link GalaxygatesSpins#amount()} method.
      */
     ShortField<GalaxygatesSpins, Short> AMOUNT = ShortField.create(
             Identifier.AMOUNT,
-            GalaxygatesSpins::getAmount,
-            GalaxygatesSpins::setAmount,
+            GalaxygatesSpins::amount,
+            GalaxygatesSpins::amount,
             TypeMapper.primitive(),
             false
     );
@@ -93,7 +93,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return the id of this GalaxygatesSpins
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the type of this GalaxygatesSpins. The type field corresponds to
@@ -101,7 +101,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return the type of this GalaxygatesSpins
      */
-    GalaxyGateProbabilityType getType();
+    GalaxyGateProbabilityType type();
 
     /**
      * Returns the probability of this GalaxygatesSpins. The probability field
@@ -110,7 +110,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return the probability of this GalaxygatesSpins
      */
-    double getProbability();
+    double probability();
 
     /**
      * Returns the itemsId of this GalaxygatesSpins. The itemsId field
@@ -119,7 +119,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return the itemsId of this GalaxygatesSpins
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the amount of this GalaxygatesSpins. The amount field corresponds
@@ -127,7 +127,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return the amount of this GalaxygatesSpins
      */
-    short getAmount();
+    short amount();
 
     /**
      * Sets the id of this GalaxygatesSpins. The id field corresponds to the
@@ -137,7 +137,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return this GalaxygatesSpins instance
      */
-    GalaxygatesSpins setId(byte id);
+    GalaxygatesSpins id(Byte id);
 
     /**
      * Sets the type of this GalaxygatesSpins. The type field corresponds to the
@@ -147,7 +147,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return this GalaxygatesSpins instance
      */
-    GalaxygatesSpins setType(GalaxyGateProbabilityType type);
+    GalaxygatesSpins type(GalaxyGateProbabilityType type);
 
     /**
      * Sets the probability of this GalaxygatesSpins. The probability field
@@ -158,7 +158,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return this GalaxygatesSpins instance
      */
-    GalaxygatesSpins setProbability(double probability);
+    GalaxygatesSpins probability(double probability);
 
     /**
      * Sets the itemsId of this GalaxygatesSpins. The itemsId field corresponds
@@ -168,7 +168,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return this GalaxygatesSpins instance
      */
-    GalaxygatesSpins setItemsId(short itemsId);
+    GalaxygatesSpins itemsId(short itemsId);
 
     /**
      * Sets the amount of this GalaxygatesSpins. The amount field corresponds to
@@ -178,7 +178,7 @@ public interface GeneratedGalaxygatesSpins {
      *
      * @return this GalaxygatesSpins instance
      */
-    GalaxygatesSpins setAmount(short amount);
+    GalaxygatesSpins amount(short amount);
 
     /**
      * Queries the specified manager for the referenced Items. If no such Items

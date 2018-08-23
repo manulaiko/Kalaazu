@@ -25,24 +25,24 @@ public interface GeneratedGalaxygatesWaves {
 
     /**
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
-     * obtained using the {@link GalaxygatesWaves#getId()} method.
+     * obtained using the {@link GalaxygatesWaves#id()} method.
      */
     ByteField<GalaxygatesWaves, Byte> ID = ByteField.create(
             Identifier.ID,
-            GalaxygatesWaves::getId,
-            GalaxygatesWaves::setId,
+            GalaxygatesWaves::id,
+            GalaxygatesWaves::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
-     * obtained using the {@link GalaxygatesWaves#getMapsId()} method.
+     * obtained using the {@link GalaxygatesWaves#mapsId()} method.
      */
     ByteForeignKeyField<GalaxygatesWaves, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
-            GalaxygatesWaves::getMapsId,
-            GalaxygatesWaves::setMapsId,
+            GalaxygatesWaves::mapsId,
+            GalaxygatesWaves::mapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -50,24 +50,24 @@ public interface GeneratedGalaxygatesWaves {
 
     /**
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
-     * obtained using the {@link GalaxygatesWaves#getSeconds()} method.
+     * obtained using the {@link GalaxygatesWaves#seconds()} method.
      */
     ByteField<GalaxygatesWaves, Byte> SECONDS = ByteField.create(
             Identifier.SECONDS,
-            GalaxygatesWaves::getSeconds,
-            GalaxygatesWaves::setSeconds,
+            GalaxygatesWaves::seconds,
+            GalaxygatesWaves::seconds,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesWaves} field that can be
-     * obtained using the {@link GalaxygatesWaves#getNpcs()} method.
+     * obtained using the {@link GalaxygatesWaves#npcs()} method.
      */
     ByteField<GalaxygatesWaves, Byte> NPCS = ByteField.create(
             Identifier.NPCS,
-            GalaxygatesWaves::getNpcs,
-            GalaxygatesWaves::setNpcs,
+            GalaxygatesWaves::npcs,
+            GalaxygatesWaves::npcs,
             TypeMapper.primitive(),
             false
     );
@@ -78,7 +78,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return the id of this GalaxygatesWaves
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the mapsId of this GalaxygatesWaves. The mapsId field corresponds
@@ -86,7 +86,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return the mapsId of this GalaxygatesWaves
      */
-    byte getMapsId();
+    byte mapsId();
 
     /**
      * Returns the seconds of this GalaxygatesWaves. The seconds field
@@ -95,7 +95,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return the seconds of this GalaxygatesWaves
      */
-    byte getSeconds();
+    byte seconds();
 
     /**
      * Returns the npcs of this GalaxygatesWaves. The npcs field corresponds to
@@ -103,7 +103,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return the npcs of this GalaxygatesWaves
      */
-    byte getNpcs();
+    byte npcs();
 
     /**
      * Sets the id of this GalaxygatesWaves. The id field corresponds to the
@@ -113,7 +113,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return this GalaxygatesWaves instance
      */
-    GalaxygatesWaves setId(byte id);
+    GalaxygatesWaves id(Byte id);
 
     /**
      * Sets the mapsId of this GalaxygatesWaves. The mapsId field corresponds to
@@ -123,7 +123,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return this GalaxygatesWaves instance
      */
-    GalaxygatesWaves setMapsId(byte mapsId);
+    GalaxygatesWaves mapsId(byte mapsId);
 
     /**
      * Sets the seconds of this GalaxygatesWaves. The seconds field corresponds
@@ -133,7 +133,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return this GalaxygatesWaves instance
      */
-    GalaxygatesWaves setSeconds(byte seconds);
+    GalaxygatesWaves seconds(byte seconds);
 
     /**
      * Sets the npcs of this GalaxygatesWaves. The npcs field corresponds to the
@@ -143,7 +143,7 @@ public interface GeneratedGalaxygatesWaves {
      *
      * @return this GalaxygatesWaves instance
      */
-    GalaxygatesWaves setNpcs(byte npcs);
+    GalaxygatesWaves npcs(byte npcs);
 
     /**
      * Queries the specified manager for the referenced Maps. If no such Maps

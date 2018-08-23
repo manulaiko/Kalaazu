@@ -6,13 +6,10 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
-import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
 import com.speedment.runtime.typemapper.TypeMapper;
-
-import java.util.Optional;
 
 /**
  * The generated base for the {@link
@@ -30,25 +27,25 @@ public interface GeneratedGalaxygatesStages {
 
     /**
      * This Field corresponds to the {@link GalaxygatesStages} field that can be
-     * obtained using the {@link GalaxygatesStages#getId()} method.
+     * obtained using the {@link GalaxygatesStages#id()} method.
      */
     IntField<GalaxygatesStages, Integer> ID = IntField.create(
             Identifier.ID,
-            GalaxygatesStages::getId,
-            GalaxygatesStages::setId,
+            GalaxygatesStages::id,
+            GalaxygatesStages::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link GalaxygatesStages} field that can be
-     * obtained using the {@link GalaxygatesStages#getGalaxygatesWavesId()}
+     * obtained using the {@link GalaxygatesStages#galaxygatesWavesId()}
      * method.
      */
     ByteForeignKeyField<GalaxygatesStages, Byte, GalaxygatesWaves> GALAXYGATES_WAVES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_WAVES_ID,
-            GalaxygatesStages::getGalaxygatesWavesId,
-            GalaxygatesStages::setGalaxygatesWavesId,
+            GalaxygatesStages::galaxygatesWavesId,
+            GalaxygatesStages::galaxygatesWavesId,
             GalaxygatesWaves.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +53,12 @@ public interface GeneratedGalaxygatesStages {
 
     /**
      * This Field corresponds to the {@link GalaxygatesStages} field that can be
-     * obtained using the {@link GalaxygatesStages#getComment()} method.
+     * obtained using the {@link GalaxygatesStages#comment()} method.
      */
     StringField<GalaxygatesStages, String> COMMENT = StringField.create(
             Identifier.COMMENT,
-            o -> OptionalUtil.unwrap(o.getComment()),
-            GalaxygatesStages::setComment,
+            GalaxygatesStages::comment,
+            GalaxygatesStages::comment,
             TypeMapper.identity(),
             false
     );
@@ -72,7 +69,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return the id of this GalaxygatesStages
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the galaxygatesWavesId of this GalaxygatesStages. The
@@ -81,7 +78,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return the galaxygatesWavesId of this GalaxygatesStages
      */
-    byte getGalaxygatesWavesId();
+    byte galaxygatesWavesId();
 
     /**
      * Returns the comment of this GalaxygatesStages. The comment field
@@ -90,7 +87,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return the comment of this GalaxygatesStages
      */
-    Optional<String> getComment();
+    String comment();
 
     /**
      * Sets the id of this GalaxygatesStages. The id field corresponds to the
@@ -100,7 +97,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return this GalaxygatesStages instance
      */
-    GalaxygatesStages setId(int id);
+    GalaxygatesStages id(Integer id);
 
     /**
      * Sets the galaxygatesWavesId of this GalaxygatesStages. The
@@ -111,7 +108,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return this GalaxygatesStages instance
      */
-    GalaxygatesStages setGalaxygatesWavesId(byte galaxygatesWavesId);
+    GalaxygatesStages galaxygatesWavesId(byte galaxygatesWavesId);
 
     /**
      * Sets the comment of this GalaxygatesStages. The comment field corresponds
@@ -121,7 +118,7 @@ public interface GeneratedGalaxygatesStages {
      *
      * @return this GalaxygatesStages instance
      */
-    GalaxygatesStages setComment(String comment);
+    GalaxygatesStages comment(String comment);
 
     /**
      * Queries the specified manager for the referenced GalaxygatesWaves. If no

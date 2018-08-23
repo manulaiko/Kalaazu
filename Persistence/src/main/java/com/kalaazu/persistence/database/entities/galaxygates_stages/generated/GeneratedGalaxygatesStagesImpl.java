@@ -4,11 +4,7 @@ import com.kalaazu.persistence.database.entities.GalaxygatesStages;
 import com.kalaazu.persistence.database.entities.GalaxygatesWaves;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.util.OptionalUtil;
-
-import java.util.Objects;
-import java.util.Optional;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +16,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedGalaxygatesStagesImpl implements GalaxygatesStages {
 
-    private int id;
+    private Integer id;
 
     private byte galaxygatesWavesId;
 
@@ -33,82 +30,10 @@ public abstract class GeneratedGalaxygatesStagesImpl implements GalaxygatesStage
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public byte getGalaxygatesWavesId() {
-        return galaxygatesWavesId;
-    }
-
-    @Override
-    public Optional<String> getComment() {
-        return Optional.ofNullable(comment);
-    }
-
-    @Override
-    public GalaxygatesStages setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesStages setGalaxygatesWavesId(byte galaxygatesWavesId) {
-        this.galaxygatesWavesId = galaxygatesWavesId;
-        return this;
-    }
-
-    @Override
-    public GalaxygatesStages setComment(String comment) {
-        this.comment = comment;
-        return this;
-    }
-
-    @Override
     public GalaxygatesWaves findGalaxygatesWavesId(Manager<GalaxygatesWaves> foreignManager) {
         return foreignManager.stream()
-                             .filter(GalaxygatesWaves.ID.equal(getGalaxygatesWavesId()))
+                             .filter(GalaxygatesWaves.ID.equal(galaxygatesWavesId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("galaxygatesWavesId = " + Objects.toString(getGalaxygatesWavesId()));
-        sj.add("comment = " + Objects.toString(OptionalUtil.unwrap(getComment())));
-        return "GalaxygatesStagesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof GalaxygatesStages)) {
-            return false;
-        }
-        final GalaxygatesStages thatGalaxygatesStages = (GalaxygatesStages) that;
-        if (this.getId() != thatGalaxygatesStages.getId()) {
-            return false;
-        }
-        if (this.getGalaxygatesWavesId() != thatGalaxygatesStages.getGalaxygatesWavesId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getComment(), thatGalaxygatesStages.getComment())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getGalaxygatesWavesId());
-        hash = 31 * hash + Objects.hashCode(getComment());
-        return hash;
     }
 }

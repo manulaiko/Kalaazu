@@ -27,12 +27,12 @@ public interface GeneratedGalaxygatesStagesSpawns {
 
     /**
      * This Field corresponds to the {@link GalaxygatesStagesSpawns} field that
-     * can be obtained using the {@link GalaxygatesStagesSpawns#getId()} method.
+     * can be obtained using the {@link GalaxygatesStagesSpawns#id()} method.
      */
     IntField<GalaxygatesStagesSpawns, Integer> ID = IntField.create(
             Identifier.ID,
-            GalaxygatesStagesSpawns::getId,
-            GalaxygatesStagesSpawns::setId,
+            GalaxygatesStagesSpawns::id,
+            GalaxygatesStagesSpawns::id,
             TypeMapper.primitive(),
             true
     );
@@ -40,12 +40,12 @@ public interface GeneratedGalaxygatesStagesSpawns {
     /**
      * This Field corresponds to the {@link GalaxygatesStagesSpawns} field that
      * can be obtained using the {@link
-     * GalaxygatesStagesSpawns#getGalaxygatesStagesId()} method.
+     * GalaxygatesStagesSpawns#galaxygatesStagesId()} method.
      */
     IntForeignKeyField<GalaxygatesStagesSpawns, Integer, GalaxygatesStages> GALAXYGATES_STAGES_ID = IntForeignKeyField.create(
             Identifier.GALAXYGATES_STAGES_ID,
-            GalaxygatesStagesSpawns::getGalaxygatesStagesId,
-            GalaxygatesStagesSpawns::setGalaxygatesStagesId,
+            GalaxygatesStagesSpawns::galaxygatesStagesId,
+            GalaxygatesStagesSpawns::galaxygatesStagesId,
             GalaxygatesStages.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +54,12 @@ public interface GeneratedGalaxygatesStagesSpawns {
     /**
      * This Field corresponds to the {@link GalaxygatesStagesSpawns} field that
      * can be obtained using the {@link
-     * GalaxygatesStagesSpawns#getGalaxygatesSpawnsId()} method.
+     * GalaxygatesStagesSpawns#galaxygatesSpawnsId()} method.
      */
     IntForeignKeyField<GalaxygatesStagesSpawns, Integer, GalaxygatesSpawns> GALAXYGATES_SPAWNS_ID = IntForeignKeyField.create(
             Identifier.GALAXYGATES_SPAWNS_ID,
-            GalaxygatesStagesSpawns::getGalaxygatesSpawnsId,
-            GalaxygatesStagesSpawns::setGalaxygatesSpawnsId,
+            GalaxygatesStagesSpawns::galaxygatesSpawnsId,
+            GalaxygatesStagesSpawns::galaxygatesSpawnsId,
             GalaxygatesSpawns.ID,
             TypeMapper.primitive(),
             false
@@ -71,7 +71,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return the id of this GalaxygatesStagesSpawns
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the galaxygatesStagesId of this GalaxygatesStagesSpawns. The
@@ -80,7 +80,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return the galaxygatesStagesId of this GalaxygatesStagesSpawns
      */
-    int getGalaxygatesStagesId();
+    int galaxygatesStagesId();
 
     /**
      * Returns the galaxygatesSpawnsId of this GalaxygatesStagesSpawns. The
@@ -89,7 +89,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return the galaxygatesSpawnsId of this GalaxygatesStagesSpawns
      */
-    int getGalaxygatesSpawnsId();
+    int galaxygatesSpawnsId();
 
     /**
      * Sets the id of this GalaxygatesStagesSpawns. The id field corresponds to
@@ -99,7 +99,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return this GalaxygatesStagesSpawns instance
      */
-    GalaxygatesStagesSpawns setId(int id);
+    GalaxygatesStagesSpawns id(Integer id);
 
     /**
      * Sets the galaxygatesStagesId of this GalaxygatesStagesSpawns. The
@@ -110,7 +110,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return this GalaxygatesStagesSpawns instance
      */
-    GalaxygatesStagesSpawns setGalaxygatesStagesId(int galaxygatesStagesId);
+    GalaxygatesStagesSpawns galaxygatesStagesId(int galaxygatesStagesId);
 
     /**
      * Sets the galaxygatesSpawnsId of this GalaxygatesStagesSpawns. The
@@ -121,7 +121,7 @@ public interface GeneratedGalaxygatesStagesSpawns {
      *
      * @return this GalaxygatesStagesSpawns instance
      */
-    GalaxygatesStagesSpawns setGalaxygatesSpawnsId(int galaxygatesSpawnsId);
+    GalaxygatesStagesSpawns galaxygatesSpawnsId(int galaxygatesSpawnsId);
 
     /**
      * Queries the specified manager for the referenced GalaxygatesStages. If no
