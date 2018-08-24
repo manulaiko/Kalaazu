@@ -28,36 +28,36 @@ public interface GeneratedMaps {
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getId()} method.
+     * using the {@link Maps#id()} method.
      */
     ByteField<Maps, Byte> ID = ByteField.create(
             Identifier.ID,
-            Maps::getId,
-            Maps::setId,
+            Maps::id,
+            Maps::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getName()} method.
+     * using the {@link Maps#name()} method.
      */
     StringField<Maps, String> NAME = StringField.create(
             Identifier.NAME,
-            Maps::getName,
-            Maps::setName,
+            Maps::name,
+            Maps::name,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getFactionsId()} method.
+     * using the {@link Maps#factionsId()} method.
      */
     ComparableForeignKeyField<Maps, Byte, Byte, Factions> FACTIONS_ID = ComparableForeignKeyField.create(
             Identifier.FACTIONS_ID,
-            o -> OptionalUtil.unwrap(o.getFactionsId()),
-            Maps::setFactionsId,
+            o -> OptionalUtil.unwrap(o.factionsId()),
+            Maps::factionsId,
             Factions.ID,
             TypeMapper.identity(),
             false
@@ -65,36 +65,36 @@ public interface GeneratedMaps {
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getIsPvp()} method.
+     * using the {@link Maps#isPvp()} method.
      */
     BooleanField<Maps, Integer> IS_PVP = BooleanField.create(
             Identifier.IS_PVP,
-            Maps::getIsPvp,
-            Maps::setIsPvp,
+            Maps::isPvp,
+            Maps::isPvp,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getIsStarter()} method.
+     * using the {@link Maps#isStarter()} method.
      */
     BooleanField<Maps, Integer> IS_STARTER = BooleanField.create(
             Identifier.IS_STARTER,
-            Maps::getIsStarter,
-            Maps::setIsStarter,
+            Maps::isStarter,
+            Maps::isStarter,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Maps} field that can be obtained
-     * using the {@link Maps#getLimits()} method.
+     * using the {@link Maps#limits()} method.
      */
     LongField<Maps, Long> LIMITS = LongField.create(
             Identifier.LIMITS,
-            Maps::getLimits,
-            Maps::setLimits,
+            Maps::limits,
+            Maps::limits,
             TypeMapper.primitive(),
             false
     );
@@ -105,7 +105,7 @@ public interface GeneratedMaps {
      *
      * @return the id of this Maps
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Maps. The name field corresponds to the database
@@ -113,7 +113,7 @@ public interface GeneratedMaps {
      *
      * @return the name of this Maps
      */
-    String getName();
+    String name();
 
     /**
      * Returns the factionsId of this Maps. The factionsId field corresponds to
@@ -121,7 +121,7 @@ public interface GeneratedMaps {
      *
      * @return the factionsId of this Maps
      */
-    Optional<Byte> getFactionsId();
+    Optional<Byte> factionsId();
 
     /**
      * Returns the isPvp of this Maps. The isPvp field corresponds to the
@@ -129,7 +129,7 @@ public interface GeneratedMaps {
      *
      * @return the isPvp of this Maps
      */
-    boolean getIsPvp();
+    boolean isPvp();
 
     /**
      * Returns the isStarter of this Maps. The isStarter field corresponds to
@@ -137,7 +137,7 @@ public interface GeneratedMaps {
      *
      * @return the isStarter of this Maps
      */
-    boolean getIsStarter();
+    boolean isStarter();
 
     /**
      * Returns the limits of this Maps. The limits field corresponds to the
@@ -145,7 +145,7 @@ public interface GeneratedMaps {
      *
      * @return the limits of this Maps
      */
-    long getLimits();
+    long limits();
 
     /**
      * Sets the id of this Maps. The id field corresponds to the database column
@@ -155,7 +155,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setId(byte id);
+    Maps id(Byte id);
 
     /**
      * Sets the name of this Maps. The name field corresponds to the database
@@ -165,7 +165,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setName(String name);
+    Maps name(String name);
 
     /**
      * Sets the factionsId of this Maps. The factionsId field corresponds to the
@@ -175,7 +175,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setFactionsId(Byte factionsId);
+    Maps factionsId(Byte factionsId);
 
     /**
      * Sets the isPvp of this Maps. The isPvp field corresponds to the database
@@ -185,7 +185,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setIsPvp(boolean isPvp);
+    Maps isPvp(boolean isPvp);
 
     /**
      * Sets the isStarter of this Maps. The isStarter field corresponds to the
@@ -195,7 +195,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setIsStarter(boolean isStarter);
+    Maps isStarter(boolean isStarter);
 
     /**
      * Sets the limits of this Maps. The limits field corresponds to the
@@ -205,7 +205,7 @@ public interface GeneratedMaps {
      *
      * @return this Maps instance
      */
-    Maps setLimits(long limits);
+    Maps limits(long limits);
 
     /**
      * Queries the specified manager for the referenced Factions. If no such

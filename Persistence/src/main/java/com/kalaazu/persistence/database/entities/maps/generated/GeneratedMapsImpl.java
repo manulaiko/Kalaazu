@@ -4,11 +4,9 @@ import com.kalaazu.persistence.database.entities.Factions;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.speedment.common.annotation.GeneratedCode;
-import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
-import java.util.Objects;
 import java.util.Optional;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +18,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedMapsImpl implements Maps {
 
-    private byte id;
+    private Byte id;
 
     private String name;
 
@@ -39,133 +38,18 @@ public abstract class GeneratedMapsImpl implements Maps {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Optional<Byte> getFactionsId() {
+    public Optional<Byte> factionsId() {
         return Optional.ofNullable(factionsId);
     }
 
     @Override
-    public boolean getIsPvp() {
-        return isPvp;
-    }
-
-    @Override
-    public boolean getIsStarter() {
-        return isStarter;
-    }
-
-    @Override
-    public long getLimits() {
-        return limits;
-    }
-
-    @Override
-    public Maps setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Maps setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public Maps setFactionsId(Byte factionsId) {
-        this.factionsId = factionsId;
-        return this;
-    }
-
-    @Override
-    public Maps setIsPvp(boolean isPvp) {
-        this.isPvp = isPvp;
-        return this;
-    }
-
-    @Override
-    public Maps setIsStarter(boolean isStarter) {
-        this.isStarter = isStarter;
-        return this;
-    }
-
-    @Override
-    public Maps setLimits(long limits) {
-        this.limits = limits;
-        return this;
-    }
-
-    @Override
     public Optional<Factions> findFactionsId(Manager<Factions> foreignManager) {
-        if (getFactionsId().isPresent()) {
+        if (factionsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Factions.ID.equal(getFactionsId().get()))
+                                 .filter(Factions.ID.equal(factionsId().get()))
                                  .findAny();
         } else {
             return Optional.empty();
         }
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("factionsId = " + Objects.toString(OptionalUtil.unwrap(getFactionsId())));
-        sj.add("isPvp = " + Objects.toString(getIsPvp()));
-        sj.add("isStarter = " + Objects.toString(getIsStarter()));
-        sj.add("limits = " + Objects.toString(getLimits()));
-        return "MapsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Maps)) {
-            return false;
-        }
-        final Maps thatMaps = (Maps) that;
-        if (this.getId() != thatMaps.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatMaps.getName())) {
-            return false;
-        }
-        if (!Objects.equals(this.getFactionsId(), thatMaps.getFactionsId())) {
-            return false;
-        }
-        if (this.getIsPvp() != thatMaps.getIsPvp()) {
-            return false;
-        }
-        if (this.getIsStarter() != thatMaps.getIsStarter()) {
-            return false;
-        }
-        if (this.getLimits() != thatMaps.getLimits()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getFactionsId());
-        hash = 31 * hash + Boolean.hashCode(getIsPvp());
-        hash = 31 * hash + Boolean.hashCode(getIsStarter());
-        hash = 31 * hash + Long.hashCode(getLimits());
-        return hash;
     }
 }

@@ -27,24 +27,24 @@ public interface GeneratedLevelsUpgrades {
 
     /**
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
-     * obtained using the {@link LevelsUpgrades#getId()} method.
+     * obtained using the {@link LevelsUpgrades#id()} method.
      */
     IntField<LevelsUpgrades, Integer> ID = IntField.create(
             Identifier.ID,
-            LevelsUpgrades::getId,
-            LevelsUpgrades::setId,
+            LevelsUpgrades::id,
+            LevelsUpgrades::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
-     * obtained using the {@link LevelsUpgrades#getLevelsId()} method.
+     * obtained using the {@link LevelsUpgrades#levelsId()} method.
      */
     ByteForeignKeyField<LevelsUpgrades, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            LevelsUpgrades::getLevelsId,
-            LevelsUpgrades::setLevelsId,
+            LevelsUpgrades::levelsId,
+            LevelsUpgrades::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -52,36 +52,36 @@ public interface GeneratedLevelsUpgrades {
 
     /**
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
-     * obtained using the {@link LevelsUpgrades#getProbability()} method.
+     * obtained using the {@link LevelsUpgrades#probability()} method.
      */
     ByteField<LevelsUpgrades, Byte> PROBABILITY = ByteField.create(
             Identifier.PROBABILITY,
-            LevelsUpgrades::getProbability,
-            LevelsUpgrades::setProbability,
+            LevelsUpgrades::probability,
+            LevelsUpgrades::probability,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
-     * obtained using the {@link LevelsUpgrades#getCredits()} method.
+     * obtained using the {@link LevelsUpgrades#credits()} method.
      */
     IntField<LevelsUpgrades, Integer> CREDITS = IntField.create(
             Identifier.CREDITS,
-            LevelsUpgrades::getCredits,
-            LevelsUpgrades::setCredits,
+            LevelsUpgrades::credits,
+            LevelsUpgrades::credits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link LevelsUpgrades} field that can be
-     * obtained using the {@link LevelsUpgrades#getUridium()} method.
+     * obtained using the {@link LevelsUpgrades#uridium()} method.
      */
     ShortField<LevelsUpgrades, Short> URIDIUM = ShortField.create(
             Identifier.URIDIUM,
-            LevelsUpgrades::getUridium,
-            LevelsUpgrades::setUridium,
+            LevelsUpgrades::uridium,
+            LevelsUpgrades::uridium,
             TypeMapper.primitive(),
             false
     );
@@ -92,7 +92,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the id of this LevelsUpgrades
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the levelsId of this LevelsUpgrades. The levelsId field
@@ -101,7 +101,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the levelsId of this LevelsUpgrades
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the probability of this LevelsUpgrades. The probability field
@@ -110,7 +110,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the probability of this LevelsUpgrades
      */
-    byte getProbability();
+    byte probability();
 
     /**
      * Returns the credits of this LevelsUpgrades. The credits field corresponds
@@ -118,7 +118,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the credits of this LevelsUpgrades
      */
-    int getCredits();
+    int credits();
 
     /**
      * Returns the uridium of this LevelsUpgrades. The uridium field corresponds
@@ -126,7 +126,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return the uridium of this LevelsUpgrades
      */
-    short getUridium();
+    short uridium();
 
     /**
      * Sets the id of this LevelsUpgrades. The id field corresponds to the
@@ -136,7 +136,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return this LevelsUpgrades instance
      */
-    LevelsUpgrades setId(int id);
+    LevelsUpgrades id(Integer id);
 
     /**
      * Sets the levelsId of this LevelsUpgrades. The levelsId field corresponds
@@ -146,7 +146,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return this LevelsUpgrades instance
      */
-    LevelsUpgrades setLevelsId(byte levelsId);
+    LevelsUpgrades levelsId(byte levelsId);
 
     /**
      * Sets the probability of this LevelsUpgrades. The probability field
@@ -157,7 +157,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return this LevelsUpgrades instance
      */
-    LevelsUpgrades setProbability(byte probability);
+    LevelsUpgrades probability(byte probability);
 
     /**
      * Sets the credits of this LevelsUpgrades. The credits field corresponds to
@@ -167,7 +167,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return this LevelsUpgrades instance
      */
-    LevelsUpgrades setCredits(int credits);
+    LevelsUpgrades credits(int credits);
 
     /**
      * Sets the uridium of this LevelsUpgrades. The uridium field corresponds to
@@ -177,7 +177,7 @@ public interface GeneratedLevelsUpgrades {
      *
      * @return this LevelsUpgrades instance
      */
-    LevelsUpgrades setUridium(short uridium);
+    LevelsUpgrades uridium(short uridium);
 
     /**
      * Queries the specified manager for the referenced Levels. If no such

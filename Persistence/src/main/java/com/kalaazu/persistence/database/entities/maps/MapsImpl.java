@@ -40,7 +40,7 @@ public final class MapsImpl
     private List<MapsStations> stations;
 
     @Override
-    public Optional<Factions> getFaction() {
+    public Optional<Factions> faction() {
         if (this.faction != null) {
             return this.faction;
         }
@@ -62,7 +62,7 @@ public final class MapsImpl
 
         this.npcs = Database.getInstance()
                             .all(MapsNpcs.class)
-                            .filter(MapsNpcs.MAPS_ID.equal(super.getId()))
+                            .filter(MapsNpcs.MAPS_ID.equal(super.id()))
                             .collect(Collectors.toList());
 
         return this.npcs;
@@ -76,7 +76,7 @@ public final class MapsImpl
 
         this.portals = Database.getInstance()
                                .all(MapsPortals.class)
-                               .filter(MapsPortals.MAPS_ID.equal(super.getId()))
+                               .filter(MapsPortals.MAPS_ID.equal(super.id()))
                                .collect(Collectors.toList());
 
         return this.portals;
@@ -90,7 +90,7 @@ public final class MapsImpl
 
         this.stations = Database.getInstance()
                                 .all(MapsStations.class)
-                                .filter(MapsStations.MAPS_ID.equal(super.getId()))
+                                .filter(MapsStations.MAPS_ID.equal(super.id()))
                                 .collect(Collectors.toList());
 
         return this.stations;

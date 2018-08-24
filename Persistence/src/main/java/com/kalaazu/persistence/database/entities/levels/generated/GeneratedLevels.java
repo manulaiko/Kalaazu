@@ -22,72 +22,72 @@ public interface GeneratedLevels {
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getId()} method.
+     * using the {@link Levels#id()} method.
      */
     ByteField<Levels, Byte> ID = ByteField.create(
             Identifier.ID,
-            Levels::getId,
-            Levels::setId,
+            Levels::id,
+            Levels::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getAccount()} method.
+     * using the {@link Levels#account()} method.
      */
     LongField<Levels, Long> ACCOUNT = LongField.create(
             Identifier.ACCOUNT,
-            Levels::getAccount,
-            Levels::setAccount,
+            Levels::account,
+            Levels::account,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getDrone()} method.
+     * using the {@link Levels#drone()} method.
      */
     ShortField<Levels, Short> DRONE = ShortField.create(
             Identifier.DRONE,
-            Levels::getDrone,
-            Levels::setDrone,
+            Levels::drone,
+            Levels::drone,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getPet()} method.
+     * using the {@link Levels#pet()} method.
      */
     IntField<Levels, Integer> PET = IntField.create(
             Identifier.PET,
-            Levels::getPet,
-            Levels::setPet,
+            Levels::pet,
+            Levels::pet,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getDamage()} method.
+     * using the {@link Levels#damage()} method.
      */
     DoubleField<Levels, Double> DAMAGE = DoubleField.create(
             Identifier.DAMAGE,
-            Levels::getDamage,
-            Levels::setDamage,
+            Levels::damage,
+            Levels::damage,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Levels} field that can be obtained
-     * using the {@link Levels#getShield()} method.
+     * using the {@link Levels#shield()} method.
      */
     DoubleField<Levels, Double> SHIELD = DoubleField.create(
             Identifier.SHIELD,
-            Levels::getShield,
-            Levels::setShield,
+            Levels::shield,
+            Levels::shield,
             TypeMapper.primitive(),
             false
     );
@@ -98,7 +98,7 @@ public interface GeneratedLevels {
      *
      * @return the id of this Levels
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the account of this Levels. The account field corresponds to the
@@ -106,7 +106,7 @@ public interface GeneratedLevels {
      *
      * @return the account of this Levels
      */
-    long getAccount();
+    long account();
 
     /**
      * Returns the drone of this Levels. The drone field corresponds to the
@@ -114,7 +114,7 @@ public interface GeneratedLevels {
      *
      * @return the drone of this Levels
      */
-    short getDrone();
+    short drone();
 
     /**
      * Returns the pet of this Levels. The pet field corresponds to the database
@@ -122,7 +122,7 @@ public interface GeneratedLevels {
      *
      * @return the pet of this Levels
      */
-    int getPet();
+    int pet();
 
     /**
      * Returns the damage of this Levels. The damage field corresponds to the
@@ -130,7 +130,7 @@ public interface GeneratedLevels {
      *
      * @return the damage of this Levels
      */
-    double getDamage();
+    double damage();
 
     /**
      * Returns the shield of this Levels. The shield field corresponds to the
@@ -138,7 +138,7 @@ public interface GeneratedLevels {
      *
      * @return the shield of this Levels
      */
-    double getShield();
+    double shield();
 
     /**
      * Sets the id of this Levels. The id field corresponds to the database
@@ -148,7 +148,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setId(byte id);
+    Levels id(Byte id);
 
     /**
      * Sets the account of this Levels. The account field corresponds to the
@@ -158,7 +158,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setAccount(long account);
+    Levels account(long account);
 
     /**
      * Sets the drone of this Levels. The drone field corresponds to the
@@ -168,7 +168,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setDrone(short drone);
+    Levels drone(short drone);
 
     /**
      * Sets the pet of this Levels. The pet field corresponds to the database
@@ -178,7 +178,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setPet(int pet);
+    Levels pet(int pet);
 
     /**
      * Sets the damage of this Levels. The damage field corresponds to the
@@ -188,7 +188,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setDamage(double damage);
+    Levels damage(double damage);
 
     /**
      * Sets the shield of this Levels. The shield field corresponds to the
@@ -198,7 +198,7 @@ public interface GeneratedLevels {
      *
      * @return this Levels instance
      */
-    Levels setShield(double shield);
+    Levels shield(double shield);
 
     enum Identifier implements ColumnIdentifier<Levels> {
 

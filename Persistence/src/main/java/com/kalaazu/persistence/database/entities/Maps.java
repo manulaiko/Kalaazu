@@ -19,7 +19,7 @@ public interface Maps extends GeneratedMaps, Entity<Byte> {
      *
      * @return Map faction.
      */
-    Optional<Factions> getFaction();
+    Optional<Factions> faction();
 
     /**
      * Returns the npcs on map.

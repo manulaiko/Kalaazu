@@ -19,7 +19,7 @@ public interface Manager<T extends Entity> extends com.speedment.runtime.core.ma
     default Optional<T> byId(int id) {
         return this.stream()
                    .filter(a -> {
-                       var i = a.getId();
+                       var i = a.id();
                        int j = 0;
 
                        if (i instanceof Byte) {
