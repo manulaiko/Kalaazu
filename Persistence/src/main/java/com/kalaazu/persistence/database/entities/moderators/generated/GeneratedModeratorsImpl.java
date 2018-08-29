@@ -5,10 +5,9 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Moderators;
 import com.kalaazu.persistence.database.entities.ModeratorsRoles;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedModeratorsImpl implements Moderators {
 
-    private byte id;
+    private Byte id;
 
     private int accountsId;
 
@@ -35,53 +35,9 @@ public abstract class GeneratedModeratorsImpl implements Moderators {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public byte getModeratorsRolesId() {
-        return moderatorsRolesId;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public Moderators setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Moderators setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public Moderators setModeratorsRolesId(byte moderatorsRolesId) {
-        this.moderatorsRolesId = moderatorsRolesId;
-        return this;
-    }
-
-    @Override
-    public Moderators setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -89,52 +45,8 @@ public abstract class GeneratedModeratorsImpl implements Moderators {
     @Override
     public ModeratorsRoles findModeratorsRolesId(Manager<ModeratorsRoles> foreignManager) {
         return foreignManager.stream()
-                             .filter(ModeratorsRoles.ID.equal(getModeratorsRolesId()))
+                             .filter(ModeratorsRoles.ID.equal(moderatorsRolesId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("moderatorsRolesId = " + Objects.toString(getModeratorsRolesId()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "ModeratorsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Moderators)) {
-            return false;
-        }
-        final Moderators thatModerators = (Moderators) that;
-        if (this.getId() != thatModerators.getId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatModerators.getAccountsId()) {
-            return false;
-        }
-        if (this.getModeratorsRolesId() != thatModerators.getModeratorsRolesId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatModerators.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Byte.hashCode(getModeratorsRolesId());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

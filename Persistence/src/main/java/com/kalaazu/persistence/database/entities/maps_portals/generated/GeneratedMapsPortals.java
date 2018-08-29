@@ -30,36 +30,36 @@ public interface GeneratedMapsPortals {
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getId()} method.
+     * obtained using the {@link MapsPortals#id()} method.
      */
     ByteField<MapsPortals, Byte> ID = ByteField.create(
             Identifier.ID,
-            MapsPortals::getId,
-            MapsPortals::setId,
+            MapsPortals::id,
+            MapsPortals::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getLevelsId()} method.
+     * obtained using the {@link MapsPortals#levelsId()} method.
      */
     ByteField<MapsPortals, Byte> LEVELS_ID = ByteField.create(
             Identifier.LEVELS_ID,
-            MapsPortals::getLevelsId,
-            MapsPortals::setLevelsId,
+            MapsPortals::levelsId,
+            MapsPortals::levelsId,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getMapsId()} method.
+     * obtained using the {@link MapsPortals#mapsId()} method.
      */
     ByteForeignKeyField<MapsPortals, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
-            MapsPortals::getMapsId,
-            MapsPortals::setMapsId,
+            MapsPortals::mapsId,
+            MapsPortals::mapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -67,24 +67,24 @@ public interface GeneratedMapsPortals {
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getPosition()} method.
+     * obtained using the {@link MapsPortals#position()} method.
      */
     ReferenceField<MapsPortals, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
-            MapsPortals::getPosition,
-            MapsPortals::setPosition,
+            MapsPortals::position,
+            MapsPortals::position,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getTargetMapsId()} method.
+     * obtained using the {@link MapsPortals#targetMapsId()} method.
      */
     ByteForeignKeyField<MapsPortals, Byte, Maps> TARGET_MAPS_ID = ByteForeignKeyField.create(
             Identifier.TARGET_MAPS_ID,
-            MapsPortals::getTargetMapsId,
-            MapsPortals::setTargetMapsId,
+            MapsPortals::targetMapsId,
+            MapsPortals::targetMapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -92,48 +92,48 @@ public interface GeneratedMapsPortals {
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getTargetPosition()} method.
+     * obtained using the {@link MapsPortals#targetPosition()} method.
      */
     ReferenceField<MapsPortals, Long, Vector2> TARGET_POSITION = ReferenceField.create(
             Identifier.TARGET_POSITION,
-            MapsPortals::getTargetPosition,
-            MapsPortals::setTargetPosition,
+            MapsPortals::targetPosition,
+            MapsPortals::targetPosition,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getIsVisible()} method.
+     * obtained using the {@link MapsPortals#isVisible()} method.
      */
     BooleanField<MapsPortals, Integer> IS_VISIBLE = BooleanField.create(
             Identifier.IS_VISIBLE,
-            MapsPortals::getIsVisible,
-            MapsPortals::setIsVisible,
+            MapsPortals::isVisible,
+            MapsPortals::isVisible,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getIsWorking()} method.
+     * obtained using the {@link MapsPortals#isWorking()} method.
      */
     BooleanField<MapsPortals, Integer> IS_WORKING = BooleanField.create(
             Identifier.IS_WORKING,
-            MapsPortals::getIsWorking,
-            MapsPortals::setIsWorking,
+            MapsPortals::isWorking,
+            MapsPortals::isWorking,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsPortals} field that can be
-     * obtained using the {@link MapsPortals#getGfx()} method.
+     * obtained using the {@link MapsPortals#gfx()} method.
      */
     ByteField<MapsPortals, Byte> GFX = ByteField.create(
             Identifier.GFX,
-            MapsPortals::getGfx,
-            MapsPortals::setGfx,
+            MapsPortals::gfx,
+            MapsPortals::gfx,
             TypeMapper.primitive(),
             false
     );
@@ -144,7 +144,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the id of this MapsPortals
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the levelsId of this MapsPortals. The levelsId field corresponds
@@ -152,7 +152,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the levelsId of this MapsPortals
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the mapsId of this MapsPortals. The mapsId field corresponds to
@@ -160,7 +160,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the mapsId of this MapsPortals
      */
-    byte getMapsId();
+    byte mapsId();
 
     /**
      * Returns the position of this MapsPortals. The position field corresponds
@@ -168,7 +168,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the position of this MapsPortals
      */
-    Vector2 getPosition();
+    Vector2 position();
 
     /**
      * Returns the targetMapsId of this MapsPortals. The targetMapsId field
@@ -177,7 +177,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the targetMapsId of this MapsPortals
      */
-    byte getTargetMapsId();
+    byte targetMapsId();
 
     /**
      * Returns the targetPosition of this MapsPortals. The targetPosition field
@@ -186,7 +186,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the targetPosition of this MapsPortals
      */
-    Vector2 getTargetPosition();
+    Vector2 targetPosition();
 
     /**
      * Returns the isVisible of this MapsPortals. The isVisible field
@@ -195,7 +195,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the isVisible of this MapsPortals
      */
-    boolean getIsVisible();
+    boolean isVisible();
 
     /**
      * Returns the isWorking of this MapsPortals. The isWorking field
@@ -204,7 +204,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the isWorking of this MapsPortals
      */
-    boolean getIsWorking();
+    boolean isWorking();
 
     /**
      * Returns the gfx of this MapsPortals. The gfx field corresponds to the
@@ -212,7 +212,7 @@ public interface GeneratedMapsPortals {
      *
      * @return the gfx of this MapsPortals
      */
-    byte getGfx();
+    byte gfx();
 
     /**
      * Sets the id of this MapsPortals. The id field corresponds to the database
@@ -222,7 +222,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setId(byte id);
+    MapsPortals id(Byte id);
 
     /**
      * Sets the levelsId of this MapsPortals. The levelsId field corresponds to
@@ -232,7 +232,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setLevelsId(byte levelsId);
+    MapsPortals levelsId(byte levelsId);
 
     /**
      * Sets the mapsId of this MapsPortals. The mapsId field corresponds to the
@@ -242,7 +242,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setMapsId(byte mapsId);
+    MapsPortals mapsId(byte mapsId);
 
     /**
      * Sets the position of this MapsPortals. The position field corresponds to
@@ -252,7 +252,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setPosition(Vector2 position);
+    MapsPortals position(Vector2 position);
 
     /**
      * Sets the targetMapsId of this MapsPortals. The targetMapsId field
@@ -263,7 +263,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setTargetMapsId(byte targetMapsId);
+    MapsPortals targetMapsId(byte targetMapsId);
 
     /**
      * Sets the targetPosition of this MapsPortals. The targetPosition field
@@ -274,7 +274,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setTargetPosition(Vector2 targetPosition);
+    MapsPortals targetPosition(Vector2 targetPosition);
 
     /**
      * Sets the isVisible of this MapsPortals. The isVisible field corresponds
@@ -284,7 +284,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setIsVisible(boolean isVisible);
+    MapsPortals isVisible(boolean isVisible);
 
     /**
      * Sets the isWorking of this MapsPortals. The isWorking field corresponds
@@ -294,7 +294,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setIsWorking(boolean isWorking);
+    MapsPortals isWorking(boolean isWorking);
 
     /**
      * Sets the gfx of this MapsPortals. The gfx field corresponds to the
@@ -304,7 +304,7 @@ public interface GeneratedMapsPortals {
      *
      * @return this MapsPortals instance
      */
-    MapsPortals setGfx(byte gfx);
+    MapsPortals gfx(byte gfx);
 
     /**
      * Queries the specified manager for the referenced Maps. If no such Maps

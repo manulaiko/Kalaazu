@@ -32,36 +32,36 @@ public interface GeneratedMapsStations {
 
     /**
      * This Field corresponds to the {@link MapsStations} field that can be
-     * obtained using the {@link MapsStations#getId()} method.
+     * obtained using the {@link MapsStations#id()} method.
      */
     ByteField<MapsStations, Byte> ID = ByteField.create(
             Identifier.ID,
-            MapsStations::getId,
-            MapsStations::setId,
+            MapsStations::id,
+            MapsStations::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link MapsStations} field that can be
-     * obtained using the {@link MapsStations#getPosition()} method.
+     * obtained using the {@link MapsStations#position()} method.
      */
     ReferenceField<MapsStations, Long, Vector2> POSITION = ReferenceField.create(
             Identifier.POSITION,
-            MapsStations::getPosition,
-            MapsStations::setPosition,
+            MapsStations::position,
+            MapsStations::position,
             new Vector2Mapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link MapsStations} field that can be
-     * obtained using the {@link MapsStations#getMapsId()} method.
+     * obtained using the {@link MapsStations#mapsId()} method.
      */
     ComparableForeignKeyField<MapsStations, Byte, Byte, Maps> MAPS_ID = ComparableForeignKeyField.create(
             Identifier.MAPS_ID,
-            o -> OptionalUtil.unwrap(o.getMapsId()),
-            MapsStations::setMapsId,
+            o -> OptionalUtil.unwrap(o.mapsId()),
+            MapsStations::mapsId,
             Maps.ID,
             TypeMapper.identity(),
             false
@@ -69,12 +69,12 @@ public interface GeneratedMapsStations {
 
     /**
      * This Field corresponds to the {@link MapsStations} field that can be
-     * obtained using the {@link MapsStations#getFactionsId()} method.
+     * obtained using the {@link MapsStations#factionsId()} method.
      */
     ComparableForeignKeyField<MapsStations, Byte, Byte, Factions> FACTIONS_ID = ComparableForeignKeyField.create(
             Identifier.FACTIONS_ID,
-            o -> OptionalUtil.unwrap(o.getFactionsId()),
-            MapsStations::setFactionsId,
+            o -> OptionalUtil.unwrap(o.factionsId()),
+            MapsStations::factionsId,
             Factions.ID,
             TypeMapper.identity(),
             false
@@ -86,7 +86,7 @@ public interface GeneratedMapsStations {
      *
      * @return the id of this MapsStations
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the position of this MapsStations. The position field corresponds
@@ -94,7 +94,7 @@ public interface GeneratedMapsStations {
      *
      * @return the position of this MapsStations
      */
-    Vector2 getPosition();
+    Vector2 position();
 
     /**
      * Returns the mapsId of this MapsStations. The mapsId field corresponds to
@@ -102,7 +102,7 @@ public interface GeneratedMapsStations {
      *
      * @return the mapsId of this MapsStations
      */
-    Optional<Byte> getMapsId();
+    Optional<Byte> mapsId();
 
     /**
      * Returns the factionsId of this MapsStations. The factionsId field
@@ -111,7 +111,7 @@ public interface GeneratedMapsStations {
      *
      * @return the factionsId of this MapsStations
      */
-    Optional<Byte> getFactionsId();
+    Optional<Byte> factionsId();
 
     /**
      * Sets the id of this MapsStations. The id field corresponds to the
@@ -121,7 +121,7 @@ public interface GeneratedMapsStations {
      *
      * @return this MapsStations instance
      */
-    MapsStations setId(byte id);
+    MapsStations id(Byte id);
 
     /**
      * Sets the position of this MapsStations. The position field corresponds to
@@ -131,7 +131,7 @@ public interface GeneratedMapsStations {
      *
      * @return this MapsStations instance
      */
-    MapsStations setPosition(Vector2 position);
+    MapsStations position(Vector2 position);
 
     /**
      * Sets the mapsId of this MapsStations. The mapsId field corresponds to the
@@ -141,7 +141,7 @@ public interface GeneratedMapsStations {
      *
      * @return this MapsStations instance
      */
-    MapsStations setMapsId(Byte mapsId);
+    MapsStations mapsId(Byte mapsId);
 
     /**
      * Sets the factionsId of this MapsStations. The factionsId field
@@ -152,7 +152,7 @@ public interface GeneratedMapsStations {
      *
      * @return this MapsStations instance
      */
-    MapsStations setFactionsId(Byte factionsId);
+    MapsStations factionsId(Byte factionsId);
 
     /**
      * Queries the specified manager for the referenced Maps. If no such Maps

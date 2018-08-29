@@ -26,24 +26,24 @@ public interface GeneratedMapsNpcs {
 
     /**
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
-     * using the {@link MapsNpcs#getId()} method.
+     * using the {@link MapsNpcs#id()} method.
      */
     ByteField<MapsNpcs, Byte> ID = ByteField.create(
             Identifier.ID,
-            MapsNpcs::getId,
-            MapsNpcs::setId,
+            MapsNpcs::id,
+            MapsNpcs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
-     * using the {@link MapsNpcs#getMapsId()} method.
+     * using the {@link MapsNpcs#mapsId()} method.
      */
     ByteForeignKeyField<MapsNpcs, Byte, Maps> MAPS_ID = ByteForeignKeyField.create(
             Identifier.MAPS_ID,
-            MapsNpcs::getMapsId,
-            MapsNpcs::setMapsId,
+            MapsNpcs::mapsId,
+            MapsNpcs::mapsId,
             Maps.ID,
             TypeMapper.primitive(),
             false
@@ -51,12 +51,12 @@ public interface GeneratedMapsNpcs {
 
     /**
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
-     * using the {@link MapsNpcs#getNpcsId()} method.
+     * using the {@link MapsNpcs#npcsId()} method.
      */
     ByteForeignKeyField<MapsNpcs, Byte, Npcs> NPCS_ID = ByteForeignKeyField.create(
             Identifier.NPCS_ID,
-            MapsNpcs::getNpcsId,
-            MapsNpcs::setNpcsId,
+            MapsNpcs::npcsId,
+            MapsNpcs::npcsId,
             Npcs.ID,
             TypeMapper.primitive(),
             false
@@ -64,12 +64,12 @@ public interface GeneratedMapsNpcs {
 
     /**
      * This Field corresponds to the {@link MapsNpcs} field that can be obtained
-     * using the {@link MapsNpcs#getAmount()} method.
+     * using the {@link MapsNpcs#amount()} method.
      */
     ByteField<MapsNpcs, Byte> AMOUNT = ByteField.create(
             Identifier.AMOUNT,
-            MapsNpcs::getAmount,
-            MapsNpcs::setAmount,
+            MapsNpcs::amount,
+            MapsNpcs::amount,
             TypeMapper.primitive(),
             false
     );
@@ -80,7 +80,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return the id of this MapsNpcs
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the mapsId of this MapsNpcs. The mapsId field corresponds to the
@@ -88,7 +88,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return the mapsId of this MapsNpcs
      */
-    byte getMapsId();
+    byte mapsId();
 
     /**
      * Returns the npcsId of this MapsNpcs. The npcsId field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return the npcsId of this MapsNpcs
      */
-    byte getNpcsId();
+    byte npcsId();
 
     /**
      * Returns the amount of this MapsNpcs. The amount field corresponds to the
@@ -104,7 +104,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return the amount of this MapsNpcs
      */
-    byte getAmount();
+    byte amount();
 
     /**
      * Sets the id of this MapsNpcs. The id field corresponds to the database
@@ -114,7 +114,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return this MapsNpcs instance
      */
-    MapsNpcs setId(byte id);
+    MapsNpcs id(Byte id);
 
     /**
      * Sets the mapsId of this MapsNpcs. The mapsId field corresponds to the
@@ -124,7 +124,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return this MapsNpcs instance
      */
-    MapsNpcs setMapsId(byte mapsId);
+    MapsNpcs mapsId(byte mapsId);
 
     /**
      * Sets the npcsId of this MapsNpcs. The npcsId field corresponds to the
@@ -134,7 +134,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return this MapsNpcs instance
      */
-    MapsNpcs setNpcsId(byte npcsId);
+    MapsNpcs npcsId(byte npcsId);
 
     /**
      * Sets the amount of this MapsNpcs. The amount field corresponds to the
@@ -144,7 +144,7 @@ public interface GeneratedMapsNpcs {
      *
      * @return this MapsNpcs instance
      */
-    MapsNpcs setAmount(byte amount);
+    MapsNpcs amount(byte amount);
 
     /**
      * Queries the specified manager for the referenced Maps. If no such Maps

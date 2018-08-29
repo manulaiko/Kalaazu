@@ -11,6 +11,7 @@ import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntForeignKeyField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -30,24 +31,24 @@ public interface GeneratedModerators {
 
     /**
      * This Field corresponds to the {@link Moderators} field that can be
-     * obtained using the {@link Moderators#getId()} method.
+     * obtained using the {@link Moderators#id()} method.
      */
     ByteField<Moderators, Byte> ID = ByteField.create(
             Identifier.ID,
-            Moderators::getId,
-            Moderators::setId,
+            Moderators::id,
+            Moderators::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Moderators} field that can be
-     * obtained using the {@link Moderators#getAccountsId()} method.
+     * obtained using the {@link Moderators#accountsId()} method.
      */
     IntForeignKeyField<Moderators, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            Moderators::getAccountsId,
-            Moderators::setAccountsId,
+            Moderators::accountsId,
+            Moderators::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -55,12 +56,12 @@ public interface GeneratedModerators {
 
     /**
      * This Field corresponds to the {@link Moderators} field that can be
-     * obtained using the {@link Moderators#getModeratorsRolesId()} method.
+     * obtained using the {@link Moderators#moderatorsRolesId()} method.
      */
     ByteForeignKeyField<Moderators, Byte, ModeratorsRoles> MODERATORS_ROLES_ID = ByteForeignKeyField.create(
             Identifier.MODERATORS_ROLES_ID,
-            Moderators::getModeratorsRolesId,
-            Moderators::setModeratorsRolesId,
+            Moderators::moderatorsRolesId,
+            Moderators::moderatorsRolesId,
             ModeratorsRoles.ID,
             TypeMapper.primitive(),
             false
@@ -68,12 +69,12 @@ public interface GeneratedModerators {
 
     /**
      * This Field corresponds to the {@link Moderators} field that can be
-     * obtained using the {@link Moderators#getDate()} method.
+     * obtained using the {@link Moderators#date()} method.
      */
     ComparableField<Moderators, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            Moderators::getDate,
-            Moderators::setDate,
+            Moderators::date,
+            (ReferenceSetter<Moderators, Timestamp>) Moderators::date,
             TypeMapper.identity(),
             false
     );
@@ -84,7 +85,7 @@ public interface GeneratedModerators {
      *
      * @return the id of this Moderators
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the accountsId of this Moderators. The accountsId field
@@ -93,7 +94,7 @@ public interface GeneratedModerators {
      *
      * @return the accountsId of this Moderators
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the moderatorsRolesId of this Moderators. The moderatorsRolesId
@@ -102,7 +103,7 @@ public interface GeneratedModerators {
      *
      * @return the moderatorsRolesId of this Moderators
      */
-    byte getModeratorsRolesId();
+    byte moderatorsRolesId();
 
     /**
      * Returns the date of this Moderators. The date field corresponds to the
@@ -110,7 +111,7 @@ public interface GeneratedModerators {
      *
      * @return the date of this Moderators
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this Moderators. The id field corresponds to the database
@@ -120,7 +121,7 @@ public interface GeneratedModerators {
      *
      * @return this Moderators instance
      */
-    Moderators setId(byte id);
+    Moderators id(Byte id);
 
     /**
      * Sets the accountsId of this Moderators. The accountsId field corresponds
@@ -130,7 +131,7 @@ public interface GeneratedModerators {
      *
      * @return this Moderators instance
      */
-    Moderators setAccountsId(int accountsId);
+    Moderators accountsId(int accountsId);
 
     /**
      * Sets the moderatorsRolesId of this Moderators. The moderatorsRolesId
@@ -141,7 +142,7 @@ public interface GeneratedModerators {
      *
      * @return this Moderators instance
      */
-    Moderators setModeratorsRolesId(byte moderatorsRolesId);
+    Moderators moderatorsRolesId(byte moderatorsRolesId);
 
     /**
      * Sets the date of this Moderators. The date field corresponds to the
@@ -151,7 +152,7 @@ public interface GeneratedModerators {
      *
      * @return this Moderators instance
      */
-    Moderators setDate(Timestamp date);
+    Moderators date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Accounts. If no such

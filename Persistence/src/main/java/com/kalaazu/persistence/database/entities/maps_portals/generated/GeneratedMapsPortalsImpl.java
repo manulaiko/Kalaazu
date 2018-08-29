@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsPortals;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedMapsPortalsImpl implements MapsPortals {
 
-    private byte id;
+    private Byte id;
 
     private byte levelsId;
 
@@ -44,108 +43,9 @@ public abstract class GeneratedMapsPortalsImpl implements MapsPortals {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public byte getMapsId() {
-        return mapsId;
-    }
-
-    @Override
-    public Vector2 getPosition() {
-        return position;
-    }
-
-    @Override
-    public byte getTargetMapsId() {
-        return targetMapsId;
-    }
-
-    @Override
-    public Vector2 getTargetPosition() {
-        return targetPosition;
-    }
-
-    @Override
-    public boolean getIsVisible() {
-        return isVisible;
-    }
-
-    @Override
-    public boolean getIsWorking() {
-        return isWorking;
-    }
-
-    @Override
-    public byte getGfx() {
-        return gfx;
-    }
-
-    @Override
-    public MapsPortals setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setMapsId(byte mapsId) {
-        this.mapsId = mapsId;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setPosition(Vector2 position) {
-        this.position = position;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setTargetMapsId(byte targetMapsId) {
-        this.targetMapsId = targetMapsId;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setTargetPosition(Vector2 targetPosition) {
-        this.targetPosition = targetPosition;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setIsVisible(boolean isVisible) {
-        this.isVisible = isVisible;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setIsWorking(boolean isWorking) {
-        this.isWorking = isWorking;
-        return this;
-    }
-
-    @Override
-    public MapsPortals setGfx(byte gfx) {
-        this.gfx = gfx;
-        return this;
-    }
-
-    @Override
     public Maps findMapsId(Manager<Maps> foreignManager) {
         return foreignManager.stream()
-                             .filter(Maps.ID.equal(getMapsId()))
+                             .filter(Maps.ID.equal(mapsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -153,77 +53,8 @@ public abstract class GeneratedMapsPortalsImpl implements MapsPortals {
     @Override
     public Maps findTargetMapsId(Manager<Maps> foreignManager) {
         return foreignManager.stream()
-                             .filter(Maps.ID.equal(getTargetMapsId()))
+                             .filter(Maps.ID.equal(targetMapsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("mapsId = " + Objects.toString(getMapsId()));
-        sj.add("position = " + Objects.toString(getPosition()));
-        sj.add("targetMapsId = " + Objects.toString(getTargetMapsId()));
-        sj.add("targetPosition = " + Objects.toString(getTargetPosition()));
-        sj.add("isVisible = " + Objects.toString(getIsVisible()));
-        sj.add("isWorking = " + Objects.toString(getIsWorking()));
-        sj.add("gfx = " + Objects.toString(getGfx()));
-        return "MapsPortalsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof MapsPortals)) {
-            return false;
-        }
-        final MapsPortals thatMapsPortals = (MapsPortals) that;
-        if (this.getId() != thatMapsPortals.getId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatMapsPortals.getLevelsId()) {
-            return false;
-        }
-        if (this.getMapsId() != thatMapsPortals.getMapsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getPosition(), thatMapsPortals.getPosition())) {
-            return false;
-        }
-        if (this.getTargetMapsId() != thatMapsPortals.getTargetMapsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getTargetPosition(), thatMapsPortals.getTargetPosition())) {
-            return false;
-        }
-        if (this.getIsVisible() != thatMapsPortals.getIsVisible()) {
-            return false;
-        }
-        if (this.getIsWorking() != thatMapsPortals.getIsWorking()) {
-            return false;
-        }
-        if (this.getGfx() != thatMapsPortals.getGfx()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Byte.hashCode(getMapsId());
-        hash = 31 * hash + Objects.hashCode(getPosition());
-        hash = 31 * hash + Byte.hashCode(getTargetMapsId());
-        hash = 31 * hash + Objects.hashCode(getTargetPosition());
-        hash = 31 * hash + Boolean.hashCode(getIsVisible());
-        hash = 31 * hash + Boolean.hashCode(getIsWorking());
-        hash = 31 * hash + Byte.hashCode(getGfx());
-        return hash;
     }
 }

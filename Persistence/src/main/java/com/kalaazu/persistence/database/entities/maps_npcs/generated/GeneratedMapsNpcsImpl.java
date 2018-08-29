@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Maps;
 import com.kalaazu.persistence.database.entities.MapsNpcs;
 import com.kalaazu.persistence.database.entities.Npcs;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedMapsNpcsImpl implements MapsNpcs {
 
-    private byte id;
+    private Byte id;
 
     private byte mapsId;
 
@@ -34,53 +33,9 @@ public abstract class GeneratedMapsNpcsImpl implements MapsNpcs {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public byte getMapsId() {
-        return mapsId;
-    }
-
-    @Override
-    public byte getNpcsId() {
-        return npcsId;
-    }
-
-    @Override
-    public byte getAmount() {
-        return amount;
-    }
-
-    @Override
-    public MapsNpcs setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public MapsNpcs setMapsId(byte mapsId) {
-        this.mapsId = mapsId;
-        return this;
-    }
-
-    @Override
-    public MapsNpcs setNpcsId(byte npcsId) {
-        this.npcsId = npcsId;
-        return this;
-    }
-
-    @Override
-    public MapsNpcs setAmount(byte amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
     public Maps findMapsId(Manager<Maps> foreignManager) {
         return foreignManager.stream()
-                             .filter(Maps.ID.equal(getMapsId()))
+                             .filter(Maps.ID.equal(mapsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -88,52 +43,8 @@ public abstract class GeneratedMapsNpcsImpl implements MapsNpcs {
     @Override
     public Npcs findNpcsId(Manager<Npcs> foreignManager) {
         return foreignManager.stream()
-                             .filter(Npcs.ID.equal(getNpcsId()))
+                             .filter(Npcs.ID.equal(npcsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("mapsId = " + Objects.toString(getMapsId()));
-        sj.add("npcsId = " + Objects.toString(getNpcsId()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        return "MapsNpcsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof MapsNpcs)) {
-            return false;
-        }
-        final MapsNpcs thatMapsNpcs = (MapsNpcs) that;
-        if (this.getId() != thatMapsNpcs.getId()) {
-            return false;
-        }
-        if (this.getMapsId() != thatMapsNpcs.getMapsId()) {
-            return false;
-        }
-        if (this.getNpcsId() != thatMapsNpcs.getNpcsId()) {
-            return false;
-        }
-        if (this.getAmount() != thatMapsNpcs.getAmount()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getMapsId());
-        hash = 31 * hash + Byte.hashCode(getNpcsId());
-        hash = 31 * hash + Byte.hashCode(getAmount());
-        return hash;
     }
 }
