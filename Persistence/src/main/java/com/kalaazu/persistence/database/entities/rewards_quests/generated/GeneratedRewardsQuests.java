@@ -26,24 +26,24 @@ public interface GeneratedRewardsQuests {
 
     /**
      * This Field corresponds to the {@link RewardsQuests} field that can be
-     * obtained using the {@link RewardsQuests#getId()} method.
+     * obtained using the {@link RewardsQuests#id()} method.
      */
     ShortField<RewardsQuests, Short> ID = ShortField.create(
             Identifier.ID,
-            RewardsQuests::getId,
-            RewardsQuests::setId,
+            RewardsQuests::id,
+            RewardsQuests::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsQuests} field that can be
-     * obtained using the {@link RewardsQuests#getQuestsId()} method.
+     * obtained using the {@link RewardsQuests#questsId()} method.
      */
     ShortForeignKeyField<RewardsQuests, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
-            RewardsQuests::getQuestsId,
-            RewardsQuests::setQuestsId,
+            RewardsQuests::questsId,
+            RewardsQuests::questsId,
             Quests.ID,
             TypeMapper.primitive(),
             false
@@ -51,12 +51,12 @@ public interface GeneratedRewardsQuests {
 
     /**
      * This Field corresponds to the {@link RewardsQuests} field that can be
-     * obtained using the {@link RewardsQuests#getRewardsId()} method.
+     * obtained using the {@link RewardsQuests#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsQuests, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsQuests::getRewardsId,
-            RewardsQuests::setRewardsId,
+            RewardsQuests::rewardsId,
+            RewardsQuests::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -68,7 +68,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return the id of this RewardsQuests
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the questsId of this RewardsQuests. The questsId field
@@ -77,7 +77,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return the questsId of this RewardsQuests
      */
-    short getQuestsId();
+    short questsId();
 
     /**
      * Returns the rewardsId of this RewardsQuests. The rewardsId field
@@ -86,7 +86,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return the rewardsId of this RewardsQuests
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsQuests. The id field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return this RewardsQuests instance
      */
-    RewardsQuests setId(short id);
+    RewardsQuests id(Short id);
 
     /**
      * Sets the questsId of this RewardsQuests. The questsId field corresponds
@@ -106,7 +106,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return this RewardsQuests instance
      */
-    RewardsQuests setQuestsId(short questsId);
+    RewardsQuests questsId(short questsId);
 
     /**
      * Sets the rewardsId of this RewardsQuests. The rewardsId field corresponds
@@ -116,7 +116,7 @@ public interface GeneratedRewardsQuests {
      *
      * @return this RewardsQuests instance
      */
-    RewardsQuests setRewardsId(short rewardsId);
+    RewardsQuests rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Quests. If no such

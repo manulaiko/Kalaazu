@@ -27,24 +27,24 @@ public interface GeneratedRewardsNpcs {
 
     /**
      * This Field corresponds to the {@link RewardsNpcs} field that can be
-     * obtained using the {@link RewardsNpcs#getId()} method.
+     * obtained using the {@link RewardsNpcs#id()} method.
      */
     ShortField<RewardsNpcs, Short> ID = ShortField.create(
             Identifier.ID,
-            RewardsNpcs::getId,
-            RewardsNpcs::setId,
+            RewardsNpcs::id,
+            RewardsNpcs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsNpcs} field that can be
-     * obtained using the {@link RewardsNpcs#getNpcsId()} method.
+     * obtained using the {@link RewardsNpcs#npcsId()} method.
      */
     ByteForeignKeyField<RewardsNpcs, Byte, Npcs> NPCS_ID = ByteForeignKeyField.create(
             Identifier.NPCS_ID,
-            RewardsNpcs::getNpcsId,
-            RewardsNpcs::setNpcsId,
+            RewardsNpcs::npcsId,
+            RewardsNpcs::npcsId,
             Npcs.ID,
             TypeMapper.primitive(),
             false
@@ -52,12 +52,12 @@ public interface GeneratedRewardsNpcs {
 
     /**
      * This Field corresponds to the {@link RewardsNpcs} field that can be
-     * obtained using the {@link RewardsNpcs#getRewardsId()} method.
+     * obtained using the {@link RewardsNpcs#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsNpcs, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsNpcs::getRewardsId,
-            RewardsNpcs::setRewardsId,
+            RewardsNpcs::rewardsId,
+            RewardsNpcs::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -69,7 +69,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return the id of this RewardsNpcs
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the npcsId of this RewardsNpcs. The npcsId field corresponds to
@@ -77,7 +77,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return the npcsId of this RewardsNpcs
      */
-    byte getNpcsId();
+    byte npcsId();
 
     /**
      * Returns the rewardsId of this RewardsNpcs. The rewardsId field
@@ -86,7 +86,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return the rewardsId of this RewardsNpcs
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsNpcs. The id field corresponds to the database
@@ -96,7 +96,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return this RewardsNpcs instance
      */
-    RewardsNpcs setId(short id);
+    RewardsNpcs id(Short id);
 
     /**
      * Sets the npcsId of this RewardsNpcs. The npcsId field corresponds to the
@@ -106,7 +106,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return this RewardsNpcs instance
      */
-    RewardsNpcs setNpcsId(byte npcsId);
+    RewardsNpcs npcsId(byte npcsId);
 
     /**
      * Sets the rewardsId of this RewardsNpcs. The rewardsId field corresponds
@@ -116,7 +116,7 @@ public interface GeneratedRewardsNpcs {
      *
      * @return this RewardsNpcs instance
      */
-    RewardsNpcs setRewardsId(short rewardsId);
+    RewardsNpcs rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Npcs. If no such Npcs

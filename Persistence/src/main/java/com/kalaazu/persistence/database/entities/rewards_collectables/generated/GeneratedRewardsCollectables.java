@@ -28,25 +28,25 @@ public interface GeneratedRewardsCollectables {
 
     /**
      * This Field corresponds to the {@link RewardsCollectables} field that can
-     * be obtained using the {@link RewardsCollectables#getId()} method.
+     * be obtained using the {@link RewardsCollectables#id()} method.
      */
     ShortField<RewardsCollectables, Short> ID = ShortField.create(
             Identifier.ID,
-            RewardsCollectables::getId,
-            RewardsCollectables::setId,
+            RewardsCollectables::id,
+            RewardsCollectables::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsCollectables} field that can
-     * be obtained using the {@link RewardsCollectables#getCollectablesId()}
+     * be obtained using the {@link RewardsCollectables#collectablesId()}
      * method.
      */
     ByteForeignKeyField<RewardsCollectables, Byte, Collectables> COLLECTABLES_ID = ByteForeignKeyField.create(
             Identifier.COLLECTABLES_ID,
-            RewardsCollectables::getCollectablesId,
-            RewardsCollectables::setCollectablesId,
+            RewardsCollectables::collectablesId,
+            RewardsCollectables::collectablesId,
             Collectables.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +54,12 @@ public interface GeneratedRewardsCollectables {
 
     /**
      * This Field corresponds to the {@link RewardsCollectables} field that can
-     * be obtained using the {@link RewardsCollectables#getRewardsId()} method.
+     * be obtained using the {@link RewardsCollectables#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsCollectables, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsCollectables::getRewardsId,
-            RewardsCollectables::setRewardsId,
+            RewardsCollectables::rewardsId,
+            RewardsCollectables::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -71,7 +71,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return the id of this RewardsCollectables
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the collectablesId of this RewardsCollectables. The
@@ -80,7 +80,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return the collectablesId of this RewardsCollectables
      */
-    byte getCollectablesId();
+    byte collectablesId();
 
     /**
      * Returns the rewardsId of this RewardsCollectables. The rewardsId field
@@ -89,7 +89,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return the rewardsId of this RewardsCollectables
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsCollectables. The id field corresponds to the
@@ -99,7 +99,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return this RewardsCollectables instance
      */
-    RewardsCollectables setId(short id);
+    RewardsCollectables id(Short id);
 
     /**
      * Sets the collectablesId of this RewardsCollectables. The collectablesId
@@ -110,7 +110,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return this RewardsCollectables instance
      */
-    RewardsCollectables setCollectablesId(byte collectablesId);
+    RewardsCollectables collectablesId(byte collectablesId);
 
     /**
      * Sets the rewardsId of this RewardsCollectables. The rewardsId field
@@ -121,7 +121,7 @@ public interface GeneratedRewardsCollectables {
      *
      * @return this RewardsCollectables instance
      */
-    RewardsCollectables setRewardsId(short rewardsId);
+    RewardsCollectables rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Collectables. If no such

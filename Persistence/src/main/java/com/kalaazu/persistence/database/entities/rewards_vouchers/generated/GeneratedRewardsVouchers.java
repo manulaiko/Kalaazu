@@ -26,24 +26,24 @@ public interface GeneratedRewardsVouchers {
 
     /**
      * This Field corresponds to the {@link RewardsVouchers} field that can be
-     * obtained using the {@link RewardsVouchers#getId()} method.
+     * obtained using the {@link RewardsVouchers#id()} method.
      */
     ShortField<RewardsVouchers, Short> ID = ShortField.create(
             Identifier.ID,
-            RewardsVouchers::getId,
-            RewardsVouchers::setId,
+            RewardsVouchers::id,
+            RewardsVouchers::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsVouchers} field that can be
-     * obtained using the {@link RewardsVouchers#getVouchersId()} method.
+     * obtained using the {@link RewardsVouchers#vouchersId()} method.
      */
     ShortForeignKeyField<RewardsVouchers, Short, Vouchers> VOUCHERS_ID = ShortForeignKeyField.create(
             Identifier.VOUCHERS_ID,
-            RewardsVouchers::getVouchersId,
-            RewardsVouchers::setVouchersId,
+            RewardsVouchers::vouchersId,
+            RewardsVouchers::vouchersId,
             Vouchers.ID,
             TypeMapper.primitive(),
             false
@@ -51,12 +51,12 @@ public interface GeneratedRewardsVouchers {
 
     /**
      * This Field corresponds to the {@link RewardsVouchers} field that can be
-     * obtained using the {@link RewardsVouchers#getRewardsId()} method.
+     * obtained using the {@link RewardsVouchers#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsVouchers, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsVouchers::getRewardsId,
-            RewardsVouchers::setRewardsId,
+            RewardsVouchers::rewardsId,
+            RewardsVouchers::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -68,7 +68,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return the id of this RewardsVouchers
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the vouchersId of this RewardsVouchers. The vouchersId field
@@ -77,7 +77,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return the vouchersId of this RewardsVouchers
      */
-    short getVouchersId();
+    short vouchersId();
 
     /**
      * Returns the rewardsId of this RewardsVouchers. The rewardsId field
@@ -86,7 +86,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return the rewardsId of this RewardsVouchers
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsVouchers. The id field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return this RewardsVouchers instance
      */
-    RewardsVouchers setId(short id);
+    RewardsVouchers id(Short id);
 
     /**
      * Sets the vouchersId of this RewardsVouchers. The vouchersId field
@@ -107,7 +107,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return this RewardsVouchers instance
      */
-    RewardsVouchers setVouchersId(short vouchersId);
+    RewardsVouchers vouchersId(short vouchersId);
 
     /**
      * Sets the rewardsId of this RewardsVouchers. The rewardsId field
@@ -118,7 +118,7 @@ public interface GeneratedRewardsVouchers {
      *
      * @return this RewardsVouchers instance
      */
-    RewardsVouchers setRewardsId(short rewardsId);
+    RewardsVouchers rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Vouchers. If no such

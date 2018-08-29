@@ -28,25 +28,25 @@ public interface GeneratedRewardsGalaxygates {
 
     /**
      * This Field corresponds to the {@link RewardsGalaxygates} field that can
-     * be obtained using the {@link RewardsGalaxygates#getId()} method.
+     * be obtained using the {@link RewardsGalaxygates#id()} method.
      */
     ByteField<RewardsGalaxygates, Byte> ID = ByteField.create(
             Identifier.ID,
-            RewardsGalaxygates::getId,
-            RewardsGalaxygates::setId,
+            RewardsGalaxygates::id,
+            RewardsGalaxygates::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsGalaxygates} field that can
-     * be obtained using the {@link RewardsGalaxygates#getGalaxygatesId()}
+     * be obtained using the {@link RewardsGalaxygates#galaxygatesId()}
      * method.
      */
     ByteForeignKeyField<RewardsGalaxygates, Byte, Galaxygates> GALAXYGATES_ID = ByteForeignKeyField.create(
             Identifier.GALAXYGATES_ID,
-            RewardsGalaxygates::getGalaxygatesId,
-            RewardsGalaxygates::setGalaxygatesId,
+            RewardsGalaxygates::galaxygatesId,
+            RewardsGalaxygates::galaxygatesId,
             Galaxygates.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +54,12 @@ public interface GeneratedRewardsGalaxygates {
 
     /**
      * This Field corresponds to the {@link RewardsGalaxygates} field that can
-     * be obtained using the {@link RewardsGalaxygates#getRewardsId()} method.
+     * be obtained using the {@link RewardsGalaxygates#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsGalaxygates, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsGalaxygates::getRewardsId,
-            RewardsGalaxygates::setRewardsId,
+            RewardsGalaxygates::rewardsId,
+            RewardsGalaxygates::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -71,7 +71,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return the id of this RewardsGalaxygates
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the galaxygatesId of this RewardsGalaxygates. The galaxygatesId
@@ -80,7 +80,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return the galaxygatesId of this RewardsGalaxygates
      */
-    byte getGalaxygatesId();
+    byte galaxygatesId();
 
     /**
      * Returns the rewardsId of this RewardsGalaxygates. The rewardsId field
@@ -89,7 +89,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return the rewardsId of this RewardsGalaxygates
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsGalaxygates. The id field corresponds to the
@@ -99,7 +99,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return this RewardsGalaxygates instance
      */
-    RewardsGalaxygates setId(byte id);
+    RewardsGalaxygates id(Byte id);
 
     /**
      * Sets the galaxygatesId of this RewardsGalaxygates. The galaxygatesId
@@ -110,7 +110,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return this RewardsGalaxygates instance
      */
-    RewardsGalaxygates setGalaxygatesId(byte galaxygatesId);
+    RewardsGalaxygates galaxygatesId(byte galaxygatesId);
 
     /**
      * Sets the rewardsId of this RewardsGalaxygates. The rewardsId field
@@ -121,7 +121,7 @@ public interface GeneratedRewardsGalaxygates {
      *
      * @return this RewardsGalaxygates instance
      */
-    RewardsGalaxygates setRewardsId(short rewardsId);
+    RewardsGalaxygates rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Galaxygates. If no such

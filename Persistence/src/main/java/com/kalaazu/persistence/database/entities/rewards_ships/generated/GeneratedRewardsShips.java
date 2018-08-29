@@ -27,24 +27,24 @@ public interface GeneratedRewardsShips {
 
     /**
      * This Field corresponds to the {@link RewardsShips} field that can be
-     * obtained using the {@link RewardsShips#getId()} method.
+     * obtained using the {@link RewardsShips#id()} method.
      */
     ByteField<RewardsShips, Byte> ID = ByteField.create(
             Identifier.ID,
-            RewardsShips::getId,
-            RewardsShips::setId,
+            RewardsShips::id,
+            RewardsShips::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link RewardsShips} field that can be
-     * obtained using the {@link RewardsShips#getShipsId()} method.
+     * obtained using the {@link RewardsShips#shipsId()} method.
      */
     ByteForeignKeyField<RewardsShips, Byte, Ships> SHIPS_ID = ByteForeignKeyField.create(
             Identifier.SHIPS_ID,
-            RewardsShips::getShipsId,
-            RewardsShips::setShipsId,
+            RewardsShips::shipsId,
+            RewardsShips::shipsId,
             Ships.ID,
             TypeMapper.primitive(),
             false
@@ -52,12 +52,12 @@ public interface GeneratedRewardsShips {
 
     /**
      * This Field corresponds to the {@link RewardsShips} field that can be
-     * obtained using the {@link RewardsShips#getRewardsId()} method.
+     * obtained using the {@link RewardsShips#rewardsId()} method.
      */
     ShortForeignKeyField<RewardsShips, Short, Rewards> REWARDS_ID = ShortForeignKeyField.create(
             Identifier.REWARDS_ID,
-            RewardsShips::getRewardsId,
-            RewardsShips::setRewardsId,
+            RewardsShips::rewardsId,
+            RewardsShips::rewardsId,
             Rewards.ID,
             TypeMapper.primitive(),
             false
@@ -69,7 +69,7 @@ public interface GeneratedRewardsShips {
      *
      * @return the id of this RewardsShips
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the shipsId of this RewardsShips. The shipsId field corresponds
@@ -77,7 +77,7 @@ public interface GeneratedRewardsShips {
      *
      * @return the shipsId of this RewardsShips
      */
-    byte getShipsId();
+    byte shipsId();
 
     /**
      * Returns the rewardsId of this RewardsShips. The rewardsId field
@@ -86,7 +86,7 @@ public interface GeneratedRewardsShips {
      *
      * @return the rewardsId of this RewardsShips
      */
-    short getRewardsId();
+    short rewardsId();
 
     /**
      * Sets the id of this RewardsShips. The id field corresponds to the
@@ -96,7 +96,7 @@ public interface GeneratedRewardsShips {
      *
      * @return this RewardsShips instance
      */
-    RewardsShips setId(byte id);
+    RewardsShips id(Byte id);
 
     /**
      * Sets the shipsId of this RewardsShips. The shipsId field corresponds to
@@ -106,7 +106,7 @@ public interface GeneratedRewardsShips {
      *
      * @return this RewardsShips instance
      */
-    RewardsShips setShipsId(byte shipsId);
+    RewardsShips shipsId(byte shipsId);
 
     /**
      * Sets the rewardsId of this RewardsShips. The rewardsId field corresponds
@@ -116,7 +116,7 @@ public interface GeneratedRewardsShips {
      *
      * @return this RewardsShips instance
      */
-    RewardsShips setRewardsId(short rewardsId);
+    RewardsShips rewardsId(short rewardsId);
 
     /**
      * Queries the specified manager for the referenced Ships. If no such Ships

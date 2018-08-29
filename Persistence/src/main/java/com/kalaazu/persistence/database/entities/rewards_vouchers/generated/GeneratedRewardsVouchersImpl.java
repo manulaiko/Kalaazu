@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsVouchers;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedRewardsVouchersImpl implements RewardsVouchers {
 
-    private short id;
+    private Short id;
 
     private short vouchersId;
 
@@ -32,42 +31,9 @@ public abstract class GeneratedRewardsVouchersImpl implements RewardsVouchers {
     }
 
     @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public short getVouchersId() {
-        return vouchersId;
-    }
-
-    @Override
-    public short getRewardsId() {
-        return rewardsId;
-    }
-
-    @Override
-    public RewardsVouchers setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public RewardsVouchers setVouchersId(short vouchersId) {
-        this.vouchersId = vouchersId;
-        return this;
-    }
-
-    @Override
-    public RewardsVouchers setRewardsId(short rewardsId) {
-        this.rewardsId = rewardsId;
-        return this;
-    }
-
-    @Override
     public Vouchers findVouchersId(Manager<Vouchers> foreignManager) {
         return foreignManager.stream()
-                             .filter(Vouchers.ID.equal(getVouchersId()))
+                             .filter(Vouchers.ID.equal(vouchersId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +41,8 @@ public abstract class GeneratedRewardsVouchersImpl implements RewardsVouchers {
     @Override
     public Rewards findRewardsId(Manager<Rewards> foreignManager) {
         return foreignManager.stream()
-                             .filter(Rewards.ID.equal(getRewardsId()))
+                             .filter(Rewards.ID.equal(rewardsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("vouchersId = " + Objects.toString(getVouchersId()));
-        sj.add("rewardsId = " + Objects.toString(getRewardsId()));
-        return "RewardsVouchersImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof RewardsVouchers)) {
-            return false;
-        }
-        final RewardsVouchers thatRewardsVouchers = (RewardsVouchers) that;
-        if (this.getId() != thatRewardsVouchers.getId()) {
-            return false;
-        }
-        if (this.getVouchersId() != thatRewardsVouchers.getVouchersId()) {
-            return false;
-        }
-        if (this.getRewardsId() != thatRewardsVouchers.getRewardsId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Short.hashCode(getVouchersId());
-        hash = 31 * hash + Short.hashCode(getRewardsId());
-        return hash;
     }
 }

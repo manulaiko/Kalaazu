@@ -27,24 +27,24 @@ public interface GeneratedRewards {
 
     /**
      * This Field corresponds to the {@link Rewards} field that can be obtained
-     * using the {@link Rewards#getId()} method.
+     * using the {@link Rewards#id()} method.
      */
     ShortField<Rewards, Short> ID = ShortField.create(
             Identifier.ID,
-            Rewards::getId,
-            Rewards::setId,
+            Rewards::id,
+            Rewards::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Rewards} field that can be obtained
-     * using the {@link Rewards#getItemsId()} method.
+     * using the {@link Rewards#itemsId()} method.
      */
     ShortForeignKeyField<Rewards, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            Rewards::getItemsId,
-            Rewards::setItemsId,
+            Rewards::itemsId,
+            Rewards::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -52,36 +52,36 @@ public interface GeneratedRewards {
 
     /**
      * This Field corresponds to the {@link Rewards} field that can be obtained
-     * using the {@link Rewards#getAmount()} method.
+     * using the {@link Rewards#amount()} method.
      */
     IntField<Rewards, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
-            Rewards::getAmount,
-            Rewards::setAmount,
+            Rewards::amount,
+            Rewards::amount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Rewards} field that can be obtained
-     * using the {@link Rewards#getProbability()} method.
+     * using the {@link Rewards#probability()} method.
      */
     DoubleField<Rewards, Double> PROBABILITY = DoubleField.create(
             Identifier.PROBABILITY,
-            Rewards::getProbability,
-            Rewards::setProbability,
+            Rewards::probability,
+            Rewards::probability,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Rewards} field that can be obtained
-     * using the {@link Rewards#getComment()} method.
+     * using the {@link Rewards#comment()} method.
      */
     StringField<Rewards, String> COMMENT = StringField.create(
             Identifier.COMMENT,
-            o -> OptionalUtil.unwrap(o.getComment()),
-            Rewards::setComment,
+            o -> OptionalUtil.unwrap(o.comment()),
+            Rewards::comment,
             TypeMapper.identity(),
             false
     );
@@ -92,7 +92,7 @@ public interface GeneratedRewards {
      *
      * @return the id of this Rewards
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the itemsId of this Rewards. The itemsId field corresponds to the
@@ -100,7 +100,7 @@ public interface GeneratedRewards {
      *
      * @return the itemsId of this Rewards
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the amount of this Rewards. The amount field corresponds to the
@@ -108,7 +108,7 @@ public interface GeneratedRewards {
      *
      * @return the amount of this Rewards
      */
-    int getAmount();
+    int amount();
 
     /**
      * Returns the probability of this Rewards. The probability field
@@ -116,7 +116,7 @@ public interface GeneratedRewards {
      *
      * @return the probability of this Rewards
      */
-    double getProbability();
+    double probability();
 
     /**
      * Returns the comment of this Rewards. The comment field corresponds to the
@@ -124,7 +124,7 @@ public interface GeneratedRewards {
      *
      * @return the comment of this Rewards
      */
-    Optional<String> getComment();
+    Optional<String> comment();
 
     /**
      * Sets the id of this Rewards. The id field corresponds to the database
@@ -134,7 +134,7 @@ public interface GeneratedRewards {
      *
      * @return this Rewards instance
      */
-    Rewards setId(short id);
+    Rewards id(Short id);
 
     /**
      * Sets the itemsId of this Rewards. The itemsId field corresponds to the
@@ -144,7 +144,7 @@ public interface GeneratedRewards {
      *
      * @return this Rewards instance
      */
-    Rewards setItemsId(short itemsId);
+    Rewards itemsId(short itemsId);
 
     /**
      * Sets the amount of this Rewards. The amount field corresponds to the
@@ -154,7 +154,7 @@ public interface GeneratedRewards {
      *
      * @return this Rewards instance
      */
-    Rewards setAmount(int amount);
+    Rewards amount(int amount);
 
     /**
      * Sets the probability of this Rewards. The probability field corresponds
@@ -164,7 +164,7 @@ public interface GeneratedRewards {
      *
      * @return this Rewards instance
      */
-    Rewards setProbability(double probability);
+    Rewards probability(double probability);
 
     /**
      * Sets the comment of this Rewards. The comment field corresponds to the
@@ -174,7 +174,7 @@ public interface GeneratedRewards {
      *
      * @return this Rewards instance
      */
-    Rewards setComment(String comment);
+    Rewards comment(String comment);
 
     /**
      * Queries the specified manager for the referenced Items. If no such Items

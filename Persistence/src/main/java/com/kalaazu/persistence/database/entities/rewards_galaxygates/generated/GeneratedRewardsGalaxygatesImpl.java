@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsGalaxygates;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedRewardsGalaxygatesImpl implements RewardsGalaxygates {
 
-    private byte id;
+    private Byte id;
 
     private byte galaxygatesId;
 
@@ -32,42 +31,9 @@ public abstract class GeneratedRewardsGalaxygatesImpl implements RewardsGalaxyga
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public byte getGalaxygatesId() {
-        return galaxygatesId;
-    }
-
-    @Override
-    public short getRewardsId() {
-        return rewardsId;
-    }
-
-    @Override
-    public RewardsGalaxygates setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public RewardsGalaxygates setGalaxygatesId(byte galaxygatesId) {
-        this.galaxygatesId = galaxygatesId;
-        return this;
-    }
-
-    @Override
-    public RewardsGalaxygates setRewardsId(short rewardsId) {
-        this.rewardsId = rewardsId;
-        return this;
-    }
-
-    @Override
     public Galaxygates findGalaxygatesId(Manager<Galaxygates> foreignManager) {
         return foreignManager.stream()
-                             .filter(Galaxygates.ID.equal(getGalaxygatesId()))
+                             .filter(Galaxygates.ID.equal(galaxygatesId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +41,8 @@ public abstract class GeneratedRewardsGalaxygatesImpl implements RewardsGalaxyga
     @Override
     public Rewards findRewardsId(Manager<Rewards> foreignManager) {
         return foreignManager.stream()
-                             .filter(Rewards.ID.equal(getRewardsId()))
+                             .filter(Rewards.ID.equal(rewardsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("galaxygatesId = " + Objects.toString(getGalaxygatesId()));
-        sj.add("rewardsId = " + Objects.toString(getRewardsId()));
-        return "RewardsGalaxygatesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof RewardsGalaxygates)) {
-            return false;
-        }
-        final RewardsGalaxygates thatRewardsGalaxygates = (RewardsGalaxygates) that;
-        if (this.getId() != thatRewardsGalaxygates.getId()) {
-            return false;
-        }
-        if (this.getGalaxygatesId() != thatRewardsGalaxygates.getGalaxygatesId()) {
-            return false;
-        }
-        if (this.getRewardsId() != thatRewardsGalaxygates.getRewardsId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getGalaxygatesId());
-        hash = 31 * hash + Short.hashCode(getRewardsId());
-        return hash;
     }
 }

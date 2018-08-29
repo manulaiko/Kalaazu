@@ -26,48 +26,48 @@ public interface GeneratedRanks {
 
     /**
      * This Field corresponds to the {@link Ranks} field that can be obtained
-     * using the {@link Ranks#getId()} method.
+     * using the {@link Ranks#id()} method.
      */
     ByteField<Ranks, Byte> ID = ByteField.create(
             Identifier.ID,
-            Ranks::getId,
-            Ranks::setId,
+            Ranks::id,
+            Ranks::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Ranks} field that can be obtained
-     * using the {@link Ranks#getName()} method.
+     * using the {@link Ranks#name()} method.
      */
     StringField<Ranks, String> NAME = StringField.create(
             Identifier.NAME,
-            Ranks::getName,
-            Ranks::setName,
+            Ranks::name,
+            Ranks::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ranks} field that can be obtained
-     * using the {@link Ranks#getPercentaje()} method.
+     * using the {@link Ranks#percentaje()} method.
      */
     DoubleField<Ranks, Double> PERCENTAJE = DoubleField.create(
             Identifier.PERCENTAJE,
-            Ranks::getPercentaje,
-            Ranks::setPercentaje,
+            Ranks::percentaje,
+            Ranks::percentaje,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ranks} field that can be obtained
-     * using the {@link Ranks#getIsPublic()} method.
+     * using the {@link Ranks#isPublic()} method.
      */
     BooleanField<Ranks, Integer> IS_PUBLIC = BooleanField.create(
             Identifier.IS_PUBLIC,
-            Ranks::getIsPublic,
-            Ranks::setIsPublic,
+            Ranks::isPublic,
+            Ranks::isPublic,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
@@ -78,7 +78,7 @@ public interface GeneratedRanks {
      *
      * @return the id of this Ranks
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Ranks. The name field corresponds to the
@@ -86,7 +86,7 @@ public interface GeneratedRanks {
      *
      * @return the name of this Ranks
      */
-    String getName();
+    String name();
 
     /**
      * Returns the percentaje of this Ranks. The percentaje field corresponds to
@@ -94,7 +94,7 @@ public interface GeneratedRanks {
      *
      * @return the percentaje of this Ranks
      */
-    double getPercentaje();
+    double percentaje();
 
     /**
      * Returns the isPublic of this Ranks. The isPublic field corresponds to the
@@ -102,7 +102,7 @@ public interface GeneratedRanks {
      *
      * @return the isPublic of this Ranks
      */
-    boolean getIsPublic();
+    boolean isPublic();
 
     /**
      * Sets the id of this Ranks. The id field corresponds to the database
@@ -112,7 +112,7 @@ public interface GeneratedRanks {
      *
      * @return this Ranks instance
      */
-    Ranks setId(byte id);
+    Ranks id(Byte id);
 
     /**
      * Sets the name of this Ranks. The name field corresponds to the database
@@ -122,7 +122,7 @@ public interface GeneratedRanks {
      *
      * @return this Ranks instance
      */
-    Ranks setName(String name);
+    Ranks name(String name);
 
     /**
      * Sets the percentaje of this Ranks. The percentaje field corresponds to
@@ -132,7 +132,7 @@ public interface GeneratedRanks {
      *
      * @return this Ranks instance
      */
-    Ranks setPercentaje(double percentaje);
+    Ranks percentaje(double percentaje);
 
     /**
      * Sets the isPublic of this Ranks. The isPublic field corresponds to the
@@ -142,7 +142,7 @@ public interface GeneratedRanks {
      *
      * @return this Ranks instance
      */
-    Ranks setIsPublic(boolean isPublic);
+    Ranks isPublic(boolean isPublic);
 
     enum Identifier implements ColumnIdentifier<Ranks> {
 

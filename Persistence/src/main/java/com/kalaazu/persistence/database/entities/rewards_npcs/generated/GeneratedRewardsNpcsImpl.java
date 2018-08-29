@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Npcs;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsNpcs;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedRewardsNpcsImpl implements RewardsNpcs {
 
-    private short id;
+    private Short id;
 
     private byte npcsId;
 
@@ -32,42 +31,9 @@ public abstract class GeneratedRewardsNpcsImpl implements RewardsNpcs {
     }
 
     @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public byte getNpcsId() {
-        return npcsId;
-    }
-
-    @Override
-    public short getRewardsId() {
-        return rewardsId;
-    }
-
-    @Override
-    public RewardsNpcs setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public RewardsNpcs setNpcsId(byte npcsId) {
-        this.npcsId = npcsId;
-        return this;
-    }
-
-    @Override
-    public RewardsNpcs setRewardsId(short rewardsId) {
-        this.rewardsId = rewardsId;
-        return this;
-    }
-
-    @Override
     public Npcs findNpcsId(Manager<Npcs> foreignManager) {
         return foreignManager.stream()
-                             .filter(Npcs.ID.equal(getNpcsId()))
+                             .filter(Npcs.ID.equal(npcsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +41,8 @@ public abstract class GeneratedRewardsNpcsImpl implements RewardsNpcs {
     @Override
     public Rewards findRewardsId(Manager<Rewards> foreignManager) {
         return foreignManager.stream()
-                             .filter(Rewards.ID.equal(getRewardsId()))
+                             .filter(Rewards.ID.equal(rewardsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("npcsId = " + Objects.toString(getNpcsId()));
-        sj.add("rewardsId = " + Objects.toString(getRewardsId()));
-        return "RewardsNpcsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof RewardsNpcs)) {
-            return false;
-        }
-        final RewardsNpcs thatRewardsNpcs = (RewardsNpcs) that;
-        if (this.getId() != thatRewardsNpcs.getId()) {
-            return false;
-        }
-        if (this.getNpcsId() != thatRewardsNpcs.getNpcsId()) {
-            return false;
-        }
-        if (this.getRewardsId() != thatRewardsNpcs.getRewardsId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getNpcsId());
-        hash = 31 * hash + Short.hashCode(getRewardsId());
-        return hash;
     }
 }

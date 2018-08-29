@@ -5,6 +5,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Rewards;
 import com.kalaazu.persistence.database.entities.RewardsCollectables;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -19,9 +20,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedRewardsCollectablesImpl implements RewardsCollectables {
 
-    private short id;
+    private Short id;
 
     private byte collectablesId;
 
@@ -32,42 +34,9 @@ public abstract class GeneratedRewardsCollectablesImpl implements RewardsCollect
     }
 
     @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public byte getCollectablesId() {
-        return collectablesId;
-    }
-
-    @Override
-    public short getRewardsId() {
-        return rewardsId;
-    }
-
-    @Override
-    public RewardsCollectables setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public RewardsCollectables setCollectablesId(byte collectablesId) {
-        this.collectablesId = collectablesId;
-        return this;
-    }
-
-    @Override
-    public RewardsCollectables setRewardsId(short rewardsId) {
-        this.rewardsId = rewardsId;
-        return this;
-    }
-
-    @Override
     public Collectables findCollectablesId(Manager<Collectables> foreignManager) {
         return foreignManager.stream()
-                             .filter(Collectables.ID.equal(getCollectablesId()))
+                             .filter(Collectables.ID.equal(collectablesId()))
                              .findAny()
                              .orElse(null);
     }
@@ -75,47 +44,8 @@ public abstract class GeneratedRewardsCollectablesImpl implements RewardsCollect
     @Override
     public Rewards findRewardsId(Manager<Rewards> foreignManager) {
         return foreignManager.stream()
-                             .filter(Rewards.ID.equal(getRewardsId()))
+                             .filter(Rewards.ID.equal(rewardsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("collectablesId = " + Objects.toString(getCollectablesId()));
-        sj.add("rewardsId = " + Objects.toString(getRewardsId()));
-        return "RewardsCollectablesImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof RewardsCollectables)) {
-            return false;
-        }
-        final RewardsCollectables thatRewardsCollectables = (RewardsCollectables) that;
-        if (this.getId() != thatRewardsCollectables.getId()) {
-            return false;
-        }
-        if (this.getCollectablesId() != thatRewardsCollectables.getCollectablesId()) {
-            return false;
-        }
-        if (this.getRewardsId() != thatRewardsCollectables.getRewardsId()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getCollectablesId());
-        hash = 31 * hash + Short.hashCode(getRewardsId());
-        return hash;
     }
 }
