@@ -2,9 +2,7 @@ package com.kalaazu.persistence.database.entities.vouchers.generated;
 
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -16,9 +14,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedVouchersImpl implements Vouchers {
 
-    private short id;
+    private Short id;
 
     private String code;
 
@@ -26,77 +25,5 @@ public abstract class GeneratedVouchersImpl implements Vouchers {
 
     protected GeneratedVouchersImpl() {
 
-    }
-
-    @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public String getCode() {
-        return code;
-    }
-
-    @Override
-    public byte getLimit() {
-        return limit;
-    }
-
-    @Override
-    public Vouchers setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Vouchers setCode(String code) {
-        this.code = code;
-        return this;
-    }
-
-    @Override
-    public Vouchers setLimit(byte limit) {
-        this.limit = limit;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("code = " + Objects.toString(getCode()));
-        sj.add("limit = " + Objects.toString(getLimit()));
-        return "VouchersImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Vouchers)) {
-            return false;
-        }
-        final Vouchers thatVouchers = (Vouchers) that;
-        if (this.getId() != thatVouchers.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getCode(), thatVouchers.getCode())) {
-            return false;
-        }
-        if (this.getLimit() != thatVouchers.getLimit()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getCode());
-        hash = 31 * hash + Byte.hashCode(getLimit());
-        return hash;
     }
 }

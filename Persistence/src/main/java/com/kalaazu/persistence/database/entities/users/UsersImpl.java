@@ -44,7 +44,7 @@ public final class UsersImpl
 
         this.accounts = Database.getInstance()
                                 .all(Accounts.class)
-                                .filter(Accounts.USERS_ID.equal(super.getId()))
+                                .filter(Accounts.USERS_ID.equal(super.id()))
                                 .collect(Collectors.toList());
 
         return this.accounts;

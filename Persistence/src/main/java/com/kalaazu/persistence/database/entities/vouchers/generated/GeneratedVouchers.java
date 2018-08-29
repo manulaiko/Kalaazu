@@ -24,36 +24,36 @@ public interface GeneratedVouchers {
 
     /**
      * This Field corresponds to the {@link Vouchers} field that can be obtained
-     * using the {@link Vouchers#getId()} method.
+     * using the {@link Vouchers#id()} method.
      */
     ShortField<Vouchers, Short> ID = ShortField.create(
             Identifier.ID,
-            Vouchers::getId,
-            Vouchers::setId,
+            Vouchers::id,
+            Vouchers::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Vouchers} field that can be obtained
-     * using the {@link Vouchers#getCode()} method.
+     * using the {@link Vouchers#code()} method.
      */
     StringField<Vouchers, String> CODE = StringField.create(
             Identifier.CODE,
-            Vouchers::getCode,
-            Vouchers::setCode,
+            Vouchers::code,
+            Vouchers::code,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Vouchers} field that can be obtained
-     * using the {@link Vouchers#getLimit()} method.
+     * using the {@link Vouchers#limit()} method.
      */
     ByteField<Vouchers, Byte> LIMIT = ByteField.create(
             Identifier.LIMIT,
-            Vouchers::getLimit,
-            Vouchers::setLimit,
+            Vouchers::limit,
+            Vouchers::limit,
             TypeMapper.primitive(),
             false
     );
@@ -64,7 +64,7 @@ public interface GeneratedVouchers {
      *
      * @return the id of this Vouchers
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the code of this Vouchers. The code field corresponds to the
@@ -72,7 +72,7 @@ public interface GeneratedVouchers {
      *
      * @return the code of this Vouchers
      */
-    String getCode();
+    String code();
 
     /**
      * Returns the limit of this Vouchers. The limit field corresponds to the
@@ -80,7 +80,7 @@ public interface GeneratedVouchers {
      *
      * @return the limit of this Vouchers
      */
-    byte getLimit();
+    byte limit();
 
     /**
      * Sets the id of this Vouchers. The id field corresponds to the database
@@ -90,7 +90,7 @@ public interface GeneratedVouchers {
      *
      * @return this Vouchers instance
      */
-    Vouchers setId(short id);
+    Vouchers id(Short id);
 
     /**
      * Sets the code of this Vouchers. The code field corresponds to the
@@ -100,7 +100,7 @@ public interface GeneratedVouchers {
      *
      * @return this Vouchers instance
      */
-    Vouchers setCode(String code);
+    Vouchers code(String code);
 
     /**
      * Sets the limit of this Vouchers. The limit field corresponds to the
@@ -110,7 +110,7 @@ public interface GeneratedVouchers {
      *
      * @return this Vouchers instance
      */
-    Vouchers setLimit(byte limit);
+    Vouchers limit(byte limit);
 
     enum Identifier implements ColumnIdentifier<Vouchers> {
 

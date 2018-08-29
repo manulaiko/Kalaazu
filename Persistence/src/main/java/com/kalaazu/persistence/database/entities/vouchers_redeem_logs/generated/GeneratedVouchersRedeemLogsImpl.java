@@ -5,10 +5,9 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Vouchers;
 import com.kalaazu.persistence.database.entities.VouchersRedeemLogs;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.sql.Timestamp;
-import java.util.Objects;
-import java.util.StringJoiner;
 
 /**
  * The generated base implementation of the {@link
@@ -20,9 +19,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedVouchersRedeemLogsImpl implements VouchersRedeemLogs {
 
-    private int id;
+    private Integer id;
 
     private short vouchersId;
 
@@ -35,53 +35,9 @@ public abstract class GeneratedVouchersRedeemLogsImpl implements VouchersRedeemL
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public short getVouchersId() {
-        return vouchersId;
-    }
-
-    @Override
-    public int getAccountsId() {
-        return accountsId;
-    }
-
-    @Override
-    public Timestamp getDate() {
-        return date;
-    }
-
-    @Override
-    public VouchersRedeemLogs setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public VouchersRedeemLogs setVouchersId(short vouchersId) {
-        this.vouchersId = vouchersId;
-        return this;
-    }
-
-    @Override
-    public VouchersRedeemLogs setAccountsId(int accountsId) {
-        this.accountsId = accountsId;
-        return this;
-    }
-
-    @Override
-    public VouchersRedeemLogs setDate(Timestamp date) {
-        this.date = date;
-        return this;
-    }
-
-    @Override
     public Vouchers findVouchersId(Manager<Vouchers> foreignManager) {
         return foreignManager.stream()
-                             .filter(Vouchers.ID.equal(getVouchersId()))
+                             .filter(Vouchers.ID.equal(vouchersId()))
                              .findAny()
                              .orElse(null);
     }
@@ -89,52 +45,8 @@ public abstract class GeneratedVouchersRedeemLogsImpl implements VouchersRedeemL
     @Override
     public Accounts findAccountsId(Manager<Accounts> foreignManager) {
         return foreignManager.stream()
-                             .filter(Accounts.ID.equal(getAccountsId()))
+                             .filter(Accounts.ID.equal(accountsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("vouchersId = " + Objects.toString(getVouchersId()));
-        sj.add("accountsId = " + Objects.toString(getAccountsId()));
-        sj.add("date = " + Objects.toString(getDate()));
-        return "VouchersRedeemLogsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof VouchersRedeemLogs)) {
-            return false;
-        }
-        final VouchersRedeemLogs thatVouchersRedeemLogs = (VouchersRedeemLogs) that;
-        if (this.getId() != thatVouchersRedeemLogs.getId()) {
-            return false;
-        }
-        if (this.getVouchersId() != thatVouchersRedeemLogs.getVouchersId()) {
-            return false;
-        }
-        if (this.getAccountsId() != thatVouchersRedeemLogs.getAccountsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getDate(), thatVouchersRedeemLogs.getDate())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Short.hashCode(getVouchersId());
-        hash = 31 * hash + Integer.hashCode(getAccountsId());
-        hash = 31 * hash + Objects.hashCode(getDate());
-        return hash;
     }
 }

@@ -25,109 +25,109 @@ public interface GeneratedTechfactoryItems {
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getId()} method.
+     * obtained using the {@link TechfactoryItems#id()} method.
      */
     ByteField<TechfactoryItems, Byte> ID = ByteField.create(
             Identifier.ID,
-            TechfactoryItems::getId,
-            TechfactoryItems::setId,
+            TechfactoryItems::id,
+            TechfactoryItems::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getName()} method.
+     * obtained using the {@link TechfactoryItems#name()} method.
      */
     StringField<TechfactoryItems, String> NAME = StringField.create(
             Identifier.NAME,
-            TechfactoryItems::getName,
-            TechfactoryItems::setName,
+            TechfactoryItems::name,
+            TechfactoryItems::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getDescription()} method.
+     * obtained using the {@link TechfactoryItems#description()} method.
      */
     StringField<TechfactoryItems, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            TechfactoryItems::getDescription,
-            TechfactoryItems::setDescription,
+            TechfactoryItems::description,
+            TechfactoryItems::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getEffect()} method.
+     * obtained using the {@link TechfactoryItems#effect()} method.
      */
     StringField<TechfactoryItems, String> EFFECT = StringField.create(
             Identifier.EFFECT,
-            TechfactoryItems::getEffect,
-            TechfactoryItems::setEffect,
+            TechfactoryItems::effect,
+            TechfactoryItems::effect,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getDuration()} method.
+     * obtained using the {@link TechfactoryItems#duration()} method.
      */
     ShortField<TechfactoryItems, Short> DURATION = ShortField.create(
             Identifier.DURATION,
-            TechfactoryItems::getDuration,
-            TechfactoryItems::setDuration,
+            TechfactoryItems::duration,
+            TechfactoryItems::duration,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getCooldown()} method.
+     * obtained using the {@link TechfactoryItems#cooldown()} method.
      */
     ShortField<TechfactoryItems, Short> COOLDOWN = ShortField.create(
             Identifier.COOLDOWN,
-            TechfactoryItems::getCooldown,
-            TechfactoryItems::setCooldown,
+            TechfactoryItems::cooldown,
+            TechfactoryItems::cooldown,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getTime()} method.
+     * obtained using the {@link TechfactoryItems#time()} method.
      */
     IntField<TechfactoryItems, Integer> TIME = IntField.create(
             Identifier.TIME,
-            TechfactoryItems::getTime,
-            TechfactoryItems::setTime,
+            TechfactoryItems::time,
+            TechfactoryItems::time,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getFreeProduction()} method.
+     * obtained using the {@link TechfactoryItems#freeProduction()} method.
      */
     ShortField<TechfactoryItems, Short> FREE_PRODUCTION = ShortField.create(
             Identifier.FREE_PRODUCTION,
-            TechfactoryItems::getFreeProduction,
-            TechfactoryItems::setFreeProduction,
+            TechfactoryItems::freeProduction,
+            TechfactoryItems::freeProduction,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryItems} field that can be
-     * obtained using the {@link TechfactoryItems#getInstantProduction()}
+     * obtained using the {@link TechfactoryItems#instantProduction()}
      * method.
      */
     ShortField<TechfactoryItems, Short> INSTANT_PRODUCTION = ShortField.create(
             Identifier.INSTANT_PRODUCTION,
-            TechfactoryItems::getInstantProduction,
-            TechfactoryItems::setInstantProduction,
+            TechfactoryItems::instantProduction,
+            TechfactoryItems::instantProduction,
             TypeMapper.primitive(),
             false
     );
@@ -138,7 +138,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the id of this TechfactoryItems
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this TechfactoryItems. The name field corresponds to
@@ -146,7 +146,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the name of this TechfactoryItems
      */
-    String getName();
+    String name();
 
     /**
      * Returns the description of this TechfactoryItems. The description field
@@ -155,7 +155,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the description of this TechfactoryItems
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the effect of this TechfactoryItems. The effect field corresponds
@@ -163,7 +163,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the effect of this TechfactoryItems
      */
-    String getEffect();
+    String effect();
 
     /**
      * Returns the duration of this TechfactoryItems. The duration field
@@ -172,7 +172,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the duration of this TechfactoryItems
      */
-    short getDuration();
+    short duration();
 
     /**
      * Returns the cooldown of this TechfactoryItems. The cooldown field
@@ -181,7 +181,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the cooldown of this TechfactoryItems
      */
-    short getCooldown();
+    short cooldown();
 
     /**
      * Returns the time of this TechfactoryItems. The time field corresponds to
@@ -189,7 +189,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the time of this TechfactoryItems
      */
-    int getTime();
+    int time();
 
     /**
      * Returns the freeProduction of this TechfactoryItems. The freeProduction
@@ -198,7 +198,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the freeProduction of this TechfactoryItems
      */
-    short getFreeProduction();
+    short freeProduction();
 
     /**
      * Returns the instantProduction of this TechfactoryItems. The
@@ -207,7 +207,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return the instantProduction of this TechfactoryItems
      */
-    short getInstantProduction();
+    short instantProduction();
 
     /**
      * Sets the id of this TechfactoryItems. The id field corresponds to the
@@ -217,7 +217,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setId(byte id);
+    TechfactoryItems id(Byte id);
 
     /**
      * Sets the name of this TechfactoryItems. The name field corresponds to the
@@ -227,7 +227,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setName(String name);
+    TechfactoryItems name(String name);
 
     /**
      * Sets the description of this TechfactoryItems. The description field
@@ -238,7 +238,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setDescription(String description);
+    TechfactoryItems description(String description);
 
     /**
      * Sets the effect of this TechfactoryItems. The effect field corresponds to
@@ -248,7 +248,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setEffect(String effect);
+    TechfactoryItems effect(String effect);
 
     /**
      * Sets the duration of this TechfactoryItems. The duration field
@@ -259,7 +259,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setDuration(short duration);
+    TechfactoryItems duration(short duration);
 
     /**
      * Sets the cooldown of this TechfactoryItems. The cooldown field
@@ -270,7 +270,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setCooldown(short cooldown);
+    TechfactoryItems cooldown(short cooldown);
 
     /**
      * Sets the time of this TechfactoryItems. The time field corresponds to the
@@ -280,7 +280,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setTime(int time);
+    TechfactoryItems time(int time);
 
     /**
      * Sets the freeProduction of this TechfactoryItems. The freeProduction
@@ -291,7 +291,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setFreeProduction(short freeProduction);
+    TechfactoryItems freeProduction(short freeProduction);
 
     /**
      * Sets the instantProduction of this TechfactoryItems. The
@@ -302,7 +302,7 @@ public interface GeneratedTechfactoryItems {
      *
      * @return this TechfactoryItems instance
      */
-    TechfactoryItems setInstantProduction(short instantProduction);
+    TechfactoryItems instantProduction(short instantProduction);
 
     enum Identifier implements ColumnIdentifier<TechfactoryItems> {
 

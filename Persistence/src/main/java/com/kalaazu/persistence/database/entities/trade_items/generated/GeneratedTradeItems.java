@@ -31,24 +31,24 @@ public interface GeneratedTradeItems {
 
     /**
      * This Field corresponds to the {@link TradeItems} field that can be
-     * obtained using the {@link TradeItems#getId()} method.
+     * obtained using the {@link TradeItems#id()} method.
      */
     ShortField<TradeItems, Short> ID = ShortField.create(
             Identifier.ID,
-            TradeItems::getId,
-            TradeItems::setId,
+            TradeItems::id,
+            TradeItems::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link TradeItems} field that can be
-     * obtained using the {@link TradeItems#getItemsId()} method.
+     * obtained using the {@link TradeItems#itemsId()} method.
      */
     ShortForeignKeyField<TradeItems, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            TradeItems::getItemsId,
-            TradeItems::setItemsId,
+            TradeItems::itemsId,
+            TradeItems::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +56,12 @@ public interface GeneratedTradeItems {
 
     /**
      * This Field corresponds to the {@link TradeItems} field that can be
-     * obtained using the {@link TradeItems#getAccountsId()} method.
+     * obtained using the {@link TradeItems#accountsId()} method.
      */
     ComparableForeignKeyField<TradeItems, Integer, Integer, Accounts> ACCOUNTS_ID = ComparableForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            o -> OptionalUtil.unwrap(o.getAccountsId()),
-            TradeItems::setAccountsId,
+            o -> OptionalUtil.unwrap(o.accountsId()),
+            TradeItems::accountsId,
             Accounts.ID,
             TypeMapper.identity(),
             false
@@ -69,24 +69,24 @@ public interface GeneratedTradeItems {
 
     /**
      * This Field corresponds to the {@link TradeItems} field that can be
-     * obtained using the {@link TradeItems#getPrice()} method.
+     * obtained using the {@link TradeItems#price()} method.
      */
     IntField<TradeItems, Integer> PRICE = IntField.create(
             Identifier.PRICE,
-            TradeItems::getPrice,
-            TradeItems::setPrice,
+            TradeItems::price,
+            TradeItems::price,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TradeItems} field that can be
-     * obtained using the {@link TradeItems#getType()} method.
+     * obtained using the {@link TradeItems#type()} method.
      */
     EnumField<TradeItems, Byte, TradeType> TYPE = EnumField.create(
             Identifier.TYPE,
-            TradeItems::getType,
-            TradeItems::setType,
+            TradeItems::type,
+            TradeItems::type,
             new TradeTypeMapper(),
             TradeType::name,
             TradeType::valueOf,
@@ -99,7 +99,7 @@ public interface GeneratedTradeItems {
      *
      * @return the id of this TradeItems
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the itemsId of this TradeItems. The itemsId field corresponds to
@@ -107,7 +107,7 @@ public interface GeneratedTradeItems {
      *
      * @return the itemsId of this TradeItems
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the accountsId of this TradeItems. The accountsId field
@@ -116,7 +116,7 @@ public interface GeneratedTradeItems {
      *
      * @return the accountsId of this TradeItems
      */
-    OptionalInt getAccountsId();
+    OptionalInt accountsId();
 
     /**
      * Returns the price of this TradeItems. The price field corresponds to the
@@ -124,7 +124,7 @@ public interface GeneratedTradeItems {
      *
      * @return the price of this TradeItems
      */
-    int getPrice();
+    int price();
 
     /**
      * Returns the type of this TradeItems. The type field corresponds to the
@@ -132,7 +132,7 @@ public interface GeneratedTradeItems {
      *
      * @return the type of this TradeItems
      */
-    TradeType getType();
+    TradeType type();
 
     /**
      * Sets the id of this TradeItems. The id field corresponds to the database
@@ -142,7 +142,7 @@ public interface GeneratedTradeItems {
      *
      * @return this TradeItems instance
      */
-    TradeItems setId(short id);
+    TradeItems id(Short id);
 
     /**
      * Sets the itemsId of this TradeItems. The itemsId field corresponds to the
@@ -152,7 +152,7 @@ public interface GeneratedTradeItems {
      *
      * @return this TradeItems instance
      */
-    TradeItems setItemsId(short itemsId);
+    TradeItems itemsId(short itemsId);
 
     /**
      * Sets the accountsId of this TradeItems. The accountsId field corresponds
@@ -162,7 +162,7 @@ public interface GeneratedTradeItems {
      *
      * @return this TradeItems instance
      */
-    TradeItems setAccountsId(Integer accountsId);
+    TradeItems accountsId(Integer accountsId);
 
     /**
      * Sets the price of this TradeItems. The price field corresponds to the
@@ -172,7 +172,7 @@ public interface GeneratedTradeItems {
      *
      * @return this TradeItems instance
      */
-    TradeItems setPrice(int price);
+    TradeItems price(int price);
 
     /**
      * Sets the type of this TradeItems. The type field corresponds to the
@@ -182,7 +182,7 @@ public interface GeneratedTradeItems {
      *
      * @return this TradeItems instance
      */
-    TradeItems setType(TradeType type);
+    TradeItems type(TradeType type);
 
     /**
      * Queries the specified manager for the referenced Items. If no such Items

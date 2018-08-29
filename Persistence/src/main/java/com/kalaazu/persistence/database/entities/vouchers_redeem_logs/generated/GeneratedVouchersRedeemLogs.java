@@ -11,6 +11,7 @@ import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.IntForeignKeyField;
 import com.speedment.runtime.field.ShortForeignKeyField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -31,24 +32,24 @@ public interface GeneratedVouchersRedeemLogs {
 
     /**
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
-     * be obtained using the {@link VouchersRedeemLogs#getId()} method.
+     * be obtained using the {@link VouchersRedeemLogs#id()} method.
      */
     IntField<VouchersRedeemLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            VouchersRedeemLogs::getId,
-            VouchersRedeemLogs::setId,
+            VouchersRedeemLogs::id,
+            VouchersRedeemLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
-     * be obtained using the {@link VouchersRedeemLogs#getVouchersId()} method.
+     * be obtained using the {@link VouchersRedeemLogs#vouchersId()} method.
      */
     ShortForeignKeyField<VouchersRedeemLogs, Short, Vouchers> VOUCHERS_ID = ShortForeignKeyField.create(
             Identifier.VOUCHERS_ID,
-            VouchersRedeemLogs::getVouchersId,
-            VouchersRedeemLogs::setVouchersId,
+            VouchersRedeemLogs::vouchersId,
+            VouchersRedeemLogs::vouchersId,
             Vouchers.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +57,12 @@ public interface GeneratedVouchersRedeemLogs {
 
     /**
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
-     * be obtained using the {@link VouchersRedeemLogs#getAccountsId()} method.
+     * be obtained using the {@link VouchersRedeemLogs#accountsId()} method.
      */
     IntForeignKeyField<VouchersRedeemLogs, Integer, Accounts> ACCOUNTS_ID = IntForeignKeyField.create(
             Identifier.ACCOUNTS_ID,
-            VouchersRedeemLogs::getAccountsId,
-            VouchersRedeemLogs::setAccountsId,
+            VouchersRedeemLogs::accountsId,
+            VouchersRedeemLogs::accountsId,
             Accounts.ID,
             TypeMapper.primitive(),
             false
@@ -69,12 +70,12 @@ public interface GeneratedVouchersRedeemLogs {
 
     /**
      * This Field corresponds to the {@link VouchersRedeemLogs} field that can
-     * be obtained using the {@link VouchersRedeemLogs#getDate()} method.
+     * be obtained using the {@link VouchersRedeemLogs#date()} method.
      */
     ComparableField<VouchersRedeemLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            VouchersRedeemLogs::getDate,
-            VouchersRedeemLogs::setDate,
+            VouchersRedeemLogs::date,
+            (ReferenceSetter<VouchersRedeemLogs, Timestamp>) VouchersRedeemLogs::date,
             TypeMapper.identity(),
             false
     );
@@ -85,7 +86,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return the id of this VouchersRedeemLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the vouchersId of this VouchersRedeemLogs. The vouchersId field
@@ -94,7 +95,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return the vouchersId of this VouchersRedeemLogs
      */
-    short getVouchersId();
+    short vouchersId();
 
     /**
      * Returns the accountsId of this VouchersRedeemLogs. The accountsId field
@@ -103,7 +104,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return the accountsId of this VouchersRedeemLogs
      */
-    int getAccountsId();
+    int accountsId();
 
     /**
      * Returns the date of this VouchersRedeemLogs. The date field corresponds
@@ -111,7 +112,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return the date of this VouchersRedeemLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Sets the id of this VouchersRedeemLogs. The id field corresponds to the
@@ -121,7 +122,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return this VouchersRedeemLogs instance
      */
-    VouchersRedeemLogs setId(int id);
+    VouchersRedeemLogs id(Integer id);
 
     /**
      * Sets the vouchersId of this VouchersRedeemLogs. The vouchersId field
@@ -132,7 +133,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return this VouchersRedeemLogs instance
      */
-    VouchersRedeemLogs setVouchersId(short vouchersId);
+    VouchersRedeemLogs vouchersId(short vouchersId);
 
     /**
      * Sets the accountsId of this VouchersRedeemLogs. The accountsId field
@@ -143,7 +144,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return this VouchersRedeemLogs instance
      */
-    VouchersRedeemLogs setAccountsId(int accountsId);
+    VouchersRedeemLogs accountsId(int accountsId);
 
     /**
      * Sets the date of this VouchersRedeemLogs. The date field corresponds to
@@ -153,7 +154,7 @@ public interface GeneratedVouchersRedeemLogs {
      *
      * @return this VouchersRedeemLogs instance
      */
-    VouchersRedeemLogs setDate(Timestamp date);
+    VouchersRedeemLogs date(Timestamp date);
 
     /**
      * Queries the specified manager for the referenced Vouchers. If no such

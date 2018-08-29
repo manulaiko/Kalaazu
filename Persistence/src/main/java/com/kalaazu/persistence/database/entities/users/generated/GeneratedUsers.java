@@ -8,6 +8,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -28,36 +29,36 @@ public interface GeneratedUsers {
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getId()} method.
+     * using the {@link Users#id()} method.
      */
     IntField<Users, Integer> ID = IntField.create(
             Identifier.ID,
-            Users::getId,
-            Users::setId,
+            Users::id,
+            Users::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getDate()} method.
+     * using the {@link Users#date()} method.
      */
     ComparableField<Users, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            Users::getDate,
-            Users::setDate,
+            Users::date,
+            (ReferenceSetter<Users, Timestamp>) Users::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getInvitationCodesId()} method.
+     * using the {@link Users#invitationCodesId()} method.
      */
     ComparableForeignKeyField<Users, Short, Short, InvitationCodes> INVITATION_CODES_ID = ComparableForeignKeyField.create(
             Identifier.INVITATION_CODES_ID,
-            o -> OptionalUtil.unwrap(o.getInvitationCodesId()),
-            Users::setInvitationCodesId,
+            o -> OptionalUtil.unwrap(o.invitationCodesId()),
+            Users::invitationCodesId,
             InvitationCodes.ID,
             TypeMapper.identity(),
             false
@@ -65,72 +66,72 @@ public interface GeneratedUsers {
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getName()} method.
+     * using the {@link Users#name()} method.
      */
     StringField<Users, String> NAME = StringField.create(
             Identifier.NAME,
-            Users::getName,
-            Users::setName,
+            Users::name,
+            Users::name,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getPassword()} method.
+     * using the {@link Users#password()} method.
      */
     StringField<Users, String> PASSWORD = StringField.create(
             Identifier.PASSWORD,
-            Users::getPassword,
-            Users::setPassword,
+            Users::password,
+            Users::password,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getEmail()} method.
+     * using the {@link Users#email()} method.
      */
     StringField<Users, String> EMAIL = StringField.create(
             Identifier.EMAIL,
-            Users::getEmail,
-            Users::setEmail,
+            Users::email,
+            Users::email,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getEmailVerificationCode()} method.
+     * using the {@link Users#emailVerificationCode()} method.
      */
     StringField<Users, String> EMAIL_VERIFICATION_CODE = StringField.create(
             Identifier.EMAIL_VERIFICATION_CODE,
-            Users::getEmailVerificationCode,
-            Users::setEmailVerificationCode,
+            Users::emailVerificationCode,
+            Users::emailVerificationCode,
             TypeMapper.identity(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getEmailVerificationDate()} method.
+     * using the {@link Users#emailVerificationDate()} method.
      */
     ComparableField<Users, Timestamp, Timestamp> EMAIL_VERIFICATION_DATE = ComparableField.create(
             Identifier.EMAIL_VERIFICATION_DATE,
-            o -> OptionalUtil.unwrap(o.getEmailVerificationDate()),
-            Users::setEmailVerificationDate,
+            o -> OptionalUtil.unwrap(o.emailVerificationDate()),
+            (ReferenceSetter<Users, Timestamp>) Users::emailVerificationDate,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Users} field that can be obtained
-     * using the {@link Users#getIp()} method.
+     * using the {@link Users#ip()} method.
      */
     StringField<Users, String> IP = StringField.create(
             Identifier.IP,
-            Users::getIp,
-            Users::setIp,
+            Users::ip,
+            Users::ip,
             TypeMapper.identity(),
             false
     );
@@ -141,7 +142,7 @@ public interface GeneratedUsers {
      *
      * @return the id of this Users
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the date of this Users. The date field corresponds to the
@@ -149,7 +150,7 @@ public interface GeneratedUsers {
      *
      * @return the date of this Users
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the invitationCodesId of this Users. The invitationCodesId field
@@ -158,7 +159,7 @@ public interface GeneratedUsers {
      *
      * @return the invitationCodesId of this Users
      */
-    Optional<Short> getInvitationCodesId();
+    Optional<Short> invitationCodesId();
 
     /**
      * Returns the name of this Users. The name field corresponds to the
@@ -166,7 +167,7 @@ public interface GeneratedUsers {
      *
      * @return the name of this Users
      */
-    String getName();
+    String name();
 
     /**
      * Returns the password of this Users. The password field corresponds to the
@@ -174,7 +175,7 @@ public interface GeneratedUsers {
      *
      * @return the password of this Users
      */
-    String getPassword();
+    String password();
 
     /**
      * Returns the email of this Users. The email field corresponds to the
@@ -182,7 +183,7 @@ public interface GeneratedUsers {
      *
      * @return the email of this Users
      */
-    String getEmail();
+    String email();
 
     /**
      * Returns the emailVerificationCode of this Users. The
@@ -191,7 +192,7 @@ public interface GeneratedUsers {
      *
      * @return the emailVerificationCode of this Users
      */
-    String getEmailVerificationCode();
+    String emailVerificationCode();
 
     /**
      * Returns the emailVerificationDate of this Users. The
@@ -200,7 +201,7 @@ public interface GeneratedUsers {
      *
      * @return the emailVerificationDate of this Users
      */
-    Optional<Timestamp> getEmailVerificationDate();
+    Optional<Timestamp> emailVerificationDate();
 
     /**
      * Returns the ip of this Users. The ip field corresponds to the database
@@ -208,7 +209,7 @@ public interface GeneratedUsers {
      *
      * @return the ip of this Users
      */
-    String getIp();
+    String ip();
 
     /**
      * Sets the id of this Users. The id field corresponds to the database
@@ -218,7 +219,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setId(int id);
+    Users id(Integer id);
 
     /**
      * Sets the date of this Users. The date field corresponds to the database
@@ -228,7 +229,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setDate(Timestamp date);
+    Users date(Timestamp date);
 
     /**
      * Sets the invitationCodesId of this Users. The invitationCodesId field
@@ -239,7 +240,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setInvitationCodesId(Short invitationCodesId);
+    Users invitationCodesId(Short invitationCodesId);
 
     /**
      * Sets the name of this Users. The name field corresponds to the database
@@ -249,7 +250,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setName(String name);
+    Users name(String name);
 
     /**
      * Sets the password of this Users. The password field corresponds to the
@@ -259,7 +260,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setPassword(String password);
+    Users password(String password);
 
     /**
      * Sets the email of this Users. The email field corresponds to the database
@@ -269,7 +270,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setEmail(String email);
+    Users email(String email);
 
     /**
      * Sets the emailVerificationCode of this Users. The emailVerificationCode
@@ -280,7 +281,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setEmailVerificationCode(String emailVerificationCode);
+    Users emailVerificationCode(String emailVerificationCode);
 
     /**
      * Sets the emailVerificationDate of this Users. The emailVerificationDate
@@ -291,7 +292,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setEmailVerificationDate(Timestamp emailVerificationDate);
+    Users emailVerificationDate(Timestamp emailVerificationDate);
 
     /**
      * Sets the ip of this Users. The ip field corresponds to the database
@@ -301,7 +302,7 @@ public interface GeneratedUsers {
      *
      * @return this Users instance
      */
-    Users setIp(String ip);
+    Users ip(String ip);
 
     /**
      * Queries the specified manager for the referenced InvitationCodes. If no

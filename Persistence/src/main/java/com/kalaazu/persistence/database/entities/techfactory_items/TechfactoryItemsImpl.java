@@ -32,7 +32,7 @@ public final class TechfactoryItemsImpl
 
         this.costs = Database.getInstance()
                              .all(TechfactoryCosts.class)
-                             .filter(TechfactoryCosts.TECHFACTORY_ITEMS_ID.equal(super.getId()))
+                             .filter(TechfactoryCosts.TECHFACTORY_ITEMS_ID.equal(super.id()))
                              .collect(Collectors.toList());
 
         return this.costs;

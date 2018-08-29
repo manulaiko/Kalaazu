@@ -28,25 +28,25 @@ public interface GeneratedTechfactoryCosts {
 
     /**
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
-     * obtained using the {@link TechfactoryCosts#getId()} method.
+     * obtained using the {@link TechfactoryCosts#id()} method.
      */
     ByteField<TechfactoryCosts, Byte> ID = ByteField.create(
             Identifier.ID,
-            TechfactoryCosts::getId,
-            TechfactoryCosts::setId,
+            TechfactoryCosts::id,
+            TechfactoryCosts::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
-     * obtained using the {@link TechfactoryCosts#getTechfactoryItemsId()}
+     * obtained using the {@link TechfactoryCosts#techfactoryItemsId()}
      * method.
      */
     ByteForeignKeyField<TechfactoryCosts, Byte, TechfactoryItems> TECHFACTORY_ITEMS_ID = ByteForeignKeyField.create(
             Identifier.TECHFACTORY_ITEMS_ID,
-            TechfactoryCosts::getTechfactoryItemsId,
-            TechfactoryCosts::setTechfactoryItemsId,
+            TechfactoryCosts::techfactoryItemsId,
+            TechfactoryCosts::techfactoryItemsId,
             TechfactoryItems.ID,
             TypeMapper.primitive(),
             false
@@ -54,12 +54,12 @@ public interface GeneratedTechfactoryCosts {
 
     /**
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
-     * obtained using the {@link TechfactoryCosts#getItemsId()} method.
+     * obtained using the {@link TechfactoryCosts#itemsId()} method.
      */
     ShortForeignKeyField<TechfactoryCosts, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            TechfactoryCosts::getItemsId,
-            TechfactoryCosts::setItemsId,
+            TechfactoryCosts::itemsId,
+            TechfactoryCosts::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -67,12 +67,12 @@ public interface GeneratedTechfactoryCosts {
 
     /**
      * This Field corresponds to the {@link TechfactoryCosts} field that can be
-     * obtained using the {@link TechfactoryCosts#getAmount()} method.
+     * obtained using the {@link TechfactoryCosts#amount()} method.
      */
     IntField<TechfactoryCosts, Integer> AMOUNT = IntField.create(
             Identifier.AMOUNT,
-            TechfactoryCosts::getAmount,
-            TechfactoryCosts::setAmount,
+            TechfactoryCosts::amount,
+            TechfactoryCosts::amount,
             TypeMapper.primitive(),
             false
     );
@@ -83,7 +83,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return the id of this TechfactoryCosts
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the techfactoryItemsId of this TechfactoryCosts. The
@@ -92,7 +92,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return the techfactoryItemsId of this TechfactoryCosts
      */
-    byte getTechfactoryItemsId();
+    byte techfactoryItemsId();
 
     /**
      * Returns the itemsId of this TechfactoryCosts. The itemsId field
@@ -101,7 +101,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return the itemsId of this TechfactoryCosts
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the amount of this TechfactoryCosts. The amount field corresponds
@@ -109,7 +109,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return the amount of this TechfactoryCosts
      */
-    int getAmount();
+    int amount();
 
     /**
      * Sets the id of this TechfactoryCosts. The id field corresponds to the
@@ -119,7 +119,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return this TechfactoryCosts instance
      */
-    TechfactoryCosts setId(byte id);
+    TechfactoryCosts id(Byte id);
 
     /**
      * Sets the techfactoryItemsId of this TechfactoryCosts. The
@@ -130,7 +130,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return this TechfactoryCosts instance
      */
-    TechfactoryCosts setTechfactoryItemsId(byte techfactoryItemsId);
+    TechfactoryCosts techfactoryItemsId(byte techfactoryItemsId);
 
     /**
      * Sets the itemsId of this TechfactoryCosts. The itemsId field corresponds
@@ -140,7 +140,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return this TechfactoryCosts instance
      */
-    TechfactoryCosts setItemsId(short itemsId);
+    TechfactoryCosts itemsId(short itemsId);
 
     /**
      * Sets the amount of this TechfactoryCosts. The amount field corresponds to
@@ -150,7 +150,7 @@ public interface GeneratedTechfactoryCosts {
      *
      * @return this TechfactoryCosts instance
      */
-    TechfactoryCosts setAmount(int amount);
+    TechfactoryCosts amount(int amount);
 
     /**
      * Queries the specified manager for the referenced TechfactoryItems. If no

@@ -5,6 +5,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.TechfactoryCosts;
 import com.kalaazu.persistence.database.entities.TechfactoryItems;
 import com.speedment.common.annotation.GeneratedCode;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.StringJoiner;
@@ -19,9 +20,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedTechfactoryCostsImpl implements TechfactoryCosts {
 
-    private byte id;
+    private Byte id;
 
     private byte techfactoryItemsId;
 
@@ -34,53 +36,9 @@ public abstract class GeneratedTechfactoryCostsImpl implements TechfactoryCosts 
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public byte getTechfactoryItemsId() {
-        return techfactoryItemsId;
-    }
-
-    @Override
-    public short getItemsId() {
-        return itemsId;
-    }
-
-    @Override
-    public int getAmount() {
-        return amount;
-    }
-
-    @Override
-    public TechfactoryCosts setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public TechfactoryCosts setTechfactoryItemsId(byte techfactoryItemsId) {
-        this.techfactoryItemsId = techfactoryItemsId;
-        return this;
-    }
-
-    @Override
-    public TechfactoryCosts setItemsId(short itemsId) {
-        this.itemsId = itemsId;
-        return this;
-    }
-
-    @Override
-    public TechfactoryCosts setAmount(int amount) {
-        this.amount = amount;
-        return this;
-    }
-
-    @Override
     public TechfactoryItems findTechfactoryItemsId(Manager<TechfactoryItems> foreignManager) {
         return foreignManager.stream()
-                             .filter(TechfactoryItems.ID.equal(getTechfactoryItemsId()))
+                             .filter(TechfactoryItems.ID.equal(techfactoryItemsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -88,52 +46,8 @@ public abstract class GeneratedTechfactoryCostsImpl implements TechfactoryCosts 
     @Override
     public Items findItemsId(Manager<Items> foreignManager) {
         return foreignManager.stream()
-                             .filter(Items.ID.equal(getItemsId()))
+                             .filter(Items.ID.equal(itemsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("techfactoryItemsId = " + Objects.toString(getTechfactoryItemsId()));
-        sj.add("itemsId = " + Objects.toString(getItemsId()));
-        sj.add("amount = " + Objects.toString(getAmount()));
-        return "TechfactoryCostsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof TechfactoryCosts)) {
-            return false;
-        }
-        final TechfactoryCosts thatTechfactoryCosts = (TechfactoryCosts) that;
-        if (this.getId() != thatTechfactoryCosts.getId()) {
-            return false;
-        }
-        if (this.getTechfactoryItemsId() != thatTechfactoryCosts.getTechfactoryItemsId()) {
-            return false;
-        }
-        if (this.getItemsId() != thatTechfactoryCosts.getItemsId()) {
-            return false;
-        }
-        if (this.getAmount() != thatTechfactoryCosts.getAmount()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getTechfactoryItemsId());
-        hash = 31 * hash + Short.hashCode(getItemsId());
-        hash = 31 * hash + Integer.hashCode(getAmount());
-        return hash;
     }
 }

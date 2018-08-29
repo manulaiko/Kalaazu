@@ -25,84 +25,84 @@ public interface GeneratedTechfactoryDrones {
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getId()} method.
+     * obtained using the {@link TechfactoryDrones#id()} method.
      */
     ByteField<TechfactoryDrones, Byte> ID = ByteField.create(
             Identifier.ID,
-            TechfactoryDrones::getId,
-            TechfactoryDrones::setId,
+            TechfactoryDrones::id,
+            TechfactoryDrones::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getName()} method.
+     * obtained using the {@link TechfactoryDrones#name()} method.
      */
     StringField<TechfactoryDrones, String> NAME = StringField.create(
             Identifier.NAME,
-            TechfactoryDrones::getName,
-            TechfactoryDrones::setName,
+            TechfactoryDrones::name,
+            TechfactoryDrones::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getDescription()} method.
+     * obtained using the {@link TechfactoryDrones#description()} method.
      */
     StringField<TechfactoryDrones, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            TechfactoryDrones::getDescription,
-            TechfactoryDrones::setDescription,
+            TechfactoryDrones::description,
+            TechfactoryDrones::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getTime()} method.
+     * obtained using the {@link TechfactoryDrones#time()} method.
      */
     ByteField<TechfactoryDrones, Byte> TIME = ByteField.create(
             Identifier.TIME,
-            TechfactoryDrones::getTime,
-            TechfactoryDrones::setTime,
+            TechfactoryDrones::time,
+            TechfactoryDrones::time,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getParts()} method.
+     * obtained using the {@link TechfactoryDrones#parts()} method.
      */
     ByteField<TechfactoryDrones, Byte> PARTS = ByteField.create(
             Identifier.PARTS,
-            TechfactoryDrones::getParts,
-            TechfactoryDrones::setParts,
+            TechfactoryDrones::parts,
+            TechfactoryDrones::parts,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getPrice()} method.
+     * obtained using the {@link TechfactoryDrones#price()} method.
      */
     IntField<TechfactoryDrones, Integer> PRICE = IntField.create(
             Identifier.PRICE,
-            TechfactoryDrones::getPrice,
-            TechfactoryDrones::setPrice,
+            TechfactoryDrones::price,
+            TechfactoryDrones::price,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link TechfactoryDrones} field that can be
-     * obtained using the {@link TechfactoryDrones#getFactor()} method.
+     * obtained using the {@link TechfactoryDrones#factor()} method.
      */
     ByteField<TechfactoryDrones, Byte> FACTOR = ByteField.create(
             Identifier.FACTOR,
-            TechfactoryDrones::getFactor,
-            TechfactoryDrones::setFactor,
+            TechfactoryDrones::factor,
+            TechfactoryDrones::factor,
             TypeMapper.primitive(),
             false
     );
@@ -113,7 +113,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the id of this TechfactoryDrones
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this TechfactoryDrones. The name field corresponds to
@@ -121,7 +121,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the name of this TechfactoryDrones
      */
-    String getName();
+    String name();
 
     /**
      * Returns the description of this TechfactoryDrones. The description field
@@ -130,7 +130,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the description of this TechfactoryDrones
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the time of this TechfactoryDrones. The time field corresponds to
@@ -138,7 +138,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the time of this TechfactoryDrones
      */
-    byte getTime();
+    byte time();
 
     /**
      * Returns the parts of this TechfactoryDrones. The parts field corresponds
@@ -146,7 +146,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the parts of this TechfactoryDrones
      */
-    byte getParts();
+    byte parts();
 
     /**
      * Returns the price of this TechfactoryDrones. The price field corresponds
@@ -154,7 +154,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the price of this TechfactoryDrones
      */
-    int getPrice();
+    int price();
 
     /**
      * Returns the factor of this TechfactoryDrones. The factor field
@@ -163,7 +163,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return the factor of this TechfactoryDrones
      */
-    byte getFactor();
+    byte factor();
 
     /**
      * Sets the id of this TechfactoryDrones. The id field corresponds to the
@@ -173,7 +173,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setId(byte id);
+    TechfactoryDrones id(Byte id);
 
     /**
      * Sets the name of this TechfactoryDrones. The name field corresponds to
@@ -183,7 +183,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setName(String name);
+    TechfactoryDrones name(String name);
 
     /**
      * Sets the description of this TechfactoryDrones. The description field
@@ -194,7 +194,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setDescription(String description);
+    TechfactoryDrones description(String description);
 
     /**
      * Sets the time of this TechfactoryDrones. The time field corresponds to
@@ -204,7 +204,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setTime(byte time);
+    TechfactoryDrones time(byte time);
 
     /**
      * Sets the parts of this TechfactoryDrones. The parts field corresponds to
@@ -214,7 +214,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setParts(byte parts);
+    TechfactoryDrones parts(byte parts);
 
     /**
      * Sets the price of this TechfactoryDrones. The price field corresponds to
@@ -224,7 +224,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setPrice(int price);
+    TechfactoryDrones price(int price);
 
     /**
      * Sets the factor of this TechfactoryDrones. The factor field corresponds
@@ -234,7 +234,7 @@ public interface GeneratedTechfactoryDrones {
      *
      * @return this TechfactoryDrones instance
      */
-    TechfactoryDrones setFactor(byte factor);
+    TechfactoryDrones factor(byte factor);
 
     enum Identifier implements ColumnIdentifier<TechfactoryDrones> {
 
