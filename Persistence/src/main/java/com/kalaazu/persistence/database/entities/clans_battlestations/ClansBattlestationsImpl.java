@@ -44,7 +44,7 @@ public final class ClansBattlestationsImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -59,7 +59,7 @@ public final class ClansBattlestationsImpl
         }
 
         this.map = super.findMapsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Maps.class)
         );
@@ -73,7 +73,7 @@ public final class ClansBattlestationsImpl
             return this.logs;
         }
 
-        this.logs = Database.getInstance()
+        this.logs = Database.instance()
                             .all(ClansBattlestationsLogs.class)
                             .filter(ClansBattlestationsLogs.CLANS_BATTLESTATIONS_ID.equal(super.id()))
                             .collect(Collectors.toList());

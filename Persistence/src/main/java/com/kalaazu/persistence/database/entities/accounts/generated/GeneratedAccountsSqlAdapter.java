@@ -48,21 +48,21 @@ public abstract class GeneratedAccountsSqlAdapter {
     protected Accounts apply(ResultSet resultSet) throws SpeedmentException {
         final Accounts entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setUsersId(resultSet.getInt(2));
-            entity.setSessionId(resultSet.getString(3));
-            entity.setLevelsId(resultSet.getByte(4));
-            entity.setFactionsId(getByte(resultSet, 5));
-            entity.setAccountsHangarsId(getInt(resultSet, 6));
-            entity.setClansId(getInt(resultSet, 7));
-            entity.setRanksId(resultSet.getByte(8));
-            entity.setName(resultSet.getString(9));
-            entity.setBanDate(resultSet.getTimestamp(10));
-            entity.setPremiumDate(resultSet.getTimestamp(11));
-            entity.setDate(resultSet.getTimestamp(12));
-            entity.setLastLogin(resultSet.getTimestamp(13));
-            entity.setSkillPointsTotal(resultSet.getShort(14));
-            entity.setSkillPointsFree(resultSet.getShort(15));
+            entity.id(resultSet.getInt(1));
+            entity.usersId(resultSet.getInt(2));
+            entity.sessionId(resultSet.getString(3));
+            entity.levelsId(resultSet.getByte(4));
+            entity.factionsId(getByte(resultSet, 5));
+            entity.accountsHangarsId(getInt(resultSet, 6));
+            entity.clansId(getInt(resultSet, 7));
+            entity.ranksId(resultSet.getByte(8));
+            entity.name(resultSet.getString(9));
+            entity.banDate(resultSet.getTimestamp(10));
+            entity.premiumDate(resultSet.getTimestamp(11));
+            entity.date(resultSet.getTimestamp(12));
+            entity.lastLogin(resultSet.getTimestamp(13));
+            entity.skillPointsTotal(resultSet.getShort(14));
+            entity.skillPointsFree(resultSet.getShort(15));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

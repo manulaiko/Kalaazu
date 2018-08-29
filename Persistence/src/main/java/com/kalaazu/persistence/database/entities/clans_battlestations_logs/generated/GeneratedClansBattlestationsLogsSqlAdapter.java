@@ -46,11 +46,11 @@ public abstract class GeneratedClansBattlestationsLogsSqlAdapter {
     protected ClansBattlestationsLogs apply(ResultSet resultSet) throws SpeedmentException {
         final ClansBattlestationsLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansId(resultSet.getInt(2));
-            entity.setClansBattlestationsId(resultSet.getByte(3));
-            entity.setMessage(resultSet.getString(4));
-            entity.setDate(resultSet.getTimestamp(5));
+            entity.id(resultSet.getInt(1));
+            entity.clansId(resultSet.getInt(2));
+            entity.clansBattlestationsId(resultSet.getByte(3));
+            entity.message(resultSet.getString(4));
+            entity.date(resultSet.getTimestamp(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

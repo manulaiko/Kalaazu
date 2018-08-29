@@ -44,7 +44,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
         }
 
         this.configuration = super.findAccountsConfigurationsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsConfigurations.class)
         );
@@ -59,7 +59,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
         }
 
         this.item = super.findAccountsItemsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsItems.class)
         );
@@ -74,7 +74,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
         }
 
         this.pet = super.findAccountsPetsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsPets.class)
         );
@@ -89,7 +89,7 @@ public final class AccountsConfigurationsAccountsItemsImpl
         }
 
         this.drone = super.findAccountsDronesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsDrones.class)
         );

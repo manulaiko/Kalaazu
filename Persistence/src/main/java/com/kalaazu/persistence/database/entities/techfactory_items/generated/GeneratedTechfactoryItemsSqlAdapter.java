@@ -46,15 +46,15 @@ public abstract class GeneratedTechfactoryItemsSqlAdapter {
     protected TechfactoryItems apply(ResultSet resultSet) throws SpeedmentException {
         final TechfactoryItems entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setDescription(resultSet.getString(3));
-            entity.setEffect(resultSet.getString(4));
-            entity.setDuration(resultSet.getShort(5));
-            entity.setCooldown(resultSet.getShort(6));
-            entity.setTime(resultSet.getInt(7));
-            entity.setFreeProduction(resultSet.getShort(8));
-            entity.setInstantProduction(resultSet.getShort(9));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.description(resultSet.getString(3));
+            entity.effect(resultSet.getString(4));
+            entity.duration(resultSet.getShort(5));
+            entity.cooldown(resultSet.getShort(6));
+            entity.time(resultSet.getInt(7));
+            entity.freeProduction(resultSet.getShort(8));
+            entity.instantProduction(resultSet.getShort(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

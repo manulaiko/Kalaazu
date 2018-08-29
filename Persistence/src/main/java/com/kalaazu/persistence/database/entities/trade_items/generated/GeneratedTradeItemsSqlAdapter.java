@@ -53,11 +53,11 @@ public abstract class GeneratedTradeItemsSqlAdapter {
     protected TradeItems apply(ResultSet resultSet) throws SpeedmentException {
         final TradeItems entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setItemsId(resultSet.getShort(2));
-            entity.setAccountsId(getInt(resultSet, 3));
-            entity.setPrice(resultSet.getInt(4));
-            entity.setType(typeHelper.apply(resultSet.getByte(5)));
+            entity.id(resultSet.getShort(1));
+            entity.itemsId(resultSet.getShort(2));
+            entity.accountsId(getInt(resultSet, 3));
+            entity.price(resultSet.getInt(4));
+            entity.type(typeHelper.apply(resultSet.getByte(5)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

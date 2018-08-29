@@ -49,7 +49,7 @@ public final class QuestsImpl
         }
 
         this.level = super.findLevelsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Levels.class)
         );
@@ -64,7 +64,7 @@ public final class QuestsImpl
         }
 
         this.quest = super.findQuestsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Quests.class)
         );
@@ -79,7 +79,7 @@ public final class QuestsImpl
         }
 
         this.faction = super.findFactionsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Factions.class)
         );
@@ -93,7 +93,7 @@ public final class QuestsImpl
             return this.conditions;
         }
 
-        this.conditions = Database.getInstance()
+        this.conditions = Database.instance()
                                   .all(QuestsConditions.class)
                                   .filter(QuestsConditions.QUESTS_ID.equal(super.id()))
                                   .collect(Collectors.toList());

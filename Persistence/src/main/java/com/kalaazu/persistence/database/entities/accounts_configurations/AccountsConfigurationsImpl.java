@@ -60,7 +60,7 @@ public final class AccountsConfigurationsImpl
         }
 
         this.hangar = super.findAccountsHangarsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsHangars.class)
         );
@@ -74,7 +74,7 @@ public final class AccountsConfigurationsImpl
             return this.items;
         }
 
-        this.items = Database.getInstance()
+        this.items = Database.instance()
                              .all(AccountsConfigurationsAccountsItems.class)
                              .filter(AccountsConfigurationsAccountsItems.ACCOUNTS_CONFIGURATIONS_ID.equal(
                                      super.id()))
@@ -158,7 +158,7 @@ public final class AccountsConfigurationsImpl
                     .map(AccountsConfigurationsAccountsItems::item)
                     .filter(
                             i -> i.item()
-                                  .getType() == type
+                                  .type() == type
                     )
                     .collect(Collectors.toList());
     }

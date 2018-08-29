@@ -38,7 +38,7 @@ public final class MapsPortalsImpl
             return this.level;
         }
 
-        this.level = Database.getInstance()
+        this.level = Database.instance()
                              .find(super.levelsId(), Levels.class)
                              .orElse(null);
 
@@ -52,7 +52,7 @@ public final class MapsPortalsImpl
         }
 
         this.map = super.findMapsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Maps.class)
         );
@@ -67,7 +67,7 @@ public final class MapsPortalsImpl
         }
 
         this.targetMap = super.findTargetMapsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Maps.class)
         );

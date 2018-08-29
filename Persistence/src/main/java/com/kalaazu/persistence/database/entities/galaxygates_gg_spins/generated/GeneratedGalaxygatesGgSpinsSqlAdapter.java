@@ -46,9 +46,9 @@ public abstract class GeneratedGalaxygatesGgSpinsSqlAdapter {
     protected GalaxygatesGgSpins apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesGgSpins entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setGalaxygatesId(resultSet.getByte(2));
-            entity.setGalaxygatesSpinsId(resultSet.getByte(3));
+            entity.id(resultSet.getShort(1));
+            entity.galaxygatesId(resultSet.getByte(2));
+            entity.galaxygatesSpinsId(resultSet.getByte(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

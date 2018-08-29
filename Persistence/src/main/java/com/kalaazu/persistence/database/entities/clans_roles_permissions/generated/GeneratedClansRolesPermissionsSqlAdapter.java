@@ -52,10 +52,10 @@ public abstract class GeneratedClansRolesPermissionsSqlAdapter {
     protected ClansRolesPermissions apply(ResultSet resultSet) throws SpeedmentException {
         final ClansRolesPermissions entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansRolesId(resultSet.getInt(2));
-            entity.setPermissionsId(resultSet.getByte(3));
-            entity.setIsEnabled(isEnabledHelper.apply(getInt(resultSet, 4)));
+            entity.id(resultSet.getInt(1));
+            entity.clansRolesId(resultSet.getInt(2));
+            entity.permissionsId(resultSet.getByte(3));
+            entity.isEnabled(isEnabledHelper.apply(getInt(resultSet, 4)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -46,14 +46,14 @@ public abstract class GeneratedAccountsRankingsSqlAdapter {
     protected AccountsRankings apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsRankings entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setPoints(resultSet.getInt(3));
-            entity.setBestPoints(resultSet.getInt(4));
-            entity.setDestroyedAllies(resultSet.getShort(5));
-            entity.setDestroyedPhoenix(resultSet.getShort(6));
-            entity.setDestroyedTimes(resultSet.getShort(7));
-            entity.setDestroyedRadiation(resultSet.getShort(8));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.points(resultSet.getInt(3));
+            entity.bestPoints(resultSet.getInt(4));
+            entity.destroyedAllies(resultSet.getShort(5));
+            entity.destroyedPhoenix(resultSet.getShort(6));
+            entity.destroyedTimes(resultSet.getShort(7));
+            entity.destroyedRadiation(resultSet.getShort(8));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

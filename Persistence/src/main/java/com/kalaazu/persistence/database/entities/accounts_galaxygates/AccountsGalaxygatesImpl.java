@@ -34,7 +34,7 @@ public final class AccountsGalaxygatesImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -49,7 +49,7 @@ public final class AccountsGalaxygatesImpl
         }
 
         this.galaxygate = super.findGalaxygatesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Galaxygates.class)
         );

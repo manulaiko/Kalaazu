@@ -50,10 +50,10 @@ public abstract class GeneratedRanksSqlAdapter {
     protected Ranks apply(ResultSet resultSet) throws SpeedmentException {
         final Ranks entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setPercentaje(resultSet.getDouble(3));
-            entity.setIsPublic(isPublicHelper.apply(resultSet.getInt(4)));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.percentaje(resultSet.getDouble(3));
+            entity.isPublic(isPublicHelper.apply(resultSet.getInt(4)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

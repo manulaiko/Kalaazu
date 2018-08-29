@@ -46,9 +46,9 @@ public abstract class GeneratedGalaxygatesSpawnsSqlAdapter {
     protected GalaxygatesSpawns apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesSpawns entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setNpcsId(resultSet.getByte(2));
-            entity.setAmount(resultSet.getByte(3));
+            entity.id(resultSet.getInt(1));
+            entity.npcsId(resultSet.getByte(2));
+            entity.amount(resultSet.getByte(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

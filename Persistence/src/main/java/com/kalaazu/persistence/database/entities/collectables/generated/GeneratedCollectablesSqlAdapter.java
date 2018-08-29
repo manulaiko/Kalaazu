@@ -52,10 +52,10 @@ public abstract class GeneratedCollectablesSqlAdapter {
     protected Collectables apply(ResultSet resultSet) throws SpeedmentException {
         final Collectables entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setGfx(resultSet.getByte(2));
-            entity.setType(typeHelper.apply(resultSet.getByte(3)));
-            entity.setName(resultSet.getString(4));
+            entity.id(resultSet.getByte(1));
+            entity.gfx(resultSet.getByte(2));
+            entity.type(typeHelper.apply(resultSet.getByte(3)));
+            entity.name(resultSet.getString(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

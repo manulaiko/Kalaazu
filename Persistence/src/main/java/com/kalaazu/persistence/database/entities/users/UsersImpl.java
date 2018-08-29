@@ -42,7 +42,7 @@ public final class UsersImpl
             return this.accounts;
         }
 
-        this.accounts = Database.getInstance()
+        this.accounts = Database.instance()
                                 .all(Accounts.class)
                                 .filter(Accounts.USERS_ID.equal(super.id()))
                                 .collect(Collectors.toList());
@@ -57,7 +57,7 @@ public final class UsersImpl
         }
 
         this.invitationCode = super.findInvitationCodesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(InvitationCodes.class)
         );

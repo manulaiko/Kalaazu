@@ -7,6 +7,7 @@ import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.ShortField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -43,7 +44,7 @@ public interface GeneratedNews {
     ComparableField<News, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             News::date,
-            News::date,
+            (ReferenceSetter<News, Timestamp>) News::date,
             TypeMapper.identity(),
             false
     );

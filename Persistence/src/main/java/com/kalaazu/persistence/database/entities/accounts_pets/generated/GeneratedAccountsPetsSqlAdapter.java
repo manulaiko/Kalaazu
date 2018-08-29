@@ -46,21 +46,21 @@ public abstract class GeneratedAccountsPetsSqlAdapter {
     protected AccountsPets apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsPets entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setLevelsId(resultSet.getByte(3));
-            entity.setName(resultSet.getString(4));
-            entity.setExperience(resultSet.getInt(5));
-            entity.setFuel(resultSet.getInt(6));
-            entity.setHealth(resultSet.getInt(7));
-            entity.setSlotsLasersTotal(resultSet.getByte(8));
-            entity.setSlotsLasersAvailable(resultSet.getByte(9));
-            entity.setSlotsGeneratorsTotal(resultSet.getByte(10));
-            entity.setSlotsGeneratorsAvailable(resultSet.getByte(11));
-            entity.setSlotsProtocolsTotal(resultSet.getByte(12));
-            entity.setSlotsProtocolsAvailable(resultSet.getByte(13));
-            entity.setSlotsGearsTotal(resultSet.getByte(14));
-            entity.setSlotsGearsAvailable(resultSet.getByte(15));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.levelsId(resultSet.getByte(3));
+            entity.name(resultSet.getString(4));
+            entity.experience(resultSet.getInt(5));
+            entity.fuel(resultSet.getInt(6));
+            entity.health(resultSet.getInt(7));
+            entity.slotsLasersTotal(resultSet.getByte(8));
+            entity.slotsLasersAvailable(resultSet.getByte(9));
+            entity.slotsGeneratorsTotal(resultSet.getByte(10));
+            entity.slotsGeneratorsAvailable(resultSet.getByte(11));
+            entity.slotsProtocolsTotal(resultSet.getByte(12));
+            entity.slotsProtocolsAvailable(resultSet.getByte(13));
+            entity.slotsGearsTotal(resultSet.getByte(14));
+            entity.slotsGearsAvailable(resultSet.getByte(15));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

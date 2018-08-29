@@ -46,9 +46,9 @@ public abstract class GeneratedRewardsGalaxygatesSqlAdapter {
     protected RewardsGalaxygates apply(ResultSet resultSet) throws SpeedmentException {
         final RewardsGalaxygates entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setGalaxygatesId(resultSet.getByte(2));
-            entity.setRewardsId(resultSet.getShort(3));
+            entity.id(resultSet.getByte(1));
+            entity.galaxygatesId(resultSet.getByte(2));
+            entity.rewardsId(resultSet.getShort(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

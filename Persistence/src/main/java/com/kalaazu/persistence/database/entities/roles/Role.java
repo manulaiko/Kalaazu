@@ -41,7 +41,7 @@ public interface Role {
         }
 
         var enabled = p.get()
-                       .enabled();
+                       .isEnabled();
 
         if (enabled.isPresent()) {
             return enabled.getAsBoolean();
@@ -52,7 +52,7 @@ public interface Role {
 
     private Optional<RolePermission> findPermission(Permission permissions) {
         for (RolePermission p : this.permissions()) {
-            if (p.permissionId() == permissions.id()) {
+            if (p.permissionsId() == permissions.id()) {
                 return Optional.of(p);
             }
         }

@@ -46,7 +46,7 @@ public final class MapsImpl
         }
 
         this.faction = super.findFactionsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Factions.class)
         );
@@ -60,7 +60,7 @@ public final class MapsImpl
             return this.npcs;
         }
 
-        this.npcs = Database.getInstance()
+        this.npcs = Database.instance()
                             .all(MapsNpcs.class)
                             .filter(MapsNpcs.MAPS_ID.equal(super.id()))
                             .collect(Collectors.toList());
@@ -74,7 +74,7 @@ public final class MapsImpl
             return this.portals;
         }
 
-        this.portals = Database.getInstance()
+        this.portals = Database.instance()
                                .all(MapsPortals.class)
                                .filter(MapsPortals.MAPS_ID.equal(super.id()))
                                .collect(Collectors.toList());
@@ -88,7 +88,7 @@ public final class MapsImpl
             return this.stations;
         }
 
-        this.stations = Database.getInstance()
+        this.stations = Database.instance()
                                 .all(MapsStations.class)
                                 .filter(MapsStations.MAPS_ID.equal(super.id()))
                                 .collect(Collectors.toList());

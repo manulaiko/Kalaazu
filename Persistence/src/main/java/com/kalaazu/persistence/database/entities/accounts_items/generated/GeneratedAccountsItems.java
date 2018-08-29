@@ -5,6 +5,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -80,7 +81,7 @@ public interface GeneratedAccountsItems {
     ComparableField<AccountsItems, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsItems::date,
-            AccountsItems::date,
+            (ReferenceSetter<AccountsItems, Timestamp>) AccountsItems::date,
             TypeMapper.identity(),
             false
     );

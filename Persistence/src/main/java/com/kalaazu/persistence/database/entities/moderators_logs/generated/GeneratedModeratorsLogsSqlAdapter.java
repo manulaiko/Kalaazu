@@ -46,11 +46,11 @@ public abstract class GeneratedModeratorsLogsSqlAdapter {
     protected ModeratorsLogs apply(ResultSet resultSet) throws SpeedmentException {
         final ModeratorsLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setModeratorsId(resultSet.getByte(2));
-            entity.setDate(resultSet.getTimestamp(3));
-            entity.setType(resultSet.getString(4));
-            entity.setText(resultSet.getString(5));
+            entity.id(resultSet.getInt(1));
+            entity.moderatorsId(resultSet.getByte(2));
+            entity.date(resultSet.getTimestamp(3));
+            entity.type(resultSet.getString(4));
+            entity.text(resultSet.getString(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

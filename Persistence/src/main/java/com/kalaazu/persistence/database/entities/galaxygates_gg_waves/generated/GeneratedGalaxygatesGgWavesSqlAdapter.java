@@ -46,9 +46,9 @@ public abstract class GeneratedGalaxygatesGgWavesSqlAdapter {
     protected GalaxygatesGgWaves apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesGgWaves entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setGalaxygatesId(resultSet.getByte(2));
-            entity.setGalaxygatesWavesId(resultSet.getByte(3));
+            entity.id(resultSet.getShort(1));
+            entity.galaxygatesId(resultSet.getByte(2));
+            entity.galaxygatesWavesId(resultSet.getByte(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

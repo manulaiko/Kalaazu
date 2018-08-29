@@ -46,10 +46,10 @@ public abstract class GeneratedModeratorsSqlAdapter {
     protected Moderators apply(ResultSet resultSet) throws SpeedmentException {
         final Moderators entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setModeratorsRolesId(resultSet.getByte(3));
-            entity.setDate(resultSet.getTimestamp(4));
+            entity.id(resultSet.getByte(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.moderatorsRolesId(resultSet.getByte(3));
+            entity.date(resultSet.getTimestamp(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

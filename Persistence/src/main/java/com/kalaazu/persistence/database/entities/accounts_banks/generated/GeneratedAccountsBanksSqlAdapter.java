@@ -46,12 +46,12 @@ public abstract class GeneratedAccountsBanksSqlAdapter {
     protected AccountsBanks apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsBanks entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setCredits(resultSet.getLong(3));
-            entity.setUridium(resultSet.getLong(4));
-            entity.setTaxCredits(resultSet.getByte(5));
-            entity.setTaxUridium(resultSet.getByte(6));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.credits(resultSet.getLong(3));
+            entity.uridium(resultSet.getLong(4));
+            entity.taxCredits(resultSet.getByte(5));
+            entity.taxUridium(resultSet.getByte(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

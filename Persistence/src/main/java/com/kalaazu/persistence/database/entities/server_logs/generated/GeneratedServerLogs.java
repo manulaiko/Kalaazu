@@ -7,6 +7,7 @@ import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -26,60 +27,60 @@ public interface GeneratedServerLogs {
 
     /**
      * This Field corresponds to the {@link ServerLogs} field that can be
-     * obtained using the {@link ServerLogs#getId()} method.
+     * obtained using the {@link ServerLogs#id()} method.
      */
     IntField<ServerLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            ServerLogs::getId,
-            ServerLogs::setId,
+            ServerLogs::id,
+            ServerLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ServerLogs} field that can be
-     * obtained using the {@link ServerLogs#getDate()} method.
+     * obtained using the {@link ServerLogs#date()} method.
      */
     ComparableField<ServerLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ServerLogs::getDate,
-            ServerLogs::setDate,
+            ServerLogs::date,
+            (ReferenceSetter<ServerLogs, Timestamp>) ServerLogs::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ServerLogs} field that can be
-     * obtained using the {@link ServerLogs#getLevel()} method.
+     * obtained using the {@link ServerLogs#level()} method.
      */
     StringField<ServerLogs, String> LEVEL = StringField.create(
             Identifier.LEVEL,
-            ServerLogs::getLevel,
-            ServerLogs::setLevel,
+            ServerLogs::level,
+            ServerLogs::level,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ServerLogs} field that can be
-     * obtained using the {@link ServerLogs#getType()} method.
+     * obtained using the {@link ServerLogs#type()} method.
      */
     StringField<ServerLogs, String> TYPE = StringField.create(
             Identifier.TYPE,
-            ServerLogs::getType,
-            ServerLogs::setType,
+            ServerLogs::type,
+            ServerLogs::type,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ServerLogs} field that can be
-     * obtained using the {@link ServerLogs#getContext()} method.
+     * obtained using the {@link ServerLogs#context()} method.
      */
     StringField<ServerLogs, String> CONTEXT = StringField.create(
             Identifier.CONTEXT,
-            ServerLogs::getContext,
-            ServerLogs::setContext,
+            ServerLogs::context,
+            ServerLogs::context,
             TypeMapper.identity(),
             false
     );
@@ -90,7 +91,7 @@ public interface GeneratedServerLogs {
      *
      * @return the id of this ServerLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the date of this ServerLogs. The date field corresponds to the
@@ -98,7 +99,7 @@ public interface GeneratedServerLogs {
      *
      * @return the date of this ServerLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the level of this ServerLogs. The level field corresponds to the
@@ -106,7 +107,7 @@ public interface GeneratedServerLogs {
      *
      * @return the level of this ServerLogs
      */
-    String getLevel();
+    String level();
 
     /**
      * Returns the type of this ServerLogs. The type field corresponds to the
@@ -114,7 +115,7 @@ public interface GeneratedServerLogs {
      *
      * @return the type of this ServerLogs
      */
-    String getType();
+    String type();
 
     /**
      * Returns the context of this ServerLogs. The context field corresponds to
@@ -122,7 +123,7 @@ public interface GeneratedServerLogs {
      *
      * @return the context of this ServerLogs
      */
-    String getContext();
+    String context();
 
     /**
      * Sets the id of this ServerLogs. The id field corresponds to the database
@@ -132,7 +133,7 @@ public interface GeneratedServerLogs {
      *
      * @return this ServerLogs instance
      */
-    ServerLogs setId(int id);
+    ServerLogs id(Integer id);
 
     /**
      * Sets the date of this ServerLogs. The date field corresponds to the
@@ -142,7 +143,7 @@ public interface GeneratedServerLogs {
      *
      * @return this ServerLogs instance
      */
-    ServerLogs setDate(Timestamp date);
+    ServerLogs date(Timestamp date);
 
     /**
      * Sets the level of this ServerLogs. The level field corresponds to the
@@ -152,7 +153,7 @@ public interface GeneratedServerLogs {
      *
      * @return this ServerLogs instance
      */
-    ServerLogs setLevel(String level);
+    ServerLogs level(String level);
 
     /**
      * Sets the type of this ServerLogs. The type field corresponds to the
@@ -162,7 +163,7 @@ public interface GeneratedServerLogs {
      *
      * @return this ServerLogs instance
      */
-    ServerLogs setType(String type);
+    ServerLogs type(String type);
 
     /**
      * Sets the context of this ServerLogs. The context field corresponds to the
@@ -172,7 +173,7 @@ public interface GeneratedServerLogs {
      *
      * @return this ServerLogs instance
      */
-    ServerLogs setContext(String context);
+    ServerLogs context(String context);
 
     enum Identifier implements ColumnIdentifier<ServerLogs> {
 

@@ -22,7 +22,7 @@ public class DeleteHandler extends Handler {
         var type   = (Class<? extends Entity>) Class.forName(entity);
         var insert = data.mapTo(type);
 
-        Database.getInstance()
+        Database.instance()
                 .delete(insert);
 
         super.reply(JsonObject.mapFrom(true));

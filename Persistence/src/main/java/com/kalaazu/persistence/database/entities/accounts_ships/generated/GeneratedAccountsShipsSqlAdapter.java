@@ -52,14 +52,14 @@ public abstract class GeneratedAccountsShipsSqlAdapter {
     protected AccountsShips apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsShips entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setShipsId(resultSet.getByte(3));
-            entity.setMapsId(resultSet.getByte(4));
-            entity.setPosition(positionHelper.apply(resultSet.getLong(5)));
-            entity.setHealth(resultSet.getInt(6));
-            entity.setNanohull(resultSet.getInt(7));
-            entity.setGfx(resultSet.getByte(8));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.shipsId(resultSet.getByte(3));
+            entity.mapsId(resultSet.getByte(4));
+            entity.position(positionHelper.apply(resultSet.getLong(5)));
+            entity.health(resultSet.getInt(6));
+            entity.nanohull(resultSet.getInt(7));
+            entity.gfx(resultSet.getByte(8));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -46,10 +46,10 @@ public abstract class GeneratedMapsNpcsSqlAdapter {
     protected MapsNpcs apply(ResultSet resultSet) throws SpeedmentException {
         final MapsNpcs entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setMapsId(resultSet.getByte(2));
-            entity.setNpcsId(resultSet.getByte(3));
-            entity.setAmount(resultSet.getByte(4));
+            entity.id(resultSet.getByte(1));
+            entity.mapsId(resultSet.getByte(2));
+            entity.npcsId(resultSet.getByte(3));
+            entity.amount(resultSet.getByte(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

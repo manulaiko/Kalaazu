@@ -46,11 +46,11 @@ public abstract class GeneratedLevelsUpgradesSqlAdapter {
     protected LevelsUpgrades apply(ResultSet resultSet) throws SpeedmentException {
         final LevelsUpgrades entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setLevelsId(resultSet.getByte(2));
-            entity.setProbability(resultSet.getByte(3));
-            entity.setCredits(resultSet.getInt(4));
-            entity.setUridium(resultSet.getShort(5));
+            entity.id(resultSet.getInt(1));
+            entity.levelsId(resultSet.getByte(2));
+            entity.probability(resultSet.getByte(3));
+            entity.credits(resultSet.getInt(4));
+            entity.uridium(resultSet.getShort(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

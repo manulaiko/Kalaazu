@@ -42,7 +42,7 @@ public final class ModeratorsImpl
             return this.logs;
         }
 
-        this.logs = Database.getInstance()
+        this.logs = Database.instance()
                             .all(ModeratorsLogs.class)
                             .filter(ModeratorsLogs.MODERATORS_ID.equal(super.id()))
                             .collect(Collectors.toList());
@@ -57,7 +57,7 @@ public final class ModeratorsImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -72,7 +72,7 @@ public final class ModeratorsImpl
         }
 
         this.role = super.findModeratorsRolesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(ModeratorsRoles.class)
         );

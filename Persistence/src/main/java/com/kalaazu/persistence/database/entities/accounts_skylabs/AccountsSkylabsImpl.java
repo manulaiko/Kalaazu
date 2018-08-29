@@ -40,7 +40,7 @@ public final class AccountsSkylabsImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -55,7 +55,7 @@ public final class AccountsSkylabsImpl
         }
 
         this.module = super.findSkylabModulesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(SkylabModules.class)
         );
@@ -70,7 +70,7 @@ public final class AccountsSkylabsImpl
         }
 
         this.level = super.findLevelsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Levels.class)
         );

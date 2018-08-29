@@ -21,7 +21,7 @@ public class FindHandler extends Handler {
 
         var type = (Class<? extends Entity>) Class.forName(entity);
 
-        var r = Database.getInstance()
+        var r = Database.instance()
                         .find(id, type);
 
         super.reply(JsonObject.mapFrom(r));

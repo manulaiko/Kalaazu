@@ -35,7 +35,7 @@ public final class RewardsCollectablesImpl
         }
 
         this.reward = super.findRewardsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Rewards.class)
         );
@@ -50,7 +50,7 @@ public final class RewardsCollectablesImpl
         }
 
         this.collectable = super.findCollectablesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Quests.class)
         );

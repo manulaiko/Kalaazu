@@ -46,9 +46,9 @@ public abstract class GeneratedInvitationCodesSqlAdapter {
     protected InvitationCodes apply(ResultSet resultSet) throws SpeedmentException {
         final InvitationCodes entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setCode(resultSet.getString(2));
-            entity.setLimit(resultSet.getByte(3));
+            entity.id(resultSet.getShort(1));
+            entity.code(resultSet.getString(2));
+            entity.limit(resultSet.getByte(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

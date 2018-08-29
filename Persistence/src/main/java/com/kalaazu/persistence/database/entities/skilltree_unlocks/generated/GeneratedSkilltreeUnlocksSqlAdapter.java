@@ -46,9 +46,9 @@ public abstract class GeneratedSkilltreeUnlocksSqlAdapter {
     protected SkilltreeUnlocks apply(ResultSet resultSet) throws SpeedmentException {
         final SkilltreeUnlocks entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setUpgradeSkilltreeLevelsId(resultSet.getShort(2));
-            entity.setRequiredSkilltreeLevelsId(resultSet.getShort(3));
+            entity.id(resultSet.getShort(1));
+            entity.upgradeSkilltreeLevelsId(resultSet.getShort(2));
+            entity.requiredSkilltreeLevelsId(resultSet.getShort(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

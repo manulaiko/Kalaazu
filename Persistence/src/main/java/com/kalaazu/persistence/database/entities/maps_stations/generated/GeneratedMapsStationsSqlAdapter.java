@@ -53,10 +53,10 @@ public abstract class GeneratedMapsStationsSqlAdapter {
     protected MapsStations apply(ResultSet resultSet) throws SpeedmentException {
         final MapsStations entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setPosition(positionHelper.apply(resultSet.getLong(2)));
-            entity.setMapsId(getByte(resultSet, 3));
-            entity.setFactionsId(getByte(resultSet, 4));
+            entity.id(resultSet.getByte(1));
+            entity.position(positionHelper.apply(resultSet.getLong(2)));
+            entity.mapsId(getByte(resultSet, 3));
+            entity.factionsId(getByte(resultSet, 4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

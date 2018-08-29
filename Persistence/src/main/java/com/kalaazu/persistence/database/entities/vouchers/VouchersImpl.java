@@ -37,7 +37,7 @@ public final class VouchersImpl
             return this.redeemLogs;
         }
 
-        this.redeemLogs = Database.getInstance()
+        this.redeemLogs = Database.instance()
                                   .all(VouchersRedeemLogs.class)
                                   .filter(VouchersRedeemLogs.VOUCHERS_ID.equal(super.id()))
                                   .collect(Collectors.toList());
@@ -51,7 +51,7 @@ public final class VouchersImpl
             return this.rewards;
         }
 
-        this.rewards = Database.getInstance()
+        this.rewards = Database.instance()
                                .all(RewardsVouchers.class)
                                .filter(RewardsVouchers.VOUCHERS_ID.equal(super.id()))
                                .map(RewardsVouchers::reward)

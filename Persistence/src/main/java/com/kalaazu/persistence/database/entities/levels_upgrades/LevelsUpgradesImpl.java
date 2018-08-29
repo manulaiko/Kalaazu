@@ -28,7 +28,7 @@ public final class LevelsUpgradesImpl
         }
 
         this.level = super.findLevelsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Levels.class)
         );

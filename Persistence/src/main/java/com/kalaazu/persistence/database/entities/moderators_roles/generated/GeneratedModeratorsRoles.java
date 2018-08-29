@@ -8,6 +8,7 @@ import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ByteField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.util.Optional;
@@ -56,7 +57,7 @@ public interface GeneratedModeratorsRoles {
     ComparableField<ModeratorsRoles, Byte, Byte> MODERATORS_ROLES_ID = ComparableField.create(
             Identifier.MODERATORS_ROLES_ID,
             o -> OptionalUtil.unwrap(o.moderatorsRolesId()),
-            ModeratorsRoles::moderatorsRolesId,
+            (ReferenceSetter<ModeratorsRoles, Byte>) ModeratorsRoles::moderatorsRolesId,
             TypeMapper.identity(),
             false
     );

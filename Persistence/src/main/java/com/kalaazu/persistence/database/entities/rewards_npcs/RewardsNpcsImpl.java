@@ -34,7 +34,7 @@ public final class RewardsNpcsImpl
         }
 
         this.reward = super.findRewardsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Rewards.class)
         );
@@ -49,7 +49,7 @@ public final class RewardsNpcsImpl
         }
 
         this.npc = super.findNpcsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Npcs.class)
         );

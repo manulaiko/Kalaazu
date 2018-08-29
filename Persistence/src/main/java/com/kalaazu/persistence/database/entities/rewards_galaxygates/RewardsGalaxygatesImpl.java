@@ -34,7 +34,7 @@ public final class RewardsGalaxygatesImpl
         }
 
         this.reward = super.findRewardsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Rewards.class)
         );
@@ -49,7 +49,7 @@ public final class RewardsGalaxygatesImpl
         }
 
         this.galaxyGate = super.findGalaxygatesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Galaxygates.class)
         );

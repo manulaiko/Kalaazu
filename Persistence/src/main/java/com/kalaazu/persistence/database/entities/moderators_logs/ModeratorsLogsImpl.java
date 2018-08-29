@@ -28,7 +28,7 @@ public final class ModeratorsLogsImpl
         }
 
         this.moderator = super.findModeratorsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Moderators.class)
         );

@@ -45,12 +45,12 @@ public abstract class GeneratedLevelsSqlAdapter {
     protected Levels apply(ResultSet resultSet) throws SpeedmentException {
         final Levels entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setAccount(resultSet.getLong(2));
-            entity.setDrone(resultSet.getShort(3));
-            entity.setPet(resultSet.getInt(4));
-            entity.setDamage(resultSet.getDouble(5));
-            entity.setShield(resultSet.getDouble(6));
+            entity.id(resultSet.getByte(1));
+            entity.account(resultSet.getLong(2));
+            entity.drone(resultSet.getShort(3));
+            entity.pet(resultSet.getInt(4));
+            entity.damage(resultSet.getDouble(5));
+            entity.shield(resultSet.getDouble(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -38,7 +38,7 @@ public final class GalaxygatesStagesImpl
         }
 
         this.wave = super.findGalaxygatesWavesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(GalaxygatesWaves.class)
         );
@@ -52,7 +52,7 @@ public final class GalaxygatesStagesImpl
             return this.spawns;
         }
 
-        this.spawns = Database.getInstance()
+        this.spawns = Database.instance()
                               .all(GalaxygatesStagesSpawns.class)
                               .filter(GalaxygatesStagesSpawns.GALAXYGATES_STAGES_ID.equal(super.id()))
                               .map(GalaxygatesStagesSpawns::spawn)

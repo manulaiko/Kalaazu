@@ -46,10 +46,10 @@ public abstract class GeneratedAccountsSkillsSqlAdapter {
     protected AccountsSkills apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsSkills entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setSkilltreeSkillsId(resultSet.getByte(3));
-            entity.setSkilltreeLevelsId(resultSet.getShort(4));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.skilltreeSkillsId(resultSet.getByte(3));
+            entity.skilltreeLevelsId(resultSet.getShort(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

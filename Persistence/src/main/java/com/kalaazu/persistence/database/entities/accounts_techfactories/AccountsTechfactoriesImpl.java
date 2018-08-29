@@ -28,7 +28,7 @@ public final class AccountsTechfactoriesImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );

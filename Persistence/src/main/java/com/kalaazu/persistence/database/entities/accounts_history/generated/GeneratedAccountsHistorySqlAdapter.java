@@ -46,12 +46,12 @@ public abstract class GeneratedAccountsHistorySqlAdapter {
     protected AccountsHistory apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsHistory entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setType(resultSet.getByte(3));
-            entity.setMessage(resultSet.getString(4));
-            entity.setAmount(resultSet.getInt(5));
-            entity.setDate(resultSet.getTimestamp(6));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.type(resultSet.getByte(3));
+            entity.message(resultSet.getString(4));
+            entity.amount(resultSet.getInt(5));
+            entity.date(resultSet.getTimestamp(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

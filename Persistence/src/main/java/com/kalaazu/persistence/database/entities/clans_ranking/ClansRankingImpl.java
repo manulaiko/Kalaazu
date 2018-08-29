@@ -28,7 +28,7 @@ public final class ClansRankingImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );

@@ -30,7 +30,7 @@ public final class TechfactoryItemsImpl
             return this.costs;
         }
 
-        this.costs = Database.getInstance()
+        this.costs = Database.instance()
                              .all(TechfactoryCosts.class)
                              .filter(TechfactoryCosts.TECHFACTORY_ITEMS_ID.equal(super.id()))
                              .collect(Collectors.toList());

@@ -11,6 +11,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -140,7 +141,7 @@ public interface GeneratedClansMessages {
     ComparableField<ClansMessages, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             ClansMessages::date,
-            ClansMessages::date,
+            (ReferenceSetter<ClansMessages, Timestamp>) ClansMessages::date,
             TypeMapper.identity(),
             false
     );

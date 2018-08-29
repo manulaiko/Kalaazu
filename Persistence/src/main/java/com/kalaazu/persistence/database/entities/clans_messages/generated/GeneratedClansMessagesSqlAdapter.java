@@ -55,15 +55,15 @@ public abstract class GeneratedClansMessagesSqlAdapter {
     protected ClansMessages apply(ResultSet resultSet) throws SpeedmentException {
         final ClansMessages entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansId(resultSet.getInt(2));
-            entity.setFromAccountsId(resultSet.getInt(3));
-            entity.setFromStatus(fromStatusHelper.apply(resultSet.getByte(4)));
-            entity.setToAccountsId(getInt(resultSet, 5));
-            entity.setToStatus(toStatusHelper.apply(resultSet.getByte(6)));
-            entity.setTitle(resultSet.getString(7));
-            entity.setText(resultSet.getString(8));
-            entity.setDate(resultSet.getTimestamp(9));
+            entity.id(resultSet.getInt(1));
+            entity.clansId(resultSet.getInt(2));
+            entity.fromAccountsId(resultSet.getInt(3));
+            entity.fromStatus(fromStatusHelper.apply(resultSet.getByte(4)));
+            entity.toAccountsId(getInt(resultSet, 5));
+            entity.toStatus(toStatusHelper.apply(resultSet.getByte(6)));
+            entity.title(resultSet.getString(7));
+            entity.text(resultSet.getString(8));
+            entity.date(resultSet.getTimestamp(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

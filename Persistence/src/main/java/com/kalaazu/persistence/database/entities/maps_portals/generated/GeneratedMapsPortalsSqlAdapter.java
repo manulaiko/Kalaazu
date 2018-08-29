@@ -58,15 +58,15 @@ public abstract class GeneratedMapsPortalsSqlAdapter {
     protected MapsPortals apply(ResultSet resultSet) throws SpeedmentException {
         final MapsPortals entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setLevelsId(resultSet.getByte(2));
-            entity.setMapsId(resultSet.getByte(3));
-            entity.setPosition(positionHelper.apply(resultSet.getLong(4)));
-            entity.setTargetMapsId(resultSet.getByte(5));
-            entity.setTargetPosition(targetPositionHelper.apply(resultSet.getLong(6)));
-            entity.setIsVisible(isVisibleHelper.apply(resultSet.getInt(7)));
-            entity.setIsWorking(isWorkingHelper.apply(resultSet.getInt(8)));
-            entity.setGfx(resultSet.getByte(9));
+            entity.id(resultSet.getByte(1));
+            entity.levelsId(resultSet.getByte(2));
+            entity.mapsId(resultSet.getByte(3));
+            entity.position(positionHelper.apply(resultSet.getLong(4)));
+            entity.targetMapsId(resultSet.getByte(5));
+            entity.targetPosition(targetPositionHelper.apply(resultSet.getLong(6)));
+            entity.isVisible(isVisibleHelper.apply(resultSet.getInt(7)));
+            entity.isWorking(isWorkingHelper.apply(resultSet.getInt(8)));
+            entity.gfx(resultSet.getByte(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

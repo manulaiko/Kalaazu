@@ -47,11 +47,11 @@ public abstract class GeneratedQuestsSqlAdapter {
     protected Quests apply(ResultSet resultSet) throws SpeedmentException {
         final Quests entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setLevelsId(resultSet.getByte(2));
-            entity.setQuestsId(getShort(resultSet, 3));
-            entity.setFactionsId(getByte(resultSet, 4));
-            entity.setName(resultSet.getString(5));
+            entity.id(resultSet.getShort(1));
+            entity.levelsId(resultSet.getByte(2));
+            entity.questsId(getShort(resultSet, 3));
+            entity.factionsId(getByte(resultSet, 4));
+            entity.name(resultSet.getString(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

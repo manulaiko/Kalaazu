@@ -47,12 +47,12 @@ public class RegisterHandler extends Handler {
             return;
         }
 
-        var u = Database.getInstance()
+        var u = Database.instance()
                         .all(Users.class)
                         .filter(i -> (
-                                i.getName()
+                                i.name()
                                  .equalsIgnoreCase(username) ||
-                                i.getEmail()
+                                i.email()
                                  .equalsIgnoreCase(email)
                         ))
                         .findFirst();
@@ -71,11 +71,11 @@ public class RegisterHandler extends Handler {
         }
 
 
-        var user = this.addUser(username, password, email, ip, code.getId());
+        var user = this.addUser(username, password, email, ip, code.id());
 
         var json = new JsonObject();
-        json.put("usersId", user.getId())
-            .put("name", user.getName())
+        json.put("usersId", user.id())
+            .put("name", user.name())
             .put("factionsId", factionsID);
 
         Vertx.currentContext()
@@ -107,16 +107,16 @@ public class RegisterHandler extends Handler {
      * @return Code's ID.
      */
     private InvitationCodes findInvitationCode(String invitationCode, String ip) {
-        var code = Database.getInstance()
+        var code = Database.instance()
                            .find(InvitationCodes.CODE, invitationCode, InvitationCodes.class);
 
         code.ifPresent(c -> {
-            var redeems = Database.getInstance()
+            var redeems = Database.instance()
                                   .all(InvitationCodesRedeemLogs.class)
-                                  .filter(InvitationCodesRedeemLogs.INVITATION_CODES_ID.equal(c.getId()))
+                                  .filter(InvitationCodesRedeemLogs.INVITATION_CODES_ID.equal(c.id()))
                                   .count();
 
-            if (c.getLimit() >= 0 && redeems >= c.getLimit()) {
+            if (c.limit() >= 0 && redeems >= c.limit()) {
                 //noinspection UnusedAssignment
                 c = InvitationCodes.INVALID_CODE;
 
@@ -124,10 +124,10 @@ public class RegisterHandler extends Handler {
             }
 
             var log = new InvitationCodesRedeemLogsImpl();
-            log.setInvitationCodesId(c.getId())
-               .setIp(ip);
+            log.invitationCodesId(c.id())
+               .ip(ip);
 
-            Database.getInstance()
+            Database.instance()
                     .create(log, InvitationCodesRedeemLogs.class);
         });
 
@@ -149,16 +149,16 @@ public class RegisterHandler extends Handler {
         var user = new UsersImpl();
 
         if (invitationCodeId > 0) {
-            user.setInvitationCodesId(invitationCodeId);
+            user.invitationCodesId(invitationCodeId);
         }
 
-        user.setName(username)
-            .setPassword(StringUtils.hash(password))
-            .setEmail(email)
-            .setEmailVerificationCode(StringUtils.random(32))
-            .setIp(ip);
+        user.name(username)
+            .password(StringUtils.hash(password))
+            .email(email)
+            .emailVerificationCode(StringUtils.random(32))
+            .ip(ip);
 
-        return Database.getInstance()
+        return Database.instance()
                        .create(user, Users.class);
     }
 }

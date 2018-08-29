@@ -34,7 +34,7 @@ public final class GalaxygatesStagesSpawnsImpl
         }
 
         this.stage = super.findGalaxygatesStagesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(GalaxygatesStages.class)
         );
@@ -49,7 +49,7 @@ public final class GalaxygatesStagesSpawnsImpl
         }
 
         this.spawn = super.findGalaxygatesSpawnsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(GalaxygatesSpawns.class)
         );

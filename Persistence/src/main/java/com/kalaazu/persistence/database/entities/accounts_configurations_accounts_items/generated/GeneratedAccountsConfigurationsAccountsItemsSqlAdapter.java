@@ -47,11 +47,11 @@ public abstract class GeneratedAccountsConfigurationsAccountsItemsSqlAdapter {
     protected AccountsConfigurationsAccountsItems apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsConfigurationsAccountsItems entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsConfigurationsId(resultSet.getInt(2));
-            entity.setAccountsItemsId(resultSet.getInt(3));
-            entity.setAccountsDronesId(getInt(resultSet, 4));
-            entity.setAccountsPetsId(getInt(resultSet, 5));
+            entity.id(resultSet.getInt(1));
+            entity.accountsConfigurationsId(resultSet.getInt(2));
+            entity.accountsItemsId(resultSet.getInt(3));
+            entity.accountsDronesId(getInt(resultSet, 4));
+            entity.accountsPetsId(getInt(resultSet, 5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

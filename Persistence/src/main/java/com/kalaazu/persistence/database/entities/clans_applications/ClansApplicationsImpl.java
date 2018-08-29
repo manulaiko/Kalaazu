@@ -34,7 +34,7 @@ public final class ClansApplicationsImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -49,7 +49,7 @@ public final class ClansApplicationsImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );

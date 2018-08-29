@@ -33,7 +33,7 @@ public final class ClansDiplomaciesImpl
         }
 
         this.author = super.findFromClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -48,7 +48,7 @@ public final class ClansDiplomaciesImpl
         }
 
         this.destination = super.findToClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );

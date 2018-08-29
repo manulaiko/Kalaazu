@@ -7,10 +7,7 @@ import com.speedment.runtime.core.component.transaction.TransactionComponent;
 import com.speedment.runtime.core.component.transaction.TransactionHandler;
 import com.speedment.runtime.field.ComparableField;
 import io.vertx.core.json.JsonArray;
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Data;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Optional;
 import java.util.function.Consumer;
@@ -36,17 +33,9 @@ public class Database {
     /**
      * Database instance.
      */
+    @Getter
+    @Setter
     private static Database instance;
-
-    //<editor-fold desc="Getters and Setters">
-    public static Database getInstance() {
-        return instance;
-    }
-
-    public static void setInstance(Database instance) {
-        Database.instance = instance;
-    }
-    //</editor-fold>
 
     ///////////////////////////////////////
     // Non static methods and properties //

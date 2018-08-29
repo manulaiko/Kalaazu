@@ -46,10 +46,10 @@ public abstract class GeneratedGalaxygatesWavesSqlAdapter {
     protected GalaxygatesWaves apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesWaves entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setMapsId(resultSet.getByte(2));
-            entity.setSeconds(resultSet.getByte(3));
-            entity.setNpcs(resultSet.getByte(4));
+            entity.id(resultSet.getByte(1));
+            entity.mapsId(resultSet.getByte(2));
+            entity.seconds(resultSet.getByte(3));
+            entity.npcs(resultSet.getByte(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

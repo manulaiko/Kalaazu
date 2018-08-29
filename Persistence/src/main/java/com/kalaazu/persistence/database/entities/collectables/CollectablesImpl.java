@@ -31,7 +31,7 @@ public final class CollectablesImpl
             return this.rewards;
         }
 
-        this.rewards = Database.getInstance()
+        this.rewards = Database.instance()
                                .all(RewardsCollectables.class)
                                .filter(RewardsCollectables.COLLECTABLES_ID.equal(super.id()))
                                .map(RewardsCollectables::reward)

@@ -46,16 +46,16 @@ public abstract class GeneratedSkylabModulesSqlAdapter {
     protected SkylabModules apply(ResultSet resultSet) throws SpeedmentException {
         final SkylabModules entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setProductionFactor(resultSet.getByte(3));
-            entity.setProductionBase(resultSet.getShort(4));
-            entity.setStorageFactor(resultSet.getShort(5));
-            entity.setStorageBase(resultSet.getShort(6));
-            entity.setUpgradeFactor(resultSet.getByte(7));
-            entity.setUpgradeBase(resultSet.getShort(8));
-            entity.setEnergyFactor(resultSet.getByte(9));
-            entity.setEnergyBase(resultSet.getByte(10));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.productionFactor(resultSet.getByte(3));
+            entity.productionBase(resultSet.getShort(4));
+            entity.storageFactor(resultSet.getShort(5));
+            entity.storageBase(resultSet.getShort(6));
+            entity.upgradeFactor(resultSet.getByte(7));
+            entity.upgradeBase(resultSet.getShort(8));
+            entity.energyFactor(resultSet.getByte(9));
+            entity.energyBase(resultSet.getByte(10));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

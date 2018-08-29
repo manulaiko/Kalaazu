@@ -42,7 +42,7 @@ public final class AccountsHangarsImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -57,7 +57,7 @@ public final class AccountsHangarsImpl
         }
 
         this.ship = super.findAccountsShipsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsShips.class)
         );
@@ -71,8 +71,8 @@ public final class AccountsHangarsImpl
             return this.configuration;
         }
 
-        this.configuration = Database.getInstance()
-                                     .find(super.getAccountsConfigurationsId()
+        this.configuration = Database.instance()
+                                     .find(super.accountsConfigurationsId()
                                                 .orElse(0), AccountsConfigurations.class);
 
         return this.configuration;

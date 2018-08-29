@@ -45,15 +45,15 @@ public abstract class GeneratedNpcsSqlAdapter {
     protected Npcs apply(ResultSet resultSet) throws SpeedmentException {
         final Npcs entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setHealth(resultSet.getInt(3));
-            entity.setShield(resultSet.getInt(4));
-            entity.setShieldAbsorption(resultSet.getByte(5));
-            entity.setDamage(resultSet.getInt(6));
-            entity.setSpeed(resultSet.getShort(7));
-            entity.setGfx(resultSet.getByte(8));
-            entity.setAi(resultSet.getByte(9));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.health(resultSet.getInt(3));
+            entity.shield(resultSet.getInt(4));
+            entity.shieldAbsorption(resultSet.getByte(5));
+            entity.damage(resultSet.getInt(6));
+            entity.speed(resultSet.getShort(7));
+            entity.gfx(resultSet.getByte(8));
+            entity.ai(resultSet.getByte(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

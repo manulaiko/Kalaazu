@@ -8,6 +8,7 @@ import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.util.OptionalInt;
@@ -69,7 +70,7 @@ public interface GeneratedClansRoles {
     ComparableField<ClansRoles, Integer, Integer> CLANS_ROLES_ID = ComparableField.create(
             Identifier.CLANS_ROLES_ID,
             o -> OptionalUtil.unwrap(o.clansRolesId()),
-            ClansRoles::clansRolesId,
+            (ReferenceSetter<ClansRoles, Integer>) ClansRoles::clansRolesId,
             TypeMapper.identity(),
             false
     );

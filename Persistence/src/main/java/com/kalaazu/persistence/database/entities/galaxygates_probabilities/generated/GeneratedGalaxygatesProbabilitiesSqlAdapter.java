@@ -52,10 +52,10 @@ public abstract class GeneratedGalaxygatesProbabilitiesSqlAdapter {
     protected GalaxygatesProbabilities apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesProbabilities entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setGalaxygatesId(resultSet.getByte(2));
-            entity.setType(typeHelper.apply(resultSet.getByte(3)));
-            entity.setProbability(resultSet.getDouble(4));
+            entity.id(resultSet.getByte(1));
+            entity.galaxygatesId(resultSet.getByte(2));
+            entity.type(typeHelper.apply(resultSet.getByte(3)));
+            entity.probability(resultSet.getDouble(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

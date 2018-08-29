@@ -46,11 +46,11 @@ public abstract class GeneratedAccountsDronesSqlAdapter {
     protected AccountsDrones apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsDrones entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setLevelsId(resultSet.getByte(3));
-            entity.setExperience(resultSet.getShort(4));
-            entity.setDate(resultSet.getTimestamp(5));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.levelsId(resultSet.getByte(3));
+            entity.experience(resultSet.getShort(4));
+            entity.date(resultSet.getTimestamp(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

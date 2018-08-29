@@ -46,11 +46,11 @@ public abstract class GeneratedAccountsDestroysSqlAdapter {
     protected AccountsDestroys apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsDestroys entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setShipsId(resultSet.getByte(3));
-            entity.setPoints(resultSet.getShort(4));
-            entity.setAmount(resultSet.getShort(5));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.shipsId(resultSet.getByte(3));
+            entity.points(resultSet.getShort(4));
+            entity.amount(resultSet.getShort(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

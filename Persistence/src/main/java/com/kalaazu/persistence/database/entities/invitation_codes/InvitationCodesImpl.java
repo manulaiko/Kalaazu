@@ -30,7 +30,7 @@ public final class InvitationCodesImpl
             return this.logs;
         }
 
-        this.logs = Database.getInstance()
+        this.logs = Database.instance()
                             .all(InvitationCodesRedeemLogs.class)
                             .filter(InvitationCodesRedeemLogs.INVITATION_CODES_ID.equal(super.id()))
                             .collect(Collectors.toList());

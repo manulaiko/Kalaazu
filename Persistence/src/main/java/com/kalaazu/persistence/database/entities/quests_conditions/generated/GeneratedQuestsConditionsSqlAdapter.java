@@ -53,11 +53,11 @@ public abstract class GeneratedQuestsConditionsSqlAdapter {
     protected QuestsConditions apply(ResultSet resultSet) throws SpeedmentException {
         final QuestsConditions entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setQuestsConditionsId(getInt(resultSet, 2));
-            entity.setQuestsId(resultSet.getShort(3));
-            entity.setType(typeHelper.apply(resultSet.getByte(4)));
-            entity.setValue(resultSet.getString(5));
+            entity.id(resultSet.getInt(1));
+            entity.questsConditionsId(getInt(resultSet, 2));
+            entity.questsId(resultSet.getShort(3));
+            entity.type(typeHelper.apply(resultSet.getByte(4)));
+            entity.value(resultSet.getString(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

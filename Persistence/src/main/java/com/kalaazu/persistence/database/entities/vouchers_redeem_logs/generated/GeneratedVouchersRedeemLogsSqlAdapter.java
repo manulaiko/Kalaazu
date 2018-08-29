@@ -46,10 +46,10 @@ public abstract class GeneratedVouchersRedeemLogsSqlAdapter {
     protected VouchersRedeemLogs apply(ResultSet resultSet) throws SpeedmentException {
         final VouchersRedeemLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setVouchersId(resultSet.getShort(2));
-            entity.setAccountsId(resultSet.getInt(3));
-            entity.setDate(resultSet.getTimestamp(4));
+            entity.id(resultSet.getInt(1));
+            entity.vouchersId(resultSet.getShort(2));
+            entity.accountsId(resultSet.getInt(3));
+            entity.date(resultSet.getTimestamp(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

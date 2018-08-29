@@ -46,12 +46,12 @@ public abstract class GeneratedAccountsSkylabsSqlAdapter {
     protected AccountsSkylabs apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsSkylabs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setSkylabModulesId(resultSet.getByte(3));
-            entity.setLevelsId(resultSet.getByte(4));
-            entity.setSpace(resultSet.getInt(5));
-            entity.setUpgrade(resultSet.getTimestamp(6));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.skylabModulesId(resultSet.getByte(3));
+            entity.levelsId(resultSet.getByte(4));
+            entity.space(resultSet.getInt(5));
+            entity.upgrade(resultSet.getTimestamp(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

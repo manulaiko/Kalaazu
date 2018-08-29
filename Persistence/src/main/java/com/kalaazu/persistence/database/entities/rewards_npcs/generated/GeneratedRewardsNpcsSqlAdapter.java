@@ -46,9 +46,9 @@ public abstract class GeneratedRewardsNpcsSqlAdapter {
     protected RewardsNpcs apply(ResultSet resultSet) throws SpeedmentException {
         final RewardsNpcs entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setNpcsId(resultSet.getByte(2));
-            entity.setRewardsId(resultSet.getShort(3));
+            entity.id(resultSet.getShort(1));
+            entity.npcsId(resultSet.getByte(2));
+            entity.rewardsId(resultSet.getShort(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

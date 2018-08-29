@@ -40,7 +40,7 @@ public final class AccountsItemsImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -55,7 +55,7 @@ public final class AccountsItemsImpl
         }
 
         this.item = super.findItemsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Items.class)
         );
@@ -70,7 +70,7 @@ public final class AccountsItemsImpl
         }
 
         this.level = super.findLevelsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Levels.class)
         );

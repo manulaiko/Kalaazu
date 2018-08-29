@@ -8,6 +8,7 @@ import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.config.identifier.ColumnIdentifier;
 import com.speedment.runtime.config.identifier.TableIdentifier;
 import com.speedment.runtime.field.*;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 import com.speedment.runtime.typemapper.integer.PrimitiveIntegerZeroOneToBooleanMapper;
 
@@ -83,7 +84,7 @@ public interface GeneratedAccountsQuests {
     ComparableField<AccountsQuests, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
             AccountsQuests::date,
-            AccountsQuests::date,
+            (ReferenceSetter<AccountsQuests, Timestamp>) AccountsQuests::date,
             TypeMapper.identity(),
             false
     );

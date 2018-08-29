@@ -46,10 +46,10 @@ public abstract class GeneratedClansRankingSqlAdapter {
     protected ClansRanking apply(ResultSet resultSet) throws SpeedmentException {
         final ClansRanking entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansId(resultSet.getInt(2));
-            entity.setPoints(resultSet.getInt(3));
-            entity.setBestPoints(resultSet.getInt(4));
+            entity.id(resultSet.getInt(1));
+            entity.clansId(resultSet.getInt(2));
+            entity.points(resultSet.getInt(3));
+            entity.bestPoints(resultSet.getInt(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

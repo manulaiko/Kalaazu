@@ -46,9 +46,9 @@ public abstract class GeneratedPermissionsSqlAdapter {
     protected Permissions apply(ResultSet resultSet) throws SpeedmentException {
         final Permissions entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setCategory(resultSet.getString(3));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.category(resultSet.getString(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

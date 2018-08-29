@@ -56,15 +56,15 @@ public abstract class GeneratedFactionsSqlAdapter {
     protected Factions apply(ResultSet resultSet) throws SpeedmentException {
         final Factions entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setTag(resultSet.getString(3));
-            entity.setDescription(resultSet.getString(4));
-            entity.setIsPublic(isPublicHelper.apply(resultSet.getInt(5)));
-            entity.setLowMapsId(resultSet.getByte(6));
-            entity.setLowMapsPosition(lowMapsPositionHelper.apply(resultSet.getLong(7)));
-            entity.setHighMapsId(resultSet.getByte(8));
-            entity.setHighMapsPosition(highMapsPositionHelper.apply(resultSet.getLong(9)));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.tag(resultSet.getString(3));
+            entity.description(resultSet.getString(4));
+            entity.isPublic(isPublicHelper.apply(resultSet.getInt(5)));
+            entity.lowMapsId(resultSet.getByte(6));
+            entity.lowMapsPosition(lowMapsPositionHelper.apply(resultSet.getLong(7)));
+            entity.highMapsId(resultSet.getByte(8));
+            entity.highMapsPosition(highMapsPositionHelper.apply(resultSet.getLong(9)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -34,7 +34,7 @@ public final class GalaxygatesGgSpinsImpl
         }
 
         this.galaxygate = this.findGalaxygatesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Galaxygates.class)
         );
@@ -49,7 +49,7 @@ public final class GalaxygatesGgSpinsImpl
         }
 
         this.spin = super.findGalaxygatesSpinsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(GalaxygatesSpins.class)
         );

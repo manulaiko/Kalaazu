@@ -54,14 +54,14 @@ public abstract class GeneratedAccountsMessagesSqlAdapter {
     protected AccountsMessages apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsMessages entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setFromAccountsId(resultSet.getInt(2));
-            entity.setFromStatus(fromStatusHelper.apply(resultSet.getByte(3)));
-            entity.setToAccountsId(resultSet.getInt(4));
-            entity.setToStatus(toStatusHelper.apply(resultSet.getByte(5)));
-            entity.setDate(resultSet.getTimestamp(6));
-            entity.setTitle(resultSet.getString(7));
-            entity.setText(resultSet.getString(8));
+            entity.id(resultSet.getInt(1));
+            entity.fromAccountsId(resultSet.getInt(2));
+            entity.fromStatus(fromStatusHelper.apply(resultSet.getByte(3)));
+            entity.toAccountsId(resultSet.getInt(4));
+            entity.toStatus(toStatusHelper.apply(resultSet.getByte(5)));
+            entity.date(resultSet.getTimestamp(6));
+            entity.title(resultSet.getString(7));
+            entity.text(resultSet.getString(8));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

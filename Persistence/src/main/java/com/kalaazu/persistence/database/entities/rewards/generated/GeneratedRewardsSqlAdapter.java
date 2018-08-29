@@ -45,11 +45,11 @@ public abstract class GeneratedRewardsSqlAdapter {
     protected Rewards apply(ResultSet resultSet) throws SpeedmentException {
         final Rewards entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setItemsId(resultSet.getShort(2));
-            entity.setAmount(resultSet.getInt(3));
-            entity.setProbability(resultSet.getDouble(4));
-            entity.setComment(resultSet.getString(5));
+            entity.id(resultSet.getShort(1));
+            entity.itemsId(resultSet.getShort(2));
+            entity.amount(resultSet.getInt(3));
+            entity.probability(resultSet.getDouble(4));
+            entity.comment(resultSet.getString(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -44,7 +44,7 @@ public class CreateAccountHandler extends Handler {
         int    usersID    = super.get("usersId");
         byte   factionsID = super.get("factionsId");
 
-        var u = Database.getInstance()
+        var u = Database.instance()
                         .find(usersID, Users.class);
 
         if (!u.isPresent()) {
@@ -68,7 +68,7 @@ public class CreateAccountHandler extends Handler {
 
         super.reply(
                 new JsonObject().put("isError", false)
-                                .put("sessionId", account.getSessionId())
+                                .put("sessionId", account.sessionId())
         );
     }
 
@@ -79,9 +79,9 @@ public class CreateAccountHandler extends Handler {
      */
     private void addTechfactories(Accounts account) {
         var techfactory = new AccountsTechfactoriesImpl();
-        techfactory.setAccountsId(account.getId());
+        techfactory.accountsId(account.id());
 
-        Database.getInstance()
+        Database.instance()
                 .create(techfactory, AccountsTechfactories.class);
     }
 
@@ -92,9 +92,9 @@ public class CreateAccountHandler extends Handler {
      */
     private void addRanking(Accounts account) {
         var ranking = new AccountsRankingsImpl();
-        ranking.setAccountsId(account.getId());
+        ranking.accountsId(account.id());
 
-        Database.getInstance()
+        Database.instance()
                 .create(ranking, AccountsRankings.class);
     }
 
@@ -104,15 +104,15 @@ public class CreateAccountHandler extends Handler {
      * @param account New account.
      */
     private void addGalaxyGates(Accounts account) {
-        var gates = Database.getInstance()
+        var gates = Database.instance()
                             .all(Galaxygates.class);
 
         gates.forEach(gg -> {
             var gate = new AccountsGalaxygatesImpl();
-            gate.setAccountsId(account.getId())
-                .setGalaxygatesId(gg.getId());
+            gate.accountsId(account.id())
+                .galaxygatesId(gg.id());
 
-            Database.getInstance()
+            Database.instance()
                     .create(gate, AccountsGalaxygates.class);
         });
     }
@@ -124,9 +124,9 @@ public class CreateAccountHandler extends Handler {
      */
     private void addBank(Accounts account) {
         var bank = new AccountsBanksImpl();
-        bank.setAccountsId(account.getId());
+        bank.accountsId(account.id());
 
-        Database.getInstance()
+        Database.instance()
                 .create(bank, AccountsBanks.class);
     }
 
@@ -145,12 +145,12 @@ public class CreateAccountHandler extends Handler {
      */
     private void addMessage(Accounts account) {
         var message = new AccountsMessagesImpl();
-        message.setToStatus(MessageStatus.UNREAD)
-               .setToAccountsId(account.getId())
-               .setFromAccountsId(1) // System
-               .setFromStatus(MessageStatus.DELETED)
-               .setTitle("Welcome to Kalaazu!")
-               .setText(
+        message.toStatus(MessageStatus.UNREAD)
+               .toAccountsId(account.id())
+               .fromAccountsId(1) // System
+               .fromStatus(MessageStatus.DELETED)
+               .title("Welcome to Kalaazu!")
+               .text(
                        "Hello space pilot!\n" +
                        "\n" +
                        "Welcome to Kalaazu, the next generation of private servers.\n" +
@@ -159,7 +159,7 @@ public class CreateAccountHandler extends Handler {
                        "-Kalaazu dev. team."
                );
 
-        Database.getInstance()
+        Database.instance()
                 .create(message, AccountsMessages.class);
     }
 
@@ -176,31 +176,31 @@ public class CreateAccountHandler extends Handler {
         var configurations = new ArrayList<AccountsConfigurations>();
 
         configurations.add(
-                new AccountsConfigurationsImpl().setConfigurationId((byte) 1)
-                                                .setName("Configuration 1")
-                                                .setAccountsHangarsId(hangar.getId())
+                new AccountsConfigurationsImpl().configurationId((byte) 1)
+                                                .name("Configuration 1")
+                                                .accountsHangarsId(hangar.id())
         );
         configurations.add(
-                new AccountsConfigurationsImpl().setConfigurationId((byte) 2)
-                                                .setName("Configuration 2")
-                                                .setAccountsHangarsId(hangar.getId())
+                new AccountsConfigurationsImpl().configurationId((byte) 2)
+                                                .name("Configuration 2")
+                                                .accountsHangarsId(hangar.id())
         );
 
         configurations.forEach(c -> {
-            c = Database.getInstance()
+            c = Database.instance()
                         .create(c, AccountsConfigurations.class);
 
             for (AccountsItems i: items) {
                 var cItem = new AccountsConfigurationsAccountsItemsImpl();
-                cItem.setAccountsConfigurationsId(c.getId())
-                     .setAccountsItemsId(i.getId());
+                cItem.accountsConfigurationsId(c.id())
+                     .accountsItemsId(i.id());
 
                 if (
-                        i.getItemsId() == 164 ||
-                        i.getItemsId() == 109 ||
-                        i.getItemsId() == 121
+                        i.itemsId() == 164 ||
+                        i.itemsId() == 109 ||
+                        i.itemsId() == 121
                 ) {
-                    Database.getInstance()
+                    Database.instance()
                             .create(cItem, AccountsConfigurationsAccountsItems.class);
                 }
             }
@@ -218,21 +218,21 @@ public class CreateAccountHandler extends Handler {
      * @return Created ship.
      */
     private AccountsShips addShip(Accounts account) {
-        var phoenix = Database.getInstance()
+        var phoenix = Database.instance()
                               .find(1, Ships.class)
                               .orElse(new ShipsImpl());
         var faction = account.faction()
                              .orElse(new FactionsImpl());
         var ship = new AccountsShipsImpl();
 
-        ship.setAccountsId(account.getId())
-            .setGfx(phoenix.getGfx())
-            .setHealth(phoenix.getHealth())
-            .setShipsId(phoenix.getId())
-            .setMapsId(faction.getLowMapsId())
-            .setPosition(faction.getLowMapsPosition());
+        ship.accountsId(account.id())
+            .gfx(phoenix.gfx())
+            .health(phoenix.health())
+            .shipsId(phoenix.id())
+            .mapsId(faction.lowMapsId())
+            .position(faction.lowMapsPosition());
 
-        return Database.getInstance()
+        return Database.instance()
                        .create(ship, AccountsShips.class);
     }
 
@@ -245,11 +245,11 @@ public class CreateAccountHandler extends Handler {
      */
     private AccountsHangars addHangar(Accounts account, AccountsShips ship) {
         var hangar = new AccountsHangarsImpl();
-        hangar.setAccountsId(account.getId())
-              .setName("HANGAR")
-              .setAccountsShipsId(ship.getId());
+        hangar.accountsId(account.id())
+              .name("HANGAR")
+              .accountsShipsId(ship.id());
 
-        return Database.getInstance()
+        return Database.instance()
                        .create(hangar, AccountsHangars.class);
     }
 
@@ -263,78 +263,78 @@ public class CreateAccountHandler extends Handler {
 
         // credits
         items.add(
-                new AccountsItemsImpl().setAmount(100_000)
-                                       .setItemsId((short) 1)
+                new AccountsItemsImpl().amount(100_000)
+                                       .itemsId((short) 1)
         );
 
         // uridium
         items.add(
-                new AccountsItemsImpl().setAmount(30_000)
-                                       .setItemsId((short) 2)
+                new AccountsItemsImpl().amount(30_000)
+                                       .itemsId((short) 2)
         );
 
         // jackpot
         items.add(
-                new AccountsItemsImpl().setAmount(0)
-                                       .setItemsId((short) 3)
+                new AccountsItemsImpl().amount(0)
+                                       .itemsId((short) 3)
         );
 
         // experience
         items.add(
-                new AccountsItemsImpl().setAmount(0)
-                                       .setItemsId((short) 4)
+                new AccountsItemsImpl().amount(0)
+                                       .itemsId((short) 4)
         );
 
         // honor
         items.add(
-                new AccountsItemsImpl().setAmount(0)
-                                       .setItemsId((short) 5)
+                new AccountsItemsImpl().amount(0)
+                                       .itemsId((short) 5)
         );
 
         // jump voucher
         items.add(
-                new AccountsItemsImpl().setAmount(0)
-                                       .setItemsId((short) 6)
+                new AccountsItemsImpl().amount(0)
+                                       .itemsId((short) 6)
         );
 
         // repair voucher
         items.add(
-                new AccountsItemsImpl().setAmount(10)
-                                       .setItemsId((short) 7)
+                new AccountsItemsImpl().amount(10)
+                                       .itemsId((short) 7)
         );
 
         // galaxygate voucher
         items.add(
-                new AccountsItemsImpl().setAmount(100)
-                                       .setItemsId((short) 8)
+                new AccountsItemsImpl().amount(100)
+                                       .itemsId((short) 8)
         );
 
         // logfiles
         items.add(
-                new AccountsItemsImpl().setAmount(30)
-                                       .setItemsId((short) 173)
+                new AccountsItemsImpl().amount(30)
+                                       .itemsId((short) 173)
         );
 
         // a weapon
         items.add(
-                new AccountsItemsImpl().setItemsId((short) 121)
+                new AccountsItemsImpl().itemsId((short) 121)
         );
 
         // a shield
         items.add(
-                new AccountsItemsImpl().setItemsId((short) 109)
+                new AccountsItemsImpl().itemsId((short) 109)
         );
 
         // a repair bot
         items.add(
-                new AccountsItemsImpl().setItemsId((short) 164)
+                new AccountsItemsImpl().itemsId((short) 164)
         );
 
         items.forEach(i -> {
-            i.setAccountsId(account.getId())
-             .setLevelsId((byte) 1);
+            i.accountsId(account.id())
+             .levelsId((byte) 1);
 
-            Database.getInstance()
+            Database.instance()
                     .create(i, AccountsItems.class);
         });
 
@@ -353,14 +353,14 @@ public class CreateAccountHandler extends Handler {
     private Accounts addAccount(Users user, String name, byte factionsID) {
         var account = new AccountsImpl();
 
-        account.setUsersId(user.getId())
-               .setName(name)
-               .setFactionsId(factionsID)
-               .setLevelsId((byte) 1)
-               .setRanksId((byte) 1)
-               .setSessionId(StringUtils.sessionId());
+        account.usersId(user.id())
+               .name(name)
+               .factionsId(factionsID)
+               .levelsId((byte) 1)
+               .ranksId((byte) 1)
+               .sessionId(StringUtils.sessionId());
 
-        return Database.getInstance()
+        return Database.instance()
                        .create(account, Accounts.class);
     }
 }

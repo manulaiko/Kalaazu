@@ -54,14 +54,14 @@ public abstract class GeneratedSkilltreeSkillsSqlAdapter {
     protected SkilltreeSkills apply(ResultSet resultSet) throws SpeedmentException {
         final SkilltreeSkills entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setDescription(resultSet.getString(3));
-            entity.setType(typeHelper.apply(resultSet.getByte(4)));
-            entity.setIsAdvanced(isAdvancedHelper.apply(resultSet.getInt(5)));
-            entity.setBonusType(resultSet.getString(6));
-            entity.setBonusAmount(resultSet.getInt(7));
-            entity.setBonusFactor(resultSet.getByte(8));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.description(resultSet.getString(3));
+            entity.type(typeHelper.apply(resultSet.getByte(4)));
+            entity.isAdvanced(isAdvancedHelper.apply(resultSet.getInt(5)));
+            entity.bonusType(resultSet.getString(6));
+            entity.bonusAmount(resultSet.getInt(7));
+            entity.bonusFactor(resultSet.getByte(8));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

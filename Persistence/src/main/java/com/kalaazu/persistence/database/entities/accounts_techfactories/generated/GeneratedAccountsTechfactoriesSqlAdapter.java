@@ -46,11 +46,11 @@ public abstract class GeneratedAccountsTechfactoriesSqlAdapter {
     protected AccountsTechfactories apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsTechfactories entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setSlotUnlockPrice(resultSet.getInt(3));
-            entity.setSlotUnlockFactor(resultSet.getByte(4));
-            entity.setSlots(resultSet.getByte(5));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.slotUnlockPrice(resultSet.getInt(3));
+            entity.slotUnlockFactor(resultSet.getByte(4));
+            entity.slots(resultSet.getByte(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

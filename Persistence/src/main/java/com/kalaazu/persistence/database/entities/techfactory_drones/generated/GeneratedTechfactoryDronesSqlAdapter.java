@@ -46,13 +46,13 @@ public abstract class GeneratedTechfactoryDronesSqlAdapter {
     protected TechfactoryDrones apply(ResultSet resultSet) throws SpeedmentException {
         final TechfactoryDrones entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setDescription(resultSet.getString(3));
-            entity.setTime(resultSet.getByte(4));
-            entity.setParts(resultSet.getByte(5));
-            entity.setPrice(resultSet.getInt(6));
-            entity.setFactor(resultSet.getByte(7));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.description(resultSet.getString(3));
+            entity.time(resultSet.getByte(4));
+            entity.parts(resultSet.getByte(5));
+            entity.price(resultSet.getInt(6));
+            entity.factor(resultSet.getByte(7));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

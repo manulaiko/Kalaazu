@@ -37,7 +37,7 @@ public final class ClansBanksImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -51,7 +51,7 @@ public final class ClansBanksImpl
             return this.logs;
         }
 
-        this.logs = Database.getInstance()
+        this.logs = Database.instance()
                             .all(ClansBanksLogs.class)
                             .filter(ClansBanksLogs.CLANS_BANKS_ID.equal(super.id()))
                             .collect(Collectors.toList());

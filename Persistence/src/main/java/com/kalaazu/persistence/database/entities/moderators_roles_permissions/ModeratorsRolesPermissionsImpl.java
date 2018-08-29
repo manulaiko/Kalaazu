@@ -34,7 +34,7 @@ public final class ModeratorsRolesPermissionsImpl
         }
 
         this.role = super.findModeratorsRolesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(ModeratorsRoles.class)
         );
@@ -49,7 +49,7 @@ public final class ModeratorsRolesPermissionsImpl
         }
 
         this.permission = super.findPermissionsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Permissions.class)
         );

@@ -34,7 +34,7 @@ public final class AccountsDestroysImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -48,7 +48,7 @@ public final class AccountsDestroysImpl
             return this.ship;
         }
 
-        this.ship = Database.getInstance()
+        this.ship = Database.instance()
                             .find(super.shipsId(), Ships.class)
                             .orElse(null);
 

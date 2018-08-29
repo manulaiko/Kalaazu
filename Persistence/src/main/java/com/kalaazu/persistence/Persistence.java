@@ -72,7 +72,7 @@ public class Persistence extends AbstractVerticle {
                          .build();
 
         db.initialize();
-        Database.setInstance(db);
+        Database.instance(db);
 
         Persistence.logger.info("Initializing event listener...");
         var listener = new EventListener();

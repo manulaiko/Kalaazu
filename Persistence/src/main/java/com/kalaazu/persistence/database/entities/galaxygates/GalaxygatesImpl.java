@@ -46,7 +46,7 @@ public final class GalaxygatesImpl
         }
 
         this.wave = super.findGalaxygatesWavesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(GalaxygatesWaves.class)
         );
@@ -60,7 +60,7 @@ public final class GalaxygatesImpl
             return this.waves;
         }
 
-        this.waves = Database.getInstance()
+        this.waves = Database.instance()
                              .all(GalaxygatesGgWaves.class)
                              .filter(GalaxygatesGgWaves.GALAXYGATES_ID.equal(super.id()))
                              .map(GalaxygatesGgWaves::wave)
@@ -75,7 +75,7 @@ public final class GalaxygatesImpl
             return this.spins;
         }
 
-        this.spins = Database.getInstance()
+        this.spins = Database.instance()
                              .all(GalaxygatesGgSpins.class)
                              .filter(GalaxygatesGgSpins.GALAXYGATES_ID.equal(super.id()))
                              .map(GalaxygatesGgSpins::spin)
@@ -90,7 +90,7 @@ public final class GalaxygatesImpl
             return this.probabilities;
         }
 
-        this.probabilities = Database.getInstance()
+        this.probabilities = Database.instance()
                                      .all(GalaxygatesProbabilities.class)
                                      .filter(GalaxygatesProbabilities.GALAXYGATES_ID.equal(super.id()))
                                      .collect(Collectors.toList());

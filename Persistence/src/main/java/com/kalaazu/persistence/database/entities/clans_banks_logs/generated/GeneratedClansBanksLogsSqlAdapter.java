@@ -55,14 +55,14 @@ public abstract class GeneratedClansBanksLogsSqlAdapter {
     protected ClansBanksLogs apply(ResultSet resultSet) throws SpeedmentException {
         final ClansBanksLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setClansBanksId(resultSet.getInt(2));
-            entity.setFromAccountsId(resultSet.getInt(3));
-            entity.setToAccountsId(resultSet.getInt(4));
-            entity.setDate(resultSet.getTimestamp(5));
-            entity.setType(typeHelper.apply(resultSet.getByte(6)));
-            entity.setAmount(resultSet.getInt(7));
-            entity.setCurrency(currencyHelper.apply(resultSet.getByte(8)));
+            entity.id(resultSet.getInt(1));
+            entity.clansBanksId(resultSet.getInt(2));
+            entity.fromAccountsId(resultSet.getInt(3));
+            entity.toAccountsId(resultSet.getInt(4));
+            entity.date(resultSet.getTimestamp(5));
+            entity.type(typeHelper.apply(resultSet.getByte(6)));
+            entity.amount(resultSet.getInt(7));
+            entity.currency(currencyHelper.apply(resultSet.getByte(8)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

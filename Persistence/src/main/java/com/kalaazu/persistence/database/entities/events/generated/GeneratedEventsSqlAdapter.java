@@ -45,11 +45,11 @@ public abstract class GeneratedEventsSqlAdapter {
     protected Events apply(ResultSet resultSet) throws SpeedmentException {
         final Events entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setName(resultSet.getString(2));
-            entity.setDescription(resultSet.getString(3));
-            entity.setStartDate(resultSet.getTimestamp(4));
-            entity.setEndDate(resultSet.getTimestamp(5));
+            entity.id(resultSet.getInt(1));
+            entity.name(resultSet.getString(2));
+            entity.description(resultSet.getString(3));
+            entity.startDate(resultSet.getTimestamp(4));
+            entity.endDate(resultSet.getTimestamp(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

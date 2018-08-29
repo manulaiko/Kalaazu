@@ -46,10 +46,10 @@ public abstract class GeneratedTechfactoryCostsSqlAdapter {
     protected TechfactoryCosts apply(ResultSet resultSet) throws SpeedmentException {
         final TechfactoryCosts entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setTechfactoryItemsId(resultSet.getByte(2));
-            entity.setItemsId(resultSet.getShort(3));
-            entity.setAmount(resultSet.getInt(4));
+            entity.id(resultSet.getByte(1));
+            entity.techfactoryItemsId(resultSet.getByte(2));
+            entity.itemsId(resultSet.getShort(3));
+            entity.amount(resultSet.getInt(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -46,13 +46,13 @@ public abstract class GeneratedAccountsGalaxygatesSqlAdapter {
     protected AccountsGalaxygates apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsGalaxygates entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setGalaxygatesId(resultSet.getByte(2));
-            entity.setAccountsId(resultSet.getInt(3));
-            entity.setParts(resultSet.getByte(4));
-            entity.setLifes(resultSet.getByte(5));
-            entity.setWave(resultSet.getByte(6));
-            entity.setTimes(resultSet.getShort(7));
+            entity.id(resultSet.getInt(1));
+            entity.galaxygatesId(resultSet.getByte(2));
+            entity.accountsId(resultSet.getInt(3));
+            entity.parts(resultSet.getByte(4));
+            entity.lifes(resultSet.getByte(5));
+            entity.wave(resultSet.getByte(6));
+            entity.times(resultSet.getShort(7));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

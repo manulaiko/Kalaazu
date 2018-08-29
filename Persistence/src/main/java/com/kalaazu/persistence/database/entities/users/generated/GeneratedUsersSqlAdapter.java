@@ -46,15 +46,15 @@ public abstract class GeneratedUsersSqlAdapter {
     protected Users apply(ResultSet resultSet) throws SpeedmentException {
         final Users entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setDate(resultSet.getTimestamp(2));
-            entity.setInvitationCodesId(getShort(resultSet, 3));
-            entity.setName(resultSet.getString(4));
-            entity.setPassword(resultSet.getString(5));
-            entity.setEmail(resultSet.getString(6));
-            entity.setEmailVerificationCode(resultSet.getString(7));
-            entity.setEmailVerificationDate(resultSet.getTimestamp(8));
-            entity.setIp(resultSet.getString(9));
+            entity.id(resultSet.getInt(1));
+            entity.date(resultSet.getTimestamp(2));
+            entity.invitationCodesId(getShort(resultSet, 3));
+            entity.name(resultSet.getString(4));
+            entity.password(resultSet.getString(5));
+            entity.email(resultSet.getString(6));
+            entity.emailVerificationCode(resultSet.getString(7));
+            entity.emailVerificationDate(resultSet.getTimestamp(8));
+            entity.ip(resultSet.getString(9));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -45,18 +45,18 @@ public abstract class GeneratedShipsSqlAdapter {
     protected Ships apply(ResultSet resultSet) throws SpeedmentException {
         final Ships entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setItemsId(resultSet.getShort(2));
-            entity.setHealth(resultSet.getInt(3));
-            entity.setSpeed(resultSet.getShort(4));
-            entity.setCargo(resultSet.getShort(5));
-            entity.setBatteries(resultSet.getShort(6));
-            entity.setRockets(resultSet.getShort(7));
-            entity.setLasers(resultSet.getByte(8));
-            entity.setHellstorms(resultSet.getByte(9));
-            entity.setGenerators(resultSet.getByte(10));
-            entity.setExtras(resultSet.getByte(11));
-            entity.setGfx(resultSet.getByte(12));
+            entity.id(resultSet.getByte(1));
+            entity.itemsId(resultSet.getShort(2));
+            entity.health(resultSet.getInt(3));
+            entity.speed(resultSet.getShort(4));
+            entity.cargo(resultSet.getShort(5));
+            entity.batteries(resultSet.getShort(6));
+            entity.rockets(resultSet.getShort(7));
+            entity.lasers(resultSet.getByte(8));
+            entity.hellstorms(resultSet.getByte(9));
+            entity.generators(resultSet.getByte(10));
+            entity.extras(resultSet.getByte(11));
+            entity.gfx(resultSet.getByte(12));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

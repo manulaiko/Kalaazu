@@ -35,7 +35,7 @@ public final class QuestsConditionsImpl
         }
 
         this.condition = super.findQuestsConditionsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(QuestsConditions.class)
         );
@@ -50,7 +50,7 @@ public final class QuestsConditionsImpl
         }
 
         this.quest = super.findQuestsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Quests.class)
         );

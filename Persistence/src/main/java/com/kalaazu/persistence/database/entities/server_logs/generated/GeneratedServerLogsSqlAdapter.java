@@ -46,11 +46,11 @@ public abstract class GeneratedServerLogsSqlAdapter {
     protected ServerLogs apply(ResultSet resultSet) throws SpeedmentException {
         final ServerLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setDate(resultSet.getTimestamp(2));
-            entity.setLevel(resultSet.getString(3));
-            entity.setType(resultSet.getString(4));
-            entity.setContext(resultSet.getString(5));
+            entity.id(resultSet.getInt(1));
+            entity.date(resultSet.getTimestamp(2));
+            entity.level(resultSet.getString(3));
+            entity.type(resultSet.getString(4));
+            entity.context(resultSet.getString(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

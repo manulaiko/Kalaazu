@@ -46,10 +46,10 @@ public abstract class GeneratedInvitationCodesRedeemLogsSqlAdapter {
     protected InvitationCodesRedeemLogs apply(ResultSet resultSet) throws SpeedmentException {
         final InvitationCodesRedeemLogs entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setInvitationCodesId(resultSet.getShort(2));
-            entity.setIp(resultSet.getString(3));
-            entity.setDate(resultSet.getTimestamp(4));
+            entity.id(resultSet.getInt(1));
+            entity.invitationCodesId(resultSet.getShort(2));
+            entity.ip(resultSet.getString(3));
+            entity.date(resultSet.getTimestamp(4));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

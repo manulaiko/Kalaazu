@@ -37,7 +37,7 @@ public final class GalaxygatesWavesImpl
         }
 
         this.map = super.findMapsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Maps.class)
         );
@@ -51,7 +51,7 @@ public final class GalaxygatesWavesImpl
             return this.stages;
         }
 
-        this.stages = Database.getInstance()
+        this.stages = Database.instance()
                               .all(GalaxygatesStages.class)
                               .filter(GalaxygatesStages.GALAXYGATES_WAVES_ID.equal(super.id()))
                               .collect(Collectors.toList());

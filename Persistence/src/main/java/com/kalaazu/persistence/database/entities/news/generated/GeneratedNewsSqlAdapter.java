@@ -45,12 +45,12 @@ public abstract class GeneratedNewsSqlAdapter {
     protected News apply(ResultSet resultSet) throws SpeedmentException {
         final News entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setDate(resultSet.getTimestamp(2));
-            entity.setImage(resultSet.getString(3));
-            entity.setTitle(resultSet.getString(4));
-            entity.setTeaser(resultSet.getString(5));
-            entity.setText(resultSet.getString(6));
+            entity.id(resultSet.getShort(1));
+            entity.date(resultSet.getTimestamp(2));
+            entity.image(resultSet.getString(3));
+            entity.title(resultSet.getString(4));
+            entity.teaser(resultSet.getString(5));
+            entity.text(resultSet.getString(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

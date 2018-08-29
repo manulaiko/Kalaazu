@@ -53,12 +53,12 @@ public abstract class GeneratedMapsSqlAdapter {
     protected Maps apply(ResultSet resultSet) throws SpeedmentException {
         final Maps entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setName(resultSet.getString(2));
-            entity.setFactionsId(getByte(resultSet, 3));
-            entity.setIsPvp(isPvpHelper.apply(resultSet.getInt(4)));
-            entity.setIsStarter(isStarterHelper.apply(resultSet.getInt(5)));
-            entity.setLimits(resultSet.getLong(6));
+            entity.id(resultSet.getByte(1));
+            entity.name(resultSet.getString(2));
+            entity.factionsId(getByte(resultSet, 3));
+            entity.isPvp(isPvpHelper.apply(resultSet.getInt(4)));
+            entity.isStarter(isStarterHelper.apply(resultSet.getInt(5)));
+            entity.limits(resultSet.getLong(6));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

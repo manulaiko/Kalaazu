@@ -41,7 +41,7 @@ public final class ClansMessagesImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -56,7 +56,7 @@ public final class ClansMessagesImpl
         }
 
         this.author = super.findFromAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -71,7 +71,7 @@ public final class ClansMessagesImpl
         }
 
         this.destination = super.findToAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );

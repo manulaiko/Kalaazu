@@ -36,7 +36,7 @@ public final class ModeratorsRolesImpl
             return this.role;
         }
 
-        this.role = Database.getInstance()
+        this.role = Database.instance()
                             .find(super.moderatorsRolesId()
                                        .orElse((byte) 0), ModeratorsRoles.class);
 
@@ -49,7 +49,7 @@ public final class ModeratorsRolesImpl
             return this.permissions;
         }
 
-        this.permissions = Database.getInstance()
+        this.permissions = Database.instance()
                                    .all(ModeratorsRolesPermissions.class)
                                    .filter(ModeratorsRolesPermissions.MODERATORS_ROLES_ID.equal(super.id()))
                                    .collect(Collectors.toList());

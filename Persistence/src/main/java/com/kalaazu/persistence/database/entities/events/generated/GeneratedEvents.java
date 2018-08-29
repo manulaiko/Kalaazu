@@ -8,6 +8,7 @@ import com.speedment.runtime.core.util.OptionalUtil;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -69,7 +70,7 @@ public interface GeneratedEvents {
     ComparableField<Events, Timestamp, Timestamp> START_DATE = ComparableField.create(
             Identifier.START_DATE,
             o -> OptionalUtil.unwrap(o.startDate()),
-            Events::startDate,
+            (ReferenceSetter<Events, Timestamp>) Events::startDate,
             TypeMapper.identity(),
             false
     );
@@ -81,7 +82,7 @@ public interface GeneratedEvents {
     ComparableField<Events, Timestamp, Timestamp> END_DATE = ComparableField.create(
             Identifier.END_DATE,
             o -> OptionalUtil.unwrap(o.endDate()),
-            Events::endDate,
+            (ReferenceSetter<Events, Timestamp>) Events::endDate,
             TypeMapper.identity(),
             false
     );

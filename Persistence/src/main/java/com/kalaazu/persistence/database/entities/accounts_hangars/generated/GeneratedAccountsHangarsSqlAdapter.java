@@ -48,13 +48,13 @@ public abstract class GeneratedAccountsHangarsSqlAdapter {
     protected AccountsHangars apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsHangars entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setAccountsShipsId(getInt(resultSet, 3));
-            entity.setAccountsConfigurationsId(getInt(resultSet, 4));
-            entity.setName(resultSet.getString(5));
-            entity.setPriority(getByte(resultSet, 6));
-            entity.setDate(resultSet.getTimestamp(7));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.accountsShipsId(getInt(resultSet, 3));
+            entity.accountsConfigurationsId(getInt(resultSet, 4));
+            entity.name(resultSet.getString(5));
+            entity.priority(getByte(resultSet, 6));
+            entity.date(resultSet.getTimestamp(7));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

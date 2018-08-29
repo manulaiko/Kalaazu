@@ -51,11 +51,11 @@ public abstract class GeneratedAccountsQuestsSqlAdapter {
     protected AccountsQuests apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsQuests entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setQuestsId(resultSet.getShort(2));
-            entity.setAccountsId(resultSet.getInt(3));
-            entity.setIsCompleted(isCompletedHelper.apply(resultSet.getInt(4)));
-            entity.setDate(resultSet.getTimestamp(5));
+            entity.id(resultSet.getInt(1));
+            entity.questsId(resultSet.getShort(2));
+            entity.accountsId(resultSet.getInt(3));
+            entity.isCompleted(isCompletedHelper.apply(resultSet.getInt(4)));
+            entity.date(resultSet.getTimestamp(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

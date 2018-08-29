@@ -37,7 +37,7 @@ public final class AccountsBanksImpl
         }
 
         this.account = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -51,7 +51,7 @@ public final class AccountsBanksImpl
             return this.logs;
         }
 
-        this.logs = Database.getInstance()
+        this.logs = Database.instance()
                             .all(AccountsBanksLogs.class)
                             .filter(AccountsBanksLogs.ACCOUNTS_BANKS_ID.equal(super.id()))
                             .collect(Collectors.toList());

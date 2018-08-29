@@ -52,11 +52,11 @@ public abstract class GeneratedGalaxygatesSpinsSqlAdapter {
     protected GalaxygatesSpins apply(ResultSet resultSet) throws SpeedmentException {
         final GalaxygatesSpins entity = createEntity();
         try {
-            entity.setId(resultSet.getByte(1));
-            entity.setType(typeHelper.apply(resultSet.getByte(2)));
-            entity.setProbability(resultSet.getDouble(3));
-            entity.setItemsId(resultSet.getShort(4));
-            entity.setAmount(resultSet.getShort(5));
+            entity.id(resultSet.getByte(1));
+            entity.type(typeHelper.apply(resultSet.getByte(2)));
+            entity.probability(resultSet.getDouble(3));
+            entity.itemsId(resultSet.getShort(4));
+            entity.amount(resultSet.getShort(5));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

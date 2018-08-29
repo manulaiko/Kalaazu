@@ -60,15 +60,15 @@ public abstract class GeneratedItemsSqlAdapter {
     protected Items apply(ResultSet resultSet) throws SpeedmentException {
         final Items entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setName(resultSet.getString(2));
-            entity.setCategory(categoryHelper.apply(resultSet.getByte(3)));
-            entity.setDescription(resultSet.getString(4));
-            entity.setPrice(resultSet.getInt(5));
-            entity.setType(typeHelper.apply(resultSet.getByte(6)));
-            entity.setIsElite(isEliteHelper.apply(resultSet.getInt(7)));
-            entity.setIsEvent(isEventHelper.apply(resultSet.getInt(8)));
-            entity.setIsBuyable(isBuyableHelper.apply(resultSet.getInt(9)));
+            entity.id(resultSet.getShort(1));
+            entity.name(resultSet.getString(2));
+            entity.category(categoryHelper.apply(resultSet.getByte(3)));
+            entity.description(resultSet.getString(4));
+            entity.price(resultSet.getInt(5));
+            entity.type(typeHelper.apply(resultSet.getByte(6)));
+            entity.isElite(isEliteHelper.apply(resultSet.getInt(7)));
+            entity.isEvent(isEventHelper.apply(resultSet.getInt(8)));
+            entity.isBuyable(isBuyableHelper.apply(resultSet.getInt(9)));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

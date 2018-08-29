@@ -46,9 +46,9 @@ public abstract class GeneratedAccountsClansRolesSqlAdapter {
     protected AccountsClansRoles apply(ResultSet resultSet) throws SpeedmentException {
         final AccountsClansRoles entity = createEntity();
         try {
-            entity.setId(resultSet.getInt(1));
-            entity.setAccountsId(resultSet.getInt(2));
-            entity.setClansRolesId(resultSet.getInt(3));
+            entity.id(resultSet.getInt(1));
+            entity.accountsId(resultSet.getInt(2));
+            entity.clansRolesId(resultSet.getInt(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

@@ -31,7 +31,7 @@ public final class NpcsImpl
             return this.rewards;
         }
 
-        this.rewards = Database.getInstance()
+        this.rewards = Database.instance()
                                .all(RewardsNpcs.class)
                                .filter(RewardsNpcs.NPCS_ID.equal(super.id()))
                                .map(RewardsNpcs::reward)

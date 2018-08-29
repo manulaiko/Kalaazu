@@ -146,7 +146,7 @@ public final class AccountsImpl
         }
 
         this.user = super.findUsersId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Users.class)
         );
@@ -161,7 +161,7 @@ public final class AccountsImpl
         }
 
         this.level = super.findLevelsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Levels.class)
         );
@@ -176,7 +176,7 @@ public final class AccountsImpl
         }
 
         this.faction = super.findFactionsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Factions.class)
         );
@@ -191,7 +191,7 @@ public final class AccountsImpl
         }
 
         this.hangar = super.findAccountsHangarsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(AccountsHangars.class)
         );
@@ -206,7 +206,7 @@ public final class AccountsImpl
         }
 
         this.clan = super.findClansId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Clans.class)
         );
@@ -221,7 +221,7 @@ public final class AccountsImpl
         }
 
         this.rank = super.findRanksId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Ranks.class)
         );
@@ -235,7 +235,7 @@ public final class AccountsImpl
             return this.clanRoles;
         }
 
-        this.clanRoles = Database.getInstance()
+        this.clanRoles = Database.instance()
                                  .all(AccountsClansRoles.class)
                                  .filter(AccountsClansRoles.ACCOUNTS_ID.equal(super.id()))
                                  .map(AccountsClansRoles::role)
@@ -250,7 +250,7 @@ public final class AccountsImpl
             return this.destroys;
         }
 
-        this.destroys = Database.getInstance()
+        this.destroys = Database.instance()
                                 .all(AccountsDestroys.class)
                                 .filter(AccountsDestroys.ACCOUNTS_ID.equal(super.id()))
                                 .collect(Collectors.toList());
@@ -264,7 +264,7 @@ public final class AccountsImpl
             return this.drones;
         }
 
-        this.drones = Database.getInstance()
+        this.drones = Database.instance()
                               .all(AccountsDrones.class)
                               .filter(AccountsDrones.ACCOUNTS_ID.equal(super.id()))
                               .collect(Collectors.toList());
@@ -278,7 +278,7 @@ public final class AccountsImpl
             return this.galaxygates;
         }
 
-        this.galaxygates = Database.getInstance()
+        this.galaxygates = Database.instance()
                                    .all(AccountsGalaxygates.class)
                                    .filter(AccountsGalaxygates.ACCOUNTS_ID.equal(super.id()))
                                    .collect(Collectors.toList());
@@ -292,7 +292,7 @@ public final class AccountsImpl
             return this.hangars;
         }
 
-        this.hangars = Database.getInstance()
+        this.hangars = Database.instance()
                                .all(AccountsHangars.class)
                                .filter(AccountsHangars.ACCOUNTS_ID.equal(super.id()))
                                .collect(Collectors.toList());
@@ -306,7 +306,7 @@ public final class AccountsImpl
             return this.histories;
         }
 
-        this.histories = Database.getInstance()
+        this.histories = Database.instance()
                                  .all(AccountsHistory.class)
                                  .filter(AccountsHistory.ACCOUNTS_ID.equal(super.id()))
                                  .collect(Collectors.toList());
@@ -320,7 +320,7 @@ public final class AccountsImpl
             return this.items;
         }
 
-        this.items = Database.getInstance()
+        this.items = Database.instance()
                              .all(AccountsItems.class)
                              .filter(AccountsItems.ACCOUNTS_ID.equal(super.id()))
                              .collect(Collectors.toList());
@@ -334,7 +334,7 @@ public final class AccountsImpl
             return this.messages;
         }
 
-        this.messages = Database.getInstance()
+        this.messages = Database.instance()
                                 .all(AccountsMessages.class)
                                 .filter(AccountsMessages.FROM_ACCOUNTS_ID.equal(super.id())
                                                                          .or(AccountsMessages.TO_ACCOUNTS_ID.equal(
@@ -350,7 +350,7 @@ public final class AccountsImpl
             return this.pet;
         }
 
-        this.pet = Database.getInstance()
+        this.pet = Database.instance()
                            .all(AccountsPets.class)
                            .filter(AccountsPets.ACCOUNTS_ID.equal(super.id()))
                            .findAny();
@@ -364,7 +364,7 @@ public final class AccountsImpl
             return this.quest;
         }
 
-        this.quest = Database.getInstance()
+        this.quest = Database.instance()
                              .all(AccountsQuests.class)
                              .filter(AccountsQuests.ACCOUNTS_ID.equal(super.id()))
                              .collect(Collectors.toList());
@@ -378,7 +378,7 @@ public final class AccountsImpl
             return this.ranking;
         }
 
-        this.ranking = Database.getInstance()
+        this.ranking = Database.instance()
                                .all(AccountsRankings.class)
                                .filter(AccountsRankings.ACCOUNTS_ID.equal(super.id()))
                                .findFirst()
@@ -393,7 +393,7 @@ public final class AccountsImpl
             return this.ships;
         }
 
-        this.ships = Database.getInstance()
+        this.ships = Database.instance()
                              .all(AccountsShips.class)
                              .filter(AccountsShips.ACCOUNTS_ID.equal(super.id()))
                              .collect(Collectors.toList());
@@ -407,7 +407,7 @@ public final class AccountsImpl
             return this.skills;
         }
 
-        this.skills = Database.getInstance()
+        this.skills = Database.instance()
                               .all(AccountsSkills.class)
                               .filter(AccountsSkills.ACCOUNTS_ID.equal(super.id()))
                               .collect(Collectors.toList());
@@ -421,7 +421,7 @@ public final class AccountsImpl
             return this.skylabs;
         }
 
-        this.skylabs = Database.getInstance()
+        this.skylabs = Database.instance()
                                .all(AccountsSkylabs.class)
                                .filter(AccountsSkylabs.ACCOUNTS_ID.equal(super.id()))
                                .collect(Collectors.toList());
@@ -435,7 +435,7 @@ public final class AccountsImpl
             return this.techfactories;
         }
 
-        this.techfactories = Database.getInstance()
+        this.techfactories = Database.instance()
                                      .all(AccountsTechfactories.class)
                                      .filter(AccountsTechfactories.ACCOUNTS_ID.equal(super.id()))
                                      .collect(Collectors.toList());
@@ -449,7 +449,7 @@ public final class AccountsImpl
             return this.techfactoryItems;
         }
 
-        this.techfactoryItems = Database.getInstance()
+        this.techfactoryItems = Database.instance()
                                         .all(AccountsTechfactoryItems.class)
                                         .filter(AccountsTechfactoryItems.ACCOUNTS_ID.equal(super.id()))
                                         .collect(Collectors.toList());
@@ -463,7 +463,7 @@ public final class AccountsImpl
             return this.clanApplications;
         }
 
-        this.clanApplications = Database.getInstance()
+        this.clanApplications = Database.instance()
                                         .all(ClansApplications.class)
                                         .filter(ClansApplications.ACCOUNTS_ID.equal(super.id()))
                                         .collect(Collectors.toList());
@@ -491,7 +491,7 @@ public final class AccountsImpl
                                                          .orElse(0)))
         ); // ayy
 
-        this.clanMessages = Database.getInstance()
+        this.clanMessages = Database.instance()
                                     .all(ClansMessages.class)
                                     .filter(where)
                                     .collect(Collectors.toList());

@@ -28,7 +28,7 @@ public final class InvitationCodesRedeemLogsImpl
         }
 
         this.invitationCode = super.findInvitationCodesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(InvitationCodes.class)
         );

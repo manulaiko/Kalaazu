@@ -46,8 +46,8 @@ public abstract class GeneratedKeyValueSqlAdapter {
     protected KeyValue apply(ResultSet resultSet) throws SpeedmentException {
         final KeyValue entity = createEntity();
         try {
-            entity.setKey(resultSet.getString(1));
-            entity.setValue(resultSet.getString(2));
+            entity.key(resultSet.getString(1));
+            entity.value(resultSet.getString(2));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }

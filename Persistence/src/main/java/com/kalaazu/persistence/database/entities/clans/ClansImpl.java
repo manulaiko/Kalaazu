@@ -56,7 +56,7 @@ public final class ClansImpl
         }
 
         this.owner = super.findAccountsId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Accounts.class)
         );
@@ -70,7 +70,7 @@ public final class ClansImpl
             return this.faction;
         }
 
-        this.faction = Database.getInstance()
+        this.faction = Database.instance()
                                .find(super.factionsId()
                                           .orElse((byte) 0), Factions.class);
 
@@ -83,7 +83,7 @@ public final class ClansImpl
             return this.applications;
         }
 
-        this.applications = Database.getInstance()
+        this.applications = Database.instance()
                                     .all(ClansApplications.class)
                                     .filter(ClansApplications.CLANS_ID.equal(super.id()))
                                     .collect(Collectors.toList());
@@ -97,7 +97,7 @@ public final class ClansImpl
             return this.diplomacies;
         }
 
-        this.diplomacies = Database.getInstance()
+        this.diplomacies = Database.instance()
                                    .all(ClansDiplomacies.class)
                                    .filter(
                                            ClansDiplomacies.FROM_CLANS_ID.equal(super.id())
@@ -115,7 +115,7 @@ public final class ClansImpl
             return this.banks;
         }
 
-        this.banks = Database.getInstance()
+        this.banks = Database.instance()
                              .all(ClansBanks.class)
                              .filter(ClansBanks.CLANS_ID.equal(super.id()))
                              .collect(Collectors.toList());
@@ -129,7 +129,7 @@ public final class ClansImpl
             return this.battlestations;
         }
 
-        this.battlestations = Database.getInstance()
+        this.battlestations = Database.instance()
                                       .all(ClansBattlestations.class)
                                       .filter(ClansBattlestations.CLANS_ID.equal(super.id()))
                                       .collect(Collectors.toList());

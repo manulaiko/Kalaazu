@@ -28,7 +28,7 @@ public final class GalaxygatesProbabilitiesImpl
         }
 
         this.galaxygate = super.findGalaxygatesId(
-                Database.getInstance()
+                Database.instance()
                         .db()
                         .manager(Galaxygates.class)
         );

@@ -46,9 +46,9 @@ public abstract class GeneratedRewardsVouchersSqlAdapter {
     protected RewardsVouchers apply(ResultSet resultSet) throws SpeedmentException {
         final RewardsVouchers entity = createEntity();
         try {
-            entity.setId(resultSet.getShort(1));
-            entity.setVouchersId(resultSet.getShort(2));
-            entity.setRewardsId(resultSet.getShort(3));
+            entity.id(resultSet.getShort(1));
+            entity.vouchersId(resultSet.getShort(2));
+            entity.rewardsId(resultSet.getShort(3));
         } catch (final SQLException sqle) {
             throw new SpeedmentException(sqle);
         }
