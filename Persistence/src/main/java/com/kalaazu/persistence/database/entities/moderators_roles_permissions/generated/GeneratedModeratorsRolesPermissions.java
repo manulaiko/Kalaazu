@@ -31,13 +31,13 @@ public interface GeneratedModeratorsRolesPermissions {
 
     /**
      * This Field corresponds to the {@link ModeratorsRolesPermissions} field
-     * that can be obtained using the {@link ModeratorsRolesPermissions#getId()}
+     * that can be obtained using the {@link ModeratorsRolesPermissions#id()}
      * method.
      */
     ByteField<ModeratorsRolesPermissions, Byte> ID = ByteField.create(
             Identifier.ID,
-            ModeratorsRolesPermissions::getId,
-            ModeratorsRolesPermissions::setId,
+            ModeratorsRolesPermissions::id,
+            ModeratorsRolesPermissions::id,
             TypeMapper.primitive(),
             true
     );
@@ -45,12 +45,12 @@ public interface GeneratedModeratorsRolesPermissions {
     /**
      * This Field corresponds to the {@link ModeratorsRolesPermissions} field
      * that can be obtained using the {@link
-     * ModeratorsRolesPermissions#getModeratorsRolesId()} method.
+     * ModeratorsRolesPermissions#moderatorsRolesId()} method.
      */
     ByteForeignKeyField<ModeratorsRolesPermissions, Byte, ModeratorsRoles> MODERATORS_ROLES_ID = ByteForeignKeyField.create(
             Identifier.MODERATORS_ROLES_ID,
-            ModeratorsRolesPermissions::getModeratorsRolesId,
-            ModeratorsRolesPermissions::setModeratorsRolesId,
+            ModeratorsRolesPermissions::moderatorsRolesId,
+            ModeratorsRolesPermissions::moderatorsRolesId,
             ModeratorsRoles.ID,
             TypeMapper.primitive(),
             false
@@ -59,12 +59,12 @@ public interface GeneratedModeratorsRolesPermissions {
     /**
      * This Field corresponds to the {@link ModeratorsRolesPermissions} field
      * that can be obtained using the {@link
-     * ModeratorsRolesPermissions#getPermissionsId()} method.
+     * ModeratorsRolesPermissions#permissionsId()} method.
      */
     ByteForeignKeyField<ModeratorsRolesPermissions, Byte, Permissions> PERMISSIONS_ID = ByteForeignKeyField.create(
             Identifier.PERMISSIONS_ID,
-            ModeratorsRolesPermissions::getPermissionsId,
-            ModeratorsRolesPermissions::setPermissionsId,
+            ModeratorsRolesPermissions::permissionsId,
+            ModeratorsRolesPermissions::permissionsId,
             Permissions.ID,
             TypeMapper.primitive(),
             false
@@ -73,12 +73,12 @@ public interface GeneratedModeratorsRolesPermissions {
     /**
      * This Field corresponds to the {@link ModeratorsRolesPermissions} field
      * that can be obtained using the {@link
-     * ModeratorsRolesPermissions#getIsEnabled()} method.
+     * ModeratorsRolesPermissions#isEnabled()} method.
      */
     BooleanField<ModeratorsRolesPermissions, Integer> IS_ENABLED = BooleanField.create(
             Identifier.IS_ENABLED,
-            o -> OptionalUtil.unwrap(o.getIsEnabled()),
-            ModeratorsRolesPermissions::setIsEnabled,
+            o -> OptionalUtil.unwrap(o.isEnabled()),
+            ModeratorsRolesPermissions::isEnabled,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
@@ -90,7 +90,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return the id of this ModeratorsRolesPermissions
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the moderatorsRolesId of this ModeratorsRolesPermissions. The
@@ -99,7 +99,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return the moderatorsRolesId of this ModeratorsRolesPermissions
      */
-    byte getModeratorsRolesId();
+    byte moderatorsRolesId();
 
     /**
      * Returns the permissionsId of this ModeratorsRolesPermissions. The
@@ -108,7 +108,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return the permissionsId of this ModeratorsRolesPermissions
      */
-    byte getPermissionsId();
+    byte permissionsId();
 
     /**
      * Returns the isEnabled of this ModeratorsRolesPermissions. The isEnabled
@@ -117,7 +117,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return the isEnabled of this ModeratorsRolesPermissions
      */
-    OptionalBoolean getIsEnabled();
+    OptionalBoolean isEnabled();
 
     /**
      * Sets the id of this ModeratorsRolesPermissions. The id field corresponds
@@ -127,7 +127,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return this ModeratorsRolesPermissions instance
      */
-    ModeratorsRolesPermissions setId(byte id);
+    ModeratorsRolesPermissions id(Byte id);
 
     /**
      * Sets the moderatorsRolesId of this ModeratorsRolesPermissions. The
@@ -138,7 +138,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return this ModeratorsRolesPermissions instance
      */
-    ModeratorsRolesPermissions setModeratorsRolesId(byte moderatorsRolesId);
+    ModeratorsRolesPermissions moderatorsRolesId(byte moderatorsRolesId);
 
     /**
      * Sets the permissionsId of this ModeratorsRolesPermissions. The
@@ -149,7 +149,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return this ModeratorsRolesPermissions instance
      */
-    ModeratorsRolesPermissions setPermissionsId(byte permissionsId);
+    ModeratorsRolesPermissions permissionsId(byte permissionsId);
 
     /**
      * Sets the isEnabled of this ModeratorsRolesPermissions. The isEnabled
@@ -160,7 +160,7 @@ public interface GeneratedModeratorsRolesPermissions {
      *
      * @return this ModeratorsRolesPermissions instance
      */
-    ModeratorsRolesPermissions setIsEnabled(boolean isEnabled);
+    ModeratorsRolesPermissions isEnabled(boolean isEnabled);
 
     /**
      * Queries the specified manager for the referenced ModeratorsRoles. If no

@@ -10,6 +10,7 @@ import com.speedment.runtime.field.ByteForeignKeyField;
 import com.speedment.runtime.field.ComparableField;
 import com.speedment.runtime.field.IntField;
 import com.speedment.runtime.field.StringField;
+import com.speedment.runtime.field.method.ReferenceSetter;
 import com.speedment.runtime.typemapper.TypeMapper;
 
 import java.sql.Timestamp;
@@ -29,24 +30,24 @@ public interface GeneratedModeratorsLogs {
 
     /**
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
-     * obtained using the {@link ModeratorsLogs#getId()} method.
+     * obtained using the {@link ModeratorsLogs#id()} method.
      */
     IntField<ModeratorsLogs, Integer> ID = IntField.create(
             Identifier.ID,
-            ModeratorsLogs::getId,
-            ModeratorsLogs::setId,
+            ModeratorsLogs::id,
+            ModeratorsLogs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
-     * obtained using the {@link ModeratorsLogs#getModeratorsId()} method.
+     * obtained using the {@link ModeratorsLogs#moderatorsId()} method.
      */
     ByteForeignKeyField<ModeratorsLogs, Byte, Moderators> MODERATORS_ID = ByteForeignKeyField.create(
             Identifier.MODERATORS_ID,
-            ModeratorsLogs::getModeratorsId,
-            ModeratorsLogs::setModeratorsId,
+            ModeratorsLogs::moderatorsId,
+            ModeratorsLogs::moderatorsId,
             Moderators.ID,
             TypeMapper.primitive(),
             false
@@ -54,36 +55,36 @@ public interface GeneratedModeratorsLogs {
 
     /**
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
-     * obtained using the {@link ModeratorsLogs#getDate()} method.
+     * obtained using the {@link ModeratorsLogs#date()} method.
      */
     ComparableField<ModeratorsLogs, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            ModeratorsLogs::getDate,
-            ModeratorsLogs::setDate,
+            ModeratorsLogs::date,
+            (ReferenceSetter<ModeratorsLogs, Timestamp>) ModeratorsLogs::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
-     * obtained using the {@link ModeratorsLogs#getType()} method.
+     * obtained using the {@link ModeratorsLogs#type()} method.
      */
     StringField<ModeratorsLogs, String> TYPE = StringField.create(
             Identifier.TYPE,
-            ModeratorsLogs::getType,
-            ModeratorsLogs::setType,
+            ModeratorsLogs::type,
+            ModeratorsLogs::type,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsLogs} field that can be
-     * obtained using the {@link ModeratorsLogs#getText()} method.
+     * obtained using the {@link ModeratorsLogs#text()} method.
      */
     StringField<ModeratorsLogs, String> TEXT = StringField.create(
             Identifier.TEXT,
-            ModeratorsLogs::getText,
-            ModeratorsLogs::setText,
+            ModeratorsLogs::text,
+            ModeratorsLogs::text,
             TypeMapper.identity(),
             false
     );
@@ -94,7 +95,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return the id of this ModeratorsLogs
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the moderatorsId of this ModeratorsLogs. The moderatorsId field
@@ -103,7 +104,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return the moderatorsId of this ModeratorsLogs
      */
-    byte getModeratorsId();
+    byte moderatorsId();
 
     /**
      * Returns the date of this ModeratorsLogs. The date field corresponds to
@@ -111,7 +112,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return the date of this ModeratorsLogs
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the type of this ModeratorsLogs. The type field corresponds to
@@ -119,7 +120,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return the type of this ModeratorsLogs
      */
-    String getType();
+    String type();
 
     /**
      * Returns the text of this ModeratorsLogs. The text field corresponds to
@@ -127,7 +128,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return the text of this ModeratorsLogs
      */
-    String getText();
+    String text();
 
     /**
      * Sets the id of this ModeratorsLogs. The id field corresponds to the
@@ -137,7 +138,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return this ModeratorsLogs instance
      */
-    ModeratorsLogs setId(int id);
+    ModeratorsLogs id(Integer id);
 
     /**
      * Sets the moderatorsId of this ModeratorsLogs. The moderatorsId field
@@ -148,7 +149,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return this ModeratorsLogs instance
      */
-    ModeratorsLogs setModeratorsId(byte moderatorsId);
+    ModeratorsLogs moderatorsId(byte moderatorsId);
 
     /**
      * Sets the date of this ModeratorsLogs. The date field corresponds to the
@@ -158,7 +159,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return this ModeratorsLogs instance
      */
-    ModeratorsLogs setDate(Timestamp date);
+    ModeratorsLogs date(Timestamp date);
 
     /**
      * Sets the type of this ModeratorsLogs. The type field corresponds to the
@@ -168,7 +169,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return this ModeratorsLogs instance
      */
-    ModeratorsLogs setType(String type);
+    ModeratorsLogs type(String type);
 
     /**
      * Sets the text of this ModeratorsLogs. The text field corresponds to the
@@ -178,7 +179,7 @@ public interface GeneratedModeratorsLogs {
      *
      * @return this ModeratorsLogs instance
      */
-    ModeratorsLogs setText(String text);
+    ModeratorsLogs text(String text);
 
     /**
      * Queries the specified manager for the referenced Moderators. If no such

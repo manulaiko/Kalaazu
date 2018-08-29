@@ -26,72 +26,72 @@ public interface GeneratedNews {
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getId()} method.
+     * using the {@link News#id()} method.
      */
     ShortField<News, Short> ID = ShortField.create(
             Identifier.ID,
-            News::getId,
-            News::setId,
+            News::id,
+            News::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getDate()} method.
+     * using the {@link News#date()} method.
      */
     ComparableField<News, Timestamp, Timestamp> DATE = ComparableField.create(
             Identifier.DATE,
-            News::getDate,
-            News::setDate,
+            News::date,
+            News::date,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getImage()} method.
+     * using the {@link News#image()} method.
      */
     StringField<News, String> IMAGE = StringField.create(
             Identifier.IMAGE,
-            News::getImage,
-            News::setImage,
+            News::image,
+            News::image,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getTitle()} method.
+     * using the {@link News#title()} method.
      */
     StringField<News, String> TITLE = StringField.create(
             Identifier.TITLE,
-            News::getTitle,
-            News::setTitle,
+            News::title,
+            News::title,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getTeaser()} method.
+     * using the {@link News#teaser()} method.
      */
     StringField<News, String> TEASER = StringField.create(
             Identifier.TEASER,
-            News::getTeaser,
-            News::setTeaser,
+            News::teaser,
+            News::teaser,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link News} field that can be obtained
-     * using the {@link News#getText()} method.
+     * using the {@link News#text()} method.
      */
     StringField<News, String> TEXT = StringField.create(
             Identifier.TEXT,
-            News::getText,
-            News::setText,
+            News::text,
+            News::text,
             TypeMapper.identity(),
             false
     );
@@ -102,7 +102,7 @@ public interface GeneratedNews {
      *
      * @return the id of this News
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the date of this News. The date field corresponds to the database
@@ -110,7 +110,7 @@ public interface GeneratedNews {
      *
      * @return the date of this News
      */
-    Timestamp getDate();
+    Timestamp date();
 
     /**
      * Returns the image of this News. The image field corresponds to the
@@ -118,7 +118,7 @@ public interface GeneratedNews {
      *
      * @return the image of this News
      */
-    String getImage();
+    String image();
 
     /**
      * Returns the title of this News. The title field corresponds to the
@@ -126,7 +126,7 @@ public interface GeneratedNews {
      *
      * @return the title of this News
      */
-    String getTitle();
+    String title();
 
     /**
      * Returns the teaser of this News. The teaser field corresponds to the
@@ -134,7 +134,7 @@ public interface GeneratedNews {
      *
      * @return the teaser of this News
      */
-    String getTeaser();
+    String teaser();
 
     /**
      * Returns the text of this News. The text field corresponds to the database
@@ -142,7 +142,7 @@ public interface GeneratedNews {
      *
      * @return the text of this News
      */
-    String getText();
+    String text();
 
     /**
      * Sets the id of this News. The id field corresponds to the database column
@@ -152,7 +152,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setId(short id);
+    News id(Short id);
 
     /**
      * Sets the date of this News. The date field corresponds to the database
@@ -162,7 +162,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setDate(Timestamp date);
+    News date(Timestamp date);
 
     /**
      * Sets the image of this News. The image field corresponds to the database
@@ -172,7 +172,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setImage(String image);
+    News image(String image);
 
     /**
      * Sets the title of this News. The title field corresponds to the database
@@ -182,7 +182,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setTitle(String title);
+    News title(String title);
 
     /**
      * Sets the teaser of this News. The teaser field corresponds to the
@@ -192,7 +192,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setTeaser(String teaser);
+    News teaser(String teaser);
 
     /**
      * Sets the text of this News. The text field corresponds to the database
@@ -202,7 +202,7 @@ public interface GeneratedNews {
      *
      * @return this News instance
      */
-    News setText(String text);
+    News text(String text);
 
     enum Identifier implements ColumnIdentifier<News> {
 

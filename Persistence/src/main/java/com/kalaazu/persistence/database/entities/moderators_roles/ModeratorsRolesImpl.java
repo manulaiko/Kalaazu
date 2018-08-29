@@ -37,7 +37,7 @@ public final class ModeratorsRolesImpl
         }
 
         this.role = Database.getInstance()
-                            .find(super.getModeratorsRolesId()
+                            .find(super.moderatorsRolesId()
                                        .orElse((byte) 0), ModeratorsRoles.class);
 
         return this.role;
@@ -51,7 +51,7 @@ public final class ModeratorsRolesImpl
 
         this.permissions = Database.getInstance()
                                    .all(ModeratorsRolesPermissions.class)
-                                   .filter(ModeratorsRolesPermissions.MODERATORS_ROLES_ID.equal(super.getId()))
+                                   .filter(ModeratorsRolesPermissions.MODERATORS_ROLES_ID.equal(super.id()))
                                    .collect(Collectors.toList());
 
         return this.permissions;

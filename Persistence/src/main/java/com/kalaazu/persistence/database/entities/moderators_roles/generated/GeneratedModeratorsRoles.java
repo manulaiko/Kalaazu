@@ -27,48 +27,48 @@ public interface GeneratedModeratorsRoles {
 
     /**
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
-     * obtained using the {@link ModeratorsRoles#getId()} method.
+     * obtained using the {@link ModeratorsRoles#id()} method.
      */
     ByteField<ModeratorsRoles, Byte> ID = ByteField.create(
             Identifier.ID,
-            ModeratorsRoles::getId,
-            ModeratorsRoles::setId,
+            ModeratorsRoles::id,
+            ModeratorsRoles::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
-     * obtained using the {@link ModeratorsRoles#getName()} method.
+     * obtained using the {@link ModeratorsRoles#name()} method.
      */
     StringField<ModeratorsRoles, String> NAME = StringField.create(
             Identifier.NAME,
-            ModeratorsRoles::getName,
-            ModeratorsRoles::setName,
+            ModeratorsRoles::name,
+            ModeratorsRoles::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
-     * obtained using the {@link ModeratorsRoles#getModeratorsRolesId()} method.
+     * obtained using the {@link ModeratorsRoles#moderatorsRolesId()} method.
      */
     ComparableField<ModeratorsRoles, Byte, Byte> MODERATORS_ROLES_ID = ComparableField.create(
             Identifier.MODERATORS_ROLES_ID,
-            o -> OptionalUtil.unwrap(o.getModeratorsRolesId()),
-            ModeratorsRoles::setModeratorsRolesId,
+            o -> OptionalUtil.unwrap(o.moderatorsRolesId()),
+            ModeratorsRoles::moderatorsRolesId,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link ModeratorsRoles} field that can be
-     * obtained using the {@link ModeratorsRoles#getPriority()} method.
+     * obtained using the {@link ModeratorsRoles#priority()} method.
      */
     ByteField<ModeratorsRoles, Byte> PRIORITY = ByteField.create(
             Identifier.PRIORITY,
-            ModeratorsRoles::getPriority,
-            ModeratorsRoles::setPriority,
+            ModeratorsRoles::priority,
+            ModeratorsRoles::priority,
             TypeMapper.primitive(),
             false
     );
@@ -79,7 +79,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return the id of this ModeratorsRoles
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this ModeratorsRoles. The name field corresponds to
@@ -87,7 +87,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return the name of this ModeratorsRoles
      */
-    String getName();
+    String name();
 
     /**
      * Returns the moderatorsRolesId of this ModeratorsRoles. The
@@ -96,7 +96,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return the moderatorsRolesId of this ModeratorsRoles
      */
-    Optional<Byte> getModeratorsRolesId();
+    Optional<Byte> moderatorsRolesId();
 
     /**
      * Returns the priority of this ModeratorsRoles. The priority field
@@ -105,7 +105,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return the priority of this ModeratorsRoles
      */
-    byte getPriority();
+    byte priority();
 
     /**
      * Sets the id of this ModeratorsRoles. The id field corresponds to the
@@ -115,7 +115,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return this ModeratorsRoles instance
      */
-    ModeratorsRoles setId(byte id);
+    ModeratorsRoles id(Byte id);
 
     /**
      * Sets the name of this ModeratorsRoles. The name field corresponds to the
@@ -125,7 +125,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return this ModeratorsRoles instance
      */
-    ModeratorsRoles setName(String name);
+    ModeratorsRoles name(String name);
 
     /**
      * Sets the moderatorsRolesId of this ModeratorsRoles. The moderatorsRolesId
@@ -136,7 +136,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return this ModeratorsRoles instance
      */
-    ModeratorsRoles setModeratorsRolesId(Byte moderatorsRolesId);
+    ModeratorsRoles moderatorsRolesId(Byte moderatorsRolesId);
 
     /**
      * Sets the priority of this ModeratorsRoles. The priority field corresponds
@@ -146,7 +146,7 @@ public interface GeneratedModeratorsRoles {
      *
      * @return this ModeratorsRoles instance
      */
-    ModeratorsRoles setPriority(byte priority);
+    ModeratorsRoles priority(byte priority);
 
     enum Identifier implements ColumnIdentifier<ModeratorsRoles> {
 

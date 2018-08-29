@@ -59,6 +59,6 @@ public final class ModeratorsRolesPermissionsImpl
 
     @Override
     public int roleId() {
-        return super.getModeratorsRolesId();
+        return super.moderatorsRolesId();
     }
 }
