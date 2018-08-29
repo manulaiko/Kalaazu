@@ -32,7 +32,7 @@ public final class SkilltreeSkillsImpl
 
         this.levels = Database.getInstance()
                               .all(SkilltreeLevels.class)
-                              .filter(SkilltreeLevels.SKILLTREE_SKILLS_ID.equal(super.getId()))
+                              .filter(SkilltreeLevels.SKILLTREE_SKILLS_ID.equal(super.id()))
                               .collect(Collectors.toList());
 
         return this.levels;

@@ -4,9 +4,7 @@ import com.kalaazu.persistence.database.entities.Items;
 import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Ships;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -18,9 +16,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedShipsImpl implements Ships {
 
-    private byte id;
+    private Byte id;
 
     private short itemsId;
 
@@ -49,226 +48,10 @@ public abstract class GeneratedShipsImpl implements Ships {
     }
 
     @Override
-    public Byte getId() {
-        return id;
-    }
-
-    @Override
-    public short getItemsId() {
-        return itemsId;
-    }
-
-    @Override
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public short getSpeed() {
-        return speed;
-    }
-
-    @Override
-    public short getCargo() {
-        return cargo;
-    }
-
-    @Override
-    public short getBatteries() {
-        return batteries;
-    }
-
-    @Override
-    public short getRockets() {
-        return rockets;
-    }
-
-    @Override
-    public byte getLasers() {
-        return lasers;
-    }
-
-    @Override
-    public byte getHellstorms() {
-        return hellstorms;
-    }
-
-    @Override
-    public byte getGenerators() {
-        return generators;
-    }
-
-    @Override
-    public byte getExtras() {
-        return extras;
-    }
-
-    @Override
-    public byte getGfx() {
-        return gfx;
-    }
-
-    @Override
-    public Ships setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Ships setItemsId(short itemsId) {
-        this.itemsId = itemsId;
-        return this;
-    }
-
-    @Override
-    public Ships setHealth(int health) {
-        this.health = health;
-        return this;
-    }
-
-    @Override
-    public Ships setSpeed(short speed) {
-        this.speed = speed;
-        return this;
-    }
-
-    @Override
-    public Ships setCargo(short cargo) {
-        this.cargo = cargo;
-        return this;
-    }
-
-    @Override
-    public Ships setBatteries(short batteries) {
-        this.batteries = batteries;
-        return this;
-    }
-
-    @Override
-    public Ships setRockets(short rockets) {
-        this.rockets = rockets;
-        return this;
-    }
-
-    @Override
-    public Ships setLasers(byte lasers) {
-        this.lasers = lasers;
-        return this;
-    }
-
-    @Override
-    public Ships setHellstorms(byte hellstorms) {
-        this.hellstorms = hellstorms;
-        return this;
-    }
-
-    @Override
-    public Ships setGenerators(byte generators) {
-        this.generators = generators;
-        return this;
-    }
-
-    @Override
-    public Ships setExtras(byte extras) {
-        this.extras = extras;
-        return this;
-    }
-
-    @Override
-    public Ships setGfx(byte gfx) {
-        this.gfx = gfx;
-        return this;
-    }
-
-    @Override
     public Items findItemsId(Manager<Items> foreignManager) {
         return foreignManager.stream()
-                             .filter(Items.ID.equal(getItemsId()))
+                             .filter(Items.ID.equal(itemsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("itemsId = " + Objects.toString(getItemsId()));
-        sj.add("health = " + Objects.toString(getHealth()));
-        sj.add("speed = " + Objects.toString(getSpeed()));
-        sj.add("cargo = " + Objects.toString(getCargo()));
-        sj.add("batteries = " + Objects.toString(getBatteries()));
-        sj.add("rockets = " + Objects.toString(getRockets()));
-        sj.add("lasers = " + Objects.toString(getLasers()));
-        sj.add("hellstorms = " + Objects.toString(getHellstorms()));
-        sj.add("generators = " + Objects.toString(getGenerators()));
-        sj.add("extras = " + Objects.toString(getExtras()));
-        sj.add("gfx = " + Objects.toString(getGfx()));
-        return "ShipsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Ships)) {
-            return false;
-        }
-        final Ships thatShips = (Ships) that;
-        if (this.getId() != thatShips.getId()) {
-            return false;
-        }
-        if (this.getItemsId() != thatShips.getItemsId()) {
-            return false;
-        }
-        if (this.getHealth() != thatShips.getHealth()) {
-            return false;
-        }
-        if (this.getSpeed() != thatShips.getSpeed()) {
-            return false;
-        }
-        if (this.getCargo() != thatShips.getCargo()) {
-            return false;
-        }
-        if (this.getBatteries() != thatShips.getBatteries()) {
-            return false;
-        }
-        if (this.getRockets() != thatShips.getRockets()) {
-            return false;
-        }
-        if (this.getLasers() != thatShips.getLasers()) {
-            return false;
-        }
-        if (this.getHellstorms() != thatShips.getHellstorms()) {
-            return false;
-        }
-        if (this.getGenerators() != thatShips.getGenerators()) {
-            return false;
-        }
-        if (this.getExtras() != thatShips.getExtras()) {
-            return false;
-        }
-        if (this.getGfx() != thatShips.getGfx()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(getId());
-        hash = 31 * hash + Short.hashCode(getItemsId());
-        hash = 31 * hash + Integer.hashCode(getHealth());
-        hash = 31 * hash + Short.hashCode(getSpeed());
-        hash = 31 * hash + Short.hashCode(getCargo());
-        hash = 31 * hash + Short.hashCode(getBatteries());
-        hash = 31 * hash + Short.hashCode(getRockets());
-        hash = 31 * hash + Byte.hashCode(getLasers());
-        hash = 31 * hash + Byte.hashCode(getHellstorms());
-        hash = 31 * hash + Byte.hashCode(getGenerators());
-        hash = 31 * hash + Byte.hashCode(getExtras());
-        hash = 31 * hash + Byte.hashCode(getGfx());
-        return hash;
     }
 }

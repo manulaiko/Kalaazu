@@ -28,24 +28,24 @@ public interface GeneratedSkilltreeLevels {
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getId()} method.
+     * obtained using the {@link SkilltreeLevels#id()} method.
      */
     ShortField<SkilltreeLevels, Short> ID = ShortField.create(
             Identifier.ID,
-            SkilltreeLevels::getId,
-            SkilltreeLevels::setId,
+            SkilltreeLevels::id,
+            SkilltreeLevels::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getSkilltreeSkillsId()} method.
+     * obtained using the {@link SkilltreeLevels#skilltreeSkillsId()} method.
      */
     ByteForeignKeyField<SkilltreeLevels, Byte, SkilltreeSkills> SKILLTREE_SKILLS_ID = ByteForeignKeyField.create(
             Identifier.SKILLTREE_SKILLS_ID,
-            SkilltreeLevels::getSkilltreeSkillsId,
-            SkilltreeLevels::setSkilltreeSkillsId,
+            SkilltreeLevels::skilltreeSkillsId,
+            SkilltreeLevels::skilltreeSkillsId,
             SkilltreeSkills.ID,
             TypeMapper.primitive(),
             false
@@ -53,12 +53,12 @@ public interface GeneratedSkilltreeLevels {
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getLevelsId()} method.
+     * obtained using the {@link SkilltreeLevels#levelsId()} method.
      */
     ByteForeignKeyField<SkilltreeLevels, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            SkilltreeLevels::getLevelsId,
-            SkilltreeLevels::setLevelsId,
+            SkilltreeLevels::levelsId,
+            SkilltreeLevels::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -66,36 +66,36 @@ public interface GeneratedSkilltreeLevels {
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getCredits()} method.
+     * obtained using the {@link SkilltreeLevels#credits()} method.
      */
     IntField<SkilltreeLevels, Integer> CREDITS = IntField.create(
             Identifier.CREDITS,
-            SkilltreeLevels::getCredits,
-            SkilltreeLevels::setCredits,
+            SkilltreeLevels::credits,
+            SkilltreeLevels::credits,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getSeprom()} method.
+     * obtained using the {@link SkilltreeLevels#seprom()} method.
      */
     ShortField<SkilltreeLevels, Short> SEPROM = ShortField.create(
             Identifier.SEPROM,
-            SkilltreeLevels::getSeprom,
-            SkilltreeLevels::setSeprom,
+            SkilltreeLevels::seprom,
+            SkilltreeLevels::seprom,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeLevels} field that can be
-     * obtained using the {@link SkilltreeLevels#getPoints()} method.
+     * obtained using the {@link SkilltreeLevels#points()} method.
      */
     ByteField<SkilltreeLevels, Byte> POINTS = ByteField.create(
             Identifier.POINTS,
-            SkilltreeLevels::getPoints,
-            SkilltreeLevels::setPoints,
+            SkilltreeLevels::points,
+            SkilltreeLevels::points,
             TypeMapper.primitive(),
             false
     );
@@ -106,7 +106,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the id of this SkilltreeLevels
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the skilltreeSkillsId of this SkilltreeLevels. The
@@ -115,7 +115,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the skilltreeSkillsId of this SkilltreeLevels
      */
-    byte getSkilltreeSkillsId();
+    byte skilltreeSkillsId();
 
     /**
      * Returns the levelsId of this SkilltreeLevels. The levelsId field
@@ -124,7 +124,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the levelsId of this SkilltreeLevels
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the credits of this SkilltreeLevels. The credits field
@@ -133,7 +133,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the credits of this SkilltreeLevels
      */
-    int getCredits();
+    int credits();
 
     /**
      * Returns the seprom of this SkilltreeLevels. The seprom field corresponds
@@ -141,7 +141,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the seprom of this SkilltreeLevels
      */
-    short getSeprom();
+    short seprom();
 
     /**
      * Returns the points of this SkilltreeLevels. The points field corresponds
@@ -149,7 +149,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return the points of this SkilltreeLevels
      */
-    byte getPoints();
+    byte points();
 
     /**
      * Sets the id of this SkilltreeLevels. The id field corresponds to the
@@ -159,7 +159,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setId(short id);
+    SkilltreeLevels id(Short id);
 
     /**
      * Sets the skilltreeSkillsId of this SkilltreeLevels. The skilltreeSkillsId
@@ -170,7 +170,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setSkilltreeSkillsId(byte skilltreeSkillsId);
+    SkilltreeLevels skilltreeSkillsId(byte skilltreeSkillsId);
 
     /**
      * Sets the levelsId of this SkilltreeLevels. The levelsId field corresponds
@@ -180,7 +180,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setLevelsId(byte levelsId);
+    SkilltreeLevels levelsId(byte levelsId);
 
     /**
      * Sets the credits of this SkilltreeLevels. The credits field corresponds
@@ -190,7 +190,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setCredits(int credits);
+    SkilltreeLevels credits(int credits);
 
     /**
      * Sets the seprom of this SkilltreeLevels. The seprom field corresponds to
@@ -200,7 +200,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setSeprom(short seprom);
+    SkilltreeLevels seprom(short seprom);
 
     /**
      * Sets the points of this SkilltreeLevels. The points field corresponds to
@@ -210,7 +210,7 @@ public interface GeneratedSkilltreeLevels {
      *
      * @return this SkilltreeLevels instance
      */
-    SkilltreeLevels setPoints(byte points);
+    SkilltreeLevels points(byte points);
 
     /**
      * Queries the specified manager for the referenced SkilltreeSkills. If no

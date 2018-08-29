@@ -25,48 +25,48 @@ public interface GeneratedSkilltreeSkills {
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getId()} method.
+     * obtained using the {@link SkilltreeSkills#id()} method.
      */
     ByteField<SkilltreeSkills, Byte> ID = ByteField.create(
             Identifier.ID,
-            SkilltreeSkills::getId,
-            SkilltreeSkills::setId,
+            SkilltreeSkills::id,
+            SkilltreeSkills::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getName()} method.
+     * obtained using the {@link SkilltreeSkills#name()} method.
      */
     StringField<SkilltreeSkills, String> NAME = StringField.create(
             Identifier.NAME,
-            SkilltreeSkills::getName,
-            SkilltreeSkills::setName,
+            SkilltreeSkills::name,
+            SkilltreeSkills::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getDescription()} method.
+     * obtained using the {@link SkilltreeSkills#description()} method.
      */
     StringField<SkilltreeSkills, String> DESCRIPTION = StringField.create(
             Identifier.DESCRIPTION,
-            SkilltreeSkills::getDescription,
-            SkilltreeSkills::setDescription,
+            SkilltreeSkills::description,
+            SkilltreeSkills::description,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getType()} method.
+     * obtained using the {@link SkilltreeSkills#type()} method.
      */
     EnumField<SkilltreeSkills, Byte, SkillType> TYPE = EnumField.create(
             Identifier.TYPE,
-            SkilltreeSkills::getType,
-            SkilltreeSkills::setType,
+            SkilltreeSkills::type,
+            SkilltreeSkills::type,
             new SkillTypeMapper(),
             SkillType::name,
             SkillType::valueOf,
@@ -75,48 +75,48 @@ public interface GeneratedSkilltreeSkills {
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getIsAdvanced()} method.
+     * obtained using the {@link SkilltreeSkills#isAdvanced()} method.
      */
     BooleanField<SkilltreeSkills, Integer> IS_ADVANCED = BooleanField.create(
             Identifier.IS_ADVANCED,
-            SkilltreeSkills::getIsAdvanced,
-            SkilltreeSkills::setIsAdvanced,
+            SkilltreeSkills::isAdvanced,
+            SkilltreeSkills::isAdvanced,
             new PrimitiveIntegerZeroOneToBooleanMapper(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getBonusType()} method.
+     * obtained using the {@link SkilltreeSkills#bonusType()} method.
      */
     StringField<SkilltreeSkills, String> BONUS_TYPE = StringField.create(
             Identifier.BONUS_TYPE,
-            SkilltreeSkills::getBonusType,
-            SkilltreeSkills::setBonusType,
+            SkilltreeSkills::bonusType,
+            SkilltreeSkills::bonusType,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getBonusAmount()} method.
+     * obtained using the {@link SkilltreeSkills#bonusAmount()} method.
      */
     IntField<SkilltreeSkills, Integer> BONUS_AMOUNT = IntField.create(
             Identifier.BONUS_AMOUNT,
-            SkilltreeSkills::getBonusAmount,
-            SkilltreeSkills::setBonusAmount,
+            SkilltreeSkills::bonusAmount,
+            SkilltreeSkills::bonusAmount,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeSkills} field that can be
-     * obtained using the {@link SkilltreeSkills#getBonusFactor()} method.
+     * obtained using the {@link SkilltreeSkills#bonusFactor()} method.
      */
     ByteField<SkilltreeSkills, Byte> BONUS_FACTOR = ByteField.create(
             Identifier.BONUS_FACTOR,
-            SkilltreeSkills::getBonusFactor,
-            SkilltreeSkills::setBonusFactor,
+            SkilltreeSkills::bonusFactor,
+            SkilltreeSkills::bonusFactor,
             TypeMapper.primitive(),
             false
     );
@@ -127,7 +127,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the id of this SkilltreeSkills
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this SkilltreeSkills. The name field corresponds to
@@ -135,7 +135,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the name of this SkilltreeSkills
      */
-    String getName();
+    String name();
 
     /**
      * Returns the description of this SkilltreeSkills. The description field
@@ -144,7 +144,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the description of this SkilltreeSkills
      */
-    String getDescription();
+    String description();
 
     /**
      * Returns the type of this SkilltreeSkills. The type field corresponds to
@@ -152,7 +152,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the type of this SkilltreeSkills
      */
-    SkillType getType();
+    SkillType type();
 
     /**
      * Returns the isAdvanced of this SkilltreeSkills. The isAdvanced field
@@ -161,7 +161,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the isAdvanced of this SkilltreeSkills
      */
-    boolean getIsAdvanced();
+    boolean isAdvanced();
 
     /**
      * Returns the bonusType of this SkilltreeSkills. The bonusType field
@@ -170,7 +170,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the bonusType of this SkilltreeSkills
      */
-    String getBonusType();
+    String bonusType();
 
     /**
      * Returns the bonusAmount of this SkilltreeSkills. The bonusAmount field
@@ -179,7 +179,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the bonusAmount of this SkilltreeSkills
      */
-    int getBonusAmount();
+    int bonusAmount();
 
     /**
      * Returns the bonusFactor of this SkilltreeSkills. The bonusFactor field
@@ -188,7 +188,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return the bonusFactor of this SkilltreeSkills
      */
-    byte getBonusFactor();
+    byte bonusFactor();
 
     /**
      * Sets the id of this SkilltreeSkills. The id field corresponds to the
@@ -198,7 +198,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setId(byte id);
+    SkilltreeSkills id(Byte id);
 
     /**
      * Sets the name of this SkilltreeSkills. The name field corresponds to the
@@ -208,7 +208,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setName(String name);
+    SkilltreeSkills name(String name);
 
     /**
      * Sets the description of this SkilltreeSkills. The description field
@@ -219,7 +219,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setDescription(String description);
+    SkilltreeSkills description(String description);
 
     /**
      * Sets the type of this SkilltreeSkills. The type field corresponds to the
@@ -229,7 +229,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setType(SkillType type);
+    SkilltreeSkills type(SkillType type);
 
     /**
      * Sets the isAdvanced of this SkilltreeSkills. The isAdvanced field
@@ -240,7 +240,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setIsAdvanced(boolean isAdvanced);
+    SkilltreeSkills isAdvanced(boolean isAdvanced);
 
     /**
      * Sets the bonusType of this SkilltreeSkills. The bonusType field
@@ -251,7 +251,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setBonusType(String bonusType);
+    SkilltreeSkills bonusType(String bonusType);
 
     /**
      * Sets the bonusAmount of this SkilltreeSkills. The bonusAmount field
@@ -262,7 +262,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setBonusAmount(int bonusAmount);
+    SkilltreeSkills bonusAmount(int bonusAmount);
 
     /**
      * Sets the bonusFactor of this SkilltreeSkills. The bonusFactor field
@@ -273,7 +273,7 @@ public interface GeneratedSkilltreeSkills {
      *
      * @return this SkilltreeSkills instance
      */
-    SkilltreeSkills setBonusFactor(byte bonusFactor);
+    SkilltreeSkills bonusFactor(byte bonusFactor);
 
     enum Identifier implements ColumnIdentifier<SkilltreeSkills> {
 

@@ -5,9 +5,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.SkilltreeLevels;
 import com.kalaazu.persistence.database.entities.SkilltreeSkills;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -19,9 +17,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedSkilltreeLevelsImpl implements SkilltreeLevels {
 
-    private short id;
+    private Short id;
 
     private byte skilltreeSkillsId;
 
@@ -38,75 +37,9 @@ public abstract class GeneratedSkilltreeLevelsImpl implements SkilltreeLevels {
     }
 
     @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public byte getSkilltreeSkillsId() {
-        return skilltreeSkillsId;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public int getCredits() {
-        return credits;
-    }
-
-    @Override
-    public short getSeprom() {
-        return seprom;
-    }
-
-    @Override
-    public byte getPoints() {
-        return points;
-    }
-
-    @Override
-    public SkilltreeLevels setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public SkilltreeLevels setSkilltreeSkillsId(byte skilltreeSkillsId) {
-        this.skilltreeSkillsId = skilltreeSkillsId;
-        return this;
-    }
-
-    @Override
-    public SkilltreeLevels setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public SkilltreeLevels setCredits(int credits) {
-        this.credits = credits;
-        return this;
-    }
-
-    @Override
-    public SkilltreeLevels setSeprom(short seprom) {
-        this.seprom = seprom;
-        return this;
-    }
-
-    @Override
-    public SkilltreeLevels setPoints(byte points) {
-        this.points = points;
-        return this;
-    }
-
-    @Override
     public SkilltreeSkills findSkilltreeSkillsId(Manager<SkilltreeSkills> foreignManager) {
         return foreignManager.stream()
-                             .filter(SkilltreeSkills.ID.equal(getSkilltreeSkillsId()))
+                             .filter(SkilltreeSkills.ID.equal(skilltreeSkillsId()))
                              .findAny()
                              .orElse(null);
     }
@@ -114,62 +47,8 @@ public abstract class GeneratedSkilltreeLevelsImpl implements SkilltreeLevels {
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("skilltreeSkillsId = " + Objects.toString(getSkilltreeSkillsId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("credits = " + Objects.toString(getCredits()));
-        sj.add("seprom = " + Objects.toString(getSeprom()));
-        sj.add("points = " + Objects.toString(getPoints()));
-        return "SkilltreeLevelsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof SkilltreeLevels)) {
-            return false;
-        }
-        final SkilltreeLevels thatSkilltreeLevels = (SkilltreeLevels) that;
-        if (this.getId() != thatSkilltreeLevels.getId()) {
-            return false;
-        }
-        if (this.getSkilltreeSkillsId() != thatSkilltreeLevels.getSkilltreeSkillsId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatSkilltreeLevels.getLevelsId()) {
-            return false;
-        }
-        if (this.getCredits() != thatSkilltreeLevels.getCredits()) {
-            return false;
-        }
-        if (this.getSeprom() != thatSkilltreeLevels.getSeprom()) {
-            return false;
-        }
-        if (this.getPoints() != thatSkilltreeLevels.getPoints()) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getSkilltreeSkillsId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Integer.hashCode(getCredits());
-        hash = 31 * hash + Short.hashCode(getSeprom());
-        hash = 31 * hash + Byte.hashCode(getPoints());
-        return hash;
     }
 }

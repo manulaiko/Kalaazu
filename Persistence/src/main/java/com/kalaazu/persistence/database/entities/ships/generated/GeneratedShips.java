@@ -27,24 +27,24 @@ public interface GeneratedShips {
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getId()} method.
+     * using the {@link Ships#id()} method.
      */
     ByteField<Ships, Byte> ID = ByteField.create(
             Identifier.ID,
-            Ships::getId,
-            Ships::setId,
+            Ships::id,
+            Ships::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getItemsId()} method.
+     * using the {@link Ships#itemsId()} method.
      */
     ShortForeignKeyField<Ships, Short, Items> ITEMS_ID = ShortForeignKeyField.create(
             Identifier.ITEMS_ID,
-            Ships::getItemsId,
-            Ships::setItemsId,
+            Ships::itemsId,
+            Ships::itemsId,
             Items.ID,
             TypeMapper.primitive(),
             false
@@ -52,120 +52,120 @@ public interface GeneratedShips {
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getHealth()} method.
+     * using the {@link Ships#health()} method.
      */
     IntField<Ships, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
-            Ships::getHealth,
-            Ships::setHealth,
+            Ships::health,
+            Ships::health,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getSpeed()} method.
+     * using the {@link Ships#speed()} method.
      */
     ShortField<Ships, Short> SPEED = ShortField.create(
             Identifier.SPEED,
-            Ships::getSpeed,
-            Ships::setSpeed,
+            Ships::speed,
+            Ships::speed,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getCargo()} method.
+     * using the {@link Ships#cargo()} method.
      */
     ShortField<Ships, Short> CARGO = ShortField.create(
             Identifier.CARGO,
-            Ships::getCargo,
-            Ships::setCargo,
+            Ships::cargo,
+            Ships::cargo,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getBatteries()} method.
+     * using the {@link Ships#batteries()} method.
      */
     ShortField<Ships, Short> BATTERIES = ShortField.create(
             Identifier.BATTERIES,
-            Ships::getBatteries,
-            Ships::setBatteries,
+            Ships::batteries,
+            Ships::batteries,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getRockets()} method.
+     * using the {@link Ships#rockets()} method.
      */
     ShortField<Ships, Short> ROCKETS = ShortField.create(
             Identifier.ROCKETS,
-            Ships::getRockets,
-            Ships::setRockets,
+            Ships::rockets,
+            Ships::rockets,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getLasers()} method.
+     * using the {@link Ships#lasers()} method.
      */
     ByteField<Ships, Byte> LASERS = ByteField.create(
             Identifier.LASERS,
-            Ships::getLasers,
-            Ships::setLasers,
+            Ships::lasers,
+            Ships::lasers,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getHellstorms()} method.
+     * using the {@link Ships#hellstorms()} method.
      */
     ByteField<Ships, Byte> HELLSTORMS = ByteField.create(
             Identifier.HELLSTORMS,
-            Ships::getHellstorms,
-            Ships::setHellstorms,
+            Ships::hellstorms,
+            Ships::hellstorms,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getGenerators()} method.
+     * using the {@link Ships#generators()} method.
      */
     ByteField<Ships, Byte> GENERATORS = ByteField.create(
             Identifier.GENERATORS,
-            Ships::getGenerators,
-            Ships::setGenerators,
+            Ships::generators,
+            Ships::generators,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getExtras()} method.
+     * using the {@link Ships#extras()} method.
      */
     ByteField<Ships, Byte> EXTRAS = ByteField.create(
             Identifier.EXTRAS,
-            Ships::getExtras,
-            Ships::setExtras,
+            Ships::extras,
+            Ships::extras,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Ships} field that can be obtained
-     * using the {@link Ships#getGfx()} method.
+     * using the {@link Ships#gfx()} method.
      */
     ByteField<Ships, Byte> GFX = ByteField.create(
             Identifier.GFX,
-            Ships::getGfx,
-            Ships::setGfx,
+            Ships::gfx,
+            Ships::gfx,
             TypeMapper.primitive(),
             false
     );
@@ -176,7 +176,7 @@ public interface GeneratedShips {
      *
      * @return the id of this Ships
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the itemsId of this Ships. The itemsId field corresponds to the
@@ -184,7 +184,7 @@ public interface GeneratedShips {
      *
      * @return the itemsId of this Ships
      */
-    short getItemsId();
+    short itemsId();
 
     /**
      * Returns the health of this Ships. The health field corresponds to the
@@ -192,7 +192,7 @@ public interface GeneratedShips {
      *
      * @return the health of this Ships
      */
-    int getHealth();
+    int health();
 
     /**
      * Returns the speed of this Ships. The speed field corresponds to the
@@ -200,7 +200,7 @@ public interface GeneratedShips {
      *
      * @return the speed of this Ships
      */
-    short getSpeed();
+    short speed();
 
     /**
      * Returns the cargo of this Ships. The cargo field corresponds to the
@@ -208,7 +208,7 @@ public interface GeneratedShips {
      *
      * @return the cargo of this Ships
      */
-    short getCargo();
+    short cargo();
 
     /**
      * Returns the batteries of this Ships. The batteries field corresponds to
@@ -216,7 +216,7 @@ public interface GeneratedShips {
      *
      * @return the batteries of this Ships
      */
-    short getBatteries();
+    short batteries();
 
     /**
      * Returns the rockets of this Ships. The rockets field corresponds to the
@@ -224,7 +224,7 @@ public interface GeneratedShips {
      *
      * @return the rockets of this Ships
      */
-    short getRockets();
+    short rockets();
 
     /**
      * Returns the lasers of this Ships. The lasers field corresponds to the
@@ -232,7 +232,7 @@ public interface GeneratedShips {
      *
      * @return the lasers of this Ships
      */
-    byte getLasers();
+    byte lasers();
 
     /**
      * Returns the hellstorms of this Ships. The hellstorms field corresponds to
@@ -240,7 +240,7 @@ public interface GeneratedShips {
      *
      * @return the hellstorms of this Ships
      */
-    byte getHellstorms();
+    byte hellstorms();
 
     /**
      * Returns the generators of this Ships. The generators field corresponds to
@@ -248,7 +248,7 @@ public interface GeneratedShips {
      *
      * @return the generators of this Ships
      */
-    byte getGenerators();
+    byte generators();
 
     /**
      * Returns the extras of this Ships. The extras field corresponds to the
@@ -256,7 +256,7 @@ public interface GeneratedShips {
      *
      * @return the extras of this Ships
      */
-    byte getExtras();
+    byte extras();
 
     /**
      * Returns the gfx of this Ships. The gfx field corresponds to the database
@@ -264,7 +264,7 @@ public interface GeneratedShips {
      *
      * @return the gfx of this Ships
      */
-    byte getGfx();
+    byte gfx();
 
     /**
      * Sets the id of this Ships. The id field corresponds to the database
@@ -274,7 +274,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setId(byte id);
+    Ships id(Byte id);
 
     /**
      * Sets the itemsId of this Ships. The itemsId field corresponds to the
@@ -284,7 +284,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setItemsId(short itemsId);
+    Ships itemsId(short itemsId);
 
     /**
      * Sets the health of this Ships. The health field corresponds to the
@@ -294,7 +294,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setHealth(int health);
+    Ships health(int health);
 
     /**
      * Sets the speed of this Ships. The speed field corresponds to the database
@@ -304,7 +304,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setSpeed(short speed);
+    Ships speed(short speed);
 
     /**
      * Sets the cargo of this Ships. The cargo field corresponds to the database
@@ -314,7 +314,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setCargo(short cargo);
+    Ships cargo(short cargo);
 
     /**
      * Sets the batteries of this Ships. The batteries field corresponds to the
@@ -324,7 +324,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setBatteries(short batteries);
+    Ships batteries(short batteries);
 
     /**
      * Sets the rockets of this Ships. The rockets field corresponds to the
@@ -334,7 +334,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setRockets(short rockets);
+    Ships rockets(short rockets);
 
     /**
      * Sets the lasers of this Ships. The lasers field corresponds to the
@@ -344,7 +344,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setLasers(byte lasers);
+    Ships lasers(byte lasers);
 
     /**
      * Sets the hellstorms of this Ships. The hellstorms field corresponds to
@@ -354,7 +354,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setHellstorms(byte hellstorms);
+    Ships hellstorms(byte hellstorms);
 
     /**
      * Sets the generators of this Ships. The generators field corresponds to
@@ -364,7 +364,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setGenerators(byte generators);
+    Ships generators(byte generators);
 
     /**
      * Sets the extras of this Ships. The extras field corresponds to the
@@ -374,7 +374,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setExtras(byte extras);
+    Ships extras(byte extras);
 
     /**
      * Sets the gfx of this Ships. The gfx field corresponds to the database
@@ -384,7 +384,7 @@ public interface GeneratedShips {
      *
      * @return this Ships instance
      */
-    Ships setGfx(byte gfx);
+    Ships gfx(byte gfx);
 
     /**
      * Queries the specified manager for the referenced Items. If no such Items

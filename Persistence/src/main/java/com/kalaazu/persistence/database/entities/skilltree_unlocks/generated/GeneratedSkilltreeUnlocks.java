@@ -25,25 +25,25 @@ public interface GeneratedSkilltreeUnlocks {
 
     /**
      * This Field corresponds to the {@link SkilltreeUnlocks} field that can be
-     * obtained using the {@link SkilltreeUnlocks#getId()} method.
+     * obtained using the {@link SkilltreeUnlocks#id()} method.
      */
     ShortField<SkilltreeUnlocks, Short> ID = ShortField.create(
             Identifier.ID,
-            SkilltreeUnlocks::getId,
-            SkilltreeUnlocks::setId,
+            SkilltreeUnlocks::id,
+            SkilltreeUnlocks::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link SkilltreeUnlocks} field that can be
-     * obtained using the {@link SkilltreeUnlocks#getUpgradeSkilltreeLevelsId()}
+     * obtained using the {@link SkilltreeUnlocks#upgradeSkilltreeLevelsId()}
      * method.
      */
     ShortForeignKeyField<SkilltreeUnlocks, Short, SkilltreeLevels> UPGRADE_SKILLTREE_LEVELS_ID = ShortForeignKeyField.create(
             Identifier.UPGRADE_SKILLTREE_LEVELS_ID,
-            SkilltreeUnlocks::getUpgradeSkilltreeLevelsId,
-            SkilltreeUnlocks::setUpgradeSkilltreeLevelsId,
+            SkilltreeUnlocks::upgradeSkilltreeLevelsId,
+            SkilltreeUnlocks::upgradeSkilltreeLevelsId,
             SkilltreeLevels.ID,
             TypeMapper.primitive(),
             false
@@ -52,12 +52,12 @@ public interface GeneratedSkilltreeUnlocks {
     /**
      * This Field corresponds to the {@link SkilltreeUnlocks} field that can be
      * obtained using the {@link
-     * SkilltreeUnlocks#getRequiredSkilltreeLevelsId()} method.
+     * SkilltreeUnlocks#requiredSkilltreeLevelsId()} method.
      */
     ShortForeignKeyField<SkilltreeUnlocks, Short, SkilltreeLevels> REQUIRED_SKILLTREE_LEVELS_ID = ShortForeignKeyField.create(
             Identifier.REQUIRED_SKILLTREE_LEVELS_ID,
-            SkilltreeUnlocks::getRequiredSkilltreeLevelsId,
-            SkilltreeUnlocks::setRequiredSkilltreeLevelsId,
+            SkilltreeUnlocks::requiredSkilltreeLevelsId,
+            SkilltreeUnlocks::requiredSkilltreeLevelsId,
             SkilltreeLevels.ID,
             TypeMapper.primitive(),
             false
@@ -69,7 +69,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return the id of this SkilltreeUnlocks
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the upgradeSkilltreeLevelsId of this SkilltreeUnlocks. The
@@ -78,7 +78,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return the upgradeSkilltreeLevelsId of this SkilltreeUnlocks
      */
-    short getUpgradeSkilltreeLevelsId();
+    short upgradeSkilltreeLevelsId();
 
     /**
      * Returns the requiredSkilltreeLevelsId of this SkilltreeUnlocks. The
@@ -87,7 +87,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return the requiredSkilltreeLevelsId of this SkilltreeUnlocks
      */
-    short getRequiredSkilltreeLevelsId();
+    short requiredSkilltreeLevelsId();
 
     /**
      * Sets the id of this SkilltreeUnlocks. The id field corresponds to the
@@ -97,7 +97,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return this SkilltreeUnlocks instance
      */
-    SkilltreeUnlocks setId(short id);
+    SkilltreeUnlocks id(Short id);
 
     /**
      * Sets the upgradeSkilltreeLevelsId of this SkilltreeUnlocks. The
@@ -108,7 +108,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return this SkilltreeUnlocks instance
      */
-    SkilltreeUnlocks setUpgradeSkilltreeLevelsId(short upgradeSkilltreeLevelsId);
+    SkilltreeUnlocks upgradeSkilltreeLevelsId(short upgradeSkilltreeLevelsId);
 
     /**
      * Sets the requiredSkilltreeLevelsId of this SkilltreeUnlocks. The
@@ -119,7 +119,7 @@ public interface GeneratedSkilltreeUnlocks {
      *
      * @return this SkilltreeUnlocks instance
      */
-    SkilltreeUnlocks setRequiredSkilltreeLevelsId(short requiredSkilltreeLevelsId);
+    SkilltreeUnlocks requiredSkilltreeLevelsId(short requiredSkilltreeLevelsId);
 
     /**
      * Queries the specified manager for the referenced SkilltreeLevels. If no
