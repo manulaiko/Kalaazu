@@ -6,6 +6,7 @@ import com.kalaazu.persistence.database.entities.Manager;
 import com.kalaazu.persistence.database.entities.Quests;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -21,9 +22,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedQuestsImpl implements Quests {
 
-    private short id;
+    private Short id;
 
     private byte levelsId;
 
@@ -38,73 +40,28 @@ public abstract class GeneratedQuestsImpl implements Quests {
     }
 
     @Override
-    public Short getId() {
-        return id;
-    }
-
-    @Override
-    public byte getLevelsId() {
-        return levelsId;
-    }
-
-    @Override
-    public Optional<Short> getQuestsId() {
+    public Optional<Short> questsId() {
         return Optional.ofNullable(questsId);
     }
 
     @Override
-    public Optional<Byte> getFactionsId() {
+    public Optional<Byte> factionsId() {
         return Optional.ofNullable(factionsId);
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public Quests setId(short id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Quests setLevelsId(byte levelsId) {
-        this.levelsId = levelsId;
-        return this;
-    }
-
-    @Override
-    public Quests setQuestsId(Short questsId) {
-        this.questsId = questsId;
-        return this;
-    }
-
-    @Override
-    public Quests setFactionsId(Byte factionsId) {
-        this.factionsId = factionsId;
-        return this;
-    }
-
-    @Override
-    public Quests setName(String name) {
-        this.name = name;
-        return this;
     }
 
     @Override
     public Levels findLevelsId(Manager<Levels> foreignManager) {
         return foreignManager.stream()
-                             .filter(Levels.ID.equal(getLevelsId()))
+                             .filter(Levels.ID.equal(levelsId()))
                              .findAny()
                              .orElse(null);
     }
 
     @Override
     public Optional<Quests> findQuestsId(Manager<Quests> foreignManager) {
-        if (getQuestsId().isPresent()) {
+        if (questsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Quests.ID.equal(getQuestsId().get()))
+                                 .filter(Quests.ID.equal(questsId().get()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -113,61 +70,12 @@ public abstract class GeneratedQuestsImpl implements Quests {
 
     @Override
     public Optional<Factions> findFactionsId(Manager<Factions> foreignManager) {
-        if (getFactionsId().isPresent()) {
+        if (factionsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(Factions.ID.equal(getFactionsId().get()))
+                                 .filter(Factions.ID.equal(factionsId().get()))
                                  .findAny();
         } else {
             return Optional.empty();
         }
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("levelsId = " + Objects.toString(getLevelsId()));
-        sj.add("questsId = " + Objects.toString(OptionalUtil.unwrap(getQuestsId())));
-        sj.add("factionsId = " + Objects.toString(OptionalUtil.unwrap(getFactionsId())));
-        sj.add("name = " + Objects.toString(getName()));
-        return "QuestsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Quests)) {
-            return false;
-        }
-        final Quests thatQuests = (Quests) that;
-        if (this.getId() != thatQuests.getId()) {
-            return false;
-        }
-        if (this.getLevelsId() != thatQuests.getLevelsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getQuestsId(), thatQuests.getQuestsId())) {
-            return false;
-        }
-        if (!Objects.equals(this.getFactionsId(), thatQuests.getFactionsId())) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatQuests.getName())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Short.hashCode(getId());
-        hash = 31 * hash + Byte.hashCode(getLevelsId());
-        hash = 31 * hash + Objects.hashCode(getQuestsId());
-        hash = 31 * hash + Objects.hashCode(getFactionsId());
-        hash = 31 * hash + Objects.hashCode(getName());
-        return hash;
     }
 }

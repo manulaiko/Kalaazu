@@ -2,9 +2,7 @@ package com.kalaazu.persistence.database.entities.permissions.generated;
 
 import com.kalaazu.persistence.database.entities.Permissions;
 import com.speedment.common.annotation.GeneratedCode;
-
-import java.util.Objects;
-import java.util.StringJoiner;
+import lombok.Data;
 
 /**
  * The generated base implementation of the {@link
@@ -16,9 +14,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedPermissionsImpl implements Permissions {
 
-    private byte id;
+    private Byte id;
 
     private String name;
 
@@ -26,77 +25,5 @@ public abstract class GeneratedPermissionsImpl implements Permissions {
 
     protected GeneratedPermissionsImpl() {
 
-    }
-
-    @Override
-    public Byte id() {
-        return id;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public String getCategory() {
-        return category;
-    }
-
-    @Override
-    public Permissions setId(byte id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public Permissions setName(String name) {
-        this.name = name;
-        return this;
-    }
-
-    @Override
-    public Permissions setCategory(String category) {
-        this.category = category;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(id()));
-        sj.add("name = " + Objects.toString(getName()));
-        sj.add("category = " + Objects.toString(getCategory()));
-        return "PermissionsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof Permissions)) {
-            return false;
-        }
-        final Permissions thatPermissions = (Permissions) that;
-        if (this.id() != thatPermissions.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getName(), thatPermissions.getName())) {
-            return false;
-        }
-        if (!Objects.equals(this.getCategory(), thatPermissions.getCategory())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Byte.hashCode(id());
-        hash = 31 * hash + Objects.hashCode(getName());
-        hash = 31 * hash + Objects.hashCode(getCategory());
-        return hash;
     }
 }

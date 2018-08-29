@@ -23,36 +23,36 @@ public interface GeneratedPermissions {
 
     /**
      * This Field corresponds to the {@link Permissions} field that can be
-     * obtained using the {@link Permissions#getId()} method.
+     * obtained using the {@link Permissions#id()} method.
      */
     ByteField<Permissions, Byte> ID = ByteField.create(
             Identifier.ID,
-            Permissions::getId,
-            Permissions::setId,
+            Permissions::id,
+            Permissions::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Permissions} field that can be
-     * obtained using the {@link Permissions#getName()} method.
+     * obtained using the {@link Permissions#name()} method.
      */
     StringField<Permissions, String> NAME = StringField.create(
             Identifier.NAME,
-            Permissions::getName,
-            Permissions::setName,
+            Permissions::name,
+            Permissions::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Permissions} field that can be
-     * obtained using the {@link Permissions#getCategory()} method.
+     * obtained using the {@link Permissions#category()} method.
      */
     StringField<Permissions, String> CATEGORY = StringField.create(
             Identifier.CATEGORY,
-            Permissions::getCategory,
-            Permissions::setCategory,
+            Permissions::category,
+            Permissions::category,
             TypeMapper.identity(),
             false
     );
@@ -63,7 +63,7 @@ public interface GeneratedPermissions {
      *
      * @return the id of this Permissions
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Permissions. The name field corresponds to the
@@ -71,7 +71,7 @@ public interface GeneratedPermissions {
      *
      * @return the name of this Permissions
      */
-    String getName();
+    String name();
 
     /**
      * Returns the category of this Permissions. The category field corresponds
@@ -79,7 +79,7 @@ public interface GeneratedPermissions {
      *
      * @return the category of this Permissions
      */
-    String getCategory();
+    String category();
 
     /**
      * Sets the id of this Permissions. The id field corresponds to the database
@@ -89,7 +89,7 @@ public interface GeneratedPermissions {
      *
      * @return this Permissions instance
      */
-    Permissions setId(byte id);
+    Permissions id(Byte id);
 
     /**
      * Sets the name of this Permissions. The name field corresponds to the
@@ -99,7 +99,7 @@ public interface GeneratedPermissions {
      *
      * @return this Permissions instance
      */
-    Permissions setName(String name);
+    Permissions name(String name);
 
     /**
      * Sets the category of this Permissions. The category field corresponds to
@@ -109,7 +109,7 @@ public interface GeneratedPermissions {
      *
      * @return this Permissions instance
      */
-    Permissions setCategory(String category);
+    Permissions category(String category);
 
     enum Identifier implements ColumnIdentifier<Permissions> {
 

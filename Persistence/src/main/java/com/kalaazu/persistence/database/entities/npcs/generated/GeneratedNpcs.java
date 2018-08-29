@@ -25,108 +25,108 @@ public interface GeneratedNpcs {
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getId()} method.
+     * using the {@link Npcs#id()} method.
      */
     ByteField<Npcs, Byte> ID = ByteField.create(
             Identifier.ID,
-            Npcs::getId,
-            Npcs::setId,
+            Npcs::id,
+            Npcs::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getName()} method.
+     * using the {@link Npcs#name()} method.
      */
     StringField<Npcs, String> NAME = StringField.create(
             Identifier.NAME,
-            Npcs::getName,
-            Npcs::setName,
+            Npcs::name,
+            Npcs::name,
             TypeMapper.identity(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getHealth()} method.
+     * using the {@link Npcs#health()} method.
      */
     IntField<Npcs, Integer> HEALTH = IntField.create(
             Identifier.HEALTH,
-            Npcs::getHealth,
-            Npcs::setHealth,
+            Npcs::health,
+            Npcs::health,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getShield()} method.
+     * using the {@link Npcs#shield()} method.
      */
     IntField<Npcs, Integer> SHIELD = IntField.create(
             Identifier.SHIELD,
-            Npcs::getShield,
-            Npcs::setShield,
+            Npcs::shield,
+            Npcs::shield,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getShieldAbsorption()} method.
+     * using the {@link Npcs#shieldAbsorption()} method.
      */
     ByteField<Npcs, Byte> SHIELD_ABSORPTION = ByteField.create(
             Identifier.SHIELD_ABSORPTION,
-            Npcs::getShieldAbsorption,
-            Npcs::setShieldAbsorption,
+            Npcs::shieldAbsorption,
+            Npcs::shieldAbsorption,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getDamage()} method.
+     * using the {@link Npcs#damage()} method.
      */
     IntField<Npcs, Integer> DAMAGE = IntField.create(
             Identifier.DAMAGE,
-            Npcs::getDamage,
-            Npcs::setDamage,
+            Npcs::damage,
+            Npcs::damage,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getSpeed()} method.
+     * using the {@link Npcs#speed()} method.
      */
     ShortField<Npcs, Short> SPEED = ShortField.create(
             Identifier.SPEED,
-            Npcs::getSpeed,
-            Npcs::setSpeed,
+            Npcs::speed,
+            Npcs::speed,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getGfx()} method.
+     * using the {@link Npcs#gfx()} method.
      */
     ByteField<Npcs, Byte> GFX = ByteField.create(
             Identifier.GFX,
-            Npcs::getGfx,
-            Npcs::setGfx,
+            Npcs::gfx,
+            Npcs::gfx,
             TypeMapper.primitive(),
             false
     );
 
     /**
      * This Field corresponds to the {@link Npcs} field that can be obtained
-     * using the {@link Npcs#getAi()} method.
+     * using the {@link Npcs#ai()} method.
      */
     ByteField<Npcs, Byte> AI = ByteField.create(
             Identifier.AI,
-            Npcs::getAi,
-            Npcs::setAi,
+            Npcs::ai,
+            Npcs::ai,
             TypeMapper.primitive(),
             false
     );
@@ -137,7 +137,7 @@ public interface GeneratedNpcs {
      *
      * @return the id of this Npcs
      */
-    Byte getId();
+    Byte id();
 
     /**
      * Returns the name of this Npcs. The name field corresponds to the database
@@ -145,7 +145,7 @@ public interface GeneratedNpcs {
      *
      * @return the name of this Npcs
      */
-    String getName();
+    String name();
 
     /**
      * Returns the health of this Npcs. The health field corresponds to the
@@ -153,7 +153,7 @@ public interface GeneratedNpcs {
      *
      * @return the health of this Npcs
      */
-    int getHealth();
+    int health();
 
     /**
      * Returns the shield of this Npcs. The shield field corresponds to the
@@ -161,7 +161,7 @@ public interface GeneratedNpcs {
      *
      * @return the shield of this Npcs
      */
-    int getShield();
+    int shield();
 
     /**
      * Returns the shieldAbsorption of this Npcs. The shieldAbsorption field
@@ -170,7 +170,7 @@ public interface GeneratedNpcs {
      *
      * @return the shieldAbsorption of this Npcs
      */
-    byte getShieldAbsorption();
+    byte shieldAbsorption();
 
     /**
      * Returns the damage of this Npcs. The damage field corresponds to the
@@ -178,7 +178,7 @@ public interface GeneratedNpcs {
      *
      * @return the damage of this Npcs
      */
-    int getDamage();
+    int damage();
 
     /**
      * Returns the speed of this Npcs. The speed field corresponds to the
@@ -186,7 +186,7 @@ public interface GeneratedNpcs {
      *
      * @return the speed of this Npcs
      */
-    short getSpeed();
+    short speed();
 
     /**
      * Returns the gfx of this Npcs. The gfx field corresponds to the database
@@ -194,7 +194,7 @@ public interface GeneratedNpcs {
      *
      * @return the gfx of this Npcs
      */
-    byte getGfx();
+    byte gfx();
 
     /**
      * Returns the ai of this Npcs. The ai field corresponds to the database
@@ -202,7 +202,7 @@ public interface GeneratedNpcs {
      *
      * @return the ai of this Npcs
      */
-    byte getAi();
+    byte ai();
 
     /**
      * Sets the id of this Npcs. The id field corresponds to the database column
@@ -212,7 +212,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setId(byte id);
+    Npcs id(Byte id);
 
     /**
      * Sets the name of this Npcs. The name field corresponds to the database
@@ -222,7 +222,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setName(String name);
+    Npcs name(String name);
 
     /**
      * Sets the health of this Npcs. The health field corresponds to the
@@ -232,7 +232,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setHealth(int health);
+    Npcs health(int health);
 
     /**
      * Sets the shield of this Npcs. The shield field corresponds to the
@@ -242,7 +242,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setShield(int shield);
+    Npcs shield(int shield);
 
     /**
      * Sets the shieldAbsorption of this Npcs. The shieldAbsorption field
@@ -253,7 +253,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setShieldAbsorption(byte shieldAbsorption);
+    Npcs shieldAbsorption(byte shieldAbsorption);
 
     /**
      * Sets the damage of this Npcs. The damage field corresponds to the
@@ -263,7 +263,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setDamage(int damage);
+    Npcs damage(int damage);
 
     /**
      * Sets the speed of this Npcs. The speed field corresponds to the database
@@ -273,7 +273,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setSpeed(short speed);
+    Npcs speed(short speed);
 
     /**
      * Sets the gfx of this Npcs. The gfx field corresponds to the database
@@ -283,7 +283,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setGfx(byte gfx);
+    Npcs gfx(byte gfx);
 
     /**
      * Sets the ai of this Npcs. The ai field corresponds to the database column
@@ -293,7 +293,7 @@ public interface GeneratedNpcs {
      *
      * @return this Npcs instance
      */
-    Npcs setAi(byte ai);
+    Npcs ai(byte ai);
 
     enum Identifier implements ColumnIdentifier<Npcs> {
 

@@ -30,25 +30,25 @@ public interface GeneratedQuestsConditions {
 
     /**
      * This Field corresponds to the {@link QuestsConditions} field that can be
-     * obtained using the {@link QuestsConditions#getId()} method.
+     * obtained using the {@link QuestsConditions#id()} method.
      */
     IntField<QuestsConditions, Integer> ID = IntField.create(
             Identifier.ID,
-            QuestsConditions::getId,
-            QuestsConditions::setId,
+            QuestsConditions::id,
+            QuestsConditions::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link QuestsConditions} field that can be
-     * obtained using the {@link QuestsConditions#getQuestsConditionsId()}
+     * obtained using the {@link QuestsConditions#questsConditionsId()}
      * method.
      */
     ComparableForeignKeyField<QuestsConditions, Integer, Integer, QuestsConditions> QUESTS_CONDITIONS_ID = ComparableForeignKeyField.create(
             Identifier.QUESTS_CONDITIONS_ID,
-            o -> OptionalUtil.unwrap(o.getQuestsConditionsId()),
-            QuestsConditions::setQuestsConditionsId,
+            o -> OptionalUtil.unwrap(o.questsConditionsId()),
+            QuestsConditions::questsConditionsId,
             QuestsConditions.ID,
             TypeMapper.identity(),
             false
@@ -56,12 +56,12 @@ public interface GeneratedQuestsConditions {
 
     /**
      * This Field corresponds to the {@link QuestsConditions} field that can be
-     * obtained using the {@link QuestsConditions#getQuestsId()} method.
+     * obtained using the {@link QuestsConditions#questsId()} method.
      */
     ShortForeignKeyField<QuestsConditions, Short, Quests> QUESTS_ID = ShortForeignKeyField.create(
             Identifier.QUESTS_ID,
-            QuestsConditions::getQuestsId,
-            QuestsConditions::setQuestsId,
+            QuestsConditions::questsId,
+            QuestsConditions::questsId,
             Quests.ID,
             TypeMapper.primitive(),
             false
@@ -69,12 +69,12 @@ public interface GeneratedQuestsConditions {
 
     /**
      * This Field corresponds to the {@link QuestsConditions} field that can be
-     * obtained using the {@link QuestsConditions#getType()} method.
+     * obtained using the {@link QuestsConditions#type()} method.
      */
     EnumField<QuestsConditions, Byte, QuestConditionType> TYPE = EnumField.create(
             Identifier.TYPE,
-            QuestsConditions::getType,
-            QuestsConditions::setType,
+            QuestsConditions::type,
+            QuestsConditions::type,
             new QuestConditionTypeMapper(),
             QuestConditionType::name,
             QuestConditionType::valueOf,
@@ -83,12 +83,12 @@ public interface GeneratedQuestsConditions {
 
     /**
      * This Field corresponds to the {@link QuestsConditions} field that can be
-     * obtained using the {@link QuestsConditions#getValue()} method.
+     * obtained using the {@link QuestsConditions#value()} method.
      */
     StringField<QuestsConditions, String> VALUE = StringField.create(
             Identifier.VALUE,
-            QuestsConditions::getValue,
-            QuestsConditions::setValue,
+            QuestsConditions::value,
+            QuestsConditions::value,
             TypeMapper.identity(),
             false
     );
@@ -99,7 +99,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return the id of this QuestsConditions
      */
-    Integer getId();
+    Integer id();
 
     /**
      * Returns the questsConditionsId of this QuestsConditions. The
@@ -108,7 +108,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return the questsConditionsId of this QuestsConditions
      */
-    OptionalInt getQuestsConditionsId();
+    OptionalInt questsConditionsId();
 
     /**
      * Returns the questsId of this QuestsConditions. The questsId field
@@ -117,7 +117,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return the questsId of this QuestsConditions
      */
-    short getQuestsId();
+    short questsId();
 
     /**
      * Returns the type of this QuestsConditions. The type field corresponds to
@@ -125,7 +125,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return the type of this QuestsConditions
      */
-    QuestConditionType getType();
+    QuestConditionType type();
 
     /**
      * Returns the value of this QuestsConditions. The value field corresponds
@@ -133,7 +133,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return the value of this QuestsConditions
      */
-    String getValue();
+    String value();
 
     /**
      * Sets the id of this QuestsConditions. The id field corresponds to the
@@ -143,7 +143,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return this QuestsConditions instance
      */
-    QuestsConditions setId(int id);
+    QuestsConditions id(Integer id);
 
     /**
      * Sets the questsConditionsId of this QuestsConditions. The
@@ -154,7 +154,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return this QuestsConditions instance
      */
-    QuestsConditions setQuestsConditionsId(Integer questsConditionsId);
+    QuestsConditions questsConditionsId(Integer questsConditionsId);
 
     /**
      * Sets the questsId of this QuestsConditions. The questsId field
@@ -165,7 +165,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return this QuestsConditions instance
      */
-    QuestsConditions setQuestsId(short questsId);
+    QuestsConditions questsId(short questsId);
 
     /**
      * Sets the type of this QuestsConditions. The type field corresponds to the
@@ -175,7 +175,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return this QuestsConditions instance
      */
-    QuestsConditions setType(QuestConditionType type);
+    QuestsConditions type(QuestConditionType type);
 
     /**
      * Sets the value of this QuestsConditions. The value field corresponds to
@@ -185,7 +185,7 @@ public interface GeneratedQuestsConditions {
      *
      * @return this QuestsConditions instance
      */
-    QuestsConditions setValue(String value);
+    QuestsConditions value(String value);
 
     /**
      * Queries the specified manager for the referenced QuestsConditions. If no

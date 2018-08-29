@@ -6,6 +6,7 @@ import com.kalaazu.persistence.database.entities.QuestsConditions;
 import com.kalaazu.persistence.database.mappers.QuestConditionType;
 import com.speedment.common.annotation.GeneratedCode;
 import com.speedment.runtime.core.util.OptionalUtil;
+import lombok.Data;
 
 import java.util.Objects;
 import java.util.Optional;
@@ -22,9 +23,10 @@ import java.util.StringJoiner;
  * @author Speedment
  */
 @GeneratedCode("Speedment")
+@Data
 public abstract class GeneratedQuestsConditionsImpl implements QuestsConditions {
 
-    private int id;
+    private Integer id;
 
     private Integer questsConditionsId;
 
@@ -39,65 +41,15 @@ public abstract class GeneratedQuestsConditionsImpl implements QuestsConditions 
     }
 
     @Override
-    public Integer getId() {
-        return id;
-    }
-
-    @Override
-    public OptionalInt getQuestsConditionsId() {
+    public OptionalInt questsConditionsId() {
         return OptionalUtil.ofNullable(questsConditionsId);
     }
 
     @Override
-    public short getQuestsId() {
-        return questsId;
-    }
-
-    @Override
-    public QuestConditionType getType() {
-        return type;
-    }
-
-    @Override
-    public String getValue() {
-        return value;
-    }
-
-    @Override
-    public QuestsConditions setId(int id) {
-        this.id = id;
-        return this;
-    }
-
-    @Override
-    public QuestsConditions setQuestsConditionsId(Integer questsConditionsId) {
-        this.questsConditionsId = questsConditionsId;
-        return this;
-    }
-
-    @Override
-    public QuestsConditions setQuestsId(short questsId) {
-        this.questsId = questsId;
-        return this;
-    }
-
-    @Override
-    public QuestsConditions setType(QuestConditionType type) {
-        this.type = type;
-        return this;
-    }
-
-    @Override
-    public QuestsConditions setValue(String value) {
-        this.value = value;
-        return this;
-    }
-
-    @Override
     public Optional<QuestsConditions> findQuestsConditionsId(Manager<QuestsConditions> foreignManager) {
-        if (getQuestsConditionsId().isPresent()) {
+        if (questsConditionsId().isPresent()) {
             return foreignManager.stream()
-                                 .filter(QuestsConditions.ID.equal(getQuestsConditionsId().getAsInt()))
+                                 .filter(QuestsConditions.ID.equal(questsConditionsId().getAsInt()))
                                  .findAny();
         } else {
             return Optional.empty();
@@ -107,57 +59,8 @@ public abstract class GeneratedQuestsConditionsImpl implements QuestsConditions 
     @Override
     public Quests findQuestsId(Manager<Quests> foreignManager) {
         return foreignManager.stream()
-                             .filter(Quests.ID.equal(getQuestsId()))
+                             .filter(Quests.ID.equal(questsId()))
                              .findAny()
                              .orElse(null);
-    }
-
-    @Override
-    public String toString() {
-        final StringJoiner sj = new StringJoiner(", ", "{ ", " }");
-        sj.add("id = " + Objects.toString(getId()));
-        sj.add("questsConditionsId = " + Objects.toString(OptionalUtil.unwrap(getQuestsConditionsId())));
-        sj.add("questsId = " + Objects.toString(getQuestsId()));
-        sj.add("type = " + Objects.toString(getType()));
-        sj.add("value = " + Objects.toString(getValue()));
-        return "QuestsConditionsImpl " + sj.toString();
-    }
-
-    @Override
-    public boolean equals(Object that) {
-        if (this == that) {
-            return true;
-        }
-        if (!(that instanceof QuestsConditions)) {
-            return false;
-        }
-        final QuestsConditions thatQuestsConditions = (QuestsConditions) that;
-        if (this.getId() != thatQuestsConditions.getId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getQuestsConditionsId(), thatQuestsConditions.getQuestsConditionsId())) {
-            return false;
-        }
-        if (this.getQuestsId() != thatQuestsConditions.getQuestsId()) {
-            return false;
-        }
-        if (!Objects.equals(this.getType(), thatQuestsConditions.getType())) {
-            return false;
-        }
-        if (!Objects.equals(this.getValue(), thatQuestsConditions.getValue())) {
-            return false;
-        }
-        return true;
-    }
-
-    @Override
-    public int hashCode() {
-        int hash = 7;
-        hash = 31 * hash + Integer.hashCode(getId());
-        hash = 31 * hash + Objects.hashCode(getQuestsConditionsId());
-        hash = 31 * hash + Short.hashCode(getQuestsId());
-        hash = 31 * hash + Objects.hashCode(getType());
-        hash = 31 * hash + Objects.hashCode(getValue());
-        return hash;
     }
 }

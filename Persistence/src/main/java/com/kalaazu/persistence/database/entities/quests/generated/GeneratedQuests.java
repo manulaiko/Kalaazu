@@ -31,24 +31,24 @@ public interface GeneratedQuests {
 
     /**
      * This Field corresponds to the {@link Quests} field that can be obtained
-     * using the {@link Quests#getId()} method.
+     * using the {@link Quests#id()} method.
      */
     ShortField<Quests, Short> ID = ShortField.create(
             Identifier.ID,
-            Quests::getId,
-            Quests::setId,
+            Quests::id,
+            Quests::id,
             TypeMapper.primitive(),
             true
     );
 
     /**
      * This Field corresponds to the {@link Quests} field that can be obtained
-     * using the {@link Quests#getLevelsId()} method.
+     * using the {@link Quests#levelsId()} method.
      */
     ByteForeignKeyField<Quests, Byte, Levels> LEVELS_ID = ByteForeignKeyField.create(
             Identifier.LEVELS_ID,
-            Quests::getLevelsId,
-            Quests::setLevelsId,
+            Quests::levelsId,
+            Quests::levelsId,
             Levels.ID,
             TypeMapper.primitive(),
             false
@@ -56,12 +56,12 @@ public interface GeneratedQuests {
 
     /**
      * This Field corresponds to the {@link Quests} field that can be obtained
-     * using the {@link Quests#getQuestsId()} method.
+     * using the {@link Quests#questsId()} method.
      */
     ComparableForeignKeyField<Quests, Short, Short, Quests> QUESTS_ID = ComparableForeignKeyField.create(
             Identifier.QUESTS_ID,
-            o -> OptionalUtil.unwrap(o.getQuestsId()),
-            Quests::setQuestsId,
+            o -> OptionalUtil.unwrap(o.questsId()),
+            Quests::questsId,
             Quests.ID,
             TypeMapper.identity(),
             false
@@ -69,12 +69,12 @@ public interface GeneratedQuests {
 
     /**
      * This Field corresponds to the {@link Quests} field that can be obtained
-     * using the {@link Quests#getFactionsId()} method.
+     * using the {@link Quests#factionsId()} method.
      */
     ComparableForeignKeyField<Quests, Byte, Byte, Factions> FACTIONS_ID = ComparableForeignKeyField.create(
             Identifier.FACTIONS_ID,
-            o -> OptionalUtil.unwrap(o.getFactionsId()),
-            Quests::setFactionsId,
+            o -> OptionalUtil.unwrap(o.factionsId()),
+            Quests::factionsId,
             Factions.ID,
             TypeMapper.identity(),
             false
@@ -82,12 +82,12 @@ public interface GeneratedQuests {
 
     /**
      * This Field corresponds to the {@link Quests} field that can be obtained
-     * using the {@link Quests#getName()} method.
+     * using the {@link Quests#name()} method.
      */
     StringField<Quests, String> NAME = StringField.create(
             Identifier.NAME,
-            Quests::getName,
-            Quests::setName,
+            Quests::name,
+            Quests::name,
             TypeMapper.identity(),
             false
     );
@@ -98,7 +98,7 @@ public interface GeneratedQuests {
      *
      * @return the id of this Quests
      */
-    Short getId();
+    Short id();
 
     /**
      * Returns the levelsId of this Quests. The levelsId field corresponds to
@@ -106,7 +106,7 @@ public interface GeneratedQuests {
      *
      * @return the levelsId of this Quests
      */
-    byte getLevelsId();
+    byte levelsId();
 
     /**
      * Returns the questsId of this Quests. The questsId field corresponds to
@@ -114,7 +114,7 @@ public interface GeneratedQuests {
      *
      * @return the questsId of this Quests
      */
-    Optional<Short> getQuestsId();
+    Optional<Short> questsId();
 
     /**
      * Returns the factionsId of this Quests. The factionsId field corresponds
@@ -122,7 +122,7 @@ public interface GeneratedQuests {
      *
      * @return the factionsId of this Quests
      */
-    Optional<Byte> getFactionsId();
+    Optional<Byte> factionsId();
 
     /**
      * Returns the name of this Quests. The name field corresponds to the
@@ -130,7 +130,7 @@ public interface GeneratedQuests {
      *
      * @return the name of this Quests
      */
-    String getName();
+    String name();
 
     /**
      * Sets the id of this Quests. The id field corresponds to the database
@@ -140,7 +140,7 @@ public interface GeneratedQuests {
      *
      * @return this Quests instance
      */
-    Quests setId(short id);
+    Quests id(Short id);
 
     /**
      * Sets the levelsId of this Quests. The levelsId field corresponds to the
@@ -150,7 +150,7 @@ public interface GeneratedQuests {
      *
      * @return this Quests instance
      */
-    Quests setLevelsId(byte levelsId);
+    Quests levelsId(byte levelsId);
 
     /**
      * Sets the questsId of this Quests. The questsId field corresponds to the
@@ -160,7 +160,7 @@ public interface GeneratedQuests {
      *
      * @return this Quests instance
      */
-    Quests setQuestsId(Short questsId);
+    Quests questsId(Short questsId);
 
     /**
      * Sets the factionsId of this Quests. The factionsId field corresponds to
@@ -170,7 +170,7 @@ public interface GeneratedQuests {
      *
      * @return this Quests instance
      */
-    Quests setFactionsId(Byte factionsId);
+    Quests factionsId(Byte factionsId);
 
     /**
      * Sets the name of this Quests. The name field corresponds to the database
@@ -180,7 +180,7 @@ public interface GeneratedQuests {
      *
      * @return this Quests instance
      */
-    Quests setName(String name);
+    Quests name(String name);
 
     /**
      * Queries the specified manager for the referenced Levels. If no such
