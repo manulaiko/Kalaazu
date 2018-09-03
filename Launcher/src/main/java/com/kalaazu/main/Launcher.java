@@ -38,6 +38,12 @@ public class Launcher extends AbstractVerticle {
 
         Launcher.logger.info("Starting Persistence module...");
         vertx.deployVerticle(new Persistence(), this.opts, h -> {
+            if (h.failed()) {
+                Launcher.logger.error("Couldn't start persistence!");
+
+                return;
+            }
+
             this.startCMS();
         });
     }
@@ -57,6 +63,10 @@ public class Launcher extends AbstractVerticle {
     public void startCMS() {
         Launcher.logger.info("Starting CMS module...");
 
-        vertx.deployVerticle(new CMS(), this.opts);
+        vertx.deployVerticle(new CMS(), this.opts, h -> {
+            if (h.failed()) {
+                Launcher.logger.warn("Couldn't start CMS!", h.cause());
+            }
+        });
     }
 }

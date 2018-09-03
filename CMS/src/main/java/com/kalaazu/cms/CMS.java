@@ -53,17 +53,22 @@ public class CMS extends AbstractVerticle {
                             .host(host)
                             .port(port)
                             .webRoot(webRoot)
+                            .vertx(vertx)
                             .build();
 
-        this.server.initialize();
+        try {
+            this.server.initialize();
 
-        CMS.logger.info("Starting event listener...");
-        var listener = new EventListener();
-        listener.initialize();
+            CMS.logger.info("Starting event listener...");
+            var listener = new EventListener();
+            listener.initialize();
 
-        CMS.logger.info("CMS started!");
+            CMS.logger.info("CMS started!");
 
-        startFuture.complete();
+            startFuture.complete();
+        } catch (Exception e) {
+            startFuture.fail(e);
+        }
     }
 
     /**

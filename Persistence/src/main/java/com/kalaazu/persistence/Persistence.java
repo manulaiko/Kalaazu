@@ -71,15 +71,19 @@ public class Persistence extends AbstractVerticle {
                          .logTypes(logTypes)
                          .build();
 
-        db.initialize();
-        Database.instance(db);
+        try {
+            db.initialize();
+            Database.instance(db);
 
-        Persistence.logger.info("Initializing event listener...");
-        var listener = new EventListener();
-        listener.initialize();
+            Persistence.logger.info("Initializing event listener...");
+            var listener = new EventListener();
+            listener.initialize();
 
-        Persistence.logger.info("Persistence initialize!");
+            Persistence.logger.info("Persistence initialize!");
 
-        startFuture.complete();
+            startFuture.complete();
+        } catch (Exception e) {
+            startFuture.fail(e);
+        }
     }
 }
