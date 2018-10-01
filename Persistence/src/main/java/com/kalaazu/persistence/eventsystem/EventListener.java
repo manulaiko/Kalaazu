@@ -2,6 +2,7 @@ package com.kalaazu.persistence.eventsystem;
 
 import com.kalaazu.persistence.eventsystem.handlers.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Event listener.
@@ -11,6 +12,7 @@ import lombok.Data;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class EventListener extends com.kalaazu.eventsystem.EventListener {
     private final String domain = "persistence";

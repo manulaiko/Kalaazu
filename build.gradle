@@ -48,7 +48,7 @@ allprojects {
     group 'com.kalaazu'
     version '1.0-SNAPSHOT'
 
-    sourceCompatibility = 10
+    sourceCompatibility = 11
 
     repositories {
         mavenCentral()
@@ -65,7 +65,7 @@ allprojects {
     }
 
     lombok {
-        version = "1.18.0"
+        version = "1.18.2"
     }
 
     dependencies {

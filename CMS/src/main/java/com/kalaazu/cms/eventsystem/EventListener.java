@@ -1,6 +1,7 @@
 package com.kalaazu.cms.eventsystem;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * Event listener.
@@ -10,6 +11,7 @@ import lombok.Data;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class EventListener extends com.kalaazu.eventsystem.EventListener {
     private String domain = "cms";

@@ -568,15 +568,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     }
 
     @Override
-    public int hashCode() {
-        final int prime  = 31;
-        int       result = 1;
-        result = prime * result + NumberUtils.floatToIntBits(x);
-        result = prime * result + NumberUtils.floatToIntBits(y);
-        return result;
-    }
-
-    @Override
     public boolean epsilonEquals(Vector2 other, float epsilon) {
         if (other == null) {
             return false;
