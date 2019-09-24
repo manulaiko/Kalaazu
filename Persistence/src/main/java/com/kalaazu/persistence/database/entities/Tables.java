@@ -4,92 +4,7 @@
 package com.kalaazu.persistence.database.entities;
 
 
-import com.kalaazu.persistence.database.entities.tables.Accounts;
-import com.kalaazu.persistence.database.entities.tables.AccountsBanks;
-import com.kalaazu.persistence.database.entities.tables.AccountsBanksLogs;
-import com.kalaazu.persistence.database.entities.tables.AccountsClansRoles;
-import com.kalaazu.persistence.database.entities.tables.AccountsConfigurations;
-import com.kalaazu.persistence.database.entities.tables.AccountsConfigurationsAccountsItems;
-import com.kalaazu.persistence.database.entities.tables.AccountsDestroys;
-import com.kalaazu.persistence.database.entities.tables.AccountsDrones;
-import com.kalaazu.persistence.database.entities.tables.AccountsGalaxygates;
-import com.kalaazu.persistence.database.entities.tables.AccountsHangars;
-import com.kalaazu.persistence.database.entities.tables.AccountsHistory;
-import com.kalaazu.persistence.database.entities.tables.AccountsItems;
-import com.kalaazu.persistence.database.entities.tables.AccountsMessages;
-import com.kalaazu.persistence.database.entities.tables.AccountsPets;
-import com.kalaazu.persistence.database.entities.tables.AccountsQuests;
-import com.kalaazu.persistence.database.entities.tables.AccountsRankings;
-import com.kalaazu.persistence.database.entities.tables.AccountsShips;
-import com.kalaazu.persistence.database.entities.tables.AccountsSkills;
-import com.kalaazu.persistence.database.entities.tables.AccountsSkylabs;
-import com.kalaazu.persistence.database.entities.tables.AccountsTechfactories;
-import com.kalaazu.persistence.database.entities.tables.AccountsTechfactoryItems;
-import com.kalaazu.persistence.database.entities.tables.Clans;
-import com.kalaazu.persistence.database.entities.tables.ClansApplications;
-import com.kalaazu.persistence.database.entities.tables.ClansBanks;
-import com.kalaazu.persistence.database.entities.tables.ClansBanksLogs;
-import com.kalaazu.persistence.database.entities.tables.ClansBattlestations;
-import com.kalaazu.persistence.database.entities.tables.ClansBattlestationsItems;
-import com.kalaazu.persistence.database.entities.tables.ClansBattlestationsLogs;
-import com.kalaazu.persistence.database.entities.tables.ClansDiplomacies;
-import com.kalaazu.persistence.database.entities.tables.ClansMessages;
-import com.kalaazu.persistence.database.entities.tables.ClansNews;
-import com.kalaazu.persistence.database.entities.tables.ClansRanking;
-import com.kalaazu.persistence.database.entities.tables.ClansRoles;
-import com.kalaazu.persistence.database.entities.tables.ClansRolesPermissions;
-import com.kalaazu.persistence.database.entities.tables.Collectables;
-import com.kalaazu.persistence.database.entities.tables.Events;
-import com.kalaazu.persistence.database.entities.tables.Factions;
-import com.kalaazu.persistence.database.entities.tables.Galaxygates;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesGgSpins;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesGgWaves;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesProbabilities;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesSpawns;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesSpins;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesStages;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesStagesSpawns;
-import com.kalaazu.persistence.database.entities.tables.GalaxygatesWaves;
-import com.kalaazu.persistence.database.entities.tables.InvitationCodes;
-import com.kalaazu.persistence.database.entities.tables.InvitationCodesRedeemLogs;
-import com.kalaazu.persistence.database.entities.tables.Items;
-import com.kalaazu.persistence.database.entities.tables.KeyValue;
-import com.kalaazu.persistence.database.entities.tables.Levels;
-import com.kalaazu.persistence.database.entities.tables.LevelsUpgrades;
-import com.kalaazu.persistence.database.entities.tables.Maps;
-import com.kalaazu.persistence.database.entities.tables.MapsNpcs;
-import com.kalaazu.persistence.database.entities.tables.MapsPortals;
-import com.kalaazu.persistence.database.entities.tables.MapsStations;
-import com.kalaazu.persistence.database.entities.tables.Moderators;
-import com.kalaazu.persistence.database.entities.tables.ModeratorsLogs;
-import com.kalaazu.persistence.database.entities.tables.ModeratorsRoles;
-import com.kalaazu.persistence.database.entities.tables.ModeratorsRolesPermissions;
-import com.kalaazu.persistence.database.entities.tables.News;
-import com.kalaazu.persistence.database.entities.tables.Npcs;
-import com.kalaazu.persistence.database.entities.tables.Permissions;
-import com.kalaazu.persistence.database.entities.tables.Quests;
-import com.kalaazu.persistence.database.entities.tables.QuestsConditions;
-import com.kalaazu.persistence.database.entities.tables.Ranks;
-import com.kalaazu.persistence.database.entities.tables.Rewards;
-import com.kalaazu.persistence.database.entities.tables.RewardsCollectables;
-import com.kalaazu.persistence.database.entities.tables.RewardsGalaxygates;
-import com.kalaazu.persistence.database.entities.tables.RewardsNpcs;
-import com.kalaazu.persistence.database.entities.tables.RewardsQuests;
-import com.kalaazu.persistence.database.entities.tables.RewardsShips;
-import com.kalaazu.persistence.database.entities.tables.RewardsVouchers;
-import com.kalaazu.persistence.database.entities.tables.ServerLogs;
-import com.kalaazu.persistence.database.entities.tables.Ships;
-import com.kalaazu.persistence.database.entities.tables.SkilltreeLevels;
-import com.kalaazu.persistence.database.entities.tables.SkilltreeSkills;
-import com.kalaazu.persistence.database.entities.tables.SkilltreeUnlocks;
-import com.kalaazu.persistence.database.entities.tables.SkylabModules;
-import com.kalaazu.persistence.database.entities.tables.TechfactoryCosts;
-import com.kalaazu.persistence.database.entities.tables.TechfactoryDrones;
-import com.kalaazu.persistence.database.entities.tables.TechfactoryItems;
-import com.kalaazu.persistence.database.entities.tables.TradeItems;
-import com.kalaazu.persistence.database.entities.tables.Users;
-import com.kalaazu.persistence.database.entities.tables.Vouchers;
-import com.kalaazu.persistence.database.entities.tables.VouchersRedeemLogs;
+import com.kalaazu.persistence.database.entities.tables.*;
 
 import javax.annotation.processing.Generated;
 
@@ -98,13 +13,13 @@ import javax.annotation.processing.Generated;
  * Convenience access to all tables in kalaazu
  */
 @Generated(
-    value = {
-        "http://www.jooq.org",
-        "jOOQ version:3.12.1"
-    },
-    comments = "This class is generated by jOOQ"
+        value = {
+                "http://www.jooq.org",
+                "jOOQ version:3.12.1"
+        },
+        comments = "This class is generated by jOOQ"
 )
-@SuppressWarnings({ "all", "unchecked", "rawtypes" })
+@SuppressWarnings({"all", "unchecked", "rawtypes"})
 public class Tables {
 
     /**
