@@ -37,10 +37,10 @@ public class RegisterTest {
                                        .put("invitationCode", invitationCode);
 
             logger.info(json);
-
+/*
             vertx.eventBus()
                  .send("persistence.register", json, h -> logger.info(h.result()
-                                                                       .body()));
+                                                                       .body()));*/
         }
     }
 }

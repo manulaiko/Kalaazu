@@ -1,24 +1,6 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
 import com.kalaazu.eventsystem.Handler;
-import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.database.entities.*;
-import com.kalaazu.persistence.database.entities.accounts.AccountsImpl;
-import com.kalaazu.persistence.database.entities.accounts_banks.AccountsBanksImpl;
-import com.kalaazu.persistence.database.entities.accounts_configurations.AccountsConfigurationsImpl;
-import com.kalaazu.persistence.database.entities.accounts_configurations_accounts_items.AccountsConfigurationsAccountsItemsImpl;
-import com.kalaazu.persistence.database.entities.accounts_galaxygates.AccountsGalaxygatesImpl;
-import com.kalaazu.persistence.database.entities.accounts_hangars.AccountsHangarsImpl;
-import com.kalaazu.persistence.database.entities.accounts_items.AccountsItemsImpl;
-import com.kalaazu.persistence.database.entities.accounts_messages.AccountsMessagesImpl;
-import com.kalaazu.persistence.database.entities.accounts_rankings.AccountsRankingsImpl;
-import com.kalaazu.persistence.database.entities.accounts_ships.AccountsShipsImpl;
-import com.kalaazu.persistence.database.entities.accounts_techfactories.AccountsTechfactoriesImpl;
-import com.kalaazu.persistence.database.entities.factions.FactionsImpl;
-import com.kalaazu.persistence.database.entities.ships.ShipsImpl;
-import com.kalaazu.persistence.database.mappers.MessageStatus;
-import com.kalaazu.util.StringUtils;
-import io.vertx.core.json.JsonObject;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 
@@ -39,7 +21,7 @@ public class CreateAccountHandler extends Handler {
     public static final Logger logger = LoggerFactory.getLogger(RegisterHandler.class);
 
     @Override
-    public void handle() {
+    public void handle() {/*
         String name       = super.get("name");
         int    usersID    = super.get("usersId");
         byte   factionsID = super.get("factionsId");
@@ -72,11 +54,11 @@ public class CreateAccountHandler extends Handler {
         );
     }
 
-    /**
+    *//**
      * Adds the techfactory to the account.
      *
      * @param account New account
-     */
+     *//*
     private void addTechfactories(Accounts account) {
         var techfactory = new AccountsTechfactoriesImpl();
         techfactory.accountsId(account.id());
@@ -85,11 +67,11 @@ public class CreateAccountHandler extends Handler {
                 .create(techfactory, AccountsTechfactories.class);
     }
 
-    /**
+    *//**
      * Adds the ranking to the account.
      *
      * @param account New account.
-     */
+     *//*
     private void addRanking(Accounts account) {
         var ranking = new AccountsRankingsImpl();
         ranking.accountsId(account.id());
@@ -98,11 +80,11 @@ public class CreateAccountHandler extends Handler {
                 .create(ranking, AccountsRankings.class);
     }
 
-    /**
+    *//**
      * Adds the galaxy gates to the account.
      *
      * @param account New account.
-     */
+     *//*
     private void addGalaxyGates(Accounts account) {
         var gates = Database.instance()
                             .all(Galaxygates.class);
@@ -117,11 +99,11 @@ public class CreateAccountHandler extends Handler {
         });
     }
 
-    /**
+    *//**
      * Adds the bank to the account.
      *
      * @param account New account.
-     */
+     *//*
     private void addBank(Accounts account) {
         var bank = new AccountsBanksImpl();
         bank.accountsId(account.id());
@@ -138,11 +120,11 @@ public class CreateAccountHandler extends Handler {
     }
 
 
-    /**
+    *//**
      * Creates the welcome message for the new account.
      *
      * @param account New account.
-     */
+     *//*
     private void addMessage(Accounts account) {
         var message = new AccountsMessagesImpl();
         message.toStatus(MessageStatus.UNREAD)
@@ -163,13 +145,13 @@ public class CreateAccountHandler extends Handler {
                 .create(message, AccountsMessages.class);
     }
 
-    /**
+    *//**
      * Adds the configurations to the hangar.
      *
      * @param account New account.
      * @param hangar  New hangar.
      * @param items   Configuration items.
-     */
+     *//*
     private ArrayList<AccountsConfigurations> addConfigurations(
             Accounts account, AccountsHangars hangar, ArrayList<AccountsItems> items
     ) {
@@ -210,13 +192,13 @@ public class CreateAccountHandler extends Handler {
         return configurations;
     }
 
-    /**
+    *//**
      * Creates and returns a ship for the account.
      *
      * @param account New account.
      *
      * @return Created ship.
-     */
+     *//*
     private AccountsShips addShip(Accounts account) {
         var phoenix = Database.instance()
                               .find(1, Ships.class)
@@ -236,13 +218,13 @@ public class CreateAccountHandler extends Handler {
                        .create(ship, AccountsShips.class);
     }
 
-    /**
+    *//**
      * Creates and returns an hangar for the account.
      *
      * @param account New account.
      *
      * @return Created hangar.
-     */
+     *//*
     private AccountsHangars addHangar(Accounts account, AccountsShips ship) {
         var hangar = new AccountsHangarsImpl();
         hangar.accountsId(account.id())
@@ -253,11 +235,11 @@ public class CreateAccountHandler extends Handler {
                        .create(hangar, AccountsHangars.class);
     }
 
-    /**
+    *//**
      * Adds the starting items to the account.
      *
      * @param account New account.
-     */
+     *//*
     private ArrayList<AccountsItems> addItems(Accounts account) {
         var items = new ArrayList<AccountsItems>();
 
@@ -341,7 +323,7 @@ public class CreateAccountHandler extends Handler {
         return items;
     }
 
-    /**
+    *//**
      * Creates the account for the given user.
      *
      * @param user       Given user.
@@ -349,7 +331,7 @@ public class CreateAccountHandler extends Handler {
      * @param factionsID Faction ID.
      *
      * @return Created account.
-     */
+     *//*
     private Accounts addAccount(Users user, String name, byte factionsID) {
         var account = new AccountsImpl();
 
@@ -361,6 +343,6 @@ public class CreateAccountHandler extends Handler {
                .sessionId(StringUtils.sessionId());
 
         return Database.instance()
-                       .create(account, Accounts.class);
+                       .create(account, Accounts.class);*/
     }
 }

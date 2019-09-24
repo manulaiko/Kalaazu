@@ -1,8 +1,6 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
 import com.kalaazu.eventsystem.Handler;
-import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.database.entities.Entity;
 import io.vertx.core.json.JsonObject;
 
 /**
@@ -15,7 +13,7 @@ import io.vertx.core.json.JsonObject;
  */
 public class DeleteHandler extends Handler {
     @Override
-    public void handle() throws ClassNotFoundException {
+    public void handle() throws ClassNotFoundException {/*
         String     entity = super.get("entity");
         JsonObject data   = super.get("data");
 
@@ -25,6 +23,6 @@ public class DeleteHandler extends Handler {
         Database.instance()
                 .delete(insert);
 
-        super.reply(JsonObject.mapFrom(true));
+        super.reply(JsonObject.mapFrom(true));*/
     }
 }

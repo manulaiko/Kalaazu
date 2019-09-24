@@ -1,10 +1,6 @@
 package com.kalaazu.persistence.eventsystem.handlers;
 
 import com.kalaazu.eventsystem.Handler;
-import com.kalaazu.persistence.database.Database;
-import com.kalaazu.persistence.database.entities.*;
-import com.kalaazu.persistence.database.entities.invitation_codes_redeem_logs.InvitationCodesRedeemLogsImpl;
-import com.kalaazu.persistence.database.entities.users.UsersImpl;
 import com.kalaazu.util.StringUtils;
 import io.vertx.core.Vertx;
 import io.vertx.core.json.JsonObject;
@@ -27,7 +23,7 @@ public class RegisterHandler extends Handler {
     public static final Logger logger = LoggerFactory.getLogger(RegisterHandler.class);
 
     @Override
-    public void handle() {
+    public void handle() {/*
         RegisterHandler.logger.info(super.getEvent().body());
         String username       = super.get("username");
         String password       = super.get("password");
@@ -99,13 +95,13 @@ public class RegisterHandler extends Handler {
              });
     }
 
-    /**
+    *//**
      * Finds and returns the ID of the specified invitation code.
      *
      * @param invitationCode The code.
      *
      * @return Code's ID.
-     */
+     *//*
     private InvitationCodes findInvitationCode(String invitationCode, String ip) {
         var code = Database.instance()
                            .find(InvitationCodes.CODE, invitationCode, InvitationCodes.class);
@@ -134,7 +130,7 @@ public class RegisterHandler extends Handler {
         return code.orElse(InvitationCodes.INVALID_CODE);
     }
 
-    /**
+    *//**
      * Adds the user to the database.
      *
      * @param username         User name.
@@ -144,7 +140,7 @@ public class RegisterHandler extends Handler {
      * @param invitationCodeId Invitation code ID.
      *
      * @return User entity.
-     */
+     *//*
     private Users addUser(String username, String password, String email, String ip, short invitationCodeId) {
         var user = new UsersImpl();
 
@@ -159,6 +155,6 @@ public class RegisterHandler extends Handler {
             .ip(ip);
 
         return Database.instance()
-                       .create(user, Users.class);
+                       .create(user, Users.class);*/
     }
 }

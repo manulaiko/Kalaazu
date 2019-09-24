@@ -1,9 +1,9 @@
 package com.kalaazu.persistence;
 
-import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.eventsystem.EventListener;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.json.JsonArray;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
@@ -39,7 +39,7 @@ public class Persistence extends AbstractVerticle {
     public static final Logger logger = LoggerFactory.getLogger(Persistence.class);
 
     @Override
-    public void start(Future<Void> startFuture) {
+    public void start(Promise<Void> startFuture) {
         var host     = config().getString("persistence.host", "localhost");
         var port     = config().getInteger("persistence.port", 3306);
         var database = config().getString("persistence.database", "kalaazu");
@@ -62,6 +62,8 @@ public class Persistence extends AbstractVerticle {
         );
 
         Persistence.logger.info("Initializing database...");
+        startFuture.complete();
+        /*
         var db = Database.builder()
                          .host(host)
                          .port(port)
@@ -84,6 +86,6 @@ public class Persistence extends AbstractVerticle {
             startFuture.complete();
         } catch (Exception e) {
             startFuture.fail(e);
-        }
+        }*/
     }
 }
