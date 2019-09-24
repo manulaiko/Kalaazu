@@ -1,5 +1,5 @@
 description = ''
 
 dependencies {
-    compile 'de.mkammerer:argon2-jvm:2.4'
+    compile group: 'de.mkammerer', name: 'argon2-jvm', version: '2.5'
 }

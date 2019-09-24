@@ -1,10 +1,12 @@
 plugins {
-    id 'com.github.johnrengelman.shadow' version '2.0.2'
-    id 'io.franzbecker.gradle-lombok' version '1.14'
+    id 'java'
     id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+    id "io.freefair.lombok" version "4.1.0"
 }
 
 repositories {
+    mavenCentral()
     jcenter()
 }
 
@@ -43,12 +45,11 @@ run {
 
 allprojects {
     apply plugin: 'java'
-    apply plugin: 'io.franzbecker.gradle-lombok'
 
     group 'com.kalaazu'
     version '1.0-SNAPSHOT'
 
-    sourceCompatibility = 11
+    sourceCompatibility = 12
 
     repositories {
         mavenCentral()
@@ -64,17 +65,13 @@ allprojects {
         }
     }
 
-    lombok {
-        version = "1.18.2"
-    }
-
     dependencies {
         testCompile group: 'junit', name: 'junit', version: '4.12'
-        compile group: 'io.vertx', name: 'vertx-core', version: '3.5.1'
-        compile group: 'io.vertx', name: 'vertx-unit', version: '3.5.1'
-        compile group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.24.Final', classifier: 'linux-x86_64'
-        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.25'
-        compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.25'
+        compile group: 'io.vertx', name: 'vertx-core', version: '4.0.0-milestone4'
+        compile group: 'io.vertx', name: 'vertx-unit', version: '4.0.0-milestone3'
+        compile group: 'io.netty', name: 'netty-transport-native-epoll', version: '4.1.41.Final', classifier: 'linux-x86_64'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
+        compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.28'
         compileOnly 'javax.annotation:javax.annotation-api:1.3.1'
     }
 }
