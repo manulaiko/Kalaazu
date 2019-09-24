@@ -3,7 +3,6 @@ package com.kalaazu.persistence.database;
 import io.vertx.mysqlclient.MySQLConnectOptions;
 import io.vertx.mysqlclient.MySQLPool;
 import io.vertx.sqlclient.PoolOptions;
-import io.vertx.sqlclient.RowSet;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;

@@ -3,11 +3,8 @@ package com.kalaazu.persistence;
 import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.eventsystem.EventListener;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
 import io.vertx.core.Promise;
-import io.vertx.core.json.JsonArray;
-import io.vertx.core.logging.Logger;
-import io.vertx.core.logging.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Persistence class.
@@ -36,9 +33,8 @@ import io.vertx.core.logging.LoggerFactory;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
+@Slf4j
 public class Persistence extends AbstractVerticle {
-    public static final Logger logger = LoggerFactory.getLogger(Persistence.class);
-
     @Override
     public void start(Promise<Void> startFuture) {
         var host     = config().getString("persistence.host", "localhost");
@@ -46,23 +42,8 @@ public class Persistence extends AbstractVerticle {
         var database = config().getString("persistence.database", "kalaazu");
         var username = config().getString("persistence.username", "manulaiko");
         var password = config().getString("persistence.password", "");
-        var logTypes = config().getJsonArray(
-                "persistence.logTypes",
-                new JsonArray(
-                        "[\n" +
-                        "    \"APPLICATION_BUILDER\",\n" +
-                        "    \"CONNECTION\",\n" +
-                        "    \"PERSIST\",\n" +
-                        "    \"REMOVE\",\n" +
-                        "    \"STREAM\",\n" +
-                        "    \"STREAM_OPTIMIZER\",\n" +
-                        "    \"TRANSACTION\",\n" +
-                        "    \"UPDATE\"\n" +
-                        "]"
-                )
-        );
 
-        Persistence.logger.info("Initializing database...");
+        log.info("Initializing database...");
         startFuture.complete();
 
         var db = Database.builder()
@@ -77,11 +58,11 @@ public class Persistence extends AbstractVerticle {
             db.initialize();
             Database.instance(db);
 
-            Persistence.logger.info("Initializing event listener...");
+            log.info("Initializing event listener...");
             var listener = new EventListener();
             listener.initialize();
 
-            Persistence.logger.info("Persistence initialize!");
+            log.info("Persistence initialize!");
 
             startFuture.complete();
         } catch (Exception e) {
