@@ -45,6 +45,7 @@ run {
 
 allprojects {
     apply plugin: 'java'
+    apply plugin: 'io.freefair.lombok'
 
     group 'com.kalaazu'
     version '1.0-SNAPSHOT'
@@ -59,6 +60,8 @@ allprojects {
     lombok {
         version '1.8.10'
     }
+
+    lombok.config['lombok.accessors.fluent'] = 'true'
 
     compileJava {
         doFirst {

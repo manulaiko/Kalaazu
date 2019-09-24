@@ -7,7 +7,7 @@ There are 3 main packages:
 
  * `com.kalaazu.persistence`.
  * `com.kalaazu.persistence.eventsystem`.
- * `com.kalaazu.persistence.database`.
+ * `com.kalaazu.persistence.speedment.database`.
 
 There are 3 public packages that can be accessed by other modules:
 
@@ -34,6 +34,6 @@ handlers for the event listeners will be stored in the `handlers` package.
 Database
 --------
 
-The `com.kalaazu.persistence.database` package contains the necessary classes
+The `com.kalaazu.persistence.speedment.database` package contains the necessary classes
 required to read/write to the database.
 The `entities` package contains the POJO types (domain model).
