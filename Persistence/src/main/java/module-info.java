@@ -5,4 +5,6 @@ module kalaazu.persistence {
     requires vertx.core;
     requires java.sql;
     requires lombok;
+    requires org.jooq;
+    requires java.compiler;
 }
