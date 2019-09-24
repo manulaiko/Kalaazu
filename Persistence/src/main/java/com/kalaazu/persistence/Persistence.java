@@ -1,5 +1,6 @@
 package com.kalaazu.persistence;
 
+import com.kalaazu.persistence.database.Database;
 import com.kalaazu.persistence.eventsystem.EventListener;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Future;
@@ -63,14 +64,13 @@ public class Persistence extends AbstractVerticle {
 
         Persistence.logger.info("Initializing database...");
         startFuture.complete();
-        /*
+
         var db = Database.builder()
                          .host(host)
                          .port(port)
                          .database(database)
                          .username(username)
                          .password(password)
-                         .logTypes(logTypes)
                          .build();
 
         try {
@@ -86,6 +86,6 @@ public class Persistence extends AbstractVerticle {
             startFuture.complete();
         } catch (Exception e) {
             startFuture.fail(e);
-        }*/
+        }
     }
 }

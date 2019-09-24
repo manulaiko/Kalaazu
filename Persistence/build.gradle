@@ -1,6 +1,6 @@
 dependencies {
     compile project(':Utils')
-    compile group: 'com.speedment', name: 'runtime', version: '3.1.18'
+    compile group: 'io.vertx', name: 'vertx-mysql-client', version: '3.8.1'
     compile group: 'org.mariadb.jdbc', name: 'mariadb-java-client', version: '2.4.4'
     compile group: 'org.jooq', name: 'jooq', version: '3.12.1'
     compile group: 'org.jooq', name: 'jooq-meta', version: '3.12.1'
