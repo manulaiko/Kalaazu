@@ -9,6 +9,7 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 import org.jooq.DSLContext;
 import org.jooq.impl.DSL;
+import org.mariadb.jdbc.MariaDbDataSource;
 
 import java.sql.SQLException;
 import java.util.function.Function;
@@ -69,7 +70,8 @@ public class Database {
      */
     public void initialize() {
         var config = new HikariConfig();
-        config.setJdbcUrl(String.format("jdbc:mysql://%s:%s/%s", this.host, this.port, this.database));
+        config.setJdbcUrl(String.format("jdbc:mariadb://%s:%s/%s", this.host, this.port, this.database));
+        config.setDataSourceClassName(MariaDbDataSource.class.getName());
         config.setUsername(this.username);
         config.setPassword(this.password);
 
