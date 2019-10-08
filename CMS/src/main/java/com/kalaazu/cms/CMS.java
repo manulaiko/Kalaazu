@@ -3,7 +3,7 @@ package com.kalaazu.cms;
 import com.kalaazu.cms.eventsystem.EventListener;
 import com.kalaazu.cms.server.Server;
 import io.vertx.core.AbstractVerticle;
-import io.vertx.core.Future;
+import io.vertx.core.Promise;
 import io.vertx.core.logging.Logger;
 import io.vertx.core.logging.LoggerFactory;
 
@@ -42,7 +42,7 @@ public class CMS extends AbstractVerticle {
     private Server server;
 
     @Override
-    public void start(Future<Void> startFuture) {
+    public void start(Promise<Void> startFuture) {
         CMS.logger.info("Starting web server...");
 
         var port    = config().getInteger("cms.port", 80);

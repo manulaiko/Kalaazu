@@ -3,8 +3,6 @@ module kalaazu {
 
     requires kalaazu.persistence;
     requires kalaazu.cms;
-
-    requires slf4j.api;
-    requires slf4j.simple;
+    requires lombok;
     requires vertx.core;
 }

@@ -67,7 +67,7 @@ public class Server {
 
         this.registerRoutes();
 
-        this.server.requestHandler(router::accept);
+        this.server.requestHandler(router);
 
         this.server.listen(this.port, this.host);
         Server.logger.info("Listening on port " + this.server.actualPort());
