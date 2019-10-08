@@ -1,12 +1,17 @@
 package com.kalaazu.persistence.database;
 
-import io.vertx.mysqlclient.MySQLConnectOptions;
-import io.vertx.mysqlclient.MySQLPool;
-import io.vertx.sqlclient.PoolOptions;
+import com.zaxxer.hikari.HikariConfig;
+import com.zaxxer.hikari.HikariDataSource;
 import lombok.Builder;
 import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.jooq.DSLContext;
+import org.jooq.impl.DSL;
+
+import java.sql.SQLException;
+import java.util.function.Function;
 
 /**
  * Database class.
@@ -18,6 +23,7 @@ import lombok.Setter;
  */
 @Builder
 @Data
+@Slf4j
 public class Database {
     /**
      * Global instance.
@@ -52,9 +58,9 @@ public class Database {
     private String password;
 
     /**
-     * MySQL client pool.
+     * Database connection pool.
      */
-    private MySQLPool client;
+    private HikariDataSource ds;
 
     /**
      * Initializes the database.
@@ -62,18 +68,24 @@ public class Database {
      * Loads the data from the database into memory.
      */
     public void initialize() {
-        var connectOptions = new MySQLConnectOptions()
-                .setPort(3306)
-                .setHost("the-host")
-                .setDatabase("the-db")
-                .setUser("user")
-                .setPassword("secret");
+        var config = new HikariConfig();
+        config.setJdbcUrl(String.format("jdbc:mysql://%s:%s/%s", this.host, this.port, this.database));
+        config.setUsername(this.username);
+        config.setPassword(this.password);
 
-        // Pool options
-        var poolOptions = new PoolOptions()
-                .setMaxSize(5);
+        this.ds(new HikariDataSource(config));
+    }
 
-        // Create the client pool
-        this.client(MySQLPool.pool(connectOptions, poolOptions));
+    /**
+     * Executes a query.
+     *
+     * @param handler Query handler.
+     */
+    public void query(Function<DSLContext, Void> handler) {
+        try {
+            handler.apply(DSL.using(this.ds().getConnection()));
+        } catch (SQLException e) {
+            log.warn("Couldn't execute query!", e);
+        }
     }
 }

@@ -3,8 +3,7 @@ module kalaazu.persistence {
 
     requires kalaazu.utils;
     requires vertx.core;
-    requires vertx.mysql.client;
-    requires vertx.sql.client;
+    requires com.zaxxer.hikari;
     requires java.sql;
     requires lombok;
     requires org.jooq;
