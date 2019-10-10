@@ -13,6 +13,83 @@
             <name>org.jooq.meta.mariadb.MariaDBDatabase</name>
             <includes>.*</includes>
             <inputSchema>kalaazu</inputSchema>
+
+            <forcedTypes>
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.ClanStatus</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>clans.status</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.BankLogType</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>(accounts|clans)_banks_logs.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.Collectable</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>collectables.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.Currency</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>(accounts|clans)_banks_logs.currency</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.DiplomacyStatus</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>clans_diplomacies.status</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.Diplomacy</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>clans_diplomacies.types</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.GalaxyGateProbability</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>galaxygates_probabilities.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.MessageStatus</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>(accounts|clans)_messages.(from|to)_status</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.QuestCondition</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>quests_conditions.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.Skill</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>skilltree_skills.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.persistence.database.types.TradeItem</userType>
+                    <enumConverter>true</enumConverter>
+                    <includeExpression>trade_items.type</includeExpression>
+                </forcedType>
+
+                <forcedType>
+                    <userType>com.kalaazu.math.Vector2</userType>
+                    <converter>com.kalaazu.persistence.database.converters.Vector2Converter</converter>
+                    <!-- Have fun <3 -->
+                    <includeExpression>
+                        ((accounts_ships|clans_battlestations|maps_stations).position|factions.(low|high)_maps_position|maps_portals.(target_)?position)
+                    </includeExpression>
+                </forcedType>
+            </forcedTypes>
         </database>
 
         <target>
