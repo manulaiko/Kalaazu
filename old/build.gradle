@@ -1,0 +1,63 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+configurations {
+    developmentOnly
+    runtimeClasspath {
+        extendsFrom developmentOnly
+    }
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(':Launcher')
+}
+
+allprojects {
+    apply plugin: 'java'
+
+    group 'com.kalaazu'
+    version '1.0-SNAPSHOT'
+
+    sourceCompatibility = 12
+
+    repositories {
+        mavenCentral()
+        mavenLocal()
+    }
+
+    compileJava {
+        doFirst {
+            options.compilerArgs = [
+                    '--module-path', classpath.asPath,
+            ]
+            classpath = files()
+        }
+    }
+
+    dependencies {
+        implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+        implementation 'org.springframework.boot:spring-boot-starter-security'
+        implementation 'org.springframework.boot:spring-boot-starter-web'
+        implementation 'org.springframework.boot:spring-boot-starter-websocket'
+        implementation 'org.springframework.session:spring-session-core'
+        compileOnly 'org.projectlombok:lombok'
+        runtimeOnly 'mysql:mysql-connector-java'
+        annotationProcessor 'org.projectlombok:lombok'
+        testImplementation('org.springframework.boot:spring-boot-starter-test') {
+            exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        }
+        testImplementation 'org.springframework.security:spring-security-test'
+        compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.28'
+        compile group: 'org.slf4j', name: 'slf4j-simple', version: '1.7.28'
+    }
+}
