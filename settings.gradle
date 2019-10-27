@@ -1,1 +1,3 @@
-rootProject.name = 'Kalaazu'
+rootProject.name = 'main'
+include 'Utils'
+
