@@ -58,7 +58,7 @@ allprojects {
     }
 
     lombok {
-        version '1.18.10'
+        version '1.8.10'
     }
 
     lombok.config['lombok.accessors.fluent'] = 'true'

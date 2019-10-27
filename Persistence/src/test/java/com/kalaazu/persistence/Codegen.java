@@ -5,7 +5,7 @@ public class Codegen {
         System.out.println(org.mariadb.jdbc.Driver.class.getName());
         org.jooq.codegen.GenerationTool.main(
             new String[] {
-                    "Persistence/src/main/resources/codegen.xml"
+                    "/home/manulaiko/Programming/Java/Kalaazu/Persistence/src/main/resources/codegen.xml"
             }
         );
     }
