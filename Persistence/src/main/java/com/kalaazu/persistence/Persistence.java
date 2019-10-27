@@ -35,6 +35,9 @@ import lombok.extern.slf4j.Slf4j;
  */
 @Slf4j
 public class Persistence extends AbstractVerticle {
+    /**
+     * @inheritDoc
+     */
     @Override
     public void start(Promise<Void> startFuture) {
         var host     = config().getString("persistence.host", "localhost");
