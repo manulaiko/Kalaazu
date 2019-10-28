@@ -1,5 +1,0 @@
-rootProject.name = 'main'
-include 'Utils'
-include 'Persistence'
-include 'Launcher'
-include 'CMS'
