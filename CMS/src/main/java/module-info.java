@@ -4,9 +4,8 @@ module kalaazu.cms {
     requires kalaazu.persistence;
     requires kalaazu.utils;
 
-    requires vertx.web;
-    requires vertx.core;
-    requires vertx.bridge.common;
-    requires rocker.runtime;
     requires lombok;
+    requires spring.context;
+    requires spring.webmvc;
+    requires spring.beans;
 }
