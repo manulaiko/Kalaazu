@@ -1,6 +1,8 @@
 dependencies {
     compile project(":Utils")
     compile project(":Persistence")
-    compile group: 'io.vertx', name: 'vertx-web', version: '4.0.0-milestone3'
-    compile group: 'com.fizzed', name: 'rocker-runtime', version: '1.2.2'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.session:spring-session-core'
 }
