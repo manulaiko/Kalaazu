@@ -2,6 +2,8 @@ package com.kalaazu.cms;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * CMS class.
@@ -26,7 +28,16 @@ import org.springframework.stereotype.Controller;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Controller
+@RestController
 @Slf4j
 public class CMS {
+    /**
+     * Request filter.
+     *
+     * Forward request to Frontend's router.
+     */
+    @RequestMapping(value = "/External")
+    public String redirect() {
+        return "forward:/";
+    }
 }

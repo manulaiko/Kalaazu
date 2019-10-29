@@ -1,5 +1,5 @@
 module kalaazu {
-    exports com.kalaazu.main;
+    exports com.kalaazu;
 
     requires lombok;
     requires spring.boot;

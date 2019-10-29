@@ -7,5 +7,6 @@ module kalaazu.cms {
     requires lombok;
     requires spring.context;
     requires spring.webmvc;
+    requires spring.web;
     requires spring.beans;
 }
