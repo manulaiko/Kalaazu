@@ -1,6 +1,15 @@
-apply plugin: 'com.moowork.node'
+task runInstall(type: Exec) {
+    workingDir('src/main/www')
+    commandLine("npm", "install")
+}
 
-assemble.dependsOn npm_run_build
+task runBuild(type: Exec) {
+    workingDir('src/main/www')
+    commandLine("npm", "run", "build")
+}
+
+runBuild.dependsOn runInstall
+assemble.dependsOn runBuild
 
 dependencies {
     compile project(':Utils')

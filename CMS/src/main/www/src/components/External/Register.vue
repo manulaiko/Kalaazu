@@ -76,7 +76,7 @@
           factionsId: this.faction,
           ip: '0.0.0.0'
         };
-        this.$eventBus.send('persistence.register', data, (err, res) => {
+        /*this.$eventBus.send('persistence.register', data, (err, res) => {
           this.$set(this.$data, 'submit', 'Register');
 
           if (err != null) {
@@ -99,7 +99,7 @@
 
           this.$store.state.sessionId = res.body.sessionId;
           this.$router.push('/Internal/Start');
-        });
+        });*/
       }
     }
   }
