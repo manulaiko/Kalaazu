@@ -9,7 +9,7 @@ task runBuild(type: Exec) {
 }
 
 runBuild.dependsOn runInstall
-assemble.dependsOn runBuild
+compileJava.dependsOn runBuild
 
 dependencies {
     implementation project(':Utils')
