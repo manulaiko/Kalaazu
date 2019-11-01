@@ -1,61 +1,47 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Galaxygates entity.
+ * ===================
+ *
+ * Entity for the `galaxygates` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "galaxygates", schema = "kalaazu", catalog = "")
+@Table(name = "galaxygates", schema = "kalaazu")
+@Data
 public class GalaxygatesEntity {
-    private byte   id;
-    private String name;
-    private byte   parts;
-
     @Id
     @Column(name = "id", nullable = false)
-    public byte getId() {
-        return id;
-    }
-
-    public void setId(byte id) {
-        this.id = id;
-    }
+    private byte id;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Basic
     @Column(name = "parts", nullable = false)
-    public byte getParts() {
-        return parts;
-    }
+    private byte parts;
 
-    public void setParts(byte parts) {
-        this.parts = parts;
-    }
+    @ManyToOne
+    @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
+    private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        GalaxygatesEntity that = (GalaxygatesEntity) o;
-        return id == that.id &&
-               parts == that.parts &&
-               Objects.equals(name, that.name);
-    }
+    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
+    private Collection<GalaxygatesGgSpinsEntity> galaxygatesGgSpins;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, parts);
-    }
+    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
+    private Collection<GalaxygatesGgWavesEntity> galaxygatesGgWaves;
+
+    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
+    private Collection<GalaxygatesProbabilitiesEntity> galaxygatesProbabilities;
+
+    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
+    private Collection<RewardsGalaxygatesEntity> rewardsGalaxygates;
 }

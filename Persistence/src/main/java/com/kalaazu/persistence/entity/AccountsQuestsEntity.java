@@ -1,73 +1,39 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/**
+ * Accounts quests entity.
+ * =======================
+ *
+ * Entity for the `accounts_quests` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_quests", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_quests", schema = "kalaazu")
+@Data
 public class AccountsQuestsEntity {
-    private int            id;
-    private byte           isCompleted;
-    private Timestamp      date;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "is_completed", nullable = false)
-    public byte getIsCompleted() {
-        return isCompleted;
-    }
-
-    public void setIsCompleted(byte isCompleted) {
-        this.isCompleted = isCompleted;
-    }
+    private boolean isCompleted;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsQuestsEntity that = (AccountsQuestsEntity) o;
-        return id == that.id &&
-               isCompleted == that.isCompleted &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, isCompleted, date);
-    }
+    private Timestamp date;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "quests_id", referencedColumnName = "id", nullable = false)
+    private QuestsEntity questsByQuestsId;
 }

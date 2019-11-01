@@ -1,73 +1,38 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Galaxygates spins entity.
+ * =========================
+ *
+ * Entity for the `galaxygates_spins` table.
+ *
+ * @author Manulaiko <manulaiko@gmial.com>
+ */
 @Entity
-@Table(name = "galaxygates_spins", schema = "kalaazu", catalog = "")
+@Table(name = "galaxygates_spins", schema = "kalaazu")
+@Data
 public class GalaxygatesSpinsEntity {
-    private byte   id;
-    private byte   type;
-    private double probability;
-    private short  amount;
-
     @Id
     @Column(name = "id", nullable = false)
-    public byte getId() {
-        return id;
-    }
-
-    public void setId(byte id) {
-        this.id = id;
-    }
+    private byte id;
 
     @Basic
     @Column(name = "type", nullable = false)
-    public byte getType() {
-        return type;
-    }
-
-    public void setType(byte type) {
-        this.type = type;
-    }
+    private byte type;
 
     @Basic
-    @Column(name = "probability", nullable = false, precision = 0)
-    public double getProbability() {
-        return probability;
-    }
-
-    public void setProbability(double probability) {
-        this.probability = probability;
-    }
+    @Column(name = "probability", nullable = false)
+    private double probability;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    public short getAmount() {
-        return amount;
-    }
+    private short amount;
 
-    public void setAmount(short amount) {
-        this.amount = amount;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        GalaxygatesSpinsEntity that = (GalaxygatesSpinsEntity) o;
-        return id == that.id &&
-               type == that.type &&
-               Double.compare(that.probability, probability) == 0 &&
-               amount == that.amount;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, type, probability, amount);
-    }
+    @ManyToOne
+    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
+    private ItemsEntity itemsByItemsId;
 }

@@ -1,60 +1,34 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Clans roles permissions entity.
+ * ===============================
+ *
+ * Entity for the `clans_roles_permissions` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "clans_roles_permissions", schema = "kalaazu", catalog = "")
+@Table(name = "clans_roles_permissions", schema = "kalaazu")
+@Data
 public class ClansRolesPermissionsEntity {
-    private int              id;
-    private Byte             isEnabled;
-    private ClansRolesEntity clansRolesByClansRolesId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
-    @Column(name = "is_enabled", nullable = true)
-    public Byte getIsEnabled() {
-        return isEnabled;
-    }
-
-    public void setIsEnabled(Byte isEnabled) {
-        this.isEnabled = isEnabled;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ClansRolesPermissionsEntity that = (ClansRolesPermissionsEntity) o;
-        return id == that.id &&
-               Objects.equals(isEnabled, that.isEnabled);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, isEnabled);
-    }
+    @Column(name = "is_enabled")
+    private boolean isEnabled;
 
     @ManyToOne
     @JoinColumn(name = "clans_roles_id", referencedColumnName = "id", nullable = false)
-    public ClansRolesEntity getClansRolesByClansRolesId() {
-        return clansRolesByClansRolesId;
-    }
+    private ClansRolesEntity clansRolesByClansRolesId;
 
-    public void setClansRolesByClansRolesId(ClansRolesEntity clansRolesByClansRolesId) {
-        this.clansRolesByClansRolesId = clansRolesByClansRolesId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "permissions_id", referencedColumnName = "id", nullable = false)
+    private PermissionsEntity permissionsByPermissionsId;
 }

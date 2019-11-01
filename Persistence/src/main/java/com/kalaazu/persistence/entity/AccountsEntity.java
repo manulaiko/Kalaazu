@@ -1,144 +1,136 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Accounts entity.
+ * ================
+ *
+ * Entity for the `accounts` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts", schema = "kalaazu", catalog = "")
+@Table(name = "accounts", schema = "kalaazu")
+@Data
 public class AccountsEntity {
-    private int       id;
-    private String    sessionId;
-    private String    name;
-    private Timestamp banDate;
-    private Timestamp premiumDate;
-    private Timestamp date;
-    private Timestamp lastLogin;
-    private short     skillPointsTotal;
-    private short     skillPointsFree;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "session_id", nullable = false, length = 32)
-    public String getSessionId() {
-        return sessionId;
-    }
-
-    public void setSessionId(String sessionId) {
-        this.sessionId = sessionId;
-    }
+    private String sessionId;
+    @Basic
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
+    @Column(name = "ban_date")
+    private Timestamp banDate;
 
     @Basic
-    @Column(name = "ban_date", nullable = true)
-    public Timestamp getBanDate() {
-        return banDate;
-    }
-
-    public void setBanDate(Timestamp banDate) {
-        this.banDate = banDate;
-    }
-
-    @Basic
-    @Column(name = "premium_date", nullable = true)
-    public Timestamp getPremiumDate() {
-        return premiumDate;
-    }
-
-    public void setPremiumDate(Timestamp premiumDate) {
-        this.premiumDate = premiumDate;
-    }
+    @Column(name = "premium_date")
+    private Timestamp premiumDate;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
+    private Timestamp date;
 
     @Basic
-    @Column(name = "last_login", nullable = true)
-    public Timestamp getLastLogin() {
-        return lastLogin;
-    }
-
-    public void setLastLogin(Timestamp lastLogin) {
-        this.lastLogin = lastLogin;
-    }
+    @Column(name = "last_login")
+    private Timestamp lastLogin;
 
     @Basic
     @Column(name = "skill_points_total", nullable = false)
-    public short getSkillPointsTotal() {
-        return skillPointsTotal;
-    }
-
-    public void setSkillPointsTotal(short skillPointsTotal) {
-        this.skillPointsTotal = skillPointsTotal;
-    }
+    private short skillPointsTotal;
 
     @Basic
     @Column(name = "skill_points_free", nullable = false)
-    public short getSkillPointsFree() {
-        return skillPointsFree;
-    }
+    private short skillPointsFree;
 
-    public void setSkillPointsFree(short skillPointsFree) {
-        this.skillPointsFree = skillPointsFree;
-    }
+    @ManyToOne()
+    @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
+    private UsersEntity users;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsEntity that = (AccountsEntity) o;
-        return id == that.id &&
-               skillPointsTotal == that.skillPointsTotal &&
-               skillPointsFree == that.skillPointsFree &&
-               Objects.equals(sessionId, that.sessionId) &&
-               Objects.equals(name, that.name) &&
-               Objects.equals(banDate, that.banDate) &&
-               Objects.equals(premiumDate, that.premiumDate) &&
-               Objects.equals(date, that.date) &&
-               Objects.equals(lastLogin, that.lastLogin);
-    }
+    @ManyToOne()
+    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
+    private LevelsEntity levels;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(
-                id,
-                sessionId,
-                name,
-                banDate,
-                premiumDate,
-                date,
-                lastLogin,
-                skillPointsTotal,
-                skillPointsFree
-        );
-    }
+    @ManyToOne()
+    @JoinColumn(name = "factions_id", referencedColumnName = "id", nullable = false)
+    private FactionsEntity factions;
+
+    @ManyToOne()
+    @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id", nullable = false)
+    private AccountsHangarsEntity activeAccountsHangars;
+
+    @ManyToOne()
+    @JoinColumn(name = "clans_id", referencedColumnName = "id")
+    private ClansEntity clans;
+
+    @ManyToOne()
+    @JoinColumn(name = "ranks_id", referencedColumnName = "id", nullable = false)
+    private RanksEntity ranks;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsBanksEntity> accountsBanks;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsClansRolesEntity> accountsClansRoles;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsDestroysEntity> accountsDestroys;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsDronesEntity> accountsDrones;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsGalaxygatesEntity> accountsGalaxygates;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsHangarsEntity> accountsHangars;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsHistoryEntity> accountsHistories;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsItemsEntity> accountsItems;
+
+    @OneToMany(mappedBy = "accountsByFromAccountsId")
+    private Collection<AccountsMessagesEntity> fromAccountsMessages;
+
+    @OneToMany(mappedBy = "accountsByToAccountsId")
+    private Collection<AccountsMessagesEntity> toAccountsMessages;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsPetsEntity> accountsPets;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsQuestsEntity> accountsQuests;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsRankingsEntity> accountsRankings;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsShipsEntity> accountsShips;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsSkillsEntity> accountsSkills;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsSkylabsEntity> accountsSkylabs;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsTechfactoriesEntity> accountsTechfactories;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<AccountsTechfactoryItemsEntity> accountsTechfactoryItems;
+
+    @OneToMany(mappedBy = "accountsByAccountsId")
+    private Collection<ClansApplicationsEntity> clansApplications;
 }

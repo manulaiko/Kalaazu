@@ -1,48 +1,34 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Accounts skills entity.
+ * =======================
+ *
+ * Entity for the `accounts_skills` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_skills", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_skills", schema = "kalaazu")
+@Data
 public class AccountsSkillsEntity {
-    private int            id;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsSkillsEntity that = (AccountsSkillsEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "skilltree_skills_id", referencedColumnName = "id", nullable = false)
+    private SkilltreeSkillsEntity skilltreeSkillsBySkilltreeSkillsId;
+
+    @ManyToOne
+    @JoinColumn(name = "skilltree_levels_id", referencedColumnName = "id", nullable = false)
+    private SkilltreeLevelsEntity skilltreeLevelsBySkilltreeLevelsId;
 }

@@ -1,73 +1,43 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/***
+ * Accounts skylabs entity.
+ * ========================
+ *
+ * Entity for the `accounts_skylabs` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_skylabs", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_skylabs", schema = "kalaazu")
+@Data
 public class AccountsSkylabsEntity {
-    private int            id;
-    private int            space;
-    private Timestamp      upgrade;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "space", nullable = false)
-    public int getSpace() {
-        return space;
-    }
-
-    public void setSpace(int space) {
-        this.space = space;
-    }
+    private int space;
 
     @Basic
-    @Column(name = "upgrade", nullable = true)
-    public Timestamp getUpgrade() {
-        return upgrade;
-    }
-
-    public void setUpgrade(Timestamp upgrade) {
-        this.upgrade = upgrade;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsSkylabsEntity that = (AccountsSkylabsEntity) o;
-        return id == that.id &&
-               space == that.space &&
-               Objects.equals(upgrade, that.upgrade);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, space, upgrade);
-    }
+    @Column(name = "upgrade")
+    private Timestamp upgrade;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "skylab_modules_id", referencedColumnName = "id", nullable = false)
+    private SkylabModulesEntity skylabModulesBySkylabModulesId;
+
+    @ManyToOne
+    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
+    private LevelsEntity levelsByLevelsId;
 }

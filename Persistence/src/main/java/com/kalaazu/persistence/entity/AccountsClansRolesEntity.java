@@ -1,48 +1,30 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Accounts clans roles entity.
+ * ============================
+ *
+ * Entity for the `accounts_clans_roles` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_clans_roles", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_clans_roles", schema = "kalaazu")
+@Data
 public class AccountsClansRolesEntity {
-    private int            id;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsClansRolesEntity that = (AccountsClansRolesEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private int id;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "clans_roles_id", referencedColumnName = "id", nullable = false)
+    private ClansRolesEntity clansRolesByClansRolesId;
 }

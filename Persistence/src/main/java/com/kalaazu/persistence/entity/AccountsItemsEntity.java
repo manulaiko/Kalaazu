@@ -1,73 +1,43 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/**
+ * Accounts items entity.
+ * ======================
+ *
+ * Entity for the `accounts_items` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_items", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_items", schema = "kalaazu")
+@Data
 public class AccountsItemsEntity {
-    private int            id;
-    private Timestamp      date;
-    private long           amount;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
+    private Timestamp date;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    public long getAmount() {
-        return amount;
-    }
-
-    public void setAmount(long amount) {
-        this.amount = amount;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsItemsEntity that = (AccountsItemsEntity) o;
-        return id == that.id &&
-               amount == that.amount &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, date, amount);
-    }
+    private long amount;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
+    private ItemsEntity itemsByItemsId;
+
+    @ManyToOne
+    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
+    private LevelsEntity levelsByLevelsId;
 }

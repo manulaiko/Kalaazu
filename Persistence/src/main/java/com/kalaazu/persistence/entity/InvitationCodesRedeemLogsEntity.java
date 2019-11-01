@@ -1,62 +1,35 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/**
+ * Invitation codes redeem logs entity.
+ * ====================================
+ *
+ * Entity for the `invitation_codes_redeem_logs` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "invitation_codes_redeem_logs", schema = "kalaazu", catalog = "")
+@Table(name = "invitation_codes_redeem_logs", schema = "kalaazu")
+@Data
 public class InvitationCodesRedeemLogsEntity {
-    private int       id;
-    private String    ip;
-    private Timestamp date;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "ip", nullable = false, length = 45)
-    public String getIp() {
-        return ip;
-    }
-
-    public void setIp(String ip) {
-        this.ip = ip;
-    }
+    private String ip;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
+    private Timestamp date;
 
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        InvitationCodesRedeemLogsEntity that = (InvitationCodesRedeemLogsEntity) o;
-        return id == that.id &&
-               Objects.equals(ip, that.ip) &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, ip, date);
-    }
+    @ManyToOne
+    @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id", nullable = false)
+    private InvitationCodesEntity invitationCodesByInvitationCodesId;
 }

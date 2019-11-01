@@ -1,59 +1,30 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Rewards galaxygates entity.
+ * ===========================
+ *
+ * Entity for the `rewards_galaxygates` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "rewards_galaxygates", schema = "kalaazu", catalog = "")
+@Table(name = "rewards_galaxygates", schema = "kalaazu")
+@Data
 public class RewardsGalaxygatesEntity {
-    private byte              id;
-    private GalaxygatesEntity galaxygatesByGalaxygatesId;
-    private RewardsEntity     rewardsByRewardsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public byte getId() {
-        return id;
-    }
-
-    public void setId(byte id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        RewardsGalaxygatesEntity that = (RewardsGalaxygatesEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private byte id;
 
     @ManyToOne
     @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
-    public GalaxygatesEntity getGalaxygatesByGalaxygatesId() {
-        return galaxygatesByGalaxygatesId;
-    }
-
-    public void setGalaxygatesByGalaxygatesId(GalaxygatesEntity galaxygatesByGalaxygatesId) {
-        this.galaxygatesByGalaxygatesId = galaxygatesByGalaxygatesId;
-    }
+    private GalaxygatesEntity galaxygatesByGalaxygatesId;
 
     @ManyToOne
     @JoinColumn(name = "rewards_id", referencedColumnName = "id", nullable = false)
-    public RewardsEntity getRewardsByRewardsId() {
-        return rewardsByRewardsId;
-    }
-
-    public void setRewardsByRewardsId(RewardsEntity rewardsByRewardsId) {
-        this.rewardsByRewardsId = rewardsByRewardsId;
-    }
+    private RewardsEntity rewardsByRewardsId;
 }

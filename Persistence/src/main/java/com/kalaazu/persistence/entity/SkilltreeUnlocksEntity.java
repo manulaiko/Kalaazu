@@ -1,63 +1,27 @@
 package com.kalaazu.persistence.entity;
 
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Skilltree unlocks entity.
+ * =========================
+ *
+ * Entity for the `skilltree_unlocks` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "skilltree_unlocks", schema = "kalaazu", catalog = "")
+@Table(name = "skilltree_unlocks", schema = "kalaazu")
 public class SkilltreeUnlocksEntity {
-    private short                 id;
-    private SkilltreeLevelsEntity skilltreeLevelsByUpgradeSkilltreeLevelsId;
-    private SkilltreeLevelsEntity skilltreeLevelsByRequiredSkilltreeLevelsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public short getId() {
-        return id;
-    }
-
-    public void setId(short id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        SkilltreeUnlocksEntity that = (SkilltreeUnlocksEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private short id;
 
     @ManyToOne
     @JoinColumn(name = "upgrade_skilltree_levels_id", referencedColumnName = "id", nullable = false)
-    public SkilltreeLevelsEntity getSkilltreeLevelsByUpgradeSkilltreeLevelsId() {
-        return skilltreeLevelsByUpgradeSkilltreeLevelsId;
-    }
-
-    public void setSkilltreeLevelsByUpgradeSkilltreeLevelsId(
-            SkilltreeLevelsEntity skilltreeLevelsByUpgradeSkilltreeLevelsId
-    ) {
-        this.skilltreeLevelsByUpgradeSkilltreeLevelsId = skilltreeLevelsByUpgradeSkilltreeLevelsId;
-    }
+    private SkilltreeLevelsEntity skilltreeLevelsByUpgradeSkilltreeLevelsId;
 
     @ManyToOne
     @JoinColumn(name = "required_skilltree_levels_id", referencedColumnName = "id", nullable = false)
-    public SkilltreeLevelsEntity getSkilltreeLevelsByRequiredSkilltreeLevelsId() {
-        return skilltreeLevelsByRequiredSkilltreeLevelsId;
-    }
-
-    public void setSkilltreeLevelsByRequiredSkilltreeLevelsId(
-            SkilltreeLevelsEntity skilltreeLevelsByRequiredSkilltreeLevelsId
-    ) {
-        this.skilltreeLevelsByRequiredSkilltreeLevelsId = skilltreeLevelsByRequiredSkilltreeLevelsId;
-    }
+    private SkilltreeLevelsEntity skilltreeLevelsByRequiredSkilltreeLevelsId;
 }

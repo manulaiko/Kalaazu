@@ -1,83 +1,38 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Trade items entity.
+ * ===================
+ *
+ * Entity for the `trade_items` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "trade_items", schema = "kalaazu", catalog = "")
+@Table(name = "trade_items", schema = "kalaazu")
+@Data
 public class TradeItemsEntity {
-    private short          id;
-    private int            price;
-    private byte           type;
-    private ItemsEntity    itemsByItemsId;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public short getId() {
-        return id;
-    }
-
-    public void setId(short id) {
-        this.id = id;
-    }
+    private short id;
 
     @Basic
     @Column(name = "price", nullable = false)
-    public int getPrice() {
-        return price;
-    }
-
-    public void setPrice(int price) {
-        this.price = price;
-    }
+    private int price;
 
     @Basic
     @Column(name = "type", nullable = false)
-    public byte getType() {
-        return type;
-    }
-
-    public void setType(byte type) {
-        this.type = type;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        TradeItemsEntity that = (TradeItemsEntity) o;
-        return id == that.id &&
-               price == that.price &&
-               type == that.type;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, price, type);
-    }
+    private byte type;
 
     @ManyToOne
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
-    public ItemsEntity getItemsByItemsId() {
-        return itemsByItemsId;
-    }
-
-    public void setItemsByItemsId(ItemsEntity itemsByItemsId) {
-        this.itemsByItemsId = itemsByItemsId;
-    }
+    private ItemsEntity itemsByItemsId;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id")
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
-
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 }

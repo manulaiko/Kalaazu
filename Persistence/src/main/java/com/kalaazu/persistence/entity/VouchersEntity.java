@@ -1,61 +1,37 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Vouchers entity.
+ * ================
+ *
+ * Entity for the `vouchers` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "vouchers", schema = "kalaazu", catalog = "")
+@Table(name = "vouchers", schema = "kalaazu")
+@Data
 public class VouchersEntity {
-    private short  id;
-    private String code;
-    private byte   limit;
-
     @Id
     @Column(name = "id", nullable = false)
-    public short getId() {
-        return id;
-    }
-
-    public void setId(short id) {
-        this.id = id;
-    }
+    private short id;
 
     @Basic
     @Column(name = "code", nullable = false, length = 32)
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
+    private String code;
 
     @Basic
     @Column(name = "limit", nullable = false)
-    public byte getLimit() {
-        return limit;
-    }
+    private byte limit;
 
-    public void setLimit(byte limit) {
-        this.limit = limit;
-    }
+    @OneToMany(mappedBy = "vouchersByVouchersId")
+    private Collection<RewardsVouchersEntity> rewardsVouchers;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        VouchersEntity that = (VouchersEntity) o;
-        return id == that.id &&
-               limit == that.limit &&
-               Objects.equals(code, that.code);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, code, limit);
-    }
+    @OneToMany(mappedBy = "vouchersByVouchersId")
+    private Collection<VouchersRedeemLogsEntity> vouchersRedeemLogs;
 }

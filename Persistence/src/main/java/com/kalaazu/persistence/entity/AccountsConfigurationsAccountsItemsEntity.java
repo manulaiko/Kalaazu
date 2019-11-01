@@ -1,40 +1,38 @@
 package com.kalaazu.persistence.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import java.util.Objects;
+import lombok.Data;
 
+import javax.persistence.*;
+
+/**
+ * Accounts configurations accounts items entity.
+ * ==============================================
+ *
+ * Entity for the `accounts_configurations_accounts_items` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_configurations_accounts_items", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_configurations_accounts_items", schema = "kalaazu")
+@Data
 public class AccountsConfigurationsAccountsItemsEntity {
-    private int id;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
+    private int id;
 
-    public void setId(int id) {
-        this.id = id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id", nullable = false)
+    private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsConfigurationsAccountsItemsEntity that = (AccountsConfigurationsAccountsItemsEntity) o;
-        return id == that.id;
-    }
+    @ManyToOne
+    @JoinColumn(name = "accounts_items_id", referencedColumnName = "id")
+    private AccountsItemsEntity accountsItemsByAccountsItemsId;
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    @ManyToOne
+    @JoinColumn(name = "accounts_drones_id", referencedColumnName = "id")
+    private AccountsDronesEntity accountsDronesByAccountsDronesId;
+
+    @ManyToOne
+    @JoinColumn(name = "accounts_pets_id", referencedColumnName = "id")
+    private AccountsPetsEntity accountsPetsByAccountsPetsId;
 }

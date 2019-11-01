@@ -1,73 +1,38 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Moderators roles entity.
+ * ========================
+ *
+ * Entity for the `moderators_roles` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "moderators_roles", schema = "kalaazu", catalog = "")
+@Table(name = "moderators_roles", schema = "kalaazu")
+@Data
 public class ModeratorsRolesEntity {
-    private byte   id;
-    private String name;
-    private Byte   moderatorsRolesId;
-    private byte   priority;
-
     @Id
     @Column(name = "id", nullable = false)
-    public byte getId() {
-        return id;
-    }
-
-    public void setId(byte id) {
-        this.id = id;
-    }
+    private byte id;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    @Basic
-    @Column(name = "moderators_roles_id", nullable = true)
-    public Byte getModeratorsRolesId() {
-        return moderatorsRolesId;
-    }
-
-    public void setModeratorsRolesId(Byte moderatorsRolesId) {
-        this.moderatorsRolesId = moderatorsRolesId;
-    }
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Basic
     @Column(name = "priority", nullable = false)
-    public byte getPriority() {
-        return priority;
-    }
+    private byte priority;
 
-    public void setPriority(byte priority) {
-        this.priority = priority;
-    }
+    @ManyToOne()
+    @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id")
+    private ModeratorsRolesEntity moderatorsRoles;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ModeratorsRolesEntity that = (ModeratorsRolesEntity) o;
-        return id == that.id &&
-               priority == that.priority &&
-               Objects.equals(name, that.name) &&
-               Objects.equals(moderatorsRolesId, that.moderatorsRolesId);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, name, moderatorsRolesId, priority);
-    }
+    @OneToMany(mappedBy = "moderatorsRolesByModeratorsRolesId")
+    private Collection<ModeratorsRolesPermissionsEntity> moderatorsRolesPermissions;
 }

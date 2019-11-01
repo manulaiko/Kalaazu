@@ -1,119 +1,51 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/**
+ * Accounts banks log entity.
+ * ==========================
+ *
+ * Entity for the `accounts_banks_logs` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "accounts_banks_logs", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_banks_logs", schema = "kalaazu")
+@Data
 public class AccountsBanksLogsEntity {
-    private int                 id;
-    private Timestamp           date;
-    private byte                type;
-    private int                 amount;
-    private byte                currency;
-    private AccountsEntity      accountsByFromAccountsId;
-    private AccountsEntity      accountsByToAccountsId;
-    private AccountsBanksEntity accountsBanksByAccountsBanksId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
+    private Timestamp date;
 
     @Basic
     @Column(name = "type", nullable = false)
-    public byte getType() {
-        return type;
-    }
-
-    public void setType(byte type) {
-        this.type = type;
-    }
+    private byte type;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    public int getAmount() {
-        return amount;
-    }
-
-    public void setAmount(int amount) {
-        this.amount = amount;
-    }
+    private int amount;
 
     @Basic
     @Column(name = "currency", nullable = false)
-    public byte getCurrency() {
-        return currency;
-    }
-
-    public void setCurrency(byte currency) {
-        this.currency = currency;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsBanksLogsEntity that = (AccountsBanksLogsEntity) o;
-        return id == that.id &&
-               type == that.type &&
-               amount == that.amount &&
-               currency == that.currency &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, date, type, amount, currency);
-    }
+    private byte currency;
 
     @ManyToOne
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByFromAccountsId() {
-        return accountsByFromAccountsId;
-    }
-
-    public void setAccountsByFromAccountsId(AccountsEntity accountsByFromAccountsId) {
-        this.accountsByFromAccountsId = accountsByFromAccountsId;
-    }
+    private AccountsEntity accountsByFromAccountsId;
 
     @ManyToOne
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByToAccountsId() {
-        return accountsByToAccountsId;
-    }
-
-    public void setAccountsByToAccountsId(AccountsEntity accountsByToAccountsId) {
-        this.accountsByToAccountsId = accountsByToAccountsId;
-    }
+    private AccountsEntity accountsByToAccountsId;
 
     @ManyToOne
     @JoinColumn(name = "accounts_banks_id", referencedColumnName = "id")
-    public AccountsBanksEntity getAccountsBanksByAccountsBanksId() {
-        return accountsBanksByAccountsBanksId;
-    }
-
-    public void setAccountsBanksByAccountsBanksId(AccountsBanksEntity accountsBanksByAccountsBanksId) {
-        this.accountsBanksByAccountsBanksId = accountsBanksByAccountsBanksId;
-    }
+    private AccountsBanksEntity accountsBanksByAccountsBanksId;
 }

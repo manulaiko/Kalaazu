@@ -1,73 +1,39 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
 
+/**
+ * Accounts techfactory items entity.
+ * ==================================
+ *
+ * Entity for the `accounts_techfactory_items` table.
+ *
+ * @author Manulaiko <manulaiko@gmial.com>
+ */
 @Entity
-@Table(name = "accounts_techfactory_items", schema = "kalaazu", catalog = "")
+@Table(name = "accounts_techfactory_items", schema = "kalaazu")
+@Data
 public class AccountsTechfactoryItemsEntity {
-    private int            id;
-    private short          amount;
-    private Timestamp      date;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    public short getAmount() {
-        return amount;
-    }
-
-    public void setAmount(short amount) {
-        this.amount = amount;
-    }
+    private short amount;
 
     @Basic
-    @Column(name = "date", nullable = true)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        AccountsTechfactoryItemsEntity that = (AccountsTechfactoryItemsEntity) o;
-        return id == that.id &&
-               amount == that.amount &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, amount, date);
-    }
+    @Column(name = "date")
+    private Timestamp date;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "techfactory_items_id", referencedColumnName = "id", nullable = false)
+    private TechfactoryItemsEntity techfactoryItemsByTechfactoryItemsId;
 }

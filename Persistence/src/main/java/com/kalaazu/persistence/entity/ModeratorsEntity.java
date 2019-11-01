@@ -1,61 +1,35 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Moderators entity.
+ * ==================
+ *
+ * Entity for the `moderators` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "moderators", schema = "kalaazu", catalog = "")
+@Table(name = "moderators", schema = "kalaazu")
+@Data
 public class ModeratorsEntity {
-    private byte           id;
-    private Timestamp      date;
-    private AccountsEntity accountsByAccountsId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public byte getId() {
-        return id;
-    }
-
-    public void setId(byte id) {
-        this.id = id;
-    }
+    private byte id;
 
     @Basic
     @Column(name = "date", nullable = false)
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        ModeratorsEntity that = (ModeratorsEntity) o;
-        return id == that.id &&
-               Objects.equals(date, that.date);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, date);
-    }
+    private Timestamp date;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
-    public AccountsEntity getAccountsByAccountsId() {
-        return accountsByAccountsId;
-    }
+    private AccountsEntity accountsByAccountsId;
 
-    public void setAccountsByAccountsId(AccountsEntity accountsByAccountsId) {
-        this.accountsByAccountsId = accountsByAccountsId;
-    }
+    @OneToMany(mappedBy = "moderatorsByModeratorsId")
+    private Collection<ModeratorsLogsEntity> moderatorsLogs;
 }

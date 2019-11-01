@@ -1,48 +1,30 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
 
+/**
+ * Galaxygates gg waves entity.
+ * ============================
+ *
+ * Entity for the `galaxygates_gg_waves` table.
+ *
+ * @author Manulaiko <manulaiko@gmail.com>
+ */
 @Entity
-@Table(name = "galaxygates_gg_waves", schema = "kalaazu", catalog = "")
+@Table(name = "galaxygates_gg_waves", schema = "kalaazu")
+@Data
 public class GalaxygatesGgWavesEntity {
-    private short             id;
-    private GalaxygatesEntity galaxygatesByGalaxygatesId;
-
     @Id
     @Column(name = "id", nullable = false)
-    public short getId() {
-        return id;
-    }
-
-    public void setId(short id) {
-        this.id = id;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        GalaxygatesGgWavesEntity that = (GalaxygatesGgWavesEntity) o;
-        return id == that.id;
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+    private short id;
 
     @ManyToOne
     @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
-    public GalaxygatesEntity getGalaxygatesByGalaxygatesId() {
-        return galaxygatesByGalaxygatesId;
-    }
+    private GalaxygatesEntity galaxygatesByGalaxygatesId;
 
-    public void setGalaxygatesByGalaxygatesId(GalaxygatesEntity galaxygatesByGalaxygatesId) {
-        this.galaxygatesByGalaxygatesId = galaxygatesByGalaxygatesId;
-    }
+    @ManyToOne
+    @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
+    private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
 }

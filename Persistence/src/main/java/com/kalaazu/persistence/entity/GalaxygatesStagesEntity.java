@@ -1,49 +1,34 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
-import java.util.Objects;
+import java.util.Collection;
 
+/**
+ * Galaxygates stages entity.
+ * ==========================
+ *
+ * Entity for the `galaxygates_stages` table.
+ *
+ * @author Manulaiko <manulaiko@gmial.com>
+ */
 @Entity
-@Table(name = "galaxygates_stages", schema = "kalaazu", catalog = "")
+@Table(name = "galaxygates_stages", schema = "kalaazu")
+@Data
 public class GalaxygatesStagesEntity {
-    private int    id;
-    private String comment;
-
     @Id
     @Column(name = "id", nullable = false)
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private int id;
 
     @Basic
-    @Column(name = "comment", nullable = true, length = -1)
-    public String getComment() {
-        return comment;
-    }
+    @Column(name = "comment", length = -1)
+    private String comment;
 
-    public void setComment(String comment) {
-        this.comment = comment;
-    }
+    @ManyToOne
+    @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
+    private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
-        GalaxygatesStagesEntity that = (GalaxygatesStagesEntity) o;
-        return id == that.id &&
-               Objects.equals(comment, that.comment);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, comment);
-    }
+    @OneToMany(mappedBy = "galaxygatesStagesByGalaxygatesStagesById")
+    private Collection<GalaxygatesStagesSpawnsEntity> galaxygatesStagesSpawns;
 }
