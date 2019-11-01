@@ -29,7 +29,7 @@ public class ItemsEntity {
     private byte category;
 
     @Basic
-    @Column(name = "description", nullable = false, length = -1)
+    @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
     private String description;
 
     @Basic

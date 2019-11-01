@@ -26,7 +26,7 @@ public class AccountsHistoryEntity {
     private byte type;
 
     @Basic
-    @Column(name = "message", nullable = false, length = -1)
+    @Column(name = "message", nullable = false, length = -1, columnDefinition = "TEXT")
     private String message;
 
     @Basic

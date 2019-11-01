@@ -30,7 +30,7 @@ public class ClansEntity {
     private String name;
 
     @Basic
-    @Column(name = "description", nullable = false, length = -1)
+    @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
     private String description;
 
     @Basic

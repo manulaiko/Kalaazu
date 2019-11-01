@@ -38,6 +38,6 @@ public class NewsEntity {
     private String teaser;
 
     @Basic
-    @Column(name = "text", nullable = false, length = -1)
+    @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 }

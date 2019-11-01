@@ -22,15 +22,15 @@ public class TechfactoryItemsEntity {
     private byte id;
 
     @Basic
-    @Column(name = "name", nullable = false, length = 255)
+    @Column(name = "name", nullable = false)
     private String name;
 
     @Basic
-    @Column(name = "description", nullable = false, length = -1)
+    @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
     private String description;
 
     @Basic
-    @Column(name = "effect", nullable = false, length = -1)
+    @Column(name = "effect", nullable = false, length = -1, columnDefinition = "TEXT")
     private String effect;
 
     @Basic

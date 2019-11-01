@@ -22,7 +22,7 @@ public class GalaxygatesStagesEntity {
     private int id;
 
     @Basic
-    @Column(name = "comment", length = -1)
+    @Column(name = "comment", length = -1, columnDefinition = "TEXT")
     private String comment;
 
     @ManyToOne

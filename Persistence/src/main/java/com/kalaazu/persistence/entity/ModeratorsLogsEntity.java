@@ -30,7 +30,7 @@ public class ModeratorsLogsEntity {
     private String type;
 
     @Basic
-    @Column(name = "text", nullable = false, length = -1)
+    @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
     @ManyToOne

@@ -34,7 +34,7 @@ public class ClansMessagesEntity {
     private String title;
 
     @Basic
-    @Column(name = "text", nullable = false, length = -1)
+    @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
     @Basic

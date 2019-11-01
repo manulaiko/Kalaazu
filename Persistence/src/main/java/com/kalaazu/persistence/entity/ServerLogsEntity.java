@@ -34,6 +34,6 @@ public class ServerLogsEntity {
     private String type;
 
     @Basic
-    @Column(name = "context", nullable = false, length = -1)
+    @Column(name = "context", nullable = false, length = -1, columnDefinition = "TEXT")
     private String context;
 }
