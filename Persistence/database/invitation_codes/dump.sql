@@ -1,6 +1,6 @@
 -- Initial dump for the `invitation_codes` table.
 
-INSERT INTO `invitation_codes` (`id`, `code`, `limit`)
+INSERT INTO `invitation_codes` (`id`, `code`, `max`)
 VALUES (1, '17089696161f8472c048f7f4a487d0a2', 0),
        (2, 'f72aa5fc72637779fd8ba6eb743d4c13', 1),
        (3, '48d14197e7e4187d2fc48a882d317150', 1),
