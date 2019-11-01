@@ -3,12 +3,12 @@
 -- Voucher codes.
 --
 CREATE TABLE `vouchers` (
-  `id`    smallint    NOT NULL AUTO_INCREMENT
+                            `id`   smallint    NOT NULL AUTO_INCREMENT
   COMMENT 'Primary Key.',
-  `code`  varchar(32) NOT NULL DEFAULT '',
-  `limit` tinyint     NOT NULL DEFAULT 1,
+                            `code` varchar(32) NOT NULL DEFAULT '',
+                            `max`  tinyint     NOT NULL DEFAULT 1,
 
-  CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
+                            CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8

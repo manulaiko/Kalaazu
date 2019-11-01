@@ -3,10 +3,11 @@
 -- Contains simple Key -> Value entries.
 --
 CREATE TABLE `key_value` (
-  `key`   varchar(255) NOT NULL DEFAULT '',
-  `value` varchar(255) NOT NULL DEFAULT '',
+                             `id`    int          NOT NULL AUTO_INCREMENT,
+                             `name`  varchar(255) NOT NULL DEFAULT '',
+                             `value` varchar(255) NOT NULL DEFAULT '',
 
-  CONSTRAINT `key_value_pk` PRIMARY KEY (`key`)
+                             CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8

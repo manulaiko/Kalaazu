@@ -17,8 +17,12 @@ import javax.persistence.*;
 @Data
 public class KeyValueEntity {
     @Id
-    @Column(name = "key", nullable = false)
-    private String key;
+    @Column(name = "id", nullable = false)
+    private int id;
+
+    @Basic
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Basic
     @Column(name = "value", nullable = false)

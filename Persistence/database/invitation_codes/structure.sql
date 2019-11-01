@@ -3,14 +3,14 @@
 -- Contains the invitation codes that can be used for registering.
 --
 CREATE TABLE `invitation_codes` (
-  `id`    smallint     NOT NULL AUTO_INCREMENT
+                                    `id`   smallint     NOT NULL AUTO_INCREMENT
   COMMENT 'Primary Key.',
-  `code`  varchar(255) NOT NULL DEFAULT ''
+                                    `code` varchar(255) NOT NULL DEFAULT ''
   COMMENT 'The invitation code.',
-  `limit` tinyint      NOT NULL DEFAULT 1
+                                    `max`  tinyint      NOT NULL DEFAULT 1
   COMMENT 'Amount of times the code can be used.',
 
-  CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
+                                    CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8

@@ -2114,14 +2114,14 @@ CREATE INDEX `galaxygates_waves_maps_id_idx`
 -- Contains the invitation codes that can be used for registering.
 --
 CREATE TABLE `invitation_codes` (
-  `id`    smallint     NOT NULL AUTO_INCREMENT
+                                    `id`   smallint     NOT NULL AUTO_INCREMENT
   COMMENT 'Primary Key.',
-  `code`  varchar(255) NOT NULL DEFAULT ''
+                                    `code` varchar(255) NOT NULL DEFAULT ''
   COMMENT 'The invitation code.',
-  `limit` tinyint      NOT NULL DEFAULT 1
+                                    `max`  tinyint      NOT NULL DEFAULT 1
   COMMENT 'Amount of times the code can be used.',
 
-  CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
+                                    CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8
@@ -2134,7 +2134,7 @@ CREATE UNIQUE INDEX `invitation_codes_code_idx`
 
 -- Initial dump for the `invitation_codes` table.
 
-INSERT INTO `invitation_codes` (`id`, `code`, `limit`)
+INSERT INTO `invitation_codes` (`id`, `code`, `max`)
 VALUES (1, '17089696161f8472c048f7f4a487d0a2', 0),
        (2, 'f72aa5fc72637779fd8ba6eb743d4c13', 1),
        (3, '48d14197e7e4187d2fc48a882d317150', 1),
@@ -5412,10 +5412,11 @@ VALUES (242, 'Promerium', 8, 'No description available.', 0, 26, 0, 0, 0),
 -- Contains simple Key -> Value entries.
 --
 CREATE TABLE `key_value` (
-  `key`   varchar(255) NOT NULL DEFAULT '',
-  `value` varchar(255) NOT NULL DEFAULT '',
+                             `id`    int          NOT NULL AUTO_INCREMENT,
+                             `name`  varchar(255) NOT NULL DEFAULT '',
+                             `value` varchar(255) NOT NULL DEFAULT '',
 
-  CONSTRAINT `key_value_pk` PRIMARY KEY (`key`)
+                             CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8
@@ -9535,12 +9536,12 @@ CREATE UNIQUE INDEX `users_email_verification_code_idx`
 -- Voucher codes.
 --
 CREATE TABLE `vouchers` (
-  `id`    smallint    NOT NULL AUTO_INCREMENT
+                            `id`   smallint    NOT NULL AUTO_INCREMENT
   COMMENT 'Primary Key.',
-  `code`  varchar(32) NOT NULL DEFAULT '',
-  `limit` tinyint     NOT NULL DEFAULT 1,
+                            `code` varchar(32) NOT NULL DEFAULT '',
+                            `max`  tinyint     NOT NULL DEFAULT 1,
 
-  CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
+                            CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 )
   ENGINE InnoDB
   CHARACTER SET utf8
