@@ -4,9 +4,9 @@
 -- A reward is a reward.
 
 ALTER TABLE `rewards_ships`
-  ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_ships`
-  ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
-REFERENCES `ships` (`id`);
+    ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
+        REFERENCES `ships` (`id`);

@@ -1,7 +1,7 @@
 -- Initial dump for the `ships` table.
 
 INSERT INTO `ships` (`id`, `items_id`, `health`, `speed`, `cargo`, `batteries`, `rockets`, `lasers`, `hellstorms`,
-                   `generators`, `extras`, `gfx`)
+                     `generators`, `extras`, `gfx`)
 VALUES (1, 9, 4000, 320, 100, 1000, 100, 1, 1, 1, 1, 1),
        (2, 10, 8000, 340, 200, 2000, 200, 2, 1, 2, 1, 2),
        (3, 11, 12000, 280, 300, 4000, 400, 3, 1, 5, 2, 3),

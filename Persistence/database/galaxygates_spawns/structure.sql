@@ -2,19 +2,20 @@
 --
 -- Stage spawn for each stage.
 --
-CREATE TABLE `galaxygates_spawns` (
-  `id`      int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `npcs_id` tinyint NOT NULL
-  COMMENT 'NPC to spawn.',
-  `amount`  tinyint NOT NULL DEFAULT 20
-  COMMENT 'Amount of NPCs to spawn.',
+CREATE TABLE `galaxygates_spawns`
+(
+    `id`      int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `npcs_id` tinyint NOT NULL
+        COMMENT 'NPC to spawn.',
+    `amount`  tinyint NOT NULL DEFAULT 20
+        COMMENT 'Amount of NPCs to spawn.',
 
-  CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Stage spawn for each stage.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Stage spawn for each stage.';
 
 CREATE INDEX `galaxygates_spawns_npcs_id_idx`
-  ON `galaxygates_spawns` (`npcs_id`);
+    ON `galaxygates_spawns` (`npcs_id`);

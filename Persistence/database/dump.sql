@@ -10,49 +10,50 @@ USE `kalaazu`;
 --
 -- In-game accounts.
 --
-CREATE TABLE `accounts` (
-  `id`                  int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `users_id`            int          NOT NULL
-  COMMENT 'Account''s owner.',
-  `session_id`          varchar(32)  NOT NULL
-  COMMENT 'Session ID.',
-  `levels_id`           tinyint      NOT NULL DEFAULT 1
-  COMMENT 'Current level.',
-  `factions_id`         tinyint      NOT NULL
-  COMMENT 'Faction that the account belongs to.',
-  `accounts_hangars_id` int          NULL     DEFAULT NULL
-  COMMENT 'Active hangar.',
-  `clans_id`            int          NULL     DEFAULT NULL,
-  `ranks_id`            tinyint      NOT NULL DEFAULT 1,
-  `name`                varchar(255) NOT NULL
-  COMMENT 'In game name.',
-  `ban_date`            timestamp    NULL     DEFAULT NULL
-  COMMENT 'Ban expiration date.',
-  `premium_date`        timestamp    NULL     DEFAULT NULL
-  COMMENT 'Premium expiration date.',
-  `date`                timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `last_login`          timestamp    NULL     DEFAULT NULL
-  COMMENT 'Last login date.',
-  `skill_points_total`  smallint     NOT NULL DEFAULT 0
-  COMMENT 'Total skill points available.',
-  `skill_points_free`   smallint     NOT NULL DEFAULT 0
-  COMMENT 'Free skill points available.',
+CREATE TABLE `accounts`
+(
+    `id`                  int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `users_id`            int          NOT NULL
+        COMMENT 'Account''s owner.',
+    `session_id`          varchar(32)  NOT NULL
+        COMMENT 'Session ID.',
+    `levels_id`           tinyint      NOT NULL DEFAULT 1
+        COMMENT 'Current level.',
+    `factions_id`         tinyint      NOT NULL
+        COMMENT 'Faction that the account belongs to.',
+    `accounts_hangars_id` int          NULL     DEFAULT NULL
+        COMMENT 'Active hangar.',
+    `clans_id`            int          NULL     DEFAULT NULL,
+    `ranks_id`            tinyint      NOT NULL DEFAULT 1,
+    `name`                varchar(255) NOT NULL
+        COMMENT 'In game name.',
+    `ban_date`            timestamp    NULL     DEFAULT NULL
+        COMMENT 'Ban expiration date.',
+    `premium_date`        timestamp    NULL     DEFAULT NULL
+        COMMENT 'Premium expiration date.',
+    `date`                timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `last_login`          timestamp    NULL     DEFAULT NULL
+        COMMENT 'Last login date.',
+    `skill_points_total`  smallint     NOT NULL DEFAULT 0
+        COMMENT 'Total skill points available.',
+    `skill_points_free`   smallint     NOT NULL DEFAULT 0
+        COMMENT 'Free skill points available.',
 
-  CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'In game accounts.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'In game accounts.';
 
 CREATE UNIQUE INDEX `accounts_session_id_idx`
-  ON `accounts` (`session_id`);
+    ON `accounts` (`session_id`);
 CREATE UNIQUE INDEX `accounts_name_idx`
-  ON `accounts` (`name`);
+    ON `accounts` (`name`);
 CREATE INDEX `accounts_ranks_id_idx`
-  ON `accounts` (`ranks_id`);
+    ON `accounts` (`ranks_id`);
 CREATE INDEX `accounts_clans_id_idx`
-  ON `accounts` (`clans_id`);
+    ON `accounts` (`clans_id`);
 
 -- Initial dump for the `accounts` table.
 
@@ -60,27 +61,28 @@ CREATE INDEX `accounts_clans_id_idx`
 --
 -- Account's internal bank.
 --
-CREATE TABLE `accounts_banks` (
-  `id`          int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int     NOT NULL,
-  `credits`     bigint  NOT NULL DEFAULT 0
-  COMMENT 'Credits available in the bank.',
-  `uridium`     bigint  NOT NULL DEFAULT 0
-  COMMENT 'Uridium available in the bank.',
-  `tax_credits` tinyint NOT NULL DEFAULT 5
-  COMMENT 'Tax rate for credits.',
-  `tax_uridium` tinyint NOT NULL DEFAULT 0
-  COMMENT 'Tax rate for uridium.',
+CREATE TABLE `accounts_banks`
+(
+    `id`          int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int     NOT NULL,
+    `credits`     bigint  NOT NULL DEFAULT 0
+        COMMENT 'Credits available in the bank.',
+    `uridium`     bigint  NOT NULL DEFAULT 0
+        COMMENT 'Uridium available in the bank.',
+    `tax_credits` tinyint NOT NULL DEFAULT 5
+        COMMENT 'Tax rate for credits.',
+    `tax_uridium` tinyint NOT NULL DEFAULT 0
+        COMMENT 'Tax rate for uridium.',
 
-  CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s internal bank.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s internal bank.';
 
 CREATE UNIQUE INDEX `accounts_banks_accounts_id_idx`
-  ON `accounts_banks` (`accounts_id`);
+    ON `accounts_banks` (`accounts_id`);
 
 -- Initial dump for the `accounts_banks` table.
 
@@ -88,30 +90,31 @@ CREATE UNIQUE INDEX `accounts_banks_accounts_id_idx`
 --
 -- Logs from account's bank.
 --
-CREATE TABLE `accounts_banks_logs` (
-  `id`                int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `from_accounts_id`  int       NOT NULL,
-  `to_accounts_id`    int       NOT NULL,
-  `date`              timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `type`              tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
-  `amount`            int       NOT NULL DEFAULT 0
-  COMMENT 'Amount of currency logged.',
-  `currency`          tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
-  `accounts_banks_id` int       NULL     DEFAULT NULL,
+CREATE TABLE `accounts_banks_logs`
+(
+    `id`                int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `from_accounts_id`  int       NOT NULL,
+    `to_accounts_id`    int       NOT NULL,
+    `date`              timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `type`              tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
+    `amount`            int       NOT NULL DEFAULT 0
+        COMMENT 'Amount of currency logged.',
+    `currency`          tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
+    `accounts_banks_id` int       NULL     DEFAULT NULL,
 
-  CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Logs from account''s bank';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Logs from account''s bank';
 
 CREATE INDEX `accounts_banks_logs_from_accounts_id_idx`
-  ON `accounts_banks_logs` (`from_accounts_id`);
+    ON `accounts_banks_logs` (`from_accounts_id`);
 CREATE INDEX `accounts_banks_logs_to_accounts_id_idx`
-  ON `accounts_banks_logs` (`to_accounts_id`);
+    ON `accounts_banks_logs` (`to_accounts_id`);
 
 -- Initial dump for the `accounts_banks_logs` table.
 
@@ -119,24 +122,25 @@ CREATE INDEX `accounts_banks_logs_to_accounts_id_idx`
 --
 -- Many to many relation table.
 --
-CREATE TABLE `accounts_clans_roles` (
-  `id`             int NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`    int NOT NULL
-  COMMENT 'Account ID.',
-  `clans_roles_id` int NOT NULL
-  COMMENT 'Role ID.',
+CREATE TABLE `accounts_clans_roles`
+(
+    `id`             int NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`    int NOT NULL
+        COMMENT 'Account ID.',
+    `clans_roles_id` int NOT NULL
+        COMMENT 'Role ID.',
 
-  CONSTRAINT `accounts_clans_roles_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_clans_roles_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relation table.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relation table.';
 
 CREATE INDEX `accounts_clans_roles_accounts_id_idx`
-  ON `accounts_clans_roles` (`accounts_id`);
+    ON `accounts_clans_roles` (`accounts_id`);
 CREATE INDEX `accounts_clans_roles_clans_roles_id_idx`
-  ON `accounts_clans_roles` (`clans_roles_id`);
+    ON `accounts_clans_roles` (`clans_roles_id`);
 
 -- Initial dump for the `accounts_clans_roles` table.
 
@@ -144,28 +148,29 @@ CREATE INDEX `accounts_clans_roles_clans_roles_id_idx`
 --
 -- Configurations of the accounts.
 --
-CREATE TABLE `accounts_configurations` (
-  `id`                  int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_hangars_id` int          NOT NULL,
-  `configuration_id`    tinyint      NOT NULL DEFAULT 1
-  COMMENT 'Configuration ID (1 or 2 (or 3)).',
-  `name`                varchar(255) NOT NULL DEFAULT '',
-  `shield`              int          NOT NULL DEFAULT 0
-  COMMENT 'Shield available in the configuration.',
-  `speed`               smallint     NOT NULL DEFAULT 0
-  COMMENT 'Speed available in the configuration.',
-  `damage`              int          NOT NULL DEFAULT 0
-  COMMENT 'Damage available in the configuration.',
+CREATE TABLE `accounts_configurations`
+(
+    `id`                  int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_hangars_id` int          NOT NULL,
+    `configuration_id`    tinyint      NOT NULL DEFAULT 1
+        COMMENT 'Configuration ID (1 or 2 (or 3)).',
+    `name`                varchar(255) NOT NULL DEFAULT '',
+    `shield`              int          NOT NULL DEFAULT 0
+        COMMENT 'Shield available in the configuration.',
+    `speed`               smallint     NOT NULL DEFAULT 0
+        COMMENT 'Speed available in the configuration.',
+    `damage`              int          NOT NULL DEFAULT 0
+        COMMENT 'Damage available in the configuration.',
 
-  CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Configurations of the accounts.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Configurations of the accounts.';
 
 CREATE INDEX `accounts_configurations_accounts_hangars_id_idx`
-  ON `accounts_configurations` (`accounts_hangars_id`);
+    ON `accounts_configurations` (`accounts_hangars_id`);
 
 -- Initial dump for the `accounts_configurations` table.
 
@@ -173,19 +178,20 @@ CREATE INDEX `accounts_configurations_accounts_hangars_id_idx`
 --
 -- Items of the configuration.
 --
-CREATE TABLE `accounts_configurations_accounts_items` (
-  `id`                         int NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_configurations_id` int NOT NULL,
-  `accounts_items_id`          int NOT NULL,
-  `accounts_drones_id`         int NULL     DEFAULT NULL,
-  `accounts_pets_id`           int NULL     DEFAULT NULL,
+CREATE TABLE `accounts_configurations_accounts_items`
+(
+    `id`                         int NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_configurations_id` int NOT NULL,
+    `accounts_items_id`          int NOT NULL,
+    `accounts_drones_id`         int NULL DEFAULT NULL,
+    `accounts_pets_id`           int NULL DEFAULT NULL,
 
-  CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Items of the configuration.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Items of the configuration.';
 
 -- Initial dump for the `accounts_configurations_accounts_items` table.
 
@@ -193,24 +199,25 @@ CREATE TABLE `accounts_configurations_accounts_items` (
 --
 -- Account's destroy history.
 --
-CREATE TABLE `accounts_destroys` (
-  `id`          int      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int      NOT NULL,
-  `ships_id`    tinyint  NOT NULL,
-  `points`      smallint NOT NULL DEFAULT 0
-  COMMENT 'Rank points received for destroying this ship.',
-  `amount`      smallint NOT NULL DEFAULT 0
-  COMMENT 'Times this ship has been destroyed',
+CREATE TABLE `accounts_destroys`
+(
+    `id`          int      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int      NOT NULL,
+    `ships_id`    tinyint  NOT NULL,
+    `points`      smallint NOT NULL DEFAULT 0
+        COMMENT 'Rank points received for destroying this ship.',
+    `amount`      smallint NOT NULL DEFAULT 0
+        COMMENT 'Times this ship has been destroyed',
 
-  CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s destroy history.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s destroy history.';
 
 CREATE UNIQUE INDEX `accounts_destroys_accounts_id_idx`
-  ON `accounts_destroys` (`accounts_id`);
+    ON `accounts_destroys` (`accounts_id`);
 
 -- Initial dump for the `accounts_destroys` table.
 
@@ -218,22 +225,23 @@ CREATE UNIQUE INDEX `accounts_destroys_accounts_id_idx`
 --
 -- Account's drones.
 --
-CREATE TABLE `accounts_drones` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int       NOT NULL,
-  `levels_id`   tinyint   NOT NULL DEFAULT 1,
-  `experience`  smallint  NOT NULL DEFAULT 0,
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE `accounts_drones`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int       NOT NULL,
+    `levels_id`   tinyint   NOT NULL DEFAULT 1,
+    `experience`  smallint  NOT NULL DEFAULT 0,
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-  CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s drones.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s drones.';
 
 CREATE UNIQUE INDEX `accounts_drones_accounts_id_idx`
-  ON `accounts_drones` (`accounts_id`);
+    ON `accounts_drones` (`accounts_id`);
 
 -- Initial dump for the `accounts_drones` table.
 
@@ -241,30 +249,31 @@ CREATE UNIQUE INDEX `accounts_drones_accounts_id_idx`
 --
 -- Account's build galaxygates.
 --
-CREATE TABLE `accounts_galaxygates` (
-  `id`             int      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_id` tinyint  NOT NULL,
-  `accounts_id`    int      NOT NULL,
-  `parts`          tinyint  NOT NULL DEFAULT 0
-  COMMENT 'Collected parts.',
-  `lifes`          tinyint  NOT NULL DEFAULT -1
-  COMMENT 'Available lives (-1 not build yet)',
-  `wave`           tinyint  NOT NULL DEFAULT -1
-  COMMENT 'Current wave.',
-  `times`          smallint NOT NULL DEFAULT 0
-  COMMENT 'Times this gate was completed.',
+CREATE TABLE `accounts_galaxygates`
+(
+    `id`             int      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint  NOT NULL,
+    `accounts_id`    int      NOT NULL,
+    `parts`          tinyint  NOT NULL DEFAULT 0
+        COMMENT 'Collected parts.',
+    `lifes`          tinyint  NOT NULL DEFAULT -1
+        COMMENT 'Available lives (-1 not build yet)',
+    `wave`           tinyint  NOT NULL DEFAULT -1
+        COMMENT 'Current wave.',
+    `times`          smallint NOT NULL DEFAULT 0
+        COMMENT 'Times this gate was completed.',
 
-  CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s build galaxygates.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s build galaxygates.';
 
 CREATE INDEX `accounts_galaxygates_galaxygates_id_idx`
-  ON `accounts_galaxygates` (`galaxygates_id`);
+    ON `accounts_galaxygates` (`galaxygates_id`);
 CREATE INDEX `accounts_galaxygates_accounts_id_idx`
-  ON `accounts_galaxygates` (`accounts_id`);
+    ON `accounts_galaxygates` (`accounts_id`);
 
 -- Initial dump for the `accounts_galaxygates` table.
 
@@ -272,29 +281,30 @@ CREATE INDEX `accounts_galaxygates_accounts_id_idx`
 --
 -- Hangars bough by an account.
 --
-CREATE TABLE `accounts_hangars` (
-  `id`                         int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`                int          NOT NULL,
-  `accounts_ships_id`          int          NULL     DEFAULT NULL
-  COMMENT 'Ship available in the hangar.',
-  `accounts_configurations_id` int          NULL     DEFAULT NULL
-  COMMENT 'Equipped configuration.',
-  `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
-  `priority`                   tinyint      NULL     DEFAULT -1
-  COMMENT 'Order priority, null = not ordered.',
-  `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE `accounts_hangars`
+(
+    `id`                         int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`                int          NOT NULL,
+    `accounts_ships_id`          int          NULL     DEFAULT NULL
+        COMMENT 'Ship available in the hangar.',
+    `accounts_configurations_id` int          NULL     DEFAULT NULL
+        COMMENT 'Equipped configuration.',
+    `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
+    `priority`                   tinyint      NULL     DEFAULT -1
+        COMMENT 'Order priority, null = not ordered.',
+    `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-  CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Hangars bough by an account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Hangars bough by an account.';
 
 CREATE INDEX `accounts_hangars_accounts_accounts_id_idx`
-  ON `accounts_hangars` (`accounts_id`);
+    ON `accounts_hangars` (`accounts_id`);
 CREATE INDEX `accounts_hangars_accounts_ships_id_idx`
-  ON `accounts_hangars` (`accounts_ships_id`);
+    ON `accounts_hangars` (`accounts_ships_id`);
 
 -- Initial dump for the `accounts_hangars` table.
 
@@ -302,27 +312,28 @@ CREATE INDEX `accounts_hangars_accounts_ships_id_idx`
 --
 -- Account's history events.
 --
-CREATE TABLE `accounts_history` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int       NOT NULL,
-  `type`        tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Event type.',
-  `message`     text      NOT NULL
-  COMMENT 'Event message.',
-  `amount`      int       NOT NULL DEFAULT 0
-  COMMENT 'For currency related events, the amount of currency.',
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the event occurred.',
+CREATE TABLE `accounts_history`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int       NOT NULL,
+    `type`        tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Event type.',
+    `message`     text      NOT NULL
+        COMMENT 'Event message.',
+    `amount`      int       NOT NULL DEFAULT 0
+        COMMENT 'For currency related events, the amount of currency.',
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the event occurred.',
 
-  CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s history events.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s history events.';
 
 CREATE UNIQUE INDEX `accounts_history_accounts_id_idx`
-  ON `accounts_history` (`accounts_id`);
+    ON `accounts_history` (`accounts_id`);
 
 -- Initial dump for the `accounts_history` table.
 
@@ -330,28 +341,29 @@ CREATE UNIQUE INDEX `accounts_history_accounts_id_idx`
 --
 -- Items bough by an account.
 --
-CREATE TABLE `accounts_items` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `items_id`    smallint  NOT NULL,
-  `accounts_id` int       NOT NULL,
-  `levels_id`   tinyint   NOT NULL DEFAULT 1,
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `amount`      bigint    NOT NULL DEFAULT 1
-  COMMENT 'Amount of items bough (for stackable items).',
+CREATE TABLE `accounts_items`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `items_id`    smallint  NOT NULL,
+    `accounts_id` int       NOT NULL,
+    `levels_id`   tinyint   NOT NULL DEFAULT 1,
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `amount`      bigint    NOT NULL DEFAULT 1
+        COMMENT 'Amount of items bough (for stackable items).',
 
-  CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Items bough by an account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Items bough by an account.';
 
 CREATE INDEX `accounts_items_items_id_idx`
-  ON `accounts_items` (`items_id`);
+    ON `accounts_items` (`items_id`);
 CREATE INDEX `accounts_items_accounts_id_idx`
-  ON `accounts_items` (`accounts_id`);
+    ON `accounts_items` (`accounts_id`);
 CREATE INDEX `accounts_items_levels_id_idx`
-  ON `accounts_items` (`levels_id`);
+    ON `accounts_items` (`levels_id`);
 
 -- Initial dump for the `accounts_items` table.
 
@@ -359,29 +371,30 @@ CREATE INDEX `accounts_items_levels_id_idx`
 --
 -- Messaging system.
 --
-CREATE TABLE `accounts_messages` (
-  `id`               int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `from_accounts_id` int          NOT NULL DEFAULT 1,
-  `from_status`      tinyint      NOT NULL DEFAULT 1
-  COMMENT '0 = unread, 1 = read, 2 = deleted.',
-  `to_accounts_id`   int          NOT NULL,
-  `to_status`        tinyint      NOT NULL DEFAULT 0
-  COMMENT '0 = unread, 1 = read, 2 = unread.',
-  `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `title`            varchar(255) NOT NULL,
-  `text`             text         NOT NULL,
+CREATE TABLE `accounts_messages`
+(
+    `id`               int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `from_accounts_id` int          NOT NULL DEFAULT 1,
+    `from_status`      tinyint      NOT NULL DEFAULT 1
+        COMMENT '0 = unread, 1 = read, 2 = deleted.',
+    `to_accounts_id`   int          NOT NULL,
+    `to_status`        tinyint      NOT NULL DEFAULT 0
+        COMMENT '0 = unread, 1 = read, 2 = unread.',
+    `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `title`            varchar(255) NOT NULL,
+    `text`             text         NOT NULL,
 
-  CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Messaging system.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Messaging system.';
 
 CREATE INDEX `accounts_messages_from_accounts_id_idx`
-  ON `accounts_messages` (`from_accounts_id`);
+    ON `accounts_messages` (`from_accounts_id`);
 CREATE INDEX `accounts_messages_to_accounts_id_idx`
-  ON `accounts_messages` (`to_accounts_id`);
+    ON `accounts_messages` (`to_accounts_id`);
 
 -- Initial dump for the `accounts_messages` table.
 
@@ -389,32 +402,33 @@ CREATE INDEX `accounts_messages_to_accounts_id_idx`
 --
 -- Account's PETs.
 --
-CREATE TABLE `accounts_pets` (
-  `id`                         int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`                int          NOT NULL,
-  `levels_id`                  tinyint      NOT NULL DEFAULT 1,
-  `name`                       varchar(255) NOT NULL DEFAULT '',
-  `experience`                 int          NOT NULL DEFAULT 0,
-  `fuel`                       int          NOT NULL DEFAULT 0,
-  `health`                     int          NOT NULL DEFAULT 0,
-  `slots_lasers_total`         tinyint      NOT NULL,
-  `slots_lasers_available`     tinyint      NOT NULL,
-  `slots_generators_total`     tinyint      NOT NULL,
-  `slots_generators_available` tinyint      NOT NULL,
-  `slots_protocols_total`      tinyint      NOT NULL,
-  `slots_protocols_available`  tinyint      NOT NULL,
-  `slots_gears_total`          tinyint      NOT NULL,
-  `slots_gears_available`      tinyint      NOT NULL,
+CREATE TABLE `accounts_pets`
+(
+    `id`                         int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`                int          NOT NULL,
+    `levels_id`                  tinyint      NOT NULL DEFAULT 1,
+    `name`                       varchar(255) NOT NULL DEFAULT '',
+    `experience`                 int          NOT NULL DEFAULT 0,
+    `fuel`                       int          NOT NULL DEFAULT 0,
+    `health`                     int          NOT NULL DEFAULT 0,
+    `slots_lasers_total`         tinyint      NOT NULL,
+    `slots_lasers_available`     tinyint      NOT NULL,
+    `slots_generators_total`     tinyint      NOT NULL,
+    `slots_generators_available` tinyint      NOT NULL,
+    `slots_protocols_total`      tinyint      NOT NULL,
+    `slots_protocols_available`  tinyint      NOT NULL,
+    `slots_gears_total`          tinyint      NOT NULL,
+    `slots_gears_available`      tinyint      NOT NULL,
 
-  CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account''s PETs.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account''s PETs.';
 
 CREATE UNIQUE INDEX `accounts_pets_accounts_id_idx`
-  ON `accounts_pets` (`accounts_id`);
+    ON `accounts_pets` (`accounts_id`);
 
 -- Initial dump for the `accounts_pets` table.
 
@@ -422,26 +436,27 @@ CREATE UNIQUE INDEX `accounts_pets_accounts_id_idx`
 --
 -- Quest status of the account.
 --
-CREATE TABLE `accounts_quests` (
-  `id`           int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `quests_id`    smallint  NOT NULL,
-  `accounts_id`  int       NOT NULL,
-  `is_completed` boolean   NOT NULL DEFAULT false
-  COMMENT 'Whether the quest has been completed or not.',
-  `date`         timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the quest was accepted/completed.',
+CREATE TABLE `accounts_quests`
+(
+    `id`           int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `quests_id`    smallint  NOT NULL,
+    `accounts_id`  int       NOT NULL,
+    `is_completed` boolean   NOT NULL DEFAULT false
+        COMMENT 'Whether the quest has been completed or not.',
+    `date`         timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the quest was accepted/completed.',
 
-  CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Quest status of the account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Quest status of the account.';
 
 CREATE INDEX `accounts_quests_quests_id_idx`
-  ON `accounts_quests` (`quests_id`);
+    ON `accounts_quests` (`quests_id`);
 CREATE INDEX `accounts_quests_accounts_id_idx`
-  ON `accounts_quests` (`accounts_id`);
+    ON `accounts_quests` (`accounts_id`);
 
 -- Initial dump for the `accounts_quests` table.
 
@@ -449,32 +464,33 @@ CREATE INDEX `accounts_quests_accounts_id_idx`
 --
 -- Account ranking.
 --
-CREATE TABLE `accounts_rankings` (
-  `id`                  int      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`         int      NOT NULL
-  COMMENT 'Account ID.',
-  `points`              int      NOT NULL DEFAULT 0
-  COMMENT 'Points in the ranking.',
-  `best_points`         int      NOT NULL DEFAULT 0
-  COMMENT 'Biggest amount of rank points ever achieved.',
-  `destroyed_allies`    smallint NOT NULL DEFAULT 0
-  COMMENT 'Destroyed allies.',
-  `destroyed_phoenix`   smallint NOT NULL DEFAULT 0
-  COMMENT 'Destroyed phoenix.',
-  `destroyed_times`     smallint NOT NULL DEFAULT 0
-  COMMENT 'Amount of times the account has been destroyed.',
-  `destroyed_radiation` smallint NOT NULL DEFAULT 0
-  COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
+CREATE TABLE `accounts_rankings`
+(
+    `id`                  int      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`         int      NOT NULL
+        COMMENT 'Account ID.',
+    `points`              int      NOT NULL DEFAULT 0
+        COMMENT 'Points in the ranking.',
+    `best_points`         int      NOT NULL DEFAULT 0
+        COMMENT 'Biggest amount of rank points ever achieved.',
+    `destroyed_allies`    smallint NOT NULL DEFAULT 0
+        COMMENT 'Destroyed allies.',
+    `destroyed_phoenix`   smallint NOT NULL DEFAULT 0
+        COMMENT 'Destroyed phoenix.',
+    `destroyed_times`     smallint NOT NULL DEFAULT 0
+        COMMENT 'Amount of times the account has been destroyed.',
+    `destroyed_radiation` smallint NOT NULL DEFAULT 0
+        COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
 
-  CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account ranking.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account ranking.';
 
 CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx`
-  ON `accounts_rankings` (`accounts_id`);
+    ON `accounts_rankings` (`accounts_id`);
 
 -- Initial dump for the `accounts_rankings` table.
 
@@ -482,33 +498,34 @@ CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx`
 --
 -- Ships bough by an account.
 --
-CREATE TABLE `accounts_ships` (
-  `id`          int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int     NOT NULL,
-  `ships_id`    tinyint NOT NULL,
-  `maps_id`     tinyint NOT NULL,
-  `position`    bigint  NOT NULL DEFAULT 0
-  COMMENT 'Position on map.',
-  `health`      int     NOT NULL DEFAULT 0
-  COMMENT 'Health points.',
-  `nanohull`    int     NOT NULL DEFAULT 0
-  COMMENT 'Nanohull points.',
-  `gfx`         tinyint NOT NULL DEFAULT 0
-  COMMENT 'Ship graphic (for WIZ-X).',
+CREATE TABLE `accounts_ships`
+(
+    `id`          int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int     NOT NULL,
+    `ships_id`    tinyint NOT NULL,
+    `maps_id`     tinyint NOT NULL,
+    `position`    bigint  NOT NULL DEFAULT 0
+        COMMENT 'Position on map.',
+    `health`      int     NOT NULL DEFAULT 0
+        COMMENT 'Health points.',
+    `nanohull`    int     NOT NULL DEFAULT 0
+        COMMENT 'Nanohull points.',
+    `gfx`         tinyint NOT NULL DEFAULT 0
+        COMMENT 'Ship graphic (for WIZ-X).',
 
-  CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Ships bough by an account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Ships bough by an account.';
 
 CREATE INDEX `accounts_ships_accounts_id_idx`
-  ON `accounts_ships` (`accounts_id`);
+    ON `accounts_ships` (`accounts_id`);
 CREATE INDEX `accounts_ships_ships_id_idx`
-  ON `accounts_ships` (`ships_id`);
+    ON `accounts_ships` (`ships_id`);
 CREATE INDEX `accounts_ships_maps_id_idx`
-  ON `accounts_ships` (`maps_id`);
+    ON `accounts_ships` (`maps_id`);
 
 -- Initial dump for the `accounts_ships` table.
 
@@ -516,24 +533,25 @@ CREATE INDEX `accounts_ships_maps_id_idx`
 --
 -- Skilltree for the account.
 --
-CREATE TABLE `accounts_skills` (
-  `id`                  int      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`         int      NOT NULL
-  COMMENT 'Account ID.',
-  `skilltree_skills_id` tinyint  NOT NULL
-  COMMENT 'Skill ID.',
-  `skilltree_levels_id` smallint NOT NULL
-  COMMENT 'Skill level.',
+CREATE TABLE `accounts_skills`
+(
+    `id`                  int      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`         int      NOT NULL
+        COMMENT 'Account ID.',
+    `skilltree_skills_id` tinyint  NOT NULL
+        COMMENT 'Skill ID.',
+    `skilltree_levels_id` smallint NOT NULL
+        COMMENT 'Skill level.',
 
-  CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Skilltree for the account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Skilltree for the account.';
 
 CREATE INDEX `accounts_skills_accounts_id_idx`
-  ON `accounts_skills` (`accounts_id`);
+    ON `accounts_skills` (`accounts_id`);
 
 -- Initial dump for the `accounts_skills` table.
 
@@ -541,30 +559,31 @@ CREATE INDEX `accounts_skills_accounts_id_idx`
 --
 -- Skylab for the account.
 --
-CREATE TABLE `accounts_skylabs` (
-  `id`                int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`       int       NOT NULL
-  COMMENT 'Account ID.',
-  `skylab_modules_id` tinyint   NOT NULL
-  COMMENT 'Module ID.',
-  `levels_id`         tinyint   NOT NULL DEFAULT 1
-  COMMENT 'Module level.',
-  `space`             int       NOT NULL DEFAULT 0
-  COMMENT 'Used space.',
-  `upgrade`           timestamp NULL     DEFAULT NULL
-  COMMENT 'Date when this module started upgrading.',
+CREATE TABLE `accounts_skylabs`
+(
+    `id`                int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`       int       NOT NULL
+        COMMENT 'Account ID.',
+    `skylab_modules_id` tinyint   NOT NULL
+        COMMENT 'Module ID.',
+    `levels_id`         tinyint   NOT NULL DEFAULT 1
+        COMMENT 'Module level.',
+    `space`             int       NOT NULL DEFAULT 0
+        COMMENT 'Used space.',
+    `upgrade`           timestamp NULL     DEFAULT NULL
+        COMMENT 'Date when this module started upgrading.',
 
-  CONSTRAINT `accounts_skylabs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_skylabs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Skylab for the accounts.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Skylab for the accounts.';
 
 CREATE INDEX `accounts_skylabs_accounts_id_idx`
-  ON `accounts_skylabs` (`accounts_id`);
+    ON `accounts_skylabs` (`accounts_id`);
 CREATE INDEX `accounts_skylabs_skylab_modules_id_idx`
-  ON `accounts_skylabs` (`skylab_modules_id`);
+    ON `accounts_skylabs` (`skylab_modules_id`);
 
 -- Initial dump for the `accounts_skylabs` table.
 
@@ -572,23 +591,24 @@ CREATE INDEX `accounts_skylabs_skylab_modules_id_idx`
 --
 -- Nanotech factory items.
 --
-CREATE TABLE `accounts_techfactories` (
-  `id`                 int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`        int     NOT NULL
-  COMMENT 'Account ID.',
-  `slot_unlock_price`  int     NOT NULL DEFAULT 50000
-  COMMENT 'Price for unlocking a slot.',
-  `slot_unlock_factor` tinyint NOT NULL DEFAULT 2
-  COMMENT 'Factor for unlocking a slot.',
-  `slots`              tinyint NOT NULL DEFAULT 1
-  COMMENT 'Unlocked slots.',
+CREATE TABLE `accounts_techfactories`
+(
+    `id`                 int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`        int     NOT NULL
+        COMMENT 'Account ID.',
+    `slot_unlock_price`  int     NOT NULL DEFAULT 50000
+        COMMENT 'Price for unlocking a slot.',
+    `slot_unlock_factor` tinyint NOT NULL DEFAULT 2
+        COMMENT 'Factor for unlocking a slot.',
+    `slots`              tinyint NOT NULL DEFAULT 1
+        COMMENT 'Unlocked slots.',
 
-  CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Nanotech factory items.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Nanotech factory items.';
 
 -- Initial dump for the `accounts_techfactories` table
 
@@ -596,28 +616,29 @@ CREATE TABLE `accounts_techfactories` (
 --
 -- Techfactory items from account.
 --
-CREATE TABLE `accounts_techfactory_items` (
-  `id`                   int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`          int       NOT NULL
-  COMMENT 'Account ID.',
-  `techfactory_items_id` tinyint   NOT NULL
-  COMMENT 'Item ID.',
-  `amount`               smallint  NOT NULL DEFAULT 1
-  COMMENT 'Amount of build items.',
-  `date`                 timestamp NULL     DEFAULT NULL
-  COMMENT 'Date when the item started building.',
+CREATE TABLE `accounts_techfactory_items`
+(
+    `id`                   int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`          int       NOT NULL
+        COMMENT 'Account ID.',
+    `techfactory_items_id` tinyint   NOT NULL
+        COMMENT 'Item ID.',
+    `amount`               smallint  NOT NULL DEFAULT 1
+        COMMENT 'Amount of build items.',
+    `date`                 timestamp NULL     DEFAULT NULL
+        COMMENT 'Date when the item started building.',
 
-  CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Techfactory items from account.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Techfactory items from account.';
 
 CREATE INDEX `accounts_techfactory_items_accounts_id_idx`
-  ON `accounts_techfactory_items` (`accounts_id`);
+    ON `accounts_techfactory_items` (`accounts_id`);
 CREATE INDEX `accounts_techfactory_items_techfactory_items_id_idx`
-  ON `accounts_techfactory_items` (`techfactory_items_id`);
+    ON `accounts_techfactory_items` (`techfactory_items_id`);
 
 -- Initial dump for the `accounts_techfactory_items` table.
 
@@ -625,33 +646,34 @@ CREATE INDEX `accounts_techfactory_items_techfactory_items_id_idx`
 --
 -- Server clans.
 --
-CREATE TABLE `clans` (
-  `id`          int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int          NOT NULL
-  COMMENT 'Owner ID',
-  `factions_id` tinyint      NULL     DEFAULT NULL
-  COMMENT 'Clan affiliation faction.',
-  `tag`         varchar(4)   NOT NULL DEFAULT ''
-  COMMENT 'Name abbreviation.',
-  `name`        varchar(255) NOT NULL DEFAULT '',
-  `description` text         NOT NULL,
-  `logo`        varchar(255) NOT NULL DEFAULT '',
-  `status`      tinyint      NOT NULL DEFAULT 0
-  COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
+CREATE TABLE `clans`
+(
+    `id`          int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int          NOT NULL
+        COMMENT 'Owner ID',
+    `factions_id` tinyint      NULL     DEFAULT NULL
+        COMMENT 'Clan affiliation faction.',
+    `tag`         varchar(4)   NOT NULL DEFAULT ''
+        COMMENT 'Name abbreviation.',
+    `name`        varchar(255) NOT NULL DEFAULT '',
+    `description` text         NOT NULL,
+    `logo`        varchar(255) NOT NULL DEFAULT '',
+    `status`      tinyint      NOT NULL DEFAULT 0
+        COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
-  CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server clans.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server clans.';
 
 CREATE UNIQUE INDEX `clans_name_idx`
-  ON `clans` (`name`);
+    ON `clans` (`name`);
 CREATE UNIQUE INDEX `clans_tag_idx`
-  ON `clans` (`tag`);
+    ON `clans` (`tag`);
 CREATE INDEX `clans_accounts_id_idx`
-  ON `clans` (`accounts_id`);
+    ON `clans` (`accounts_id`);
 
 -- Initial dump for the `clans` table.
 
@@ -659,26 +681,27 @@ CREATE INDEX `clans_accounts_id_idx`
 --
 -- Account applications to a clan.
 --
-CREATE TABLE `clans_applications` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id`    int       NOT NULL
-  COMMENT 'Clan ID.',
-  `accounts_id` int       NOT NULL
-  COMMENT 'Account ID.',
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `text`        text      NOT NULL,
+CREATE TABLE `clans_applications`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id`    int       NOT NULL
+        COMMENT 'Clan ID.',
+    `accounts_id` int       NOT NULL
+        COMMENT 'Account ID.',
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `text`        text      NOT NULL,
 
-  CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Account applications to a clan.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Account applications to a clan.';
 
 CREATE INDEX `clans_applications_clans_id_idx`
-  ON `clans_applications` (`clans_id`);
+    ON `clans_applications` (`clans_id`);
 CREATE INDEX `clans_applications_accounts_id_idx`
-  ON `clans_applications` (`accounts_id`);
+    ON `clans_applications` (`accounts_id`);
 
 -- Initial dump for the `clans_applications` table.
 
@@ -686,27 +709,28 @@ CREATE INDEX `clans_applications_accounts_id_idx`
 --
 -- Clan's internal bank.
 --
-CREATE TABLE `clans_banks` (
-  `id`          int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id`    int     NOT NULL,
-  `credits`     bigint  NOT NULL DEFAULT 0
-  COMMENT 'Credits available in the bank.',
-  `uridium`     bigint  NOT NULL DEFAULT 0
-  COMMENT 'Uridium available in the bank.',
-  `tax_credits` tinyint NOT NULL DEFAULT 5.0
-  COMMENT 'Tax rate for credits.',
-  `tax_uridium` tinyint NOT NULL DEFAULT 0.0
-  COMMENT 'Tax rate for uridium.',
+CREATE TABLE `clans_banks`
+(
+    `id`          int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id`    int     NOT NULL,
+    `credits`     bigint  NOT NULL DEFAULT 0
+        COMMENT 'Credits available in the bank.',
+    `uridium`     bigint  NOT NULL DEFAULT 0
+        COMMENT 'Uridium available in the bank.',
+    `tax_credits` tinyint NOT NULL DEFAULT 5.0
+        COMMENT 'Tax rate for credits.',
+    `tax_uridium` tinyint NOT NULL DEFAULT 0.0
+        COMMENT 'Tax rate for uridium.',
 
-  CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Clan''s internal bank.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Clan''s internal bank.';
 
 CREATE UNIQUE INDEX `clans_bank_clans_id_idx`
-  ON `clans_banks` (`clans_id`);
+    ON `clans_banks` (`clans_id`);
 
 -- Initial dump for the `clans_banks` table.
 
@@ -714,33 +738,34 @@ CREATE UNIQUE INDEX `clans_bank_clans_id_idx`
 --
 -- Logs from clan's bank.
 --
-CREATE TABLE `clans_banks_logs` (
-  `id`               int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_banks_id`   int       NOT NULL,
-  `from_accounts_id` int       NOT NULL
-  COMMENT 'Account that made the log.',
-  `to_accounts_id`   int       NOT NULL,
-  `date`             timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `type`             tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
-  `amount`           int       NOT NULL DEFAULT 0
-  COMMENT 'Amount of currency logged.',
-  `currency`         tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
+CREATE TABLE `clans_banks_logs`
+(
+    `id`               int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_banks_id`   int       NOT NULL,
+    `from_accounts_id` int       NOT NULL
+        COMMENT 'Account that made the log.',
+    `to_accounts_id`   int       NOT NULL,
+    `date`             timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `type`             tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Log type. 0 = withdraw, 1 = deposit, 2 = donation.',
+    `amount`           int       NOT NULL DEFAULT 0
+        COMMENT 'Amount of currency logged.',
+    `currency`         tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
 
-  CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Logs from clan''s bank.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Logs from clan''s bank.';
 
 CREATE INDEX `clans_banks_logs_clans_banks_id_idx`
-  ON `clans_banks_logs` (`clans_banks_id`);
+    ON `clans_banks_logs` (`clans_banks_id`);
 CREATE INDEX `clans_banks_logs_from_accounts_id_idx`
-  ON `clans_banks_logs` (`from_accounts_id`);
+    ON `clans_banks_logs` (`from_accounts_id`);
 CREATE INDEX `clans_banks_logs_to_accounts_id_idx`
-  ON `clans_banks_logs` (`to_accounts_id`);
+    ON `clans_banks_logs` (`to_accounts_id`);
 
 -- Initial dump for the `clans_banks_logs` table.
 
@@ -748,29 +773,30 @@ CREATE INDEX `clans_banks_logs_to_accounts_id_idx`
 --
 -- Clan CBS.
 --
-CREATE TABLE `clans_battlestations` (
-  `id`       tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id` int          NULL     DEFAULT NULL
-  COMMENT 'Owner of the CBS.',
-  `maps_id`  tinyint      NOT NULL
-  COMMENT 'Map of the CBS.',
-  `name`     varchar(255) NOT NULL DEFAULT '',
-  `position` bigint       NOT NULL DEFAULT 0
-  COMMENT 'Position on map.',
-  `date`     timestamp    NULL     DEFAULT NULL
-  COMMENT 'Date when the CBS was build.',
+CREATE TABLE `clans_battlestations`
+(
+    `id`       tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id` int          NULL     DEFAULT NULL
+        COMMENT 'Owner of the CBS.',
+    `maps_id`  tinyint      NOT NULL
+        COMMENT 'Map of the CBS.',
+    `name`     varchar(255) NOT NULL DEFAULT '',
+    `position` bigint       NOT NULL DEFAULT 0
+        COMMENT 'Position on map.',
+    `date`     timestamp    NULL     DEFAULT NULL
+        COMMENT 'Date when the CBS was build.',
 
-  CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Clan CBS.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Clan CBS.';
 
 CREATE INDEX `clans_battlestations_clans_id_idx`
-  ON `clans_battlestations` (`clans_id`);
+    ON `clans_battlestations` (`clans_id`);
 CREATE INDEX `clans_battlestations_maps_id_idx`
-  ON `clans_battlestations` (`maps_id`);
+    ON `clans_battlestations` (`maps_id`);
 
 -- Initial dump for the `clans_battlestations` table.
 
@@ -800,28 +826,29 @@ VALUES (1, 'Aries', 3, 45097156610500),
 --
 -- Items equipped in the CBS.
 --
-CREATE TABLE `clans_battlestations_items` (
-  `id`                      int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_battlestations_id` tinyint   NOT NULL
-  COMMENT 'CBS where item is equipped.',
-  `accounts_items_id`       int       NOT NULL
-  COMMENT 'Equipped item.',
-  `slot`                    tinyint   NOT NULL DEFAULT 1
-  COMMENT 'Position where the item is equipped (A = 9, B = 10).',
-  `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the item was equipped.',
+CREATE TABLE `clans_battlestations_items`
+(
+    `id`                      int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_battlestations_id` tinyint   NOT NULL
+        COMMENT 'CBS where item is equipped.',
+    `accounts_items_id`       int       NOT NULL
+        COMMENT 'Equipped item.',
+    `slot`                    tinyint   NOT NULL DEFAULT 1
+        COMMENT 'Position where the item is equipped (A = 9, B = 10).',
+    `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the item was equipped.',
 
-  CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Items equipped in the CBS.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Items equipped in the CBS.';
 
 CREATE INDEX `clans_battlestations_items_clans_battlestations_id_idx`
-  ON `clans_battlestations_items` (`clans_battlestations_id`);
+    ON `clans_battlestations_items` (`clans_battlestations_id`);
 CREATE INDEX `clans_battlestations_items_accounts_items_id_idx`
-  ON `clans_battlestations_items` (`accounts_items_id`);
+    ON `clans_battlestations_items` (`accounts_items_id`);
 
 -- Initial dump for the `clans_battlestations_items` table.
 
@@ -829,24 +856,25 @@ CREATE INDEX `clans_battlestations_items_accounts_items_id_idx`
 --
 -- Logs from clan's battlestations.
 --
-CREATE TABLE `clans_battlestations_logs` (
-  `id`                      int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id`                int       NOT NULL,
-  `clans_battlestations_id` tinyint   NOT NULL,
-  `message`                 text      NOT NULL,
-  `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE `clans_battlestations_logs`
+(
+    `id`                      int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id`                int       NOT NULL,
+    `clans_battlestations_id` tinyint   NOT NULL,
+    `message`                 text      NOT NULL,
+    `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-  CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Logs from clan''s battlestations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Logs from clan''s battlestations.';
 
 CREATE INDEX `clans_battlestations_logs_clans_battlestations_id_idx`
-  ON `clans_battlestations_logs` (`clans_battlestations_id`);
+    ON `clans_battlestations_logs` (`clans_battlestations_id`);
 CREATE INDEX `clans_battlestations_logs_clans_id_idx`
-  ON `clans_battlestations_logs` (`clans_id`);
+    ON `clans_battlestations_logs` (`clans_id`);
 
 -- Initial dump for the `clans_battlestations_logs` table.
 
@@ -854,32 +882,33 @@ CREATE INDEX `clans_battlestations_logs_clans_id_idx`
 --
 -- Diplomacy table for clans.
 --
-CREATE TABLE `clans_diplomacies` (
-  `id`            int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `from_clans_id` int       NOT NULL
-  COMMENT 'Clan that made the request.',
-  `to_clans_id`   int       NOT NULL
-  COMMENT 'Clan that receives the request.',
-  `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Diplomacy creation date.',
-  `expires`       timestamp NULL     DEFAULT NULL
-  COMMENT 'Date when the diplomacy expires.',
-  `status`        tinyint   NOT NULL DEFAULT 0
-  COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
-  `type`          tinyint   NOT NULL DEFAULT 1
-  COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
+CREATE TABLE `clans_diplomacies`
+(
+    `id`            int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `from_clans_id` int       NOT NULL
+        COMMENT 'Clan that made the request.',
+    `to_clans_id`   int       NOT NULL
+        COMMENT 'Clan that receives the request.',
+    `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Diplomacy creation date.',
+    `expires`       timestamp NULL     DEFAULT NULL
+        COMMENT 'Date when the diplomacy expires.',
+    `status`        tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
+    `type`          tinyint   NOT NULL DEFAULT 1
+        COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
 
-  CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Diplomacy table for clans.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Diplomacy table for clans.';
 
 CREATE INDEX `clans_diplomacies_from_clans_id_idx`
-  ON `clans_diplomacies` (`from_clans_id`);
+    ON `clans_diplomacies` (`from_clans_id`);
 CREATE INDEX `clans_diplomacies_to_clans_id_idx`
-  ON `clans_diplomacies` (`to_clans_id`);
+    ON `clans_diplomacies` (`to_clans_id`);
 
 -- Initial dump for the `clans_diplomacies` table.trad
 
@@ -887,33 +916,34 @@ CREATE INDEX `clans_diplomacies_to_clans_id_idx`
 --
 -- Messages in the clan.
 --
-CREATE TABLE `clans_messages` (
-  `id`               int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id`         int          NOT NULL
-  COMMENT 'Clan where the message was created',
-  `from_accounts_id` int          NOT NULL,
-  `from_status`      tinyint      NOT NULL DEFAULT 1
-  COMMENT '0 = unread, 1 = read, 2 = deleted.',
-  `to_accounts_id`   int          NULL     DEFAULT NULL,
-  `to_status`        tinyint      NOT NULL DEFAULT 0
-  COMMENT '0 = unread, 1 = read, 2 = unread.',
-  `title`            varchar(255) NOT NULL DEFAULT '',
-  `text`             text         NOT NULL,
-  `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+CREATE TABLE `clans_messages`
+(
+    `id`               int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id`         int          NOT NULL
+        COMMENT 'Clan where the message was created',
+    `from_accounts_id` int          NOT NULL,
+    `from_status`      tinyint      NOT NULL DEFAULT 1
+        COMMENT '0 = unread, 1 = read, 2 = deleted.',
+    `to_accounts_id`   int          NULL     DEFAULT NULL,
+    `to_status`        tinyint      NOT NULL DEFAULT 0
+        COMMENT '0 = unread, 1 = read, 2 = unread.',
+    `title`            varchar(255) NOT NULL DEFAULT '',
+    `text`             text         NOT NULL,
+    `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
-  CONSTRAINT `clans_messages` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_messages` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Messages in the clan.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Messages in the clan.';
 
 CREATE INDEX `clans_messages_clans_id_idx`
-  ON `clans_messages` (`clans_id`);
+    ON `clans_messages` (`clans_id`);
 CREATE INDEX `clans_messages_from_accounts_id_idx`
-  ON `clans_messages` (`from_accounts_id`);
+    ON `clans_messages` (`from_accounts_id`);
 CREATE INDEX `clans_messages_to_accounts_id_idx`
-  ON `clans_messages` (`to_accounts_id`);
+    ON `clans_messages` (`to_accounts_id`);
 
 -- Initial dump for the `clans_messages` table
 
@@ -921,27 +951,28 @@ CREATE INDEX `clans_messages_to_accounts_id_idx`
 --
 -- News of the clan.
 --
-CREATE TABLE `clans_news` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id` int       NOT NULL
-  COMMENT 'Author.',
-  `clans_id`    int       NOT NULL,
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Creation date.',
-  `text`        text      NOT NULL
-  COMMENT 'News content.',
+CREATE TABLE `clans_news`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int       NOT NULL
+        COMMENT 'Author.',
+    `clans_id`    int       NOT NULL,
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Creation date.',
+    `text`        text      NOT NULL
+        COMMENT 'News content.',
 
-  CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'News of the clan.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'News of the clan.';
 
 CREATE INDEX `clans_news_accounts_id_idx`
-  ON `clans_news` (`accounts_id`);
+    ON `clans_news` (`accounts_id`);
 CREATE INDEX `clans_news_clans_id_idx`
-  ON `clans_news` (`clans_id`);
+    ON `clans_news` (`clans_id`);
 
 -- Initial dump for the `clans_news` table.
 
@@ -949,24 +980,25 @@ CREATE INDEX `clans_news_clans_id_idx`
 --
 -- Clan ranking.
 --
-CREATE TABLE `clans_ranking` (
-  `id`          int NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_id`    int NOT NULL
-  COMMENT 'Clan ID.',
-  `points`      int NOT NULL DEFAULT 0
-  COMMENT 'Points in the ranking.',
-  `best_points` int NOT NULL DEFAULT 0
-  COMMENT 'Biggest amount of rank points ever achieved.',
+CREATE TABLE `clans_ranking`
+(
+    `id`          int NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_id`    int NOT NULL
+        COMMENT 'Clan ID.',
+    `points`      int NOT NULL DEFAULT 0
+        COMMENT 'Points in the ranking.',
+    `best_points` int NOT NULL DEFAULT 0
+        COMMENT 'Biggest amount of rank points ever achieved.',
 
-  CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Clan ranking.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Clan ranking.';
 
 CREATE UNIQUE INDEX `clans_ranking_accounts_id_idx`
-  ON `clans_ranking` (`clans_id`);
+    ON `clans_ranking` (`clans_id`);
 
 -- Initial dump for the `clans_ranking` table.
 
@@ -974,25 +1006,26 @@ CREATE UNIQUE INDEX `clans_ranking_accounts_id_idx`
 --
 -- Clan's permissions roles.
 --
-CREATE TABLE `clans_roles` (
-  `id`             int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`           varchar(255) NOT NULL,
-  `clans_id`       int          NOT NULL,
-  `clans_roles_id` int          NULL     DEFAULT NULL
-  COMMENT 'Parent role.',
-  `priority`       tinyint      NOT NULL DEFAULT 1,
+CREATE TABLE `clans_roles`
+(
+    `id`             int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`           varchar(255) NOT NULL,
+    `clans_id`       int          NOT NULL,
+    `clans_roles_id` int          NULL     DEFAULT NULL
+        COMMENT 'Parent role.',
+    `priority`       tinyint      NOT NULL DEFAULT 1,
 
-  CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Clan''s roles.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Clan''s roles.';
 
 CREATE INDEX `clans_roles_clans_id_idx`
-  ON `clans_roles` (`clans_id`);
+    ON `clans_roles` (`clans_id`);
 CREATE INDEX `clans_roles_name_idx`
-  ON `clans_roles` (`name`);
+    ON `clans_roles` (`name`);
 
 -- Initial dump for the `clans_roles` table.
 
@@ -1000,24 +1033,25 @@ CREATE INDEX `clans_roles_name_idx`
 --
 -- Clan roles' permissions
 --
-CREATE TABLE `clans_roles_permissions` (
-  `id`             int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `clans_roles_id` int     NOT NULL,
-  `permissions_id` tinyint NOT NULL,
-  `is_enabled`     boolean NULL     DEFAULT NULL
-  COMMENT 'Enabled value, null = inherited',
+CREATE TABLE `clans_roles_permissions`
+(
+    `id`             int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `clans_roles_id` int     NOT NULL,
+    `permissions_id` tinyint NOT NULL,
+    `is_enabled`     boolean NULL DEFAULT NULL
+        COMMENT 'Enabled value, null = inherited',
 
-  CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Clan roles'' permissions';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Clan roles'' permissions';
 
 CREATE INDEX `clans_roles_permissions_clans_roles_id_idx`
-  ON `clans_roles_permissions` (`clans_roles_id`);
+    ON `clans_roles_permissions` (`clans_roles_id`);
 CREATE INDEX `clans_roles_permissions_permissions_id_idx`
-  ON `clans_roles_permissions` (`permissions_id`);
+    ON `clans_roles_permissions` (`permissions_id`);
 
 -- Initial dump for the `clans_roles_permissions` table.
 
@@ -1025,19 +1059,20 @@ CREATE INDEX `clans_roles_permissions_permissions_id_idx`
 --
 -- Map collectables.
 --
-CREATE TABLE `collectables` (
-  `id`   tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `gfx`  tinyint      NOT NULL DEFAULT 0,
-  `type` tinyint      NOT NULL DEFAULT 0
-  COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
-  `name` varchar(255) NOT NULL DEFAULT '',
+CREATE TABLE `collectables`
+(
+    `id`   tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `gfx`  tinyint      NOT NULL DEFAULT 0,
+    `type` tinyint      NOT NULL DEFAULT 0
+        COMMENT '0 = box, 1 = ore, 2 = beacon, 3 = firework',
+    `name` varchar(255) NOT NULL DEFAULT '',
 
-  CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Map collectables.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Map collectables.';
 
 -- Initial dump for the `collectables` table.
 
@@ -1045,444 +1080,444 @@ INSERT INTO `collectables` (`id`, `gfx`, `type`, `name`)
 VALUES (1,
         0,
         0,
-        'box0'), (
-        2,
+        'box0'),
+       (2,
         1,
         0,
-        'box1'), (
-        3,
+        'box1'),
+       (3,
         2,
         0,
-        'box2'), (
-        4,
+        'box2'),
+       (4,
         3,
         0,
-        'easterEgg'), (
+        'easterEgg'),
+       (5,
         5,
-        5,
         0,
-        'bigPumpkin'), (
+        'bigPumpkin'),
+       (6,
         6,
-        6,
         0,
-        'orangePumpkin'), (
+        'orangePumpkin'),
+       (7,
         7,
-        7,
         0,
-        'turkey'), (
+        'turkey'),
+       (8,
         8,
-        8,
         0,
-        'bigXmasStar'), (
+        'bigXmasStar'),
+       (9,
         9,
-        9,
         0,
-        'stdXmasStar'), (
+        'stdXmasStar'),
+       (10,
         10,
-        10,
         0,
-        'flower_mothersday'), (
-        11,
+        'flower_mothersday'),
+       (11,
         11,
         0,
-        'theItalianBox'), (
-        12,
+        'theItalianBox'),
+       (12,
         14,
         0,
-        'crestAndStar'), (
-        13,
+        'crestAndStar'),
+       (13,
         15,
         0,
-        'polishBonusBox'), (
-        14,
+        'polishBonusBox'),
+       (14,
         16,
         0,
-        'winterGiftBox'), (
-        15,
+        'winterGiftBox'),
+       (15,
         17,
         0,
-        'carnival_box'), (
-        16,
+        'carnival_box'),
+       (16,
         19,
         0,
-        'bonusBoxSun'), (
-        17,
+        'bonusBoxSun'),
+       (17,
         20,
         0,
-        'petWeekBox'), (
-        18,
+        'petWeekBox'),
+       (18,
         21,
         0,
-        'pirateBootyBox'), (
-        19,
+        'pirateBootyBox'),
+       (19,
         22,
         0,
-        'pirateBootyGoldBox'), (
-        20,
+        'pirateBootyGoldBox'),
+       (20,
         23,
         0,
-        'hungarianRevolutionBox'), (
-        21,
+        'hungarianRevolutionBox'),
+       (21,
         24,
         0,
-        'stpatricksDayBox'), (
-        22,
+        'stpatricksDayBox'),
+       (22,
         25,
         0,
-        'titanicBonusBox'), (
-        23,
+        'titanicBonusBox'),
+       (23,
         26,
         0,
-        'brazilBonusBox'), (
-        24,
+        'brazilBonusBox'),
+       (24,
         27,
         0,
-        'victoryFrBonusBox'), (
-        25,
+        'victoryFrBonusBox'),
+       (25,
         28,
         0,
-        'victoryRuBonusBox'), (
-        26,
+        'victoryRuBonusBox'),
+       (26,
         29,
         0,
-        'victoryCzBonusBox'), (
-        27,
+        'victoryCzBonusBox'),
+       (27,
         30,
         0,
-        'boxStar'), (
-        28,
+        'boxStar'),
+       (28,
         31,
         0,
-        'pirateBootyRedBox'), (
-        29,
+        'pirateBootyRedBox'),
+       (29,
         32,
         0,
-        'pirateBootyBlueBox'), (
-        30,
+        'pirateBootyBlueBox'),
+       (30,
         33,
         0,
-        'victoryFrBonusBox'), (
-        31,
+        'victoryFrBonusBox'),
+       (31,
         34,
         0,
-        'mexicanBonusBox'), (
-        32,
+        'mexicanBonusBox'),
+       (32,
         35,
         0,
-        'boxAntec'), (
-        33,
+        'boxAntec'),
+       (33,
         36,
         0,
-        'germanUnificationDayBox'), (
-        34,
+        'germanUnificationDayBox'),
+       (34,
         37,
         0,
-        'hispanicDayBox'), (
-        35,
+        'hispanicDayBox'),
+       (35,
         38,
         0,
-        'candyBox'), (
-        36,
+        'candyBox'),
+       (36,
         39,
         0,
-        'birthdayBox'), (
-        37,
+        'birthdayBox'),
+       (37,
         40,
         0,
-        'treasureChest'), (
-        38,
+        'treasureChest'),
+       (38,
         41,
         0,
-        'fathersDayBox'), (
-        39,
+        'fathersDayBox'),
+       (39,
         42,
         0,
-        'summerEventBox'), (
-        40,
+        'summerEventBox'),
+       (40,
         43,
         0,
-        'silverBootyBox'), (
-        41,
+        'silverBootyBox'),
+       (41,
         44,
         0,
-        'britishBox'), (
-        42,
+        'britishBox'),
+       (42,
         45,
         0,
-        'football_box'), (
-        43,
+        'football_box'),
+       (43,
         46,
         0,
-        'demanerTransporterBootyBox'), (
-        44,
+        'demanerTransporterBootyBox'),
+       (44,
         47,
         0,
-        'icyBox'), (
-        45,
+        'icyBox'),
+       (45,
         0,
         1,
-        'oreRed'), (
-        46,
+        'oreRed'),
+       (46,
         1,
         1,
-        'oreBlue'), (
-        47,
+        'oreBlue'),
+       (47,
         2,
         1,
-        'oreYellow'), (
-        48,
+        'oreYellow'),
+       (48,
         8,
         1,
-        'ore_palladium'), (
-        49,
+        'ore_palladium'),
+       (49,
         112,
         2,
-        'beacon_1_2'), (
-        50,
+        'beacon_1_2'),
+       (50,
         113,
         2,
-        'beacon_1_3'), (
-        51,
+        'beacon_1_3'),
+       (51,
         121,
         2,
-        'beacon_2_1'), (
-        52,
+        'beacon_2_1'),
+       (52,
         123,
         2,
-        'beacon_2_3'), (
-        53,
+        'beacon_2_3'),
+       (53,
         131,
         2,
-        'beacon_3_1'), (
-        54,
+        'beacon_3_1'),
+       (54,
         132,
         2,
-        'beacon_3_2'), (
-        55,
+        'beacon_3_2'),
+       (55,
         212,
         2,
-        'beacon_1_2'), (
-        56,
+        'beacon_1_2'),
+       (56,
         213,
         2,
-        'beacon_1_3'), (
-        57,
+        'beacon_1_3'),
+       (57,
         221,
         2,
-        'beacon_2_1'), (
-        58,
+        'beacon_2_1'),
+       (58,
         223,
         2,
-        'beacon_2_3'), (
-        59,
+        'beacon_2_3'),
+       (59,
         231,
         2,
-        'beacon_3_1'), (
-        60,
+        'beacon_3_1'),
+       (60,
         232,
         2,
-        'beacon_3_2'), (
-        61,
+        'beacon_3_2'),
+       (61,
         31,
         3,
-        'fireworks_box'), (
-        62,
+        'fireworks_box'),
+       (62,
         32,
         3,
-        'fireworks_box'), (
-        63,
+        'fireworks_box'),
+       (63,
         33,
         3,
-        'fireworks_box'), (
-        64,
+        'fireworks_box'),
+       (64,
         34,
         3,
-        'fireworks_box'), (
-        65,
+        'fireworks_box'),
+       (65,
         35,
         3,
-        'fireworks_box'), (
-        66,
+        'fireworks_box'),
+       (66,
         36,
         3,
-        'fireworks_box'), (
-        67,
+        'fireworks_box'),
+       (67,
         121,
         3,
-        'fireworks_box'), (
-        68,
+        'fireworks_box'),
+       (68,
         122,
         3,
-        'fireworks_box'), (
-        69,
+        'fireworks_box'),
+       (69,
         123,
         3,
-        'fireworks_box'), (
-        70,
+        'fireworks_box'),
+       (70,
         131,
         3,
-        'fireworks_box'), (
-        71,
+        'fireworks_box'),
+       (71,
         132,
         3,
-        'fireworks_box'), (
-        72,
+        'fireworks_box'),
+       (72,
         133,
         3,
-        'fireworks_box'), (
-        73,
+        'fireworks_box'),
+       (73,
         211,
         3,
-        'fireworks_box'), (
-        74,
+        'fireworks_box'),
+       (74,
         212,
         3,
-        'fireworks_box'), (
-        75,
+        'fireworks_box'),
+       (75,
         213,
         3,
-        'fireworks_box'), (
-        76,
+        'fireworks_box'),
+       (76,
         221,
         3,
-        'fireworks_box'), (
-        77,
+        'fireworks_box'),
+       (77,
         222,
         3,
-        'fireworks_box'), (
-        78,
+        'fireworks_box'),
+       (78,
         223,
         3,
-        'fireworks_box'), (
-        79,
+        'fireworks_box'),
+       (79,
         231,
         3,
-        'fireworks_box'), (
-        80,
+        'fireworks_box'),
+       (80,
         232,
         3,
-        'fireworks_box'), (
-        81,
+        'fireworks_box'),
+       (81,
         233,
         3,
-        'fireworks_box'), (
-        82,
+        'fireworks_box'),
+       (82,
         311,
         3,
-        'fireworks_box'), (
-        83,
+        'fireworks_box'),
+       (83,
         312,
         3,
-        'fireworks_box'), (
-        84,
+        'fireworks_box'),
+       (84,
         313,
         3,
-        'fireworks_box'), (
-        85,
+        'fireworks_box'),
+       (85,
         321,
         3,
-        'fireworks_box'), (
-        86,
+        'fireworks_box'),
+       (86,
         322,
         3,
-        'fireworks_box'), (
-        87,
+        'fireworks_box'),
+       (87,
         323,
         3,
-        'fireworks_box'), (
-        88,
+        'fireworks_box'),
+       (88,
         331,
         3,
-        'fireworks_box'), (
-        89,
+        'fireworks_box'),
+       (89,
         332,
         3,
-        'fireworks_box'), (
-        90,
+        'fireworks_box'),
+       (90,
         333,
         3,
-        'fireworks_box'), (
-        91,
+        'fireworks_box'),
+       (91,
         411,
         3,
-        'fireworks_box'), (
-        92,
+        'fireworks_box'),
+       (92,
         412,
         3,
-        'fireworks_box'), (
-        93,
+        'fireworks_box'),
+       (93,
         413,
         3,
-        'fireworks_box'), (
-        94,
+        'fireworks_box'),
+       (94,
         421,
         3,
-        'fireworks_box'), (
-        95,
+        'fireworks_box'),
+       (95,
         422,
         3,
-        'fireworks_box'), (
-        96,
+        'fireworks_box'),
+       (96,
         423,
         3,
-        'fireworks_box'), (
-        97,
+        'fireworks_box'),
+       (97,
         431,
         3,
-        'fireworks_box'), (
-        98,
+        'fireworks_box'),
+       (98,
         432,
         3,
-        'fireworks_box'), (
-        99,
+        'fireworks_box'),
+       (99,
         433,
         3,
-        'fireworks_box'), (
-        100,
+        'fireworks_box'),
+       (100,
         511,
         3,
-        'fireworks_box'), (
-        101,
+        'fireworks_box'),
+       (101,
         512,
         3,
-        'fireworks_box'), (
-        102,
+        'fireworks_box'),
+       (102,
         513,
         3,
-        'fireworks_box'), (
-        103,
+        'fireworks_box'),
+       (103,
         521,
         3,
-        'fireworks_box'), (
-        104,
+        'fireworks_box'),
+       (104,
         522,
         3,
-        'fireworks_box'), (
-        105,
+        'fireworks_box'),
+       (105,
         523,
         3,
-        'fireworks_box'), (
-        106,
+        'fireworks_box'),
+       (106,
         531,
         3,
-        'fireworks_box'), (
-        107,
+        'fireworks_box'),
+       (107,
         532,
         3,
-        'fireworks_box'), (
-        108,
+        'fireworks_box'),
+       (108,
         533,
         3,
-        'fireworks_box'), (
-        109,
+        'fireworks_box'),
+       (109,
         601,
         3,
-        'fireworks_box'), (
-        110,
+        'fireworks_box'),
+       (110,
         602,
         3,
-        'fireworks_box'), (
-        111,
+        'fireworks_box'),
+       (111,
         603,
         3,
         'fireworks_box');
@@ -1491,21 +1526,22 @@ VALUES (1,
 --
 -- Contains server's events.
 --
-CREATE TABLE `events` (
-  `id`          int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`        varchar(255) NOT NULL DEFAULT '',
-  `description` text         NOT NULL,
-  `start_date`  timestamp    NULL     DEFAULT NULL
-  COMMENT 'Event start date.',
-  `end_date`    timestamp    NULL     DEFAULT NULL
-  COMMENT 'Event end date.',
+CREATE TABLE `events`
+(
+    `id`          int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`        varchar(255) NOT NULL DEFAULT '',
+    `description` text         NOT NULL,
+    `start_date`  timestamp    NULL     DEFAULT NULL
+        COMMENT 'Event start date.',
+    `end_date`    timestamp    NULL     DEFAULT NULL
+        COMMENT 'Event end date.',
 
-  CONSTRAINT `events_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `events_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains server''s events.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains server''s events.';
 
 -- Initial dump for the `events` table.
 --
@@ -1514,59 +1550,67 @@ CREATE TABLE `events` (
 --
 -- Contains server's factions.
 --
-CREATE TABLE `factions` (
-  `id`                 tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`               varchar(255) NOT NULL DEFAULT '',
-  `tag`                varchar(3)   NOT NULL DEFAULT ''
-  COMMENT 'Name abbreviation.',
-  `description`        text         NOT NULL,
-  `is_public`          boolean      NOT NULL DEFAULT true,
-  `low_maps_id`        tinyint      NOT NULL,
-  `low_maps_position`  bigint       NOT NULL DEFAULT 0
-  COMMENT 'Starting position on map.',
-  `high_maps_id`       tinyint      NOT NULL,
-  `high_maps_position` bigint       NOT NULL DEFAULT 0
-  COMMENT 'Starting position on map.',
+CREATE TABLE `factions`
+(
+    `id`                 tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`               varchar(255) NOT NULL DEFAULT '',
+    `tag`                varchar(3)   NOT NULL DEFAULT ''
+        COMMENT 'Name abbreviation.',
+    `description`        text         NOT NULL,
+    `is_public`          boolean      NOT NULL DEFAULT true,
+    `low_maps_id`        tinyint      NOT NULL,
+    `low_maps_position`  bigint       NOT NULL DEFAULT 0
+        COMMENT 'Starting position on map.',
+    `high_maps_id`       tinyint      NOT NULL,
+    `high_maps_position` bigint       NOT NULL DEFAULT 0
+        COMMENT 'Starting position on map.',
 
-  CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains server''s factions.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains server''s factions.';
 
 CREATE UNIQUE INDEX `factions_name_idx`
-  ON `factions` (`name`);
+    ON `factions` (`name`);
 CREATE UNIQUE INDEX `factions_tag_idx`
-  ON `factions` (`tag`);
+    ON `factions` (`tag`);
 
 -- Initial dump for the `factions` table.
 --
 INSERT INTO `factions` (`id`, `name`, `tag`, `is_public`, `description`, `low_maps_id`, `low_maps_position`,
-                   `high_maps_id`, `high_maps_position`)
-VALUES (1, 'Mars Mining Operations', 'mmo', 1, 'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!', 1, 4294967297000, 20, 4294967302000),
-       (2, 'Earth Industries Corporations', 'eic', 1, 'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!', 5, 81604378625000, 24, 45956150068200),
-       (3, 'Venus Resources Unlimited', 'vru', 1, 'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!', 9, 81604378625300, 28, 81604378630000),
+                        `high_maps_id`, `high_maps_position`)
+VALUES (1, 'Mars Mining Operations', 'mmo', 1,
+        'I''m not going to blow smoke up your tush, so I''ll just get straight to the point. We at Mars Mining Operations want you for two reasons: to mine ore and to eradicate all alien scum infecting our galactic sector. Do this successfully and you''ll soon be popping rival pilots for thrills and honor!',
+        1, 4294967297000, 20, 4294967302000),
+       (2, 'Earth Industries Corporations', 'eic', 1,
+        'Pilot, these are trying times during which only those made of the purest inner steel can prevail! How tough is your mettle? We reward loyalty and impeccable manners with the best lasers Uridium can buy. Join us in the fight to cleanse our sector of all those cretins that stand in our way. For glory and privilege!',
+        5, 81604378625000, 24, 45956150068200),
+       (3, 'Venus Resources Unlimited', 'vru', 1,
+        'We pride ourselves in our ability to push the envelope of technological advancement, while retaining a communal atmosphere. Some call us a cult desiring galactic domination, but they simply misunderstand our brilliant recruitment methods. We are always looking for talented pilots to help us destroy our enemies and shape humanity''s future!',
+        9, 81604378625300, 28, 81604378630000),
        (4, 'Admins and Mods', 'aam', 0, 'Secret faction for Admins and Mods >:)', 92, 4294967297000, 92, 4294967297000);
 
 -- GalaxyGates table.
 --
 -- Galaxy gates from the server.
 --
-CREATE TABLE `galaxygates` (
-  `id`                   tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`                 varchar(255) NOT NULL DEFAULT 'GG-A',
-  `galaxygates_waves_id` tinyint      NULL     DEFAULT NULL
-  COMMENT 'Starting wave.',
-  `parts`                tinyint      NOT NULL DEFAULT 0
-  COMMENT 'Necessary parts to build the gate.',
+CREATE TABLE `galaxygates`
+(
+    `id`                   tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`                 varchar(255) NOT NULL DEFAULT 'GG-A',
+    `galaxygates_waves_id` tinyint      NULL     DEFAULT NULL
+        COMMENT 'Starting wave.',
+    `parts`                tinyint      NOT NULL DEFAULT 0
+        COMMENT 'Necessary parts to build the gate.',
 
-  CONSTRAINT `galaxygates_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Galaxy gates from the server.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Galaxy gates from the server.';
 
 -- Initial dump for the `galaxygates` table.
 
@@ -1586,22 +1630,23 @@ VALUES (1, 'Alpha', NULL, 34),
 --
 -- Many to many relations for galaxygates and galaxygates_spins.
 --
-CREATE TABLE `galaxygates_gg_spins` (
-  `id`                   smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_id`       tinyint  NOT NULL,
-  `galaxygates_spins_id` tinyint  NOT NULL,
+CREATE TABLE `galaxygates_gg_spins`
+(
+    `id`                   smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_id`       tinyint  NOT NULL,
+    `galaxygates_spins_id` tinyint  NOT NULL,
 
-  CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
 
 CREATE INDEX `galaxygates_gg_spins_galaxygates_id_idx`
-  ON `galaxygates_gg_spins` (`galaxygates_id`);
+    ON `galaxygates_gg_spins` (`galaxygates_id`);
 CREATE INDEX `galaxygates_gg_spins_galaxygates_spins_id_idx`
-  ON `galaxygates_gg_spins` (`galaxygates_spins_id`);
+    ON `galaxygates_gg_spins` (`galaxygates_spins_id`);
 
 -- Initial dump for the `galaxygates_gg_spins` table.
 
@@ -1854,22 +1899,23 @@ VALUES (1, 1, 1),
 --
 -- Many to many relations for galaxygates and galaxygates_waves.
 --
-CREATE TABLE `galaxygates_gg_waves` (
-  `id`                   smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_id`       tinyint  NOT NULL,
-  `galaxygates_waves_id` tinyint  NOT NULL,
+CREATE TABLE `galaxygates_gg_waves`
+(
+    `id`                   smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_id`       tinyint  NOT NULL,
+    `galaxygates_waves_id` tinyint  NOT NULL,
 
-  CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
 
 CREATE INDEX `galaxygates_gg_waves_galaxygates_id_idx`
-  ON `galaxygates_gg_waves` (`galaxygates_id`);
+    ON `galaxygates_gg_waves` (`galaxygates_id`);
 CREATE INDEX `galaxygates_gg_waves_galaxygates_waves_id_idx`
-  ON `galaxygates_gg_waves` (`galaxygates_waves_id`);
+    ON `galaxygates_gg_waves` (`galaxygates_waves_id`);
 
 -- Initial dump for the `galaxygates_gg_waves` table.
 
@@ -1877,21 +1923,22 @@ CREATE INDEX `galaxygates_gg_waves_galaxygates_waves_id_idx`
 --
 -- Spin probabilities for the galaxy gates.
 --
-CREATE TABLE `galaxygates_probabilities` (
-  `id`             tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_id` tinyint NOT NULL
-  COMMENT 'The galaxy gate.',
-  `type`           tinyint NOT NULL DEFAULT 0
-  COMMENT '0 = ammo, 1 = resource, 2 = voucher, 3 = logfile, 4 = part, 5 = special.',
-  `probability`    float   NOT NULL DEFAULT 100.00
-  COMMENT 'Probability of awarding one spin of this type.',
+CREATE TABLE `galaxygates_probabilities`
+(
+    `id`             tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint NOT NULL
+        COMMENT 'The galaxy gate.',
+    `type`           tinyint NOT NULL DEFAULT 0
+        COMMENT '0 = ammo, 1 = resource, 2 = voucher, 3 = logfile, 4 = part, 5 = special.',
+    `probability`    float   NOT NULL DEFAULT 100.00
+        COMMENT 'Probability of awarding one spin of this type.',
 
-  CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Spin probabilities for the galaxy gates.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Spin probabilities for the galaxy gates.';
 
 -- Initial dump for the `galaxygates_probabilities` table.
 
@@ -1960,22 +2007,23 @@ VALUES (1, 1, 1, 67.00),
 --
 -- Stage spawn for each stage.
 --
-CREATE TABLE `galaxygates_spawns` (
-  `id`      int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `npcs_id` tinyint NOT NULL
-  COMMENT 'NPC to spawn.',
-  `amount`  tinyint NOT NULL DEFAULT 20
-  COMMENT 'Amount of NPCs to spawn.',
+CREATE TABLE `galaxygates_spawns`
+(
+    `id`      int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `npcs_id` tinyint NOT NULL
+        COMMENT 'NPC to spawn.',
+    `amount`  tinyint NOT NULL DEFAULT 20
+        COMMENT 'Amount of NPCs to spawn.',
 
-  CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Stage spawn for each stage.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Stage spawn for each stage.';
 
 CREATE INDEX `galaxygates_spawns_npcs_id_idx`
-  ON `galaxygates_spawns` (`npcs_id`);
+    ON `galaxygates_spawns` (`npcs_id`);
 
 -- Initial dump for the `galaxygates_spawns` table.
 
@@ -1983,23 +2031,24 @@ CREATE INDEX `galaxygates_spawns_npcs_id_idx`
 --
 -- Spins from the galaxy gate.
 --
-CREATE TABLE `galaxygates_spins` (
-  `id`          tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `type`        tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Type from `galaxygates_probabilities`',
-  `probability` float    NOT NULL DEFAULT '0.0',
-  `items_id`    smallint NOT NULL,
-  `amount`      smallint NOT NULL DEFAULT 1,
+CREATE TABLE `galaxygates_spins`
+(
+    `id`          tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `type`        tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Type from `galaxygates_probabilities`',
+    `probability` float    NOT NULL DEFAULT '0.0',
+    `items_id`    smallint NOT NULL,
+    `amount`      smallint NOT NULL DEFAULT 1,
 
-  CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Spins from the galaxy gate.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Spins from the galaxy gate.';
 
 CREATE INDEX `galaxygates_spins_items_id_idx`
-  ON `galaxygates_spins` (`items_id`);
+    ON `galaxygates_spins` (`items_id`);
 
 -- Initial dump for the `galaxygates_spins` table.
 
@@ -2042,22 +2091,23 @@ VALUES (1, 1, 6.66, 60, 200),
 --
 -- Spawn stage for each wave.
 --
-CREATE TABLE `galaxygates_stages` (
-  `id`                   int     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_waves_id` tinyint NOT NULL
-  COMMENT 'Wave this stage belongs to',
-  `comment`              text    NULL     DEFAULT NULL
-  COMMENT 'Just so this isn''t that empty',
+CREATE TABLE `galaxygates_stages`
+(
+    `id`                   int     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_waves_id` tinyint NOT NULL
+        COMMENT 'Wave this stage belongs to',
+    `comment`              text    NULL DEFAULT NULL
+        COMMENT 'Just so this isn''t that empty',
 
-  CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Spawn stage for each wave.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Spawn stage for each wave.';
 
 CREATE INDEX `galaxygates_stages_galaxygates_waves_id_idx`
-  ON `galaxygates_stages` (`galaxygates_waves_id`);
+    ON `galaxygates_stages` (`galaxygates_waves_id`);
 
 -- Initial dump for the `galaxygates_stages` table.
 
@@ -2065,22 +2115,23 @@ CREATE INDEX `galaxygates_stages_galaxygates_waves_id_idx`
 --
 -- Many to many relations for galaxygates_stages and galaxygates_spawns.
 --
-CREATE TABLE `galaxygates_stages_spawns` (
-  `id`                    int NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_stages_id` int NOT NULL,
-  `galaxygates_spawns_id` int NOT NULL,
+CREATE TABLE `galaxygates_stages_spawns`
+(
+    `id`                    int NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_stages_id` int NOT NULL,
+    `galaxygates_spawns_id` int NOT NULL,
 
-  CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';
 
 CREATE INDEX `galaxygates_stages_spawns_galaxygates_stages_id_idx`
-  ON `galaxygates_stages_spawns` (`galaxygates_stages_id`);
+    ON `galaxygates_stages_spawns` (`galaxygates_stages_id`);
 CREATE INDEX `galaxygates_stages_spawns_galaxygates_spawns_id_idx`
-  ON `galaxygates_stages_spawns` (`galaxygates_spawns_id`);
+    ON `galaxygates_stages_spawns` (`galaxygates_spawns_id`);
 
 -- Initial dump for the `galaxygates_stages_spawns` table.
 
@@ -2088,24 +2139,25 @@ CREATE INDEX `galaxygates_stages_spawns_galaxygates_spawns_id_idx`
 --
 -- Waves of the galaxy gate.
 --
-CREATE TABLE `galaxygates_waves` (
-  `id`      tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `maps_id` tinyint NOT NULL
-  COMMENT 'Map',
-  `seconds` tinyint NOT NULL DEFAULT 120
-  COMMENT 'Seconds to wait between stages',
-  `npcs`    tinyint NOT NULL DEFAULT 5
-  COMMENT 'NPCS that the user must destroy to spawn next stage',
+CREATE TABLE `galaxygates_waves`
+(
+    `id`      tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `maps_id` tinyint NOT NULL
+        COMMENT 'Map',
+    `seconds` tinyint NOT NULL DEFAULT 120
+        COMMENT 'Seconds to wait between stages',
+    `npcs`    tinyint NOT NULL DEFAULT 5
+        COMMENT 'NPCS that the user must destroy to spawn next stage',
 
-  CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Waves of the galaxy gate.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Waves of the galaxy gate.';
 
 CREATE INDEX `galaxygates_waves_maps_id_idx`
-  ON `galaxygates_waves` (`maps_id`);
+    ON `galaxygates_waves` (`maps_id`);
 
 -- Initial dump for the `galaxygates_waves` table.
 
@@ -2113,24 +2165,25 @@ CREATE INDEX `galaxygates_waves_maps_id_idx`
 --
 -- Contains the invitation codes that can be used for registering.
 --
-CREATE TABLE `invitation_codes` (
-                                    `id`   smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-                                    `code` varchar(255) NOT NULL DEFAULT ''
-  COMMENT 'The invitation code.',
-                                    `max`  tinyint      NOT NULL DEFAULT 1
-  COMMENT 'Amount of times the code can be used.',
+CREATE TABLE `invitation_codes`
+(
+    `id`   smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `code` varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'The invitation code.',
+    `max`  tinyint      NOT NULL DEFAULT 1
+        COMMENT 'Amount of times the code can be used.',
 
-                                    CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the invitation codes that can be used for registering.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the invitation codes that can be used for registering.';
 
 CREATE UNIQUE INDEX `invitation_codes_id_idx`
-  ON `invitation_codes` (`id`);
+    ON `invitation_codes` (`id`);
 CREATE UNIQUE INDEX `invitation_codes_code_idx`
-  ON `invitation_codes` (`code`);
+    ON `invitation_codes` (`code`);
 
 -- Initial dump for the `invitation_codes` table.
 
@@ -3140,21 +3193,22 @@ VALUES (1, '17089696161f8472c048f7f4a487d0a2', 0),
 --
 -- Contains the redeem logs for the invitation codes.
 --
-CREATE TABLE `invitation_codes_redeem_logs` (
-  `id`                  int           NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `invitation_codes_id` smallint      NOT NULL
-  COMMENT 'Invitation code ID.',
-  `ip`                  varchar(45) NOT NULL
-  COMMENT 'IP that redeemed the code.',
-  `date`                timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the code was redeemed.',
+CREATE TABLE `invitation_codes_redeem_logs`
+(
+    `id`                  int         NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `invitation_codes_id` smallint    NOT NULL
+        COMMENT 'Invitation code ID.',
+    `ip`                  varchar(45) NOT NULL
+        COMMENT 'IP that redeemed the code.',
+    `date`                timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the code was redeemed.',
 
-  CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the redeem logs for the invitation codes.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the redeem logs for the invitation codes.';
 
 -- Initial dump for the `invitation_codes_redeem_logs` table.
 
@@ -3162,26 +3216,27 @@ CREATE TABLE `invitation_codes_redeem_logs` (
 --
 -- Contains server's items.
 --
-CREATE TABLE `items` (
-  `id`          smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`        varchar(255) NOT NULL DEFAULT '',
-  `category`    tinyint      NOT NULL DEFAULT 0,
-  `description` text         NOT NULL
-  COMMENT 'Shop description.',
-  `price`       int          NOT NULL DEFAULT 0,
-  `type`        tinyint      NOT NULL DEFAULT 0,
-  `is_elite`    boolean      NOT NULL DEFAULT false,
-  `is_event`    boolean      NOT NULL DEFAULT false
-  COMMENT 'Event item.',
-  `is_buyable`  boolean      NOT NULL DEFAULT true
-  COMMENT 'Buyable in shop',
+CREATE TABLE `items`
+(
+    `id`          smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`        varchar(255) NOT NULL DEFAULT '',
+    `category`    tinyint      NOT NULL DEFAULT 0,
+    `description` text         NOT NULL
+        COMMENT 'Shop description.',
+    `price`       int          NOT NULL DEFAULT 0,
+    `type`        tinyint      NOT NULL DEFAULT 0,
+    `is_elite`    boolean      NOT NULL DEFAULT false,
+    `is_event`    boolean      NOT NULL DEFAULT false
+        COMMENT 'Event item.',
+    `is_buyable`  boolean      NOT NULL DEFAULT true
+        COMMENT 'Buyable in shop',
 
-  CONSTRAINT `items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains server''s items.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains server''s items.';
 
 -- Initial dump for the `items` table.
 --
@@ -3194,8 +3249,8 @@ VALUES (1,
         1,
         1,
         0,
-        0), (
-        2,
+        0),
+       (2,
         'Uridium',
         0,
         'Uridium item.',
@@ -3203,8 +3258,8 @@ VALUES (1,
         1,
         1,
         0,
-        0), (
-        3,
+        0),
+       (3,
         'Jackpot',
         0,
         'Jackpot item.',
@@ -3212,8 +3267,8 @@ VALUES (1,
         1,
         1,
         0,
-        0), (
-        4,
+        0),
+       (4,
         'Experience',
         0,
         'Experience item.',
@@ -3221,8 +3276,8 @@ VALUES (1,
         1,
         1,
         0,
-        0), (
-        5,
+        0),
+       (5,
         'Honor',
         0,
         'Honor item.',
@@ -3230,8 +3285,8 @@ VALUES (1,
         1,
         1,
         0,
-        0), (
-        6,
+        0),
+       (6,
         'Jump Voucher',
         0,
         'Jump voucher item.',
@@ -3239,8 +3294,8 @@ VALUES (1,
         2,
         0,
         0,
-        0), (
-        7,
+        0),
+       (7,
         'Repair Voucher',
         0,
         'Repair voucher item.',
@@ -3248,8 +3303,8 @@ VALUES (1,
         2,
         0,
         0,
-        0), (
-        8,
+        0),
+       (8,
         'GalaxyGate Voucher',
         0,
         'GalaxyGate voucher item.',
@@ -3257,8 +3312,8 @@ VALUES (1,
         2,
         0,
         0,
-        0), (
-        9,
+        0),
+       (9,
         'Phoenix',
         1,
         'Phoenix\n\nAll your ships sold off or in hock? Don''t worry - your Company won''t leave you in the lurch!\nThis free beater will let you rise like a phoenix from the ashes of your gambling problem and/or lack of foresight, and will ferry you around until you can afford something better.',
@@ -3266,8 +3321,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        10,
+        0),
+       (10,
         'Yamato',
         1,
         'Yamato\n\nAvailable from special events! Updated, tweaked, and fully upgraded, the classic Yamato is back in business. You can strut your stuff in her, too - you''ll find a [travel mode capacity] under her hood, which will give you a temporary speed boost.',
@@ -3275,8 +3330,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        11,
+        0),
+       (11,
         'Defcom',
         1,
         'Defcom\n\nAvailable from special events! An old-timer spaceship with real vintage style!\nThe Defcom is currently enjoying an impressive revival, and its newest iteration features a cloaking device hidden behind those gorgeous hot-rod lines. No classic ship collection is complete without her!',
@@ -3284,8 +3339,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        12,
+        0),
+       (12,
         'Liberator',
         1,
         ' Liberator\n\nYou never forget your first...! No matter whose logo you display, the Liberator is the proven workhorse that shuttled you safely through your first dogfights. This nostalgic little trip down Memory Lane rounds out any collection.',
@@ -3293,8 +3348,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        13,
+        0),
+       (13,
         'Leonov',
         1,
         ' Leonov\n\nThe Leonov is worth every scrap of Uridium asked for her. Versatile, agile, and with an unbeatable home advantage: more cargo space and more speed when you''re in your Company''s sectors! Your Company has your back - and now, you can return the favor!',
@@ -3302,8 +3357,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        14,
+        0),
+       (14,
         'Piranha',
         1,
         'Piranha\n\nThis ship is a fitting reward for the insanely tough training that Elite pilots survive. Like her namesake, she''s a fast, agile hunter with sharp teeth - only pilots who have proven their worth in the heat of battle can control her!',
@@ -3311,8 +3366,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        15,
+        0),
+       (15,
         'Nostromo',
         1,
         'Nostromo\n\nThe Nostromo is one of the best ships that Credits can buy. You can even arm her with successively more powerful modifying designs thanks to Lunar Industries'' innovative \"Invite-a-Friend\" bonus program! Easy as pie.',
@@ -3320,8 +3375,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        16,
+        0),
+       (16,
         'Vengeance',
         1,
         'Vengeance\n\nThe best Star Hunter: you''ll have (almost) nothing to fear in this ship!',
@@ -3329,8 +3384,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        17,
+        0),
+       (17,
         'BigBoy',
         1,
         'BigBoy\n\nNo fleet worth its salt would dream of trying to do without this ship! It may not be the fastest thing in orbit, but it boasts the most cargo space of any ship available for Credits. That''s true utility!',
@@ -3338,8 +3393,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        18,
+        0),
+       (18,
         'Goliath',
         1,
         'Goliath\n\nThe ultimate battlecruiser: hot-shot pilots accept no substitutes!',
@@ -3347,8 +3402,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        19,
+        0),
+       (19,
         'Sepearhead',
         1,
         'Spearhead\n\nAn agile reconnaissance ship, ideal for the ruthless, cold-blooded lone wolf. Spearheads can penetrate unseen deep into enemy territory as scouts, disable enemy ships'' skills, or even mark them for her allies.',
@@ -3356,8 +3411,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        20,
+        0),
+       (20,
         'Aegis',
         1,
         'Aegis\n\nThe Aegis tips the scales one way or the other in every battle she''s flown in. This versatile engineering ship''s support and repair abilities have often made the difference between defeat and victory - so make sure she''s on your side!',
@@ -3365,8 +3420,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        21,
+        0),
+       (21,
         'Citadel',
         1,
         'Citadel\n\nA Citadel is often affectionately called a \"Clank Tank\" - or just The Tank - by her crew. She''s a hulking Heavy Cruiser with two rocket main slots and various abilities that make her a mobile shield for her allies. Now this bulwark among spaceships can be yours!',
@@ -3374,8 +3429,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        22,
+        0),
+       (22,
         'Aegis Superelite',
         1,
         'Aegis Elite\n\nLoyal, trustworthy, tough - no pilot could wish for a better support system! This ship has the following abilities: 5% extra damage, 50% longer-lasting repairbots, 20% faster shield repair, and 10% faster HP repair.',
@@ -3383,8 +3438,8 @@ VALUES (1,
         3,
         1,
         1,
-        0), (
-        23,
+        0),
+       (23,
         'Aegis Elite',
         1,
         'Aegis Veteran\n\nBe the shield your allies deserve: the A-Veteran is a beautifully designed support ship, ready to prove her worth in any battle! This ship has the following abilities: 5% bonus to experience and honor points.',
@@ -3392,8 +3447,8 @@ VALUES (1,
         3,
         1,
         1,
-        0), (
-        24,
+        0),
+       (24,
         'Citadel Superelite',
         1,
         'Citadel Elite\n\nThis flying fortress will teach your enemies the true meaning of fear! This ship has the following abilities: 5% extra damage, 50% increased durations of the Protection and Draw Fire abilities, 25% shorter Fortify ability, and 15% shorter Travel ability.',
@@ -3401,8 +3456,8 @@ VALUES (1,
         4,
         1,
         1,
-        0), (
-        25,
+        0),
+       (25,
         'Citadel Elite',
         1,
         'Citadel Veteran\n\nThe uncompromising battlecruiser in which to gain the respect of your allies and sow discord among your enemies! This ship has the following abilities: 5% bonus to experience and honor points.',
@@ -3410,8 +3465,8 @@ VALUES (1,
         4,
         1,
         1,
-        0), (
-        26,
+        0),
+       (26,
         'Sepearhead Superelite',
         1,
         'Spearhead Elite\n\nDo you want a Recon Ship that will meet your exacting standards? The Spearhead Elite is as menacing as it is effective. This ship has the following abilities: 5% extra damage, 50% increased durations of the Ultimate Cloak and Recon abilities, 25% shorter Target Marker ability, and 15% longer cooldown of the JAMX ability.',
@@ -3419,8 +3474,8 @@ VALUES (1,
         5,
         1,
         1,
-        0), (
-        27,
+        0),
+       (27,
         'Sepearhead Elite',
         1,
         'Spearhead Veteran\n\nA sophisticated Recon Ship for refined pilots. Your enemies won''t see you until it''s too late! This ship has the following abilities: 5% bonus to experience and honor points.',
@@ -3428,8 +3483,8 @@ VALUES (1,
         5,
         1,
         1,
-        0), (
-        28,
+        0),
+       (28,
         'Bastion',
         1,
         'Goliath Bastion\n\nThis battlecruiser makes itself indispensable in any battle, big or small. Even the fiercest alien threats won''t find you to be easy game when you go up against them in your Bastion. This ship has the following abilities: 10% extra shield power.',
@@ -3437,8 +3492,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        29,
+        0),
+       (29,
         'Enforcer',
         1,
         'Goliath Enforcer\n\nNo clan can afford not to have this massive ship within its fleet! The brute force of the G-Enforcer sets a new bar for deep-space warfare, and will be the backbone of any raiding party. This ship has the following abilities: 5% extra damage.',
@@ -3446,8 +3501,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        30,
+        0),
+       (30,
         'Centaur',
         1,
         'No description available.',
@@ -3455,8 +3510,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        31,
+        0),
+       (31,
         'Saturn',
         1,
         'No description available.',
@@ -3464,8 +3519,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        32,
+        0),
+       (32,
         'Veteran',
         1,
         'Goliath Veteran\n\nSleek, glossy, and with every detail crafted to the highest standard, this combat vessel is as luxurious and precious as ivory! This ship has the following abilities: 10% bonus to experience.',
@@ -3473,8 +3528,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        33,
+        0),
+       (33,
         'Exalted',
         1,
         'Goliath Exalted\n\nRed as heart''s blood, this battlecruiser may well have been assembled by the devil''s own shipwright. This is no vessel for a shy pilot! This ship has the following abilities: 10% bonus to honor points.',
@@ -3482,8 +3537,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        34,
+        0),
+       (34,
         'Solace',
         1,
         ' Solace\n\nIn space, no-one can hear you scream... but you can come to the rescue! In the Solace, you''re an oasis and beacon for your allies in a dark, hostile desert. This ship has the following abilities: 10% extra shield power, and the Nano-Cluster Repairer ability, which immediately repairs the hulls of your ship and your group members'' ships!',
@@ -3491,8 +3546,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        35,
+        0),
+       (35,
         'Venom',
         1,
         'Venom\n\nA leviathan amongst battlecruisers! Sting your foes with its deadly poison and then step back and let the venom do the rest! This ship has the following abilities: 5% extra damage, and the Singularity ability, which will paralyze enemy ships and cause them substantial damage over time!',
@@ -3500,8 +3555,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        36,
+        0),
+       (36,
         'Spectrum',
         1,
         'Spectrum\n\nThe Spectrum is a kaleidoscope of color to blind your foes. Laser beams roll off of this polished battlecruiser''s hull like water off a duck''s back! This ship has the following abilities: 10% extra shield power, and the Prismatic Shielding ability, which will render enemy laser attacks almost useless, though it also temporarily weakens your own lasers.',
@@ -3509,8 +3564,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        37,
+        0),
+       (37,
         'Sentinel',
         1,
         'Sentinel\n\nThe Sentinel awes with its futuristic design and robust shields. Fly wing-to-wing with other Sentinels to create an impenetrable shield wall! This ship has the following abilities: 10% extra shield power, and the Fortress ability, which massively increases your shielding for a brief time.',
@@ -3518,8 +3573,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        38,
+        0),
+       (38,
         'Diminisher',
         1,
         'Diminisher\n\nThe battlecruiser of choice for cunning pilots: first, weaken enemy shields, then let loose with a vicious salvo. This ship has the following abilities: 5% extra damage, and the Weaken Shields ability.',
@@ -3527,8 +3582,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        39,
+        0),
+       (39,
         'Kick',
         1,
         'Kick\n\nKick design for the Goliath with a 10% shield bonus. Soccer crazy? Then act now and show off your passion for the beautiful game! In comparison to the Bastion, Sentinel, Solace, and Spectrum, the Kick is only comparable to the Bastion since all other designs are skill designs.',
@@ -3536,8 +3591,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        40,
+        0),
+       (40,
         'Goal',
         1,
         'Goal\n\nGoal design for the Goliath with 10% XP bonus. Soccer crazy? Then act now and bring soccer to space. In comparison to the Veteran, the Goal is its equal, but much harder to get.',
@@ -3545,8 +3600,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        41,
+        0),
+       (41,
         'Referee',
         1,
         'Referee\n\nReferee design for the Goliath. Exude authority with this design and increase your damage by 5%. In comparison to the Enforcer, Venom, and Diminisher, the Referee is only comparable to the Enforcer since all the other designs are Skill Designs.',
@@ -3554,8 +3609,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        42,
+        0),
+       (42,
         'Soverign',
         1,
         'No description available.',
@@ -3563,8 +3618,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        43,
+        0),
+       (43,
         'Peacemaker',
         1,
         'No description available.',
@@ -3572,8 +3627,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        44,
+        0),
+       (44,
         'Vanquisher',
         1,
         'Vanquisher\n\nA special, limited edition Goliath, the Vanquisher design is only available to pilots who are truly loyal to MMO. It will not only provide a 5% bonus to all Influence earned for MMO, but will also grant a 7% damage bonus against rival human pilots.',
@@ -3581,8 +3636,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        45,
+        0),
+       (45,
         'Ignite',
         1,
         'No description available.',
@@ -3590,8 +3645,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        46,
+        0),
+       (46,
         'Surgeon',
         1,
         'No description available.',
@@ -3599,8 +3654,8 @@ VALUES (1,
         6,
         1,
         1,
-        0), (
-        47,
+        0),
+       (47,
         'Adept',
         1,
         'Vengeance Adept\n\nClothes make the man - and the same holds true for the ship and the pilot! A valuable vessel that''s just the ticket for any pilot worth their salt, this ship has the following abilities: 10% bonus to experience.',
@@ -3608,8 +3663,8 @@ VALUES (1,
         7,
         1,
         1,
-        0), (
-        48,
+        0),
+       (48,
         'Lightning',
         1,
         'Vengeance Lightning\n\nStrike out of a clear blue sky - or the deep black cold of space - and give your enemies an electrifying reception in the Lightning! This ship has the following abilities: 5% extra damage, and the Afterburner ability, which will boost your ship''s speed by 30% for 5 seconds!',
@@ -3617,8 +3672,8 @@ VALUES (1,
         7,
         1,
         1,
-        0), (
-        49,
+        0),
+       (49,
         'Corsair',
         1,
         ' Vengeance Corsair\n\nHonor to whom honor is due: the cool V-Corsair is the starfighter of choice for intergalactic exploits of all kinds! This ship has the following abilities: 10% bonus to honor points.',
@@ -3626,8 +3681,8 @@ VALUES (1,
         7,
         1,
         1,
-        0), (
-        50,
+        0),
+       (50,
         'Pusat',
         1,
         'Pusat\n\nDeveloped by the brilliant minds on Yeni''turkiye Station, the Pusat Vengeance design features a rich arsenal of lasers and generators for delicious, hard-hitting firepower, at the expense of armour. Strike hard and fast when you''re at its helm.',
@@ -3635,8 +3690,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        51,
+        0),
+       (51,
         'Revenge',
         1,
         'Vengeance Revenge\n\nThe V-Revenge is best used to deliver the coup de grace that ends a fierce battle, with K.O. power ideal for dealing with dangerous aliens and enemy Clans alike. This ship has the following abilities: 5% extra damage.',
@@ -3644,8 +3699,8 @@ VALUES (1,
         7,
         1,
         1,
-        0), (
-        52,
+        0),
+       (52,
         'Avenger',
         1,
         'Vengeance Avenger\n\nThe Avenger is a starfighter that''s the complete package, making you a tough nut to crack for enemy pilots and fearsome aliens alike! This ship has the following abilities: 10% extra shield power.',
@@ -3653,8 +3708,8 @@ VALUES (1,
         7,
         1,
         1,
-        0), (
-        53,
+        0),
+       (53,
         'Police',
         1,
         'No description available.',
@@ -3662,8 +3717,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        54,
+        0),
+       (54,
         'FWX-L',
         2,
         'No description available.',
@@ -3671,8 +3726,8 @@ VALUES (1,
         8,
         1,
         1,
-        0), (
-        55,
+        0),
+       (55,
         'FWX-M',
         2,
         'No description available.',
@@ -3680,8 +3735,8 @@ VALUES (1,
         8,
         1,
         1,
-        0), (
-        56,
+        0),
+       (56,
         'FWX-S',
         2,
         'No description available.',
@@ -3689,8 +3744,8 @@ VALUES (1,
         8,
         0,
         1,
-        0), (
-        57,
+        0),
+       (57,
         'CBO-100',
         2,
         'CBO-100\n\nCombo 100 is a rare ammunition that inflicts the damage of the MCB-50 ammo along with half of the SAB-50 ammo''s Shield Leech effect.',
@@ -3698,8 +3753,8 @@ VALUES (1,
         9,
         1,
         1,
-        1), (
-        58,
+        1),
+       (58,
         'JOB-100',
         2,
         'JOB-100\n\nDie Jack-O-Battery is a rare Halloween Ammo that causes 3.5 times the damage to NPCs and twice the damage to other players.',
@@ -3707,8 +3762,8 @@ VALUES (1,
         9,
         1,
         1,
-        1), (
-        59,
+        1),
+       (59,
         'LCB-10',
         2,
         'LCB-10\n\nLow efficiency for a low price.',
@@ -3716,8 +3771,8 @@ VALUES (1,
         9,
         0,
         1,
-        0), (
-        60,
+        0),
+       (60,
         'MCB-25',
         2,
         'MCB-25\n\nMore bang for your buck: x2 laser damage per round.',
@@ -3725,8 +3780,8 @@ VALUES (1,
         9,
         1,
         1,
-        0), (
-        61,
+        0),
+       (61,
         'MCB-50',
         2,
         'MCB-50\n\nThe best standard laser ammo: x3 laser damage per round.',
@@ -3734,8 +3789,8 @@ VALUES (1,
         9,
         1,
         1,
-        0), (
-        62,
+        0),
+       (62,
         'RSB-75',
         2,
         'RSB-75\n\nOne type of ammo you just can''t do without: Rain death on your enemies when you fire off a rapid laser salvo.',
@@ -3743,8 +3798,8 @@ VALUES (1,
         9,
         1,
         1,
-        0), (
-        63,
+        0),
+       (63,
         'SAB-50',
         2,
         'SAB-50\n\nSpecial ammunition that reinforces your Shield, strengthening it by tapping into enemy shields (Shield Leech).',
@@ -3752,8 +3807,8 @@ VALUES (1,
         9,
         1,
         1,
-        0), (
-        64,
+        0),
+       (64,
         'UCB-100',
         2,
         'No description available.',
@@ -3761,8 +3816,8 @@ VALUES (1,
         9,
         1,
         1,
-        0), (
-        65,
+        0),
+       (65,
         'ACM-01',
         2,
         'ACM-1\n\nProximity mine: 20% damage upon detonation.',
@@ -3770,8 +3825,8 @@ VALUES (1,
         10,
         1,
         1,
-        0), (
-        66,
+        0),
+       (66,
         'DDM-01',
         2,
         'Direct-damage mine\n\nProximity mine:\n20% direct damage calculated from ship''s base HP and pilot-bio upgrades - powerful enough to destroy enemy ships entirely!',
@@ -3779,8 +3834,8 @@ VALUES (1,
         10,
         1,
         1,
-        1), (
-        67,
+        1),
+       (67,
         'EMPM-01',
         2,
         'Anti-cloaking mine\n\nProximity mine: 100% uncloaking upon detonation',
@@ -3788,8 +3843,8 @@ VALUES (1,
         10,
         1,
         1,
-        1), (
-        68,
+        1),
+       (68,
         'SABM-01',
         2,
         'Anti-shield mine\n\nProximity mine:\n50% shield damage upon detonation; combinable with other mine types.',
@@ -3797,8 +3852,8 @@ VALUES (1,
         10,
         1,
         1,
-        1), (
-        69,
+        1),
+       (69,
         'RB-02',
         2,
         'No description available.',
@@ -3806,8 +3861,8 @@ VALUES (1,
         10,
         0,
         1,
-        0), (
-        70,
+        0),
+       (70,
         'RB-E01',
         2,
         'No description available.',
@@ -3815,8 +3870,8 @@ VALUES (1,
         10,
         1,
         1,
-        0), (
-        71,
+        0),
+       (71,
         'RB-E02',
         2,
         'No description available.',
@@ -3824,8 +3879,8 @@ VALUES (1,
         10,
         0,
         1,
-        0), (
-        72,
+        0),
+       (72,
         'SL-01',
         2,
         'Slowdown Mine\n\nSlows your opponent for 5 seconds by 50%. Furthermore, it takes effect in just 1 second.',
@@ -3833,8 +3888,8 @@ VALUES (1,
         10,
         1,
         1,
-        1), (
-        73,
+        1),
+       (73,
         'SLM-01',
         2,
         'Slowdown Mine\n\nSlows your opponent for 5 seconds by 50%. Furthermore, it takes effect in just 1 second.',
@@ -3842,8 +3897,8 @@ VALUES (1,
         10,
         1,
         1,
-        1), (
-        74,
+        1),
+       (74,
         'BDR-1212',
         2,
         'No description available.',
@@ -3851,8 +3906,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        75,
+        1),
+       (75,
         'CBR-100',
         2,
         'CBR Rocket\n\nThe combo rocket will help you make a name for yourself. A combination of high damage infliction and Shield Leech is a one-two punch your enemies won''t soon forget.',
@@ -3860,8 +3915,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        76,
+        1),
+       (76,
         'ECO-10',
         2,
         'ECO-10 rocket\n\nThe multi-angle damage rocket for smart spenders. Your toughest enemies won''t stand a chance against the many broadsides of the ECO Hellstorm.',
@@ -3869,8 +3924,8 @@ VALUES (1,
         11,
         0,
         1,
-        0), (
-        77,
+        0),
+       (77,
         'HSTRM-01',
         2,
         'Hellstorm\n\nDouble the rockets, double the trouble!\nUpon being fired from the rocket main, these rockets will rapidly descend upon your enemy and scorch their target with a near apocalyptic explosion. Fired off in a broadside, they will cause even more damage, hitting an enemy ship from multiple sides to weaken its hull structure..',
@@ -3878,8 +3933,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        78,
+        1),
+       (78,
         'SAR-01',
         2,
         'SAR-01 rocket\n\nThe Hellstorm SAR-01, a Shield Leeching rocket, is fired from a rocket main. An especially good quick-strike weapon!',
@@ -3887,8 +3942,8 @@ VALUES (1,
         11,
         0,
         1,
-        0), (
-        79,
+        0),
+       (79,
         'SAR-02',
         2,
         'SAR-02 rocket\n\nThe Hellstorm SAR-02, a Shield Leeching rocket, is fired from a rocket main. An especially good quick-strike weapon!',
@@ -3896,8 +3951,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        80,
+        1),
+       (80,
         'SHG-01',
         2,
         'No description available.',
@@ -3905,8 +3960,8 @@ VALUES (1,
         11,
         0,
         1,
-        0), (
-        81,
+        0),
+       (81,
         'SHG-02',
         2,
         'No description available.',
@@ -3914,8 +3969,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        82,
+        1),
+       (82,
         'UBR-100',
         2,
         'Uber\n\nYour rocket main will fire salvos of UBR-100 rockets. Their optimized warheads are at least 80% more effective against aliens, and they also utilize the multi-angle damage feature of conventional Hellstorm rockets.',
@@ -3923,8 +3978,8 @@ VALUES (1,
         11,
         1,
         1,
-        1), (
-        83,
+        1),
+       (83,
         'BDR-1211',
         2,
         'Birthday Rocket\n\nCause extensive damage to aliens of max. 7,500 per shot! On other pilot''s ships, they only cause a max. 4,000 damage per hit.',
@@ -3932,8 +3987,8 @@ VALUES (1,
         12,
         1,
         1,
-        1), (
-        84,
+        1),
+       (84,
         'PLT-2021',
         2,
         'PLT-2021\n\nLong-range rocket: causes up to 4,000 points per rocket fired.',
@@ -3941,8 +3996,8 @@ VALUES (1,
         12,
         1,
         1,
-        0), (
-        85,
+        0),
+       (85,
         'PLT-2026',
         2,
         'PLT-2026\n\nMid-range rocket: causes up to 2,000 damage points per rocket fired.',
@@ -3950,8 +4005,8 @@ VALUES (1,
         12,
         0,
         1,
-        0), (
-        86,
+        0),
+       (86,
         'PLT-3030',
         2,
         'PLT-3030\n\nEach rocket inflicts a max. of 6,000 HP of damage, but has a lower accuracy rate due to its impressive firepower.\nAn exceptional weapon when used in combination with the Tech Center''s precision targeter.',
@@ -3959,8 +4014,8 @@ VALUES (1,
         12,
         1,
         1,
-        0), (
-        87,
+        0),
+       (87,
         'R-310',
         2,
         'R310\n\nShort-range rocket: causes up to 1,000 damage points per rocket fired.',
@@ -3968,8 +4023,8 @@ VALUES (1,
         12,
         0,
         1,
-        0), (
-        88,
+        0),
+       (88,
         'DCR-250',
         2,
         'Deceleration rockets\n\nHit your opponent with a deceleration rocket to slow them down by 30% for 5 seconds.',
@@ -3977,8 +4032,8 @@ VALUES (1,
         13,
         1,
         1,
-        1), (
-        89,
+        1),
+       (89,
         'EMP-01',
         2,
         'EMP burst\n\nThe EMP burst will release an electromagnetic impulse wave to temporarily short-circuit your enemies'' onboard instruments and disable their targeting devices. If you''re really lucky, the burst will also uncloak them, allowing you to shoot them out of the sky like birds.',
@@ -3986,8 +4041,8 @@ VALUES (1,
         13,
         1,
         1,
-        1), (
-        90,
+        1),
+       (90,
         'PLD-8',
         2,
         'PLD-8\n\nThis plasma charger causes a 40% reduction of your target''s accuracy for 5 seconds.',
@@ -3995,8 +4050,8 @@ VALUES (1,
         13,
         1,
         1,
-        1), (
-        91,
+        1),
+       (91,
         'WIZ-X',
         2,
         'No description available.',
@@ -4004,8 +4059,8 @@ VALUES (1,
         13,
         1,
         1,
-        1), (
-        92,
+        1),
+       (92,
         'CD-B01',
         3,
         'Cooldown Booster\n\n20% quicker cooldown times for all ship skills. Booster is active for 10 hours of game time after purchase.',
@@ -4013,8 +4068,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        93,
+        1),
+       (93,
         'CD-B02',
         3,
         'Cooldown Booster\n\n30% quicker cooldown times for all ship skills. Booster is active for 10 hours of game time after purchase.\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4022,8 +4077,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        94,
+        0),
+       (94,
         'DMG-B01',
         3,
         'Damage booster\n\n+10% damage for all damage inflicted. Booster is active for 10 hours from the time of purchase.',
@@ -4031,8 +4086,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        95,
+        0),
+       (95,
         'DMG-B02',
         3,
         'Shared damage booster\n\n\n\n+10% damage for damage inflicted. 5% of bonus damage can be shared with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4040,8 +4095,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        96,
+        1),
+       (96,
         'EP-B01',
         3,
         'Experience booster\n\nGives you a 10% EP bonus. Booster is active for 10 hours from the time of purchase.',
@@ -4049,8 +4104,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        97,
+        0),
+       (97,
         'EP-B02',
         3,
         'Shared EP Booster\n\n+10% EP; 5% of this EP bonus can be shared with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4058,8 +4113,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        98,
+        1),
+       (98,
         'HON-B01',
         3,
         'Honor booster\n\n+10% honor; This booster is active for 10 hours from the time of purchase.',
@@ -4067,8 +4122,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        99,
+        0),
+       (99,
         'HON-B02',
         3,
         'Shared honor booster\n\nGrants a +10% bonus to earning Honor Points, and 5% of that bonus is applied to friendly ships nearby.\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4076,8 +4131,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        100,
+        1),
+       (100,
         'HP-B01',
         3,
         'Hit point booster\n\n+10% ship HP; This booster is active for 10 hours from the time of purchase.',
@@ -4085,8 +4140,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        101,
+        0),
+       (101,
         'HP-B02',
         3,
         'Shared hit points booster\n\nIncreases ship''s maximum HP by 10% and allows you to share 5% of this bonus with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4094,8 +4149,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        102,
+        1),
+       (102,
         'REP-B01',
         3,
         'Repair booster\n\n+10% faster ship repairs; This booster is active for 10 hours from the time of purchase.',
@@ -4103,8 +4158,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        103,
+        0),
+       (103,
         'REP-B02',
         3,
         'Shared repair booster\n\n+10% repair speed; 5% of this bonus can be shared with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
@@ -4112,8 +4167,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        104,
+        1),
+       (104,
         'RES-B01',
         3,
         'Resource booster\n\nThe resource booster increases the number of resources from collected NPC cargo boxes by 25%. Booster is active for 10 hours from the time of purchase.',
@@ -4121,8 +4176,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        105,
+        0),
+       (105,
         'RES-B02',
         3,
         'Shared resource booster\n\nThe resource booster increases the number of resources from collected NPC cargo boxes by 25% and provides a 10 % of this bonus for friendly ships in the vicinity.\n\nBooster is active for 10 hours from the time of purchase. It has a 100% maximum boost level.',
@@ -4130,8 +4185,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        106,
+        1),
+       (106,
         'SHD-B01',
         3,
         'Shield booster\n\n+25% shield power; This booster is active for 10 hours from the time of purchase.',
@@ -4139,8 +4194,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        107,
+        0),
+       (107,
         'SHD-B02',
         3,
         'Shared shield power booster\n\nIncreases ship''s maximum shield power by 25% and allows you to share 10% of this bonus with friendly ships nearby.\n\nBooster is active for 10 hours from the time of purchase. It has a 100% maximum boost level.',
@@ -4148,8 +4203,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        108,
+        1),
+       (108,
         'SREG-B01',
         3,
         'Shield recharger booster\n\n+25% shield regeneration speed; This booster is active for 10 hours from the time of purchase.',
@@ -4157,8 +4212,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        109,
+        0),
+       (109,
         'SG3N-A01',
         4,
         'SG3N-A01 shield\n\n1,000 shield strength / 40% less damage.',
@@ -4166,8 +4221,8 @@ VALUES (1,
         14,
         0,
         1,
-        0), (
-        110,
+        0),
+       (110,
         'SG3N-A02',
         4,
         'SG3N-A02 shield\n\n2,000 shield strength / 50% less damage.',
@@ -4175,8 +4230,8 @@ VALUES (1,
         14,
         0,
         1,
-        0), (
-        111,
+        0),
+       (111,
         'SG3N-A03',
         4,
         'SG3N-A03 shield\n\n5,000 shield strength / 60% less damage.',
@@ -4184,8 +4239,8 @@ VALUES (1,
         14,
         0,
         1,
-        0), (
-        112,
+        0),
+       (112,
         'SG3N-B01',
         4,
         'SG3N-B01 shield\n\n4,000 shield strength / 70% less damage.',
@@ -4193,8 +4248,8 @@ VALUES (1,
         14,
         1,
         1,
-        0), (
-        113,
+        0),
+       (113,
         'SG3N-B02',
         4,
         'SG3N-B02 shield\n\n10,000 shield strength / 80% less damage.',
@@ -4202,8 +4257,8 @@ VALUES (1,
         14,
         1,
         1,
-        0), (
-        114,
+        0),
+       (114,
         'G3N-1010',
         4,
         'G3N-1010 speed generator\n\nIncreases ship speed by 2.',
@@ -4211,8 +4266,8 @@ VALUES (1,
         15,
         0,
         1,
-        0), (
-        115,
+        0),
+       (115,
         'G3N-2010',
         4,
         'G3N-2010 speed generator\n\nIncreases ship speed by 3.',
@@ -4220,8 +4275,8 @@ VALUES (1,
         15,
         0,
         1,
-        0), (
-        116,
+        0),
+       (116,
         'G3N-3210',
         4,
         'G3N-3210 speed generator\n\nIncreases ship speed by 4.',
@@ -4229,8 +4284,8 @@ VALUES (1,
         15,
         0,
         1,
-        0), (
-        117,
+        0),
+       (117,
         'G3N-3310',
         4,
         'G3N-3310 speed generator\n\nIncreases ship speed by 5.',
@@ -4238,8 +4293,8 @@ VALUES (1,
         15,
         0,
         1,
-        0), (
-        118,
+        0),
+       (118,
         'G3N-6900',
         4,
         'G3N-6900 speed generator\n\nIncreases ship speed by 7.',
@@ -4247,8 +4302,8 @@ VALUES (1,
         15,
         1,
         1,
-        0), (
-        119,
+        0),
+       (119,
         'G3N-7900',
         4,
         'G3N-7900 speed generator\n\nIncreases ship speed by 10.',
@@ -4256,8 +4311,8 @@ VALUES (1,
         15,
         1,
         1,
-        0), (
-        120,
+        0),
+       (120,
         'MP-1',
         4,
         'MP-1\n\nAverage laser: causes up to 60 damage points per round.',
@@ -4265,8 +4320,8 @@ VALUES (1,
         16,
         0,
         1,
-        0), (
-        121,
+        0),
+       (121,
         'LF-1',
         4,
         'LF-1\n\nSmall laser: causes up to 40 damage points per round.',
@@ -4274,8 +4329,8 @@ VALUES (1,
         16,
         0,
         1,
-        0), (
-        122,
+        0),
+       (122,
         'LF-2',
         4,
         'LF-2\n\nStrong laser: causes up to 100 damage points per round.',
@@ -4283,8 +4338,8 @@ VALUES (1,
         16,
         0,
         1,
-        0), (
-        123,
+        0),
+       (123,
         'LF-3',
         4,
         'LF-3\n\nMuch stronger laser: Causes up to 150 damage points per round.',
@@ -4292,8 +4347,8 @@ VALUES (1,
         16,
         0,
         1,
-        0), (
-        124,
+        0),
+       (124,
         'LF-4',
         4,
         'LF-4\n\nMuch much stronger laser: Causes up to 200 damage points per round.',
@@ -4301,8 +4356,8 @@ VALUES (1,
         16,
         0,
         1,
-        0), (
-        125,
+        0),
+       (125,
         'HST-1',
         4,
         'Hellstorm main 1\n\nThe rapid reloader!\nThis rocket main makes it possible to win a battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 3 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
@@ -4310,8 +4365,8 @@ VALUES (1,
         17,
         0,
         1,
-        0), (
-        126,
+        0),
+       (126,
         'HST-2',
         4,
         'Hellstorm main 2\n\nThe rapid reloader!\nThis upgraded version of the Hellstorm main 1 makes it possible to win the battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 5 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
@@ -4319,8 +4374,8 @@ VALUES (1,
         17,
         0,
         1,
-        0), (
-        127,
+        0),
+       (127,
         'HMD-07',
         4,
         'HM7 trade drone\n\nWith the HM7 trade drone, you can sell your ore no matter what orbit you''re in. Why waste time going back to the space station?\nValid for 100 transactions.\n\nYou already have an active trade drone. If you buy this trade drone now, you''ll receive 100 more transactions.\n\nOnly one of these items is allowed per configuration.',
@@ -4328,8 +4383,8 @@ VALUES (1,
         18,
         1,
         1,
-        0), (
-        128,
+        0),
+       (128,
         'AIM-01',
         4,
         'Targeting Guidance CPU 1\n\n25% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU is allowed per configuration.\n\nOnly one of these items is allowed per configuration.',
@@ -4337,8 +4392,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        129,
+        0),
+       (129,
         'AIM-02',
         4,
         'Targeting Guidance CPU 2\n\n50% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU allowed per configuration.\n\nOnly one of these items is allowed per configuration.',
@@ -4346,8 +4401,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        130,
+        0),
+       (130,
         'AJP-01',
         4,
         'Advanced Jump CPU 1\n\nAllows you to jump to any of the valid target maps. May not be used during battle.\n\nOnly one of these items is allowed per configuration.',
@@ -4355,8 +4410,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        131,
+        0),
+       (131,
         'ALB-X',
         4,
         'Ammunition CPU\n\nAutomatically buys 10,000 laser rounds if less than 1,000 rounds on board. Settings can be adjusted in Hanger/Manage.\n\nOnly one of these items is allowed per configuration.',
@@ -4364,8 +4419,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        132,
+        0),
+       (132,
         'ANTI-Z1',
         4,
         'Serum CPU\n\nThose who fight deadly diseases must be prepared! The Serum CPU will automatically cure you of any infections or parasites.\n\nOnly one of these items is allowed per configuration.',
@@ -4373,8 +4428,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        133,
+        0),
+       (133,
         'ANTI-Z1 XL',
         4,
         'Serum CPU XL\n\nWith 10 doses, the Serum CPU XL is your strongest ally against parasites and infections. Cure yourself and other players - before it''s too late!\n\nOnly one of these items is allowed per configuration.',
@@ -4382,8 +4437,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        134,
+        0),
+       (134,
         'AROL-X',
         4,
         'Auto Rocket CPU\n\nAutomatic rocket rapid-fire in laser attacks you start\n\nAfter installation is completed, the AROL-X CPU must be activated on the space map in \"CPUs\".\n\nOnly one of these items is allowed per configuration.',
@@ -4391,8 +4446,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        135,
+        0),
+       (135,
         'CL04K-M',
         4,
         'Cloaking CPU\n\n10 ship cloakings (active until your first attack)\n\nWARNING: Enemies can still see cloaked ships on the mini map.\n\nOnly one of these items is allowed per configuration.',
@@ -4400,8 +4455,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        136,
+        0),
+       (136,
         'CL04K-XL',
         4,
         'Cloaking CPU XL\n\nCloak your ship 50 times and stay invisible until you launch an attack yourself.\n\nWARNING: Enemies can still see cloaked ships on the mini map.\n\nOnly one of these items is allowed per configuration.',
@@ -4409,8 +4464,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        137,
+        0),
+       (137,
         'CL04K-XS',
         4,
         'Cloaking Device Type A\n\nShip stays cloaked until your first attack\n\nWARNING: Enemies can still see cloaked ships on the mini map.\n\nOnly one of these items is allowed per configuration.',
@@ -4418,8 +4473,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        138,
+        0),
+       (138,
         'DR-01',
         4,
         'Drone Repair CPU 1\n\nThis CPU automatically repairs your drones when they sustain more than 70% damage upon ship destruction, as long as you have enough Uridium or Credits (depends on the drone type). Good for 8 repairs.\n\nOnly one of these items is allowed per configuration.',
@@ -4427,8 +4482,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        139,
+        0),
+       (139,
         'DR-02',
         4,
         'Drone Repair CPU 2\n\nThis CPU automatically repairs your drones when they have received the maximum damage upon ship destruction, as long as you have enough Uridium or Credits (depends on the drone type). Good for 32 repairs.\n\nOnly one of these items is allowed per configuration.',
@@ -4436,8 +4491,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        140,
+        0),
+       (140,
         'FB-X',
         4,
         'Automatic CPU Fuel Assistant\n\nAutomatically buys 10,000 units of P.E.T. fuel when your fuel reserves fall below 1000 units.\n\nOnly one of these items is allowed per configuration.',
@@ -4445,8 +4500,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        141,
+        0),
+       (141,
         'G3X-AMRY-L',
         4,
         'No description available.',
@@ -4454,8 +4509,8 @@ VALUES (1,
         19,
         0,
         0,
-        0), (
-        142,
+        0),
+       (142,
         'G3X-AMRY-M',
         4,
         'No description available.',
@@ -4463,8 +4518,8 @@ VALUES (1,
         19,
         0,
         0,
-        0), (
-        143,
+        0),
+       (143,
         'G3X-AMRY-S',
         4,
         'No description available.',
@@ -4472,8 +4527,8 @@ VALUES (1,
         19,
         0,
         0,
-        0), (
-        144,
+        0),
+       (144,
         'G3X-CARGO-X',
         4,
         'Cargo bay expansion\n\nx2 cargo space thanks to molecular compression\n\nOnly one of these items is allowed per configuration.',
@@ -4481,8 +4536,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        145,
+        0),
+       (145,
         'ISH-01',
         4,
         'Insta-shield CPU\n\n3-second protection against enemies; 10 mines and 100 Xenomit used every time\n\nIt has the same cool-down time as mines.\n\nOnly one of these items is allowed per configuration.',
@@ -4490,8 +4545,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        146,
+        0),
+       (146,
         'JP-01',
         4,
         'Jump CPU 1\n\n10 jumps to X-1 home map. You may not jump from farther out than map X-4 and NOT from PvP maps (4-X). May not be used during battle.\n\nOnly one of these items is allowed per configuration.',
@@ -4499,8 +4554,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        147,
+        0),
+       (147,
         'JP-02',
         4,
         'Jump CPU 2\n\nJump to X-1 home map, works everywhere except the pirate sector. 20 total jumps. May not be used during battle.\n\nOnly one of these items is allowed per configuration.',
@@ -4508,8 +4563,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        148,
+        0),
+       (148,
         'MIN-T01',
         4,
         'Turbo Mine CPU 1\n\n25% less cool-down time for mines and items made from mines\n\nOnly one of these items is allowed per configuration.',
@@ -4517,8 +4572,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        149,
+        0),
+       (149,
         'MIN-T02',
         4,
         'Turbo Mine CPU 2\n\n50% less cool-down time for mines and items made from mines\n\nOnly one of these items is allowed per configuration.',
@@ -4526,8 +4581,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        150,
+        0),
+       (150,
         'NC-AGB-X',
         4,
         'Generator Boost CPU\n\nAutomatically gives your generators a boost using the best resources available\n\nOnly one of these items is allowed per configuration.',
@@ -4535,8 +4590,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        151,
+        0),
+       (151,
         'NC-AWB-X',
         4,
         'Lab CPU\n\nBoosts rockets and lasers with raw materials currently in lab use\n\nOnly one of these items is allowed per configuration.',
@@ -4544,8 +4599,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        152,
+        0),
+       (152,
         'NC-AWL-X',
         4,
         'Lab CPU 3\n\nBoosts lasers with raw materials currently in lab use\n\nOnly one of these items is allowed per configuration.',
@@ -4553,8 +4608,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        153,
+        0),
+       (153,
         'NC-AWR-X',
         4,
         'Lab CPU 2\n\nBoosts rockets with raw materials currently in lab use\n\nOnly one of these items is allowed per configuration.',
@@ -4562,8 +4617,8 @@ VALUES (1,
         19,
         0,
         1,
-        0), (
-        154,
+        0),
+       (154,
         'NC-RRB-X',
         4,
         'Repair-bot Auto CPU\n\nAuto-activates a repair robot available\n\nOnly one of these items is allowed per configuration.',
@@ -4571,8 +4626,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        155,
+        0),
+       (155,
         'RB-X',
         4,
         'Rocket CPU\n\nAutomatically buys 500 rockets of the selected rocket type when you have less than 100 left on board. To set the rocket type, click on Hangar/Manage.\n\nOnly one of these items is allowed per configuration.',
@@ -4580,8 +4635,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        156,
+        0),
+       (156,
         'RD-X',
         4,
         'Radar CPU\n\nDisplays diplomacy status on mini map\n\nOnly one of these items is allowed per configuration.',
@@ -4589,8 +4644,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        157,
+        0),
+       (157,
         'RLLB-X',
         4,
         'Rocket-main CPU\n\nThe rocket-main CPU automatically reloads your rocket main with a specified rocket type to rain fire on your enemies when you launch a laser attack.\n\nAfter installation is completed, the RL-LB1 CPU must be activated on the space map in \"CPUs\".\n\nOnly one of these items is allowed per configuration.',
@@ -4598,8 +4653,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        158,
+        0),
+       (158,
         'ROK-T01',
         4,
         'Rocket Turbo\n\nDoubles rocket firing speed\n\nOnly one of these items is allowed per configuration.',
@@ -4607,8 +4662,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        159,
+        0),
+       (159,
         'SLE-01',
         4,
         'Slot CPU 1\n\n+2 new slots for extras.\n\nOnly one of these items is allowed per configuration.',
@@ -4616,8 +4671,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        160,
+        0),
+       (160,
         'SLE-02',
         4,
         'Slot CPU 2\n\n+4 new slots for extras.\n\nOnly one of these items is allowed per configuration.',
@@ -4625,8 +4680,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        161,
+        0),
+       (161,
         'SLE-03',
         4,
         'Slot CPU 3\n\n+6 new slots for extras.\n\nOnly one of these items is allowed per configuration.',
@@ -4634,8 +4689,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        162,
+        0),
+       (162,
         'SLE-04',
         4,
         'Slot CPU 4\n\n+10 new slots for extras.\n\nOnly one of these items is allowed per configuration.',
@@ -4643,8 +4698,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        163,
+        0),
+       (163,
         'SMB-01',
         4,
         'Smart Bomb CPU\n\nInstant bomb made from 10 mines and 100 Xenomit; doesn''t cause any damage to your ship.\n\nIt has the same cool-down time as mines.\n\nOnly one of these items is allowed per configuration.',
@@ -4652,8 +4707,8 @@ VALUES (1,
         19,
         1,
         1,
-        0), (
-        164,
+        0),
+       (164,
         'REP-1',
         4,
         'Repair Robot 1\n\nThis repair bot recovers your ship''s hull in 165 seconds.\n\nOnly one of these items is allowed per configuration.',
@@ -4661,8 +4716,8 @@ VALUES (1,
         20,
         0,
         1,
-        0), (
-        165,
+        0),
+       (165,
         'REP-2',
         4,
         'Repair Robot 2\n\nThis repair bot recovers your ship''s hull in 120 seconds.\n\nOnly one of these items is allowed per configuration.',
@@ -4670,8 +4725,8 @@ VALUES (1,
         20,
         0,
         1,
-        0), (
-        166,
+        0),
+       (166,
         'REP-3',
         4,
         'Repair Robot 3\n\nThis repair bot recovers your ship''s hull in 105 seconds.\n\nOnly one of these items is allowed per configuration.',
@@ -4679,8 +4734,8 @@ VALUES (1,
         20,
         1,
         1,
-        0), (
-        167,
+        0),
+       (167,
         'REP-4',
         4,
         'Repair robot 4\n\nThis repair bot recovers your ship''s hull in 90 seconds.\n\nOnly one of these items is allowed per configuration.',
@@ -4688,8 +4743,8 @@ VALUES (1,
         20,
         1,
         1,
-        0), (
-        168,
+        0),
+       (168,
         'BOOTY-KEY',
         5,
         'No description available.',
@@ -4697,8 +4752,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        169,
+        1),
+       (169,
         'BOOTY-KEY-BLUE',
         5,
         'No description available.',
@@ -4706,8 +4761,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        170,
+        1),
+       (170,
         'BOOTY-KEY-RED',
         5,
         'No description available.',
@@ -4715,8 +4770,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        171,
+        1),
+       (171,
         'EXTRA-ENERGY',
         5,
         'No description available.',
@@ -4724,8 +4779,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        172,
+        1),
+       (172,
         'JUMP-VOUCHERS',
         5,
         'No description available.',
@@ -4733,8 +4788,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        173,
+        1),
+       (173,
         'LOGFILE',
         5,
         'No description available.',
@@ -4742,8 +4797,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        174,
+        1),
+       (174,
         'PET',
         5,
         'No description available.',
@@ -4751,8 +4806,8 @@ VALUES (1,
         0,
         1,
         1,
-        1), (
-        175,
+        1),
+       (175,
         'PET-10',
         6,
         'No description available.',
@@ -4760,8 +4815,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        176,
+        0),
+       (176,
         'G-HP1',
         6,
         'P.E.T. hull upgrade\n\nReinforces your P.E.T.''s hull and increases its HP',
@@ -4769,8 +4824,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        177,
+        0),
+       (177,
         'Fuel 100',
         6,
         'P.E.T. fuel\n\nYour P.E.T. only runs when it''s got fuel.',
@@ -4778,8 +4833,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        178,
+        0),
+       (178,
         'CSR-02',
         6,
         'Combo Repair Gear (Level: 1)\n\nEffect: Repairs 10000 HP per second.\nDuration: 5 seconds\nDeflection chance: 65%\nConsumption: 200 Fuel\n\nRepairs your ship during flight. Uses extra fuel for each repair.\n\nProtects your pet from attacks.',
@@ -4787,8 +4842,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        179,
+        0),
+       (179,
         'CGM-02',
         6,
         'Combo Guard Mode Gear (Level: 1)\n\nDeflection chance: 65%\nAdditional consumption: 35% Extra-Fuel\n\nConnects the Guard Mode to the new Insta Shield. Uses 35% more fuel when it''s been activated.\n\nGuard mode with an extra shield for the P.E.T.\n',
@@ -4796,8 +4851,8 @@ VALUES (1,
         21,
         0,
         1,
-        0), (
-        180,
+        0),
+       (180,
         'G-AL1',
         6,
         'Auto-looter (Level: 1)\n\nRange: 700\n\nOnce you activate this P.E.T gear, it will automatically collect bonus boxes and cargo boxes within close range.\n\nYour P.E.T can only be attacked by other players while it is collecting loot. Aliens cannot attack it.',
@@ -4805,8 +4860,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        181,
+        0),
+       (181,
         'G-AR1',
         6,
         'Auto-resource collector (Level: 1)\n\nRange: 700\n\nOnce you activate this P.E.T. gear, your P.E.T will automatically collect resources within close range.\n\nYour P.E.T can only be attacked by other players while collecting loot. Aliens cannot attack it.\n',
@@ -4814,8 +4869,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        182,
+        0),
+       (182,
         'G-EL1',
         6,
         'Enemy locator (Level: 1)\n\nRange: 2000\n\nOutfit your P.E.T with this gear and it''ll automatically pinpoint every alien in the current star system.',
@@ -4823,8 +4878,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        183,
+        0),
+       (183,
         'G-RL1',
         6,
         'Resource locator (Level: 1)\n\nRange: 2000\n\nWith this gear on board your P.E.T., it will be able to track down nearby resources in the current star system.',
@@ -4832,8 +4887,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        184,
+        0),
+       (184,
         'G-TRA1',
         6,
         'Cargo trader (Level: 1)\n\nTrade bonus: +5%\n\nThe cargo trader makes it possible for your P.E.T. to trade cargo from anywhere in the galaxy at anytime.',
@@ -4841,8 +4896,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        185,
+        0),
+       (185,
         'G-REP1',
         6,
         'P.E.T. repairer (Level: 1)\n\nEffect: Repairs 2000 HP per second.\nDuration: 120 seconds\n\nThe P.E.T. repairer will fix your P.E.T.\n\nNot made for use in combat.\n',
@@ -4850,8 +4905,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        186,
+        0),
+       (186,
         'G-KK1',
         6,
         'Kamikaze Detonator (Level: 1)\n\nEffect: Causes 25000 splash damage upon exploding.\nRadius: 250\n\nWhen your P.E.T. or ship is close to being destroyed, the Kamikaze Detonator will start the self-destruct sequence and explode, thereby taking out all enemies in the immediate vicinity.\n\nAfter the detonator has gone off, your P.E.T. will be massively damaged and have to be repaired.',
@@ -4859,8 +4914,8 @@ VALUES (1,
         21,
         1,
         1,
-        0), (
-        187,
+        0),
+       (187,
         'AI-CR1',
         6,
         'Cargo protocol (Level: 1)\n\nEffect: Increases the cargo space by 3%\n\nThe cargo protocol expands your cargo bay.',
@@ -4868,8 +4923,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        188,
+        0),
+       (188,
         'AI-R1',
         6,
         'Radar protocol (Level: 1)\n\nEffect: Increases your P.E.T. radar''s range by 2%\n\nThe radar protocol extends your P.E.T. radar''s range. It will also increase the effectiveness of your P.E.T. collector and enemy locator gear.',
@@ -4877,8 +4932,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        189,
+        0),
+       (189,
         'AI-S1',
         6,
         'Salvage protocol (Level: 1)\n\nEffect: Increases the reward from boxes by 1%\n\nThe salvage protocol increases rewards for bonus and cargo boxes collected by your P.E.T.',
@@ -4886,8 +4941,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        190,
+        0),
+       (190,
         'AI-SM1',
         6,
         'Shield protocol (Level: 1)\n\nEffect: Increases the shield strength by 1%\n\nThe shield protocol boosts your P.E.T.''s shield power.',
@@ -4895,8 +4950,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        191,
+        0),
+       (191,
         'AI-LM1',
         6,
         'Laser Gun Protocol (Level: 1)\n\nEffect: Increases laser damage by 1%\n\nThe Laser Gun Protocol lets your P.E.T. cause more laser damage.',
@@ -4904,8 +4959,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        192,
+        0),
+       (192,
         'AI-AIM1',
         6,
         'Targeting protocol (Level: 1)\n\nEffect: Increases laser precision by 1%\n\nThe targeting protocol improves the accuracy of your P.E.T''s lasers.',
@@ -4913,8 +4968,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        193,
+        0),
+       (193,
         'AI-E1',
         6,
         'Evasion protocol (Level: 1)\n\nEffect: Decreases enemy hit chances by 1%\n\nThe evasion protocol makes it harder for your enemies to destroy your P.E.T. Their chances of scoring a hit will be lower.',
@@ -4922,8 +4977,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        194,
+        0),
+       (194,
         'AI-HP1',
         6,
         'HP protocol (Level: 1)\n\nEffect: Increases the hit points by 1%\n\nThe HP protocol gives your P.E.T more HP.',
@@ -4931,8 +4986,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        195,
+        0),
+       (195,
         'AI-AL1',
         6,
         'Alien protocol (Level: 1)\n\nEffect: Increases damage to aliens by 1%\n\nThe alien protocol enables your P.E.T. to inflict more damage to aliens.',
@@ -4940,8 +4995,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        196,
+        0),
+       (196,
         'AI-ECO1',
         6,
         'Fuel protocol (Level: 1)\n\nEffect: Decreases fuel consumption by 1%\n\nWith the fuel protocol, your P.E.T. will use less fuel.',
@@ -4949,8 +5004,8 @@ VALUES (1,
         22,
         1,
         1,
-        0), (
-        197,
+        0),
+       (197,
         'Havoc',
         7,
         'No description available.',
@@ -4958,8 +5013,8 @@ VALUES (1,
         23,
         1,
         1,
-        1), (
-        198,
+        1),
+       (198,
         'Hercules',
         7,
         'No description available.',
@@ -4967,8 +5022,8 @@ VALUES (1,
         23,
         1,
         1,
-        1), (
-        199,
+        1),
+       (199,
         'Flax',
         7,
         'Flax\n\nStarter drone with one slot.',
@@ -4976,8 +5031,8 @@ VALUES (1,
         0,
         0,
         1,
-        0), (
-        200,
+        0),
+       (200,
         'Iris',
         7,
         'Iris\n\nPower drone with two slots.',
@@ -4985,8 +5040,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        201,
+        0),
+       (201,
         'Apis',
         7,
         'Apis\n\nApis drone with two slots.',
@@ -4994,8 +5049,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        202,
+        0),
+       (202,
         'Zeus',
         7,
         'Zeus\n\nZeus drone with two slots.',
@@ -5003,8 +5058,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        203,
+        0),
+       (203,
         'F-01-TU',
         7,
         '',
@@ -5012,8 +5067,8 @@ VALUES (1,
         24,
         0,
         1,
-        0), (
-        204,
+        0),
+       (204,
         'F-02-AR',
         7,
         '',
@@ -5021,8 +5076,8 @@ VALUES (1,
         24,
         0,
         1,
-        0), (
-        205,
+        0),
+       (205,
         'F-03-LA',
         7,
         'No description available.',
@@ -5030,8 +5085,8 @@ VALUES (1,
         24,
         1,
         0,
-        0), (
-        206,
+        0),
+       (206,
         'F-04-ST',
         7,
         'Star Formation\n\nAugment your drone control unit with the Star Formation.\n\nIncreases rocket damage by 25%, but rocket main reload time increases by 33%, as well.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5039,8 +5094,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        207,
+        0),
+       (207,
         'F-05-PI',
         7,
         'Pincer Formation\n\nAugment your drone control unit with the Pincer Formation.\n\nIncreases laser damage by 3% against other players and provides an additional 5% honor point bonus. However, it reduces shield penetration by 10%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5048,8 +5103,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        208,
+        0),
+       (208,
         'F-06-DA',
         7,
         'Double Arrow Formation\n\nAugment your drone control unit with the Double Arrow Formation.\n\nIncreases shield penetration by 10%, but reduces shield power by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5057,8 +5112,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        209,
+        0),
+       (209,
         'F-07-DI',
         7,
         'Diamond Formation\n\nAugment your drone control unit with the Diamond Formation.\n\nYour shield regenerates 1% of your max shield power per second, up to a maximum of 5,000 per second. But hit points are reduced by 30%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5066,8 +5121,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        210,
+        0),
+       (210,
         'F-08-CH',
         7,
         'Chevron Formation\n\nAugment your drone control unit with the Chevron Formation.\n\nIncreases rocket damage by 50%, but reduces ship hit points by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5075,8 +5130,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        211,
+        0),
+       (211,
         'F-09-MO',
         7,
         'Moth Formation\n\nAugment your drone control unit with the Moth Formation.\n\nIncreases shield penetration by 20%. Hit points are also increased by 20%. But it weakens your shield strength at a rate of 1% per second.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5084,8 +5139,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        212,
+        0),
+       (212,
         'F-10-CR',
         7,
         'Crab Formation\n\nAugment your drone control unit with the Crab Formation.\n\nIncreases shield absorption by 20%, but reduces speed by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5093,8 +5148,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        213,
+        0),
+       (213,
         'F-11-HE',
         7,
         'Heart Formation\n\nAugment your drone control unit with the Heart Formation.\n\nIncreases your shield power by 10% and your hit points by 20%. Laser damage is, however, reduced by 5%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5102,8 +5157,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        214,
+        0),
+       (214,
         'F-12-BA',
         7,
         'Barrage Formation\n\nAugment your drone control unit with the Barrage Formation.\n\nIncreases laser damage to NPCs by 5% and provides an additional 5% XP from NPC kills. Shield Leech will, however, be reduced by 15%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5111,8 +5166,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        215,
+        0),
+       (215,
         'F-13-BT',
         7,
         'Bat Formation\n\nAugment your drone control unit with the Bat Formation.\n\nIncrease damage to NPCs by 8% and earn 8% more XP; however, your speed will be reduced by 15%.\n\nAs long as you have 6 or more drones, you can use this formation any time after you‘ve purchased it. This formation is not available all the time, so grab it while you can!',
@@ -5120,8 +5175,8 @@ VALUES (1,
         24,
         1,
         1,
-        1), (
-        216,
+        1),
+       (216,
         'F-14-RG',
         7,
         'Ring Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Ring Formation.\n\nShield points are increased by 120%; however, speed is reduced by 5%, laser damage is reduced by 25%, and cooldown times for rockets and rocket launchers are increased by 25%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5129,8 +5184,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        217,
+        0),
+       (217,
         'F-15-DL',
         7,
         'Drill Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Drill Formation.\n\nLaser damage is increased by 20%; however, shield points are reduced by 25%, shield spread by 5%, and speed by 5%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5138,8 +5193,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        218,
+        0),
+       (218,
         'F-16-VT',
         7,
         'Veteran Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Veteran Formation.\n\nHonor is increased by 20%; however, laser damage, hit points, and shield points are all decreased by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5147,8 +5202,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        219,
+        0),
+       (219,
         'F-17-DM',
         7,
         'Dome Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Dome Formation.\n\nShield points are increased by 30% and regenerate by 0.5% per second. Cooldown times for rockets and rocket launchers are reduced by 25%; however, laser damage and speed are both reduced by 50%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5156,8 +5211,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        220,
+        0),
+       (220,
         'F-18-DW',
         7,
         'Wheel Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Wheel Formation.\n\nSpeed is increased by 5%; however, laser damage is reduced by 20%, and this formation drains shields by 5% per second.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5165,8 +5220,8 @@ VALUES (1,
         24,
         1,
         1,
-        0), (
-        221,
+        0),
+       (221,
         'F-19-X',
         7,
         'X Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the X Formation.\n\n-100% honor rewarded\n\nYour lasers cause no damage to enemy players\n\n+5% Laser Damage against aliens\n\n+5% XP from aliens\n\n+8% HP\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5174,8 +5229,8 @@ VALUES (1,
         24,
         0,
         1,
-        0), (
-        222,
+        0),
+       (222,
         'F-20-WV',
         7,
         'Wave Formation\n\nThis formation has a special look in the 3D client.\n\nJazz up your drones with the Wave Formation!\n\nDrones will make waves, but otherwise this formation grants neither benefits nor penalties.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
@@ -5183,8 +5238,8 @@ VALUES (1,
         24,
         0,
         1,
-        0), (
-        223,
+        0),
+       (223,
         'Prismatic Socket',
         8,
         'Prismatic Socket\n\nWith this prismatic socket, slack joints and jamming are a thing of the past! It''s also used to produce high-tech items in the Assembly.',
@@ -5192,8 +5247,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        224,
+        0),
+       (224,
         'High-Frequency Cable',
         8,
         'High-Frequency Cable\n\nThis nano-based high-frequency cable is essential for signaling and measurement, and is used to produce high-tech items in the Assembly.',
@@ -5201,8 +5256,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        225,
+        0),
+       (225,
         'Hybrid Processor',
         8,
         'Hybrid Processor\n\nEven the Kristallon have taken note of this small gadget''s unique processing power. It''s used to produce high-tech items in the Assembly.',
@@ -5210,8 +5265,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        226,
+        0),
+       (226,
         'Micro-transistors',
         8,
         'Micro-transistors\n\nNo micro-transistors, no modern microelectronics! These small units are everywhere, and are used to produce high-tech items in the Assembly.',
@@ -5219,8 +5274,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        227,
+        0),
+       (227,
         'Nano Condenser',
         8,
         'Nano Condenser\n\nWith its unmatched memory capacities, the nano condenser is a must for every space ship. It''s used to produce high-tech items in the Assembly.',
@@ -5228,8 +5283,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        228,
+        0),
+       (228,
         'Nano Case',
         8,
         'Nano Case\n\nIt may not look like much, but this nano case will protect your sensitive electronics, no matter what. It''s also used to produce high-tech items in the Assembly.',
@@ -5237,8 +5292,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        229,
+        0),
+       (229,
         'LGF',
         8,
         'Log-disks\n\nLog-disks can be exchanged for pilot points.',
@@ -5246,8 +5301,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        230,
+        0),
+       (230,
         'BK-100',
         8,
         'Green Booty Key\n\nUsed to open pirate booty and collect the valuable treasure contained within.',
@@ -5255,8 +5310,8 @@ VALUES (1,
         0,
         1,
         1,
-        0), (
-        231,
+        0),
+       (231,
         'BK-101',
         8,
         'No description available.',
@@ -5264,8 +5319,8 @@ VALUES (1,
         0,
         1,
         0,
-        0), (
-        232,
+        0),
+       (232,
         'BK-102',
         8,
         'No description available.',
@@ -5273,8 +5328,8 @@ VALUES (1,
         0,
         1,
         0,
-        0), (
-        233,
+        0),
+       (233,
         'Lottery Euro',
         8,
         'No description available.',
@@ -5282,8 +5337,8 @@ VALUES (1,
         0,
         1,
         0,
-        0), (
-        234,
+        0),
+       (234,
         'Apis Part',
         8,
         'No description available.',
@@ -5291,8 +5346,8 @@ VALUES (1,
         25,
         1,
         0,
-        0), (
-        235,
+        0),
+       (235,
         'Zeus Part',
         8,
         'No description available.',
@@ -5300,8 +5355,8 @@ VALUES (1,
         25,
         1,
         0,
-        0), (
-        236,
+        0),
+       (236,
         'Prometium',
         8,
         'No description available.',
@@ -5309,8 +5364,8 @@ VALUES (1,
         26,
         0,
         0,
-        0), (
-        237,
+        0),
+       (237,
         'Endurium',
         8,
         'No description available.',
@@ -5318,8 +5373,8 @@ VALUES (1,
         26,
         0,
         0,
-        0), (
-        238,
+        0),
+       (238,
         'Terbium',
         8,
         'No description available.',
@@ -5327,8 +5382,8 @@ VALUES (1,
         26,
         0,
         0,
-        0), (
-        239,
+        0),
+       (239,
         'Prometid',
         8,
         'No description available.',
@@ -5336,8 +5391,8 @@ VALUES (1,
         26,
         0,
         0,
-        0), (
-        240,
+        0),
+       (240,
         'Duranium',
         8,
         'No description available.',
@@ -5345,8 +5400,8 @@ VALUES (1,
         26,
         0,
         0,
-        0), (
-        241,
+        0),
+       (241,
         'Xenomit',
         8,
         'No description available.',
@@ -5387,10 +5442,16 @@ VALUES (242, 'Promerium', 8, 'No description available.', 0, 26, 0, 0, 0),
        (270, 'Trittothrin', 8, 'No description available.', 0, 28, 0, 0, 0),
        (271, 'Recipe Default', 8, 'No description available.', 0, 0, 0, 0, 0),
        (272, 'REPM-1', 9, 'Repairs Battle Stations over time.', 0, 0, 0, 0, 0),
-       (273, 'XPM-1', 9, 'This valuable module increases the experience gained by your clan members. The best of both worlds!', 0, 0, 0, 0, 0),
-       (274, 'DEFM-1', 9, 'This crucial module is required for building a Battle Station and provides an invulnerable deflector, whilst active. Get it now!', 0, 0, 0, 0, 0),
+       (273, 'XPM-1', 9,
+        'This valuable module increases the experience gained by your clan members. The best of both worlds!', 0, 0, 0,
+        0, 0),
+       (274, 'DEFM-1', 9,
+        'This crucial module is required for building a Battle Station and provides an invulnerable deflector, whilst active. Get it now!',
+        0, 0, 0, 0, 0),
        (275, 'DMGM-1', 9, 'Increases damage from weapon modules', 0, 0, 0, 0, 0),
-       (276, 'HULM-1', 9, 'This essential module is required for building a Battle Station, provides its hull strength, and can be used to upgrade the HP as well.', 0, 0, 0, 0, 0),
+       (276, 'HULM-1', 9,
+        'This essential module is required for building a Battle Station, provides its hull strength, and can be used to upgrade the HP as well.',
+        0, 0, 0, 0, 0),
        (277, 'HONM-1', 9, 'All Clan members receive more honor points', 0, 0, 0, 0, 0),
        (278, 'LTM-LR', 9, 'Laser Module with limited range.', 0, 0, 0, 0, 0),
        (279, 'LTM-MR', 9, 'Laser Module with average range.', 0, 0, 0, 0, 0),
@@ -5411,16 +5472,17 @@ VALUES (242, 'Promerium', 8, 'No description available.', 0, 26, 0, 0, 0),
 --
 -- Contains simple Key -> Value entries.
 --
-CREATE TABLE `key_value` (
-                             `id`    int          NOT NULL AUTO_INCREMENT,
-                             `name`  varchar(255) NOT NULL DEFAULT '',
-                             `value` varchar(255) NOT NULL DEFAULT '',
+CREATE TABLE `key_value`
+(
+    `id`    int          NOT NULL AUTO_INCREMENT,
+    `name`  varchar(255) NOT NULL DEFAULT '',
+    `value` varchar(255) NOT NULL DEFAULT '',
 
-                             CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains simple Key -> Value entries.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains simple Key -> Value entries.';
 
 -- Initial dump for the `key_value` table.
 
@@ -5428,28 +5490,29 @@ CREATE TABLE `key_value` (
 --
 -- Contains server's levels.
 --
-CREATE TABLE `levels` (
-  `id`      tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `account` bigint   NOT NULL DEFAULT 0
-  COMMENT 'Experience needed for an account to reach this level.',
-  `drone`   smallint NOT NULL DEFAULT -1
-  COMMENT 'Experience needed for a drone to reach this level',
-  `pet`     int      NOT NULL DEFAULT -1
-  COMMENT 'Experience needed for a PET to reach this level.',
-  `damage`  float    NOT NULL DEFAULT 0.0
-  COMMENT 'Damage bonus applied for an item at this level.',
-  `shield`  float    NOT NULL DEFAULT 0.0
-  COMMENT 'Shield bonus applied to an item at this level.',
+CREATE TABLE `levels`
+(
+    `id`      tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `account` bigint   NOT NULL DEFAULT 0
+        COMMENT 'Experience needed for an account to reach this level.',
+    `drone`   smallint NOT NULL DEFAULT -1
+        COMMENT 'Experience needed for a drone to reach this level',
+    `pet`     int      NOT NULL DEFAULT -1
+        COMMENT 'Experience needed for a PET to reach this level.',
+    `damage`  float    NOT NULL DEFAULT 0.0
+        COMMENT 'Damage bonus applied for an item at this level.',
+    `shield`  float    NOT NULL DEFAULT 0.0
+        COMMENT 'Shield bonus applied to an item at this level.',
 
-  CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains server''s levels.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains server''s levels.';
 
 CREATE UNIQUE INDEX `levels_account_idx`
-  ON `levels` (`account`);
+    ON `levels` (`account`);
 
 -- Initial dump for the `levels` table.
 --
@@ -5499,23 +5562,24 @@ VALUES (1, 0, 0, 8000, 0.00, 0.00),
 --
 -- Contains the upgrade costs for each level.
 --
-CREATE TABLE `levels_upgrades` (
-  `id`          int      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `levels_id`   tinyint  NOT NULL
-  COMMENT 'The upgrade level.',
-  `probability` tinyint  NOT NULL DEFAULT 5
-  COMMENT 'Probability level.',
-  `credits`     int      NOT NULL DEFAULT 0
-  COMMENT 'Credits needed to upgrade to this level with given probability.',
-  `uridium`     smallint NOT NULL DEFAULT 0
-  COMMENT 'Uridium needed to upgrade to this level with given probability.',
+CREATE TABLE `levels_upgrades`
+(
+    `id`          int      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `levels_id`   tinyint  NOT NULL
+        COMMENT 'The upgrade level.',
+    `probability` tinyint  NOT NULL DEFAULT 5
+        COMMENT 'Probability level.',
+    `credits`     int      NOT NULL DEFAULT 0
+        COMMENT 'Credits needed to upgrade to this level with given probability.',
+    `uridium`     smallint NOT NULL DEFAULT 0
+        COMMENT 'Uridium needed to upgrade to this level with given probability.',
 
-  CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
+    CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the upgrade costs for each level.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the upgrade costs for each level.';
 
 -- Initial dump for the `levels_upgrades` table.
 --
@@ -5825,24 +5889,25 @@ VALUES (1, 2, 5, 125000, 200),
 --
 -- In game maps.
 --
-CREATE TABLE `maps` (
-  `id`          tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`        varchar(255) NOT NULL DEFAULT ''
-  COMMENT 'Map name.',
-  `factions_id` tinyint      NULL     DEFAULT NULL,
-  `is_pvp`      boolean      NOT NULL DEFAULT false,
-  `is_starter`  boolean      NOT NULL DEFAULT false,
-  `limits`      bigint       NOT NULL DEFAULT 89335319769600,
+CREATE TABLE `maps`
+(
+    `id`          tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`        varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'Map name.',
+    `factions_id` tinyint      NULL     DEFAULT NULL,
+    `is_pvp`      boolean      NOT NULL DEFAULT false,
+    `is_starter`  boolean      NOT NULL DEFAULT false,
+    `limits`      bigint       NOT NULL DEFAULT 89335319769600,
 
-  CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'In game maps.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'In game maps.';
 
 CREATE UNIQUE INDEX `maps_name_idx`
-  ON `maps` (`name`);
+    ON `maps` (`name`);
 
 -- Initial dump for the `maps` table.
 
@@ -5885,26 +5950,27 @@ VALUES (2, '1-2', 1, false, true, 89335319769600),
 --
 -- Many to many relation table.
 --
-CREATE TABLE `maps_npcs` (
-  `id`      tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `maps_id` tinyint NOT NULL
-  COMMENT 'Map ID.',
-  `npcs_id` tinyint NOT NULL
-  COMMENT 'NPC ID.',
-  `amount`  tinyint NOT NULL DEFAULT 0
-  COMMENT 'Amount of NPCs on map',
+CREATE TABLE `maps_npcs`
+(
+    `id`      tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `maps_id` tinyint NOT NULL
+        COMMENT 'Map ID.',
+    `npcs_id` tinyint NOT NULL
+        COMMENT 'NPC ID.',
+    `amount`  tinyint NOT NULL DEFAULT 0
+        COMMENT 'Amount of NPCs on map',
 
-  CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relation table.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relation table.';
 
 CREATE INDEX `maps_npcs_maps_id_idx`
-  ON `maps_npcs` (`maps_id`);
+    ON `maps_npcs` (`maps_id`);
 CREATE INDEX `maps_npcs_npcs_id_idx`
-  ON `maps_npcs` (`npcs_id`);
+    ON `maps_npcs` (`npcs_id`);
 
 -- Initial dump for the `maps_npcs` table.
 
@@ -5996,32 +6062,33 @@ VALUES (1, 1, 1, 50),
 --
 -- Portals on map.
 --
-CREATE TABLE `maps_portals` (
-  `id`              tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `levels_id`       tinyint NOT NULL DEFAULT 1,
-  `maps_id`         tinyint NOT NULL,
-  `position`        bigint  NOT NULL DEFAULT 0
-  COMMENT 'Position on map.',
-  `target_maps_id`  tinyint NOT NULL,
-  `target_position` bigint  NOT NULL DEFAULT 0
-  COMMENT 'Target position.',
-  `is_visible`      boolean NOT NULL DEFAULT true,
-  `is_working`      boolean NOT NULL DEFAULT true,
-  `gfx`             tinyint NOT NULL DEFAULT 1,
+CREATE TABLE `maps_portals`
+(
+    `id`              tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `levels_id`       tinyint NOT NULL DEFAULT 1,
+    `maps_id`         tinyint NOT NULL,
+    `position`        bigint  NOT NULL DEFAULT 0
+        COMMENT 'Position on map.',
+    `target_maps_id`  tinyint NOT NULL,
+    `target_position` bigint  NOT NULL DEFAULT 0
+        COMMENT 'Target position.',
+    `is_visible`      boolean NOT NULL DEFAULT true,
+    `is_working`      boolean NOT NULL DEFAULT true,
+    `gfx`             tinyint NOT NULL DEFAULT 1,
 
-  CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Portals on map.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Portals on map.';
 
 CREATE INDEX `maps_portals_levels_id_idx`
-  ON `maps_portals` (`levels_id`);
+    ON `maps_portals` (`levels_id`);
 CREATE INDEX `maps_portals_maps_id_idx`
-  ON `maps_portals` (`maps_id`);
+    ON `maps_portals` (`maps_id`);
 CREATE INDEX `maps_portals_target_maps_id_idx`
-  ON `maps_portals` (`target_maps_id`);
+    ON `maps_portals` (`target_maps_id`);
 
 -- Initial dump for the `maps_portals` table.
 
@@ -6136,24 +6203,25 @@ VALUES (1, 79456894987500, 8589934594000, 2),
 --
 -- Stations on map.
 --
-CREATE TABLE `maps_stations` (
-  `id`          tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `position`    bigint  NOT NULL DEFAULT 0
-  COMMENT 'Position on map.',
-  `maps_id`     tinyint NULL     DEFAULT NULL,
-  `factions_id` tinyint NULL     DEFAULT NULL,
+CREATE TABLE `maps_stations`
+(
+    `id`          tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `position`    bigint  NOT NULL DEFAULT 0
+        COMMENT 'Position on map.',
+    `maps_id`     tinyint NULL     DEFAULT NULL,
+    `factions_id` tinyint NULL     DEFAULT NULL,
 
-  CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Stations on map.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Stations on map.';
 
 CREATE INDEX `maps_stations_factions_id_idx`
-  ON `maps_stations` (`factions_id`);
+    ON `maps_stations` (`factions_id`);
 CREATE INDEX `maps_stations_maps_id_idx`
-  ON `maps_stations` (`maps_id`);
+    ON `maps_stations` (`maps_id`);
 
 -- Initial dump for the `stations` table.
 
@@ -6168,25 +6236,26 @@ VALUES (1, 4294967297000, 1, 1),
 --
 -- Server moderators.
 --
-CREATE TABLE `moderators` (
-  `id`                  tinyint   NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `accounts_id`         int       NOT NULL,
-  `moderators_roles_id` tinyint   NOT NULL DEFAULT 1
-  COMMENT 'Moderator role.',
-  `date`                timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the account become a moderator.',
+CREATE TABLE `moderators`
+(
+    `id`                  tinyint   NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id`         int       NOT NULL,
+    `moderators_roles_id` tinyint   NOT NULL DEFAULT 1
+        COMMENT 'Moderator role.',
+    `date`                timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the account become a moderator.',
 
-  CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server moderators.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server moderators.';
 
 CREATE INDEX `moderators_accounts_id_idx`
-  ON `moderators` (`accounts_id`);
+    ON `moderators` (`accounts_id`);
 CREATE INDEX `moderators_moderators_roles_id_idx`
-  ON `moderators` (`moderators_roles_id`);
+    ON `moderators` (`moderators_roles_id`);
 
 -- Initial dump for the `moderators` table.
 
@@ -6194,24 +6263,25 @@ CREATE INDEX `moderators_moderators_roles_id_idx`
 --
 -- Logged events made by moderators.
 --
-CREATE TABLE `moderators_logs` (
-  `id`            int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `moderators_id` tinyint      NOT NULL,
-  `date`          timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `type`          varchar(255) NOT NULL DEFAULT '',
-  `text`          text         NOT NULL,
+CREATE TABLE `moderators_logs`
+(
+    `id`            int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `moderators_id` tinyint      NOT NULL,
+    `date`          timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `type`          varchar(255) NOT NULL DEFAULT '',
+    `text`          text         NOT NULL,
 
-  CONSTRAINT `moderators_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `moderators_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Logged events made by moderators.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Logged events made by moderators.';
 
 CREATE INDEX `moderators_logs_moderators_id_idx`
-  ON `moderators_logs` (`moderators_id`);
+    ON `moderators_logs` (`moderators_id`);
 CREATE INDEX `moderators_logs_type_idx`
-  ON `moderators_logs` (`type`);
+    ON `moderators_logs` (`type`);
 
 -- Initial dump for the `moderators_logs` table.
 
@@ -6219,22 +6289,23 @@ CREATE INDEX `moderators_logs_type_idx`
 --
 -- Moderator's permissions roles.
 --
-CREATE TABLE `moderators_roles` (
-  `id`                  tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`                varchar(255) NOT NULL,
-  `moderators_roles_id` tinyint      NULL     DEFAULT NULL
-  COMMENT 'Parent role.',
-  `priority`            tinyint      NOT NULL DEFAULT 1,
+CREATE TABLE `moderators_roles`
+(
+    `id`                  tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`                varchar(255) NOT NULL,
+    `moderators_roles_id` tinyint      NULL     DEFAULT NULL
+        COMMENT 'Parent role.',
+    `priority`            tinyint      NOT NULL DEFAULT 1,
 
-  CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Moderator''s roles.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Moderator''s roles.';
 
 CREATE INDEX `moderators_roles_name_idx`
-  ON `moderators_roles` (`name`);
+    ON `moderators_roles` (`name`);
 
 -- Initial dump for the `moderators_roles` table.
 
@@ -6249,24 +6320,25 @@ VALUES (1, 'Chat moderator', NULL, 0),
 --
 -- Moderator roles' permissions
 --
-CREATE TABLE `moderators_roles_permissions` (
-  `id`                  tinyint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `moderators_roles_id` tinyint NOT NULL,
-  `permissions_id`      tinyint NOT NULL,
-  `is_enabled`          boolean NULL     DEFAULT NULL
-  COMMENT 'Enabled value, null = inherited',
+CREATE TABLE `moderators_roles_permissions`
+(
+    `id`                  tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `moderators_roles_id` tinyint NOT NULL,
+    `permissions_id`      tinyint NOT NULL,
+    `is_enabled`          boolean NULL DEFAULT NULL
+        COMMENT 'Enabled value, null = inherited',
 
-  CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
+    CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Moderator roles'' permissions';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Moderator roles'' permissions';
 
 CREATE INDEX `moderators_roles_permissions_moderators_roles_id_idx`
-  ON `moderators_roles_permissions` (`moderators_roles_id`);
+    ON `moderators_roles_permissions` (`moderators_roles_id`);
 CREATE INDEX `moderators_roles_permissions_permissions_id_idx`
-  ON `moderators_roles_permissions` (`permissions_id`);
+    ON `moderators_roles_permissions` (`permissions_id`);
 
 -- Initial dump for the `moderators_roles_permissions` table.
 
@@ -6291,25 +6363,26 @@ VALUES (1, 1, 14, true),
 --
 -- Server news.
 --
-CREATE TABLE `news` (
-  `id`     smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `image`  varchar(255) NOT NULL DEFAULT '',
-  `title`  varchar(255) NOT NULL DEFAULT '',
-  `teaser` varchar(255) NOT NULL DEFAULT '',
-  `text`   text         NOT NULL,
+CREATE TABLE `news`
+(
+    `id`     smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `image`  varchar(255) NOT NULL DEFAULT '',
+    `title`  varchar(255) NOT NULL DEFAULT '',
+    `teaser` varchar(255) NOT NULL DEFAULT '',
+    `text`   text         NOT NULL,
 
-  CONSTRAINT `news_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `news_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server news.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server news.';
 
 CREATE INDEX `news_title`
-  ON `news` (`title`);
+    ON `news` (`title`);
 CREATE INDEX `news_date`
-  ON `news` (`date`);
+    ON `news` (`date`);
 
 -- Initial dump for the `news` table.
 
@@ -6317,28 +6390,29 @@ CREATE INDEX `news_date`
 --
 -- Server NPCs.
 --
-CREATE TABLE `npcs` (
-  `id`                tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`              varchar(255) NOT NULL DEFAULT '-=[Streuner]=-',
-  `health`            int          NOT NULL DEFAULT 0,
-  `shield`            int          NOT NULL DEFAULT 0,
-  `shield_absorption` tinyint      NOT NULL DEFAULT 0.0,
-  `damage`            int          NOT NULL DEFAULT 0,
-  `speed`             smallint     NOT NULL DEFAULT 0,
-  `gfx`               tinyint      NOT NULL DEFAULT 0,
-  `ai`                tinyint      NOT NULL DEFAULT 1,
+CREATE TABLE `npcs`
+(
+    `id`                tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`              varchar(255) NOT NULL DEFAULT '-=[Streuner]=-',
+    `health`            int          NOT NULL DEFAULT 0,
+    `shield`            int          NOT NULL DEFAULT 0,
+    `shield_absorption` tinyint      NOT NULL DEFAULT 0.0,
+    `damage`            int          NOT NULL DEFAULT 0,
+    `speed`             smallint     NOT NULL DEFAULT 0,
+    `gfx`               tinyint      NOT NULL DEFAULT 0,
+    `ai`                tinyint      NOT NULL DEFAULT 1,
 
-  CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server NPCS.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server NPCS.';
 
 CREATE INDEX `npcs_name`
-  ON `npcs` (`name`);
+    ON `npcs` (`name`);
 CREATE INDEX `npcs_gfx`
-  ON `npcs` (`gfx`);
+    ON `npcs` (`gfx`);
 
 -- Initial dump for the `npcs` table.
 
@@ -6429,22 +6503,23 @@ VALUES (1, '-=[Streuner]=-', 800, 400, 80, 15, 0, 84, 1),
 --
 -- Server permissions.
 --
-CREATE TABLE `permissions` (
-  `id`       tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`     varchar(255) NOT NULL,
-  `category` varchar(255) NOT NULL,
+CREATE TABLE `permissions`
+(
+    `id`       tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`     varchar(255) NOT NULL,
+    `category` varchar(255) NOT NULL,
 
-  CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server permissions.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server permissions.';
 
 CREATE INDEX `permissions_name_idx`
-  ON `permissions` (`name`);
+    ON `permissions` (`name`);
 CREATE INDEX `permissions_category_idx`
-  ON `permissions` (`category`);
+    ON `permissions` (`category`);
 
 -- Initial dump for the `permissions` table.
 
@@ -6473,29 +6548,30 @@ VALUES (1, 'create_newsletter', 'clan'),
 --
 -- In game quests.
 --
-CREATE TABLE `quests` (
-  `id`          smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `levels_id`   tinyint      NOT NULL DEFAULT 1
-  COMMENT 'Level required to unlock this quest.',
-  `quests_id`   smallint     NULL     DEFAULT NULL
-  COMMENT 'Quest required to complete in order to unlock this quest.',
-  `factions_id` tinyint      NULL     DEFAULT NULL
-  COMMENT 'Faction required to unlock this quest.',
-  `name`        varchar(255) NOT NULL DEFAULT '',
+CREATE TABLE `quests`
+(
+    `id`          smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `levels_id`   tinyint      NOT NULL DEFAULT 1
+        COMMENT 'Level required to unlock this quest.',
+    `quests_id`   smallint     NULL     DEFAULT NULL
+        COMMENT 'Quest required to complete in order to unlock this quest.',
+    `factions_id` tinyint      NULL     DEFAULT NULL
+        COMMENT 'Faction required to unlock this quest.',
+    `name`        varchar(255) NOT NULL DEFAULT '',
 
-  CONSTRAINT `quests_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `quests_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'In game quests.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'In game quests.';
 
 CREATE INDEX `quests_name`
-  ON `quests` (`name`);
+    ON `quests` (`name`);
 CREATE INDEX `quests_levels_id`
-  ON `quests` (`levels_id`);
+    ON `quests` (`levels_id`);
 CREATE INDEX `quests_quests_id`
-  ON `quests` (`quests_id`);
+    ON `quests` (`quests_id`);
 
 -- Initial dump for the `quests` table.
 
@@ -6503,26 +6579,27 @@ CREATE INDEX `quests_quests_id`
 --
 -- Quest's conditions.
 --
-CREATE TABLE `quests_conditions` (
-  `id`                   int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `quests_conditions_id` int          NULL     DEFAULT NULL
-  COMMENT 'Condition needed to unlock this condition.',
-  `quests_id`            smallint     NOT NULL,
-  `type`                 tinyint      NOT NULL DEFAULT 0
-  COMMENT '0 = collect, 1 = destroy, 2 = travel, 3 = one of, 4 = in order, 5 = accomplish before, 6 = on map',
-  `value`                varchar(255) NOT NULL DEFAULT '',
+CREATE TABLE `quests_conditions`
+(
+    `id`                   int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `quests_conditions_id` int          NULL     DEFAULT NULL
+        COMMENT 'Condition needed to unlock this condition.',
+    `quests_id`            smallint     NOT NULL,
+    `type`                 tinyint      NOT NULL DEFAULT 0
+        COMMENT '0 = collect, 1 = destroy, 2 = travel, 3 = one of, 4 = in order, 5 = accomplish before, 6 = on map',
+    `value`                varchar(255) NOT NULL DEFAULT '',
 
-  CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Quest''s conditions.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Quest''s conditions.';
 
 CREATE INDEX `quests_conditions_quests_conditions_id_idx`
-  ON `quests_conditions` (`quests_conditions_id`);
+    ON `quests_conditions` (`quests_conditions_id`);
 CREATE INDEX `quests_conditions_quests_id_idx`
-  ON `quests_conditions` (`quests_id`);
+    ON `quests_conditions` (`quests_id`);
 
 -- Initial dump for the `quests_conditions` table.
 
@@ -6530,18 +6607,19 @@ CREATE INDEX `quests_conditions_quests_id_idx`
 --
 -- Contains the rank system.
 --
-CREATE TABLE `ranks` (
-  `id`         tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`       varchar(255) NOT NULL DEFAULT '',
-  `percentaje` float        NOT NULL DEFAULT 0.0,
-  `is_public`  boolean      NOT NULL DEFAULT true,
+CREATE TABLE `ranks`
+(
+    `id`         tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`       varchar(255) NOT NULL DEFAULT '',
+    `percentaje` float        NOT NULL DEFAULT 0.0,
+    `is_public`  boolean      NOT NULL DEFAULT true,
 
-  CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the rank system.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the rank system.';
 
 -- Initial dump for the `ranks` table.
 --
@@ -6573,26 +6651,27 @@ VALUES (1, 'Basic Space Pilot', 20.00, 1),
 --
 -- All rewards available so there's no need of JSON.
 --
-CREATE TABLE `rewards` (
-  `id`          smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `items_id`    smallint     NOT NULL
-  COMMENT 'Item to award.',
-  `amount`      int          NOT NULL
-  COMMENT 'Amount of items to award.',
-  `probability` float        NOT NULL DEFAULT 100.00
-  COMMENT 'Probability of awarding this item',
-  `comment`     varchar(255) NULL     DEFAULT NULL
-  COMMENT 'Comment of the reward.',
+CREATE TABLE `rewards`
+(
+    `id`          smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `items_id`    smallint     NOT NULL
+        COMMENT 'Item to award.',
+    `amount`      int          NOT NULL
+        COMMENT 'Amount of items to award.',
+    `probability` float        NOT NULL DEFAULT 100.00
+        COMMENT 'Probability of awarding this item',
+    `comment`     varchar(255) NULL     DEFAULT NULL
+        COMMENT 'Comment of the reward.',
 
-  CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'All rewards available so there''s no need of JSON.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'All rewards available so there''s no need of JSON.';
 
 CREATE INDEX `rewards_items_id`
-  ON `rewards` (`items_id`);
+    ON `rewards` (`items_id`);
 
 -- Initial dump for the `rewards` table.
 
@@ -7739,24 +7818,25 @@ VALUES (1, 1, 400, 100, '-=[Streuner]=- npc'),
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_collectables` (
-  `id`              smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `collectables_id` tinyint  NOT NULL
-  COMMENT 'Collectable ID.',
-  `rewards_id`      smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_collectables`
+(
+    `id`              smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `collectables_id` tinyint  NOT NULL
+        COMMENT 'Collectable ID.',
+    `rewards_id`      smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_collectables_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_collectables_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_collectables_npcs_id_idx`
-  ON `rewards_collectables` (`collectables_id`);
+    ON `rewards_collectables` (`collectables_id`);
 CREATE INDEX `rewards_collectables_rewards_id_idx`
-  ON `rewards_collectables` (`rewards_id`);
+    ON `rewards_collectables` (`rewards_id`);
 
 -- Initial dump for the `rewards_collectables` table.
 
@@ -8610,24 +8690,25 @@ VALUES (1, 1, 201),
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_galaxygates` (
-  `id`             tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `galaxygates_id` tinyint  NOT NULL
-  COMMENT 'GalaxyGate ID.',
-  `rewards_id`     smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_galaxygates`
+(
+    `id`             tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `galaxygates_id` tinyint  NOT NULL
+        COMMENT 'GalaxyGate ID.',
+    `rewards_id`     smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_galaxygates_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_galaxygates_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_galaxygates_galaxygates_id_idx`
-  ON `rewards_galaxygates` (`galaxygates_id`);
+    ON `rewards_galaxygates` (`galaxygates_id`);
 CREATE INDEX `rewards_galaxygates_rewards_id_idx`
-  ON `rewards_galaxygates` (`rewards_id`);
+    ON `rewards_galaxygates` (`rewards_id`);
 
 -- Initial dump for the `rewards_galaxygates` table.
 
@@ -8704,24 +8785,25 @@ VALUES (1, 1, 1045),
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_npcs` (
-  `id`         smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `npcs_id`    tinyint  NOT NULL
-  COMMENT 'NPC ID.',
-  `rewards_id` smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_npcs`
+(
+    `id`         smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `npcs_id`    tinyint  NOT NULL
+        COMMENT 'NPC ID.',
+    `rewards_id` smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_npcs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_npcs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_npcs_npcs_id_idx`
-  ON `rewards_npcs` (`npcs_id`);
+    ON `rewards_npcs` (`npcs_id`);
 CREATE INDEX `rewards_npcs_rewards_id_idx`
-  ON `rewards_npcs` (`rewards_id`);
+    ON `rewards_npcs` (`rewards_id`);
 
 INSERT INTO `rewards_npcs` (`id`, `npcs_id`, `rewards_id`)
 VALUES (1, 1, 1),
@@ -8929,24 +9011,25 @@ VALUES (1, 1, 1),
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_quests` (
-  `id`         smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `quests_id`  smallint NOT NULL
-  COMMENT 'Quest ID.',
-  `rewards_id` smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_quests`
+(
+    `id`         smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `quests_id`  smallint NOT NULL
+        COMMENT 'Quest ID.',
+    `rewards_id` smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_quests_quests_id_idx`
-  ON `rewards_quests` (`quests_id`);
+    ON `rewards_quests` (`quests_id`);
 CREATE INDEX `rewards_quests_rewards_id_idx`
-  ON `rewards_quests` (`rewards_id`);
+    ON `rewards_quests` (`rewards_id`);
 
 -- Initial dump for the `rewards_quests` table.
 
@@ -8954,24 +9037,25 @@ CREATE INDEX `rewards_quests_rewards_id_idx`
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_ships` (
-  `id`         tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `ships_id`   tinyint  NOT NULL
-  COMMENT 'Ship ID.',
-  `rewards_id` smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_ships`
+(
+    `id`         tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `ships_id`   tinyint  NOT NULL
+        COMMENT 'Ship ID.',
+    `rewards_id` smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_ships_ships_id_idx`
-  ON `rewards_ships` (`ships_id`);
+    ON `rewards_ships` (`ships_id`);
 CREATE INDEX `rewards_ships_rewards_id_idx`
-  ON `rewards_ships` (`rewards_id`);
+    ON `rewards_ships` (`rewards_id`);
 
 -- Initial dump for the `rewards_ships` table.
 
@@ -9007,24 +9091,25 @@ VALUES (1, 1, 1112),
 --
 -- Many to many relations table.
 --
-CREATE TABLE `rewards_vouchers` (
-  `id`          smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `vouchers_id` smallint NOT NULL
-  COMMENT 'Voucher ID.',
-  `rewards_id`  smallint NOT NULL
-  COMMENT 'Reward to award.',
+CREATE TABLE `rewards_vouchers`
+(
+    `id`          smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `vouchers_id` smallint NOT NULL
+        COMMENT 'Voucher ID.',
+    `rewards_id`  smallint NOT NULL
+        COMMENT 'Reward to award.',
 
-  CONSTRAINT `rewards_vouchers_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `rewards_vouchers_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Many to many relations.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_vouchers_vouchers_id_idx`
-  ON `rewards_vouchers` (`vouchers_id`);
+    ON `rewards_vouchers` (`vouchers_id`);
 CREATE INDEX `rewards_vouchers_rewards_id_idx`
-  ON `rewards_vouchers` (`rewards_id`);
+    ON `rewards_vouchers` (`rewards_id`);
 
 -- Initial dump for the `rewards_vouchers` table.
 
@@ -9032,23 +9117,24 @@ CREATE INDEX `rewards_vouchers_rewards_id_idx`
 --
 -- Server fired events.
 --
-CREATE TABLE `server_logs` (
-  `id`      int          NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `date`    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `level`   varchar(255) NOT NULL DEFAULT 'debug'
-  COMMENT 'Log level (emergency, alert, critical, error, warning, notice, info, debug)',
-  `type`    varchar(255) NOT NULL DEFAULT '',
-  `context` text         NOT NULL,
+CREATE TABLE `server_logs`
+(
+    `id`      int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `date`    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `level`   varchar(255) NOT NULL DEFAULT 'debug'
+        COMMENT 'Log level (emergency, alert, critical, error, warning, notice, info, debug)',
+    `type`    varchar(255) NOT NULL DEFAULT '',
+    `context` text         NOT NULL,
 
-  CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server fired events.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server fired events.';
 
 CREATE INDEX `server_logs_level_idx`
-  ON `server_logs` (`level`);
+    ON `server_logs` (`level`);
 
 -- Initial dump for the `server_logs` table.
 
@@ -9056,45 +9142,46 @@ CREATE INDEX `server_logs_level_idx`
 --
 -- Ships table.
 --
-CREATE TABLE `ships` (
-  `id`         tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `items_id`   smallint NOT NULL,
-  `health`     int      NOT NULL DEFAULT 0
-  COMMENT 'Health points',
-  `speed`      smallint NOT NULL DEFAULT 0
-  COMMENT 'Base speed.',
-  `cargo`      smallint NOT NULL DEFAULT 100
-  COMMENT 'Cargo space.',
-  `batteries`  smallint NOT NULL DEFAULT 1000
-  COMMENT 'Batteries space.',
-  `rockets`    smallint NOT NULL DEFAULT 100
-  COMMENT 'Rockets space.',
-  `lasers`     tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Laser slots.',
-  `hellstorms` tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Laser slots.',
-  `generators` tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Generator slots.',
-  `extras`     tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Extras slots.',
-  `gfx`        tinyint  NOT NULL DEFAULT 0,
+CREATE TABLE `ships`
+(
+    `id`         tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `items_id`   smallint NOT NULL,
+    `health`     int      NOT NULL DEFAULT 0
+        COMMENT 'Health points',
+    `speed`      smallint NOT NULL DEFAULT 0
+        COMMENT 'Base speed.',
+    `cargo`      smallint NOT NULL DEFAULT 100
+        COMMENT 'Cargo space.',
+    `batteries`  smallint NOT NULL DEFAULT 1000
+        COMMENT 'Batteries space.',
+    `rockets`    smallint NOT NULL DEFAULT 100
+        COMMENT 'Rockets space.',
+    `lasers`     tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Laser slots.',
+    `hellstorms` tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Laser slots.',
+    `generators` tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Generator slots.',
+    `extras`     tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Extras slots.',
+    `gfx`        tinyint  NOT NULL DEFAULT 0,
 
-  CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Ships table.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Ships table.';
 
 CREATE INDEX `ships_items_id_idx`
-  ON `ships` (`items_id`);
+    ON `ships` (`items_id`);
 CREATE INDEX `ships_gfx_idx`
-  ON `ships` (`gfx`);
+    ON `ships` (`gfx`);
 
 -- Initial dump for the `ships` table.
 
 INSERT INTO `ships` (`id`, `items_id`, `health`, `speed`, `cargo`, `batteries`, `rockets`, `lasers`, `hellstorms`,
-                   `generators`, `extras`, `gfx`)
+                     `generators`, `extras`, `gfx`)
 VALUES (1, 9, 4000, 320, 100, 1000, 100, 1, 1, 1, 1, 1),
        (2, 10, 8000, 340, 200, 2000, 200, 2, 1, 2, 1, 2),
        (3, 11, 12000, 280, 300, 4000, 400, 3, 1, 5, 2, 3),
@@ -9113,25 +9200,26 @@ VALUES (1, 9, 4000, 320, 100, 1000, 100, 1, 1, 1, 1, 1),
 --
 -- Levels a skill can reach.
 --
-CREATE TABLE `skilltree_levels` (
-  `id`                  smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `skilltree_skills_id` tinyint  NOT NULL
-  COMMENT 'The skill.',
-  `levels_id`           tinyint  NOT NULL
-  COMMENT 'Level to upgrade the skill.',
-  `credits`             int      NOT NULL DEFAULT 10000
-  COMMENT 'Credits needed to upgrade this skill.',
-  `seprom`              smallint NOT NULL DEFAULT 0
-  COMMENT 'Seprom needed to upgrade this skill.',
-  `points`              tinyint  NOT NULL DEFAULT 1
-  COMMENT 'Research points needed to upgrade this skill.',
+CREATE TABLE `skilltree_levels`
+(
+    `id`                  smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `skilltree_skills_id` tinyint  NOT NULL
+        COMMENT 'The skill.',
+    `levels_id`           tinyint  NOT NULL
+        COMMENT 'Level to upgrade the skill.',
+    `credits`             int      NOT NULL DEFAULT 10000
+        COMMENT 'Credits needed to upgrade this skill.',
+    `seprom`              smallint NOT NULL DEFAULT 0
+        COMMENT 'Seprom needed to upgrade this skill.',
+    `points`              tinyint  NOT NULL DEFAULT 1
+        COMMENT 'Research points needed to upgrade this skill.',
 
-  CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Levels a skill can reach.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Levels a skill can reach.';
 
 -- Initial dump for the `skilltree_levels` table.
 
@@ -9139,38 +9227,39 @@ CREATE TABLE `skilltree_levels` (
 --
 -- The available skills.
 --
-CREATE TABLE `skilltree_skills` (
-  `id`           tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`         varchar(255) NOT NULL DEFAULT ''
-  COMMENT 'Skill name.',
-  `description`  text         NOT NULL
-  COMMENT 'Skill description.',
-  `type`         tinyint      NOT NULL DEFAULT 1
-  COMMENT '0 = blue, 1 = purple, 2 = red.',
-  `is_advanced`  boolean      NOT NULL DEFAULT false
-  COMMENT 'Whether it''s an advanced skill or not.',
-  `bonus_type`   varchar(255) NOT NULL DEFAULT 'health'
-  COMMENT 'Type of bonus the skill awards.',
-  `bonus_amount` int          NOT NULL DEFAULT 0
-  COMMENT 'Amount of bonus the skill awards.',
-  `bonus_factor` tinyint      NOT NULL DEFAULT 2
-  COMMENT 'Factor the bonus increases with each upgrade.',
+CREATE TABLE `skilltree_skills`
+(
+    `id`           tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`         varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'Skill name.',
+    `description`  text         NOT NULL
+        COMMENT 'Skill description.',
+    `type`         tinyint      NOT NULL DEFAULT 1
+        COMMENT '0 = blue, 1 = purple, 2 = red.',
+    `is_advanced`  boolean      NOT NULL DEFAULT false
+        COMMENT 'Whether it''s an advanced skill or not.',
+    `bonus_type`   varchar(255) NOT NULL DEFAULT 'health'
+        COMMENT 'Type of bonus the skill awards.',
+    `bonus_amount` int          NOT NULL DEFAULT 0
+        COMMENT 'Amount of bonus the skill awards.',
+    `bonus_factor` tinyint      NOT NULL DEFAULT 2
+        COMMENT 'Factor the bonus increases with each upgrade.',
 
-  CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'The available skills.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'The available skills.';
 
 CREATE INDEX `skilltree_skills_name_idx`
-  ON `skilltree_skills` (`name`);
+    ON `skilltree_skills` (`name`);
 CREATE INDEX `skilltree_skills_type_idx`
-  ON `skilltree_skills` (`type`);
+    ON `skilltree_skills` (`type`);
 CREATE INDEX `skilltree_skills_is_advanced_idx`
-  ON `skilltree_skills` (`is_advanced`);
+    ON `skilltree_skills` (`is_advanced`);
 CREATE INDEX `skilltree_skills_bonus_type_idx`
-  ON `skilltree_skills` (`bonus_type`);
+    ON `skilltree_skills` (`bonus_type`);
 
 -- Initial dump for the `skilltree_skills` table.
 
@@ -9178,24 +9267,25 @@ CREATE INDEX `skilltree_skills_bonus_type_idx`
 --
 -- Requisites needed to unlock a skill upgrade.
 --
-CREATE TABLE `skilltree_unlocks` (
-  `id`                           smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `upgrade_skilltree_levels_id`  smallint NOT NULL
-  COMMENT 'Skill to upgrade.',
-  `required_skilltree_levels_id` smallint NOT NULL
-  COMMENT 'Required skill level to upgrade.',
+CREATE TABLE `skilltree_unlocks`
+(
+    `id`                           smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `upgrade_skilltree_levels_id`  smallint NOT NULL
+        COMMENT 'Skill to upgrade.',
+    `required_skilltree_levels_id` smallint NOT NULL
+        COMMENT 'Required skill level to upgrade.',
 
-  CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Requisites needed to unlock a skill upgrade.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Requisites needed to unlock a skill upgrade.';
 
 CREATE INDEX `skilltree_unlocks_upgrade_skilltree_levels_id_idx`
-  ON `skilltree_unlocks` (`upgrade_skilltree_levels_id`);
+    ON `skilltree_unlocks` (`upgrade_skilltree_levels_id`);
 CREATE INDEX `skilltree_unlocks_required_skilltree_levels_id_idx`
-  ON `skilltree_unlocks` (`required_skilltree_levels_id`);
+    ON `skilltree_unlocks` (`required_skilltree_levels_id`);
 
 -- Initial dump for the `skilltree_unlocks` table.
 
@@ -9203,41 +9293,42 @@ CREATE INDEX `skilltree_unlocks_required_skilltree_levels_id_idx`
 --
 -- Different skylab modules.
 --
-CREATE TABLE `skylab_modules` (
-  `id`                tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`              varchar(255) NOT NULL DEFAULT ''
-  COMMENT 'Module name.',
-  `production_factor` tinyint      NOT NULL DEFAULT 20
-  COMMENT 'Production factor.',
-  `production_base`   smallint     NOT NULL DEFAULT 1000
-  COMMENT 'Production base.',
-  `storage_factor`    smallint     NOT NULL DEFAULT 50
-  COMMENT 'Storage factor.',
-  `storage_base`      smallint     NOT NULL DEFAULT 20000
-  COMMENT 'Storage base.',
-  `upgrade_factor`    tinyint      NOT NULL DEFAULT 35
-  COMMENT 'Upgrade costs factor.',
-  `upgrade_base`      smallint     NOT NULL DEFAULT 5000
-  COMMENT 'Upgrade costs base.',
-  `energy_factor`     tinyint      NOT NULL DEFAULT 10
-  COMMENT 'Energy consumption factor.',
-  `energy_base`       tinyint      NOT NULL DEFAULT 10
-  COMMENT 'Energy consumption base.',
+CREATE TABLE `skylab_modules`
+(
+    `id`                tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`              varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'Module name.',
+    `production_factor` tinyint      NOT NULL DEFAULT 20
+        COMMENT 'Production factor.',
+    `production_base`   smallint     NOT NULL DEFAULT 1000
+        COMMENT 'Production base.',
+    `storage_factor`    smallint     NOT NULL DEFAULT 50
+        COMMENT 'Storage factor.',
+    `storage_base`      smallint     NOT NULL DEFAULT 20000
+        COMMENT 'Storage base.',
+    `upgrade_factor`    tinyint      NOT NULL DEFAULT 35
+        COMMENT 'Upgrade costs factor.',
+    `upgrade_base`      smallint     NOT NULL DEFAULT 5000
+        COMMENT 'Upgrade costs base.',
+    `energy_factor`     tinyint      NOT NULL DEFAULT 10
+        COMMENT 'Energy consumption factor.',
+    `energy_base`       tinyint      NOT NULL DEFAULT 10
+        COMMENT 'Energy consumption base.',
 
-  CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
+    CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Different skylab modules.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Different skylab modules.';
 
 CREATE INDEX `skylab_modules_name_idx`
-  ON `skylab_modules` (`name`);
+    ON `skylab_modules` (`name`);
 
 -- Initial dump for the `skylab_modules` table.
 
 INSERT INTO `skylab_modules` (`id`, `name`, `production_factor`, `production_base`, `storage_factor`, `storage_base`,
-                   `upgrade_factor`, `upgrade_base`, `energy_factor`, `energy_base`)
+                              `upgrade_factor`, `upgrade_base`, `energy_factor`, `energy_base`)
 VALUES (1,
         'Prometium Collector',
         20,
@@ -9247,8 +9338,8 @@ VALUES (1,
         35,
         5000,
         10,
-        10), (
-        2,
+        10),
+       (2,
         'Endurium Collector',
         20,
         1000,
@@ -9257,8 +9348,8 @@ VALUES (1,
         35,
         5000,
         10,
-        10), (
-        3,
+        10),
+       (3,
         'Terbium Collector',
         20,
         1000,
@@ -9267,8 +9358,8 @@ VALUES (1,
         35,
         5000,
         10,
-        10), (
-        4,
+        10),
+       (4,
         'Basic Module',
         0,
         0,
@@ -9277,8 +9368,8 @@ VALUES (1,
         30,
         10000,
         5,
-        20), (
-        5,
+        20),
+       (5,
         'Solar Module',
         20,
         150,
@@ -9287,8 +9378,8 @@ VALUES (1,
         20,
         6000,
         10,
-        10), (
-        6,
+        10),
+       (6,
         'Storage Module',
         0,
         0,
@@ -9297,8 +9388,8 @@ VALUES (1,
         27,
         10000,
         10,
-        10), (
-        7,
+        10),
+       (7,
         'Prometid Refinery',
         10,
         100,
@@ -9307,8 +9398,8 @@ VALUES (1,
         40,
         10000,
         10,
-        15), (
-        8,
+        15),
+       (8,
         'Duranium Refinery',
         10,
         100,
@@ -9317,8 +9408,8 @@ VALUES (1,
         40,
         10000,
         10,
-        15), (
-        9,
+        15),
+       (9,
         'Xenomit Refinery',
         10,
         100,
@@ -9327,8 +9418,8 @@ VALUES (1,
         40,
         10000,
         10,
-        15), (
-        10,
+        15),
+       (10,
         'Promerium Refinery',
         7,
         100,
@@ -9337,8 +9428,8 @@ VALUES (1,
         35,
         5000,
         10,
-        10), (
-        11,
+        10),
+       (11,
         'Seprom Refinery',
         20,
         10,
@@ -9353,21 +9444,22 @@ VALUES (1,
 --
 -- Item production costs.
 --
-CREATE TABLE `techfactory_costs` (
-  `id`                   tinyint  NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `techfactory_items_id` tinyint  NOT NULL
-  COMMENT 'Techfactory Item ID.',
-  `items_id`             smallint NOT NULL
-  COMMENT 'Cost item ID.',
-  `amount`               int      NOT NULL
-  COMMENT 'Amount of items to build the techfactory item.',
+CREATE TABLE `techfactory_costs`
+(
+    `id`                   tinyint  NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `techfactory_items_id` tinyint  NOT NULL
+        COMMENT 'Techfactory Item ID.',
+    `items_id`             smallint NOT NULL
+        COMMENT 'Cost item ID.',
+    `amount`               int      NOT NULL
+        COMMENT 'Amount of items to build the techfactory item.',
 
-  CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Item production costs.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Item production costs.';
 
 -- Initial dump for the `techfactory_costs` table.
 
@@ -9390,105 +9482,121 @@ VALUES (1, 1, 1, 1000000),
 --
 -- Drones that can be build in the tech factory.
 --
-CREATE TABLE `techfactory_drones` (
-  `id`          tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`        varchar(255) NOT NULL
-  COMMENT 'Drone name.',
-  `description` text         NOT NULL
-  COMMENT 'Drone description.',
-  `time`        tinyint      NOT NULL DEFAULT 0
-  COMMENT 'Seconds it takes to produce the drone.',
-  `parts`       tinyint      NOT NULL DEFAULT 45
-  COMMENT 'Necessary parts to build the drone.',
-  `price`       int          NOT NULL
-  COMMENT 'Price for producing the drone.',
-  `factor`      tinyint      NOT NULL DEFAULT 5.00
-  COMMENT 'Factor the price reduces with each new part.',
+CREATE TABLE `techfactory_drones`
+(
+    `id`          tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`        varchar(255) NOT NULL
+        COMMENT 'Drone name.',
+    `description` text         NOT NULL
+        COMMENT 'Drone description.',
+    `time`        tinyint      NOT NULL DEFAULT 0
+        COMMENT 'Seconds it takes to produce the drone.',
+    `parts`       tinyint      NOT NULL DEFAULT 45
+        COMMENT 'Necessary parts to build the drone.',
+    `price`       int          NOT NULL
+        COMMENT 'Price for producing the drone.',
+    `factor`      tinyint      NOT NULL DEFAULT 5.00
+        COMMENT 'Factor the price reduces with each new part.',
 
-  CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Drones that can be build in the tech factory.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Drones that can be build in the tech factory.';
 
 CREATE INDEX `techfactory_drones_name_idx`
-  ON `techfactory_drones` (`name`);
+    ON `techfactory_drones` (`name`);
 
 -- Initial dump for the `techfactory_drones` table.
 
 INSERT INTO `techfactory_drones` (`id`, `name`, `description`, `time`, `parts`, `price`, `factor`)
-VALUES (1, 'Apis', 'Every now and then you can find sections of the Apis drone blueprints in pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each part of the blueprints you find reduces the price of instantly building the drone.', 0, 45, 1100000, 5),
-       (2, 'Zeus', 'Occasionally you can find sections of the Zeus drone blueprints in the pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each piece of the blueprints that you find reduces the price of instantly building the drone.', 0, 45, 1500000, 5);
+VALUES (1, 'Apis',
+        'Every now and then you can find sections of the Apis drone blueprints in pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each part of the blueprints you find reduces the price of instantly building the drone.',
+        0, 45, 1100000, 5),
+       (2, 'Zeus',
+        'Occasionally you can find sections of the Zeus drone blueprints in the pirate booty. Once you have all the sections, you can build the drone. You can also build the drone instantly but this requires Uridium. Each piece of the blueprints that you find reduces the price of instantly building the drone.',
+        0, 45, 1500000, 5);
 
 -- Nanotech Factory items table.
 --
 -- Items that can be build in the tech factory.
 --
-CREATE TABLE `techfactory_items` (
-  `id`                 tinyint      NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `name`               varchar(255) NOT NULL
-  COMMENT 'Item name.',
-  `description`        text         NOT NULL
-  COMMENT 'Item description.',
-  `effect`             text         NOT NULL
-  COMMENT 'Effect description.',
-  `duration`           smallint     NOT NULL DEFAULT 900
-  COMMENT 'Seconds the effect is active.',
-  `cooldown`           smallint     NOT NULL DEFAULT 900
-  COMMENT 'Seconds the effect takes to cooldown.',
-  `time`               int          NOT NULL
-  COMMENT 'Seconds it takes to produce the item.',
-  `free_production`    smallint     NOT NULL
-  COMMENT 'Free production costs.',
-  `instant_production` smallint     NOT NULL
-  COMMENT 'Instant production costs.',
+CREATE TABLE `techfactory_items`
+(
+    `id`                 tinyint      NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `name`               varchar(255) NOT NULL
+        COMMENT 'Item name.',
+    `description`        text         NOT NULL
+        COMMENT 'Item description.',
+    `effect`             text         NOT NULL
+        COMMENT 'Effect description.',
+    `duration`           smallint     NOT NULL DEFAULT 900
+        COMMENT 'Seconds the effect is active.',
+    `cooldown`           smallint     NOT NULL DEFAULT 900
+        COMMENT 'Seconds the effect takes to cooldown.',
+    `time`               int          NOT NULL
+        COMMENT 'Seconds it takes to produce the item.',
+    `free_production`    smallint     NOT NULL
+        COMMENT 'Free production costs.',
+    `instant_production` smallint     NOT NULL
+        COMMENT 'Instant production costs.',
 
-  CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Items that can be build in the tech factory.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Items that can be build in the tech factory.';
 
 CREATE INDEX `techfactory_items_name_idx`
-  ON `techfactory_items` (`name`);
+    ON `techfactory_items` (`name`);
 
 -- Initial dump for the `techfactory_items` table.
 
 INSERT INTO `techfactory_items` (`id`, `name`, `description`, `effect`, `duration`, `cooldown`, `time`,
-                   `instant_production`, `free_production`)
-VALUES (1, 'Energy leech', 'The energy leech transforms 10% of the laser damage you cause into HP and transfers it back to your ship.', 'Transforms 10% of laser damage into HP and transfers it back to your ship', 900, 900, 43200, 3125, 6500),
-       (2, 'Chain impulse', 'An energy pulse which locks onto one target and then onto up to seven other enemies, thereby causing a chain reaction of shield damage to each and every one.', 'Can inflict up to 10,000 damage on a maximum of 7 targets', 0, 60, 21600, 900, 1800),
-       (3, 'Precision targeter', 'The precision targeter is a highly accurate targeting system that increases the hit ratio of normal rockets by 100% for a certain time.', '100% hit ratio', 900, 300, 7200, 250, 500),
-       (4, 'Backup shields', 'The backup shields will bring your ship''s shields back up immediately.', '75,000 shield strength', 0, 120, 43200, 1400, 2800),
-       (5, 'Battle repair bot', 'When the battle repair bot is activated, it repairs 10,000 HP per second. It can be used even in the toughest battle situations.', '10,000 HP', 10, 120, 43200, 1400, 2800);
+                                 `instant_production`, `free_production`)
+VALUES (1, 'Energy leech',
+        'The energy leech transforms 10% of the laser damage you cause into HP and transfers it back to your ship.',
+        'Transforms 10% of laser damage into HP and transfers it back to your ship', 900, 900, 43200, 3125, 6500),
+       (2, 'Chain impulse',
+        'An energy pulse which locks onto one target and then onto up to seven other enemies, thereby causing a chain reaction of shield damage to each and every one.',
+        'Can inflict up to 10,000 damage on a maximum of 7 targets', 0, 60, 21600, 900, 1800),
+       (3, 'Precision targeter',
+        'The precision targeter is a highly accurate targeting system that increases the hit ratio of normal rockets by 100% for a certain time.',
+        '100% hit ratio', 900, 300, 7200, 250, 500),
+       (4, 'Backup shields', 'The backup shields will bring your ship''s shields back up immediately.',
+        '75,000 shield strength', 0, 120, 43200, 1400, 2800),
+       (5, 'Battle repair bot',
+        'When the battle repair bot is activated, it repairs 10,000 HP per second. It can be used even in the toughest battle situations.',
+        '10,000 HP', 10, 120, 43200, 1400, 2800);
 
 -- Trade items table.
 --
 -- Trade items.
 --
-CREATE TABLE `trade_items` (
-  `id`          smallint NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `items_id`    smallint NOT NULL,
-  `accounts_id` int      NULL     DEFAULT NULL,
-  `price`       int      NOT NULL DEFAULT 0,
-  `type`        tinyint  NOT NULL DEFAULT 0
-  COMMENT '0 = hourly, 1 = daily, 3 = weekly',
+CREATE TABLE `trade_items`
+(
+    `id`          smallint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `items_id`    smallint NOT NULL,
+    `accounts_id` int      NULL     DEFAULT NULL,
+    `price`       int      NOT NULL DEFAULT 0,
+    `type`        tinyint  NOT NULL DEFAULT 0
+        COMMENT '0 = hourly, 1 = daily, 3 = weekly',
 
-  CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Trade items.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Trade items.';
 
 CREATE INDEX `trade_items_items_id_idx`
-  ON `trade_items` (`items_id`);
+    ON `trade_items` (`items_id`);
 CREATE INDEX `trade_items_accounts_id_idx`
-  ON `trade_items` (`accounts_id`);
+    ON `trade_items` (`accounts_id`);
 CREATE INDEX `trade_items_type_idx`
-  ON `trade_items` (`type`);
+    ON `trade_items` (`type`);
 
 -- Initial dump for the `trade_items` table.
 
@@ -9496,38 +9604,39 @@ CREATE INDEX `trade_items_type_idx`
 --
 -- Contains the registered users.
 --
-CREATE TABLE `users` (
-  `id`                      int           NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `date`                    timestamp     NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the user registered.',
-  `invitation_codes_id`     smallint      NULL     DEFAULT NULL
-  COMMENT 'Invitation code used to register',
-  `name`                    varchar(255)  NOT NULL DEFAULT ''
-  COMMENT 'User name.',
-  `password`                varchar(255)   NOT NULL DEFAULT ''
-  COMMENT 'Password hash (argon).',
-  `email`                   varchar(255)  NOT NULL DEFAULT ''
-  COMMENT 'User email.',
-  `email_verification_code` varchar(32)   NOT NULL DEFAULT ''
-  COMMENT 'Email verification code.',
-  `email_verification_date` timestamp     NULL     DEFAULT NULL
-  COMMENT 'Date when the user verified its email.',
-  `ip`                      varchar(45) NOT NULL DEFAULT ''
-  COMMENT 'Registration IP.',
+CREATE TABLE `users`
+(
+    `id`                      int          NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `date`                    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the user registered.',
+    `invitation_codes_id`     smallint     NULL     DEFAULT NULL
+        COMMENT 'Invitation code used to register',
+    `name`                    varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'User name.',
+    `password`                varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'Password hash (argon).',
+    `email`                   varchar(255) NOT NULL DEFAULT ''
+        COMMENT 'User email.',
+    `email_verification_code` varchar(32)  NOT NULL DEFAULT ''
+        COMMENT 'Email verification code.',
+    `email_verification_date` timestamp    NULL     DEFAULT NULL
+        COMMENT 'Date when the user verified its email.',
+    `ip`                      varchar(45)  NOT NULL DEFAULT ''
+        COMMENT 'Registration IP.',
 
-  CONSTRAINT `users_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `users_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the login information of the registered users.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the login information of the registered users.';
 
 CREATE UNIQUE INDEX `users_id_idx`
-  ON `users` (`id`);
+    ON `users` (`id`);
 CREATE UNIQUE INDEX `users_name_idx`
-  ON `users` (`name`);
+    ON `users` (`name`);
 CREATE UNIQUE INDEX `users_email_verification_code_idx`
-  ON `users` (`email_verification_code`);
+    ON `users` (`email_verification_code`);
 
 -- Initial dump for `users` table.
 
@@ -9535,20 +9644,21 @@ CREATE UNIQUE INDEX `users_email_verification_code_idx`
 --
 -- Voucher codes.
 --
-CREATE TABLE `vouchers` (
-                            `id`   smallint    NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-                            `code` varchar(32) NOT NULL DEFAULT '',
-                            `max`  tinyint     NOT NULL DEFAULT 1,
+CREATE TABLE `vouchers`
+(
+    `id`   smallint    NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `code` varchar(32) NOT NULL DEFAULT '',
+    `max`  tinyint     NOT NULL DEFAULT 1,
 
-                            CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Voucher codes.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Voucher codes.';
 
 CREATE UNIQUE INDEX `vouchers_code_idx`
-  ON `vouchers` (`code`);
+    ON `vouchers` (`code`);
 
 -- Initial dump for the `vouchers` table.
 
@@ -9556,26 +9666,27 @@ CREATE UNIQUE INDEX `vouchers_code_idx`
 --
 -- Contains the redeem logs for the invitation codes.
 --
-CREATE TABLE `vouchers_redeem_logs` (
-  `id`          int       NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `vouchers_id` smallint  NOT NULL
-  COMMENT 'Voucher code ID.',
-  `accounts_id` int       NOT NULL
-  COMMENT 'Account that redeemed the voucher.',
-  `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
-  COMMENT 'Date when the voucher was redeemed.',
+CREATE TABLE `vouchers_redeem_logs`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `vouchers_id` smallint  NOT NULL
+        COMMENT 'Voucher code ID.',
+    `accounts_id` int       NOT NULL
+        COMMENT 'Account that redeemed the voucher.',
+    `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+        COMMENT 'Date when the voucher was redeemed.',
 
-  CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Contains the redeem logs for the voucher codes.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Contains the redeem logs for the voucher codes.';
 
 CREATE INDEX `vouchers_redeem_logs_vouchers_id_idx`
-  ON `vouchers_redeem_logs` (`vouchers_id`);
+    ON `vouchers_redeem_logs` (`vouchers_id`);
 CREATE INDEX `vouchers_redeem_logs_accounts_id_idx`
-  ON `vouchers_redeem_logs` (`accounts_id`);
+    ON `vouchers_redeem_logs` (`accounts_id`);
 
 -- Initial dump for the `vouchers_redeem_logs` table.
 
@@ -9590,36 +9701,36 @@ CREATE INDEX `vouchers_redeem_logs_accounts_id_idx`
 -- An account belongs to an user.
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_clans` FOREIGN KEY `accounts_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `accounts_clans` FOREIGN KEY `accounts_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_factions` FOREIGN KEY `accounts_factions` (`factions_id`)
-REFERENCES `factions` (`id`);
+    ADD CONSTRAINT `accounts_factions` FOREIGN KEY `accounts_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_accounts_hangars` FOREIGN KEY `accounts_accounts_hangars` (`accounts_hangars_id`)
-REFERENCES `accounts_hangars` (`id`);
+    ADD CONSTRAINT `accounts_accounts_hangars` FOREIGN KEY `accounts_accounts_hangars` (`accounts_hangars_id`)
+        REFERENCES `accounts_hangars` (`id`);
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_levels` FOREIGN KEY `accounts_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `accounts_levels` FOREIGN KEY `accounts_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_ranks` FOREIGN KEY `accounts_ranks` (`ranks_id`)
-REFERENCES `ranks` (`id`);
+    ADD CONSTRAINT `accounts_ranks` FOREIGN KEY `accounts_ranks` (`ranks_id`)
+        REFERENCES `ranks` (`id`);
 
 ALTER TABLE `accounts`
-  ADD CONSTRAINT `accounts_users` FOREIGN KEY `accounts_users` (`users_id`)
-REFERENCES `users` (`id`);
+    ADD CONSTRAINT `accounts_users` FOREIGN KEY `accounts_users` (`users_id`)
+        REFERENCES `users` (`id`);
 
 -- Relations for the `accounts_banks` table.
 --
 -- A bank belongs to an account.
 
 ALTER TABLE `accounts_banks`
-  ADD CONSTRAINT `accounts_banks_accounts` FOREIGN KEY `accounts_banks_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_banks_accounts` FOREIGN KEY `accounts_banks_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_banks_logs` table.
 --
@@ -9628,16 +9739,16 @@ REFERENCES `accounts` (`id`);
 -- A log entry belongs to a bank.
 
 ALTER TABLE `accounts_banks_logs`
-  ADD CONSTRAINT `accounts_banks_logs_accounts` FOREIGN KEY `accounts_banks_logs_accounts` (`from_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_banks_logs_accounts` FOREIGN KEY `accounts_banks_logs_accounts` (`from_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
-  ADD CONSTRAINT `accounts_banks_logs_to_accounts` FOREIGN KEY `accounts_banks_logs_to_accounts` (`to_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_banks_logs_to_accounts` FOREIGN KEY `accounts_banks_logs_to_accounts` (`to_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
-  ADD CONSTRAINT `accounts_banks_logs_accounts_banks` FOREIGN KEY `accounts_banks_logs_accounts_banks` (`accounts_banks_id`)
-REFERENCES `accounts_banks` (`id`);
+    ADD CONSTRAINT `accounts_banks_logs_accounts_banks` FOREIGN KEY `accounts_banks_logs_accounts_banks` (`accounts_banks_id`)
+        REFERENCES `accounts_banks` (`id`);
 
 -- Relations for the `accounts_clans_roles` table.
 --
@@ -9645,20 +9756,20 @@ REFERENCES `accounts_banks` (`id`);
 -- A role.
 
 ALTER TABLE `accounts_clans_roles`
-  ADD CONSTRAINT `accounts_clans_roles_accounts` FOREIGN KEY `accounts_clans_roles_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_clans_roles_accounts` FOREIGN KEY `accounts_clans_roles_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_clans_roles`
-  ADD CONSTRAINT `accounts_clans_roles_clans_roles` FOREIGN KEY `accounts_clans_roles_clans_roles` (`clans_roles_id`)
-REFERENCES `clans_roles` (`id`);
+    ADD CONSTRAINT `accounts_clans_roles_clans_roles` FOREIGN KEY `accounts_clans_roles_clans_roles` (`clans_roles_id`)
+        REFERENCES `clans_roles` (`id`);
 
 -- Relations for the `accounts_configurations` table.
 --
 -- A configuration belongs to an hangar.
 
 ALTER TABLE `accounts_configurations`
-  ADD CONSTRAINT `accounts_configurations_accounts_hangars` FOREIGN KEY `accounts_configurations_accounts_hangars` (`accounts_hangars_id`)
-REFERENCES `accounts_hangars` (`id`);
+    ADD CONSTRAINT `accounts_configurations_accounts_hangars` FOREIGN KEY `accounts_configurations_accounts_hangars` (`accounts_hangars_id`)
+        REFERENCES `accounts_hangars` (`id`);
 
 -- Relations for the `accounts_configurations_accounts_items` table.
 --
@@ -9668,28 +9779,32 @@ REFERENCES `accounts_hangars` (`id`);
 -- A configuration item can be equipped on a pet.
 
 ALTER TABLE `accounts_configurations_accounts_items`
-  ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_configurations` FOREIGN KEY `accounts_configurations_accounts_items_accounts_configurations` (`accounts_configurations_id`)
-REFERENCES `accounts_configurations` (`id`);
+    ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_configurations` FOREIGN KEY `accounts_configurations_accounts_items_accounts_configurations` (`accounts_configurations_id`)
+        REFERENCES `accounts_configurations` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
-  ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_items` FOREIGN KEY `accounts_configurations_accounts_items_accounts_items` (`accounts_items_id`)
-REFERENCES `accounts_items` (`id`);
+    ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_items` FOREIGN KEY `accounts_configurations_accounts_items_accounts_items` (`accounts_items_id`)
+        REFERENCES `accounts_items` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
-  ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_drones` FOREIGN KEY `accounts_configurations_accounts_items_accounts_drones` (`accounts_drones_id`)
-REFERENCES `accounts_drones` (`id`);
+    ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_drones` FOREIGN KEY `accounts_configurations_accounts_items_accounts_drones` (`accounts_drones_id`)
+        REFERENCES `accounts_drones` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
-  ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_pets` FOREIGN KEY `accounts_configurations_accounts_items_accounts_pets` (`accounts_pets_id`)
-REFERENCES `accounts_pets` (`id`);
+    ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_pets` FOREIGN KEY `accounts_configurations_accounts_items_accounts_pets` (`accounts_pets_id`)
+        REFERENCES `accounts_pets` (`id`);
 
 -- Relations for the `accounts_destroys` table.
 --
 -- A destroy history belongs to an account.
 
 ALTER TABLE `accounts_destroys`
-  ADD CONSTRAINT `accounts_destroys_accounts` FOREIGN KEY `accounts_destroys_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_destroys_accounts` FOREIGN KEY `accounts_destroys_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
+
+ALTER TABLE `accounts_destroys`
+    ADD CONSTRAINT `accounts_destroys_ships` FOREIGN KEY `accounts_destroys_ships` (`ships_id`)
+        REFERENCES `ships` (`id`);
 
 -- Relations for the `accounts_drones` table.
 --
@@ -9697,12 +9812,12 @@ REFERENCES `accounts` (`id`);
 -- A drone belongs to an account.
 
 ALTER TABLE `accounts_drones`
-  ADD CONSTRAINT `accounts_drones_accounts` FOREIGN KEY `accounts_drones_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_drones_accounts` FOREIGN KEY `accounts_drones_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_drones`
-  ADD CONSTRAINT `accounts_drones_levels` FOREIGN KEY `accounts_drones_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `accounts_drones_levels` FOREIGN KEY `accounts_drones_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_galaxygates` table.
 --
@@ -9710,12 +9825,12 @@ REFERENCES `levels` (`id`);
 -- A gate belongs to an account.
 
 ALTER TABLE `accounts_galaxygates`
-  ADD CONSTRAINT `accounts_galaxygates_galaxygates` FOREIGN KEY `accounts_galaxygates_galaxygates` (`galaxygates_id`)
-REFERENCES `galaxygates` (`id`);
+    ADD CONSTRAINT `accounts_galaxygates_galaxygates` FOREIGN KEY `accounts_galaxygates_galaxygates` (`galaxygates_id`)
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `accounts_galaxygates`
-  ADD CONSTRAINT `accounts_galaxygates_accounts` FOREIGN KEY `accounts_galaxygates_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_galaxygates_accounts` FOREIGN KEY `accounts_galaxygates_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_hangars` table.
 --
@@ -9723,20 +9838,20 @@ REFERENCES `accounts` (`id`);
 -- An hangar has a ship.
 
 ALTER TABLE `accounts_hangars`
-  ADD CONSTRAINT `accounts_hangars_accounts` FOREIGN KEY `accounts_hangars_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_hangars_accounts` FOREIGN KEY `accounts_hangars_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_hangars`
-  ADD CONSTRAINT `accounts_hangars_accounts_ships` FOREIGN KEY `accounts_hangars_accounts_ships` (`accounts_ships_id`)
-REFERENCES `accounts_ships` (`id`);
+    ADD CONSTRAINT `accounts_hangars_accounts_ships` FOREIGN KEY `accounts_hangars_accounts_ships` (`accounts_ships_id`)
+        REFERENCES `accounts_ships` (`id`);
 
 -- Relations for the `accounts_history` table.
 --
 -- A history belongs to an account.
 
 ALTER TABLE `accounts_history`
-  ADD CONSTRAINT `accounts_history_accounts` FOREIGN KEY `accounts_history_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_history_accounts` FOREIGN KEY `accounts_history_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_items` table.
 --
@@ -9745,16 +9860,16 @@ REFERENCES `accounts` (`id`);
 -- An item has a level.
 
 ALTER TABLE `accounts_items`
-  ADD CONSTRAINT `accounts_items_accounts` FOREIGN KEY `accounts_items_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_items_accounts` FOREIGN KEY `accounts_items_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_items`
-  ADD CONSTRAINT `accounts_items_items` FOREIGN KEY `accounts_items_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `accounts_items_items` FOREIGN KEY `accounts_items_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 ALTER TABLE `accounts_items`
-  ADD CONSTRAINT `accounts_items_levels` FOREIGN KEY `accounts_items_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `accounts_items_levels` FOREIGN KEY `accounts_items_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_messages` table.
 --
@@ -9762,12 +9877,12 @@ REFERENCES `levels` (`id`);
 -- A message goes to an account.
 
 ALTER TABLE `accounts_messages`
-  ADD CONSTRAINT `accounts_messages_to_accounts` FOREIGN KEY `accounts_messages_to_accounts` (`to_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_messages_to_accounts` FOREIGN KEY `accounts_messages_to_accounts` (`to_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_messages`
-  ADD CONSTRAINT `accounts_messages_from_accounts` FOREIGN KEY `accounts_messages_from_accounts` (`from_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_messages_from_accounts` FOREIGN KEY `accounts_messages_from_accounts` (`from_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_pets` table.
 --
@@ -9775,12 +9890,12 @@ REFERENCES `accounts` (`id`);
 -- A pet belongs to an account.
 
 ALTER TABLE `accounts_pets`
-  ADD CONSTRAINT `accounts_pets_accounts` FOREIGN KEY `accounts_pets_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_pets_accounts` FOREIGN KEY `accounts_pets_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_pets`
-  ADD CONSTRAINT `accounts_pets_levels` FOREIGN KEY `accounts_pets_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `accounts_pets_levels` FOREIGN KEY `accounts_pets_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_quests` table.
 --
@@ -9788,20 +9903,20 @@ REFERENCES `levels` (`id`);
 -- A quest is a quest.
 
 ALTER TABLE `accounts_quests`
-  ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_quests`
-  ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
 
 -- Relations for the `accounts_rankings` table.
 --
 -- A rank belongs to an account.
 
 ALTER TABLE `accounts_rankings`
-  ADD CONSTRAINT `accounts_rankings_accounts` FOREIGN KEY `accounts_rankings_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_rankings_accounts` FOREIGN KEY `accounts_rankings_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_ships` table.
 --
@@ -9810,16 +9925,16 @@ REFERENCES `accounts` (`id`);
 -- A ship is located in a map.
 
 ALTER TABLE `accounts_ships`
-  ADD CONSTRAINT `accounts_ships_accounts` FOREIGN KEY `accounts_ships_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_ships_accounts` FOREIGN KEY `accounts_ships_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_ships`
-  ADD CONSTRAINT `accounts_ships_ships` FOREIGN KEY `accounts_ships_ships` (`ships_id`)
-REFERENCES `ships` (`id`);
+    ADD CONSTRAINT `accounts_ships_ships` FOREIGN KEY `accounts_ships_ships` (`ships_id`)
+        REFERENCES `ships` (`id`);
 
 ALTER TABLE `accounts_ships`
-  ADD CONSTRAINT `accounts_ships_maps` FOREIGN KEY `accounts_ships_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `accounts_ships_maps` FOREIGN KEY `accounts_ships_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `accounts_skills` table.
 --
@@ -9828,16 +9943,16 @@ REFERENCES `maps` (`id`);
 -- A skill has a level.
 
 ALTER TABLE `accounts_skills`
-  ADD CONSTRAINT `accounts_skills_accounts` FOREIGN KEY `accounts_skills_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_skills_accounts` FOREIGN KEY `accounts_skills_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skills`
-  ADD CONSTRAINT `accounts_skills_skilltree_skills` FOREIGN KEY `accounts_skills_skilltree_skills` (`skilltree_skills_id`)
-REFERENCES `skilltree_skills` (`id`);
+    ADD CONSTRAINT `accounts_skills_skilltree_skills` FOREIGN KEY `accounts_skills_skilltree_skills` (`skilltree_skills_id`)
+        REFERENCES `skilltree_skills` (`id`);
 
 ALTER TABLE `accounts_skills`
-  ADD CONSTRAINT `accounts_skills_skilltree_levels` FOREIGN KEY `accounts_skills_skilltree_levels` (`skilltree_levels_id`)
-REFERENCES `skilltree_levels` (`id`);
+    ADD CONSTRAINT `accounts_skills_skilltree_levels` FOREIGN KEY `accounts_skills_skilltree_levels` (`skilltree_levels_id`)
+        REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `accounts_skylabs` table.
 --
@@ -9846,24 +9961,24 @@ REFERENCES `skilltree_levels` (`id`);
 -- A skylab belongs to an account.
 
 ALTER TABLE `accounts_skylabs`
-  ADD CONSTRAINT `accounts_skylabs_accounts` FOREIGN KEY `accounts_skylabs_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_skylabs_accounts` FOREIGN KEY `accounts_skylabs_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skylabs`
-  ADD CONSTRAINT `accounts_skylabs_skylab_modules` FOREIGN KEY `accounts_skylabs_skylab_modules` (`skylab_modules_id`)
-REFERENCES `skylab_modules` (`id`);
+    ADD CONSTRAINT `accounts_skylabs_skylab_modules` FOREIGN KEY `accounts_skylabs_skylab_modules` (`skylab_modules_id`)
+        REFERENCES `skylab_modules` (`id`);
 
 ALTER TABLE `accounts_skylabs`
-  ADD CONSTRAINT `accounts_skylabs_levels` FOREIGN KEY `accounts_skylabs_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `accounts_skylabs_levels` FOREIGN KEY `accounts_skylabs_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_techfactories` table.
 --
 -- A techfactory belongs to an account.
 
 ALTER TABLE `accounts_techfactories`
-  ADD CONSTRAINT `accounts_techfactories_accounts` FOREIGN KEY `accounts_techfactories_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_techfactories_accounts` FOREIGN KEY `accounts_techfactories_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_techfactory_items` table.
 --
@@ -9871,20 +9986,24 @@ REFERENCES `accounts` (`id`);
 -- An item is a techfactory item.
 
 ALTER TABLE `accounts_techfactory_items`
-  ADD CONSTRAINT `accounts_techfactory_items_accounts` FOREIGN KEY `accounts_techfactory_items_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_techfactory_items_accounts` FOREIGN KEY `accounts_techfactory_items_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_techfactory_items`
-  ADD CONSTRAINT `accounts_techfactory_items_techfactory_items` FOREIGN KEY `accounts_techfactory_items_techfactory_items` (`techfactory_items_id`)
-REFERENCES `techfactory_items` (`id`);
+    ADD CONSTRAINT `accounts_techfactory_items_techfactory_items` FOREIGN KEY `accounts_techfactory_items_techfactory_items` (`techfactory_items_id`)
+        REFERENCES `techfactory_items` (`id`);
 
 -- Relations for the table `clans`.
 --
 -- A clan belongs to an account.
 
 ALTER TABLE `clans`
-  ADD CONSTRAINT `clans_accounts` FOREIGN KEY `clans_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_accounts` FOREIGN KEY `clans_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
+
+ALTER TABLE `clans`
+    ADD CONSTRAINT `clans_factions` FOREIGN KEY `clans_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `clans_applications` table.
 --
@@ -9892,20 +10011,20 @@ REFERENCES `accounts` (`id`);
 -- An application belongs to an account.
 
 ALTER TABLE `clans_applications`
-  ADD CONSTRAINT `clans_applications_clans` FOREIGN KEY `clans_applications_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_applications_clans` FOREIGN KEY `clans_applications_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_applications`
-  ADD CONSTRAINT `clans_applications_accounts` FOREIGN KEY `clans_applications_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_applications_accounts` FOREIGN KEY `clans_applications_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_banks` table.
 --
 -- A bank belongs to a clan.
 
 ALTER TABLE `clans_banks`
-  ADD CONSTRAINT `clans_banks_clans` FOREIGN KEY `clans_banks_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_banks_clans` FOREIGN KEY `clans_banks_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_banks_logs` table.
 --
@@ -9914,16 +10033,16 @@ REFERENCES `clans` (`id`);
 -- A log entry is made to an account.
 
 ALTER TABLE `clans_banks_logs`
-  ADD CONSTRAINT `clans_banks_logs_clans_banks` FOREIGN KEY `clans_banks_logs_clans_banks` (`clans_banks_id`)
-REFERENCES `clans_banks` (`id`);
+    ADD CONSTRAINT `clans_banks_logs_clans_banks` FOREIGN KEY `clans_banks_logs_clans_banks` (`clans_banks_id`)
+        REFERENCES `clans_banks` (`id`);
 
 ALTER TABLE `clans_banks_logs`
-  ADD CONSTRAINT `clans_banks_logs_from_accounts` FOREIGN KEY `clans_banks_logs_from_accounts` (`from_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_banks_logs_from_accounts` FOREIGN KEY `clans_banks_logs_from_accounts` (`from_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_banks_logs`
-  ADD CONSTRAINT `clans_banks_logs_to_accounts` FOREIGN KEY `clans_banks_logs_to_accounts` (`to_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_banks_logs_to_accounts` FOREIGN KEY `clans_banks_logs_to_accounts` (`to_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_battlestations` table.
 --
@@ -9931,12 +10050,12 @@ REFERENCES `accounts` (`id`);
 -- A CBS is located in a map.
 
 ALTER TABLE `clans_battlestations`
-  ADD CONSTRAINT `clans_battlestations_clans` FOREIGN KEY `clans_battlestations_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_battlestations_clans` FOREIGN KEY `clans_battlestations_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_battlestations`
-  ADD CONSTRAINT `clans_battlestations_maps` FOREIGN KEY `clans_battlestations_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `clans_battlestations_maps` FOREIGN KEY `clans_battlestations_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `clans_battlestations_items` table.
 --
@@ -9944,12 +10063,12 @@ REFERENCES `maps` (`id`);
 -- An item is an account's item.
 
 ALTER TABLE `clans_battlestations_items`
-  ADD CONSTRAINT `clans_battlestations_items_clans_battlestations` FOREIGN KEY `clans_battlestations_items_clans_battlestations` (`clans_battlestations_id`)
-REFERENCES `clans_battlestations` (`id`);
+    ADD CONSTRAINT `clans_battlestations_items_clans_battlestations` FOREIGN KEY `clans_battlestations_items_clans_battlestations` (`clans_battlestations_id`)
+        REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_items`
-  ADD CONSTRAINT `clans_battlestations_items_accounts_items` FOREIGN KEY `clans_battlestations_items_accounts_items` (`accounts_items_id`)
-REFERENCES `accounts_items` (`id`);
+    ADD CONSTRAINT `clans_battlestations_items_accounts_items` FOREIGN KEY `clans_battlestations_items_accounts_items` (`accounts_items_id`)
+        REFERENCES `accounts_items` (`id`);
 
 -- Relations for the `clans_battlestations_logs` table.
 --
@@ -9957,12 +10076,12 @@ REFERENCES `accounts_items` (`id`);
 -- A log entry belongs to a clan.
 
 ALTER TABLE `clans_battlestations_logs`
-  ADD CONSTRAINT `clans_battlestations_logs_clans_battlestations` FOREIGN KEY `clans_battlestations_logs_clans_battlestations` (`clans_battlestations_id`)
-REFERENCES `clans_battlestations` (`id`);
+    ADD CONSTRAINT `clans_battlestations_logs_clans_battlestations` FOREIGN KEY `clans_battlestations_logs_clans_battlestations` (`clans_battlestations_id`)
+        REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_logs`
-  ADD CONSTRAINT `clans_battlestations_logs_clans` FOREIGN KEY `clans_battlestations_logs_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_battlestations_logs_clans` FOREIGN KEY `clans_battlestations_logs_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_diplomacies` table.
 --
@@ -9970,12 +10089,12 @@ REFERENCES `clans` (`id`);
 -- A diplomacy is aimed to a clan.
 
 ALTER TABLE `clans_diplomacies`
-  ADD CONSTRAINT `clans_diplomacies_from_clans` FOREIGN KEY `clans_diplomacies_from_clans` (`from_clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_diplomacies_from_clans` FOREIGN KEY `clans_diplomacies_from_clans` (`from_clans_id`)
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_diplomacies`
-  ADD CONSTRAINT `clans_diplomacies_to_clans` FOREIGN KEY `clans_diplomacies_to_clans` (`to_clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_diplomacies_to_clans` FOREIGN KEY `clans_diplomacies_to_clans` (`to_clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_messages` table.
 --
@@ -9984,16 +10103,16 @@ REFERENCES `clans` (`id`);
 -- A message may be directed to an account.
 
 ALTER TABLE `clans_messages`
-  ADD CONSTRAINT `clans_messages_clans` FOREIGN KEY `clans_messages_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_messages_clans` FOREIGN KEY `clans_messages_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_messages`
-  ADD CONSTRAINT `clans_messages_to_accounts` FOREIGN KEY `clans_messages_to_accounts` (`to_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_messages_to_accounts` FOREIGN KEY `clans_messages_to_accounts` (`to_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_messages`
-  ADD CONSTRAINT `clans_messages_from_accounts` FOREIGN KEY `clans_messages_from_accounts` (`from_accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_messages_from_accounts` FOREIGN KEY `clans_messages_from_accounts` (`from_accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_news` table.
 --
@@ -10001,28 +10120,28 @@ REFERENCES `accounts` (`id`);
 -- A new belongs to a clan.
 
 ALTER TABLE `clans_news`
-  ADD CONSTRAINT `clans_news_accounts` FOREIGN KEY `clans_news_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `clans_news_accounts` FOREIGN KEY `clans_news_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_news`
-  ADD CONSTRAINT `clans_news_clans` FOREIGN KEY `clans_news_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_news_clans` FOREIGN KEY `clans_news_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_ranking` table.
 --
 -- A rank belongs to a clan.
 
 ALTER TABLE `clans_ranking`
-  ADD CONSTRAINT `clans_ranking_clans` FOREIGN KEY `clans_ranking_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_ranking_clans` FOREIGN KEY `clans_ranking_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles` table.
 --
 -- A role belongs to a clan.
 
 ALTER TABLE `clans_roles`
-  ADD CONSTRAINT `clans_roles_clans` FOREIGN KEY `clans_roles_clans` (`clans_id`)
-REFERENCES `clans` (`id`);
+    ADD CONSTRAINT `clans_roles_clans` FOREIGN KEY `clans_roles_clans` (`clans_id`)
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles_permissions` table.
 --
@@ -10030,12 +10149,12 @@ REFERENCES `clans` (`id`);
 -- A role permission is a permission
 
 ALTER TABLE `clans_roles_permissions`
-  ADD CONSTRAINT `clans_roles_permissions_clans_roles` FOREIGN KEY `clans_roles_permissions_clans_roles` (`clans_roles_id`)
-REFERENCES `clans_roles` (`id`);
+    ADD CONSTRAINT `clans_roles_permissions_clans_roles` FOREIGN KEY `clans_roles_permissions_clans_roles` (`clans_roles_id`)
+        REFERENCES `clans_roles` (`id`);
 
 ALTER TABLE `clans_roles_permissions`
-  ADD CONSTRAINT `clans_roles_permissions_permissions` FOREIGN KEY `clans_roles_permissions_permissions` (`permissions_id`)
-REFERENCES `permissions` (`id`);
+    ADD CONSTRAINT `clans_roles_permissions_permissions` FOREIGN KEY `clans_roles_permissions_permissions` (`permissions_id`)
+        REFERENCES `permissions` (`id`);
 
 -- Relations for the `collectables` table.
 
@@ -10048,90 +10167,90 @@ REFERENCES `permissions` (`id`);
 -- A faction has a high starter map.
 
 ALTER TABLE `factions`
-  ADD CONSTRAINT `factions_high_maps` FOREIGN KEY `factions_high_maps` (`high_maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `factions_high_maps` FOREIGN KEY `factions_high_maps` (`high_maps_id`)
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `factions`
-  ADD CONSTRAINT `factions_low_maps` FOREIGN KEY `factions_low_maps` (`low_maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `factions_low_maps` FOREIGN KEY `factions_low_maps` (`low_maps_id`)
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `galaxygates` table.
 --
 -- A galaxygate starts in a wave.
 
 ALTER TABLE `galaxygates`
-  ADD CONSTRAINT `galaxygates_galaxygates_waves` FOREIGN KEY `galaxygates_galaxygates_waves` (`galaxygates_waves_id`)
-REFERENCES `galaxygates_waves` (`id`);
+    ADD CONSTRAINT `galaxygates_galaxygates_waves` FOREIGN KEY `galaxygates_galaxygates_waves` (`galaxygates_waves_id`)
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_gg_spins` table.
 
 ALTER TABLE `galaxygates_gg_spins`
-  ADD CONSTRAINT `galaxygates_gg_spins_galaxygates` FOREIGN KEY `galaxygates_gg_spins_galaxygates` (`galaxygates_id`)
-REFERENCES `galaxygates` (`id`);
+    ADD CONSTRAINT `galaxygates_gg_spins_galaxygates` FOREIGN KEY `galaxygates_gg_spins_galaxygates` (`galaxygates_id`)
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_spins`
-  ADD CONSTRAINT `galaxygates_gg_spins_galaxygates_spins` FOREIGN KEY `galaxygates_gg_spins_galaxygates_spins` (`galaxygates_spins_id`)
-REFERENCES `galaxygates_spins` (`id`);
+    ADD CONSTRAINT `galaxygates_gg_spins_galaxygates_spins` FOREIGN KEY `galaxygates_gg_spins_galaxygates_spins` (`galaxygates_spins_id`)
+        REFERENCES `galaxygates_spins` (`id`);
 
 -- Relations for the `galaxygates_gg_waves` table.
 
 ALTER TABLE `galaxygates_gg_waves`
-  ADD CONSTRAINT `galaxygates_gg_waves_galaxygates` FOREIGN KEY `galaxygates_gg_waves_galaxygates` (`galaxygates_id`)
-REFERENCES `galaxygates` (`id`);
+    ADD CONSTRAINT `galaxygates_gg_waves_galaxygates` FOREIGN KEY `galaxygates_gg_waves_galaxygates` (`galaxygates_id`)
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_waves`
-  ADD CONSTRAINT `galaxygates_gg_waves_galaxygates_waves` FOREIGN KEY `galaxygates_gg_waves_galaxygates_waves` (`galaxygates_waves_id`)
-REFERENCES `galaxygates_waves` (`id`);
+    ADD CONSTRAINT `galaxygates_gg_waves_galaxygates_waves` FOREIGN KEY `galaxygates_gg_waves_galaxygates_waves` (`galaxygates_waves_id`)
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_probabilities` table.
 --
 -- A probability belongs to a gate.
 
 ALTER TABLE `galaxygates_probabilities`
-  ADD CONSTRAINT `galaxygates_probabilities_galaxygates` FOREIGN KEY `galaxygates_probabilities_galaxygates` (`galaxygates_id`)
-REFERENCES `galaxygates` (`id`);
+    ADD CONSTRAINT `galaxygates_probabilities_galaxygates` FOREIGN KEY `galaxygates_probabilities_galaxygates` (`galaxygates_id`)
+        REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `galaxygates_spawns` table.
 --
 -- A spawn spawns an NPC.
 
 ALTER TABLE `galaxygates_spawns`
-  ADD CONSTRAINT `galaxygates_spawns_npcs` FOREIGN KEY `galaxygates_spawns_npcs` (`npcs_id`)
-REFERENCES `npcs` (`id`);
+    ADD CONSTRAINT `galaxygates_spawns_npcs` FOREIGN KEY `galaxygates_spawns_npcs` (`npcs_id`)
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `galaxygates_spins` table.
 --
 -- A spin awards an item.
 
 ALTER TABLE `galaxygates_spins`
-  ADD CONSTRAINT `galaxygates_spins_items` FOREIGN KEY `galaxygates_spins_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `galaxygates_spins_items` FOREIGN KEY `galaxygates_spins_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 -- Relations for the `galaxygates_stages` table.
 --
 -- A stage belongs to a wave.
 
 ALTER TABLE `galaxygates_stages`
-  ADD CONSTRAINT `galaxygates_stages_galaxygates_waves` FOREIGN KEY `galaxygates_stages_galaxygates_waves` (`galaxygates_waves_id`)
-REFERENCES `galaxygates_waves` (`id`);
+    ADD CONSTRAINT `galaxygates_stages_galaxygates_waves` FOREIGN KEY `galaxygates_stages_galaxygates_waves` (`galaxygates_waves_id`)
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_stages_spawns` table.
 
 ALTER TABLE `galaxygates_stages_spawns`
-  ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_stages` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_stages` (`galaxygates_stages_id`)
-REFERENCES `galaxygates_stages` (`id`);
+    ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_stages` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_stages` (`galaxygates_stages_id`)
+        REFERENCES `galaxygates_stages` (`id`);
 
 ALTER TABLE `galaxygates_stages_spawns`
-  ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_spawns` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_spawns` (`galaxygates_spawns_id`)
-REFERENCES `galaxygates_spawns` (`id`);
+    ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_spawns` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_spawns` (`galaxygates_spawns_id`)
+        REFERENCES `galaxygates_spawns` (`id`);
 
 -- Relations for the `galaxygates_waves` table.
 --
 -- A wave occurs in a map
 
 ALTER TABLE `galaxygates_waves`
-  ADD CONSTRAINT `galaxygates_waves_maps` FOREIGN KEY `galaxygates_spins_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `galaxygates_waves_maps` FOREIGN KEY `galaxygates_spins_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `invitation_codes` table.
 
@@ -10141,8 +10260,8 @@ REFERENCES `maps` (`id`);
 --
 
 ALTER TABLE `invitation_codes_redeem_logs`
-  ADD CONSTRAINT `invitation_codes_redeem_logs_invitation_codes` FOREIGN KEY `invitation_codes_redeem_logs_invitation_codes` (`invitation_codes_id`)
-REFERENCES `invitation_codes` (`id`);
+    ADD CONSTRAINT `invitation_codes_redeem_logs_invitation_codes` FOREIGN KEY `invitation_codes_redeem_logs_invitation_codes` (`invitation_codes_id`)
+        REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `items` table.
 
@@ -10153,16 +10272,16 @@ REFERENCES `invitation_codes` (`id`);
 -- Relations for the `levels_upgrades` table.
 --
 ALTER TABLE `levels_upgrades`
-  ADD CONSTRAINT `levels_upgrades_levels` FOREIGN KEY `levels_upgrades_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `levels_upgrades_levels` FOREIGN KEY `levels_upgrades_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `maps` table.
 --
 -- A map may belong to a faction.
 
 ALTER TABLE `maps`
-  ADD CONSTRAINT `maps_factions` FOREIGN KEY `maps_factions` (`factions_id`)
-REFERENCES `factions` (`id`);
+    ADD CONSTRAINT `maps_factions` FOREIGN KEY `maps_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `maps_npcs` table.
 --
@@ -10170,12 +10289,12 @@ REFERENCES `factions` (`id`);
 -- A npc is a npc.
 
 ALTER TABLE `maps_npcs`
-  ADD CONSTRAINT `maps_npcs_maps` FOREIGN KEY `maps_npcs_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `maps_npcs_maps` FOREIGN KEY `maps_npcs_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_npcs`
-  ADD CONSTRAINT `maps_npcs_npcs` FOREIGN KEY `maps_npcs_npcs` (`npcs_id`)
-REFERENCES `npcs` (`id`);
+    ADD CONSTRAINT `maps_npcs_npcs` FOREIGN KEY `maps_npcs_npcs` (`npcs_id`)
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `maps_portals` table.
 --
@@ -10183,12 +10302,12 @@ REFERENCES `npcs` (`id`);
 -- A portal targets a map
 
 ALTER TABLE `maps_portals`
-  ADD CONSTRAINT `maps_portals_maps` FOREIGN KEY `maps_portals_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `maps_portals_maps` FOREIGN KEY `maps_portals_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_portals`
-  ADD CONSTRAINT `maps_portals_target_maps` FOREIGN KEY `maps_portals_to_maps` (`target_maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `maps_portals_target_maps` FOREIGN KEY `maps_portals_to_maps` (`target_maps_id`)
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `maps_stations` table.
 --
@@ -10196,12 +10315,12 @@ REFERENCES `maps` (`id`);
 -- A station belongs to a faction.
 
 ALTER TABLE `maps_stations`
-  ADD CONSTRAINT `maps_stations_maps` FOREIGN KEY `maps_stations_maps` (`maps_id`)
-REFERENCES `maps` (`id`);
+    ADD CONSTRAINT `maps_stations_maps` FOREIGN KEY `maps_stations_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_stations`
-  ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY `maps_stations_factions` (`factions_id`)
-REFERENCES `factions` (`id`);
+    ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY `maps_stations_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `moderators` table.
 --
@@ -10209,35 +10328,40 @@ REFERENCES `factions` (`id`);
 -- A moderator has a role.
 
 ALTER TABLE `moderators`
-  ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `moderators`
-  ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
-REFERENCES `moderators_roles` (`id`);
+    ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
+        REFERENCES `moderators_roles` (`id`);
 
 -- Relations for the `moderators_logs` table.
 --
 -- A log entry is made by a moderator.
 
 ALTER TABLE `moderators_logs`
-  ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
-REFERENCES `moderators` (`id`);
+    ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
+        REFERENCES `moderators` (`id`);
 
 -- Relations for the `moderators_roles` table.
+--
+-- A role can have a parent role
 
+ALTER TABLE `moderators_roles`
+    ADD CONSTRAINT `moderators_roles_moderators_roles` FOREIGN KEY `moderators_roles_moderators_roles` (`moderators_roles_id`)
+        REFERENCES `moderators_roles` (`id`);
 -- Relations for the `moderators_roles_permissions` table.
 --
 -- A role permission belongs to a moderator.
 -- A role permission is a permission
 
 ALTER TABLE `moderators_roles_permissions`
-  ADD CONSTRAINT `moderators_roles_permissions_moderators_roles` FOREIGN KEY `moderators_roles_permissions_moderators_roles` (`moderators_roles_id`)
-REFERENCES `moderators_roles` (`id`);
+    ADD CONSTRAINT `moderators_roles_permissions_moderators_roles` FOREIGN KEY `moderators_roles_permissions_moderators_roles` (`moderators_roles_id`)
+        REFERENCES `moderators_roles` (`id`);
 
 ALTER TABLE `moderators_roles_permissions`
-  ADD CONSTRAINT `moderators_roles_permissions_permissions` FOREIGN KEY `moderators_roles_permissions_permissions` (`permissions_id`)
-REFERENCES `permissions` (`id`);
+    ADD CONSTRAINT `moderators_roles_permissions_permissions` FOREIGN KEY `moderators_roles_permissions_permissions` (`permissions_id`)
+        REFERENCES `permissions` (`id`);
 
 -- Relations for the `news` table.
 
@@ -10252,16 +10376,16 @@ REFERENCES `permissions` (`id`);
 -- A quest can belong to a faction
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
-REFERENCES `factions` (`id`);
+    ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `quests_conditions` table.
 --
@@ -10269,12 +10393,12 @@ REFERENCES `factions` (`id`);
 -- A condition may have a parent condition.
 
 ALTER TABLE `quests_conditions`
-  ADD CONSTRAINT `quests_conditions_quests` FOREIGN KEY `quests_conditions_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `quests_conditions_quests` FOREIGN KEY `quests_conditions_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests_conditions`
-  ADD CONSTRAINT `quests_conditions_quests_conditions` FOREIGN KEY `quests_conditions_quests_conditions` (`quests_conditions_id`)
-REFERENCES `quests_conditions` (`id`);
+    ADD CONSTRAINT `quests_conditions_quests_conditions` FOREIGN KEY `quests_conditions_quests_conditions` (`quests_conditions_id`)
+        REFERENCES `quests_conditions` (`id`);
 
 -- Relations for the `ranks` table.
 
@@ -10283,8 +10407,8 @@ REFERENCES `quests_conditions` (`id`);
 -- A reward is an item.
 
 ALTER TABLE `rewards`
-  ADD CONSTRAINT `rewards_items` FOREIGN KEY `rewards_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `rewards_items` FOREIGN KEY `rewards_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 -- Relations for the `rewards_collectables` table.
 --
@@ -10292,12 +10416,12 @@ REFERENCES `items` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_collectables`
-  ADD CONSTRAINT `rewards_collectables_rewards` FOREIGN KEY `rewards_collectables_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_collectables_rewards` FOREIGN KEY `rewards_collectables_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_collectables`
-  ADD CONSTRAINT `rewards_collectables_collectables` FOREIGN KEY `rewards_collectables_collectables` (`collectables_id`)
-REFERENCES `collectables` (`id`);
+    ADD CONSTRAINT `rewards_collectables_collectables` FOREIGN KEY `rewards_collectables_collectables` (`collectables_id`)
+        REFERENCES `collectables` (`id`);
 
 -- Relations for the `rewards_galaxygates` table.
 --
@@ -10305,12 +10429,12 @@ REFERENCES `collectables` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_galaxygates`
-  ADD CONSTRAINT `rewards_galaxygates_rewards` FOREIGN KEY `rewards_galaxygates_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_galaxygates_rewards` FOREIGN KEY `rewards_galaxygates_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_galaxygates`
-  ADD CONSTRAINT `rewards_galaxygates_galaxygates` FOREIGN KEY `rewards_galaxygates_galaxygates` (`galaxygates_id`)
-REFERENCES `galaxygates` (`id`);
+    ADD CONSTRAINT `rewards_galaxygates_galaxygates` FOREIGN KEY `rewards_galaxygates_galaxygates` (`galaxygates_id`)
+        REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `rewards_npcs` table.
 --
@@ -10318,12 +10442,12 @@ REFERENCES `galaxygates` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_npcs`
-  ADD CONSTRAINT `rewards_npcs_rewards` FOREIGN KEY `rewards_npcs_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_npcs_rewards` FOREIGN KEY `rewards_npcs_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_npcs`
-  ADD CONSTRAINT `rewards_npcs_npcs` FOREIGN KEY `rewards_npcs_npcs` (`npcs_id`)
-REFERENCES `npcs` (`id`);
+    ADD CONSTRAINT `rewards_npcs_npcs` FOREIGN KEY `rewards_npcs_npcs` (`npcs_id`)
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `rewards_quests` table.
 --
@@ -10331,12 +10455,12 @@ REFERENCES `npcs` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_quests`
-  ADD CONSTRAINT `rewards_quests_rewards` FOREIGN KEY `rewards_quests_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_quests_rewards` FOREIGN KEY `rewards_quests_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_quests`
-  ADD CONSTRAINT `rewards_quests_quests` FOREIGN KEY `rewards_quests_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `rewards_quests_quests` FOREIGN KEY `rewards_quests_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
 
 -- Relations for the `rewards_ships` table.
 --
@@ -10344,12 +10468,12 @@ REFERENCES `quests` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_ships`
-  ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_ships`
-  ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
-REFERENCES `ships` (`id`);
+    ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
+        REFERENCES `ships` (`id`);
 
 -- Relations for the `rewards_vouchers` table.
 --
@@ -10357,12 +10481,12 @@ REFERENCES `ships` (`id`);
 -- A reward is a reward.
 
 ALTER TABLE `rewards_vouchers`
-  ADD CONSTRAINT `rewards_vouchers_rewards` FOREIGN KEY `rewards_vouchers_rewards` (`rewards_id`)
-REFERENCES `rewards` (`id`);
+    ADD CONSTRAINT `rewards_vouchers_rewards` FOREIGN KEY `rewards_vouchers_rewards` (`rewards_id`)
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_vouchers`
-  ADD CONSTRAINT `rewards_vouchers_vouchers` FOREIGN KEY `rewards_vouchers_vouchers` (`vouchers_id`)
-REFERENCES `vouchers` (`id`);
+    ADD CONSTRAINT `rewards_vouchers_vouchers` FOREIGN KEY `rewards_vouchers_vouchers` (`vouchers_id`)
+        REFERENCES `vouchers` (`id`);
 
 -- Relations for the `server_logs` table.
 
@@ -10371,8 +10495,8 @@ REFERENCES `vouchers` (`id`);
 -- A ship is an item
 
 ALTER TABLE `ships`
-  ADD CONSTRAINT `ships_items` FOREIGN KEY `ships_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `ships_items` FOREIGN KEY `ships_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 -- Relations for the `skilltree_levels` table.
 --
@@ -10380,12 +10504,12 @@ REFERENCES `items` (`id`);
 -- A level is for a skill.
 
 ALTER TABLE `skilltree_levels`
-  ADD CONSTRAINT `skilltree_levels_levels` FOREIGN KEY `skilltree_levels_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `skilltree_levels_levels` FOREIGN KEY `skilltree_levels_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `skilltree_levels`
-  ADD CONSTRAINT `skilltree_levels_skills` FOREIGN KEY `skilltree_levels_skills` (`skilltree_skills_id`)
-REFERENCES `skilltree_skills` (`id`);
+    ADD CONSTRAINT `skilltree_levels_skills` FOREIGN KEY `skilltree_levels_skills` (`skilltree_skills_id`)
+        REFERENCES `skilltree_skills` (`id`);
 
 -- Relations for the `skilltree_skills` table.
 
@@ -10395,12 +10519,12 @@ REFERENCES `skilltree_skills` (`id`);
 -- A unlock requires another skill level.
 
 ALTER TABLE `skilltree_unlocks`
-  ADD CONSTRAINT `skilltree_unlocks_upgrade_skilltree_levels` FOREIGN KEY `skilltree_unlocks_upgrade_skilltree_levels` (`upgrade_skilltree_levels_id`)
-REFERENCES `skilltree_levels` (`id`);
+    ADD CONSTRAINT `skilltree_unlocks_upgrade_skilltree_levels` FOREIGN KEY `skilltree_unlocks_upgrade_skilltree_levels` (`upgrade_skilltree_levels_id`)
+        REFERENCES `skilltree_levels` (`id`);
 
 ALTER TABLE `skilltree_unlocks`
-  ADD CONSTRAINT `skilltree_unlocks_required_skilltree_levels` FOREIGN KEY `skilltree_unlocks_required_skilltree_levels` (`required_skilltree_levels_id`)
-REFERENCES `skilltree_levels` (`id`);
+    ADD CONSTRAINT `skilltree_unlocks_required_skilltree_levels` FOREIGN KEY `skilltree_unlocks_required_skilltree_levels` (`required_skilltree_levels_id`)
+        REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `skylab_modules` levels.
 
@@ -10410,12 +10534,12 @@ REFERENCES `skilltree_levels` (`id`);
 -- A cost requires an item.
 
 ALTER TABLE `techfactory_costs`
-  ADD CONSTRAINT `techfactory_costs_techfactory_items` FOREIGN KEY `techfactory_costs_techfactory_items` (`techfactory_items_id`)
-REFERENCES `techfactory_items` (`id`);
+    ADD CONSTRAINT `techfactory_costs_techfactory_items` FOREIGN KEY `techfactory_costs_techfactory_items` (`techfactory_items_id`)
+        REFERENCES `techfactory_items` (`id`);
 
 ALTER TABLE `techfactory_costs`
-  ADD CONSTRAINT `techfactory_costs_items` FOREIGN KEY `techfactory_costs_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `techfactory_costs_items` FOREIGN KEY `techfactory_costs_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 -- Relations for the `techfactory_drones` table.
 
@@ -10427,20 +10551,20 @@ REFERENCES `items` (`id`);
 -- A bid is made by an account.
 
 ALTER TABLE `trade_items`
-  ADD CONSTRAINT `trade_items_items` FOREIGN KEY `trade_items_items` (`items_id`)
-REFERENCES `items` (`id`);
+    ADD CONSTRAINT `trade_items_items` FOREIGN KEY `trade_items_items` (`items_id`)
+        REFERENCES `items` (`id`);
 
 ALTER TABLE `trade_items`
-  ADD CONSTRAINT `trade_items_accounts` FOREIGN KEY `trade_items_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `trade_items_accounts` FOREIGN KEY `trade_items_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 -- Relations for `users` table.
 --
 -- An user can be registered with an invitation code.
 
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_invitation_codes` FOREIGN KEY `users_invitation_codes` (`invitation_codes_id`)
-REFERENCES `invitation_codes` (`id`);
+    ADD CONSTRAINT `users_invitation_codes` FOREIGN KEY `users_invitation_codes` (`invitation_codes_id`)
+        REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `vouchers` table.
 
@@ -10450,10 +10574,10 @@ REFERENCES `invitation_codes` (`id`);
 -- A log entry is redeemed by an account.
 
 ALTER TABLE `vouchers_redeem_logs`
-  ADD CONSTRAINT `vouchers_redeem_logs_vouchers` FOREIGN KEY `vouchers_redeem_logs_vouchers` (`vouchers_id`)
-REFERENCES `vouchers` (`id`);
+    ADD CONSTRAINT `vouchers_redeem_logs_vouchers` FOREIGN KEY `vouchers_redeem_logs_vouchers` (`vouchers_id`)
+        REFERENCES `vouchers` (`id`);
 
 ALTER TABLE `vouchers_redeem_logs`
-  ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 

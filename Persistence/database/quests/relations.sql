@@ -5,13 +5,13 @@
 -- A quest can belong to a faction
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
-REFERENCES `levels` (`id`);
+    ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests`
-  ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
-REFERENCES `factions` (`id`);
+    ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
+        REFERENCES `factions` (`id`);

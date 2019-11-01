@@ -2,22 +2,23 @@
 --
 -- Server news.
 --
-CREATE TABLE `news` (
-  `id`     smallint     NOT NULL AUTO_INCREMENT
-  COMMENT 'Primary Key.',
-  `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `image`  varchar(255) NOT NULL DEFAULT '',
-  `title`  varchar(255) NOT NULL DEFAULT '',
-  `teaser` varchar(255) NOT NULL DEFAULT '',
-  `text`   text         NOT NULL,
+CREATE TABLE `news`
+(
+    `id`     smallint     NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `date`   timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `image`  varchar(255) NOT NULL DEFAULT '',
+    `title`  varchar(255) NOT NULL DEFAULT '',
+    `teaser` varchar(255) NOT NULL DEFAULT '',
+    `text`   text         NOT NULL,
 
-  CONSTRAINT `news_pk` PRIMARY KEY (`id`)
+    CONSTRAINT `news_pk` PRIMARY KEY (`id`)
 )
-  ENGINE InnoDB
-  CHARACTER SET utf8
-  COMMENT 'Server news.';
+    ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'Server news.';
 
 CREATE INDEX `news_title`
-  ON `news` (`title`);
+    ON `news` (`title`);
 CREATE INDEX `news_date`
-  ON `news` (`date`);
+    ON `news` (`date`);

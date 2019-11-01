@@ -4,9 +4,9 @@
 -- A quest is a quest.
 
 ALTER TABLE `accounts_quests`
-  ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
-REFERENCES `accounts` (`id`);
+    ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_quests`
-  ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
-REFERENCES `quests` (`id`);
+    ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
+        REFERENCES `quests` (`id`);
