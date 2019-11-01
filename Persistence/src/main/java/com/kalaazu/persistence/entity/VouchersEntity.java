@@ -29,8 +29,13 @@ public class VouchersEntity {
     @Column(name = "limit", nullable = false)
     private byte limit;
 
-    @OneToMany(mappedBy = "vouchersByVouchersId")
-    private Collection<RewardsVouchersEntity> rewardsVouchers;
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_vouchers",
+            joinColumns = @JoinColumn(name = "vouchers_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 
     @OneToMany(mappedBy = "vouchersByVouchersId")
     private Collection<VouchersRedeemLogsEntity> vouchersRedeemLogs;

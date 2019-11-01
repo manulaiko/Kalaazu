@@ -33,6 +33,11 @@ public class CollectablesEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @OneToMany(mappedBy = "collectablesByCollectablesId")
-    private Collection<RewardsCollectablesEntity> rewardsCollectables;
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_collectables",
+            joinColumns = @JoinColumn(name = "collectables_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 }

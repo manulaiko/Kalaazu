@@ -11,7 +11,7 @@ import java.util.Collection;
  *
  * Entity for the `galaxygates_stages` table.
  *
- * @author Manulaiko <manulaiko@gmial.com>
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 @Entity
 @Table(name = "galaxygates_stages", schema = "kalaazu")
@@ -29,6 +29,11 @@ public class GalaxygatesStagesEntity {
     @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
     private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
 
-    @OneToMany(mappedBy = "galaxygatesStagesByGalaxygatesStagesById")
-    private Collection<GalaxygatesStagesSpawnsEntity> galaxygatesStagesSpawns;
+    @ManyToMany
+    @JoinTable(
+            name = "galaxygates_stages_spawns",
+            joinColumns = @JoinColumn(name = "galaxygates_stages_id"),
+            inverseJoinColumns = @JoinColumn(name = "galaxygates_spawns_id")
+    )
+    private Collection<GalaxygatesSpawnsEntity> galaxygatesSpawns;
 }

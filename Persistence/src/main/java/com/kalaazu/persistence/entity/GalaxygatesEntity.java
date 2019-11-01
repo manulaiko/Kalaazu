@@ -34,14 +34,29 @@ public class GalaxygatesEntity {
     private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
 
     @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
-    private Collection<GalaxygatesGgSpinsEntity> galaxygatesGgSpins;
-
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
-    private Collection<GalaxygatesGgWavesEntity> galaxygatesGgWaves;
-
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
     private Collection<GalaxygatesProbabilitiesEntity> galaxygatesProbabilities;
 
-    @OneToMany(mappedBy = "galaxygatesByGalaxygatesId")
-    private Collection<RewardsGalaxygatesEntity> rewardsGalaxygates;
+    @ManyToMany
+    @JoinTable(
+            name = "galaxygates_gg_spins",
+            joinColumns = @JoinColumn(name = "galaxygates_id"),
+            inverseJoinColumns = @JoinColumn(name = "galaxygates_spins_id")
+    )
+    private Collection<GalaxygatesSpinsEntity> galaxygatesSpins;
+
+    @ManyToMany
+    @JoinTable(
+            name = "galaxygates_gg_waves",
+            joinColumns = @JoinColumn(name = "galaxygates_id"),
+            inverseJoinColumns = @JoinColumn(name = "galaxygates_waves_id")
+    )
+    private Collection<GalaxygatesWavesEntity> galaxygatesWaves;
+
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_galaxygates",
+            joinColumns = @JoinColumn(name = "galaxygates_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 }

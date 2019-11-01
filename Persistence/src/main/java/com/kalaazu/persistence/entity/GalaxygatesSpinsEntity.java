@@ -10,7 +10,7 @@ import javax.persistence.*;
  *
  * Entity for the `galaxygates_spins` table.
  *
- * @author Manulaiko <manulaiko@gmial.com>
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 @Entity
 @Table(name = "galaxygates_spins", schema = "kalaazu")

@@ -11,7 +11,7 @@ import java.sql.Timestamp;
  *
  * Entity for the `clans_messages` table.
  *
- * @author Manulaiko <manulaiko@gmial.com>
+ * @author Manulaiko <manulaiko@gmail.com>
  */
 @Entity
 @Table(name = "clans_messages", schema = "kalaazu")

@@ -65,6 +65,11 @@ public class ShipsEntity {
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 
-    @OneToMany(mappedBy = "shipsByShipsId")
-    private Collection<RewardsShipsEntity> rewardsShips;
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_ships",
+            joinColumns = @JoinColumn(name = "ships_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 }

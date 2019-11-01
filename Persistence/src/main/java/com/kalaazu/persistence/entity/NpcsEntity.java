@@ -53,6 +53,11 @@ public class NpcsEntity {
     @Column(name = "ai", nullable = false)
     private byte ai;
 
-    @OneToMany(mappedBy = "npcsByNpcsId")
-    private Collection<RewardsNpcsEntity> rewardsNpcs;
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_npcs",
+            joinColumns = @JoinColumn(name = "npcs_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 }

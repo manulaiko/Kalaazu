@@ -55,33 +55,30 @@ public class AccountsEntity {
 
     @ManyToOne()
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
-    private UsersEntity users;
+    private UsersEntity usersByUsersId;
 
     @ManyToOne()
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
-    private LevelsEntity levels;
+    private LevelsEntity levelsByLevelsId;
 
     @ManyToOne()
     @JoinColumn(name = "factions_id", referencedColumnName = "id", nullable = false)
-    private FactionsEntity factions;
+    private FactionsEntity factionsByFactionsId;
 
     @ManyToOne()
     @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id", nullable = false)
-    private AccountsHangarsEntity activeAccountsHangars;
+    private AccountsHangarsEntity accountsHangarsByAccountsHangarsId;
 
     @ManyToOne()
     @JoinColumn(name = "clans_id", referencedColumnName = "id")
-    private ClansEntity clans;
+    private ClansEntity clansByClansId;
 
     @ManyToOne()
     @JoinColumn(name = "ranks_id", referencedColumnName = "id", nullable = false)
-    private RanksEntity ranks;
+    private RanksEntity ranksByRanksId;
 
     @OneToMany(mappedBy = "accountsByAccountsId")
     private Collection<AccountsBanksEntity> accountsBanks;
-
-    @OneToMany(mappedBy = "accountsByAccountsId")
-    private Collection<AccountsClansRolesEntity> accountsClansRoles;
 
     @OneToMany(mappedBy = "accountsByAccountsId")
     private Collection<AccountsDestroysEntity> accountsDestroys;
@@ -133,4 +130,12 @@ public class AccountsEntity {
 
     @OneToMany(mappedBy = "accountsByAccountsId")
     private Collection<ClansApplicationsEntity> clansApplications;
+
+    @ManyToMany
+    @JoinTable(
+            name = "accounts_clans_roles",
+            joinColumns = @JoinColumn(name = "accounts_id"),
+            inverseJoinColumns = @JoinColumn(name = "clans_roles_id")
+    )
+    private Collection<ClansRolesEntity> clansRoles;
 }

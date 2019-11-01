@@ -40,6 +40,11 @@ public class QuestsEntity {
     @OneToMany(mappedBy = "questsByQuestsId")
     private Collection<QuestsConditionsEntity> questsConditions;
 
-    @OneToMany(mappedBy = "questsByQuestsId")
-    private Collection<RewardsQuestsEntity> rewardsQuests;
+    @ManyToMany
+    @JoinTable(
+            name = "rewards_quests",
+            joinColumns = @JoinColumn(name = "quests_id"),
+            inverseJoinColumns = @JoinColumn(name = "rewards_id")
+    )
+    private Collection<RewardsEntity> rewards;
 }

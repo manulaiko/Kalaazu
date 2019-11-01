@@ -30,6 +30,10 @@ public class ModeratorsEntity {
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
+    @ManyToOne
+    @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id", nullable = false)
+    private ModeratorsRolesEntity moderatorsRoles;
+
     @OneToMany(mappedBy = "moderatorsByModeratorsId")
     private Collection<ModeratorsLogsEntity> moderatorsLogs;
 }

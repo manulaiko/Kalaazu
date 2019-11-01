@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.entity;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 /**
@@ -12,6 +14,7 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "skilltree_unlocks", schema = "kalaazu")
+@Data
 public class SkilltreeUnlocksEntity {
     @Id
     @Column(name = "id", nullable = false)

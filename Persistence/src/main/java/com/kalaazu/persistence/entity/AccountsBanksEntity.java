@@ -41,6 +41,6 @@ public class AccountsBanksEntity {
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @OneToOne(mappedBy = "accountsBanksByAccountsBanksId")
+    @OneToMany(mappedBy = "accountsBanksByAccountsBanksId")
     private Collection<AccountsBanksLogsEntity> accountsBanksLogs;
 }
