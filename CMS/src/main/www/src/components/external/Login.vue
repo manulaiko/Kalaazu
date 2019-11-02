@@ -30,11 +30,9 @@
         methods: {
             /**
              * Performs the login operation.
-             *
-             * @param e Received event.
              */
-            login: function(e) {
-
+            login: function() {
+              this.$api.external.login(this.username, this.password);
             }
         }
     };
