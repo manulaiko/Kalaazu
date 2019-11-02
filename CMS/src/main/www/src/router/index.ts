@@ -12,8 +12,8 @@ const routes = [
     name: "external",
     component: External,
     children: [
-      { path: "login", name: "login", component: Login },
-      { path: "register", name: "register", component: Register }
+      { path: "register", name: "register", component: Register },
+      { path: "", name: "login", component: Login }
     ]
   }
 ];
