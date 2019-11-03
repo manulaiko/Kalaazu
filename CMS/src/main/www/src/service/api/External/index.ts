@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Vue from 'vue';
+import Store from '@/store';
 import Endpoint from "@/service/api/Endpoint";
 import {LoginResult} from "@/service/api/External/types";
 
@@ -15,11 +15,11 @@ export default class Index extends Endpoint {
     /**
      * Constructor
      *
-     * @param http Axios instance.
-     * @param vue  Vue instance.
+     * @param http  Axios instance.
+     * @param store Vue store.
      */
-    constructor(http: typeof axios, vue: typeof Vue) {
-        super(http, vue, "/external");
+    constructor(http: typeof axios, store: typeof Store) {
+        super(http, store, "/external");
     }
 
     /**
@@ -29,7 +29,7 @@ export default class Index extends Endpoint {
      * @param password Login password.
      */
     async login(username: string, password: string): Promise<LoginResult> {
-        const result = await this.http.post("/login", {
+        const result = await this.http.post<LoginResult>("/login", {
             username: username,
             password: password
         });

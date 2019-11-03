@@ -1,5 +1,5 @@
 import axios from 'axios';
-import Vue from 'vue';
+import Store from '@/store';
 
 /**
  * Endpoint class.
@@ -11,18 +11,18 @@ import Vue from 'vue';
  */
 export default class Endpoint {
     http: typeof axios;
-    vue: typeof Vue;
+    store: typeof Store;
 
     /**
      * Constructor.
      *
      * @param http     Axios instance.
-     * @param vue      Vue instance.
+     * @param store    Vue store.
      * @param endpoint Endpoint path.
      */
-    constructor(http: typeof axios, vue: typeof Vue, endpoint: string) {
+    constructor(http: typeof axios, store: typeof Store, endpoint: string) {
         this.http = http;
-        this.vue = vue;
+        this.store = store;
         this.http.defaults.baseURL += endpoint
     }
 }
