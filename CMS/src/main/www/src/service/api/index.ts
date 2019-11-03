@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import axios from 'axios';
-import External from './External';
+import External from '@/service/api/External';
 
 /**
  * API service.

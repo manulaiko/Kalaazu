@@ -1,9 +1,6 @@
 import axios from 'axios';
 import Endpoint from "@/service/api/Endpoint";
-
-type LoginResult = {
-    sessionId: string
-};
+import {LoginResult} from "@/service/api/External/types";
 
 /**
  * External api controller.
@@ -13,7 +10,7 @@ type LoginResult = {
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-export default class External extends Endpoint {
+export default class Index extends Endpoint {
     /**
      * Constructor
      *
