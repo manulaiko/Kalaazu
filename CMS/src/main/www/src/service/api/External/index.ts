@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Vue from 'vue';
 import Endpoint from "@/service/api/Endpoint";
 import {LoginResult} from "@/service/api/External/types";
 
@@ -15,9 +16,10 @@ export default class Index extends Endpoint {
      * Constructor
      *
      * @param http Axios instance.
+     * @param vue  Vue instance.
      */
-    constructor(http: typeof axios) {
-        super(http, "/external");
+    constructor(http: typeof axios, vue: typeof Vue) {
+        super(http, vue, "/external");
     }
 
     /**

@@ -15,14 +15,16 @@ class ApiService {
 
     /**
      * Constructor.
+     *
+     * @param vue Vue instance.
      */
-    constructor() {
-        this.external = new External(axios)
+    constructor(vue: typeof Vue) {
+        this.external = new External(axios, vue)
     }
 }
 
 export default function Api(vue: typeof Vue, options: any): void {
     axios.defaults.baseURL = options.url;
 
-    vue.prototype.$api = new ApiService();
+    vue.prototype.$api = new ApiService(vue);
 }
