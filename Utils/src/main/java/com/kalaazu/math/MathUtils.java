@@ -36,47 +36,33 @@ public final class MathUtils {
     static public final float PI2 = PI * 2;
 
     static public final float E = 2.7182818f;
-
-    static private final int SIN_BITS = 14; // 16KB. Adjust for accuracy.
-
-    static private final int SIN_MASK = ~(-1 << SIN_BITS);
-
-    static private final int SIN_COUNT = SIN_MASK + 1;
-
-    static private final float radFull = PI * 2;
-
-    static private final float degFull = 360;
-
-    static private final float radToIndex = SIN_COUNT / radFull;
-
-    static private final float degToIndex = SIN_COUNT / degFull;
-
     /**
      * multiply by this to convert from radians to degrees
      */
     static public final float radiansToDegrees = 180f / PI;
-
     static public final float radDeg = radiansToDegrees;
-
     /**
      * multiply by this to convert from degrees to radians
      */
     static public final float degreesToRadians = PI / 180;
-
     static public final float degRad = degreesToRadians;
+    static private final int SIN_BITS = 14; // 16KB. Adjust for accuracy.
+    static private final int SIN_MASK = ~(-1 << SIN_BITS);
+    static private final int SIN_COUNT = SIN_MASK + 1;
+    static private final float radFull = PI * 2;
+    static private final float degFull = 360;
+    static private final float radToIndex = SIN_COUNT / radFull;
+    static private final float degToIndex = SIN_COUNT / degFull;
+    static private final int BIG_ENOUGH_INT = 16 * 1024;
+    static private final double BIG_ENOUGH_FLOOR = BIG_ENOUGH_INT;
+    static private final double CEIL = 0.9999999;
+    static private final double BIG_ENOUGH_CEIL = 16384.999999999996;
+    static private final double BIG_ENOUGH_ROUND = BIG_ENOUGH_INT + 0.5f;
 
-    static private class Sin {
-        static final float[] table = new float[SIN_COUNT];
+    // ---
+    static public Random random = new RandomXS128();
 
-        static {
-            for (int i = 0; i < SIN_COUNT; i++) {
-                table[i] = (float) Math.sin((i + 0.5f) / SIN_COUNT * radFull);
-            }
-            for (int i = 0; i < 360; i += 90) {
-                table[(int) (i * degToIndex) & SIN_MASK] = (float) Math.sin(i * degreesToRadians);
-            }
-        }
-    }
+    // ---
 
     /**
      * Returns the sine in radians from a lookup table.
@@ -105,8 +91,6 @@ public final class MathUtils {
     static public float cosDeg(float degrees) {
         return Sin.table[(int) ((degrees + 90) * degToIndex) & SIN_MASK];
     }
-
-    // ---
 
     /**
      * Returns atan2 in radians, faster but less accurate than Math.atan2. Average error of 0.00231 radians (0.1323 degrees),
@@ -144,10 +128,6 @@ public final class MathUtils {
                ? atan - PI
                : atan;
     }
-
-    // ---
-
-    static public Random random = new RandomXS128();
 
     /**
      * Returns a random number between 0 (inclusive) and the specified value (inclusive).
@@ -219,6 +199,8 @@ public final class MathUtils {
         return 1 | (random.nextInt() >> 31);
     }
 
+    // ---
+
     /**
      * Returns a triangularly distributed random number between -1.0 (exclusive) and 1.0 (exclusive), where values around zero are
      * more likely.
@@ -240,6 +222,8 @@ public final class MathUtils {
     public static float randomTriangular(float max) {
         return (random.nextFloat() - random.nextFloat()) * max;
     }
+
+    // ---
 
     /**
      * Returns a triangularly distributed random number between {@code min} (inclusive) and {@code max} (exclusive), where the
@@ -272,8 +256,6 @@ public final class MathUtils {
         return max - (float) Math.sqrt((1 - u) * d * (max - mode));
     }
 
-    // ---
-
     /**
      * Returns the next power of two. Returns the specified value if the value is already a power of two.
      */
@@ -296,8 +278,6 @@ public final class MathUtils {
         return value != 0 && (value & value - 1) == 0;
     }
 
-    // ---
-
     static public short clamp(short value, short min, short max) {
         if (value < min) {
             return min;
@@ -309,6 +289,8 @@ public final class MathUtils {
 
         return value;
     }
+
+    // ---
 
     static public int clamp(int value, int min, int max) {
         if (value < min) {
@@ -346,6 +328,8 @@ public final class MathUtils {
         return value;
     }
 
+    // ---
+
     static public double clamp(double value, double min, double max) {
         if (value < min) {
             return min;
@@ -357,8 +341,6 @@ public final class MathUtils {
 
         return value;
     }
-
-    // ---
 
     /**
      * Linearly interpolates between fromValue to toValue on progress position.
@@ -398,18 +380,6 @@ public final class MathUtils {
 
         return (fromDegrees + delta * progress + 360) % 360;
     }
-
-    // ---
-
-    static private final int BIG_ENOUGH_INT = 16 * 1024;
-
-    static private final double BIG_ENOUGH_FLOOR = BIG_ENOUGH_INT;
-
-    static private final double CEIL = 0.9999999;
-
-    static private final double BIG_ENOUGH_CEIL = 16384.999999999996;
-
-    static private final double BIG_ENOUGH_ROUND = BIG_ENOUGH_INT + 0.5f;
 
     /**
      * Returns the largest integer less than or equal to the specified float. This method will only properly floor floats from
@@ -507,5 +477,18 @@ public final class MathUtils {
      */
     static public float log2(float value) {
         return log(2, value);
+    }
+
+    static private class Sin {
+        static final float[] table = new float[SIN_COUNT];
+
+        static {
+            for (int i = 0; i < SIN_COUNT; i++) {
+                table[i] = (float) Math.sin((i + 0.5f) / SIN_COUNT * radFull);
+            }
+            for (int i = 0; i < 360; i += 90) {
+                table[(int) (i * degToIndex) & SIN_MASK] = (float) Math.sin(i * degreesToRadians);
+            }
+        }
     }
 }

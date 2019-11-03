@@ -4,4 +4,5 @@ module kalaazu.utils {
 
     requires de.mkammerer.argon2;
     requires lombok;
+    requires java.desktop;
 }

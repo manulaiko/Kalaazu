@@ -33,7 +33,7 @@ allprojects {
     }
 
     lombok {
-        config['lombok.accessors.fluent'] = 'true'
+        config['lombok.anyConstructor.addConstructorProperties'] = 'true'
     }
 
     compileJava {

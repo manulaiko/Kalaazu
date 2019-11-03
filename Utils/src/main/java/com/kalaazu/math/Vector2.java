@@ -16,11 +16,11 @@
 
 package com.kalaazu.math;
 
-import java.io.Serializable;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * Encapsulates a 2D vector. Allows chaining methods by returning a reference to itself
@@ -31,10 +31,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Vector2 implements Serializable, Vector<Vector2> {
-    private static final long serialVersionUID = 913902788239530931L;
-
     public final static Vector2 Zero = new Vector2(0, 0);
-
+    private static final long serialVersionUID = 913902788239530931L;
     /**
      * the x-component of this vector
      */
@@ -76,6 +74,32 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         this.y = (float) (l.intValue());
     }
 
+    public static float len(float x, float y) {
+        return (float) Math.sqrt(x * x + y * y);
+    }
+
+    public static float len2(float x, float y) {
+        return x * x + y * y;
+    }
+
+    public static float dot(float x1, float y1, float x2, float y2) {
+        return x1 * x2 + y1 * y2;
+    }
+
+    public static float dst(float x1, float y1, float x2, float y2) {
+        final float x_d = x2 - x1;
+        final float y_d = y2 - y1;
+
+        return (float) Math.sqrt(x_d * x_d + y_d * y_d);
+    }
+
+    public static float dst2(float x1, float y1, float x2, float y2) {
+        final float x_d = x2 - x1;
+        final float y_d = y2 - y1;
+
+        return x_d * x_d + y_d * y_d;
+    }
+
     /**
      * Packs the vector in a long.
      *
@@ -90,17 +114,9 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         return new Vector2(this);
     }
 
-    public static float len(float x, float y) {
-        return (float) Math.sqrt(x * x + y * y);
-    }
-
     @Override
     public float len() {
         return (float) Math.sqrt(x * x + y * y);
-    }
-
-    public static float len2(float x, float y) {
-        return x * x + y * y;
     }
 
     @Override
@@ -188,10 +204,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         return this;
     }
 
-    public static float dot(float x1, float y1, float x2, float y2) {
-        return x1 * x2 + y1 * y2;
-    }
-
     @Override
     public float dot(Vector2 v) {
         return x * v.x + y * v.y;
@@ -245,13 +257,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         return this;
     }
 
-    public static float dst(float x1, float y1, float x2, float y2) {
-        final float x_d = x2 - x1;
-        final float y_d = y2 - y1;
-
-        return (float) Math.sqrt(x_d * x_d + y_d * y_d);
-    }
-
     @Override
     public float dst(Vector2 v) {
         final float x_d = v.x - x;
@@ -271,13 +276,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         final float y_d = y - this.y;
 
         return (float) Math.sqrt(x_d * x_d + y_d * y_d);
-    }
-
-    public static float dst2(float x1, float y1, float x2, float y2) {
-        final float x_d = x2 - x1;
-        final float y_d = y2 - y1;
-
-        return x_d * x_d + y_d * y_d;
     }
 
     @Override
@@ -540,10 +538,10 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         float x = this.x;
         if (dir >= 0) {
             this.x = -y;
-            y = x;
+            y      = x;
         } else {
             this.x = y;
-            y = -x;
+            y      = -x;
         }
         return this;
     }

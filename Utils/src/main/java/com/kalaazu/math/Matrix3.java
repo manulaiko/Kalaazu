@@ -24,26 +24,16 @@ import java.io.Serializable;
  * @author mzechner
  */
 public class Matrix3 implements Serializable {
-    private static final long serialVersionUID = 7907569533774959788L;
-
     public static final int M00 = 0;
-
     public static final int M01 = 3;
-
     public static final int M02 = 6;
-
     public static final int M10 = 1;
-
     public static final int M11 = 4;
-
     public static final int M12 = 7;
-
     public static final int M20 = 2;
-
     public static final int M21 = 5;
-
     public static final int M22 = 8;
-
+    private static final long serialVersionUID = 7907569533774959788L;
     public float[] val = new float[9];
 
     private float[] tmp = new float[9];
@@ -65,6 +55,40 @@ public class Matrix3 implements Serializable {
      */
     public Matrix3(float[] values) {
         this.set(values);
+    }
+
+    /**
+     * Multiplies matrix a with matrix b in the following manner:
+     *
+     * <pre>
+     * mul(A, B) => A := AB
+     * </pre>
+     *
+     * @param mata The float array representing the first matrix. Must have at least 9 elements.
+     * @param matb The float array representing the second matrix. Must have at least 9 elements.
+     */
+    private static void mul(float[] mata, float[] matb) {
+        float v00 = mata[M00] * matb[M00] + mata[M01] * matb[M10] + mata[M02] * matb[M20];
+        float v01 = mata[M00] * matb[M01] + mata[M01] * matb[M11] + mata[M02] * matb[M21];
+        float v02 = mata[M00] * matb[M02] + mata[M01] * matb[M12] + mata[M02] * matb[M22];
+
+        float v10 = mata[M10] * matb[M00] + mata[M11] * matb[M10] + mata[M12] * matb[M20];
+        float v11 = mata[M10] * matb[M01] + mata[M11] * matb[M11] + mata[M12] * matb[M21];
+        float v12 = mata[M10] * matb[M02] + mata[M11] * matb[M12] + mata[M12] * matb[M22];
+
+        float v20 = mata[M20] * matb[M00] + mata[M21] * matb[M10] + mata[M22] * matb[M20];
+        float v21 = mata[M20] * matb[M01] + mata[M21] * matb[M11] + mata[M22] * matb[M21];
+        float v22 = mata[M20] * matb[M02] + mata[M21] * matb[M12] + mata[M22] * matb[M22];
+
+        mata[M00] = v00;
+        mata[M10] = v10;
+        mata[M20] = v20;
+        mata[M01] = v01;
+        mata[M11] = v11;
+        mata[M21] = v21;
+        mata[M02] = v02;
+        mata[M12] = v12;
+        mata[M22] = v22;
     }
 
     /**
@@ -247,8 +271,8 @@ public class Matrix3 implements Serializable {
         val[M11] = 1;
         val[M21] = 0;
 
-        val[M02] = translation.x();
-        val[M12] = translation.y();
+        val[M02] = translation.getX();
+        val[M12] = translation.getY();
         val[M22] = 1;
 
         return this;
@@ -285,11 +309,11 @@ public class Matrix3 implements Serializable {
      */
     public Matrix3 setToScaling(Vector2 scale) {
         float[] val = this.val;
-        val[M00] = scale.x();
+        val[M00] = scale.getX();
         val[M10] = 0;
         val[M20] = 0;
         val[M01] = 0;
-        val[M11] = scale.y();
+        val[M11] = scale.getY();
         val[M21] = 0;
         val[M02] = 0;
         val[M12] = 0;
@@ -409,8 +433,8 @@ public class Matrix3 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Matrix3 trn(Vector2 vector) {
-        val[M02] += vector.x();
-        val[M12] += vector.y();
+        val[M02] += vector.getX();
+        val[M12] += vector.getY();
         return this;
     }
 
@@ -472,8 +496,8 @@ public class Matrix3 implements Serializable {
         tmp[M11] = 1;
         tmp[M21] = 0;
 
-        tmp[M02] = translation.x();
-        tmp[M12] = translation.y();
+        tmp[M02] = translation.getX();
+        tmp[M12] = translation.getY();
         tmp[M22] = 1;
         mul(val, tmp);
         return this;
@@ -556,11 +580,11 @@ public class Matrix3 implements Serializable {
      */
     public Matrix3 scale(Vector2 scale) {
         float[] tmp = this.tmp;
-        tmp[M00] = scale.x();
+        tmp[M00] = scale.getX();
         tmp[M10] = 0;
         tmp[M20] = 0;
         tmp[M01] = 0;
-        tmp[M11] = scale.y();
+        tmp[M11] = scale.getY();
         tmp[M21] = 0;
         tmp[M02] = 0;
         tmp[M12] = 0;
@@ -579,15 +603,15 @@ public class Matrix3 implements Serializable {
     }
 
     public Vector2 getTranslation(Vector2 position) {
-        position.x(val[M02]);
-        position.y(val[M12]);
+        position.setX(val[M02]);
+        position.setY(val[M12]);
         return position;
     }
 
     public Vector2 getScale(Vector2 scale) {
         float[] val = this.val;
-        scale.x((float) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]));
-        scale.y((float) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]));
+        scale.setX((float) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]));
+        scale.setY((float) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]));
         return scale;
     }
 
@@ -620,8 +644,8 @@ public class Matrix3 implements Serializable {
      * @return This matrix for the purpose of chaining methods together.
      */
     public Matrix3 scl(Vector2 scale) {
-        val[M00] *= scale.x();
-        val[M11] *= scale.y();
+        val[M00] *= scale.getX();
+        val[M11] *= scale.getY();
 
         return this;
     }
@@ -647,39 +671,5 @@ public class Matrix3 implements Serializable {
         val[M20] = v20;
         val[M21] = v21;
         return this;
-    }
-
-    /**
-     * Multiplies matrix a with matrix b in the following manner:
-     *
-     * <pre>
-     * mul(A, B) => A := AB
-     * </pre>
-     *
-     * @param mata The float array representing the first matrix. Must have at least 9 elements.
-     * @param matb The float array representing the second matrix. Must have at least 9 elements.
-     */
-    private static void mul(float[] mata, float[] matb) {
-        float v00 = mata[M00] * matb[M00] + mata[M01] * matb[M10] + mata[M02] * matb[M20];
-        float v01 = mata[M00] * matb[M01] + mata[M01] * matb[M11] + mata[M02] * matb[M21];
-        float v02 = mata[M00] * matb[M02] + mata[M01] * matb[M12] + mata[M02] * matb[M22];
-
-        float v10 = mata[M10] * matb[M00] + mata[M11] * matb[M10] + mata[M12] * matb[M20];
-        float v11 = mata[M10] * matb[M01] + mata[M11] * matb[M11] + mata[M12] * matb[M21];
-        float v12 = mata[M10] * matb[M02] + mata[M11] * matb[M12] + mata[M12] * matb[M22];
-
-        float v20 = mata[M20] * matb[M00] + mata[M21] * matb[M10] + mata[M22] * matb[M20];
-        float v21 = mata[M20] * matb[M01] + mata[M21] * matb[M11] + mata[M22] * matb[M21];
-        float v22 = mata[M20] * matb[M02] + mata[M21] * matb[M12] + mata[M22] * matb[M22];
-
-        mata[M00] = v00;
-        mata[M10] = v10;
-        mata[M20] = v20;
-        mata[M01] = v01;
-        mata[M11] = v11;
-        mata[M21] = v21;
-        mata[M02] = v02;
-        mata[M12] = v12;
-        mata[M22] = v22;
     }
 }

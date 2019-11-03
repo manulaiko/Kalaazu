@@ -8,7 +8,9 @@ import api from "@/service/api";
 
 Vue.config.productionTip = false;
 Vue.use(Buefy);
-Vue.use(api);
+Vue.use(api, {
+    url: "http://localhost:8080"
+});
 
 new Vue({
   router,

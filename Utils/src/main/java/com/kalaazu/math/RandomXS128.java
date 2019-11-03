@@ -72,6 +72,16 @@ public class RandomXS128 extends Random {
         setSeed(seed);
     }
 
+    private static long murmurHash3(long x) {
+        x ^= x >>> 33;
+        x *= 0xff51afd7ed558ccdL;
+        x ^= x >>> 33;
+        x *= 0xc4ceb9fe1a85ec53L;
+        x ^= x >>> 33;
+
+        return x;
+    }
+
     /**
      * Returns the next pseudo-random, uniformly distributed {@code long} value from this random number generator's sequence.
      * <p>
@@ -237,15 +247,5 @@ public class RandomXS128 extends Random {
         return seed == 0
                ? seed0
                : seed1;
-    }
-
-    private static long murmurHash3(long x) {
-        x ^= x >>> 33;
-        x *= 0xff51afd7ed558ccdL;
-        x ^= x >>> 33;
-        x *= 0xc4ceb9fe1a85ec53L;
-        x ^= x >>> 33;
-
-        return x;
     }
 }

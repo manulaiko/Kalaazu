@@ -132,7 +132,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTranslation(Vector2 trn) {
-        return setToTranslation(trn.x(), trn.y());
+        return setToTranslation(trn.getX(), trn.getY());
     }
 
     /**
@@ -162,7 +162,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToScaling(Vector2 scale) {
-        return setToScaling(scale.x(), scale.y());
+        return setToScaling(scale.getX(), scale.getY());
     }
 
     /**
@@ -253,7 +253,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToShearing(Vector2 shear) {
-        return setToShearing(shear.x(), shear.y());
+        return setToShearing(shear.getX(), shear.getY());
     }
 
     /**
@@ -300,7 +300,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotScl(Vector2 trn, float degrees, Vector2 scale) {
-        return setToTrnRotScl(trn.x(), trn.y(), degrees, scale.x(), scale.y());
+        return setToTrnRotScl(trn.getX(), trn.getY(), degrees, scale.getX(), scale.getY());
     }
 
     /**
@@ -347,7 +347,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotRadScl(Vector2 trn, float radians, Vector2 scale) {
-        return setToTrnRotRadScl(trn.x(), trn.y(), radians, scale.x(), scale.y());
+        return setToTrnRotRadScl(trn.getX(), trn.getY(), radians, scale.getX(), scale.getY());
     }
 
     /**
@@ -381,7 +381,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnScl(Vector2 trn, Vector2 scale) {
-        return setToTrnScl(trn.x(), trn.y(), scale.x(), scale.y());
+        return setToTrnScl(trn.getX(), trn.getY(), scale.getX(), scale.getY());
     }
 
     /**
@@ -511,7 +511,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 translate(Vector2 trn) {
-        return translate(trn.x(), trn.y());
+        return translate(trn.getX(), trn.getY());
     }
 
     /**
@@ -536,7 +536,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preTranslate(Vector2 trn) {
-        return preTranslate(trn.x(), trn.y());
+        return preTranslate(trn.getX(), trn.getY());
     }
 
     /**
@@ -563,7 +563,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 scale(Vector2 scale) {
-        return scale(scale.x(), scale.y());
+        return scale(scale.getX(), scale.getY());
     }
 
     /**
@@ -592,7 +592,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preScale(Vector2 scale) {
-        return preScale(scale.x(), scale.y());
+        return preScale(scale.getX(), scale.getY());
     }
 
     /**
@@ -727,8 +727,8 @@ public final class Affine2 implements Serializable {
 
         tmp0 = m10 + shearY * m11;
         tmp1 = m11 + shearX * m10;
-        m10 = tmp0;
-        m11 = tmp1;
+        m10  = tmp0;
+        m11  = tmp1;
         return this;
     }
 
@@ -740,7 +740,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 shear(Vector2 shear) {
-        return shear(shear.x(), shear.y());
+        return shear(shear.getX(), shear.getY());
     }
 
     /**
@@ -776,7 +776,7 @@ public final class Affine2 implements Serializable {
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preShear(Vector2 shear) {
-        return preShear(shear.x(), shear.y());
+        return preShear(shear.getX(), shear.getY());
     }
 
     /**
@@ -796,8 +796,8 @@ public final class Affine2 implements Serializable {
      * @return Filled position.
      */
     public Vector2 getTranslation(Vector2 position) {
-        position.x(m02);
-        position.y(m12);
+        position.setX(m02);
+        position.setY(m12);
 
         return position;
     }
@@ -824,10 +824,10 @@ public final class Affine2 implements Serializable {
      * Applies the affine transformation on a vector.
      */
     public void applyTo(Vector2 point) {
-        float x = point.x();
-        float y = point.y();
-        point.x(m00 * x + m01 * y + m02);
-        point.y(m10 * x + m11 * y + m12);
+        float x = point.getX();
+        float y = point.getY();
+        point.setX(m00 * x + m01 * y + m02);
+        point.setY(m10 * x + m11 * y + m12);
     }
 
     @Override

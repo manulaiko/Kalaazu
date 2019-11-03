@@ -1,30 +1,27 @@
 package com.kalaazu.cms;
 
-import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * CMS class.
  * ==========
  *
- * Serves as the module's facade.
- *
- * Use `CMSBuilder` to instantiate this class.
- *
- * Once instantiated you can use the `start`, `stop` or `restart`
- * methods to manage the HTTP server.
- *
- * Example:
- *
- * ```java
- * if (cms.isRunning()) {
- * cms.stop();
- * }
- *
- * cms.start();
- * ```
+ * Configures the CMS server.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-@Slf4j
-public class CMS {
+@Configuration
+@EnableWebMvc
+public class CMS implements WebMvcConfigurer {
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public void addCorsMappings(CorsRegistry registry) {
+        // disable CORS
+        registry.addMapping("/**");
+    }
 }
