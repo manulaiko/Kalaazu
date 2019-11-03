@@ -1,5 +1,5 @@
-import {MutationTree} from "vuex";
-import {AccountState} from "@/store/Account/types";
+import {MutationTree} from 'vuex';
+import {AccountState} from '@/store/Account/types';
 
 /**
  * Account mutations.

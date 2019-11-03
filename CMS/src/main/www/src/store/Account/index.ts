@@ -1,8 +1,8 @@
 import { Module } from 'vuex';
-import {RootState} from "@/store/types";
-import {AccountState} from "@/store/Account/types";
-import {state} from "@/store/Account/state";
-import {mutations} from "@/store/Account/mutations";
+import {RootState} from '@/store/types';
+import {AccountState} from '@/store/Account/types';
+import {state} from '@/store/Account/state';
+import {mutations} from '@/store/Account/mutations';
 
 /**
  * Account store module.

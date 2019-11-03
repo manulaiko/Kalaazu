@@ -1,7 +1,7 @@
 import axios from 'axios';
 import Store from '@/store';
-import Endpoint from "@/service/api/Endpoint";
-import {LoginResult} from "@/service/api/External/types";
+import Endpoint from '@/service/api/Endpoint';
+import {LoginResult} from '@/service/api/External/types';
 
 /**
  * External api controller.
@@ -19,7 +19,7 @@ export default class Index extends Endpoint {
      * @param store Vue store.
      */
     constructor(http: typeof axios, store: typeof Store) {
-        super(http, store, "/external");
+        super(http, store, '/external');
     }
 
     /**
@@ -28,12 +28,16 @@ export default class Index extends Endpoint {
      * @param username Login username.
      * @param password Login password.
      */
-    async login(username: string, password: string): Promise<LoginResult> {
-        const result = await this.http.post<LoginResult>("/login", {
+    async login(username: string, password: string): Promise<void> {
+        const result = await this.http.post<LoginResult>('/login', {
             username: username,
             password: password
         });
-
-        return result.data;
+        
+        if (result.data.kind == 'ok') {
+            super.store.commit('LOGIN', result.data.data);
+            
+            return;
+        }
     }
 }

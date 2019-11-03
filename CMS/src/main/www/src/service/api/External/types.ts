@@ -1,7 +1,7 @@
 /**
  * Login result type.
  */
-import {ApiResponse} from "@/service/api/types";
+import {ApiResponse} from '@/service/api/types';
 
 /**
  * Login endpoint response.
