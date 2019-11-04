@@ -7,4 +7,7 @@ module kalaazu.persistence {
     requires spring.context;
     requires java.persistence;
     requires java.sql;
+    requires reflections;
+    requires spring.core;
+    requires spring.data.jpa;
 }

@@ -6,7 +6,7 @@ plugins {
 }
 
 version = '0.0.1-SNAPSHOT'
-mainClassName = 'com.kalaazu.Launcher'
+mainClassName = project.hasProperty('mainClass') ? getProperty('mainClass') : 'com.kalaazu.Launcher'
 
 configurations {
     compileOnly {
@@ -59,6 +59,7 @@ allprojects {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
         testImplementation 'org.springframework.security:spring-security-test'
+        implementation 'org.reflections:reflections:0.9.11'
     }
 
     test {
