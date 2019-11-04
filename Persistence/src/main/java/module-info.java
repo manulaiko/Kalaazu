@@ -10,4 +10,5 @@ module kalaazu.persistence {
     requires reflections;
     requires spring.core;
     requires spring.data.jpa;
+    requires spring.beans;
 }
