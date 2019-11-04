@@ -1,6 +1,7 @@
 module kalaazu.persistence {
     exports com.kalaazu.persistence;
     exports com.kalaazu.persistence.entity;
+    exports com.kalaazu.persistence.service;
 
     requires kalaazu.utils;
     requires lombok;

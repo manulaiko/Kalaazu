@@ -2,6 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.UsersEntity;
 import com.kalaazu.persistence.repository.UsersRepository;
+import com.kalaazu.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -60,5 +61,13 @@ public class UsersServiceImpl implements UsersService {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public UsersEntity login(String username, String password) {
+        return this.repository.findByNameAndPassword(username, StringUtils.hash(password));
     }
 }
