@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * MapsNpcs repository.
  * ====================
- * 
+ *
  * Repository for the MapsNpcs entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

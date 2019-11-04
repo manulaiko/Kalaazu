@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * ClansDiplomacies repository.
  * ============================
- * 
+ *
  * Repository for the ClansDiplomacies entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

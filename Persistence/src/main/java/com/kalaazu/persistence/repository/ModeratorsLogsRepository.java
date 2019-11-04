@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * ModeratorsLogs repository.
  * ==========================
- * 
+ *
  * Repository for the ModeratorsLogs entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

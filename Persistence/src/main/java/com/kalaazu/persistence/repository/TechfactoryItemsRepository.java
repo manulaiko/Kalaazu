@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * TechfactoryItems repository.
  * ============================
- * 
+ *
  * Repository for the TechfactoryItems entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

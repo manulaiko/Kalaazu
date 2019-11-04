@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * SkylabModules repository.
  * =========================
- * 
+ *
  * Repository for the SkylabModules entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

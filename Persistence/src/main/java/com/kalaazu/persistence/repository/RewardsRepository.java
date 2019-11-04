@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * Rewards repository.
  * ===================
- * 
+ *
  * Repository for the Rewards entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

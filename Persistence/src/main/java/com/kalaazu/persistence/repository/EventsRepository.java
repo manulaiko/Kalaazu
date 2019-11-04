@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * Events repository.
  * ==================
- * 
+ *
  * Repository for the Events entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

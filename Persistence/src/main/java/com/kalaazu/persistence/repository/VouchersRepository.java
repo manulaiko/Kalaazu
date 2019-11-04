@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * Vouchers repository.
  * ====================
- * 
+ *
  * Repository for the Vouchers entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

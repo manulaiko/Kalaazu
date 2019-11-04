@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * News repository.
  * ================
- * 
+ *
  * Repository for the News entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

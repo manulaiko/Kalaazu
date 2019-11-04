@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * GalaxygatesSpawns repository.
  * =============================
- * 
+ *
  * Repository for the GalaxygatesSpawns entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

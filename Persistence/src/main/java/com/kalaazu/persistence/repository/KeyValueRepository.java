@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * KeyValue repository.
  * ====================
- * 
+ *
  * Repository for the KeyValue entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository

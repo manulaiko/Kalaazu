@@ -7,9 +7,9 @@ import org.springframework.stereotype.Repository;
 /**
  * Collectables repository.
  * ========================
- * 
+ *
  * Repository for the Collectables entity.
- * 
+ *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
