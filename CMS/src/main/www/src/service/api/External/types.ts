@@ -1,11 +1,8 @@
-/**
- * Login result type.
- */
 import { ApiResponse } from "@/service/api/types";
 
 /**
- * Login endpoint response.
+ * Login/Register endpoint response.
  */
-export type LoginResult = ApiResponse<{
+export type Result = ApiResponse<{
   sessionId: string;
 }>;

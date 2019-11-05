@@ -1,8 +1,8 @@
 import axios from "axios";
-import { ToastProgrammatic as Toast } from "buefy";
+import {ToastProgrammatic as Toast} from "buefy";
 import Store from "@/store";
 import Endpoint from "@/service/api/Endpoint";
-import { LoginResult } from "@/service/api/External/types";
+import {Result} from "@/service/api/External/types";
 
 /**
  * External api controller.
@@ -30,24 +30,50 @@ export default class Index extends Endpoint {
    * @param password Login password.
    */
   async login(username: string, password: string): Promise<void> {
-    const result = await this.http.post<LoginResult>("/login", {
+    const result = await this.http.post<Result>("/login", {
       username: username,
       password: password
     });
 
-    if (result.data.kind == "ok") {
-      super.store.commit("LOGIN", result.data.data);
+    this.parseResult(result.data);
+  }
+
+  /**
+   * Performs the register operation.
+   *
+   * @param username Register username.
+   * @param password Register password.
+   * @param email    Register email.
+   */
+  async register(username: string, password: string, email: string): Promise<void> {
+    const result = await this.http.post<Result>("/register", {
+      username: username,
+      password: password,
+      email: email
+    });
+
+    this.parseResult(result.data);
+  }
+
+  /**
+   * Parses the result data.
+   *
+   * @param data Result data.
+   */
+  private parseResult(data: Result): void {
+    if (data.kind == "ok") {
       Toast.open({
         message: "Successfully logged in!",
         type: "is-success"
       });
+      super.store.commit("LOGIN", data.data);
 
       return;
     }
 
-    if (result.data.kind == "not-found") {
+    if (data.kind == "not-found") {
       Toast.open({
-        message: "No username/password convination found!",
+        message: "No username/password combination found!",
         type: "is-danger"
       });
 
@@ -58,6 +84,6 @@ export default class Index extends Endpoint {
       message: "Something went wrong!",
       type: "is-danger"
     });
-    console.error(result.data);
+    console.error(data);
   }
 }
