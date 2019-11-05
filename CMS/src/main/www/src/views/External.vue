@@ -3,11 +3,11 @@
     <div class="hero-head">
       <b-navbar>
         <template slot="end">
-          <router-link tag="b-navbar-item" :to="{name: 'login'}">
+          <router-link tag="b-navbar-item" :to="{ name: 'login' }">
             Login
           </router-link>
 
-          <router-link tag="b-navbar-item" :to="{name: 'register'}">
+          <router-link tag="b-navbar-item" :to="{ name: 'register' }">
             Register
           </router-link>
         </template>

@@ -9,5 +9,6 @@ module kalaazu.cms {
     requires spring.webmvc;
     requires spring.web;
     requires spring.beans;
+    requires java.sql;
     requires java.desktop;
 }

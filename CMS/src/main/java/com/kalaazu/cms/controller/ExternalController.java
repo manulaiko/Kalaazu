@@ -59,6 +59,7 @@ public class ExternalController {
 
             return ResponseEntity.ok(response);
         }
+
         // Filter out banned accounts.
         // Last logged in account.
         var lastUsedAccount = user.getAccounts()

@@ -1,7 +1,7 @@
 <template>
   <section class="column is-4 is-offset-4">
     <h3 class="title">Login</h3>
-    <hr class="login-hr">
+    <hr class="login-hr" />
     <form>
       <b-field label="Username">
         <b-input v-model="username"></b-input>
@@ -19,31 +19,31 @@
 </template>
 
 <script>
-    export default {
-        name: "Login",
-        data() {
-            return {
-                username: "",
-                password: ""
-            }
-        },
-        methods: {
-            /**
-             * Performs the login operation.
-             */
-            login: function() {
-              this.$api.external.login(this.username, this.password);
-            }
-        }
+export default {
+  name: "Login",
+  data() {
+    return {
+      username: "",
+      password: ""
     };
+  },
+  methods: {
+    /**
+     * Performs the login operation.
+     */
+    login: function() {
+      this.$api.external.login(this.username, this.password);
+    }
+  }
+};
 </script>
 
 <style lang="sass" scoped>
-  section
-    background-color: rgba(255, 255, 255, 0.5)
-    border-radius: 10px
-    padding: 25px
+section
+  background-color: rgba(255, 255, 255, 0.5)
+  border-radius: 10px
+  padding: 25px
 
-    label
-      color: black
+  label
+    color: black
 </style>

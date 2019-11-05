@@ -1,7 +1,7 @@
-import Vue from 'vue';
-import axios from 'axios';
-import Store from '@/store';
-import External from '@/service/api/External';
+import Vue from "vue";
+import axios from "axios";
+import Store from "@/store";
+import External from "@/service/api/External";
 
 /**
  * API service.
@@ -12,20 +12,20 @@ import External from '@/service/api/External';
  * @author Manulaiko <manulaiko@gmail.com>
  */
 class ApiService {
-    external: External;
+  external: External;
 
-    /**
-     * Constructor.
-     *
-     * @param store Vue store.
-     */
-    constructor(store: typeof Store) {
-        this.external = new External(axios, store)
-    }
+  /**
+   * Constructor.
+   *
+   * @param store Vue store.
+   */
+  constructor(store: typeof Store) {
+    this.external = new External(axios, store);
+  }
 }
 
 export default function Api(vue: typeof Vue, options: any): void {
-    axios.defaults.baseURL = options.url;
+  axios.defaults.baseURL = options.url;
 
-    vue.prototype.$api = new ApiService(Store);
+  vue.prototype.$api = new ApiService(Store);
 }

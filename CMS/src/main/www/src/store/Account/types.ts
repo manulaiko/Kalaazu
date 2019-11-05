@@ -2,5 +2,5 @@
  * Account state.
  */
 export type AccountState = {
-    sessionId: string
+  sessionId: string;
 };
