@@ -20,7 +20,7 @@ export default new Vuex.Store<RootState>({
      */
     LOGIN: (context, payload) => {
       context.commit("ISLOGGEDIN", true);
-      context.commit("INIT_ACCOUNT", payload);
+      context.dispatch("INIT_ACCOUNT", payload);
     }
   },
   modules: {
