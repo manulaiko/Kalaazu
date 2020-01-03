@@ -4,10 +4,9 @@ import com.kalaazu.cms.dto.LoginRequest;
 import com.kalaazu.cms.dto.LoginResponse;
 import com.kalaazu.cms.dto.RegisterRequest;
 import com.kalaazu.cms.dto.Response;
+import com.kalaazu.cms.service.LoginService;
 import com.kalaazu.persistence.entity.UsersEntity;
-import com.kalaazu.persistence.service.AccountsService;
 import com.kalaazu.persistence.service.UsersService;
-import com.kalaazu.util.StringUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,9 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.time.Instant;
-import java.util.Date;
 
 /**
  * External controller.
@@ -32,10 +28,10 @@ import java.util.Date;
 @RequestMapping("/external")
 public class ExternalController {
     @Autowired
-    private UsersService usersService;
+    private LoginService login;
 
     @Autowired
-    private AccountsService accountsService;
+    private UsersService usersService;
 
     /**
      * Login endpoint.
@@ -48,49 +44,18 @@ public class ExternalController {
     public ResponseEntity<Response<LoginResponse>> login(@RequestBody LoginRequest body) {
         var response = new Response<LoginResponse>("other", "Couldn't perform login!", null);
 
-        if (body.getUsername().isEmpty() || body.getPassword().isEmpty()) {
-            response.setKind("bad-data");
+        try {
+            var sessionId = this.login.login(body.getUsername(), body.getPassword());
 
-            return ResponseEntity.ok(response);
+            var data = new LoginResponse();
+            data.setSessionId(sessionId);
+
+            response.setKind("ok");
+            response.setData(data);
+        } catch (Exception e) {
+            response.setKind("other");
+            response.setMessage(e.getMessage());
         }
-
-        var user = usersService.login(body.getUsername(), body.getPassword());
-        if (user == null) {
-            response.setKind("not-found");
-
-            return ResponseEntity.ok(response);
-        }
-
-        // Filter out banned accounts.
-        // Last logged in account.
-        var lastUsedAccount = user.getAccounts()
-                                  .stream()
-                                  .filter(
-                                          // Filter out banned accounts.
-                                          a -> a.getBanDate() != null &&
-                                               a.getBanDate().compareTo(Date.from(Instant.now())) < 0
-                                  )
-                                  .min(
-                                          // Last logged in account.
-                                          (a1, a2) -> a2.getLastLogin().compareTo(a1.getLastLogin())
-                                  )
-                                  .orElse(null);
-
-        if (lastUsedAccount == null) {
-            response.setKind("rejected");
-
-            return ResponseEntity.ok(response);
-        }
-
-        // Generate new session ID.
-        lastUsedAccount.setSessionId(StringUtils.random(32));
-        this.accountsService.update(lastUsedAccount);
-
-        var data = new LoginResponse();
-        data.setSessionId(lastUsedAccount.getSessionId());
-
-        response.setKind("ok");
-        response.setData(data);
 
         return ResponseEntity.ok(response);
     }
