@@ -5,8 +5,7 @@ import com.kalaazu.cms.dto.LoginResponse;
 import com.kalaazu.cms.dto.RegisterRequest;
 import com.kalaazu.cms.dto.Response;
 import com.kalaazu.cms.service.LoginService;
-import com.kalaazu.persistence.entity.UsersEntity;
-import com.kalaazu.persistence.service.UsersService;
+import com.kalaazu.cms.service.RegisterService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -31,7 +30,7 @@ public class ExternalController {
     private LoginService login;
 
     @Autowired
-    private UsersService usersService;
+    private RegisterService register;
 
     /**
      * Login endpoint.
@@ -70,26 +69,18 @@ public class ExternalController {
     public ResponseEntity<Response<LoginResponse>> register(@RequestBody RegisterRequest body) {
         var response = new Response<LoginResponse>("other", "Couldn't perform register!", null);
 
-        if (body.getUsername().isEmpty() || body.getPassword().isEmpty() || body.getEmail().isEmpty()) {
-            response.setKind("bad-data");
-
-            return ResponseEntity.ok(response);
-        }
-
-        UsersEntity user;
         try {
-            user = usersService.register(body.getUsername(), body.getPassword(), body.getEmail());
+            var sessionId = this.register.register(body.getUsername(), body.getPassword(), body.getEmail());
+
+            var data = new LoginResponse();
+            data.setSessionId(sessionId);
+
+            response.setKind("ok");
+            response.setData(data);
         } catch (Exception e) {
             response.setKind("other");
             response.setMessage(e.getMessage());
-
-            return ResponseEntity.ok(response);
         }
-
-        var data = new LoginResponse();
-
-        response.setKind("ok");
-        response.setData(data);
 
         return ResponseEntity.ok(response);
     }

@@ -68,7 +68,7 @@ public class LoginService {
         }
 
         // Generate new session ID.
-        lastUsedAccount.setSessionId(StringUtils.random(32));
+        lastUsedAccount.setSessionId(StringUtils.sessionId());
         this.accounts.update(lastUsedAccount);
 
         return lastUsedAccount.getSessionId();
