@@ -23,4 +23,14 @@ public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
      * @return Login user.
      */
     UsersEntity findByNameAndPassword(String username, String password);
+
+    /**
+     * Returns the user with the provided register info.
+     *
+     * @param username Login username.
+     * @param email    Login password.
+     *
+     * @return Login user.
+     */
+    UsersEntity findByNameOrEmail(String username, String email);
 }

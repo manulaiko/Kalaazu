@@ -80,6 +80,15 @@ export default class Index extends Endpoint {
       return;
     }
 
+    if (data.kind == "other") {
+      Toast.open({
+        message: data.message,
+        type: "is-danger"
+      });
+
+      return
+    }
+
     Toast.open({
       message: "Something went wrong!",
       type: "is-danger"

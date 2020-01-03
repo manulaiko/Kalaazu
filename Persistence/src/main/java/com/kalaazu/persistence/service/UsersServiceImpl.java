@@ -70,4 +70,21 @@ public class UsersServiceImpl implements UsersService {
     public UsersEntity login(String username, String password) {
         return this.repository.findByNameAndPassword(username, StringUtils.hash(password));
     }
+
+    /**
+     * @inheritDoc
+     */
+    @Override
+    public UsersEntity register(String username, String password, String email) throws Exception {
+        if (this.repository.findByNameOrEmail(username, email) != null) {
+            throw new Exception("Username/email already exists!");
+        }
+
+        var user = new UsersEntity();
+        user.setName(username);
+        user.setPassword(StringUtils.hash(password));
+        user.setEmail(email);
+
+        return user;
+    }
 }

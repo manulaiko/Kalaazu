@@ -46,6 +46,10 @@ export type ApiResponse<T> =
    */
   | { kind: "bad-data" }
   /**
+   * Other response errors.
+   */
+  | { kind: "other"; message: string}
+  /**
    * Ok response.
    */
   | { kind: "ok"; data: T };

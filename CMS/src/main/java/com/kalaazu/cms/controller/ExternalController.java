@@ -2,7 +2,9 @@ package com.kalaazu.cms.controller;
 
 import com.kalaazu.cms.dto.LoginRequest;
 import com.kalaazu.cms.dto.LoginResponse;
+import com.kalaazu.cms.dto.RegisterRequest;
 import com.kalaazu.cms.dto.Response;
+import com.kalaazu.persistence.entity.UsersEntity;
 import com.kalaazu.persistence.service.AccountsService;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.util.StringUtils;
@@ -44,8 +46,7 @@ public class ExternalController {
      */
     @PostMapping("/login")
     public ResponseEntity<Response<LoginResponse>> login(@RequestBody LoginRequest body) {
-        var response = new Response<LoginResponse>();
-        response.setKind("unknown");
+        var response = new Response<LoginResponse>("other", "Couldn't perform login!", null);
 
         if (body.getUsername().isEmpty() || body.getPassword().isEmpty()) {
             response.setKind("bad-data");
@@ -87,6 +88,40 @@ public class ExternalController {
 
         var data = new LoginResponse();
         data.setSessionId(lastUsedAccount.getSessionId());
+
+        response.setKind("ok");
+        response.setData(data);
+
+        return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Register endpoint.
+     *
+     * @param body Request body.
+     *
+     * @return Response entity.
+     */
+    public ResponseEntity<Response<LoginResponse>> register(@RequestBody RegisterRequest body) {
+        var response = new Response<LoginResponse>("other", "Couldn't perform register!", null);
+
+        if (body.getUsername().isEmpty() || body.getPassword().isEmpty() || body.getEmail().isEmpty()) {
+            response.setKind("bad-data");
+
+            return ResponseEntity.ok(response);
+        }
+
+        UsersEntity user;
+        try {
+            user = usersService.register(body.getUsername(), body.getPassword(), body.getEmail());
+        } catch (Exception e) {
+            response.setKind("other");
+            response.setMessage(e.getMessage());
+
+            return ResponseEntity.ok(response);
+        }
+
+        var data = new LoginResponse();
 
         response.setKind("ok");
         response.setData(data);

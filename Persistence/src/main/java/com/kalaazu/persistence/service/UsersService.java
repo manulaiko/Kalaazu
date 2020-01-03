@@ -20,4 +20,15 @@ public interface UsersService extends IService<UsersEntity, Integer> {
      * @return Login user.
      */
     UsersEntity login(String username, String password);
+
+    /**
+     * Registers a new user with the provided info.
+     *
+     * @param username Login username.
+     * @param password Login password.
+     * @param email    User email.
+     *
+     * @return Created user.
+     */
+    UsersEntity register(String username, String password, String email) throws Exception;
 }
