@@ -1,6 +1,7 @@
 package com.kalaazu.persistence.entity;
 
 import lombok.Data;
+import lombok.With;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -27,15 +28,17 @@ public class ClansBanksLogsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type;
+    @Enumerated(EnumType.ORDINAL)
+    private BanksLogType type = BanksLogType.WITHDRAW;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private int amount;
+    private int amount = 0;
 
     @Basic
     @Column(name = "currency", nullable = false)
-    private byte currency;
+    @Enumerated(EnumType.ORDINAL)
+    private CurrencyType currency = CurrencyType.CREDITS;
 
     @ManyToOne
     @JoinColumn(name = "clans_banks_id", referencedColumnName = "id", nullable = false)

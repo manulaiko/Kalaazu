@@ -23,11 +23,13 @@ public class AccountsMessagesEntity {
 
     @Basic
     @Column(name = "from_status", nullable = false)
-    private byte fromStatus;
+    @Enumerated(EnumType.ORDINAL)
+    private MessageStatus fromStatus = MessageStatus.UNREAD;
 
     @Basic
     @Column(name = "to_status", nullable = false)
-    private byte toStatus;
+    @Enumerated(EnumType.ORDINAL)
+    private MessageStatus toStatus = MessageStatus.UNREAD;
 
     @Basic
     @Column(name = "date", nullable = false)

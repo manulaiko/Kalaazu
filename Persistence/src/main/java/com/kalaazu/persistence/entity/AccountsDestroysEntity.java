@@ -22,11 +22,11 @@ public class AccountsDestroysEntity {
 
     @Basic
     @Column(name = "points", nullable = false)
-    private short points;
+    private short points = 0;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private short amount;
+    private short amount = 0;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

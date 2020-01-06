@@ -23,7 +23,7 @@ public class AccountsSkylabsEntity {
 
     @Basic
     @Column(name = "space", nullable = false)
-    private int space;
+    private int space = 0;
 
     @Basic
     @Column(name = "upgrade")

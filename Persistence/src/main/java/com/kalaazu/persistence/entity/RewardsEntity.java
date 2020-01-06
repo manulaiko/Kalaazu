@@ -25,8 +25,8 @@ public class RewardsEntity {
     private int amount;
 
     @Basic
-    @Column(name = "probability", nullable = false)
-    private double probability;
+    @Column(name = "probability", nullable = false, precision = 2)
+    private double probability = 100;
 
     @Basic
     @Column(name = "comment")

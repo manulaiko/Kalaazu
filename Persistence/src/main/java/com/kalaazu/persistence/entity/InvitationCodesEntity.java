@@ -27,7 +27,7 @@ public class InvitationCodesEntity {
 
     @Basic
     @Column(name = "max", nullable = false)
-    private byte max;
+    private byte max = 1;
 
     @OneToMany(mappedBy = "invitationCodesByInvitationCodesId")
     private Collection<InvitationCodesRedeemLogsEntity> invitationCodesRedeemLogs;

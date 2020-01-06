@@ -47,11 +47,11 @@ public class AccountsEntity {
 
     @Basic
     @Column(name = "skill_points_total", nullable = false)
-    private short skillPointsTotal;
+    private short skillPointsTotal = 0;
 
     @Basic
     @Column(name = "skill_points_free", nullable = false)
-    private short skillPointsFree;
+    private short skillPointsFree = 0;
 
     @ManyToOne()
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
@@ -62,11 +62,11 @@ public class AccountsEntity {
     private LevelsEntity levelsByLevelsId;
 
     @ManyToOne()
-    @JoinColumn(name = "factions_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 
     @ManyToOne()
-    @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id", nullable = false)
+    @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id")
     private AccountsHangarsEntity accountsHangarsByAccountsHangarsId;
 
     @ManyToOne()

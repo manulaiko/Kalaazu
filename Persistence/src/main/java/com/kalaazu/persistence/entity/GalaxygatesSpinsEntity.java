@@ -22,15 +22,16 @@ public class GalaxygatesSpinsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type;
+    @Enumerated(EnumType.ORDINAL)
+    private ProbabilityType type = ProbabilityType.AMMO;
 
     @Basic
     @Column(name = "probability", nullable = false)
-    private double probability;
+    private double probability = 0;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private short amount;
+    private short amount = 1;
 
     @ManyToOne
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)

@@ -22,7 +22,7 @@ public class MapsNpcsEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private byte amount;
+    private byte amount = 0;
 
     @ManyToOne
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)

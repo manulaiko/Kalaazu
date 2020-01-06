@@ -20,22 +20,23 @@ public class AccountsConfigurationsEntity {
 
     @Basic
     @Column(name = "configuration_id", nullable = false)
-    private byte   configurationId;
+    private byte configurationId = 1;
+
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "shield", nullable = false)
-    private int shield;
+    private int shield = 0;
 
     @Basic
     @Column(name = "speed", nullable = false)
-    private short speed;
+    private short speed = 0;
 
     @Basic
     @Column(name = "damage", nullable = false)
-    private int damage;
+    private int damage = 0;
 
     @ManyToOne
     @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id", nullable = false)

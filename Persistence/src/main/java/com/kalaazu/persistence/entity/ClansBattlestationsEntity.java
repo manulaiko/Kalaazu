@@ -24,11 +24,11 @@ public class ClansBattlestationsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "position", nullable = false)
-    private long position;
+    private long position = 0;
 
     @Basic
     @Column(name = "date")

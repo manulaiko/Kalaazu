@@ -27,15 +27,15 @@ public class NewsEntity {
 
     @Basic
     @Column(name = "image", nullable = false)
-    private String image;
+    private String image = "";
 
     @Basic
     @Column(name = "title", nullable = false)
-    private String title;
+    private String title = "";
 
     @Basic
     @Column(name = "teaser", nullable = false)
-    private String teaser;
+    private String teaser = "";
 
     @Basic
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")

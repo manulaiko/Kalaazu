@@ -23,7 +23,7 @@ public class AccountsQuestsEntity {
 
     @Basic
     @Column(name = "is_completed", nullable = false)
-    private boolean isCompleted;
+    private boolean isCompleted = false;
 
     @Basic
     @Column(name = "date", nullable = false)

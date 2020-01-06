@@ -22,19 +22,19 @@ public class AccountsGalaxygatesEntity {
 
     @Basic
     @Column(name = "parts", nullable = false)
-    private byte parts;
+    private byte parts = 0;
 
     @Basic
     @Column(name = "lifes", nullable = false)
-    private byte lifes;
+    private byte lifes = -1;
 
     @Basic
     @Column(name = "wave", nullable = false)
-    private byte wave;
+    private byte wave = -1;
 
     @Basic
     @Column(name = "times", nullable = false)
-    private short times;
+    private short times = 0;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
