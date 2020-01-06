@@ -27,17 +27,15 @@ public class AccountsBanksLogsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private BanksLogType type = BanksLogType.WITHDRAW;
+    private byte type;
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private int amount = 0;
+    private int amount;
 
     @Basic
     @Column(name = "currency", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private CurrencyType currency = CurrencyType.CREDITS;
+    private byte currency;
 
     @ManyToOne
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)

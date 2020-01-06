@@ -22,11 +22,11 @@ public class ClansRankingEntity {
 
     @Basic
     @Column(name = "points", nullable = false)
-    private int points = 0;
+    private int points;
 
     @Basic
     @Column(name = "best_points", nullable = false)
-    private int bestPoints = 0;
+    private int bestPoints;
 
     @ManyToOne
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)

@@ -27,7 +27,7 @@ public class AccountsItemsEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private long amount = 1;
+    private long amount;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

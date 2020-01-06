@@ -23,11 +23,11 @@ public class GalaxygatesEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "GG-A";
+    private String name;
 
     @Basic
     @Column(name = "parts", nullable = false)
-    private byte parts = 0;
+    private byte parts;
 
     @ManyToOne
     @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)

@@ -23,17 +23,15 @@ public class ClansMessagesEntity {
 
     @Basic
     @Column(name = "from_status", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private MessageStatus fromStatus = MessageStatus.UNREAD;
+    private byte fromStatus;
 
     @Basic
     @Column(name = "to_status", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private MessageStatus toStatus = MessageStatus.UNREAD;
+    private byte toStatus;
 
     @Basic
     @Column(name = "title", nullable = false)
-    private String title = "";
+    private String title;
 
     @Basic
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")

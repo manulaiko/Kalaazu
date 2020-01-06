@@ -23,7 +23,7 @@ public class SkilltreeSkillsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -31,24 +31,23 @@ public class SkilltreeSkillsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private SkillType type = SkillType.BLUE;
+    private byte type;
 
     @Basic
     @Column(name = "is_advanced", nullable = false)
-    private boolean isAdvanced = false;
+    private boolean isAdvanced;
 
     @Basic
     @Column(name = "bonus_type", nullable = false)
-    private String bonusType = "health";
+    private String bonusType;
 
     @Basic
     @Column(name = "bonus_amount", nullable = false)
-    private int bonusAmount = 0;
+    private int bonusAmount;
 
     @Basic
     @Column(name = "bonus_factor", nullable = false)
-    private byte bonusFactor = 2;
+    private byte bonusFactor;
 
     @OneToMany(mappedBy = "skilltreeSkillsBySkilltreeSkillsId")
     private Collection<SkilltreeLevelsEntity> skilltreeLevels;

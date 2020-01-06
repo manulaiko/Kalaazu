@@ -22,12 +22,11 @@ public class QuestsConditionsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private ConditionType type = ConditionType.COLLECT;
+    private byte type;
 
     @Basic
     @Column(name = "value", nullable = false)
-    private String value = "";
+    private String value;
 
     @ManyToOne
     @JoinColumn(name = "quests_conditions_id", referencedColumnName = "id")

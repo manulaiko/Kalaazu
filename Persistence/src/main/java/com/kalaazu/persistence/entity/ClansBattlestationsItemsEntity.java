@@ -23,7 +23,7 @@ public class ClansBattlestationsItemsEntity {
 
     @Basic
     @Column(name = "slot", nullable = false)
-    private byte slot = 1;
+    private byte slot;
 
     @Basic
     @Column(name = "date", nullable = false)

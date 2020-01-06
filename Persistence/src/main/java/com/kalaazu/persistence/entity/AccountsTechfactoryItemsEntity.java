@@ -23,7 +23,7 @@ public class AccountsTechfactoryItemsEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private short amount = 1;
+    private short amount;
 
     @Basic
     @Column(name = "date")

@@ -27,7 +27,7 @@ public class VouchersEntity {
 
     @Basic
     @Column(name = "max", nullable = false)
-    private byte max = 1;
+    private byte max;
 
     @ManyToMany
     @JoinTable(

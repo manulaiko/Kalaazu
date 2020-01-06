@@ -23,43 +23,43 @@ public class ShipsEntity {
 
     @Basic
     @Column(name = "health", nullable = false)
-    private int health = 0;
+    private int health;
 
     @Basic
     @Column(name = "speed", nullable = false)
-    private short speed = 0;
+    private short speed;
 
     @Basic
     @Column(name = "cargo", nullable = false)
-    private short cargo = 100;
+    private short cargo;
 
     @Basic
     @Column(name = "batteries", nullable = false)
-    private short batteries = 1000;
+    private short batteries;
 
     @Basic
     @Column(name = "rockets", nullable = false)
-    private short rockets = 100;
+    private short rockets;
 
     @Basic
     @Column(name = "lasers", nullable = false)
-    private byte lasers = 1;
+    private byte lasers;
 
     @Basic
     @Column(name = "hellstorms", nullable = false)
-    private byte hellstorms = 1;
+    private byte hellstorms;
 
     @Basic
     @Column(name = "generators", nullable = false)
-    private byte generators = 1;
+    private byte generators;
 
     @Basic
     @Column(name = "extras", nullable = false)
-    private byte extras = 1;
+    private byte extras;
 
     @Basic
     @Column(name = "gfx", nullable = false)
-    private byte gfx = 0;
+    private byte gfx;
 
     @ManyToOne
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)

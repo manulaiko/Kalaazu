@@ -22,15 +22,15 @@ public class LevelsUpgradesEntity {
 
     @Basic
     @Column(name = "probability", nullable = false)
-    private byte probability = 5;
+    private byte probability;
 
     @Basic
     @Column(name = "credits", nullable = false)
-    private int credits = 0;
+    private int credits;
 
     @Basic
     @Column(name = "uridium", nullable = false)
-    private short uridium = 0;
+    private short uridium;
 
     @ManyToOne
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)

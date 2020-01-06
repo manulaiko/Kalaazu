@@ -23,35 +23,35 @@ public class NpcsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "health", nullable = false)
-    private int health = 0;
+    private int health;
 
     @Basic
     @Column(name = "shield", nullable = false)
-    private int shield = 0;
+    private int shield;
 
     @Basic
-    @Column(name = "shield_absorption", nullable = false, precision = 2)
-    private double shieldAbsorption = 0;
+    @Column(name = "shield_absorption", nullable = false)
+    private byte shieldAbsorption;
 
     @Basic
     @Column(name = "damage", nullable = false)
-    private int damage = 0;
+    private int damage;
 
     @Basic
     @Column(name = "speed", nullable = false)
-    private short speed = 0;
+    private short speed;
 
     @Basic
     @Column(name = "gfx", nullable = false)
-    private byte gfx = 0;
+    private byte gfx;
 
     @Basic
     @Column(name = "ai", nullable = false)
-    private byte ai = 1;
+    private byte ai;
 
     @ManyToMany
     @JoinTable(

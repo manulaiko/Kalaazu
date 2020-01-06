@@ -22,12 +22,11 @@ public class GalaxygatesProbabilitiesEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private ProbabilityType type = ProbabilityType.AMMO;
+    private byte type;
 
     @Basic
-    @Column(name = "probability", nullable = false, precision = 2)
-    private double probability = 100;
+    @Column(name = "probability", nullable = false, precision = 0)
+    private double probability;
 
     @ManyToOne
     @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)

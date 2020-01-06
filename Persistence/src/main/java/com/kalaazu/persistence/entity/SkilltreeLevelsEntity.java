@@ -23,15 +23,15 @@ public class SkilltreeLevelsEntity {
 
     @Basic
     @Column(name = "credits", nullable = false)
-    private int credits = 10000;
+    private int credits;
 
     @Basic
     @Column(name = "seprom", nullable = false)
-    private short seprom = 0;
+    private short seprom;
 
     @Basic
     @Column(name = "points", nullable = false)
-    private byte points = 1;
+    private byte points;
 
     @ManyToOne
     @JoinColumn(name = "skilltree_skills_id", referencedColumnName = "id", nullable = false)

@@ -23,7 +23,7 @@ public class AccountsDronesEntity {
 
     @Basic
     @Column(name = "experience", nullable = false)
-    private short experience = 0;
+    private short experience;
 
     @Basic
     @Column(name = "date", nullable = false)

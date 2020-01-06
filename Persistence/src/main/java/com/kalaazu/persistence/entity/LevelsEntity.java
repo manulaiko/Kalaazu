@@ -16,27 +16,28 @@ import javax.persistence.*;
 @Table(name = "levels", schema = "kalaazu")
 @Data
 public class LevelsEntity {
+
     @Id
     @Column(name = "id", nullable = false)
     private byte id;
 
     @Basic
     @Column(name = "account", nullable = false)
-    private long account = 0;
+    private long account;
 
     @Basic
     @Column(name = "drone", nullable = false)
-    private short drone = -1;
+    private short drone;
 
     @Basic
     @Column(name = "pet", nullable = false)
-    private int pet = -1;
+    private int pet;
 
     @Basic
-    @Column(name = "damage", nullable = false, precision = 1)
-    private double damage = 0;
+    @Column(name = "damage", nullable = false)
+    private double damage;
 
     @Basic
-    @Column(name = "shield", nullable = false, precision = 1)
-    private double shield = 0;
+    @Column(name = "shield", nullable = false)
+    private double shield;
 }

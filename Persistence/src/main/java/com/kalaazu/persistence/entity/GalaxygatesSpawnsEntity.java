@@ -22,7 +22,7 @@ public class GalaxygatesSpawnsEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private byte amount = 20;
+    private byte amount;
 
     @ManyToOne
     @JoinColumn(name = "npcs_id", referencedColumnName = "id", nullable = false)

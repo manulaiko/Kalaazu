@@ -27,7 +27,7 @@ public class ModeratorsLogsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    private String type = "";
+    private String type;
 
     @Basic
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")

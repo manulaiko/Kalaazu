@@ -22,11 +22,11 @@ public class FactionsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "tag", nullable = false, length = 3)
-    private String tag = "";
+    private String tag;
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -34,15 +34,15 @@ public class FactionsEntity {
 
     @Basic
     @Column(name = "is_public", nullable = false)
-    private boolean isPublic = true;
+    private boolean isPublic;
 
     @Basic
     @Column(name = "low_maps_position", nullable = false)
-    private long lowMapsPosition = 0;
+    private long lowMapsPosition;
 
     @Basic
     @Column(name = "high_maps_position", nullable = false)
-    private long highMapsPosition = 0;
+    private long highMapsPosition;
 
     @ManyToOne
     @JoinColumn(name = "low_maps_id", nullable = false)

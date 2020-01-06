@@ -31,13 +31,11 @@ public class ClansDiplomaciesEntity {
 
     @Basic
     @Column(name = "status", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private DiplomacyStatus status = DiplomacyStatus.NOT_ACCEPTED;
+    private byte status;
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private DiplomacyType type = DiplomacyType.WAR;
+    private byte type;
 
     @ManyToOne
     @JoinColumn(name = "from_clans_id", referencedColumnName = "id", nullable = false)

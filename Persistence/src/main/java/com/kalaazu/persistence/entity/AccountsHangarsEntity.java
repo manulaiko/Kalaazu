@@ -28,12 +28,11 @@ public class AccountsHangarsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "HANGAR";
+    private String name;
 
     @Basic
     @Column(name = "priority")
-    private byte priority = -1;
-
+    private byte      priority;
     @Basic
     @Column(name = "date", nullable = false)
     private Timestamp date;

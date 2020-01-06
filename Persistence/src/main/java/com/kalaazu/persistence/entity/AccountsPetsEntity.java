@@ -22,51 +22,51 @@ public class AccountsPetsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "experience", nullable = false)
-    private int experience = 0;
+    private int experience;
 
     @Basic
     @Column(name = "fuel", nullable = false)
-    private int fuel = 0;
+    private int fuel;
 
     @Basic
     @Column(name = "health", nullable = false)
-    private int health = 0;
+    private int health;
 
     @Basic
     @Column(name = "slots_lasers_total", nullable = false)
-    private byte slotsLasersTotal = 1;
+    private byte slotsLasersTotal;
 
     @Basic
     @Column(name = "slots_lasers_available", nullable = false)
-    private byte slotsLasersAvailable = 1;
+    private byte slotsLasersAvailable;
 
     @Basic
     @Column(name = "slots_generators_total", nullable = false)
-    private byte slotsGeneratorsTotal = 2;
+    private byte slotsGeneratorsTotal;
 
     @Basic
     @Column(name = "slots_generators_available", nullable = false)
-    private byte slotsGeneratorsAvailable = 2;
+    private byte slotsGeneratorsAvailable;
 
     @Basic
     @Column(name = "slots_protocols_total", nullable = false)
-    private byte slotsProtocolsTotal = 2;
+    private byte slotsProtocolsTotal;
 
     @Basic
     @Column(name = "slots_protocols_available", nullable = false)
-    private byte slotsProtocolsAvailable = 2;
+    private byte slotsProtocolsAvailable;
 
     @Basic
     @Column(name = "slots_gears_total", nullable = false)
-    private byte slotsGearsTotal = 1;
+    private byte slotsGearsTotal;
 
     @Basic
     @Column(name = "slots_gears_available", nullable = false)
-    private byte slotsGearsAvailable = 1;
+    private byte slotsGearsAvailable;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

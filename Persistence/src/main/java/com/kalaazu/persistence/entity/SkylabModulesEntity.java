@@ -22,37 +22,37 @@ public class SkylabModulesEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "production_factor", nullable = false)
-    private byte productionFactor = 20;
+    private byte productionFactor;
 
     @Basic
     @Column(name = "production_base", nullable = false)
-    private short productionBase = 1000;
+    private short productionBase;
 
     @Basic
     @Column(name = "storage_factor", nullable = false)
-    private short storageFactor = 50;
+    private short storageFactor;
 
     @Basic
     @Column(name = "storage_base", nullable = false)
-    private short storageBase = 20000;
+    private short storageBase;
 
     @Basic
     @Column(name = "upgrade_factor", nullable = false)
-    private byte upgradeFactor = 35;
+    private byte upgradeFactor;
 
     @Basic
     @Column(name = "upgrade_base", nullable = false)
-    private short upgradeBase = 5000;
+    private short upgradeBase;
 
     @Basic
     @Column(name = "energy_factor", nullable = false)
-    private byte energyFactor = 10;
+    private byte energyFactor;
 
     @Basic
     @Column(name = "energy_base", nullable = false)
-    private byte energyBase = 10;
+    private byte energyBase;
 }

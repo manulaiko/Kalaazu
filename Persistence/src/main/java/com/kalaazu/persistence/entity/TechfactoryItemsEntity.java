@@ -35,11 +35,11 @@ public class TechfactoryItemsEntity {
 
     @Basic
     @Column(name = "duration", nullable = false)
-    private short duration = 900;
+    private short duration;
 
     @Basic
     @Column(name = "cooldown", nullable = false)
-    private short cooldown = 900;
+    private short cooldown;
 
     @Basic
     @Column(name = "time", nullable = false)

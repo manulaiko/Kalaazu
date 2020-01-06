@@ -48,7 +48,7 @@ public class UsersEntity {
 
     @Basic
     @Column(name = "ip", nullable = false, length = 45)
-    private String ip = "0.0.0.0";
+    private String ip;
 
     @ManyToOne
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id")

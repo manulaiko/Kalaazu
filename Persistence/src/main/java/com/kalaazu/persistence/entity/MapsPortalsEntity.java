@@ -21,24 +21,28 @@ public class MapsPortalsEntity {
     private byte id;
 
     @Basic
+    @Column(name = "levels_id", nullable = false)
+    private byte levelsId;
+
+    @Basic
     @Column(name = "position", nullable = false)
-    private long position = 0;
+    private long position;
 
     @Basic
     @Column(name = "target_position", nullable = false)
-    private long targetPosition = 0;
+    private long targetPosition;
 
     @Basic
     @Column(name = "is_visible", nullable = false)
-    private boolean isVisible = true;
+    private byte isVisible;
 
     @Basic
     @Column(name = "is_working", nullable = false)
-    private boolean isWorking = true;
+    private byte isWorking;
 
     @Basic
     @Column(name = "gfx", nullable = false)
-    private byte gfx = 1;
+    private byte gfx;
 
     @ManyToOne
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
@@ -47,8 +51,4 @@ public class MapsPortalsEntity {
     @ManyToOne
     @JoinColumn(name = "target_maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByTargetMapsId;
-
-    @OneToMany
-    @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
-    private LevelsEntity levelsByLevelsId;
 }

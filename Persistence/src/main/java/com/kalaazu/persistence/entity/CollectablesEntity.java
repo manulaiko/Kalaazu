@@ -23,12 +23,11 @@ public class CollectablesEntity {
 
     @Basic
     @Column(name = "gfx", nullable = false)
-    private byte gfx = 0;
+    private byte gfx;
 
     @Basic
     @Column(name = "type", nullable = false)
-    @Enumerated(EnumType.ORDINAL)
-    private CollectableType type = CollectableType.BOX;
+    private byte type;
 
     @Basic
     @Column(name = "name", nullable = false)

@@ -22,11 +22,11 @@ public class ItemsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
     @Column(name = "category", nullable = false)
-    private byte category = 0;
+    private byte category;
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -34,22 +34,22 @@ public class ItemsEntity {
 
     @Basic
     @Column(name = "price", nullable = false)
-    private int price = 0;
+    private int price;
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type = 0;
+    private byte type;
 
     @Basic
     @Column(name = "is_elite", nullable = false)
-    private boolean isElite = false;
+    private byte isElite;
 
     @Basic
     @Column(name = "is_event", nullable = false)
-    private boolean isEvent = false;
+    private byte isEvent;
 
     @Basic
     @Column(name = "is_buyable", nullable = false)
-    private boolean isBuyable = true;
+    private byte isBuyable;
 
 }

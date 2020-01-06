@@ -22,27 +22,27 @@ public class AccountsRankingsEntity {
 
     @Basic
     @Column(name = "points", nullable = false)
-    private int points = 0;
+    private int points;
 
     @Basic
     @Column(name = "best_points", nullable = false)
-    private int bestPoints = 0;
+    private int bestPoints;
 
     @Basic
     @Column(name = "destroyed_allies", nullable = false)
-    private short destroyedAllies = 0;
+    private short destroyedAllies;
 
     @Basic
     @Column(name = "destroyed_phoenix", nullable = false)
-    private short destroyedPhoenix = 0;
+    private short destroyedPhoenix;
 
     @Basic
     @Column(name = "destroyed_times", nullable = false)
-    private short destroyedTimes = 0;
+    private short destroyedTimes;
 
     @Basic
     @Column(name = "destroyed_radiation", nullable = false)
-    private short destroyedRadiation = 0;
+    private short destroyedRadiation;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

@@ -23,19 +23,19 @@ public class AccountsBanksEntity {
 
     @Basic
     @Column(name = "credits", nullable = false)
-    private long credits = 0;
+    private long credits;
 
     @Basic
     @Column(name = "uridium", nullable = false)
-    private long uridium = 0;
+    private long uridium;
 
     @Basic
     @Column(name = "tax_credits", nullable = false)
-    private byte taxCredits = 5;
+    private byte taxCredits;
 
     @Basic
     @Column(name = "tax_uridium", nullable = false)
-    private byte taxUridium = 0;
+    private byte taxUridium;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

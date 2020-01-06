@@ -22,7 +22,7 @@ public class MapsStationsEntity {
 
     @Basic
     @Column(name = "position", nullable = false)
-    private long position = 0;
+    private long position;
 
     @ManyToOne
     @JoinColumn(name = "maps_id", referencedColumnName = "id")

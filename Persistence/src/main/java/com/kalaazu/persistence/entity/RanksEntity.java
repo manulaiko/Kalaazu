@@ -22,13 +22,13 @@ public class RanksEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name = "";
+    private String name;
 
     @Basic
-    @Column(name = "percentaje", nullable = false, precision = 2)
-    private double percentaje = 0;
+    @Column(name = "percentaje", nullable = false)
+    private double percentaje;
 
     @Basic
     @Column(name = "is_public", nullable = false)
-    private boolean isPublic = true;
+    private byte isPublic;
 }

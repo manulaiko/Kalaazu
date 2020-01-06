@@ -23,7 +23,7 @@ public class AccountsHistoryEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type = 0;
+    private byte type;
 
     @Basic
     @Column(name = "message", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -31,7 +31,7 @@ public class AccountsHistoryEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private int amount = 0;
+    private int amount;
 
     @Basic
     @Column(name = "date", nullable = false)

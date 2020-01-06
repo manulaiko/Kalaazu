@@ -22,15 +22,15 @@ public class AccountsTechfactoriesEntity {
 
     @Basic
     @Column(name = "slot_unlock_price", nullable = false)
-    private int slotUnlockPrice = 50000;
+    private int slotUnlockPrice;
 
     @Basic
     @Column(name = "slot_unlock_factor", nullable = false)
-    private byte slotUnlockFactor = 2;
+    private byte slotUnlockFactor;
 
     @Basic
     @Column(name = "slots", nullable = false)
-    private byte slots = 1;
+    private byte slots;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

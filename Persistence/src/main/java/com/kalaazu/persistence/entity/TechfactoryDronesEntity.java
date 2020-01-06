@@ -30,17 +30,17 @@ public class TechfactoryDronesEntity {
 
     @Basic
     @Column(name = "time", nullable = false)
-    private byte time = 0;
+    private byte time;
 
     @Basic
     @Column(name = "parts", nullable = false)
-    private byte parts = 45;
+    private byte parts;
 
     @Basic
     @Column(name = "price", nullable = false)
-    private int price = 0;
+    private int price;
 
     @Basic
     @Column(name = "factor", nullable = false)
-    private byte factor = 5;
+    private byte factor;
 }
