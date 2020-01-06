@@ -12,7 +12,7 @@ CREATE TABLE `accounts`
         COMMENT 'Session ID.',
     `levels_id`           tinyint      NOT NULL DEFAULT 1
         COMMENT 'Current level.',
-    `factions_id`         tinyint      NOT NULL
+    `factions_id`         tinyint      NULL     DEFAULT NULL
         COMMENT 'Faction that the account belongs to.',
     `accounts_hangars_id` int          NULL     DEFAULT NULL
         COMMENT 'Active hangar.',
