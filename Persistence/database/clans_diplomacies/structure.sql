@@ -16,8 +16,8 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Date when the diplomacy expires.',
     `status`        tinyint   NOT NULL DEFAULT 0
         COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
-    `type`          tinyint   NOT NULL DEFAULT 1
-        COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
+    `type`          tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Diplomacy type. 0 = War, 1 = NAP, 2 = Alliance.',
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 )

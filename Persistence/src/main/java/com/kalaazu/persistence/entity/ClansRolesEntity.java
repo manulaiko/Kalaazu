@@ -26,12 +26,8 @@ public class ClansRolesEntity {
     private String name;
 
     @Basic
-    @Column(name = "clans_roles_id")
-    private Integer clansRolesId;
-
-    @Basic
     @Column(name = "priority", nullable = false)
-    private byte priority;
+    private byte priority = 1;
 
     @ManyToOne
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
@@ -39,4 +35,8 @@ public class ClansRolesEntity {
 
     @OneToMany(mappedBy = "clansRolesByClansRolesId")
     private Collection<ClansRolesPermissionsEntity> clansRolesPermissions;
+
+    @OneToMany
+    @JoinColumn(name = "clans_roles_id", referencedColumnName = "id")
+    private ClansRolesEntity clansRolesByClansRolesId;
 }

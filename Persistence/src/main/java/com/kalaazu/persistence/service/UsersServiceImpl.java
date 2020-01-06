@@ -84,7 +84,9 @@ public class UsersServiceImpl implements UsersService {
         user.setName(username);
         user.setPassword(StringUtils.hash(password));
         user.setEmail(email);
+        user.setEmailVerificationCode(StringUtils.random(32));
+        user.setIp("0.0.0.0"); // TODO
 
-        return user;
+        return this.create(user);
     }
 }

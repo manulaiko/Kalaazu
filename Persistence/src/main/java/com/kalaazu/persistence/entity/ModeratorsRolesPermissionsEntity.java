@@ -22,7 +22,7 @@ public class ModeratorsRolesPermissionsEntity {
 
     @Basic
     @Column(name = "is_enabled")
-    private Byte isEnabled;
+    private boolean isEnabled;
 
     @ManyToOne
     @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id", nullable = false)

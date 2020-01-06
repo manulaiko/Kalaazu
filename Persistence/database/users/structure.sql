@@ -20,7 +20,7 @@ CREATE TABLE `users`
         COMMENT 'Email verification code.',
     `email_verification_date` timestamp    NULL     DEFAULT NULL
         COMMENT 'Date when the user verified its email.',
-    `ip`                      varchar(45)  NOT NULL DEFAULT ''
+    `ip`                      varchar(45)  NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'Registration IP.',
 
     CONSTRAINT `users_pk` PRIMARY KEY (`id`)

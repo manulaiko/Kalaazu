@@ -23,11 +23,11 @@ public class GalaxygatesWavesEntity {
 
     @Basic
     @Column(name = "seconds", nullable = false)
-    private byte seconds;
+    private byte seconds = 120;
 
     @Basic
     @Column(name = "npcs", nullable = false)
-    private byte npcs;
+    private byte npcs = 5;
 
     @ManyToOne
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)

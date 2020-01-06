@@ -22,11 +22,12 @@ public class TradeItemsEntity {
 
     @Basic
     @Column(name = "price", nullable = false)
-    private int price;
+    private int price = 0;
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type;
+    @Enumerated(EnumType.ORDINAL)
+    private TradeType type = TradeType.HOURLY;
 
     @ManyToOne
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)

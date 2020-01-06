@@ -15,7 +15,7 @@ CREATE TABLE `clans`
     `name`        varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL,
     `logo`        varchar(255) NOT NULL DEFAULT '',
-    `status`      tinyint      NOT NULL DEFAULT 0
+    `status`      tinyint      NOT NULL DEFAULT 1
         COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)

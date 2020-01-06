@@ -22,9 +22,9 @@ public class KeyValueEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "value", nullable = false)
-    private String value;
+    private String value = "";
 }

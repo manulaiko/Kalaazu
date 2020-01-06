@@ -27,13 +27,10 @@ public class ServerLogsEntity {
 
     @Basic
     @Column(name = "level", nullable = false)
-    private String level;
+    @Enumerated(EnumType.ORDINAL)
+    private LogLevel level = LogLevel.EMERGENCY;
 
     @Basic
-    @Column(name = "type", nullable = false)
-    private String type;
-
-    @Basic
-    @Column(name = "context", nullable = false, length = -1, columnDefinition = "TEXT")
-    private String context;
+    @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
+    private String text;
 }

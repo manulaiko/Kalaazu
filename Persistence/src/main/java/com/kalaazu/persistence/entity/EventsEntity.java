@@ -23,7 +23,7 @@ public class EventsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")

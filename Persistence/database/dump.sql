@@ -380,7 +380,7 @@ CREATE TABLE `accounts_messages`
         COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `to_accounts_id`   int          NOT NULL,
     `to_status`        tinyint      NOT NULL DEFAULT 0
-        COMMENT '0 = unread, 1 = read, 2 = unread.',
+        COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `title`            varchar(255) NOT NULL,
     `text`             text         NOT NULL,
@@ -412,14 +412,14 @@ CREATE TABLE `accounts_pets`
     `experience`                 int          NOT NULL DEFAULT 0,
     `fuel`                       int          NOT NULL DEFAULT 0,
     `health`                     int          NOT NULL DEFAULT 0,
-    `slots_lasers_total`         tinyint      NOT NULL,
-    `slots_lasers_available`     tinyint      NOT NULL,
-    `slots_generators_total`     tinyint      NOT NULL,
-    `slots_generators_available` tinyint      NOT NULL,
-    `slots_protocols_total`      tinyint      NOT NULL,
-    `slots_protocols_available`  tinyint      NOT NULL,
-    `slots_gears_total`          tinyint      NOT NULL,
-    `slots_gears_available`      tinyint      NOT NULL,
+    `slots_lasers_total`         tinyint      NOT NULL DEFAULT 1,
+    `slots_lasers_available`     tinyint      NOT NULL DEFAULT 1,
+    `slots_generators_total`     tinyint      NOT NULL DEFAULT 2,
+    `slots_generators_available` tinyint      NOT NULL DEFAULT 2,
+    `slots_protocols_total`      tinyint      NOT NULL DEFAULT 2,
+    `slots_protocols_available`  tinyint      NOT NULL DEFAULT 2,
+    `slots_gears_total`          tinyint      NOT NULL DEFAULT 1,
+    `slots_gears_available`      tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
 )
@@ -659,7 +659,7 @@ CREATE TABLE `clans`
     `name`        varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL,
     `logo`        varchar(255) NOT NULL DEFAULT '',
-    `status`      tinyint      NOT NULL DEFAULT 0
+    `status`      tinyint      NOT NULL DEFAULT 1
         COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
@@ -896,8 +896,8 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Date when the diplomacy expires.',
     `status`        tinyint   NOT NULL DEFAULT 0
         COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
-    `type`          tinyint   NOT NULL DEFAULT 1
-        COMMENT 'Diplomacy type. 1 = War, 2 = NAP, 3 = Alliance.',
+    `type`          tinyint   NOT NULL DEFAULT 0
+        COMMENT 'Diplomacy type. 0 = War, 1 = NAP, 2 = Alliance.',
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 )
@@ -3199,7 +3199,7 @@ CREATE TABLE `invitation_codes_redeem_logs`
         COMMENT 'Primary Key.',
     `invitation_codes_id` smallint    NOT NULL
         COMMENT 'Invitation code ID.',
-    `ip`                  varchar(45) NOT NULL
+    `ip`                  varchar(45) NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'IP that redeemed the code.',
     `date`                timestamp   NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Date when the code was redeemed.',
@@ -9119,13 +9119,12 @@ CREATE INDEX `rewards_vouchers_rewards_id_idx`
 --
 CREATE TABLE `server_logs`
 (
-    `id`      int          NOT NULL AUTO_INCREMENT
+    `id`    int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `date`    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `level`   varchar(255) NOT NULL DEFAULT 'debug'
-        COMMENT 'Log level (emergency, alert, critical, error, warning, notice, info, debug)',
-    `type`    varchar(255) NOT NULL DEFAULT '',
-    `context` text         NOT NULL,
+    `date`  timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `level` tinyint      NOT NULL DEFAULT 0
+        COMMENT 'Log level (0 = emergency, 1 = alert, 2 = critical, 3 = error, 4 = warning, 5 = notice, 6 = info, 7 = debug)',
+    `text`  text         NOT NULL,
 
     CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
 )
@@ -9622,7 +9621,7 @@ CREATE TABLE `users`
         COMMENT 'Email verification code.',
     `email_verification_date` timestamp    NULL     DEFAULT NULL
         COMMENT 'Date when the user verified its email.',
-    `ip`                      varchar(45)  NOT NULL DEFAULT ''
+    `ip`                      varchar(45)  NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'Registration IP.',
 
     CONSTRAINT `users_pk` PRIMARY KEY (`id`)

@@ -22,19 +22,19 @@ public class AccountsShipsEntity {
 
     @Basic
     @Column(name = "position", nullable = false)
-    private long position;
+    private long position = 0;
 
     @Basic
     @Column(name = "health", nullable = false)
-    private int health;
+    private int health = 0;
 
     @Basic
     @Column(name = "nanohull", nullable = false)
-    private int nanohull;
+    private int nanohull = 0;
 
     @Basic
     @Column(name = "gfx", nullable = false)
-    private byte gfx;
+    private byte gfx = 0;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

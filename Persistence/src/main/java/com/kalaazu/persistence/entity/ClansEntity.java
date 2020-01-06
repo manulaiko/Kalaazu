@@ -23,11 +23,11 @@ public class ClansEntity {
 
     @Basic
     @Column(name = "tag", nullable = false, length = 4)
-    private String tag;
+    private String tag = "";
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -35,11 +35,12 @@ public class ClansEntity {
 
     @Basic
     @Column(name = "logo", nullable = false)
-    private String logo;
+    private String logo = "";
 
     @Basic
     @Column(name = "status", nullable = false)
-    private byte status;
+    @Enumerated(EnumType.ORDINAL)
+    private ClanStatus status = ClanStatus.RECRUITING;
 
     @ManyToOne
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)

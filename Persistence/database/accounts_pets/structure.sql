@@ -12,14 +12,14 @@ CREATE TABLE `accounts_pets`
     `experience`                 int          NOT NULL DEFAULT 0,
     `fuel`                       int          NOT NULL DEFAULT 0,
     `health`                     int          NOT NULL DEFAULT 0,
-    `slots_lasers_total`         tinyint      NOT NULL,
-    `slots_lasers_available`     tinyint      NOT NULL,
-    `slots_generators_total`     tinyint      NOT NULL,
-    `slots_generators_available` tinyint      NOT NULL,
-    `slots_protocols_total`      tinyint      NOT NULL,
-    `slots_protocols_available`  tinyint      NOT NULL,
-    `slots_gears_total`          tinyint      NOT NULL,
-    `slots_gears_available`      tinyint      NOT NULL,
+    `slots_lasers_total`         tinyint      NOT NULL DEFAULT 1,
+    `slots_lasers_available`     tinyint      NOT NULL DEFAULT 1,
+    `slots_generators_total`     tinyint      NOT NULL DEFAULT 2,
+    `slots_generators_available` tinyint      NOT NULL DEFAULT 2,
+    `slots_protocols_total`      tinyint      NOT NULL DEFAULT 2,
+    `slots_protocols_available`  tinyint      NOT NULL DEFAULT 2,
+    `slots_gears_total`          tinyint      NOT NULL DEFAULT 1,
+    `slots_gears_available`      tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
 )

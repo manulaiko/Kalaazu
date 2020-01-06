@@ -23,19 +23,19 @@ public class MapsEntity {
 
     @Basic
     @Column(name = "name", nullable = false)
-    private String name;
+    private String name = "";
 
     @Basic
     @Column(name = "is_pvp", nullable = false)
-    private boolean isPvp;
+    private boolean isPvp = false;
 
     @Basic
     @Column(name = "is_starter", nullable = false)
-    private boolean isStarter;
+    private boolean isStarter = false;
 
     @Basic
     @Column(name = "limits", nullable = false)
-    private long limits;
+    private long limits = 89335319769600L;
 
     @ManyToOne
     @JoinColumn(name = "factions_id", referencedColumnName = "id")

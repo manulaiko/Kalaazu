@@ -27,11 +27,11 @@ public class ModeratorsRolesEntity {
 
     @Basic
     @Column(name = "priority", nullable = false)
-    private byte priority;
+    private byte priority = 1;
 
     @ManyToOne()
     @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id")
-    private ModeratorsRolesEntity moderatorsRoles;
+    private ModeratorsRolesEntity moderatorsRolesByModeratorsRolesId;
 
     @OneToMany(mappedBy = "moderatorsRolesByModeratorsRolesId")
     private Collection<ModeratorsRolesPermissionsEntity> moderatorsRolesPermissions;

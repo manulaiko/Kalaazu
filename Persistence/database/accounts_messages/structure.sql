@@ -11,7 +11,7 @@ CREATE TABLE `accounts_messages`
         COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `to_accounts_id`   int          NOT NULL,
     `to_status`        tinyint      NOT NULL DEFAULT 0
-        COMMENT '0 = unread, 1 = read, 2 = unread.',
+        COMMENT '0 = unread, 1 = read, 2 = deleted.',
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `title`            varchar(255) NOT NULL,
     `text`             text         NOT NULL,
