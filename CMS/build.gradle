@@ -8,8 +8,8 @@ task runBuild(type: Exec) {
     commandLine("npm", "run", "build")
 }
 
-runBuild.dependsOn runInstall
-compileJava.dependsOn runBuild
+//runBuild.dependsOn runInstall
+//compileJava.dependsOn runBuild
 
 dependencies {
     implementation project(':Utils')

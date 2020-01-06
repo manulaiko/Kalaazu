@@ -3,6 +3,7 @@ package com.kalaazu.cms.service;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.entity.UsersEntity;
 import com.kalaazu.persistence.service.AccountsService;
+import com.kalaazu.persistence.service.LevelsService;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,9 @@ public class RegisterService {
 
     @Autowired
     private AccountsService accounts;
+
+    @Autowired
+    private LevelsService levels;
 
     /**
      * Performs the user registration.
@@ -61,9 +65,11 @@ public class RegisterService {
      */
     private AccountsEntity createAccount(UsersEntity user) {
         var account = new AccountsEntity();
-        account.setUsersByUsersId(user);
         account.setName(user.getName());
         account.setSessionId(StringUtils.sessionId());
+
+        account.setUsersByUsersId(user);
+        account.setLevelsByLevelsId(this.levels.find(1));
 
         return this.accounts.create(account);
     }

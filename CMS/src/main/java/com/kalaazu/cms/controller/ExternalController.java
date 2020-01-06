@@ -66,6 +66,7 @@ public class ExternalController {
      *
      * @return Response entity.
      */
+    @PostMapping("/register")
     public ResponseEntity<Response<LoginResponse>> register(@RequestBody RegisterRequest body) {
         var response = new Response<LoginResponse>("other", "Couldn't perform register!", null);
 
