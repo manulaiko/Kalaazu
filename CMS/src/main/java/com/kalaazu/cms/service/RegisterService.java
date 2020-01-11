@@ -52,6 +52,9 @@ public class RegisterService {
     @Autowired
     private AccountsConfigurationsAccountsItemsService accountsConfigItems;
 
+    @Autowired
+    private RanksService ranks;
+
     /**
      * Performs the user registration.
      *
@@ -72,17 +75,43 @@ public class RegisterService {
             throw new Exception("All fields are required!");
         }
 
-        var user = users.register(u, p, e);
+        var user    = users.register(u, p, e);
         var account = this.createAccount(user);
 
-        var ship = this.createShip(account);
-        var hangar = this.createHangar(account, ship);
-        var items = this.createItems(account);
+        var ship    = this.createShip(account);
+        var hangar  = this.createHangar(account, ship);
+        var items   = this.createItems(account);
         var configs = this.createConfigs(hangar);
 
         this.addItemsToConfig(items, configs);
+        this.addConfigToHangar(configs.values().iterator().next(), hangar);
+        this.addHangarToAccount(hangar, account);
 
         return account.getSessionId();
+    }
+
+    /**
+     * Sets the active configuration of the hangar.
+     *
+     * @param config Active configuration.
+     * @param hangar Configuration owner.
+     */
+    private void addConfigToHangar(AccountsConfigurationsEntity config, AccountsHangarsEntity hangar) {
+        hangar.setAccountsConfigurationsByAccountsConfigurationsId(config);
+
+        this.hangars.update(hangar);
+    }
+
+    /**
+     * Sets the active hangar of the account.
+     *
+     * @param hangar  Active hangar.
+     * @param account Hangar owner.
+     */
+    private void addHangarToAccount(AccountsHangarsEntity hangar, AccountsEntity account) {
+        account.setAccountsHangarsByAccountsHangarsId(hangar);
+
+        this.accounts.update(account);
     }
 
     /**
@@ -91,7 +120,9 @@ public class RegisterService {
      * @param items   Account items.
      * @param configs Account configurations.
      */
-    private void addItemsToConfig(Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
+    private void addItemsToConfig(
+            Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs
+    ) {
         configs.forEach((configId, config) -> items.forEach((itemId, item) -> {
             var configItem = new AccountsConfigurationsAccountsItemsEntity();
             configItem.setAccountsItemsByAccountsItemsId(item);
@@ -101,7 +132,7 @@ public class RegisterService {
 
             // Update config stats
             var i = item.getItemsByItemsId();
-            switch(i.getType()) {
+            switch (i.getType()) {
                 case LASER:
                     config.setDamage(config.getDamage() + i.getBonus());
 
@@ -113,7 +144,7 @@ public class RegisterService {
                     break;
 
                 case SPEED_GENERATOR:
-                    config.setSpeed((short)(config.getSpeed() + i.getBonus()));
+                    config.setSpeed((short) (config.getSpeed() + i.getBonus()));
 
                     break;
             }
@@ -128,13 +159,16 @@ public class RegisterService {
      * @return Created account.
      */
     private AccountsEntity createAccount(UsersEntity user) {
+        System.out.println("USER ID " + user.getId());
+        System.out.println("User " + user);
         var account = new AccountsEntity();
         account.setName(user.getName());
         account.setSessionId(StringUtils.sessionId());
 
         account.setUsersByUsersId(user);
-        account.setLevelsByLevelsId(this.levels.find((byte)1));
-        account.setFactionsByFactionsId(this.factions.find((byte)1)); // Default to MMO
+        account.setLevelsByLevelsId(this.levels.find((byte) 1));
+        account.setFactionsByFactionsId(this.factions.find((byte) 1)); // Default to MMO
+        account.setRanksByRanksId(this.ranks.find((byte) 1));
 
         return this.accounts.create(account);
     }
@@ -145,39 +179,40 @@ public class RegisterService {
      * @param account Account that will own the items.
      */
     private Map<Short, AccountsItemsEntity> createItems(AccountsEntity account) {
-        var ret = new HashMap<Short, AccountsItemsEntity>();
+        var ret   = new HashMap<Short, AccountsItemsEntity>();
         var items = new HashMap<Short, Integer>();
 
         // Credits
-        items.put((short)1, 150_000);
+        items.put((short) 1, 150_000);
         // Uridium
-        items.put((short)2, 10_000);
+        items.put((short) 2, 10_000);
         // Jackpot
-        items.put((short)3, 0);
+        items.put((short) 3, 0);
         // Exp
-        items.put((short)4, 0);
+        items.put((short) 4, 0);
         // Honor
-        items.put((short)5, 0);
+        items.put((short) 5, 0);
 
         // LCB-10
-        items.put((short)59, 10_000);
+        items.put((short) 59, 10_000);
         // R-310
-        items.put((short)87, 1_000);
+        items.put((short) 87, 1_000);
 
         // LF-1
-        items.put((short)121, 1);
+        items.put((short) 121, 1);
         // REP-1
-        items.put((short)164, 1);
+        items.put((short) 164, 1);
 
         items.forEach((id, amount) -> {
             var item = new AccountsItemsEntity();
             item.setAmount(amount);
             item.setAccountsByAccountsId(account);
             item.setItemsByItemsId(this.items.find(id));
+            item.setLevelsByLevelsId(this.levels.find((byte) 1));
 
             var i = this.accountsItems.create(item);
 
-            ret.put((short)i.getId(), i);
+            ret.put((short) i.getId(), i);
         });
 
         return ret;
@@ -191,7 +226,7 @@ public class RegisterService {
      * @return Created ship.
      */
     private AccountsShipsEntity createShip(AccountsEntity account) {
-        var phoenix = this.ships.find((byte)1); // Phoenix
+        var phoenix = this.ships.find((byte) 1); // Phoenix
 
         var ship = new AccountsShipsEntity();
         ship.setShipsByShipsId(phoenix);

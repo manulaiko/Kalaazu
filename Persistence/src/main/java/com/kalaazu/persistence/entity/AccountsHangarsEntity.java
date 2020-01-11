@@ -24,10 +24,6 @@ public class AccountsHangarsEntity {
     private int id;
 
     @Basic
-    @Column(name = "accounts_configurations_id")
-    private int accountsConfigurationsId;
-
-    @Basic
     @Column(name = "name", nullable = false)
     private String name = "HANGAR";
 
@@ -46,6 +42,10 @@ public class AccountsHangarsEntity {
     @ManyToOne
     @JoinColumn(name = "accounts_ships_id", referencedColumnName = "id", nullable = false)
     private AccountsShipsEntity accountsShipsByAccountsShipsId;
+
+    @ManyToOne
+    @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id", nullable = false)
+    private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
     @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId")
     private Collection<AccountsConfigurationsEntity> accountsConfigurations;
