@@ -19,6 +19,7 @@ import java.sql.Timestamp;
 @Data
 public class ClansBanksLogsEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
 

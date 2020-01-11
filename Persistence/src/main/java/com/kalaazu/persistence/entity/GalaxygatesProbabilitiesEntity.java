@@ -17,6 +17,7 @@ import javax.persistence.*;
 @Data
 public class GalaxygatesProbabilitiesEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private byte id;
 

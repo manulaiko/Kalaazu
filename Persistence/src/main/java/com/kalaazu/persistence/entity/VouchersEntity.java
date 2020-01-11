@@ -18,6 +18,7 @@ import java.util.Collection;
 @Data
 public class VouchersEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private short id;
 

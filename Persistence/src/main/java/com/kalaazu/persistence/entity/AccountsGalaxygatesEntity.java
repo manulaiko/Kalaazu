@@ -17,6 +17,7 @@ import javax.persistence.*;
 @Data
 public class AccountsGalaxygatesEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private int id;
 

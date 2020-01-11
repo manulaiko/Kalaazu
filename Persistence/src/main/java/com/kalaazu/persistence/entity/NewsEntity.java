@@ -18,6 +18,7 @@ import java.sql.Timestamp;
 @Data
 public class NewsEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private short id;
 
