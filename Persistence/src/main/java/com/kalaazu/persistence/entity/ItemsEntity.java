@@ -26,7 +26,8 @@ public class ItemsEntity {
 
     @Basic
     @Column(name = "category", nullable = false)
-    private byte category = 0;
+    @Enumerated(EnumType.ORDINAL)
+    private ItemCategory category = ItemCategory.CURRENCY;
 
     @Basic
     @Column(name = "description", nullable = false, length = -1, columnDefinition = "TEXT")
@@ -38,7 +39,8 @@ public class ItemsEntity {
 
     @Basic
     @Column(name = "type", nullable = false)
-    private byte type = 0;
+    @Enumerated(EnumType.ORDINAL)
+    private ItemType type = ItemType.OTHER;
 
     @Basic
     @Column(name = "is_elite", nullable = false)
@@ -52,4 +54,7 @@ public class ItemsEntity {
     @Column(name = "is_buyable", nullable = false)
     private boolean isBuyable = true;
 
+    @Basic
+    @Column(name = "bonus", nullable = false)
+    private int bonus = 0;
 }
