@@ -17,6 +17,8 @@ CREATE TABLE `items`
         COMMENT 'Event item.',
     `is_buyable`  boolean      NOT NULL DEFAULT true
         COMMENT 'Buyable in shop',
+    `bonus`       int          NOT NULL DEFAULT 0
+        COMMENT 'Item bonus',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 )
