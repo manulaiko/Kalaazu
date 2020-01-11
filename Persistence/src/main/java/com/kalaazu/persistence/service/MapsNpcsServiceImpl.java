@@ -32,7 +32,7 @@ public class MapsNpcsServiceImpl implements MapsNpcsService {
      * @inheritDoc
      */
     @Override
-    public MapsNpcsEntity find(Integer id) {
+    public MapsNpcsEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class MapsNpcsServiceImpl implements MapsNpcsService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

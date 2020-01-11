@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.FactionsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface FactionsService extends IService<FactionsEntity, Integer> {
+public interface FactionsService extends IService<FactionsEntity, Byte> {
 }

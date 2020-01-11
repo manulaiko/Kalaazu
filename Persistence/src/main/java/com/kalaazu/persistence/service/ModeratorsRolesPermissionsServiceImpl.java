@@ -32,7 +32,7 @@ public class ModeratorsRolesPermissionsServiceImpl implements ModeratorsRolesPer
      * @inheritDoc
      */
     @Override
-    public ModeratorsRolesPermissionsEntity find(Integer id) {
+    public ModeratorsRolesPermissionsEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class ModeratorsRolesPermissionsServiceImpl implements ModeratorsRolesPer
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

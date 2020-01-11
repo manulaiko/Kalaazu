@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.SkylabModulesEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkylabModulesService extends IService<SkylabModulesEntity, Integer> {
+public interface SkylabModulesService extends IService<SkylabModulesEntity, Byte> {
 }

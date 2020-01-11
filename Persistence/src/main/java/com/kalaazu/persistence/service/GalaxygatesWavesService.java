@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.GalaxygatesWavesEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesWavesService extends IService<GalaxygatesWavesEntity, Integer> {
+public interface GalaxygatesWavesService extends IService<GalaxygatesWavesEntity, Byte> {
 }

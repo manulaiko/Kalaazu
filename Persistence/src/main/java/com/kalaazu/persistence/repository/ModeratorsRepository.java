@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface ModeratorsRepository extends JpaRepository<ModeratorsEntity, Integer> {
+public interface ModeratorsRepository extends JpaRepository<ModeratorsEntity, Byte> {
 }

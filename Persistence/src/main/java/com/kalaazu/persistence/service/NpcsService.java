@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.NpcsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface NpcsService extends IService<NpcsEntity, Integer> {
+public interface NpcsService extends IService<NpcsEntity, Byte> {
 }

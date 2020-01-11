@@ -48,7 +48,7 @@ public class MapsPortalsEntity {
     @JoinColumn(name = "target_maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByTargetMapsId;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 }

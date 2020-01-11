@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface ItemsRepository extends JpaRepository<ItemsEntity, Integer> {
+public interface ItemsRepository extends JpaRepository<ItemsEntity, Short> {
 }

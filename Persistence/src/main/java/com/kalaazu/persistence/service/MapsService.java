@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.MapsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface MapsService extends IService<MapsEntity, Integer> {
+public interface MapsService extends IService<MapsEntity, Byte> {
 }

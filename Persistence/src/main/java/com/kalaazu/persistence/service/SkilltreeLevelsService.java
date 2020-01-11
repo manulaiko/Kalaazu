@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.SkilltreeLevelsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface SkilltreeLevelsService extends IService<SkilltreeLevelsEntity, Integer> {
+public interface SkilltreeLevelsService extends IService<SkilltreeLevelsEntity, Short> {
 }

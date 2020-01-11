@@ -91,7 +91,7 @@ public class RegisterService {
      * @param items   Account items.
      * @param configs Account configurations.
      */
-    private void addItemsToConfig(Map<Integer, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
+    private void addItemsToConfig(Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
         configs.forEach((configId, config) -> items.forEach((itemId, item) -> {
             var configItem = new AccountsConfigurationsAccountsItemsEntity();
             configItem.setAccountsItemsByAccountsItemsId(item);
@@ -133,8 +133,8 @@ public class RegisterService {
         account.setSessionId(StringUtils.sessionId());
 
         account.setUsersByUsersId(user);
-        account.setLevelsByLevelsId(this.levels.find(1));
-        account.setFactionsByFactionsId(this.factions.find(1)); // Default to MMO
+        account.setLevelsByLevelsId(this.levels.find((byte)1));
+        account.setFactionsByFactionsId(this.factions.find((byte)1)); // Default to MMO
 
         return this.accounts.create(account);
     }
@@ -144,30 +144,30 @@ public class RegisterService {
      *
      * @param account Account that will own the items.
      */
-    private Map<Integer, AccountsItemsEntity> createItems(AccountsEntity account) {
-        var ret = new HashMap<Integer, AccountsItemsEntity>();
-        var items = new HashMap<Integer, Integer>();
+    private Map<Short, AccountsItemsEntity> createItems(AccountsEntity account) {
+        var ret = new HashMap<Short, AccountsItemsEntity>();
+        var items = new HashMap<Short, Integer>();
 
         // Credits
-        items.put(1, 150_000);
+        items.put((short)1, 150_000);
         // Uridium
-        items.put(2, 10_000);
+        items.put((short)2, 10_000);
         // Jackpot
-        items.put(3, 0);
+        items.put((short)3, 0);
         // Exp
-        items.put(4, 0);
+        items.put((short)4, 0);
         // Honor
-        items.put(5, 0);
+        items.put((short)5, 0);
 
         // LCB-10
-        items.put(59, 10_000);
+        items.put((short)59, 10_000);
         // R-310
-        items.put(87, 1_000);
+        items.put((short)87, 1_000);
 
         // LF-1
-        items.put(121, 1);
+        items.put((short)121, 1);
         // REP-1
-        items.put(164, 1);
+        items.put((short)164, 1);
 
         items.forEach((id, amount) -> {
             var item = new AccountsItemsEntity();
@@ -177,7 +177,7 @@ public class RegisterService {
 
             var i = this.accountsItems.create(item);
 
-            ret.put(i.getId(), i);
+            ret.put((short)i.getId(), i);
         });
 
         return ret;
@@ -191,7 +191,7 @@ public class RegisterService {
      * @return Created ship.
      */
     private AccountsShipsEntity createShip(AccountsEntity account) {
-        var phoenix = this.ships.find(1); // Phoenix
+        var phoenix = this.ships.find((byte)1); // Phoenix
 
         var ship = new AccountsShipsEntity();
         ship.setShipsByShipsId(phoenix);

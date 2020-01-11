@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.ModeratorsRolesPermissionsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ModeratorsRolesPermissionsService extends IService<ModeratorsRolesPermissionsEntity, Integer> {
+public interface ModeratorsRolesPermissionsService extends IService<ModeratorsRolesPermissionsEntity, Byte> {
 }

@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.GalaxygatesProbabilitiesEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface GalaxygatesProbabilitiesService extends IService<GalaxygatesProbabilitiesEntity, Integer> {
+public interface GalaxygatesProbabilitiesService extends IService<GalaxygatesProbabilitiesEntity, Byte> {
 }

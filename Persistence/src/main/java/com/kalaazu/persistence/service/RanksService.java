@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.RanksEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface RanksService extends IService<RanksEntity, Integer> {
+public interface RanksService extends IService<RanksEntity, Byte> {
 }

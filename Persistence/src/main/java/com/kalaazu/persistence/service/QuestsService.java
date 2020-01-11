@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.QuestsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface QuestsService extends IService<QuestsEntity, Integer> {
+public interface QuestsService extends IService<QuestsEntity, Short> {
 }

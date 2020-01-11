@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.VouchersEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface VouchersService extends IService<VouchersEntity, Integer> {
+public interface VouchersService extends IService<VouchersEntity, Short> {
 }

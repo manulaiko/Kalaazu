@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface LevelsRepository extends JpaRepository<LevelsEntity, Integer> {
+public interface LevelsRepository extends JpaRepository<LevelsEntity, Byte> {
 }

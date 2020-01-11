@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface TechfactoryDronesRepository extends JpaRepository<TechfactoryDronesEntity, Integer> {
+public interface TechfactoryDronesRepository extends JpaRepository<TechfactoryDronesEntity, Byte> {
 }

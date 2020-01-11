@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.RewardsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface RewardsService extends IService<RewardsEntity, Integer> {
+public interface RewardsService extends IService<RewardsEntity, Short> {
 }

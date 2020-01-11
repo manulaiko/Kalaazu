@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.TechfactoryDronesEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TechfactoryDronesService extends IService<TechfactoryDronesEntity, Integer> {
+public interface TechfactoryDronesService extends IService<TechfactoryDronesEntity, Byte> {
 }

@@ -32,7 +32,7 @@ public class InvitationCodesServiceImpl implements InvitationCodesService {
      * @inheritDoc
      */
     @Override
-    public InvitationCodesEntity find(Integer id) {
+    public InvitationCodesEntity find(Short id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class InvitationCodesServiceImpl implements InvitationCodesService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Short id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

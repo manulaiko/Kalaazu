@@ -32,7 +32,7 @@ public class LevelsServiceImpl implements LevelsService {
      * @inheritDoc
      */
     @Override
-    public LevelsEntity find(Integer id) {
+    public LevelsEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class LevelsServiceImpl implements LevelsService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

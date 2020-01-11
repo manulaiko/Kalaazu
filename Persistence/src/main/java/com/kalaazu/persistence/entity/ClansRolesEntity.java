@@ -36,7 +36,7 @@ public class ClansRolesEntity {
     @OneToMany(mappedBy = "clansRolesByClansRolesId")
     private Collection<ClansRolesPermissionsEntity> clansRolesPermissions;
 
-    @OneToMany
+    @ManyToOne
     @JoinColumn(name = "clans_roles_id", referencedColumnName = "id")
     private ClansRolesEntity clansRolesByClansRolesId;
 }

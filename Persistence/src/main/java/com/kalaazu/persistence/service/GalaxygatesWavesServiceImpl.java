@@ -32,7 +32,7 @@ public class GalaxygatesWavesServiceImpl implements GalaxygatesWavesService {
      * @inheritDoc
      */
     @Override
-    public GalaxygatesWavesEntity find(Integer id) {
+    public GalaxygatesWavesEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class GalaxygatesWavesServiceImpl implements GalaxygatesWavesService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

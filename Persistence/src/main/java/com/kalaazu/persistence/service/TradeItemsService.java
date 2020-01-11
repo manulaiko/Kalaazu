@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.TradeItemsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface TradeItemsService extends IService<TradeItemsEntity, Integer> {
+public interface TradeItemsService extends IService<TradeItemsEntity, Short> {
 }

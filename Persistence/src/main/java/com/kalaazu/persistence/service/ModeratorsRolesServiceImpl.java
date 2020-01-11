@@ -32,7 +32,7 @@ public class ModeratorsRolesServiceImpl implements ModeratorsRolesService {
      * @inheritDoc
      */
     @Override
-    public ModeratorsRolesEntity find(Integer id) {
+    public ModeratorsRolesEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class ModeratorsRolesServiceImpl implements ModeratorsRolesService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

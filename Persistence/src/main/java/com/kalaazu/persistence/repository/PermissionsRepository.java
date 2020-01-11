@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface PermissionsRepository extends JpaRepository<PermissionsEntity, Integer> {
+public interface PermissionsRepository extends JpaRepository<PermissionsEntity, Byte> {
 }

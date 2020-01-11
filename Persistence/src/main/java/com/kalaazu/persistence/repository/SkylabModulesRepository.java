@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface SkylabModulesRepository extends JpaRepository<SkylabModulesEntity, Integer> {
+public interface SkylabModulesRepository extends JpaRepository<SkylabModulesEntity, Byte> {
 }

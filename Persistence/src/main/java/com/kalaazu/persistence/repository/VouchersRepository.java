@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface VouchersRepository extends JpaRepository<VouchersEntity, Integer> {
+public interface VouchersRepository extends JpaRepository<VouchersEntity, Short> {
 }

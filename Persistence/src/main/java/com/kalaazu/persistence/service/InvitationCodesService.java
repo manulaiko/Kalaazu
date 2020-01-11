@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.InvitationCodesEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface InvitationCodesService extends IService<InvitationCodesEntity, Integer> {
+public interface InvitationCodesService extends IService<InvitationCodesEntity, Short> {
 }

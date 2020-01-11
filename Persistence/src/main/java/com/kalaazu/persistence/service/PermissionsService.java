@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.PermissionsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface PermissionsService extends IService<PermissionsEntity, Integer> {
+public interface PermissionsService extends IService<PermissionsEntity, Byte> {
 }

@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface RanksRepository extends JpaRepository<RanksEntity, Integer> {
+public interface RanksRepository extends JpaRepository<RanksEntity, Byte> {
 }

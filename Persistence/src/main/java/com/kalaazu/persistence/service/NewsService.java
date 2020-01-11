@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.NewsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface NewsService extends IService<NewsEntity, Integer> {
+public interface NewsService extends IService<NewsEntity, Short> {
 }

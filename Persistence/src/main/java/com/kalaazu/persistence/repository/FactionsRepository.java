@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface FactionsRepository extends JpaRepository<FactionsEntity, Integer> {
+public interface FactionsRepository extends JpaRepository<FactionsEntity, Byte> {
 }

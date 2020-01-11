@@ -32,7 +32,7 @@ public class PermissionsServiceImpl implements PermissionsService {
      * @inheritDoc
      */
     @Override
-    public PermissionsEntity find(Integer id) {
+    public PermissionsEntity find(Byte id) {
         return this.repository.findById(id).orElse(null);
     }
 
@@ -56,7 +56,7 @@ public class PermissionsServiceImpl implements PermissionsService {
      * @inheritDoc
      */
     @Override
-    public boolean delete(Integer id) {
+    public boolean delete(Byte id) {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);

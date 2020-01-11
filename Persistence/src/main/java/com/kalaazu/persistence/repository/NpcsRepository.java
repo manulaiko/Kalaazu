@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface NpcsRepository extends JpaRepository<NpcsEntity, Integer> {
+public interface NpcsRepository extends JpaRepository<NpcsEntity, Byte> {
 }

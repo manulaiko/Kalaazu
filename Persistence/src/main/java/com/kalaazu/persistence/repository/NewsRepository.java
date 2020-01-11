@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface NewsRepository extends JpaRepository<NewsEntity, Integer> {
+public interface NewsRepository extends JpaRepository<NewsEntity, Short> {
 }

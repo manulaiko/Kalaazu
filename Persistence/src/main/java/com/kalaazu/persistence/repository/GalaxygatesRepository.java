@@ -13,5 +13,5 @@ import org.springframework.stereotype.Repository;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Repository
-public interface GalaxygatesRepository extends JpaRepository<GalaxygatesEntity, Integer> {
+public interface GalaxygatesRepository extends JpaRepository<GalaxygatesEntity, Byte> {
 }

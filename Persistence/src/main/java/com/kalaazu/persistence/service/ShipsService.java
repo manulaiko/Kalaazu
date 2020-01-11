@@ -10,5 +10,5 @@ import com.kalaazu.persistence.entity.ShipsEntity;
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
-public interface ShipsService extends IService<ShipsEntity, Integer> {
+public interface ShipsService extends IService<ShipsEntity, Byte> {
 }
