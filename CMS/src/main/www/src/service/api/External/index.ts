@@ -66,7 +66,7 @@ export default class Index extends Endpoint {
         message: "Successfully logged in!",
         type: "is-success"
       });
-      super.store.commit("LOGIN", data.data);
+      this.store.dispatch("LOGIN", data.data);
 
       return;
     }
