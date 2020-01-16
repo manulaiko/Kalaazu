@@ -60,7 +60,7 @@ allprojects {
         }
         testImplementation 'org.springframework.security:spring-security-test'
         implementation 'org.reflections:reflections:0.9.11'
-        implementation 'org.springframework.boot:spring-boot-devtools'
+        implementation 'org.modelmapper:modelmapper:2.3.6'
     }
 
     test {
