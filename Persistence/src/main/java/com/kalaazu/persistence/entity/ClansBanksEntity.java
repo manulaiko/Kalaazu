@@ -37,7 +37,7 @@ public class ClansBanksEntity {
     @Column(name = "tax_uridium", nullable = false)
     private byte taxUridium = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 }

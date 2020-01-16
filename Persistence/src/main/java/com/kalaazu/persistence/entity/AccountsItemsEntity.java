@@ -30,15 +30,15 @@ public class AccountsItemsEntity {
     @Column(name = "amount", nullable = false)
     private long amount = 1;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 }

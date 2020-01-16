@@ -25,11 +25,11 @@ public class ClansRolesPermissionsEntity {
     @Column(name = "is_enabled")
     private boolean isEnabled;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_roles_id", referencedColumnName = "id", nullable = false)
     private ClansRolesEntity clansRolesByClansRolesId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "permissions_id", referencedColumnName = "id", nullable = false)
     private PermissionsEntity permissionsByPermissionsId;
 }

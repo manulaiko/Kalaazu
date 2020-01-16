@@ -51,10 +51,10 @@ public class UsersEntity {
     @Column(name = "ip", nullable = false, length = 45)
     private String ip = "0.0.0.0";
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id")
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
 
-    @OneToMany(mappedBy = "usersByUsersId")
+    @OneToMany(mappedBy = "usersByUsersId", fetch = FetchType.LAZY)
     private Collection<AccountsEntity> accounts;
 }

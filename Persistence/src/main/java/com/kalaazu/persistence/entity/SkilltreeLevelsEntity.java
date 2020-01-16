@@ -34,14 +34,14 @@ public class SkilltreeLevelsEntity {
     @Column(name = "points", nullable = false)
     private byte points = 1;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skilltree_skills_id", referencedColumnName = "id", nullable = false)
     private SkilltreeSkillsEntity skilltreeSkillsBySkilltreeSkillsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 
-    @OneToMany(mappedBy = "skilltreeLevelsByUpgradeSkilltreeLevelsId")
+    @OneToMany(mappedBy = "skilltreeLevelsByUpgradeSkilltreeLevelsId", fetch = FetchType.LAZY)
     private Collection<SkilltreeUnlocksEntity> skilltreeUnlocks;
 }

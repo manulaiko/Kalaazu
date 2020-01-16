@@ -44,15 +44,15 @@ public class ClansMessagesEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id")
     private AccountsEntity accountsByToAccountsId;
 }

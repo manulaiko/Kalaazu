@@ -45,11 +45,11 @@ public class FactionsEntity {
     @Column(name = "high_maps_position", nullable = false)
     private long highMapsPosition = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "low_maps_id", nullable = false)
     private MapsEntity lowMapsByLowMapsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "high_maps_id", nullable = false)
     private MapsEntity highMapsByHighMapsId;
 }

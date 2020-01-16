@@ -62,7 +62,7 @@ public class ShipsEntity {
     @Column(name = "gfx", nullable = false)
     private byte gfx = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 

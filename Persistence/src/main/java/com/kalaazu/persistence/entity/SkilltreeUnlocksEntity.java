@@ -21,11 +21,11 @@ public class SkilltreeUnlocksEntity {
     @Column(name = "id", nullable = false)
     private short id;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "upgrade_skilltree_levels_id", referencedColumnName = "id", nullable = false)
     private SkilltreeLevelsEntity skilltreeLevelsByUpgradeSkilltreeLevelsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "required_skilltree_levels_id", referencedColumnName = "id", nullable = false)
     private SkilltreeLevelsEntity skilltreeLevelsByRequiredSkilltreeLevelsId;
 }

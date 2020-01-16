@@ -34,7 +34,7 @@ public class ModeratorsLogsEntity {
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "moderators_id", referencedColumnName = "id", nullable = false)
     private ModeratorsEntity moderatorsByModeratorsId;
 }

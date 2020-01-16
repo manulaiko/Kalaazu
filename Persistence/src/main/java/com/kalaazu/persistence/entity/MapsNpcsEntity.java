@@ -25,11 +25,11 @@ public class MapsNpcsEntity {
     @Column(name = "amount", nullable = false)
     private byte amount = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "npcs_id", referencedColumnName = "id", nullable = false)
     private NpcsEntity npcsByNpcsId;
 }

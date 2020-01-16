@@ -30,11 +30,11 @@ public class AccountsDronesEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 }

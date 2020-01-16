@@ -29,7 +29,7 @@ public class ClansRankingEntity {
     @Column(name = "best_points", nullable = false)
     private int bestPoints = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 }

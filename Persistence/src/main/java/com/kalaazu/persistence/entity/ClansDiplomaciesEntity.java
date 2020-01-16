@@ -40,11 +40,11 @@ public class ClansDiplomaciesEntity {
     @Enumerated(EnumType.ORDINAL)
     private DiplomacyType type = DiplomacyType.WAR;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByFromClansId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByToClansId;
 }

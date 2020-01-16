@@ -26,11 +26,11 @@ public class VouchersRedeemLogsEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "vouchers_id", referencedColumnName = "id", nullable = false)
     private VouchersEntity vouchersByVouchersId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 }

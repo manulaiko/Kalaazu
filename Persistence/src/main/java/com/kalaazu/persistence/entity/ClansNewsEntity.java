@@ -30,11 +30,11 @@ public class ClansNewsEntity {
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 }

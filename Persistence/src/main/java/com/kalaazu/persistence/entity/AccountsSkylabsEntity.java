@@ -30,15 +30,15 @@ public class AccountsSkylabsEntity {
     @Column(name = "upgrade")
     private Timestamp upgrade;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skylab_modules_id", referencedColumnName = "id", nullable = false)
     private SkylabModulesEntity skylabModulesBySkylabModulesId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 }

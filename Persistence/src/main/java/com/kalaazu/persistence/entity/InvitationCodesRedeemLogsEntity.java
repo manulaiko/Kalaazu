@@ -30,7 +30,7 @@ public class InvitationCodesRedeemLogsEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id", nullable = false)
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
 }

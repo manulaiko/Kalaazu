@@ -41,15 +41,15 @@ public class ClansBanksLogsEntity {
     @Enumerated(EnumType.ORDINAL)
     private CurrencyType currency = CurrencyType.CREDITS;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_banks_id", referencedColumnName = "id", nullable = false)
     private ClansBanksEntity clansBanksByClansBanksId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByToAccountsId;
 }

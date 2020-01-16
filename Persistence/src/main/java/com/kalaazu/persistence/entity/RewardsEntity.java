@@ -33,7 +33,7 @@ public class RewardsEntity {
     @Column(name = "comment")
     private String comment;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 }

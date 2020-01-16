@@ -26,19 +26,19 @@ public class QuestsEntity {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "quests_id", referencedColumnName = "id")
     private QuestsEntity questsByQuestsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 
-    @OneToMany(mappedBy = "questsByQuestsId")
+    @OneToMany(mappedBy = "questsByQuestsId", fetch = FetchType.LAZY)
     private Collection<QuestsConditionsEntity> questsConditions;
 
     @ManyToMany

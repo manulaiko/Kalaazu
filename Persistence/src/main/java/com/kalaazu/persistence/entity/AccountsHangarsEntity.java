@@ -35,18 +35,18 @@ public class AccountsHangarsEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_ships_id", referencedColumnName = "id", nullable = false)
     private AccountsShipsEntity accountsShipsByAccountsShipsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id", nullable = false)
     private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
-    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId")
+    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId", fetch = FetchType.LAZY)
     private Collection<AccountsConfigurationsEntity> accountsConfigurations;
 }

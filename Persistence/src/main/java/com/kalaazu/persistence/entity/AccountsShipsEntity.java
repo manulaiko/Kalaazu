@@ -37,15 +37,15 @@ public class AccountsShipsEntity {
     @Column(name = "gfx", nullable = false)
     private byte gfx = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ships_id", referencedColumnName = "id", nullable = false)
     private ShipsEntity shipsByShipsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
 }

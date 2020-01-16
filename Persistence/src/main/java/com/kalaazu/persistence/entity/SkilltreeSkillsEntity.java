@@ -51,6 +51,6 @@ public class SkilltreeSkillsEntity {
     @Column(name = "bonus_factor", nullable = false)
     private byte bonusFactor = 2;
 
-    @OneToMany(mappedBy = "skilltreeSkillsBySkilltreeSkillsId")
+    @OneToMany(mappedBy = "skilltreeSkillsBySkilltreeSkillsId", fetch = FetchType.LAZY)
     private Collection<SkilltreeLevelsEntity> skilltreeLevels;
 }

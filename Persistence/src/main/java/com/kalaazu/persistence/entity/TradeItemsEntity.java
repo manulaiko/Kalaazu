@@ -30,11 +30,11 @@ public class TradeItemsEntity {
     @Enumerated(EnumType.ORDINAL)
     private TradeType type = TradeType.HOURLY;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id")
     private AccountsEntity accountsByAccountsId;
 }

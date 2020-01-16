@@ -30,11 +30,11 @@ public class ClansBattlestationsLogsEntity {
     @Column(name = "date", nullable = false)
     private Timestamp date;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_battlestations_id", referencedColumnName = "id", nullable = false)
     private ClansBattlestationsEntity clansBattlestationsByClansBattlestationsId;
 }

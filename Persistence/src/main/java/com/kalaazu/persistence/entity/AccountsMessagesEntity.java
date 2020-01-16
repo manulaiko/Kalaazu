@@ -44,11 +44,11 @@ public class AccountsMessagesEntity {
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByToAccountsId;
 }

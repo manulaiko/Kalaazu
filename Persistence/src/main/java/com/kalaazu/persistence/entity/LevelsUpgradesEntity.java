@@ -33,7 +33,7 @@ public class LevelsUpgradesEntity {
     @Column(name = "uridium", nullable = false)
     private short uridium = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 }

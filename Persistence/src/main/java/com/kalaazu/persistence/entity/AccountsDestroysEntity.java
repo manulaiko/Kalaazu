@@ -29,11 +29,11 @@ public class AccountsDestroysEntity {
     @Column(name = "amount", nullable = false)
     private short amount = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ships_id", referencedColumnName = "id", nullable = false)
     private ShipsEntity shipsByShipsId;
 }

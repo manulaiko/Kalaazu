@@ -37,11 +37,11 @@ public class AccountsGalaxygatesEntity {
     @Column(name = "times", nullable = false)
     private short times = 0;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
     private GalaxygatesEntity galaxygatesByGalaxygatesId;
 }
