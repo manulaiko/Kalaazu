@@ -6,6 +6,8 @@ import {AccountState} from "@/store/Account/types";
  */
 export const mutations: MutationTree<AccountState> = {
   SET_ACCOUNT: (state, payload) => {
-    state = payload
+    state = payload;
+
+    console.log(state);
   }
 };

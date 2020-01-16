@@ -62,11 +62,11 @@ public class RegisterService {
      * @param password User password.
      * @param email    User email.
      *
-     * @return Registered account session ID.
+     * @return Registered account.
      *
      * @throws Exception If something goes wrong.
      */
-    public String register(String username, String password, String email) throws Exception {
+    public AccountsEntity register(String username, String password, String email) throws Exception {
         var u = username.trim();
         var p = password.trim();
         var e = email.trim();
@@ -84,10 +84,10 @@ public class RegisterService {
         var configs = this.createConfigs(hangar);
 
         this.addItemsToConfig(items, configs);
-        this.addConfigToHangar(configs.values().iterator().next(), hangar);
-        this.addHangarToAccount(hangar, account);
+        this.setActiveConfig(configs.values().iterator().next(), hangar);
+        this.setActiveHangar(hangar, account);
 
-        return account.getSessionId();
+        return account;
     }
 
     /**
@@ -96,7 +96,7 @@ public class RegisterService {
      * @param config Active configuration.
      * @param hangar Configuration owner.
      */
-    private void addConfigToHangar(AccountsConfigurationsEntity config, AccountsHangarsEntity hangar) {
+    private void setActiveConfig(AccountsConfigurationsEntity config, AccountsHangarsEntity hangar) {
         hangar.setAccountsConfigurationsByAccountsConfigurationsId(config);
 
         this.hangars.update(hangar);
@@ -108,7 +108,7 @@ public class RegisterService {
      * @param hangar  Active hangar.
      * @param account Hangar owner.
      */
-    private void addHangarToAccount(AccountsHangarsEntity hangar, AccountsEntity account) {
+    private void setActiveHangar(AccountsHangarsEntity hangar, AccountsEntity account) {
         account.setAccountsHangarsByAccountsHangarsId(hangar);
 
         this.accounts.update(account);
@@ -159,8 +159,6 @@ public class RegisterService {
      * @return Created account.
      */
     private AccountsEntity createAccount(UsersEntity user) {
-        System.out.println("USER ID " + user.getId());
-        System.out.println("User " + user);
         var account = new AccountsEntity();
         account.setName(user.getName());
         account.setSessionId(StringUtils.sessionId());
@@ -170,7 +168,10 @@ public class RegisterService {
         account.setFactionsByFactionsId(this.factions.find((byte) 1)); // Default to MMO
         account.setRanksByRanksId(this.ranks.find((byte) 1));
 
-        return this.accounts.create(account);
+        var a = this.accounts.create(account);
+        user.addAccount(a);
+
+        return a;
     }
 
     /**
@@ -211,6 +212,7 @@ public class RegisterService {
             item.setLevelsByLevelsId(this.levels.find((byte) 1));
 
             var i = this.accountsItems.create(item);
+            account.addItem(i);
 
             ret.put((short) i.getId(), i);
         });
@@ -237,7 +239,10 @@ public class RegisterService {
         ship.setMapsByMapsId(account.getFactionsByFactionsId().getLowMapsByLowMapsId());
         ship.setPosition(account.getFactionsByFactionsId().getLowMapsPosition());
 
-        return this.accountsShips.create(ship);
+        var s = this.accountsShips.create(ship);
+        account.addShip(ship);
+
+        return s;
     }
 
     /**
@@ -256,6 +261,7 @@ public class RegisterService {
             config.setAccountsHangarsByAccountsHangarsId(hangar);
 
             var c = this.accountsConfigs.create(config);
+            hangar.addConfiguration(c);
 
             configs.put(c.getId(), c);
         }
@@ -273,9 +279,12 @@ public class RegisterService {
      */
     private AccountsHangarsEntity createHangar(AccountsEntity account, AccountsShipsEntity ship) {
         var hangar = new AccountsHangarsEntity();
-        hangar.setAccountsByAccountsId(account);
+        hangar.setAccountsByAccountsId(accounts.find(1));
         hangar.setAccountsShipsByAccountsShipsId(ship);
 
-        return this.hangars.create(hangar);
+        var h = this.hangars.create(hangar);
+        account.addHangar(h);
+
+        return h;
     }
 }

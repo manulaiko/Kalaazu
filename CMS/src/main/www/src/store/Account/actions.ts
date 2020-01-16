@@ -8,7 +8,7 @@ import router from "@/router";
  */
 export const actions: ActionTree<AccountState, RootState> = {
   INIT_ACCOUNT: (context, payload) => {
-    if(payload.factionsId == undefined || payload.factionsId < 1) {
+    if(payload.lastLogin == null) {
       router.push({ name: 'companyChoose' });
 
       return;

@@ -35,11 +35,11 @@ public class LoginService {
      * @param username User name.
      * @param password Password.
      *
-     * @return Authenticated user's session ID.
+     * @return Authenticated user's account.
      *
      * @throws Exception If something goes wrong.
      */
-    public String login(String username, String password) throws Exception {
+    public AccountsEntity login(String username, String password) throws Exception {
         var u = username.trim();
         var p = password.trim();
 
@@ -71,7 +71,7 @@ public class LoginService {
         lastUsedAccount.setSessionId(StringUtils.sessionId());
         this.accounts.update(lastUsedAccount);
 
-        return lastUsedAccount.getSessionId();
+        return lastUsedAccount;
     }
 
     /**

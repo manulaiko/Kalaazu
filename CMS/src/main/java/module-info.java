@@ -11,4 +11,5 @@ module kalaazu.cms {
     requires spring.beans;
     requires java.sql;
     requires java.desktop;
+    requires modelmapper;
 }

@@ -1,12 +1,12 @@
 package com.kalaazu.cms.controller;
 
-import com.kalaazu.cms.dto.LoginRequest;
-import com.kalaazu.cms.dto.LoginResponse;
-import com.kalaazu.cms.dto.RegisterRequest;
-import com.kalaazu.cms.dto.Response;
+import com.kalaazu.cms.dto.*;
 import com.kalaazu.cms.service.LoginService;
 import com.kalaazu.cms.service.RegisterService;
+import com.kalaazu.persistence.entity.AccountsEntity;
+import com.kalaazu.persistence.entity.ItemType;
 import lombok.extern.slf4j.Slf4j;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,6 +32,9 @@ public class ExternalController {
     @Autowired
     private RegisterService register;
 
+    @Autowired
+    private ModelMapper mapper;
+
     /**
      * Login endpoint.
      *
@@ -44,10 +47,10 @@ public class ExternalController {
         var response = new Response<LoginResponse>("other", "Couldn't perform login!", null);
 
         try {
-            var sessionId = this.login.login(body.getUsername(), body.getPassword());
+            var account = this.login.login(body.getUsername(), body.getPassword());
 
             var data = new LoginResponse();
-            data.setSessionId(sessionId);
+            data.setAccount(this.buildAccount(account));
 
             response.setKind("ok");
             response.setData(data);
@@ -71,10 +74,11 @@ public class ExternalController {
         var response = new Response<LoginResponse>("other", "Couldn't perform register!", null);
 
         try {
-            var sessionId = this.register.register(body.getUsername(), body.getPassword(), body.getEmail());
+            var account = this.register.register(body.getUsername(), body.getPassword(), body.getEmail());
 
+            System.out.println("Account registered!");
             var data = new LoginResponse();
-            data.setSessionId(sessionId);
+            data.setAccount(this.buildAccount(account));
 
             response.setKind("ok");
             response.setData(data);
@@ -84,5 +88,58 @@ public class ExternalController {
         }
 
         return ResponseEntity.ok(response);
+    }
+
+    /**
+     * Builds the account DTO.
+     *
+     * @param account Account entity.
+     *
+     * @return Account DTO for `account`.
+     */
+    private Account buildAccount(AccountsEntity account) {
+        System.out.println("Building DTO");
+        var a = new Account();
+        this.mapper.map(account, a);
+
+        var items = account.getAccountsItems();
+
+        System.out.println("adding items...");
+        items
+               .forEach(i -> {
+                   System.out.println("Item "+ i);
+                   if (i.getItemsByItemsId().getType() != ItemType.CURRENCY) {
+                       return;
+                   }
+
+                   switch (i.getItemsByItemsId().getId()) {
+                       case 1: // Credits
+                           a.setCredits(i.getAmount());
+                           break;
+
+                       case 2: // Uridium
+                           a.setUridium((int) i.getAmount());
+                           break;
+
+                       case 3: // Jackpot
+                           a.setJackpot((int) i.getAmount());
+                           break;
+
+                       case 4: // Experience
+                           a.setExperience(i.getAmount());
+                           break;
+
+                       case 5: // Honor
+                           a.setHonor((int) i.getAmount());
+                           break;
+                   }
+               });
+
+        System.out.println(a);
+
+        a.setLevelsId(account.getLevelsByLevelsId().getId());
+        a.setFactionsId(account.getFactionsByFactionsId().getId());
+
+        return a;
     }
 }
