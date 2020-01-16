@@ -7,6 +7,7 @@ import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 
 /**
  * Accounts entity.
@@ -81,58 +82,58 @@ public class AccountsEntity {
     private RanksEntity ranksByRanksId;
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsBanksEntity> accountsBanks;
+    private Collection<AccountsBanksEntity> accountsBanks = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsDestroysEntity> accountsDestroys;
+    private Collection<AccountsDestroysEntity> accountsDestroys = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsDronesEntity> accountsDrones;
+    private Collection<AccountsDronesEntity> accountsDrones = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsGalaxygatesEntity> accountsGalaxygates;
+    private Collection<AccountsGalaxygatesEntity> accountsGalaxygates = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsHangarsEntity> accountsHangars;
+    private Collection<AccountsHangarsEntity> accountsHangars = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsHistoryEntity> accountsHistories;
+    private Collection<AccountsHistoryEntity> accountsHistories = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsItemsEntity> accountsItems = new ArrayList<>();
+    private Collection<AccountsItemsEntity> accountsItems = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByFromAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsMessagesEntity> fromAccountsMessages;
+    private Collection<AccountsMessagesEntity> fromAccountsMessages = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByToAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsMessagesEntity> toAccountsMessages;
+    private Collection<AccountsMessagesEntity> toAccountsMessages = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsPetsEntity> accountsPets;
+    private Collection<AccountsPetsEntity> accountsPets = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsQuestsEntity> accountsQuests;
+    private Collection<AccountsQuestsEntity> accountsQuests = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsRankingsEntity> accountsRankings;
+    private Collection<AccountsRankingsEntity> accountsRankings = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsShipsEntity> accountsShips;
+    private Collection<AccountsShipsEntity> accountsShips = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsSkillsEntity> accountsSkills;
+    private Collection<AccountsSkillsEntity> accountsSkills = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsSkylabsEntity> accountsSkylabs;
+    private Collection<AccountsSkylabsEntity> accountsSkylabs = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsTechfactoriesEntity> accountsTechfactories;
+    private Collection<AccountsTechfactoriesEntity> accountsTechfactories = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<AccountsTechfactoryItemsEntity> accountsTechfactoryItems;
+    private Collection<AccountsTechfactoryItemsEntity> accountsTechfactoryItems = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
-    private Collection<ClansApplicationsEntity> clansApplications;
+    private Collection<ClansApplicationsEntity> clansApplications = new HashSet<>();
 
     @ManyToMany
     @JoinTable(
@@ -140,5 +141,35 @@ public class AccountsEntity {
             joinColumns = @JoinColumn(name = "accounts_id"),
             inverseJoinColumns = @JoinColumn(name = "clans_roles_id")
     )
-    private Collection<ClansRolesEntity> clansRoles;
+    private Collection<ClansRolesEntity> clansRoles = new HashSet<>();
+
+    /**
+     * Adds an item to the account.
+     *
+     * @param item Item to add.
+     */
+    public void addItem(AccountsItemsEntity item) {
+        this.accountsItems.add(item);
+        item.setAccountsByAccountsId(this);
+    }
+
+    /**
+     * Adds a ship to the account.
+     *
+     * @param ship Ship to add.
+     */
+    public void addShip(AccountsShipsEntity ship) {
+        this.accountsShips.add(ship);
+        ship.setAccountsByAccountsId(this);
+    }
+
+    /**
+     * Adds an hangar to the account.
+     *
+     * @param hangar Hangar to add.
+     */
+    public void addHangar(AccountsHangarsEntity hangar) {
+        this.accountsHangars.add(hangar);
+        hangar.setAccountsByAccountsId(this);
+    }
 }

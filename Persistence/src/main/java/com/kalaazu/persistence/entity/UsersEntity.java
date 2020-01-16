@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * Users entity.
@@ -56,5 +57,15 @@ public class UsersEntity {
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
 
     @OneToMany(mappedBy = "usersByUsersId", fetch = FetchType.LAZY)
-    private Collection<AccountsEntity> accounts;
+    private Collection<AccountsEntity> accounts = new HashSet<>();
+
+    /**
+     * Adds a new account.
+     *
+     * @param account Account to add.
+     */
+    public void addAccount(AccountsEntity account) {
+        this.accounts.add(account);
+        account.setUsersByUsersId(this);
+    }
 }

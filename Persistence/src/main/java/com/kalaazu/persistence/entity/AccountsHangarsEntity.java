@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
+import java.util.HashSet;
 
 /**
  * Accounts hangars entity.
@@ -48,5 +49,15 @@ public class AccountsHangarsEntity {
     private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
     @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId", fetch = FetchType.LAZY)
-    private Collection<AccountsConfigurationsEntity> accountsConfigurations;
+    private Collection<AccountsConfigurationsEntity> accountsConfigurations = new HashSet<>();
+
+    /**
+     * Adds a configuration to the hangar.
+     *
+     * @param config Configuration to add.
+     */
+    public void addConfiguration(AccountsConfigurationsEntity config) {
+        this.accountsConfigurations.add(config);
+        config.setAccountsHangarsByAccountsHangarsId(this);
+    }
 }
