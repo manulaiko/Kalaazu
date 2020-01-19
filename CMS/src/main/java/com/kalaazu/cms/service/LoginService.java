@@ -7,6 +7,7 @@ import com.kalaazu.util.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.Date;
 
@@ -69,6 +70,7 @@ public class LoginService {
 
         // Generate new session ID.
         lastUsedAccount.setSessionId(StringUtils.sessionId());
+        lastUsedAccount.setLastLogin(Timestamp.from(Instant.now()));
         this.accounts.update(lastUsedAccount);
 
         return lastUsedAccount;

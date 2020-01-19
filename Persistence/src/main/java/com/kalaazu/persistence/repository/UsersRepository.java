@@ -18,11 +18,10 @@ public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
      * Returns the user with the provided login info.
      *
      * @param username Login username.
-     * @param password Login password.
      *
      * @return Login user.
      */
-    UsersEntity findByNameAndPassword(String username, String password);
+    UsersEntity findByName(String username);
 
     /**
      * Returns the user with the provided register info.

@@ -68,7 +68,13 @@ public class UsersServiceImpl implements UsersService {
      */
     @Override
     public UsersEntity login(String username, String password) {
-        return this.repository.findByNameAndPassword(username, StringUtils.hash(password));
+        var user = this.repository.findByName(username);
+
+        if (user != null && StringUtils.verify(user.getPassword(), password)) {
+            return user;
+        }
+
+        return null;
     }
 
     /**
