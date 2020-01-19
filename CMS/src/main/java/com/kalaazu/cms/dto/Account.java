@@ -28,4 +28,7 @@ public class Account {
     private int jackpot;
     private short factionsId;
     private short levelsId;
+    private short ranksId;
+    private int clansId;
+    private int accountsHangarsId;
 }
