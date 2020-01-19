@@ -4,10 +4,9 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashSet;
+import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * Accounts entity.
@@ -43,6 +42,7 @@ public class AccountsEntity {
 
     @Basic
     @Column(name = "date", nullable = false)
+    @CreationTimestamp
     private Timestamp date;
 
     @Basic

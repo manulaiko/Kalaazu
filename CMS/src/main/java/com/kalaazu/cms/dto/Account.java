@@ -2,8 +2,6 @@ package com.kalaazu.cms.dto;
 
 import lombok.Data;
 
-import java.sql.Timestamp;
-
 /**
  * Account DTO.
  * ============
@@ -17,10 +15,10 @@ public class Account {
     private int id;
     private String sessionId;
     private String name;
-    private Timestamp banDate;
-    private Timestamp premiumDate;
-    private Timestamp date;
-    private Timestamp lastLogin;
+    private String banDate;
+    private String premiumDate;
+    private String date;
+    private String lastLogin;
     private short skillPointsTotal = 0;
     private short skillPointsFree = 0;
     private long experience;

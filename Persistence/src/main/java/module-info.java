@@ -12,4 +12,5 @@ module kalaazu.persistence {
     requires spring.core;
     requires spring.data.jpa;
     requires spring.beans;
+    requires org.hibernate.orm.core;
 }

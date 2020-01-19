@@ -76,7 +76,6 @@ public class ExternalController {
         try {
             var account = this.register.register(body.getUsername(), body.getPassword(), body.getEmail());
 
-            System.out.println("Account registered!");
             var data = new LoginResponse();
             data.setAccount(this.buildAccount(account));
 
@@ -98,16 +97,11 @@ public class ExternalController {
      * @return Account DTO for `account`.
      */
     private Account buildAccount(AccountsEntity account) {
-        System.out.println("Building DTO");
         var a = new Account();
         this.mapper.map(account, a);
 
-        var items = account.getAccountsItems();
-
-        System.out.println("adding items...");
-        items
+        account.getAccountsItems()
                .forEach(i -> {
-                   System.out.println("Item "+ i);
                    if (i.getItemsByItemsId().getType() != ItemType.CURRENCY) {
                        return;
                    }
@@ -134,11 +128,6 @@ public class ExternalController {
                            break;
                    }
                });
-
-        System.out.println(a);
-
-        a.setLevelsId(account.getLevelsByLevelsId().getId());
-        a.setFactionsId(account.getFactionsByFactionsId().getId());
 
         return a;
     }

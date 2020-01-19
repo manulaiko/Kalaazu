@@ -87,6 +87,10 @@ public class RegisterService {
         this.setActiveConfig(configs.values().iterator().next(), hangar);
         this.setActiveHangar(hangar, account);
 
+        account.addShip(ship);
+        items.values().forEach(account::addItem);
+        account.addHangar(hangar);
+
         return account;
     }
 
