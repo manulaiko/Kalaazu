@@ -168,10 +168,7 @@ public class RegisterService {
         account.setFactionsByFactionsId(this.factions.find((byte) 1)); // Default to MMO
         account.setRanksByRanksId(this.ranks.find((byte) 1));
 
-        var a = this.accounts.create(account);
-        user.addAccount(a);
-
-        return a;
+        return this.accounts.create(account);
     }
 
     /**
@@ -212,7 +209,6 @@ public class RegisterService {
             item.setLevelsByLevelsId(this.levels.find((byte) 1));
 
             var i = this.accountsItems.create(item);
-            account.addItem(i);
 
             ret.put((short) i.getId(), i);
         });
@@ -239,10 +235,7 @@ public class RegisterService {
         ship.setMapsByMapsId(account.getFactionsByFactionsId().getLowMapsByLowMapsId());
         ship.setPosition(account.getFactionsByFactionsId().getLowMapsPosition());
 
-        var s = this.accountsShips.create(ship);
-        account.addShip(ship);
-
-        return s;
+        return this.accountsShips.create(ship);
     }
 
     /**
@@ -261,7 +254,6 @@ public class RegisterService {
             config.setAccountsHangarsByAccountsHangarsId(hangar);
 
             var c = this.accountsConfigs.create(config);
-            hangar.addConfiguration(c);
 
             configs.put(c.getId(), c);
         }
@@ -279,12 +271,9 @@ public class RegisterService {
      */
     private AccountsHangarsEntity createHangar(AccountsEntity account, AccountsShipsEntity ship) {
         var hangar = new AccountsHangarsEntity();
-        hangar.setAccountsByAccountsId(accounts.find(1));
+        hangar.setAccountsByAccountsId(account);
         hangar.setAccountsShipsByAccountsShipsId(ship);
 
-        var h = this.hangars.create(hangar);
-        account.addHangar(h);
-
-        return h;
+        return this.hangars.create(hangar);
     }
 }
