@@ -71,9 +71,8 @@ public class LoginService {
         // Generate new session ID.
         lastUsedAccount.setSessionId(StringUtils.sessionId());
         lastUsedAccount.setLastLogin(Timestamp.from(Instant.now()));
-        this.accounts.update(lastUsedAccount);
 
-        return lastUsedAccount;
+        return this.accounts.update(lastUsedAccount);
     }
 
     /**
@@ -84,18 +83,18 @@ public class LoginService {
      * @return Whether the account is banned or not.
      */
     private boolean filterBannedAccounts(AccountsEntity account) {
-        var d = account.getBanDate();
+        var date = account.getBanDate();
 
         // Not banned yet.
-        if (d == null) {
+        if (date == null) {
             return true;
         }
 
         // If banned.
-        if (d.compareTo(this.now) > 0) {
+        if (date.compareTo(this.now) > 0) {
             // If this ban expires before `nextBanExpire`
-            if (d.compareTo(this.nextBanExpire) > 0) {
-                this.nextBanExpire = d;
+            if (date.compareTo(this.nextBanExpire) > 0) {
+                this.nextBanExpire = date;
             }
 
             return false;
