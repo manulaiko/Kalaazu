@@ -2,6 +2,7 @@ import Vue from "vue";
 import axios from "axios";
 import Store from "@/store";
 import External from "@/service/api/External";
+import Company from "@/service/api/Company";
 
 /**
  * API service.
@@ -13,6 +14,7 @@ import External from "@/service/api/External";
  */
 class ApiService {
   external: External;
+  company:  Company;
 
   /**
    * Constructor.
@@ -21,6 +23,7 @@ class ApiService {
    */
   constructor(store: typeof Store) {
     this.external = new External(axios, store);
+    this.company = new Company(axios, store);
   }
 }
 

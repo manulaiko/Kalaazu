@@ -5,9 +5,9 @@ import com.kalaazu.cms.service.LoginService;
 import com.kalaazu.cms.service.RegisterService;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.entity.ItemType;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,15 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequestMapping("/external")
+@RequiredArgsConstructor
 public class ExternalController {
-    @Autowired
-    private LoginService login;
-
-    @Autowired
-    private RegisterService register;
-
-    @Autowired
-    private ModelMapper mapper;
+    private final LoginService login;
+    private final RegisterService register;
+    private final ModelMapper mapper;
 
     /**
      * Login endpoint.

@@ -16,7 +16,7 @@ export default {
     }
   },
   created: function() {
-    //this.companies = this.$api.companies.list();
+    this.companies = this.$api.companies.list();
   }
 };
 </script>
