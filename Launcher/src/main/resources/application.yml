@@ -8,3 +8,12 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+app:
+  port:
+    server: 8080
+    policy: 843
+    chat: 8082
+
+server:
+  port: 8081
