@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.Collection;
 
 /**
  * Account bank entity.
  * ====================
- *
+ * <p>
  * Represents an entity from the `accounts_banks` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -3,9 +3,9 @@ package com.kalaazu.persistence.entity;
 /**
  * Currency type.
  * ==============
- *
- *  * 0 = Credits
- *  * 1 = Uridium
+ * <p>
+ * * 0 = Credits
+ * * 1 = Uridium
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsQuests service.
  * ==========================
- *
+ * <p>
  * Service for the AccountsQuests entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

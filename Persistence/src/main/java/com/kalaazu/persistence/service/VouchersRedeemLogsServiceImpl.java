@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * VouchersRedeemLogs service.
  * ==============================
- *
+ * <p>
  * Service for the VouchersRedeemLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

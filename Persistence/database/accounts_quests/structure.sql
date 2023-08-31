@@ -14,8 +14,7 @@ CREATE TABLE `accounts_quests`
         COMMENT 'Date when the quest was accepted/completed.',
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Quest status of the account.';
 

@@ -9,7 +9,6 @@ CREATE TABLE `key_value`
     `value` varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains simple Key -> Value entries.';

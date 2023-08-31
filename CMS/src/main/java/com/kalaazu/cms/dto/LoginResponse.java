@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * Login response.
  * ===============
- *
+ * <p>
  * DTO for the login response body.
  *
  * @author Manulaiko <manulaiko@gmail.com>

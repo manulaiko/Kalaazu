@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.MapsNpcsEntity;
 /**
  * MapsNpcs service.
  * ====================
- *
+ * <p>
  * Service for the MapsNpcs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

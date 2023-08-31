@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsRankings service.
  * ============================
- *
+ * <p>
  * Service for the AccountsRankings entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

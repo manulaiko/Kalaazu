@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsDrones service.
  * ==========================
- *
+ * <p>
  * Service for the AccountsDrones entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

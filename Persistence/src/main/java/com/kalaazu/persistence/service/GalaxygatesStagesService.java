@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.GalaxygatesStagesEntity;
 /**
  * GalaxygatesStages service.
  * =============================
- *
+ * <p>
  * Service for the GalaxygatesStages entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

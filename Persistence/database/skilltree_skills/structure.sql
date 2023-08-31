@@ -22,8 +22,7 @@ CREATE TABLE `skilltree_skills`
         COMMENT 'Factor the bonus increases with each upgrade.',
 
     CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'The available skills.';
 

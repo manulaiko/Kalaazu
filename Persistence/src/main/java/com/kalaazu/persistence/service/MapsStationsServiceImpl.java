@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * MapsStations service.
  * ========================
- *
+ * <p>
  * Service for the MapsStations entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

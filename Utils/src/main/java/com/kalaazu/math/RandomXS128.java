@@ -89,7 +89,7 @@ public class RandomXS128 extends Random {
      */
     @Override
     public long nextLong() {
-        long       s1 = this.seed0;
+        long s1 = this.seed0;
         final long s0 = this.seed1;
         this.seed0 = s0;
         s1 ^= s1 << 23;
@@ -122,7 +122,6 @@ public class RandomXS128 extends Random {
      * This implementation uses {@link #nextLong()} internally.
      *
      * @param n the positive bound on the random number to be returned.
-     *
      * @return the next pseudo-random {@code int} value between {@code 0} (inclusive) and {@code n} (exclusive).
      */
     @Override
@@ -138,7 +137,6 @@ public class RandomXS128 extends Random {
      * This implementation uses {@link #nextLong()} internally.
      *
      * @param n the positive bound on the random number to be returned.
-     *
      * @return the next pseudo-random {@code long} value between {@code 0} (inclusive) and {@code n} (exclusive).
      */
     public long nextLong(final long n) {
@@ -147,7 +145,7 @@ public class RandomXS128 extends Random {
         }
 
         while (true) {
-            final long bits  = nextLong() >>> 1;
+            final long bits = nextLong() >>> 1;
             final long value = bits % n;
             if (bits - value + (n - 1) >= 0) {
                 return value;
@@ -199,8 +197,8 @@ public class RandomXS128 extends Random {
         int i = bytes.length;
         while (i != 0) {
             n = i < 8
-                ? i
-                : 8; // min(i, 8);
+                    ? i
+                    : 8; // min(i, 8);
             for (long bits = nextLong(); n-- != 0; bits >>= 8) {
                 bytes[--i] = (byte) bits;
             }
@@ -219,8 +217,8 @@ public class RandomXS128 extends Random {
     public void setSeed(final long seed) {
         long seed0 = murmurHash3(
                 seed == 0
-                ? Long.MIN_VALUE
-                : seed
+                        ? Long.MIN_VALUE
+                        : seed
         );
         setState(seed0, murmurHash3(seed0));
     }
@@ -240,12 +238,11 @@ public class RandomXS128 extends Random {
      * Returns the internal seeds to allow state saving.
      *
      * @param seed must be 0 or 1, designating which of the 2 long seeds to return
-     *
      * @return the internal seed that can be used in setState
      */
     public long getState(int seed) {
         return seed == 0
-               ? seed0
-               : seed1;
+                ? seed0
+                : seed1;
     }
 }

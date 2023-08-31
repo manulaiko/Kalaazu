@@ -3,10 +3,10 @@ package com.kalaazu.persistence.entity;
 /**
  * Skilltree skill type.
  * =====================
- *
- *  * 0 = Blue
- *  * 1 = Purple
- *  * 2 = Red
+ * <p>
+ * * 0 = Blue
+ * * 1 = Purple
+ * * 2 = Red
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

@@ -10,12 +10,12 @@
 <script>
 export default {
   name: "companyChoose",
-  data: function() {
+  data: function () {
     return {
       companies: []
     }
   },
-  created: function() {
+  created: function () {
     this.companies = this.$api.companies.list();
   }
 };

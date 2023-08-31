@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsSkylabs service.
  * ===========================
- *
+ * <p>
  * Service for the AccountsSkylabs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

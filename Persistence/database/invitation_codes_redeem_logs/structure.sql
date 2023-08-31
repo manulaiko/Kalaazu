@@ -14,7 +14,6 @@ CREATE TABLE `invitation_codes_redeem_logs`
         COMMENT 'Date when the code was redeemed.',
 
     CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the invitation codes.';

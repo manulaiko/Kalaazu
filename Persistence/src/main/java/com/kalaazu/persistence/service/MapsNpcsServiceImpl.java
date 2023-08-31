@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * MapsNpcs service.
  * ====================
- *
+ * <p>
  * Service for the MapsNpcs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

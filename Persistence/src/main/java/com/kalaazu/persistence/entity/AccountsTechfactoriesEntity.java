@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Accounts techfactories entity.
  * ==============================
- *
+ * <p>
  * Entity for the `accounts_techfactories` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

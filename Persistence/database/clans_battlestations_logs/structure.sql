@@ -12,8 +12,7 @@ CREATE TABLE `clans_battlestations_logs`
     `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from clan''s battlestations.';
 

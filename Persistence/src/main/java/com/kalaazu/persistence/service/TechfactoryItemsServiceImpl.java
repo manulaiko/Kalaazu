@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * TechfactoryItems service.
  * ============================
- *
+ * <p>
  * Service for the TechfactoryItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

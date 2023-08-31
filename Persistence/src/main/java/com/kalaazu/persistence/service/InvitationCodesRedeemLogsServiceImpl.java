@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * InvitationCodesRedeemLogs service.
  * =====================================
- *
+ * <p>
  * Service for the InvitationCodesRedeemLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

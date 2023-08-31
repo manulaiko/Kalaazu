@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * InvitationCodes service.
  * ===========================
- *
+ * <p>
  * Service for the InvitationCodes entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

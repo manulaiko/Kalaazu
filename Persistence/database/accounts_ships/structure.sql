@@ -19,8 +19,7 @@ CREATE TABLE `accounts_ships`
         COMMENT 'Ship graphic (for WIZ-X).',
 
     CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Ships bough by an account.';
 

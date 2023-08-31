@@ -4,4 +4,4 @@
 
 ALTER TABLE `moderators_logs`
     ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
-        REFERENCES `moderators` (`id`);
+    REFERENCES `moderators` (`id`);

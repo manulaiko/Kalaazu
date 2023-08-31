@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Rewards service.
  * ===================
- *
+ * <p>
  * Service for the Rewards entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -3,10 +3,10 @@ package com.kalaazu.persistence.entity;
 /**
  * Trade item type.
  * ================
- *
- *  * 0 = Hourly
- *  * 1 = Daily
- *  * 2 = Weekly
+ * <p>
+ * * 0 = Hourly
+ * * 1 = Daily
+ * * 2 = Weekly
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */

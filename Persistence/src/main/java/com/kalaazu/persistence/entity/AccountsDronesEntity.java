@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Accounts drones entity.
  * =======================
- *
+ * <p>
  * Entity for the `accounts_drones` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

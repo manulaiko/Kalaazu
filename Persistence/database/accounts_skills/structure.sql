@@ -14,8 +14,7 @@ CREATE TABLE `accounts_skills`
         COMMENT 'Skill level.',
 
     CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Skilltree for the account.';
 

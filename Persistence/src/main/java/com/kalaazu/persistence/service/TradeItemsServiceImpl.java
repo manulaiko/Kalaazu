@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * TradeItems service.
  * ======================
- *
+ * <p>
  * Service for the TradeItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

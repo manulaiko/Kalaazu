@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.AccountsTechfactoryItemsEntity;
 /**
  * AccountsTechfactoryItems service.
  * ====================================
- *
+ * <p>
  * Service for the AccountsTechfactoryItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

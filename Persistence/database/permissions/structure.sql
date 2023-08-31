@@ -10,8 +10,7 @@ CREATE TABLE `permissions`
     `category` varchar(255) NOT NULL,
 
     CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server permissions.';
 

@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.AccountsHistoryEntity;
 /**
  * AccountsHistory service.
  * ===========================
- *
+ * <p>
  * Service for the AccountsHistory entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

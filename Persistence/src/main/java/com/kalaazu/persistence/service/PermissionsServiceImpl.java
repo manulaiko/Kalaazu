@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Permissions service.
  * =======================
- *
+ * <p>
  * Service for the Permissions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

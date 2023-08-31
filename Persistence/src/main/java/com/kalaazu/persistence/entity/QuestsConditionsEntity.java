@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Quests conditions entity.
  * =========================
- *
+ * <p>
  * Entity for the `quests_conditions` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

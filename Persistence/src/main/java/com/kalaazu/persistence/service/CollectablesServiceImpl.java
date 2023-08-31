@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Collectables service.
  * ========================
- *
+ * <p>
  * Service for the Collectables entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

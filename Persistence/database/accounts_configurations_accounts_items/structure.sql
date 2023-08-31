@@ -12,7 +12,6 @@ CREATE TABLE `accounts_configurations_accounts_items`
     `accounts_pets_id`           int NULL DEFAULT NULL,
 
     CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items of the configuration.';

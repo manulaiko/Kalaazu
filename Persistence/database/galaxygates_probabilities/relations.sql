@@ -4,4 +4,4 @@
 
 ALTER TABLE `galaxygates_probabilities`
     ADD CONSTRAINT `galaxygates_probabilities_galaxygates` FOREIGN KEY `galaxygates_probabilities_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);

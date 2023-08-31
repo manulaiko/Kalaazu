@@ -14,8 +14,7 @@ CREATE TABLE `vouchers_redeem_logs`
         COMMENT 'Date when the voucher was redeemed.',
 
     CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the voucher codes.';
 

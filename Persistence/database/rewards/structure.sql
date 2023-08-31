@@ -4,20 +4,19 @@
 --
 CREATE TABLE `rewards`
 (
-    `id`          smallint     NOT NULL AUTO_INCREMENT
+    `id`          smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `items_id`    smallint     NOT NULL
+    `items_id`    smallint NOT NULL
         COMMENT 'Item to award.',
-    `amount`      int          NOT NULL
+    `amount`      int      NOT NULL
         COMMENT 'Amount of items to award.',
-    `probability` float        NOT NULL DEFAULT 100.00
+    `probability` float    NOT NULL DEFAULT 100.00
         COMMENT 'Probability of awarding this item',
-    `comment`     varchar(255) NULL     DEFAULT NULL
+    `comment`     varchar(255) NULL DEFAULT NULL
         COMMENT 'Comment of the reward.',
 
     CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'All rewards available so there''s no need of JSON.';
 

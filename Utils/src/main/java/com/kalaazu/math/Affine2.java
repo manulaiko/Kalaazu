@@ -16,6 +16,7 @@
 
 package com.kalaazu.math;
 
+import java.io.Serial;
 import java.io.Serializable;
 
 
@@ -28,6 +29,7 @@ import java.io.Serializable;
  * @author vmilea
  */
 public final class Affine2 implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1524569123485049187L;
 
     public float m00 = 1, m01 = 0, m02 = 0;
@@ -71,7 +73,6 @@ public final class Affine2 implements Serializable {
      * Copies the values from the provided affine matrix to this matrix.
      *
      * @param other The affine matrix to copy.
-     *
      * @return This matrix for the purposes of chaining.
      */
     public Affine2 set(Affine2 other) {
@@ -89,7 +90,6 @@ public final class Affine2 implements Serializable {
      * Copies the values from the provided matrix to this matrix.
      *
      * @param matrix The matrix to copy, assumed to be an affine transformation.
-     *
      * @return This matrix for the purposes of chaining.
      */
     public Affine2 set(Matrix3 matrix) {
@@ -110,7 +110,6 @@ public final class Affine2 implements Serializable {
      *
      * @param x The translation in x
      * @param y The translation in y
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTranslation(float x, float y) {
@@ -128,7 +127,6 @@ public final class Affine2 implements Serializable {
      * Sets this matrix to a translation matrix.
      *
      * @param trn The translation vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTranslation(Vector2 trn) {
@@ -140,7 +138,6 @@ public final class Affine2 implements Serializable {
      *
      * @param scaleX The scale in x.
      * @param scaleY The scale in y.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToScaling(float scaleX, float scaleY) {
@@ -158,7 +155,6 @@ public final class Affine2 implements Serializable {
      * Sets this matrix to a scaling matrix.
      *
      * @param scale The scale vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToScaling(Vector2 scale) {
@@ -169,7 +165,6 @@ public final class Affine2 implements Serializable {
      * Sets this matrix to a rotation matrix that will rotate any vector in counter-clockwise direction around the z-axis.
      *
      * @param degrees The angle in degrees.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToRotation(float degrees) {
@@ -190,7 +185,6 @@ public final class Affine2 implements Serializable {
      * Sets this matrix to a rotation matrix that will rotate any vector in counter-clockwise direction around the z-axis.
      *
      * @param radians The angle in radians.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToRotationRad(float radians) {
@@ -212,7 +206,6 @@ public final class Affine2 implements Serializable {
      *
      * @param cos The angle cosine.
      * @param sin The angle sine.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToRotation(float cos, float sin) {
@@ -231,7 +224,6 @@ public final class Affine2 implements Serializable {
      *
      * @param shearX The shear in x direction.
      * @param shearY The shear in y direction.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToShearing(float shearX, float shearY) {
@@ -249,7 +241,6 @@ public final class Affine2 implements Serializable {
      * Sets this matrix to a shearing matrix.
      *
      * @param shear The shear vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToShearing(Vector2 shear) {
@@ -265,7 +256,6 @@ public final class Affine2 implements Serializable {
      * @param degrees The angle in degrees.
      * @param scaleX  The scale in y.
      * @param scaleY  The scale in x.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotScl(float x, float y, float degrees, float scaleX, float scaleY) {
@@ -296,7 +286,6 @@ public final class Affine2 implements Serializable {
      * @param trn     The translation vector.
      * @param degrees The angle in degrees.
      * @param scale   The scale vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotScl(Vector2 trn, float degrees, Vector2 scale) {
@@ -312,7 +301,6 @@ public final class Affine2 implements Serializable {
      * @param radians The angle in radians.
      * @param scaleX  The scale in y.
      * @param scaleY  The scale in x.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotRadScl(float x, float y, float radians, float scaleX, float scaleY) {
@@ -343,7 +331,6 @@ public final class Affine2 implements Serializable {
      * @param trn     The translation vector.
      * @param radians The angle in radians.
      * @param scale   The scale vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnRotRadScl(Vector2 trn, float radians, Vector2 scale) {
@@ -358,7 +345,6 @@ public final class Affine2 implements Serializable {
      * @param y      The translation in y.
      * @param scaleX The scale in y.
      * @param scaleY The scale in x.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnScl(float x, float y, float scaleX, float scaleY) {
@@ -377,7 +363,6 @@ public final class Affine2 implements Serializable {
      *
      * @param trn   The translation vector.
      * @param scale The scale vector.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToTrnScl(Vector2 trn, Vector2 scale) {
@@ -389,7 +374,6 @@ public final class Affine2 implements Serializable {
      *
      * @param l Left matrix.
      * @param r Right matrix.
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 setToProduct(Affine2 l, Affine2 r) {
@@ -406,7 +390,6 @@ public final class Affine2 implements Serializable {
      * Inverts this matrix given that the determinant is != 0.
      *
      * @return This matrix for the purpose of chaining operations.
-     *
      * @throws RuntimeException if the matrix is singular (not invertible)
      */
     public Affine2 inv() {
@@ -441,7 +424,6 @@ public final class Affine2 implements Serializable {
      * </pre>
      *
      * @param other Matrix to multiply by.
-     *
      * @return This matrix for the purpose of chaining operations together.
      */
     public Affine2 mul(Affine2 other) {
@@ -469,7 +451,6 @@ public final class Affine2 implements Serializable {
      * </pre>
      *
      * @param other The other Matrix to multiply by
-     *
      * @return This matrix for the purpose of chaining operations.
      */
     public Affine2 preMul(Affine2 other) {
@@ -494,7 +475,6 @@ public final class Affine2 implements Serializable {
      *
      * @param x The x-component of the translation vector.
      * @param y The y-component of the translation vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 translate(float x, float y) {
@@ -507,7 +487,6 @@ public final class Affine2 implements Serializable {
      * Post-multiplies this matrix by a translation matrix.
      *
      * @param trn The translation vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 translate(Vector2 trn) {
@@ -519,7 +498,6 @@ public final class Affine2 implements Serializable {
      *
      * @param x The x-component of the translation vector.
      * @param y The y-component of the translation vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preTranslate(float x, float y) {
@@ -532,7 +510,6 @@ public final class Affine2 implements Serializable {
      * Pre-multiplies this matrix by a translation matrix.
      *
      * @param trn The translation vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preTranslate(Vector2 trn) {
@@ -544,7 +521,6 @@ public final class Affine2 implements Serializable {
      *
      * @param scaleX The scale in the x-axis.
      * @param scaleY The scale in the y-axis.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 scale(float scaleX, float scaleY) {
@@ -559,7 +535,6 @@ public final class Affine2 implements Serializable {
      * Post-multiplies this matrix with a scale matrix.
      *
      * @param scale The scale vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 scale(Vector2 scale) {
@@ -571,7 +546,6 @@ public final class Affine2 implements Serializable {
      *
      * @param scaleX The scale in the x-axis.
      * @param scaleY The scale in the y-axis.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preScale(float scaleX, float scaleY) {
@@ -588,7 +562,6 @@ public final class Affine2 implements Serializable {
      * Pre-multiplies this matrix with a scale matrix.
      *
      * @param scale The scale vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preScale(Vector2 scale) {
@@ -599,7 +572,6 @@ public final class Affine2 implements Serializable {
      * Post-multiplies this matrix with a (counter-clockwise) rotation matrix.
      *
      * @param degrees The angle in degrees
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 rotate(float degrees) {
@@ -626,7 +598,6 @@ public final class Affine2 implements Serializable {
      * Post-multiplies this matrix with a (counter-clockwise) rotation matrix.
      *
      * @param radians The angle in radians
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 rotateRad(float radians) {
@@ -653,7 +624,6 @@ public final class Affine2 implements Serializable {
      * Pre-multiplies this matrix with a (counter-clockwise) rotation matrix.
      *
      * @param degrees The angle in degrees
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preRotate(float degrees) {
@@ -684,7 +654,6 @@ public final class Affine2 implements Serializable {
      * Pre-multiplies this matrix with a (counter-clockwise) rotation matrix.
      *
      * @param radians The angle in radians
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preRotateRad(float radians) {
@@ -716,7 +685,6 @@ public final class Affine2 implements Serializable {
      *
      * @param shearX The shear in x direction.
      * @param shearY The shear in y direction.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 shear(float shearX, float shearY) {
@@ -727,8 +695,8 @@ public final class Affine2 implements Serializable {
 
         tmp0 = m10 + shearY * m11;
         tmp1 = m11 + shearX * m10;
-        m10  = tmp0;
-        m11  = tmp1;
+        m10 = tmp0;
+        m11 = tmp1;
         return this;
     }
 
@@ -736,7 +704,6 @@ public final class Affine2 implements Serializable {
      * Post-multiplies this matrix by a shear matrix.
      *
      * @param shear The shear vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 shear(Vector2 shear) {
@@ -748,7 +715,6 @@ public final class Affine2 implements Serializable {
      *
      * @param shearX The shear in x direction.
      * @param shearY The shear in y direction.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preShear(float shearX, float shearY) {
@@ -772,7 +738,6 @@ public final class Affine2 implements Serializable {
      * Pre-multiplies this matrix by a shear matrix.
      *
      * @param shear The shear vector.
-     *
      * @return This matrix for the purpose of chaining.
      */
     public Affine2 preShear(Vector2 shear) {
@@ -792,7 +757,6 @@ public final class Affine2 implements Serializable {
      * Get the x-y translation component of the matrix.
      *
      * @param position Output vector.
-     *
      * @return Filled position.
      */
     public Vector2 getTranslation(Vector2 position) {

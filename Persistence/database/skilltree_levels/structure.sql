@@ -18,7 +18,6 @@ CREATE TABLE `skilltree_levels`
         COMMENT 'Research points needed to upgrade this skill.',
 
     CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Levels a skill can reach.';

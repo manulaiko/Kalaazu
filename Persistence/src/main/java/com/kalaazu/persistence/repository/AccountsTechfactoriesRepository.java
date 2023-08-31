@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsTechfactories repository.
  * =================================
- *
+ * <p>
  * Repository for the AccountsTechfactories entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

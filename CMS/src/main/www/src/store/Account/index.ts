@@ -14,7 +14,7 @@ import {mutations} from "@/store/Account/mutations";
  * @author Manulaiko <manulaiko@gmail.com>
  */
 export const account: Module<AccountState, RootState> = {
-  state: state,
-  actions: actions,
-  mutations: mutations
+    state: state,
+    actions: actions,
+    mutations: mutations
 };

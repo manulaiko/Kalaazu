@@ -18,8 +18,7 @@ CREATE TABLE `maps_portals`
     `gfx`             tinyint NOT NULL DEFAULT 1,
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Portals on map.';
 

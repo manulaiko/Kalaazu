@@ -8,7 +8,7 @@ CREATE TABLE `clans`
         COMMENT 'Primary Key.',
     `accounts_id` int          NOT NULL
         COMMENT 'Owner ID',
-    `factions_id` tinyint      NULL     DEFAULT NULL
+    `factions_id` tinyint NULL DEFAULT NULL
         COMMENT 'Clan affiliation faction.',
     `tag`         varchar(4)   NOT NULL DEFAULT ''
         COMMENT 'Name abbreviation.',
@@ -19,8 +19,7 @@ CREATE TABLE `clans`
         COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server clans.';
 

@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 /**
  * CMS class.
  * ==========
- *
+ * <p>
  * Configures the CMS server.
  *
  * @author Manulaiko <manulaiko@gmail.com>

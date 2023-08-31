@@ -4,4 +4,4 @@
 
 ALTER TABLE `galaxygates_waves`
     ADD CONSTRAINT `galaxygates_waves_maps` FOREIGN KEY `galaxygates_spins_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);

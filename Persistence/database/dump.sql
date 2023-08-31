@@ -2,9 +2,12 @@
 -- 
 -- @author Manulaiko <manulaiko@gmail.com>
 
-DROP DATABASE IF EXISTS `kalaazu`;
-CREATE DATABASE `kalaazu`;
-USE `kalaazu`;
+DROP
+DATABASE IF EXISTS `kalaazu`;
+CREATE
+DATABASE `kalaazu`;
+USE
+`kalaazu`;
 
 -- Accounts table.
 --
@@ -20,20 +23,20 @@ CREATE TABLE `accounts`
         COMMENT 'Session ID.',
     `levels_id`           tinyint      NOT NULL DEFAULT 1
         COMMENT 'Current level.',
-    `factions_id`         tinyint      NULL     DEFAULT NULL
+    `factions_id`         tinyint NULL DEFAULT NULL
         COMMENT 'Faction that the account belongs to.',
-    `accounts_hangars_id` int          NULL     DEFAULT NULL
+    `accounts_hangars_id` int NULL DEFAULT NULL
         COMMENT 'Active hangar.',
-    `clans_id`            int          NULL     DEFAULT NULL,
+    `clans_id`            int NULL DEFAULT NULL,
     `ranks_id`            tinyint      NOT NULL DEFAULT 1,
     `name`                varchar(255) NOT NULL
         COMMENT 'In game name.',
-    `ban_date`            timestamp    NULL     DEFAULT NULL
+    `ban_date`            timestamp NULL DEFAULT NULL
         COMMENT 'Ban expiration date.',
-    `premium_date`        timestamp    NULL     DEFAULT NULL
+    `premium_date`        timestamp NULL DEFAULT NULL
         COMMENT 'Premium expiration date.',
     `date`                timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `last_login`          timestamp    NULL     DEFAULT NULL
+    `last_login`          timestamp NULL DEFAULT NULL
         COMMENT 'Last login date.',
     `skill_points_total`  smallint     NOT NULL DEFAULT 0
         COMMENT 'Total skill points available.',
@@ -41,8 +44,7 @@ CREATE TABLE `accounts`
         COMMENT 'Free skill points available.',
 
     CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'In game accounts.';
 
@@ -76,8 +78,7 @@ CREATE TABLE `accounts_banks`
         COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s internal bank.';
 
@@ -103,11 +104,10 @@ CREATE TABLE `accounts_banks_logs`
         COMMENT 'Amount of currency logged.',
     `currency`          tinyint   NOT NULL DEFAULT 0
         COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
-    `accounts_banks_id` int       NULL     DEFAULT NULL,
+    `accounts_banks_id` int NULL DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from account''s bank';
 
@@ -132,8 +132,7 @@ CREATE TABLE `accounts_clans_roles`
         COMMENT 'Role ID.',
 
     CONSTRAINT `accounts_clans_roles_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 
@@ -164,8 +163,7 @@ CREATE TABLE `accounts_configurations`
         COMMENT 'Damage available in the configuration.',
 
     CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Configurations of the accounts.';
 
@@ -188,8 +186,7 @@ CREATE TABLE `accounts_configurations_accounts_items`
     `accounts_pets_id`           int NULL DEFAULT NULL,
 
     CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items of the configuration.';
 
@@ -211,8 +208,7 @@ CREATE TABLE `accounts_destroys`
         COMMENT 'Times this ship has been destroyed',
 
     CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s destroy history.';
 
@@ -235,8 +231,7 @@ CREATE TABLE `accounts_drones`
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s drones.';
 
@@ -265,8 +260,7 @@ CREATE TABLE `accounts_galaxygates`
         COMMENT 'Times this gate was completed.',
 
     CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s build galaxygates.';
 
@@ -286,18 +280,17 @@ CREATE TABLE `accounts_hangars`
     `id`                         int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `accounts_id`                int          NOT NULL,
-    `accounts_ships_id`          int          NULL     DEFAULT NULL
+    `accounts_ships_id`          int NULL DEFAULT NULL
         COMMENT 'Ship available in the hangar.',
-    `accounts_configurations_id` int          NULL     DEFAULT NULL
+    `accounts_configurations_id` int NULL DEFAULT NULL
         COMMENT 'Equipped configuration.',
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
-    `priority`                   tinyint      NULL     DEFAULT -1
+    `priority`                   tinyint NULL DEFAULT -1
         COMMENT 'Order priority, null = not ordered.',
     `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Hangars bough by an account.';
 
@@ -327,8 +320,7 @@ CREATE TABLE `accounts_history`
         COMMENT 'Date when the event occurred.',
 
     CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s history events.';
 
@@ -353,8 +345,7 @@ CREATE TABLE `accounts_items`
         COMMENT 'Amount of items bough (for stackable items).',
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items bough by an account.';
 
@@ -386,8 +377,7 @@ CREATE TABLE `accounts_messages`
     `text`             text         NOT NULL,
 
     CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Messaging system.';
 
@@ -422,8 +412,7 @@ CREATE TABLE `accounts_pets`
     `slots_gears_available`      tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s PETs.';
 
@@ -448,8 +437,7 @@ CREATE TABLE `accounts_quests`
         COMMENT 'Date when the quest was accepted/completed.',
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Quest status of the account.';
 
@@ -484,8 +472,7 @@ CREATE TABLE `accounts_rankings`
         COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
 
     CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account ranking.';
 
@@ -515,8 +502,7 @@ CREATE TABLE `accounts_ships`
         COMMENT 'Ship graphic (for WIZ-X).',
 
     CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Ships bough by an account.';
 
@@ -545,8 +531,7 @@ CREATE TABLE `accounts_skills`
         COMMENT 'Skill level.',
 
     CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Skilltree for the account.';
 
@@ -561,22 +546,21 @@ CREATE INDEX `accounts_skills_accounts_id_idx`
 --
 CREATE TABLE `accounts_skylabs`
 (
-    `id`                int       NOT NULL AUTO_INCREMENT
+    `id`                int     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `accounts_id`       int       NOT NULL
+    `accounts_id`       int     NOT NULL
         COMMENT 'Account ID.',
-    `skylab_modules_id` tinyint   NOT NULL
+    `skylab_modules_id` tinyint NOT NULL
         COMMENT 'Module ID.',
-    `levels_id`         tinyint   NOT NULL DEFAULT 1
+    `levels_id`         tinyint NOT NULL DEFAULT 1
         COMMENT 'Module level.',
-    `space`             int       NOT NULL DEFAULT 0
+    `space`             int     NOT NULL DEFAULT 0
         COMMENT 'Used space.',
-    `upgrade`           timestamp NULL     DEFAULT NULL
+    `upgrade`           timestamp NULL DEFAULT NULL
         COMMENT 'Date when this module started upgrading.',
 
     CONSTRAINT `accounts_skylabs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Skylab for the accounts.';
 
@@ -605,8 +589,7 @@ CREATE TABLE `accounts_techfactories`
         COMMENT 'Unlocked slots.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Nanotech factory items.';
 
@@ -618,20 +601,19 @@ CREATE TABLE `accounts_techfactories`
 --
 CREATE TABLE `accounts_techfactory_items`
 (
-    `id`                   int       NOT NULL AUTO_INCREMENT
+    `id`                   int      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `accounts_id`          int       NOT NULL
+    `accounts_id`          int      NOT NULL
         COMMENT 'Account ID.',
-    `techfactory_items_id` tinyint   NOT NULL
+    `techfactory_items_id` tinyint  NOT NULL
         COMMENT 'Item ID.',
-    `amount`               smallint  NOT NULL DEFAULT 1
+    `amount`               smallint NOT NULL DEFAULT 1
         COMMENT 'Amount of build items.',
-    `date`                 timestamp NULL     DEFAULT NULL
+    `date`                 timestamp NULL DEFAULT NULL
         COMMENT 'Date when the item started building.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Techfactory items from account.';
 
@@ -652,7 +634,7 @@ CREATE TABLE `clans`
         COMMENT 'Primary Key.',
     `accounts_id` int          NOT NULL
         COMMENT 'Owner ID',
-    `factions_id` tinyint      NULL     DEFAULT NULL
+    `factions_id` tinyint NULL DEFAULT NULL
         COMMENT 'Clan affiliation faction.',
     `tag`         varchar(4)   NOT NULL DEFAULT ''
         COMMENT 'Name abbreviation.',
@@ -663,8 +645,7 @@ CREATE TABLE `clans`
         COMMENT '0 = closed, 1 = recruiting, 2 = lvl10+, 3 = lvl16+, 4 = FE.',
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server clans.';
 
@@ -693,8 +674,7 @@ CREATE TABLE `clans_applications`
     `text`        text      NOT NULL,
 
     CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account applications to a clan.';
 
@@ -724,8 +704,7 @@ CREATE TABLE `clans_banks`
         COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan''s internal bank.';
 
@@ -755,8 +734,7 @@ CREATE TABLE `clans_banks_logs`
         COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from clan''s bank.';
 
@@ -777,19 +755,18 @@ CREATE TABLE `clans_battlestations`
 (
     `id`       tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `clans_id` int          NULL     DEFAULT NULL
+    `clans_id` int NULL DEFAULT NULL
         COMMENT 'Owner of the CBS.',
     `maps_id`  tinyint      NOT NULL
         COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
     `position` bigint       NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
-    `date`     timestamp    NULL     DEFAULT NULL
+    `date`     timestamp NULL DEFAULT NULL
         COMMENT 'Date when the CBS was build.',
 
     CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan CBS.';
 
@@ -840,8 +817,7 @@ CREATE TABLE `clans_battlestations_items`
         COMMENT 'Date when the item was equipped.',
 
     CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items equipped in the CBS.';
 
@@ -866,8 +842,7 @@ CREATE TABLE `clans_battlestations_logs`
     `date`                    timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from clan''s battlestations.';
 
@@ -892,7 +867,7 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Clan that receives the request.',
     `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Diplomacy creation date.',
-    `expires`       timestamp NULL     DEFAULT NULL
+    `expires`       timestamp NULL DEFAULT NULL
         COMMENT 'Date when the diplomacy expires.',
     `status`        tinyint   NOT NULL DEFAULT 0
         COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
@@ -900,8 +875,7 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Diplomacy type. 0 = War, 1 = NAP, 2 = Alliance.',
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Diplomacy table for clans.';
 
@@ -925,7 +899,7 @@ CREATE TABLE `clans_messages`
     `from_accounts_id` int          NOT NULL,
     `from_status`      tinyint      NOT NULL DEFAULT 1
         COMMENT '0 = unread, 1 = read, 2 = deleted.',
-    `to_accounts_id`   int          NULL     DEFAULT NULL,
+    `to_accounts_id`   int NULL DEFAULT NULL,
     `to_status`        tinyint      NOT NULL DEFAULT 0
         COMMENT '0 = unread, 1 = read, 2 = unread.',
     `title`            varchar(255) NOT NULL DEFAULT '',
@@ -933,8 +907,7 @@ CREATE TABLE `clans_messages`
     `date`             timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `clans_messages` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Messages in the clan.';
 
@@ -964,8 +937,7 @@ CREATE TABLE `clans_news`
         COMMENT 'News content.',
 
     CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'News of the clan.';
 
@@ -992,8 +964,7 @@ CREATE TABLE `clans_ranking`
         COMMENT 'Biggest amount of rank points ever achieved.',
 
     CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan ranking.';
 
@@ -1012,13 +983,12 @@ CREATE TABLE `clans_roles`
         COMMENT 'Primary Key.',
     `name`           varchar(255) NOT NULL,
     `clans_id`       int          NOT NULL,
-    `clans_roles_id` int          NULL     DEFAULT NULL
+    `clans_roles_id` int NULL DEFAULT NULL
         COMMENT 'Parent role.',
     `priority`       tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan''s roles.';
 
@@ -1043,8 +1013,7 @@ CREATE TABLE `clans_roles_permissions`
         COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan roles'' permissions';
 
@@ -1069,8 +1038,7 @@ CREATE TABLE `collectables`
     `name` varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Map collectables.';
 
@@ -1532,14 +1500,13 @@ CREATE TABLE `events`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL,
-    `start_date`  timestamp    NULL     DEFAULT NULL
+    `start_date`  timestamp NULL DEFAULT NULL
         COMMENT 'Event start date.',
-    `end_date`    timestamp    NULL     DEFAULT NULL
+    `end_date`    timestamp NULL DEFAULT NULL
         COMMENT 'Event end date.',
 
     CONSTRAINT `events_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s events.';
 
@@ -1567,8 +1534,7 @@ CREATE TABLE `factions`
         COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s factions.';
 
@@ -1601,14 +1567,13 @@ CREATE TABLE `galaxygates`
     `id`                   tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `name`                 varchar(255) NOT NULL DEFAULT 'GG-A',
-    `galaxygates_waves_id` tinyint      NULL     DEFAULT NULL
+    `galaxygates_waves_id` tinyint NULL DEFAULT NULL
         COMMENT 'Starting wave.',
     `parts`                tinyint      NOT NULL DEFAULT 0
         COMMENT 'Necessary parts to build the gate.',
 
     CONSTRAINT `galaxygates_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Galaxy gates from the server.';
 
@@ -1638,8 +1603,7 @@ CREATE TABLE `galaxygates_gg_spins`
     `galaxygates_spins_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
 
@@ -1907,8 +1871,7 @@ CREATE TABLE `galaxygates_gg_waves`
     `galaxygates_waves_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
 
@@ -1935,8 +1898,7 @@ CREATE TABLE `galaxygates_probabilities`
         COMMENT 'Probability of awarding one spin of this type.',
 
     CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Spin probabilities for the galaxy gates.';
 
@@ -2017,8 +1979,7 @@ CREATE TABLE `galaxygates_spawns`
         COMMENT 'Amount of NPCs to spawn.',
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Stage spawn for each stage.';
 
@@ -2042,8 +2003,7 @@ CREATE TABLE `galaxygates_spins`
     `amount`      smallint NOT NULL DEFAULT 1,
 
     CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Spins from the galaxy gate.';
 
@@ -2097,12 +2057,11 @@ CREATE TABLE `galaxygates_stages`
         COMMENT 'Primary Key.',
     `galaxygates_waves_id` tinyint NOT NULL
         COMMENT 'Wave this stage belongs to',
-    `comment`              text    NULL DEFAULT NULL
+    `comment`              text NULL DEFAULT NULL
         COMMENT 'Just so this isn''t that empty',
 
     CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Spawn stage for each wave.';
 
@@ -2123,8 +2082,7 @@ CREATE TABLE `galaxygates_stages_spawns`
     `galaxygates_spawns_id` int NOT NULL,
 
     CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';
 
@@ -2151,8 +2109,7 @@ CREATE TABLE `galaxygates_waves`
         COMMENT 'NPCS that the user must destroy to spawn next stage',
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Waves of the galaxy gate.';
 
@@ -2175,8 +2132,7 @@ CREATE TABLE `invitation_codes`
         COMMENT 'Amount of times the code can be used.',
 
     CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the invitation codes that can be used for registering.';
 
@@ -3205,8 +3161,7 @@ CREATE TABLE `invitation_codes_redeem_logs`
         COMMENT 'Date when the code was redeemed.',
 
     CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the invitation codes.';
 
@@ -3235,8 +3190,7 @@ CREATE TABLE `items`
         COMMENT 'Item bonus',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s items.';
 
@@ -3257,19 +3211,25 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Phoenix\n\nAll your ships sold off or in hock? Don\'t worry - your Company won\'t leave you in the lurch!\nThis free beater will let you rise like a phoenix from the ashes of your gambling problem and/or lack of foresight, and will ferry you around until you can afford something better.',
         0, 30, 0, 0, 1, 0),
        (10, 'Yamato', 1,
-        'Yamato\n\nAvailable from special events! Updated, tweaked, and fully upgraded, the classic Yamato is back in business. You can strut your stuff in her, too - you\'ll find a [travel mode capacity] under her hood, which will give you a temporary speed boost.',
+        'Yamato\n\nAvailable from special events! Updated, tweaked, and fully upgraded, the classic Yamato is back in business. You can strut your stuff in her, too - you\'ll find a [travel mode capacity] under her hood,
+        which will give you a temporary speed boost.',
         0, 30, 0, 0, 1, 0),
        (11, 'Defcom', 1,
-        'Defcom\n\nAvailable from special events! An old-timer spaceship with real vintage style!\nThe Defcom is currently enjoying an impressive revival, and its newest iteration features a cloaking device hidden behind those gorgeous hot-rod lines. No classic ship collection is complete without her!',
+        'Defcom\n\nAvailable from special events! An old-timer spaceship with real vintage style!\nThe Defcom is currently enjoying an impressive revival, and
+        its newest iteration features a cloaking device hidden behind those gorgeous hot - rod lines.No classic ship
+        collection is complete without her ! ',
         0, 30, 0, 0, 1, 0),
-       (12, 'Liberator', 1,
+       (12, ' Liberator ', 1,
         ' Liberator\n\nYou never forget your first...! No matter whose logo you display, the Liberator is the proven workhorse that shuttled you safely through your first dogfights. This nostalgic little trip down Memory Lane rounds out any collection.',
         40000, 30, 0, 0, 1, 0),
        (13, 'Leonov', 1,
-        ' Leonov\n\nThe Leonov is worth every scrap of Uridium asked for her. Versatile, agile, and with an unbeatable home advantage: more cargo space and more speed when you\'re in your Company\'s sectors! Your Company has your back - and now, you can return the favor!',
+        ' Leonov\n\nThe Leonov is worth every scrap of Uridium asked for her. Versatile, agile, and with an unbeatable
+        home advantage : more cargo space and more speed when you\'re in your Company\' s sectors ! Your Company has
+        your back - and now, you can return the favor!',
         15000, 30, 1, 0, 1, 0),
        (14, 'Piranha', 1,
-        'Piranha\n\nThis ship is a fitting reward for the insanely tough training that Elite pilots survive. Like her namesake, she\'s a fast, agile hunter with sharp teeth - only pilots who have proven their worth in the heat of battle can control her!',
+        'Piranha\n\nThis ship is a fitting reward for the insanely tough training that Elite pilots survive. Like her namesake,
+        she\'s a fast, agile hunter with sharp teeth - only pilots who have proven their worth in the heat of battle can control her!',
         100000, 30, 0, 0, 1, 0),
        (15, 'Nostromo', 1,
         'Nostromo\n\nThe Nostromo is one of the best ships that Credits can buy. You can even arm her with successively more powerful modifying designs thanks to Lunar Industries\' innovative \"Invite-a-Friend\" bonus program! Easy as pie.',
@@ -3277,39 +3237,53 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
        (16, 'Vengeance', 1, 'Vengeance\n\nThe best Star Hunter: you\'ll have (almost) nothing to fear in this ship!',
         30000, 30, 1, 0, 1, 0),
        (17, 'BigBoy', 1,
-        'BigBoy\n\nNo fleet worth its salt would dream of trying to do without this ship! It may not be the fastest thing in orbit, but it boasts the most cargo space of any ship available for Credits. That\'s true utility!',
+        'BigBoy\n\nNo fleet worth its salt would dream of trying to do without this ship! It may not be the fastest thing in orbit,
+        but it boasts the most cargo space of any ship available for Credits. That\'s true utility!',
         285000, 30, 1, 0, 1, 0),
        (18, 'Goliath', 1, 'Goliath\n\nThe ultimate battlecruiser: hot-shot pilots accept no substitutes!', 80000, 30, 1,
         0, 1, 0),
        (19, 'Sepearhead', 1,
-        'Spearhead\n\nAn agile reconnaissance ship, ideal for the ruthless, cold-blooded lone wolf. Spearheads can penetrate unseen deep into enemy territory as scouts, disable enemy ships\' skills, or even mark them for her allies.',
+        'Spearhead\n\nAn agile reconnaissance ship, ideal for the ruthless, cold-blooded lone wolf. Spearheads can penetrate unseen deep into enemy territory as scouts, disable enemy ships\' skills, or
+        even mark them for her allies.',
         45000, 30, 1, 0, 1, 0),
-       (20, 'Aegis', 1,
-        'Aegis\n\nThe Aegis tips the scales one way or the other in every battle she\'s flown in. This versatile engineering ship\'s support and repair abilities have often made the difference between defeat and victory - so make sure she\'s on your side!',
+       (20, ' Aegis ', 1,
+        ' Aegis\n\nThe Aegis tips the scales one way or the other in every battle she\'s flown in. This versatile engineering ship\'
+        s support and repair abilities have often made the difference between defeat and victory - so make sure she\'s on your side!',
         250000, 30, 1, 0, 1, 0),
        (21, 'Citadel', 1,
         'Citadel\n\nA Citadel is often affectionately called a \"Clank Tank\" - or just The Tank - by her crew. She\'s a hulking Heavy Cruiser with two rocket main slots and various abilities that make her a mobile shield for her allies. Now this bulwark among spaceships can be yours!',
         300000, 30, 1, 0, 1, 0),
        (22, 'Aegis Superelite', 1,
-        'Aegis Elite\n\nLoyal, trustworthy, tough - no pilot could wish for a better support system! This ship has the following abilities: 5% extra damage, 50% longer-lasting repairbots, 20% faster shield repair, and 10% faster HP repair.',
+        'Aegis Elite\n\nLoyal, trustworthy,
+        tough - no pilot could wish for a better support system ! This ship has the following abilities: 5% extra damage,
+        50% longer-lasting repairbots, 20% faster shield repair, and 10 % faster HP repair.',
         300000, 3, 1, 0, 1, 0),
-       (23, 'Aegis Elite', 1,
-        'Aegis Veteran\n\nBe the shield your allies deserve: the A-Veteran is a beautifully designed support ship, ready to prove her worth in any battle! This ship has the following abilities: 5% bonus to experience and honor points.',
+       (23, ' Aegis Elite ', 1,
+        ' Aegis Veteran\n\nBe the shield your allies deserve : the A - Veteran is a beautifully designed support ship,
+        ready to prove her worth in any battle! This ship has the following abilities: 5% bonus to experience and honor points.',
         300000, 3, 1, 0, 1, 0),
        (24, 'Citadel Superelite', 1,
-        'Citadel Elite\n\nThis flying fortress will teach your enemies the true meaning of fear! This ship has the following abilities: 5% extra damage, 50% increased durations of the Protection and Draw Fire abilities, 25% shorter Fortify ability, and 15% shorter Travel ability.',
+        'Citadel Elite\n\nThis flying fortress will teach your enemies the true meaning of fear! This ship has the following abilities: 5% extra damage,
+        50% increased durations of the Protection and Draw Fire abilities, 25% shorter Fortify ability, and 15 % shorter
+        Travel ability.',
         300000, 4, 1, 0, 1, 0),
-       (25, 'Citadel Elite', 1,
-        'Citadel Veteran\n\nThe uncompromising battlecruiser in which to gain the respect of your allies and sow discord among your enemies! This ship has the following abilities: 5% bonus to experience and honor points.',
+       (25, ' Citadel Elite ', 1,
+        ' Citadel Veteran\n\nThe uncompromising battlecruiser in which to gain the respect of your allies and sow
+        discord among your enemies ! This ship has the following abilities : 5 % bonus to experience and honor points.',
         300000, 4, 1, 0, 1, 0),
-       (26, 'Sepearhead Superelite', 1,
-        'Spearhead Elite\n\nDo you want a Recon Ship that will meet your exacting standards? The Spearhead Elite is as menacing as it is effective. This ship has the following abilities: 5% extra damage, 50% increased durations of the Ultimate Cloak and Recon abilities, 25% shorter Target Marker ability, and 15% longer cooldown of the JAMX ability.',
+       (26, ' Sepearhead Superelite ', 1,
+        ' Spearhead Elite\n\nDo you want a Recon Ship that will meet your exacting standards ? The Spearhead Elite is as
+        menacing as it is effective.This ship has the following abilities : 5 % extra damage,
+        50% increased durations of the Ultimate Cloak and Recon abilities, 25% shorter Target Marker ability, and 15 %
+        longer cooldown of the JAMX ability.',
         45000, 5, 1, 0, 1, 0),
-       (27, 'Sepearhead Elite', 1,
-        'Spearhead Veteran\n\nA sophisticated Recon Ship for refined pilots. Your enemies won\'t see you until it\'s too late! This ship has the following abilities: 5% bonus to experience and honor points.',
+       (27, ' Sepearhead Elite ', 1,
+        ' Spearhead Veteran\n\nA sophisticated Recon Ship for refined pilots.Your enemies won\'t see you until it\' s
+        too late ! This ship has the following abilities : 5 % bonus to experience and honor points.',
         45000, 5, 1, 0, 1, 0),
-       (28, 'Bastion', 1,
-        'Goliath Bastion\n\nThis battlecruiser makes itself indispensable in any battle, big or small. Even the fiercest alien threats won\'t find you to be easy game when you go up against them in your Bastion. This ship has the following abilities: 10% extra shield power.',
+       (28, ' Bastion ', 1,
+        ' Goliath Bastion\n\nThis battlecruiser makes itself indispensable in any battle, big or
+                                                                                          small.Even the fiercest alien threats won\'t find you to be easy game when you go up against them in your Bastion. This ship has the following abilities: 10% extra shield power.',
         80000, 6, 1, 0, 1, 0),
        (29, 'Enforcer', 1,
         'Goliath Enforcer\n\nNo clan can afford not to have this massive ship within its fleet! The brute force of the G-Enforcer sets a new bar for deep-space warfare, and will be the backbone of any raiding party. This ship has the following abilities: 5% extra damage.',
@@ -3320,10 +3294,13 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Goliath Veteran\n\nSleek, glossy, and with every detail crafted to the highest standard, this combat vessel is as luxurious and precious as ivory! This ship has the following abilities: 10% bonus to experience.',
         80000, 6, 1, 0, 1, 0),
        (33, 'Exalted', 1,
-        'Goliath Exalted\n\nRed as heart\'s blood, this battlecruiser may well have been assembled by the devil\'s own shipwright. This is no vessel for a shy pilot! This ship has the following abilities: 10% bonus to honor points.',
+        'Goliath Exalted\n\nRed as heart\'s blood,
+        this battlecruiser may well have been assembled by the devil\'s own shipwright. This is no vessel for a shy pilot! This ship has the following abilities: 10% bonus to honor points.',
         80000, 6, 1, 0, 1, 0),
        (34, 'Solace', 1,
-        ' Solace\n\nIn space, no-one can hear you scream... but you can come to the rescue! In the Solace, you\'re an oasis and beacon for your allies in a dark, hostile desert. This ship has the following abilities: 10% extra shield power, and the Nano-Cluster Repairer ability, which immediately repairs the hulls of your ship and your group members\' ships!',
+        ' Solace\n\nIn space, no-one can hear you scream... but you can come to the rescue! In the Solace, you\'re an oasis and beacon for your allies in a dark,
+        hostile desert. This ship has the following abilities: 10% extra shield power, and the Nano - Cluster Repairer
+        ability, which immediately repairs the hulls of your ship and your group members\' ships!',
         80000, 6, 1, 0, 1, 0),
        (35, 'Venom', 1,
         'Venom\n\nA leviathan amongst battlecruisers! Sting your foes with its deadly poison and then step back and let the venom do the rest! This ship has the following abilities: 5% extra damage, and the Singularity ability, which will paralyze enemy ships and cause them substantial damage over time!',
@@ -3354,16 +3331,20 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
        (45, 'Ignite', 1, 'No description available.', 80000, 6, 1, 0, 1, 0),
        (46, 'Surgeon', 1, 'No description available.', 80000, 6, 1, 0, 1, 0),
        (47, 'Adept', 1,
-        'Vengeance Adept\n\nClothes make the man - and the same holds true for the ship and the pilot! A valuable vessel that\'s just the ticket for any pilot worth their salt, this ship has the following abilities: 10% bonus to experience.',
+        'Vengeance Adept\n\nClothes make the man - and the same holds true for the ship and the pilot! A valuable vessel that\'s just the ticket for any pilot worth their salt,
+        this ship has the following abilities: 10% bonus to experience.',
         80000, 7, 1, 0, 1, 0),
        (48, 'Lightning', 1,
-        'Vengeance Lightning\n\nStrike out of a clear blue sky - or the deep black cold of space - and give your enemies an electrifying reception in the Lightning! This ship has the following abilities: 5% extra damage, and the Afterburner ability, which will boost your ship\'s speed by 30% for 5 seconds!',
+        'Vengeance Lightning\n\nStrike out of a clear blue sky - or the deep black cold of space - and give your enemies an electrifying reception in the Lightning! This ship has the following abilities: 5% extra damage, and
+        the Afterburner ability, which will boost your ship\'s speed by 30% for 5 seconds!',
         80000, 7, 1, 0, 1, 0),
        (49, 'Corsair', 1,
         ' Vengeance Corsair\n\nHonor to whom honor is due: the cool V-Corsair is the starfighter of choice for intergalactic exploits of all kinds! This ship has the following abilities: 10% bonus to honor points.',
         80000, 7, 1, 0, 1, 0),
        (50, 'Pusat', 1,
-        'Pusat\n\nDeveloped by the brilliant minds on Yeni\'turkiye Station, the Pusat Vengeance design features a rich arsenal of lasers and generators for delicious, hard-hitting firepower, at the expense of armour. Strike hard and fast when you\'re at its helm.',
+        'Pusat\n\nDeveloped by the brilliant minds on Yeni\'turkiye Station,
+        the Pusat Vengeance design features a rich arsenal of lasers and generators for delicious,
+        hard - hitting firepower, at the expense of armour.Strike hard and fast when you\'re at its helm.',
         80000, 7, 1, 0, 1, 0),
        (51, 'Revenge', 1,
         'Vengeance Revenge\n\nThe V-Revenge is best used to deliver the coup de grace that ends a fierce battle, with K.O. power ideal for dealing with dangerous aliens and enemy Clans alike. This ship has the following abilities: 5% extra damage.',
@@ -3430,14 +3411,16 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Uber\n\nYour rocket main will fire salvos of UBR-100 rockets. Their optimized warheads are at least 80% more effective against aliens, and they also utilize the multi-angle damage feature of conventional Hellstorm rockets.',
         30, 11, 1, 1, 1, 5000),
        (83, 'BDR-1211', 2,
-        'Birthday Rocket\n\nCause extensive damage to aliens of max. 7,500 per shot! On other pilot\'s ships, they only cause a max. 4,000 damage per hit.',
+        'Birthday Rocket\n\nCause extensive damage to aliens of max. 7,500 per shot! On other pilot\'s ships,
+        they only cause a max. 4, 000 damage per hit.',
         10, 12, 1, 1, 1, 6000),
-       (84, 'PLT-2021', 2, 'PLT-2021\n\nLong-range rocket: causes up to 4,000 points per rocket fired.', 5, 12, 1, 0, 1,
+       (84, 'PLT-2021', 2, 'PLT-2021\n\nLong-range rocket: causes up to 4, 000 points per rocket fired.', 5, 12, 1, 0, 1,
         4000),
-       (85, 'PLT-2026', 2, 'PLT-2026\n\nMid-range rocket: causes up to 2,000 damage points per rocket fired.', 500, 12,
+       (85, 'PLT-2026', 2, 'PLT-2026\n\nMid-range rocket: causes up to 2, 000 damage points per rocket fired.', 500, 12,
         0, 0, 1, 2000),
        (86, 'PLT-3030', 2,
-        'PLT-3030\n\nEach rocket inflicts a max. of 6,000 HP of damage, but has a lower accuracy rate due to its impressive firepower.\nAn exceptional weapon when used in combination with the Tech Center\'s precision targeter.',
+        'PLT-3030\n\nEach rocket inflicts a max. of 6, 000 HP of damage,
+        but has a lower accuracy rate due to its impressive firepower.\nAn exceptional weapon when used in combination with the Tech Center\'s precision targeter.',
         7, 12, 1, 0, 1, 6000),
        (87, 'R-310', 2, 'R310\n\nShort-range rocket: causes up to 1,000 damage points per rocket fired.', 100, 12, 0, 0,
         1, 1000),
@@ -3466,18 +3449,34 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Experience booster\n\nGives you a 10% EP bonus. Booster is active for 10 hours from the time of purchase.',
         10000, 0, 1, 0, 1, 10),
        (97, 'EP-B02', 3,
-        'Shared EP Booster\n\n+10% EP; 5% of this EP bonus can be shared with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
+        'Shared EP Booster\n\n+10% EP;
+5% of this EP bonus can be shared with friendly ships nearby
+\n
+\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
         10000, 0, 1, 1, 1, 10),
-       (98, 'HON-B01', 3, 'Honor booster\n\n+10% honor; This booster is active for 10 hours from the time of purchase.',
+       (98, 'HON-B01', 3, 'Honor booster
+\n
+\n+10% honor; This
+booster is active for 10 hours from the time of purchase.',
         10000, 0, 1, 0, 1, 10),
        (99, 'HON-B02', 3,
-        'Shared honor booster\n\nGrants a +10% bonus to earning Honor Points, and 5% of that bonus is applied to friendly ships nearby.\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
+        'Shared honor booster
+\n
+\nGrants a +10% bonus to earning Honor Points, and 5% of that bonus is applied to friendly ships nearby.
+\n
+\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
         10000, 0, 1, 1, 1, 10),
        (100, 'HP-B01', 3,
-        'Hit point booster\n\n+10% ship HP; This booster is active for 10 hours from the time of purchase.', 10000, 0,
+        'Hit point booster
+\n
+\n+10% ship HP; This
+booster is active for 10 hours from the time of purchase.', 10000, 0,
         1, 0, 1, 10),
        (101, 'HP-B02', 3,
-        'Shared hit points booster\n\nIncreases ship\'s maximum HP by 10% and allows you to share 5% of this bonus with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
+        'Shared hit points booster
+\n
+\nIncreases ship
+\'s maximum HP by 10% and allows you to share 5% of this bonus with friendly ships nearby\n\nBooster is active for 10 hours from the time of purchase. It has a 50% maximum boost level.',
         10000, 0, 1, 1, 1, 10),
        (102, 'REP-B01', 3,
         'Repair booster\n\n+10% faster ship repairs; This booster is active for 10 hours from the time of purchase.',
@@ -3495,54 +3494,153 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Shield booster\n\n+25% shield power; This booster is active for 10 hours from the time of purchase.', 10000, 0,
         1, 0, 1, 25),
        (107, 'SHD-B02', 3,
-        'Shared shield power booster\n\nIncreases ship\'s maximum shield power by 25% and allows you to share 10% of this bonus with friendly ships nearby.\n\nBooster is active for 10 hours from the time of purchase. It has a 100% maximum boost level.',
+        'Shared shield power booster\n\nIncreases ship\'s maximum shield power by 25% and allows you to share 10% of this bonus with friendly ships nearby.
+\n
+\nBooster is active for 10 hours from the time of purchase. It has a 100% maximum boost level.',
         10000, 0, 1, 1, 1, 25),
        (108, 'SREG-B01', 3,
-        'Shield recharger booster\n\n+25% shield regeneration speed; This booster is active for 10 hours from the time of purchase.',
+        'Shield recharger booster
+\n
+\n+25% shield regeneration speed; This booster is active for 10 hours from the time of purchase.',
         10000, 0, 1, 0, 1, 25),
-       (109, 'SG3N-A01', 4, 'SG3N-A01 shield\n\n1,000 shield strength / 40% less damage.', 8000, 14, 0, 0, 1, 1000),
-       (110, 'SG3N-A02', 4, 'SG3N-A02 shield\n\n2,000 shield strength / 50% less damage.', 16000, 14, 0, 0, 1, 2000),
-       (111, 'SG3N-A03', 4, 'SG3N-A03 shield\n\n5,000 shield strength / 60% less damage.', 256000, 14, 0, 0, 1, 5000),
-       (112, 'SG3N-B01', 4, 'SG3N-B01 shield\n\n4,000 shield strength / 70% less damage.', 2500, 14, 1, 0, 1, 4000),
-       (113, 'SG3N-B02', 4, 'SG3N-B02 shield\n\n10,000 shield strength / 80% less damage.', 10000, 14, 1, 0, 1, 10000),
-       (114, 'G3N-1010', 4, 'G3N-1010 speed generator\n\nIncreases ship speed by 2.', 2000, 15, 0, 0, 1, 2),
-       (115, 'G3N-2010', 4, 'G3N-2010 speed generator\n\nIncreases ship speed by 3.', 4000, 15, 0, 0, 1, 3),
-       (116, 'G3N-3210', 4, 'G3N-3210 speed generator\n\nIncreases ship speed by 4.', 8000, 15, 0, 0, 1, 4),
-       (117, 'G3N-3310', 4, 'G3N-3310 speed generator\n\nIncreases ship speed by 5.', 16000, 15, 0, 0, 1, 5),
-       (118, 'G3N-6900', 4, 'G3N-6900 speed generator\n\nIncreases ship speed by 7.', 1000, 15, 1, 0, 1, 7),
-       (119, 'G3N-7900', 4, 'G3N-7900 speed generator\n\nIncreases ship speed by 10.', 2000, 15, 1, 0, 1, 10),
-       (120, 'MP-1', 4, 'MP-1\n\nAverage laser: causes up to 60 damage points per round.', 0, 16, 0, 0, 1, 60),
-       (121, 'LF-1', 4, 'LF-1\n\nSmall laser: causes up to 40 damage points per round.', 0, 16, 0, 0, 1, 40),
-       (122, 'LF-2', 4, 'LF-2\n\nStrong laser: causes up to 100 damage points per round.', 0, 16, 0, 0, 1, 100),
-       (123, 'LF-3', 4, 'LF-3\n\nMuch stronger laser: Causes up to 150 damage points per round.', 0, 16, 0, 0, 1, 150),
-       (124, 'LF-4', 4, 'LF-4\n\nMuch much stronger laser: Causes up to 200 damage points per round.', 0, 16, 0, 0, 1,
+       (109, 'SG3N-A01', 4, 'SG3N-A01 shield
+\n
+\n1,000 shield strength / 40% less damage.', 8000, 14, 0, 0, 1, 1000),
+       (110, 'SG3N-A02', 4, 'SG3N-A02 shield
+\n
+\n2,000 shield strength / 50% less damage.', 16000, 14, 0, 0, 1, 2000),
+       (111, 'SG3N-A03', 4, 'SG3N-A03 shield
+\n
+\n5,000 shield strength / 60% less damage.', 256000, 14, 0, 0, 1, 5000),
+       (112, 'SG3N-B01', 4, 'SG3N-B01 shield
+\n
+\n4,000 shield strength / 70% less damage.', 2500, 14, 1, 0, 1, 4000),
+       (113, 'SG3N-B02', 4, 'SG3N-B02 shield
+\n
+\n10,000 shield strength / 80% less damage.', 10000, 14, 1, 0, 1, 10000),
+       (114, 'G3N-1010
+', 4, 'G3N-1010 speed generator
+\n
+\nIncreases ship speed by 2.
+', 2000, 15, 0, 0, 1, 2),
+       (115, 'G3N-2010
+', 4, 'G3N-2010 speed generator
+\n
+\nIncreases ship speed by 3.
+', 4000, 15, 0, 0, 1, 3),
+       (116, 'G3N-3210
+', 4, 'G3N-3210 speed generator
+\n
+\nIncreases ship speed by 4.
+', 8000, 15, 0, 0, 1, 4),
+       (117, 'G3N-3310
+', 4, 'G3N-3310 speed generator
+\n
+\nIncreases ship speed by 5.
+', 16000, 15, 0, 0, 1, 5),
+       (118, 'G3N-6900
+', 4, 'G3N-6900 speed generator
+\n
+\nIncreases ship speed by 7.
+', 1000, 15, 1, 0, 1, 7),
+       (119, 'G3N-7900
+', 4, 'G3N-7900 speed generator
+\n
+\nIncreases ship speed by 10.
+', 2000, 15, 1, 0, 1, 10),
+       (120, 'MP-1
+', 4, 'MP-1
+\n
+\nAverage laser: causes up to 60 damage points per round.', 0, 16, 0, 0, 1, 60),
+       (121, 'LF-1
+', 4, 'LF-1
+\n
+\nSmall laser: causes up to 40 damage points per round.', 0, 16, 0, 0, 1, 40),
+       (122, 'LF-2
+', 4, 'LF-2
+\n
+\nStrong laser: causes up to 100 damage points per round.', 0, 16, 0, 0, 1, 100),
+       (123, 'LF-3
+', 4, 'LF-3
+\n
+\nMuch stronger laser: Causes up to 150 damage points per round.', 0, 16, 0, 0, 1, 150),
+       (124, 'LF-4
+', 4, 'LF-4
+\n
+\nMuch much stronger laser: Causes up to 200 damage points per round.', 0, 16, 0, 0, 1,
         200),
-       (125, 'HST-1', 4,
-        'Hellstorm main 1\n\nThe rapid reloader!\nThis rocket main makes it possible to win a battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 3 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
+       (125, 'HST-1
+', 4,
+        'Hellstorm main 1
+\n
+\nThe rapid reloader!
+\nThis rocket main makes it possible to win a battle before it
+‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 3 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
         0, 17, 0, 0, 1, 0),
-       (126, 'HST-2', 4,
-        'Hellstorm main 2\n\nThe rapid reloader!\nThis upgraded version of the Hellstorm main 1 makes it possible to win the battle before it‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 5 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
+       (126, 'HST-2
+', 4,
+        'Hellstorm main 2
+\n
+\nThe rapid reloader!
+\nThis upgraded version of the Hellstorm main 1 makes it possible to win the battle before it
+‘s even begun. One little rocket makes a world of difference on the battlefield - firing up to 5 rockets, this rocket main unleashes a broadside of destruction, giving a whole new meaning to the word firepower. This highly sophisticated piece of weaponry can only be equipped with specially designed rockets.',
         0, 17, 0, 0, 1, 0),
-       (127, 'HMD-07', 4,
-        'HM7 trade drone\n\nWith the HM7 trade drone, you can sell your ore no matter what orbit you\'re in. Why waste time going back to the space station?\nValid for 100 transactions.\n\nYou already have an active trade drone. If you buy this trade drone now, you\'ll receive 100 more transactions.\n\nOnly one of these items is allowed per configuration.',
+       (127, 'HMD-07
+', 4,
+        'HM7 trade drone
+\n
+\nWith the HM7 trade drone, you can sell your ore no matter what orbit you
+\'re in. Why waste time going back to the space station?\nValid for 100 transactions.\n\nYou already have an active trade drone. If you buy this trade drone now, you\'ll receive 100 more transactions.
+\n
+\nOnly one of these items is allowed per configuration.',
         10000, 18, 1, 0, 1, 0),
-       (128, 'AIM-01', 4,
-        'Targeting Guidance CPU 1\n\n25% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU is allowed per configuration.\n\nOnly one of these items is allowed per configuration.',
+       (128, 'AIM-01
+', 4,
+        'Targeting Guidance CPU 1
+\n
+\n25% less chance that lasers will miss their target; 10 Xenomit used per volley
+\n
+\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU is allowed per configuration.
+\n
+\nOnly one of these items is allowed per configuration.',
         20000000, 19, 0, 0, 1, 25),
-       (129, 'AIM-02', 4,
-        'Targeting Guidance CPU 2\n\n50% less chance that lasers will miss their target; 10 Xenomit used per volley\n\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU allowed per configuration.\n\nOnly one of these items is allowed per configuration.',
+       (129, 'AIM-02
+', 4,
+        'Targeting Guidance CPU 2
+\n
+\n50% less chance that lasers will miss their target; 10 Xenomit used per volley
+\n
+\nClick on the CPUs button in the shortcut bar to activate targeting guidance. Only one targeting guidance CPU allowed per configuration.
+\n
+\nOnly one of these items is allowed per configuration.',
         200000, 19, 1, 0, 1, 50),
-       (130, 'AJP-01', 4,
-        'Advanced Jump CPU 1\n\nAllows you to jump to any of the valid target maps. May not be used during battle.\n\nOnly one of these items is allowed per configuration.',
+       (130, 'AJP-01
+', 4,
+        'Advanced Jump CPU 1
+\n
+\nAllows you to jump to any of the valid target maps. May not be used during battle.
+\n
+\nOnly one of these items is allowed per configuration.',
         75000, 19, 1, 0, 1, 0),
        (131, 'ALB-X', 4,
-        'Ammunition CPU\n\nAutomatically buys 10,000 laser rounds if less than 1,000 rounds on board. Settings can be adjusted in Hanger/Manage.\n\nOnly one of these items is allowed per configuration.',
+        'Ammunition CPU
+\n
+\nAutomatically buys 10,000 laser rounds if less than 1,000 rounds on board. Settings can be adjusted in Hanger/Manage.
+\n
+\nOnly one of these items is allowed per configuration.',
         15000, 19, 1, 0, 1, 0),
        (132, 'ANTI-Z1', 4,
-        'Serum CPU\n\nThose who fight deadly diseases must be prepared! The Serum CPU will automatically cure you of any infections or parasites.\n\nOnly one of these items is allowed per configuration.',
+        'Serum CPU
+\n
+\nThose who fight deadly diseases must be prepared! The Serum CPU will automatically cure you of any infections or parasites.
+\n
+\nOnly one of these items is allowed per configuration.',
         108, 19, 1, 0, 1, 0),
        (133, 'ANTI-Z1 XL', 4,
-        'Serum CPU XL\n\nWith 10 doses, the Serum CPU XL is your strongest ally against parasites and infections. Cure yourself and other players - before it\'s too late!\n\nOnly one of these items is allowed per configuration.',
+        'Serum CPU XL
+\n
+\nWith 10 doses, the Serum CPU XL is your strongest ally against parasites and infections. Cure yourself and other players - before it
+\'s too late!\n\nOnly one of these items is allowed per configuration.',
         972, 19, 1, 0, 1, 0),
        (134, 'AROL-X', 4,
         'Auto Rocket CPU\n\nAutomatic rocket rapid-fire in laser attacks you start\n\nAfter installation is completed, the AROL-X CPU must be activated on the space map in \"CPUs\".\n\nOnly one of these items is allowed per configuration.',
@@ -3626,19 +3724,35 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Slot CPU 4\n\n+10 new slots for extras.\n\nOnly one of these items is allowed per configuration.', 250000, 19,
         1, 0, 1, 10),
        (163, 'SMB-01', 4,
-        'Smart Bomb CPU\n\nInstant bomb made from 10 mines and 100 Xenomit; doesn\'t cause any damage to your ship.\n\nIt has the same cool-down time as mines.\n\nOnly one of these items is allowed per configuration.',
+        'Smart Bomb CPU\n\nInstant bomb made from 10 mines and 100 Xenomit; doesn\'t cause any damage to your ship.
+\n
+\nIt has the same cool-down time as mines.
+\n
+\nOnly one of these items is allowed per configuration.',
         50000, 19, 1, 0, 1, 0),
-       (164, 'REP-1', 4,
-        'Repair Robot 1\n\nThis repair bot recovers your ship\'s hull in 165 seconds.\n\nOnly one of these items is allowed per configuration.',
+       (164, 'REP-1
+', 4,
+        'Repair Robot 1
+\n
+\nThis repair bot recovers your ship
+\'s hull in 165 seconds.\n\nOnly one of these items is allowed per configuration.',
         10000, 20, 0, 0, 1, 165),
        (165, 'REP-2', 4,
-        'Repair Robot 2\n\nThis repair bot recovers your ship\'s hull in 120 seconds.\n\nOnly one of these items is allowed per configuration.',
+        'Repair Robot 2\n\nThis repair bot recovers your ship\'s hull in 120 seconds.
+\n
+\nOnly one of these items is allowed per configuration.',
         64000, 20, 0, 0, 1, 120),
-       (166, 'REP-3', 4,
-        'Repair Robot 3\n\nThis repair bot recovers your ship\'s hull in 105 seconds.\n\nOnly one of these items is allowed per configuration.',
+       (166, 'REP-3
+', 4,
+        'Repair Robot 3
+\n
+\nThis repair bot recovers your ship
+\'s hull in 105 seconds.\n\nOnly one of these items is allowed per configuration.',
         5000, 20, 1, 0, 1, 105),
        (167, 'REP-4', 4,
-        'Repair robot 4\n\nThis repair bot recovers your ship\'s hull in 90 seconds.\n\nOnly one of these items is allowed per configuration.',
+        'Repair robot 4\n\nThis repair bot recovers your ship\'s hull in 90 seconds.
+\n
+\nOnly one of these items is allowed per configuration.',
         20000, 20, 1, 0, 1, 90),
        (168, 'BOOTY-KEY', 5, 'No description available.', 10000, 0, 1, 1, 1, 0),
        (169, 'BOOTY-KEY-BLUE', 5, 'No description available.', 10000, 0, 1, 1, 1, 0),
@@ -3647,15 +3761,36 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
        (172, 'JUMP-VOUCHERS', 5, 'No description available.', 10000, 0, 1, 1, 1, 0),
        (173, 'LOGFILE', 5, 'No description available.', 10000, 0, 1, 1, 1, 0),
        (174, 'PET', 5, 'No description available.', 10000, 0, 1, 1, 1, 0),
-       (175, 'PET-10', 6, 'No description available.', 50000, 0, 1, 0, 1, 0),
-       (176, 'G-HP1', 6, 'P.E.T. hull upgrade\n\nReinforces your P.E.T.\'s hull and increases its HP', 5000, 0, 1, 0, 1,
+       (175, 'PET-10
+', 6, 'No description available.', 50000, 0, 1, 0, 1, 0),
+       (176, 'G-HP1', 6, 'P.E.T. hull upgrade
+\n
+\nReinforces your P.E.T.
+\'s hull and increases its HP', 5000, 0, 1, 0, 1,
         0),
        (177, 'Fuel 100', 6, 'P.E.T. fuel\n\nYour P.E.T. only runs when it\'s got fuel.', 1, 0, 1, 0, 1, 0),
-       (178, 'CSR-02', 6,
-        'Combo Repair Gear (Level: 1)\n\nEffect: Repairs 10000 HP per second.\nDuration: 5 seconds\nDeflection chance: 65%\nConsumption: 200 Fuel\n\nRepairs your ship during flight. Uses extra fuel for each repair.\n\nProtects your pet from attacks.',
+       (178, 'CSR-02
+', 6,
+        'Combo Repair Gear (Level: 1)
+\n
+\nEffect: Repairs 10000 HP per second.
+\nDuration: 5 seconds
+\nDeflection chance: 65%
+\nConsumption: 200 Fuel
+\n
+\nRepairs your ship during flight. Uses extra fuel for each repair.
+\n
+\nProtects your pet from attacks.',
         20000, 21, 1, 0, 1, 0),
-       (179, 'CGM-02', 6,
-        'Combo Guard Mode Gear (Level: 1)\n\nDeflection chance: 65%\nAdditional consumption: 35% Extra-Fuel\n\nConnects the Guard Mode to the new Insta Shield. Uses 35% more fuel when it\'s been activated.\n\nGuard mode with an extra shield for the P.E.T.\n',
+       (179, 'CGM-02
+', 6,
+        'Combo Guard Mode Gear (Level: 1)
+\n
+\nDeflection chance: 65%
+\nAdditional consumption: 35% Extra-Fuel
+\n
+\nConnects the Guard Mode to the new Insta Shield. Uses 35% more fuel when it
+\'s been activated.\n\nGuard mode with an extra shield for the P.E.T.\n',
         20000, 21, 0, 0, 1, 0),
        (180, 'G-AL1', 6,
         'Auto-looter (Level: 1)\n\nRange: 700\n\nOnce you activate this P.E.T gear, it will automatically collect bonus boxes and cargo boxes within close range.\n\nYour P.E.T can only be attacked by other players while it is collecting loot. Aliens cannot attack it.',
@@ -3667,28 +3802,67 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Enemy locator (Level: 1)\n\nRange: 2000\n\nOutfit your P.E.T with this gear and it\'ll automatically pinpoint every alien in the current star system.',
         6000, 21, 1, 0, 1, 0),
        (183, 'G-RL1', 6,
-        'Resource locator (Level: 1)\n\nRange: 2000\n\nWith this gear on board your P.E.T., it will be able to track down nearby resources in the current star system.',
+        'Resource locator (Level: 1)
+\n
+\nRange: 2000
+\n
+\nWith this gear on board your P.E.T., it will be able to track down nearby resources in the current star system.',
         2500, 21, 1, 0, 1, 0),
        (184, 'G-TRA1', 6,
-        'Cargo trader (Level: 1)\n\nTrade bonus: +5%\n\nThe cargo trader makes it possible for your P.E.T. to trade cargo from anywhere in the galaxy at anytime.',
+        'Cargo trader (Level: 1)
+\n
+\nTrade bonus: +5%
+\n
+\nThe cargo trader makes it possible for your P.E.T. to trade cargo from anywhere in the galaxy at anytime.',
         6000, 21, 1, 0, 1, 0),
        (185, 'G-REP1', 6,
-        'P.E.T. repairer (Level: 1)\n\nEffect: Repairs 2000 HP per second.\nDuration: 120 seconds\n\nThe P.E.T. repairer will fix your P.E.T.\n\nNot made for use in combat.\n',
+        'P.E.T. repairer (Level: 1)
+\n
+\nEffect: Repairs 2000 HP per second.
+\nDuration: 120 seconds
+\n
+\nThe P.E.T. repairer will fix your P.E.T.
+\n
+\nNot made for use in combat.
+\n',
         2500, 21, 1, 0, 1, 0),
        (186, 'G-KK1', 6,
-        'Kamikaze Detonator (Level: 1)\n\nEffect: Causes 25000 splash damage upon exploding.\nRadius: 250\n\nWhen your P.E.T. or ship is close to being destroyed, the Kamikaze Detonator will start the self-destruct sequence and explode, thereby taking out all enemies in the immediate vicinity.\n\nAfter the detonator has gone off, your P.E.T. will be massively damaged and have to be repaired.',
+        'Kamikaze Detonator (Level: 1)
+\n
+\nEffect: Causes 25000 splash damage upon exploding.
+\nRadius: 250
+\n
+\nWhen your P.E.T. or ship is close to being destroyed, the Kamikaze Detonator will start the self-destruct sequence and explode, thereby taking out all enemies in the immediate vicinity.
+\n
+\nAfter the detonator has gone off, your P.E.T. will be massively damaged and have to be repaired.',
         7500, 21, 1, 0, 1, 0),
        (187, 'AI-CR1', 6,
-        'Cargo protocol (Level: 1)\n\nEffect: Increases the cargo space by 3%\n\nThe cargo protocol expands your cargo bay.',
+        'Cargo protocol (Level: 1)
+\n
+\nEffect: Increases the cargo space by 3%
+\n
+\nThe cargo protocol expands your cargo bay.',
         3000, 22, 1, 0, 1, 0),
        (188, 'AI-R1', 6,
-        'Radar protocol (Level: 1)\n\nEffect: Increases your P.E.T. radar\'s range by 2%\n\nThe radar protocol extends your P.E.T. radar\'s range. It will also increase the effectiveness of your P.E.T. collector and enemy locator gear.',
+        'Radar protocol (Level: 1)
+\n
+\nEffect: Increases your P.E.T. radar
+\'s range by 2%\n\nThe radar protocol extends your P.E.T. radar\'s range. It will also increase the effectiveness of your P.E.T. collector and enemy locator gear.',
         3000, 22, 1, 0, 1, 0),
        (189, 'AI-S1', 6,
-        'Salvage protocol (Level: 1)\n\nEffect: Increases the reward from boxes by 1%\n\nThe salvage protocol increases rewards for bonus and cargo boxes collected by your P.E.T.',
+        'Salvage protocol (Level: 1)
+\n
+\nEffect: Increases the reward from boxes by 1%
+\n
+\nThe salvage protocol increases rewards for bonus and cargo boxes collected by your P.E.T.',
         5000, 22, 1, 0, 1, 0),
        (190, 'AI-SM1', 6,
-        'Shield protocol (Level: 1)\n\nEffect: Increases the shield strength by 1%\n\nThe shield protocol boosts your P.E.T.\'s shield power.',
+        'Shield protocol (Level: 1)
+\n
+\nEffect: Increases the shield strength by 1%
+\n
+\nThe shield protocol boosts your P.E.T.
+\'s shield power.',
         5000, 22, 1, 0, 1, 0),
        (191, 'AI-LM1', 6,
         'Laser Gun Protocol (Level: 1)\n\nEffect: Increases laser damage by 1%\n\nThe Laser Gun Protocol lets your P.E.T. cause more laser damage.',
@@ -3697,85 +3871,254 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Targeting protocol (Level: 1)\n\nEffect: Increases laser precision by 1%\n\nThe targeting protocol improves the accuracy of your P.E.T\'s lasers.',
         3000, 22, 1, 0, 1, 0),
        (193, 'AI-E1', 6,
-        'Evasion protocol (Level: 1)\n\nEffect: Decreases enemy hit chances by 1%\n\nThe evasion protocol makes it harder for your enemies to destroy your P.E.T. Their chances of scoring a hit will be lower.',
+        'Evasion protocol (Level: 1)
+\n
+\nEffect: Decreases enemy hit chances by 1%
+\n
+\nThe evasion protocol makes it harder for your enemies to destroy your P.E.T. Their chances of scoring a hit will be lower.',
         5000, 22, 1, 0, 1, 0),
        (194, 'AI-HP1', 6,
-        'HP protocol (Level: 1)\n\nEffect: Increases the hit points by 1%\n\nThe HP protocol gives your P.E.T more HP.',
+        'HP protocol (Level: 1)
+\n
+\nEffect: Increases the hit points by 1%
+\n
+\nThe HP protocol gives your P.E.T more HP.',
         5000, 22, 1, 0, 1, 0),
        (195, 'AI-AL1', 6,
-        'Alien protocol (Level: 1)\n\nEffect: Increases damage to aliens by 1%\n\nThe alien protocol enables your P.E.T. to inflict more damage to aliens.',
+        'Alien protocol (Level: 1)
+\n
+\nEffect: Increases damage to aliens by 1%
+\n
+\nThe alien protocol enables your P.E.T. to inflict more damage to aliens.',
         3000, 22, 1, 0, 1, 0),
        (196, 'AI-ECO1', 6,
-        'Fuel protocol (Level: 1)\n\nEffect: Decreases fuel consumption by 1%\n\nWith the fuel protocol, your P.E.T. will use less fuel.',
+        'Fuel protocol (Level: 1)
+\n
+\nEffect: Decreases fuel consumption by 1%
+\n
+\nWith the fuel protocol, your P.E.T. will use less fuel.',
         5000, 22, 1, 0, 1, 0),
        (197, 'Havoc', 7, 'No description available.', 50000, 23, 1, 1, 1, 0),
        (198, 'Hercules', 7, 'No description available.', 75000, 23, 1, 1, 1, 0),
-       (199, 'Flax', 7, 'Flax\n\nStarter drone with one slot.', 100000, 0, 0, 0, 1, 0),
-       (200, 'Iris', 7, 'Iris\n\nPower drone with two slots.', 15000, 0, 1, 0, 1, 0),
-       (201, 'Apis', 7, 'Apis\n\nApis drone with two slots.', 1100000, 0, 1, 0, 1, 0),
-       (202, 'Zeus', 7, 'Zeus\n\nZeus drone with two slots.', 1500000, 0, 1, 0, 1, 0),
+       (199, 'Flax', 7, 'Flax
+\n
+\nStarter drone with one slot.', 100000, 0, 0, 0, 1, 0),
+       (200, 'Iris', 7, 'Iris
+\n
+\nPower drone with two slots.', 15000, 0, 1, 0, 1, 0),
+       (201, 'Apis', 7, 'Apis
+\n
+\nApis drone with two slots.', 1100000, 0, 1, 0, 1, 0),
+       (202, 'Zeus', 7, 'Zeus
+\n
+\nZeus drone with two slots.', 1500000, 0, 1, 0, 1, 0),
        (203, 'F-01-TU', 7, '', 1000000, 24, 0, 0, 1, 0),
        (204, 'F-02-AR', 7, '', 1000000, 24, 0, 0, 1, 0),
        (205, 'F-03-LA', 7, 'No description available.', 100000, 24, 1, 0, 0, 0),
        (206, 'F-04-ST', 7,
-        'Star Formation\n\nAugment your drone control unit with the Star Formation.\n\nIncreases rocket damage by 25%, but rocket main reload time increases by 33%, as well.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Star Formation
+\n
+\nAugment your drone control unit with the Star Formation.
+\n
+\nIncreases rocket damage by 25%, but rocket main reload time increases by 33%, as well.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         75000, 24, 1, 0, 1, 0),
        (207, 'F-05-PI', 7,
-        'Pincer Formation\n\nAugment your drone control unit with the Pincer Formation.\n\nIncreases laser damage by 3% against other players and provides an additional 5% honor point bonus. However, it reduces shield penetration by 10%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Pincer Formation
+\n
+\nAugment your drone control unit with the Pincer Formation.
+\n
+\nIncreases laser damage by 3% against other players and provides an additional 5% honor point bonus. However, it reduces shield penetration by 10%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (208, 'F-06-DA', 7,
-        'Double Arrow Formation\n\nAugment your drone control unit with the Double Arrow Formation.\n\nIncreases shield penetration by 10%, but reduces shield power by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Double Arrow Formation
+\n
+\nAugment your drone control unit with the Double Arrow Formation.
+\n
+\nIncreases shield penetration by 10%, but reduces shield power by 20%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         75000, 24, 1, 0, 1, 0),
        (209, 'F-07-DI', 7,
-        'Diamond Formation\n\nAugment your drone control unit with the Diamond Formation.\n\nYour shield regenerates 1% of your max shield power per second, up to a maximum of 5,000 per second. But hit points are reduced by 30%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Diamond Formation
+\n
+\nAugment your drone control unit with the Diamond Formation.
+\n
+\nYour shield regenerates 1% of your max shield power per second, up to a maximum of 5,000 per second. But hit points are reduced by 30%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (210, 'F-08-CH', 7,
-        'Chevron Formation\n\nAugment your drone control unit with the Chevron Formation.\n\nIncreases rocket damage by 50%, but reduces ship hit points by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Chevron Formation
+\n
+\nAugment your drone control unit with the Chevron Formation.
+\n
+\nIncreases rocket damage by 50%, but reduces ship hit points by 20%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         75000, 24, 1, 0, 1, 0),
        (211, 'F-09-MO', 7,
-        'Moth Formation\n\nAugment your drone control unit with the Moth Formation.\n\nIncreases shield penetration by 20%. Hit points are also increased by 20%. But it weakens your shield strength at a rate of 1% per second.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Moth Formation
+\n
+\nAugment your drone control unit with the Moth Formation.
+\n
+\nIncreases shield penetration by 20%. Hit points are also increased by 20%. But it weakens your shield strength at a rate of 1% per second.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (212, 'F-10-CR', 7,
-        'Crab Formation\n\nAugment your drone control unit with the Crab Formation.\n\nIncreases shield absorption by 20%, but reduces speed by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Crab Formation
+\n
+\nAugment your drone control unit with the Crab Formation.
+\n
+\nIncreases shield absorption by 20%, but reduces speed by 20%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (213, 'F-11-HE', 7,
-        'Heart Formation\n\nAugment your drone control unit with the Heart Formation.\n\nIncreases your shield power by 10% and your hit points by 20%. Laser damage is, however, reduced by 5%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Heart Formation
+\n
+\nAugment your drone control unit with the Heart Formation.
+\n
+\nIncreases your shield power by 10% and your hit points by 20%. Laser damage is, however, reduced by 5%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (214, 'F-12-BA', 7,
-        'Barrage Formation\n\nAugment your drone control unit with the Barrage Formation.\n\nIncreases laser damage to NPCs by 5% and provides an additional 5% XP from NPC kills. Shield Leech will, however, be reduced by 15%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Barrage Formation
+\n
+\nAugment your drone control unit with the Barrage Formation.
+\n
+\nIncreases laser damage to NPCs by 5% and provides an additional 5% XP from NPC kills. Shield Leech will, however, be reduced by 15%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         100000, 24, 1, 0, 1, 0),
        (215, 'F-13-BT', 7,
-        'Bat Formation\n\nAugment your drone control unit with the Bat Formation.\n\nIncrease damage to NPCs by 8% and earn 8% more XP; however, your speed will be reduced by 15%.\n\nAs long as you have 6 or more drones, you can use this formation any time after you‘ve purchased it. This formation is not available all the time, so grab it while you can!',
+        'Bat Formation
+\n
+\nAugment your drone control unit with the Bat Formation.
+\n
+\nIncrease damage to NPCs by 8% and earn 8% more XP; however, your speed will be reduced by 15%.
+\n
+\nAs long as you have 6 or more drones, you can use this formation any time after you
+‘ve purchased it. This formation is not available all the time, so grab it while you can!',
         150000, 24, 1, 1, 1, 0),
        (216, 'F-14-RG', 7,
-        'Ring Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Ring Formation.\n\nShield points are increased by 120%; however, speed is reduced by 5%, laser damage is reduced by 25%, and cooldown times for rockets and rocket launchers are increased by 25%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Ring Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the Ring Formation.
+\n
+\nShield points are increased by 120%; however, speed is reduced by 5%, laser damage is reduced by 25%, and cooldown times for rockets and rocket launchers are increased by 25%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         1500000, 24, 1, 0, 1, 0),
        (217, 'F-15-DL', 7,
-        'Drill Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Drill Formation.\n\nLaser damage is increased by 20%; however, shield points are reduced by 25%, shield spread by 5%, and speed by 5%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Drill Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the Drill Formation.
+\n
+\nLaser damage is increased by 20%; however, shield points are reduced by 25%, shield spread by 5%, and speed by 5%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         150000, 24, 1, 0, 1, 0),
        (218, 'F-16-VT', 7,
-        'Veteran Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Veteran Formation.\n\nHonor is increased by 20%; however, laser damage, hit points, and shield points are all decreased by 20%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Veteran Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the Veteran Formation.
+\n
+\nHonor is increased by 20%; however, laser damage, hit points, and shield points are all decreased by 20%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         150000, 24, 1, 0, 1, 0),
        (219, 'F-17-DM', 7,
-        'Dome Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Dome Formation.\n\nShield points are increased by 30% and regenerate by 0.5% per second. Cooldown times for rockets and rocket launchers are reduced by 25%; however, laser damage and speed are both reduced by 50%.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Dome Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the Dome Formation.
+\n
+\nShield points are increased by 30% and regenerate by 0.5% per second. Cooldown times for rockets and rocket launchers are reduced by 25%; however, laser damage and speed are both reduced by 50%.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         150000, 24, 1, 0, 1, 0),
        (220, 'F-18-DW', 7,
-        'Wheel Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the Wheel Formation.\n\nSpeed is increased by 5%; however, laser damage is reduced by 20%, and this formation drains shields by 5% per second.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Wheel Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the Wheel Formation.
+\n
+\nSpeed is increased by 5%; however, laser damage is reduced by 20%, and this formation drains shields by 5% per second.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         150000, 24, 1, 0, 1, 0),
        (221, 'F-19-X', 7,
-        'X Formation\n\nThis formation has a special look in the 3D client.\n\nAugment your drone control unit with the X Formation.\n\n-100% honor rewarded\n\nYour lasers cause no damage to enemy players\n\n+5% Laser Damage against aliens\n\n+5% XP from aliens\n\n+8% HP\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'X Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nAugment your drone control unit with the X Formation.
+\n
+\n-100% honor rewarded
+\n
+\nYour lasers cause no damage to enemy players
+\n
+\n+5% Laser Damage against aliens
+\n
+\n+5% XP from aliens
+\n
+\n+8% HP
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         300000, 24, 0, 0, 1, 0),
        (222, 'F-20-WV', 7,
-        'Wave Formation\n\nThis formation has a special look in the 3D client.\n\nJazz up your drones with the Wave Formation!\n\nDrones will make waves, but otherwise this formation grants neither benefits nor penalties.\n\nAs long as you have 4 or more drones, you can use this formation any time after you‘ve purchased it.',
+        'Wave Formation
+\n
+\nThis formation has a special look in the 3D client.
+\n
+\nJazz up your drones with the Wave Formation!
+\n
+\nDrones will make waves, but otherwise this formation grants neither benefits nor penalties.
+\n
+\nAs long as you have 4 or more drones, you can use this formation any time after you
+‘ve purchased it.',
         4950000, 24, 0, 0, 1, 0),
        (223, 'Prismatic Socket', 8,
-        'Prismatic Socket\n\nWith this prismatic socket, slack joints and jamming are a thing of the past! It\'s also used to produce high-tech items in the Assembly.',
+        'Prismatic Socket
+\n
+\nWith this prismatic socket, slack joints and jamming are a thing of the past! It
+\'s also used to produce high-tech items in the Assembly.',
         20000, 29, 1, 0, 1, 0),
        (224, 'High-Frequency Cable', 8,
         'High-Frequency Cable\n\nThis nano-based high-frequency cable is essential for signaling and measurement, and is used to produce high-tech items in the Assembly.',
         5000, 29, 1, 0, 1, 0),
        (225, 'Hybrid Processor', 8,
-        'Hybrid Processor\n\nEven the Kristallon have taken note of this small gadget\'s unique processing power. It\'s used to produce high-tech items in the Assembly.',
+        'Hybrid Processor\n\nEven the Kristallon have taken note of this small gadget\'s unique processing power. It
+\'s used to produce high-tech items in the Assembly.',
         40000, 29, 1, 0, 1, 0),
        (226, 'Micro-transistors', 8,
         'Micro-transistors\n\nNo micro-transistors, no modern microelectronics! These small units are everywhere, and are used to produce high-tech items in the Assembly.',
@@ -3784,7 +4127,10 @@ VALUES (1, 'Credits', 0, 'Credits item.', 0, 1, 1, 0, 0, 0),
         'Nano Condenser\n\nWith its unmatched memory capacities, the nano condenser is a must for every space ship. It\'s used to produce high-tech items in the Assembly.',
         20000, 29, 1, 0, 1, 0),
        (228, 'Nano Case', 8,
-        'Nano Case\n\nIt may not look like much, but this nano case will protect your sensitive electronics, no matter what. It\'s also used to produce high-tech items in the Assembly.',
+        'Nano Case
+\n
+\nIt may not look like much, but this nano case will protect your sensitive electronics, no matter what. It
+\'s also used to produce high-tech items in the Assembly.',
         5000, 29, 1, 0, 1, 0),
        (229, 'LGF', 8, 'Log-disks\n\nLog-disks can be exchanged for pilot points.', 300, 0, 1, 0, 1, 0),
        (230, 'BK-100', 8,
@@ -3870,8 +4216,7 @@ CREATE TABLE `key_value`
     `value` varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains simple Key -> Value entries.';
 
@@ -3897,8 +4242,7 @@ CREATE TABLE `levels`
         COMMENT 'Shield bonus applied to an item at this level.',
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s levels.';
 
@@ -3967,8 +4311,7 @@ CREATE TABLE `levels_upgrades`
         COMMENT 'Uridium needed to upgrade to this level with given probability.',
 
     CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the upgrade costs for each level.';
 
@@ -4286,14 +4629,13 @@ CREATE TABLE `maps`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',
-    `factions_id` tinyint      NULL     DEFAULT NULL,
+    `factions_id` tinyint NULL DEFAULT NULL,
     `is_pvp`      boolean      NOT NULL DEFAULT false,
     `is_starter`  boolean      NOT NULL DEFAULT false,
     `limits`      bigint       NOT NULL DEFAULT 89335319769600,
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'In game maps.';
 
@@ -4353,8 +4695,7 @@ CREATE TABLE `maps_npcs`
         COMMENT 'Amount of NPCs on map',
 
     CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 
@@ -4469,8 +4810,7 @@ CREATE TABLE `maps_portals`
     `gfx`             tinyint NOT NULL DEFAULT 1,
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Portals on map.';
 
@@ -4600,12 +4940,11 @@ CREATE TABLE `maps_stations`
         COMMENT 'Primary Key.',
     `position`    bigint  NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
-    `maps_id`     tinyint NULL     DEFAULT NULL,
-    `factions_id` tinyint NULL     DEFAULT NULL,
+    `maps_id`     tinyint NULL DEFAULT NULL,
+    `factions_id` tinyint NULL DEFAULT NULL,
 
     CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Stations on map.';
 
@@ -4638,8 +4977,7 @@ CREATE TABLE `moderators`
         COMMENT 'Date when the account become a moderator.',
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server moderators.';
 
@@ -4664,8 +5002,7 @@ CREATE TABLE `moderators_logs`
     `text`          text         NOT NULL,
 
     CONSTRAINT `moderators_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logged events made by moderators.';
 
@@ -4685,13 +5022,12 @@ CREATE TABLE `moderators_roles`
     `id`                  tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `name`                varchar(255) NOT NULL,
-    `moderators_roles_id` tinyint      NULL     DEFAULT NULL
+    `moderators_roles_id` tinyint NULL DEFAULT NULL
         COMMENT 'Parent role.',
     `priority`            tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Moderator''s roles.';
 
@@ -4721,8 +5057,7 @@ CREATE TABLE `moderators_roles_permissions`
         COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Moderator roles'' permissions';
 
@@ -4765,8 +5100,7 @@ CREATE TABLE `news`
     `text`   text         NOT NULL,
 
     CONSTRAINT `news_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server news.';
 
@@ -4795,8 +5129,7 @@ CREATE TABLE `npcs`
     `ai`                tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server NPCS.';
 
@@ -4902,8 +5235,7 @@ CREATE TABLE `permissions`
     `category` varchar(255) NOT NULL,
 
     CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server permissions.';
 
@@ -4945,15 +5277,14 @@ CREATE TABLE `quests`
         COMMENT 'Primary Key.',
     `levels_id`   tinyint      NOT NULL DEFAULT 1
         COMMENT 'Level required to unlock this quest.',
-    `quests_id`   smallint     NULL     DEFAULT NULL
+    `quests_id`   smallint NULL DEFAULT NULL
         COMMENT 'Quest required to complete in order to unlock this quest.',
-    `factions_id` tinyint      NULL     DEFAULT NULL
+    `factions_id` tinyint NULL DEFAULT NULL
         COMMENT 'Faction required to unlock this quest.',
     `name`        varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'In game quests.';
 
@@ -4974,7 +5305,7 @@ CREATE TABLE `quests_conditions`
 (
     `id`                   int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `quests_conditions_id` int          NULL     DEFAULT NULL
+    `quests_conditions_id` int NULL DEFAULT NULL
         COMMENT 'Condition needed to unlock this condition.',
     `quests_id`            smallint     NOT NULL,
     `type`                 tinyint      NOT NULL DEFAULT 0
@@ -4982,8 +5313,7 @@ CREATE TABLE `quests_conditions`
     `value`                varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Quest''s conditions.';
 
@@ -5007,8 +5337,7 @@ CREATE TABLE `ranks`
     `is_public`  boolean      NOT NULL DEFAULT true,
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the rank system.';
 
@@ -5044,20 +5373,19 @@ VALUES (1, 'Basic Space Pilot', 20.00, 1),
 --
 CREATE TABLE `rewards`
 (
-    `id`          smallint     NOT NULL AUTO_INCREMENT
+    `id`          smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `items_id`    smallint     NOT NULL
+    `items_id`    smallint NOT NULL
         COMMENT 'Item to award.',
-    `amount`      int          NOT NULL
+    `amount`      int      NOT NULL
         COMMENT 'Amount of items to award.',
-    `probability` float        NOT NULL DEFAULT 100.00
+    `probability` float    NOT NULL DEFAULT 100.00
         COMMENT 'Probability of awarding this item',
-    `comment`     varchar(255) NULL     DEFAULT NULL
+    `comment`     varchar(255) NULL DEFAULT NULL
         COMMENT 'Comment of the reward.',
 
     CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'All rewards available so there''s no need of JSON.';
 
@@ -6219,8 +6547,7 @@ CREATE TABLE `rewards_collectables`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_collectables_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7091,8 +7418,7 @@ CREATE TABLE `rewards_galaxygates`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_galaxygates_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7186,8 +7512,7 @@ CREATE TABLE `rewards_npcs`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_npcs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7412,8 +7737,7 @@ CREATE TABLE `rewards_quests`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7438,8 +7762,7 @@ CREATE TABLE `rewards_ships`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7492,8 +7815,7 @@ CREATE TABLE `rewards_vouchers`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_vouchers_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
@@ -7510,16 +7832,15 @@ CREATE INDEX `rewards_vouchers_rewards_id_idx`
 --
 CREATE TABLE `server_logs`
 (
-    `id`    int          NOT NULL AUTO_INCREMENT
+    `id`    int       NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `date`  timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `level` tinyint      NOT NULL DEFAULT 0
+    `date`  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `level` tinyint   NOT NULL DEFAULT 0
         COMMENT 'Log level (0 = emergency, 1 = alert, 2 = critical, 3 = error, 4 = warning, 5 = notice, 6 = info, 7 = debug)',
-    `text`  text         NOT NULL,
+    `text`  text      NOT NULL,
 
     CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server fired events.';
 
@@ -7558,8 +7879,7 @@ CREATE TABLE `ships`
     `gfx`        tinyint  NOT NULL DEFAULT 0,
 
     CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Ships table.';
 
@@ -7606,8 +7926,7 @@ CREATE TABLE `skilltree_levels`
         COMMENT 'Research points needed to upgrade this skill.',
 
     CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Levels a skill can reach.';
 
@@ -7637,8 +7956,7 @@ CREATE TABLE `skilltree_skills`
         COMMENT 'Factor the bonus increases with each upgrade.',
 
     CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'The available skills.';
 
@@ -7667,8 +7985,7 @@ CREATE TABLE `skilltree_unlocks`
         COMMENT 'Required skill level to upgrade.',
 
     CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Requisites needed to unlock a skill upgrade.';
 
@@ -7707,8 +8024,7 @@ CREATE TABLE `skylab_modules`
         COMMENT 'Energy consumption base.',
 
     CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Different skylab modules.';
 
@@ -7846,8 +8162,7 @@ CREATE TABLE `techfactory_costs`
         COMMENT 'Amount of items to build the techfactory item.',
 
     CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Item production costs.';
 
@@ -7890,8 +8205,7 @@ CREATE TABLE `techfactory_drones`
         COMMENT 'Factor the price reduces with each new part.',
 
     CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Drones that can be build in the tech factory.';
 
@@ -7934,8 +8248,7 @@ CREATE TABLE `techfactory_items`
         COMMENT 'Instant production costs.',
 
     CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items that can be build in the tech factory.';
 
@@ -7970,14 +8283,13 @@ CREATE TABLE `trade_items`
     `id`          smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `items_id`    smallint NOT NULL,
-    `accounts_id` int      NULL     DEFAULT NULL,
+    `accounts_id` int NULL DEFAULT NULL,
     `price`       int      NOT NULL DEFAULT 0,
     `type`        tinyint  NOT NULL DEFAULT 0
         COMMENT '0 = hourly, 1 = daily, 3 = weekly',
 
     CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Trade items.';
 
@@ -8000,7 +8312,7 @@ CREATE TABLE `users`
         COMMENT 'Primary Key.',
     `date`                    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Date when the user registered.',
-    `invitation_codes_id`     smallint     NULL     DEFAULT NULL
+    `invitation_codes_id`     smallint NULL DEFAULT NULL
         COMMENT 'Invitation code used to register',
     `name`                    varchar(255) NOT NULL DEFAULT ''
         COMMENT 'User name.',
@@ -8010,14 +8322,13 @@ CREATE TABLE `users`
         COMMENT 'User email.',
     `email_verification_code` varchar(32)  NOT NULL DEFAULT ''
         COMMENT 'Email verification code.',
-    `email_verification_date` timestamp    NULL     DEFAULT NULL
+    `email_verification_date` timestamp NULL DEFAULT NULL
         COMMENT 'Date when the user verified its email.',
     `ip`                      varchar(45)  NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'Registration IP.',
 
     CONSTRAINT `users_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the login information of the registered users.';
 
@@ -8042,8 +8353,7 @@ CREATE TABLE `vouchers`
     `max`  tinyint     NOT NULL DEFAULT 1,
 
     CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Voucher codes.';
 
@@ -8068,8 +8378,7 @@ CREATE TABLE `vouchers_redeem_logs`
         COMMENT 'Date when the voucher was redeemed.',
 
     CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the voucher codes.';
 
@@ -8092,27 +8401,27 @@ CREATE INDEX `vouchers_redeem_logs_accounts_id_idx`
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_clans` FOREIGN KEY `accounts_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_factions` FOREIGN KEY `accounts_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
+    REFERENCES `factions` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_accounts_hangars` FOREIGN KEY `accounts_accounts_hangars` (`accounts_hangars_id`)
-        REFERENCES `accounts_hangars` (`id`);
+    REFERENCES `accounts_hangars` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_levels` FOREIGN KEY `accounts_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_ranks` FOREIGN KEY `accounts_ranks` (`ranks_id`)
-        REFERENCES `ranks` (`id`);
+    REFERENCES `ranks` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_users` FOREIGN KEY `accounts_users` (`users_id`)
-        REFERENCES `users` (`id`);
+    REFERENCES `users` (`id`);
 
 -- Relations for the `accounts_banks` table.
 --
@@ -8120,7 +8429,7 @@ ALTER TABLE `accounts`
 
 ALTER TABLE `accounts_banks`
     ADD CONSTRAINT `accounts_banks_accounts` FOREIGN KEY `accounts_banks_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_banks_logs` table.
 --
@@ -8130,15 +8439,15 @@ ALTER TABLE `accounts_banks`
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts` FOREIGN KEY `accounts_banks_logs_accounts` (`from_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_to_accounts` FOREIGN KEY `accounts_banks_logs_to_accounts` (`to_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts_banks` FOREIGN KEY `accounts_banks_logs_accounts_banks` (`accounts_banks_id`)
-        REFERENCES `accounts_banks` (`id`);
+    REFERENCES `accounts_banks` (`id`);
 
 -- Relations for the `accounts_clans_roles` table.
 --
@@ -8147,11 +8456,11 @@ ALTER TABLE `accounts_banks_logs`
 
 ALTER TABLE `accounts_clans_roles`
     ADD CONSTRAINT `accounts_clans_roles_accounts` FOREIGN KEY `accounts_clans_roles_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_clans_roles`
     ADD CONSTRAINT `accounts_clans_roles_clans_roles` FOREIGN KEY `accounts_clans_roles_clans_roles` (`clans_roles_id`)
-        REFERENCES `clans_roles` (`id`);
+    REFERENCES `clans_roles` (`id`);
 
 -- Relations for the `accounts_configurations` table.
 --
@@ -8159,7 +8468,7 @@ ALTER TABLE `accounts_clans_roles`
 
 ALTER TABLE `accounts_configurations`
     ADD CONSTRAINT `accounts_configurations_accounts_hangars` FOREIGN KEY `accounts_configurations_accounts_hangars` (`accounts_hangars_id`)
-        REFERENCES `accounts_hangars` (`id`);
+    REFERENCES `accounts_hangars` (`id`);
 
 -- Relations for the `accounts_configurations_accounts_items` table.
 --
@@ -8170,19 +8479,19 @@ ALTER TABLE `accounts_configurations`
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_configurations` FOREIGN KEY `accounts_configurations_accounts_items_accounts_configurations` (`accounts_configurations_id`)
-        REFERENCES `accounts_configurations` (`id`);
+    REFERENCES `accounts_configurations` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_items` FOREIGN KEY `accounts_configurations_accounts_items_accounts_items` (`accounts_items_id`)
-        REFERENCES `accounts_items` (`id`);
+    REFERENCES `accounts_items` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_drones` FOREIGN KEY `accounts_configurations_accounts_items_accounts_drones` (`accounts_drones_id`)
-        REFERENCES `accounts_drones` (`id`);
+    REFERENCES `accounts_drones` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_pets` FOREIGN KEY `accounts_configurations_accounts_items_accounts_pets` (`accounts_pets_id`)
-        REFERENCES `accounts_pets` (`id`);
+    REFERENCES `accounts_pets` (`id`);
 
 -- Relations for the `accounts_destroys` table.
 --
@@ -8190,11 +8499,11 @@ ALTER TABLE `accounts_configurations_accounts_items`
 
 ALTER TABLE `accounts_destroys`
     ADD CONSTRAINT `accounts_destroys_accounts` FOREIGN KEY `accounts_destroys_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_destroys`
     ADD CONSTRAINT `accounts_destroys_ships` FOREIGN KEY `accounts_destroys_ships` (`ships_id`)
-        REFERENCES `ships` (`id`);
+    REFERENCES `ships` (`id`);
 
 -- Relations for the `accounts_drones` table.
 --
@@ -8203,11 +8512,11 @@ ALTER TABLE `accounts_destroys`
 
 ALTER TABLE `accounts_drones`
     ADD CONSTRAINT `accounts_drones_accounts` FOREIGN KEY `accounts_drones_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_drones`
     ADD CONSTRAINT `accounts_drones_levels` FOREIGN KEY `accounts_drones_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_galaxygates` table.
 --
@@ -8216,11 +8525,11 @@ ALTER TABLE `accounts_drones`
 
 ALTER TABLE `accounts_galaxygates`
     ADD CONSTRAINT `accounts_galaxygates_galaxygates` FOREIGN KEY `accounts_galaxygates_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `accounts_galaxygates`
     ADD CONSTRAINT `accounts_galaxygates_accounts` FOREIGN KEY `accounts_galaxygates_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_hangars` table.
 --
@@ -8230,15 +8539,15 @@ ALTER TABLE `accounts_galaxygates`
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts` FOREIGN KEY `accounts_hangars_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_ships` FOREIGN KEY `accounts_hangars_accounts_ships` (`accounts_ships_id`)
-        REFERENCES `accounts_ships` (`id`);
+    REFERENCES `accounts_ships` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_configurations` FOREIGN KEY `accounts_hangars_accounts_configurations` (`accounts_configurations_id`)
-        REFERENCES `accounts_configurations` (`id`);
+    REFERENCES `accounts_configurations` (`id`);
 
 -- Relations for the `accounts_history` table.
 --
@@ -8246,7 +8555,7 @@ ALTER TABLE `accounts_hangars`
 
 ALTER TABLE `accounts_history`
     ADD CONSTRAINT `accounts_history_accounts` FOREIGN KEY `accounts_history_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_items` table.
 --
@@ -8256,15 +8565,15 @@ ALTER TABLE `accounts_history`
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_accounts` FOREIGN KEY `accounts_items_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_items` FOREIGN KEY `accounts_items_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_levels` FOREIGN KEY `accounts_items_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_messages` table.
 --
@@ -8273,11 +8582,11 @@ ALTER TABLE `accounts_items`
 
 ALTER TABLE `accounts_messages`
     ADD CONSTRAINT `accounts_messages_to_accounts` FOREIGN KEY `accounts_messages_to_accounts` (`to_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_messages`
     ADD CONSTRAINT `accounts_messages_from_accounts` FOREIGN KEY `accounts_messages_from_accounts` (`from_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_pets` table.
 --
@@ -8286,11 +8595,11 @@ ALTER TABLE `accounts_messages`
 
 ALTER TABLE `accounts_pets`
     ADD CONSTRAINT `accounts_pets_accounts` FOREIGN KEY `accounts_pets_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_pets`
     ADD CONSTRAINT `accounts_pets_levels` FOREIGN KEY `accounts_pets_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_quests` table.
 --
@@ -8299,11 +8608,11 @@ ALTER TABLE `accounts_pets`
 
 ALTER TABLE `accounts_quests`
     ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_quests`
     ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
-        REFERENCES `quests` (`id`);
+    REFERENCES `quests` (`id`);
 
 -- Relations for the `accounts_rankings` table.
 --
@@ -8311,7 +8620,7 @@ ALTER TABLE `accounts_quests`
 
 ALTER TABLE `accounts_rankings`
     ADD CONSTRAINT `accounts_rankings_accounts` FOREIGN KEY `accounts_rankings_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_ships` table.
 --
@@ -8321,15 +8630,15 @@ ALTER TABLE `accounts_rankings`
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_accounts` FOREIGN KEY `accounts_ships_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_ships` FOREIGN KEY `accounts_ships_ships` (`ships_id`)
-        REFERENCES `ships` (`id`);
+    REFERENCES `ships` (`id`);
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_maps` FOREIGN KEY `accounts_ships_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 -- Relations for the `accounts_skills` table.
 --
@@ -8339,15 +8648,15 @@ ALTER TABLE `accounts_ships`
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_accounts` FOREIGN KEY `accounts_skills_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_skilltree_skills` FOREIGN KEY `accounts_skills_skilltree_skills` (`skilltree_skills_id`)
-        REFERENCES `skilltree_skills` (`id`);
+    REFERENCES `skilltree_skills` (`id`);
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_skilltree_levels` FOREIGN KEY `accounts_skills_skilltree_levels` (`skilltree_levels_id`)
-        REFERENCES `skilltree_levels` (`id`);
+    REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `accounts_skylabs` table.
 --
@@ -8357,15 +8666,15 @@ ALTER TABLE `accounts_skills`
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_accounts` FOREIGN KEY `accounts_skylabs_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_skylab_modules` FOREIGN KEY `accounts_skylabs_skylab_modules` (`skylab_modules_id`)
-        REFERENCES `skylab_modules` (`id`);
+    REFERENCES `skylab_modules` (`id`);
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_levels` FOREIGN KEY `accounts_skylabs_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_techfactories` table.
 --
@@ -8373,7 +8682,7 @@ ALTER TABLE `accounts_skylabs`
 
 ALTER TABLE `accounts_techfactories`
     ADD CONSTRAINT `accounts_techfactories_accounts` FOREIGN KEY `accounts_techfactories_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_techfactory_items` table.
 --
@@ -8382,11 +8691,11 @@ ALTER TABLE `accounts_techfactories`
 
 ALTER TABLE `accounts_techfactory_items`
     ADD CONSTRAINT `accounts_techfactory_items_accounts` FOREIGN KEY `accounts_techfactory_items_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_techfactory_items`
     ADD CONSTRAINT `accounts_techfactory_items_techfactory_items` FOREIGN KEY `accounts_techfactory_items_techfactory_items` (`techfactory_items_id`)
-        REFERENCES `techfactory_items` (`id`);
+    REFERENCES `techfactory_items` (`id`);
 
 -- Relations for the table `clans`.
 --
@@ -8394,11 +8703,11 @@ ALTER TABLE `accounts_techfactory_items`
 
 ALTER TABLE `clans`
     ADD CONSTRAINT `clans_accounts` FOREIGN KEY `clans_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans`
     ADD CONSTRAINT `clans_factions` FOREIGN KEY `clans_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
+    REFERENCES `factions` (`id`);
 
 -- Relations for the `clans_applications` table.
 --
@@ -8407,11 +8716,11 @@ ALTER TABLE `clans`
 
 ALTER TABLE `clans_applications`
     ADD CONSTRAINT `clans_applications_clans` FOREIGN KEY `clans_applications_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_applications`
     ADD CONSTRAINT `clans_applications_accounts` FOREIGN KEY `clans_applications_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_banks` table.
 --
@@ -8419,7 +8728,7 @@ ALTER TABLE `clans_applications`
 
 ALTER TABLE `clans_banks`
     ADD CONSTRAINT `clans_banks_clans` FOREIGN KEY `clans_banks_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_banks_logs` table.
 --
@@ -8429,15 +8738,15 @@ ALTER TABLE `clans_banks`
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_clans_banks` FOREIGN KEY `clans_banks_logs_clans_banks` (`clans_banks_id`)
-        REFERENCES `clans_banks` (`id`);
+    REFERENCES `clans_banks` (`id`);
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_from_accounts` FOREIGN KEY `clans_banks_logs_from_accounts` (`from_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_to_accounts` FOREIGN KEY `clans_banks_logs_to_accounts` (`to_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_battlestations` table.
 --
@@ -8446,11 +8755,11 @@ ALTER TABLE `clans_banks_logs`
 
 ALTER TABLE `clans_battlestations`
     ADD CONSTRAINT `clans_battlestations_clans` FOREIGN KEY `clans_battlestations_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_battlestations`
     ADD CONSTRAINT `clans_battlestations_maps` FOREIGN KEY `clans_battlestations_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 -- Relations for the `clans_battlestations_items` table.
 --
@@ -8459,11 +8768,11 @@ ALTER TABLE `clans_battlestations`
 
 ALTER TABLE `clans_battlestations_items`
     ADD CONSTRAINT `clans_battlestations_items_clans_battlestations` FOREIGN KEY `clans_battlestations_items_clans_battlestations` (`clans_battlestations_id`)
-        REFERENCES `clans_battlestations` (`id`);
+    REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_items`
     ADD CONSTRAINT `clans_battlestations_items_accounts_items` FOREIGN KEY `clans_battlestations_items_accounts_items` (`accounts_items_id`)
-        REFERENCES `accounts_items` (`id`);
+    REFERENCES `accounts_items` (`id`);
 
 -- Relations for the `clans_battlestations_logs` table.
 --
@@ -8472,11 +8781,11 @@ ALTER TABLE `clans_battlestations_items`
 
 ALTER TABLE `clans_battlestations_logs`
     ADD CONSTRAINT `clans_battlestations_logs_clans_battlestations` FOREIGN KEY `clans_battlestations_logs_clans_battlestations` (`clans_battlestations_id`)
-        REFERENCES `clans_battlestations` (`id`);
+    REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_logs`
     ADD CONSTRAINT `clans_battlestations_logs_clans` FOREIGN KEY `clans_battlestations_logs_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_diplomacies` table.
 --
@@ -8485,11 +8794,11 @@ ALTER TABLE `clans_battlestations_logs`
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_from_clans` FOREIGN KEY `clans_diplomacies_from_clans` (`from_clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_to_clans` FOREIGN KEY `clans_diplomacies_to_clans` (`to_clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_messages` table.
 --
@@ -8499,15 +8808,15 @@ ALTER TABLE `clans_diplomacies`
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_clans` FOREIGN KEY `clans_messages_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_to_accounts` FOREIGN KEY `clans_messages_to_accounts` (`to_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_from_accounts` FOREIGN KEY `clans_messages_from_accounts` (`from_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_news` table.
 --
@@ -8516,11 +8825,11 @@ ALTER TABLE `clans_messages`
 
 ALTER TABLE `clans_news`
     ADD CONSTRAINT `clans_news_accounts` FOREIGN KEY `clans_news_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_news`
     ADD CONSTRAINT `clans_news_clans` FOREIGN KEY `clans_news_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_ranking` table.
 --
@@ -8528,7 +8837,7 @@ ALTER TABLE `clans_news`
 
 ALTER TABLE `clans_ranking`
     ADD CONSTRAINT `clans_ranking_clans` FOREIGN KEY `clans_ranking_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles` table.
 --
@@ -8536,7 +8845,7 @@ ALTER TABLE `clans_ranking`
 
 ALTER TABLE `clans_roles`
     ADD CONSTRAINT `clans_roles_clans` FOREIGN KEY `clans_roles_clans` (`clans_id`)
-        REFERENCES `clans` (`id`);
+    REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles_permissions` table.
 --
@@ -8545,11 +8854,11 @@ ALTER TABLE `clans_roles`
 
 ALTER TABLE `clans_roles_permissions`
     ADD CONSTRAINT `clans_roles_permissions_clans_roles` FOREIGN KEY `clans_roles_permissions_clans_roles` (`clans_roles_id`)
-        REFERENCES `clans_roles` (`id`);
+    REFERENCES `clans_roles` (`id`);
 
 ALTER TABLE `clans_roles_permissions`
     ADD CONSTRAINT `clans_roles_permissions_permissions` FOREIGN KEY `clans_roles_permissions_permissions` (`permissions_id`)
-        REFERENCES `permissions` (`id`);
+    REFERENCES `permissions` (`id`);
 
 -- Relations for the `collectables` table.
 
@@ -8563,11 +8872,11 @@ ALTER TABLE `clans_roles_permissions`
 
 ALTER TABLE `factions`
     ADD CONSTRAINT `factions_high_maps` FOREIGN KEY `factions_high_maps` (`high_maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 ALTER TABLE `factions`
     ADD CONSTRAINT `factions_low_maps` FOREIGN KEY `factions_low_maps` (`low_maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 -- Relations for the `galaxygates` table.
 --
@@ -8575,27 +8884,27 @@ ALTER TABLE `factions`
 
 ALTER TABLE `galaxygates`
     ADD CONSTRAINT `galaxygates_galaxygates_waves` FOREIGN KEY `galaxygates_galaxygates_waves` (`galaxygates_waves_id`)
-        REFERENCES `galaxygates_waves` (`id`);
+    REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_gg_spins` table.
 
 ALTER TABLE `galaxygates_gg_spins`
     ADD CONSTRAINT `galaxygates_gg_spins_galaxygates` FOREIGN KEY `galaxygates_gg_spins_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_spins`
     ADD CONSTRAINT `galaxygates_gg_spins_galaxygates_spins` FOREIGN KEY `galaxygates_gg_spins_galaxygates_spins` (`galaxygates_spins_id`)
-        REFERENCES `galaxygates_spins` (`id`);
+    REFERENCES `galaxygates_spins` (`id`);
 
 -- Relations for the `galaxygates_gg_waves` table.
 
 ALTER TABLE `galaxygates_gg_waves`
     ADD CONSTRAINT `galaxygates_gg_waves_galaxygates` FOREIGN KEY `galaxygates_gg_waves_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_waves`
     ADD CONSTRAINT `galaxygates_gg_waves_galaxygates_waves` FOREIGN KEY `galaxygates_gg_waves_galaxygates_waves` (`galaxygates_waves_id`)
-        REFERENCES `galaxygates_waves` (`id`);
+    REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_probabilities` table.
 --
@@ -8603,7 +8912,7 @@ ALTER TABLE `galaxygates_gg_waves`
 
 ALTER TABLE `galaxygates_probabilities`
     ADD CONSTRAINT `galaxygates_probabilities_galaxygates` FOREIGN KEY `galaxygates_probabilities_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `galaxygates_spawns` table.
 --
@@ -8611,7 +8920,7 @@ ALTER TABLE `galaxygates_probabilities`
 
 ALTER TABLE `galaxygates_spawns`
     ADD CONSTRAINT `galaxygates_spawns_npcs` FOREIGN KEY `galaxygates_spawns_npcs` (`npcs_id`)
-        REFERENCES `npcs` (`id`);
+    REFERENCES `npcs` (`id`);
 
 -- Relations for the `galaxygates_spins` table.
 --
@@ -8619,7 +8928,7 @@ ALTER TABLE `galaxygates_spawns`
 
 ALTER TABLE `galaxygates_spins`
     ADD CONSTRAINT `galaxygates_spins_items` FOREIGN KEY `galaxygates_spins_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 -- Relations for the `galaxygates_stages` table.
 --
@@ -8627,17 +8936,17 @@ ALTER TABLE `galaxygates_spins`
 
 ALTER TABLE `galaxygates_stages`
     ADD CONSTRAINT `galaxygates_stages_galaxygates_waves` FOREIGN KEY `galaxygates_stages_galaxygates_waves` (`galaxygates_waves_id`)
-        REFERENCES `galaxygates_waves` (`id`);
+    REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_stages_spawns` table.
 
 ALTER TABLE `galaxygates_stages_spawns`
     ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_stages` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_stages` (`galaxygates_stages_id`)
-        REFERENCES `galaxygates_stages` (`id`);
+    REFERENCES `galaxygates_stages` (`id`);
 
 ALTER TABLE `galaxygates_stages_spawns`
     ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_spawns` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_spawns` (`galaxygates_spawns_id`)
-        REFERENCES `galaxygates_spawns` (`id`);
+    REFERENCES `galaxygates_spawns` (`id`);
 
 -- Relations for the `galaxygates_waves` table.
 --
@@ -8645,7 +8954,7 @@ ALTER TABLE `galaxygates_stages_spawns`
 
 ALTER TABLE `galaxygates_waves`
     ADD CONSTRAINT `galaxygates_waves_maps` FOREIGN KEY `galaxygates_spins_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 -- Relations for the `invitation_codes` table.
 
@@ -8656,7 +8965,7 @@ ALTER TABLE `galaxygates_waves`
 
 ALTER TABLE `invitation_codes_redeem_logs`
     ADD CONSTRAINT `invitation_codes_redeem_logs_invitation_codes` FOREIGN KEY `invitation_codes_redeem_logs_invitation_codes` (`invitation_codes_id`)
-        REFERENCES `invitation_codes` (`id`);
+    REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `items` table.
 
@@ -8668,7 +8977,7 @@ ALTER TABLE `invitation_codes_redeem_logs`
 --
 ALTER TABLE `levels_upgrades`
     ADD CONSTRAINT `levels_upgrades_levels` FOREIGN KEY `levels_upgrades_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 -- Relations for the `maps` table.
 --
@@ -8676,7 +8985,7 @@ ALTER TABLE `levels_upgrades`
 
 ALTER TABLE `maps`
     ADD CONSTRAINT `maps_factions` FOREIGN KEY `maps_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
+    REFERENCES `factions` (`id`);
 
 -- Relations for the `maps_npcs` table.
 --
@@ -8685,11 +8994,11 @@ ALTER TABLE `maps`
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_maps` FOREIGN KEY `maps_npcs_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_npcs` FOREIGN KEY `maps_npcs_npcs` (`npcs_id`)
-        REFERENCES `npcs` (`id`);
+    REFERENCES `npcs` (`id`);
 
 -- Relations for the `maps_portals` table.
 --
@@ -8698,11 +9007,11 @@ ALTER TABLE `maps_npcs`
 
 ALTER TABLE `maps_portals`
     ADD CONSTRAINT `maps_portals_maps` FOREIGN KEY `maps_portals_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_portals`
     ADD CONSTRAINT `maps_portals_target_maps` FOREIGN KEY `maps_portals_to_maps` (`target_maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 -- Relations for the `maps_stations` table.
 --
@@ -8711,11 +9020,11 @@ ALTER TABLE `maps_portals`
 
 ALTER TABLE `maps_stations`
     ADD CONSTRAINT `maps_stations_maps` FOREIGN KEY `maps_stations_maps` (`maps_id`)
-        REFERENCES `maps` (`id`);
+    REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_stations`
     ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY `maps_stations_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
+    REFERENCES `factions` (`id`);
 
 -- Relations for the `moderators` table.
 --
@@ -8724,11 +9033,11 @@ ALTER TABLE `maps_stations`
 
 ALTER TABLE `moderators`
     ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `moderators`
     ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
-        REFERENCES `moderators_roles` (`id`);
+    REFERENCES `moderators_roles` (`id`);
 
 -- Relations for the `moderators_logs` table.
 --
@@ -8736,7 +9045,7 @@ ALTER TABLE `moderators`
 
 ALTER TABLE `moderators_logs`
     ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
-        REFERENCES `moderators` (`id`);
+    REFERENCES `moderators` (`id`);
 
 -- Relations for the `moderators_roles` table.
 --
@@ -8744,7 +9053,7 @@ ALTER TABLE `moderators_logs`
 
 ALTER TABLE `moderators_roles`
     ADD CONSTRAINT `moderators_roles_moderators_roles` FOREIGN KEY `moderators_roles_moderators_roles` (`moderators_roles_id`)
-        REFERENCES `moderators_roles` (`id`);
+    REFERENCES `moderators_roles` (`id`);
 -- Relations for the `moderators_roles_permissions` table.
 --
 -- A role permission belongs to a moderator.
@@ -8752,11 +9061,11 @@ ALTER TABLE `moderators_roles`
 
 ALTER TABLE `moderators_roles_permissions`
     ADD CONSTRAINT `moderators_roles_permissions_moderators_roles` FOREIGN KEY `moderators_roles_permissions_moderators_roles` (`moderators_roles_id`)
-        REFERENCES `moderators_roles` (`id`);
+    REFERENCES `moderators_roles` (`id`);
 
 ALTER TABLE `moderators_roles_permissions`
     ADD CONSTRAINT `moderators_roles_permissions_permissions` FOREIGN KEY `moderators_roles_permissions_permissions` (`permissions_id`)
-        REFERENCES `permissions` (`id`);
+    REFERENCES `permissions` (`id`);
 
 -- Relations for the `news` table.
 
@@ -8772,15 +9081,15 @@ ALTER TABLE `moderators_roles_permissions`
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
-        REFERENCES `quests` (`id`);
+    REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
+    REFERENCES `factions` (`id`);
 
 -- Relations for the `quests_conditions` table.
 --
@@ -8789,11 +9098,11 @@ ALTER TABLE `quests`
 
 ALTER TABLE `quests_conditions`
     ADD CONSTRAINT `quests_conditions_quests` FOREIGN KEY `quests_conditions_quests` (`quests_id`)
-        REFERENCES `quests` (`id`);
+    REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests_conditions`
     ADD CONSTRAINT `quests_conditions_quests_conditions` FOREIGN KEY `quests_conditions_quests_conditions` (`quests_conditions_id`)
-        REFERENCES `quests_conditions` (`id`);
+    REFERENCES `quests_conditions` (`id`);
 
 -- Relations for the `ranks` table.
 
@@ -8803,7 +9112,7 @@ ALTER TABLE `quests_conditions`
 
 ALTER TABLE `rewards`
     ADD CONSTRAINT `rewards_items` FOREIGN KEY `rewards_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 -- Relations for the `rewards_collectables` table.
 --
@@ -8812,11 +9121,11 @@ ALTER TABLE `rewards`
 
 ALTER TABLE `rewards_collectables`
     ADD CONSTRAINT `rewards_collectables_rewards` FOREIGN KEY `rewards_collectables_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_collectables`
     ADD CONSTRAINT `rewards_collectables_collectables` FOREIGN KEY `rewards_collectables_collectables` (`collectables_id`)
-        REFERENCES `collectables` (`id`);
+    REFERENCES `collectables` (`id`);
 
 -- Relations for the `rewards_galaxygates` table.
 --
@@ -8825,11 +9134,11 @@ ALTER TABLE `rewards_collectables`
 
 ALTER TABLE `rewards_galaxygates`
     ADD CONSTRAINT `rewards_galaxygates_rewards` FOREIGN KEY `rewards_galaxygates_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_galaxygates`
     ADD CONSTRAINT `rewards_galaxygates_galaxygates` FOREIGN KEY `rewards_galaxygates_galaxygates` (`galaxygates_id`)
-        REFERENCES `galaxygates` (`id`);
+    REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `rewards_npcs` table.
 --
@@ -8838,11 +9147,11 @@ ALTER TABLE `rewards_galaxygates`
 
 ALTER TABLE `rewards_npcs`
     ADD CONSTRAINT `rewards_npcs_rewards` FOREIGN KEY `rewards_npcs_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_npcs`
     ADD CONSTRAINT `rewards_npcs_npcs` FOREIGN KEY `rewards_npcs_npcs` (`npcs_id`)
-        REFERENCES `npcs` (`id`);
+    REFERENCES `npcs` (`id`);
 
 -- Relations for the `rewards_quests` table.
 --
@@ -8851,11 +9160,11 @@ ALTER TABLE `rewards_npcs`
 
 ALTER TABLE `rewards_quests`
     ADD CONSTRAINT `rewards_quests_rewards` FOREIGN KEY `rewards_quests_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_quests`
     ADD CONSTRAINT `rewards_quests_quests` FOREIGN KEY `rewards_quests_quests` (`quests_id`)
-        REFERENCES `quests` (`id`);
+    REFERENCES `quests` (`id`);
 
 -- Relations for the `rewards_ships` table.
 --
@@ -8864,11 +9173,11 @@ ALTER TABLE `rewards_quests`
 
 ALTER TABLE `rewards_ships`
     ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_ships`
     ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
-        REFERENCES `ships` (`id`);
+    REFERENCES `ships` (`id`);
 
 -- Relations for the `rewards_vouchers` table.
 --
@@ -8877,11 +9186,11 @@ ALTER TABLE `rewards_ships`
 
 ALTER TABLE `rewards_vouchers`
     ADD CONSTRAINT `rewards_vouchers_rewards` FOREIGN KEY `rewards_vouchers_rewards` (`rewards_id`)
-        REFERENCES `rewards` (`id`);
+    REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_vouchers`
     ADD CONSTRAINT `rewards_vouchers_vouchers` FOREIGN KEY `rewards_vouchers_vouchers` (`vouchers_id`)
-        REFERENCES `vouchers` (`id`);
+    REFERENCES `vouchers` (`id`);
 
 -- Relations for the `server_logs` table.
 
@@ -8891,7 +9200,7 @@ ALTER TABLE `rewards_vouchers`
 
 ALTER TABLE `ships`
     ADD CONSTRAINT `ships_items` FOREIGN KEY `ships_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 -- Relations for the `skilltree_levels` table.
 --
@@ -8900,11 +9209,11 @@ ALTER TABLE `ships`
 
 ALTER TABLE `skilltree_levels`
     ADD CONSTRAINT `skilltree_levels_levels` FOREIGN KEY `skilltree_levels_levels` (`levels_id`)
-        REFERENCES `levels` (`id`);
+    REFERENCES `levels` (`id`);
 
 ALTER TABLE `skilltree_levels`
     ADD CONSTRAINT `skilltree_levels_skills` FOREIGN KEY `skilltree_levels_skills` (`skilltree_skills_id`)
-        REFERENCES `skilltree_skills` (`id`);
+    REFERENCES `skilltree_skills` (`id`);
 
 -- Relations for the `skilltree_skills` table.
 
@@ -8915,11 +9224,11 @@ ALTER TABLE `skilltree_levels`
 
 ALTER TABLE `skilltree_unlocks`
     ADD CONSTRAINT `skilltree_unlocks_upgrade_skilltree_levels` FOREIGN KEY `skilltree_unlocks_upgrade_skilltree_levels` (`upgrade_skilltree_levels_id`)
-        REFERENCES `skilltree_levels` (`id`);
+    REFERENCES `skilltree_levels` (`id`);
 
 ALTER TABLE `skilltree_unlocks`
     ADD CONSTRAINT `skilltree_unlocks_required_skilltree_levels` FOREIGN KEY `skilltree_unlocks_required_skilltree_levels` (`required_skilltree_levels_id`)
-        REFERENCES `skilltree_levels` (`id`);
+    REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `skylab_modules` levels.
 
@@ -8930,11 +9239,11 @@ ALTER TABLE `skilltree_unlocks`
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_techfactory_items` FOREIGN KEY `techfactory_costs_techfactory_items` (`techfactory_items_id`)
-        REFERENCES `techfactory_items` (`id`);
+    REFERENCES `techfactory_items` (`id`);
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_items` FOREIGN KEY `techfactory_costs_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 -- Relations for the `techfactory_drones` table.
 
@@ -8947,11 +9256,11 @@ ALTER TABLE `techfactory_costs`
 
 ALTER TABLE `trade_items`
     ADD CONSTRAINT `trade_items_items` FOREIGN KEY `trade_items_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);
 
 ALTER TABLE `trade_items`
     ADD CONSTRAINT `trade_items_accounts` FOREIGN KEY `trade_items_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 -- Relations for `users` table.
 --
@@ -8959,7 +9268,7 @@ ALTER TABLE `trade_items`
 
 ALTER TABLE `users`
     ADD CONSTRAINT `users_invitation_codes` FOREIGN KEY `users_invitation_codes` (`invitation_codes_id`)
-        REFERENCES `invitation_codes` (`id`);
+    REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `vouchers` table.
 
@@ -8970,9 +9279,8 @@ ALTER TABLE `users`
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_vouchers` FOREIGN KEY `vouchers_redeem_logs_vouchers` (`vouchers_id`)
-        REFERENCES `vouchers` (`id`);
+    REFERENCES `vouchers` (`id`);
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
-
+    REFERENCES `accounts` (`id`);

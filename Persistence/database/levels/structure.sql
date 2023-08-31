@@ -18,8 +18,7 @@ CREATE TABLE `levels`
         COMMENT 'Shield bonus applied to an item at this level.',
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s levels.';
 

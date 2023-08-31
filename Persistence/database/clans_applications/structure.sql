@@ -14,8 +14,7 @@ CREATE TABLE `clans_applications`
     `text`        text      NOT NULL,
 
     CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account applications to a clan.';
 

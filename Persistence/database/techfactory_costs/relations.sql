@@ -5,8 +5,8 @@
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_techfactory_items` FOREIGN KEY `techfactory_costs_techfactory_items` (`techfactory_items_id`)
-        REFERENCES `techfactory_items` (`id`);
+    REFERENCES `techfactory_items` (`id`);
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_items` FOREIGN KEY `techfactory_costs_items` (`items_id`)
-        REFERENCES `items` (`id`);
+    REFERENCES `items` (`id`);

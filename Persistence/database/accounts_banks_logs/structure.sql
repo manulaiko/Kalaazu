@@ -15,11 +15,10 @@ CREATE TABLE `accounts_banks_logs`
         COMMENT 'Amount of currency logged.',
     `currency`          tinyint   NOT NULL DEFAULT 0
         COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
-    `accounts_banks_id` int       NULL     DEFAULT NULL,
+    `accounts_banks_id` int NULL DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from account''s bank';
 

@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.SkilltreeSkillsEntity;
 /**
  * SkilltreeSkills service.
  * ===========================
- *
+ * <p>
  * Service for the SkilltreeSkills entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

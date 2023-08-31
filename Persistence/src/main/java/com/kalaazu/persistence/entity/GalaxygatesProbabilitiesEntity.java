@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Galaxygates probabilities entity.
  * =================================
- *
+ * <p>
  * Entity for the `galaxygates_probabilities` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

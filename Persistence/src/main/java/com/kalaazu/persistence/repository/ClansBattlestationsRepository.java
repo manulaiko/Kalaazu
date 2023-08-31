@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * ClansBattlestations repository.
  * ===============================
- *
+ * <p>
  * Repository for the ClansBattlestations entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

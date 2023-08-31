@@ -4,4 +4,4 @@
 
 ALTER TABLE `accounts_techfactories`
     ADD CONSTRAINT `accounts_techfactories_accounts` FOREIGN KEY `accounts_techfactories_accounts` (`accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);

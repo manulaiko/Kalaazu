@@ -11,7 +11,6 @@ CREATE TABLE `ranks`
     `is_public`  boolean      NOT NULL DEFAULT true,
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the rank system.';

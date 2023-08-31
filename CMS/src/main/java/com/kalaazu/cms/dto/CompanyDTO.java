@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * Company DTO.
  * ============
- *
+ * <p>
  * DTO for the company table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

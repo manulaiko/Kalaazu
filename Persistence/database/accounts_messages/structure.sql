@@ -17,8 +17,7 @@ CREATE TABLE `accounts_messages`
     `text`             text         NOT NULL,
 
     CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Messaging system.';
 

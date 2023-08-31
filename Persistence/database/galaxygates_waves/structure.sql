@@ -14,8 +14,7 @@ CREATE TABLE `galaxygates_waves`
         COMMENT 'NPCS that the user must destroy to spawn next stage',
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Waves of the galaxy gate.';
 

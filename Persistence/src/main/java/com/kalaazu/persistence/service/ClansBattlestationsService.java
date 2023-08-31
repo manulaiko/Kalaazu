@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansBattlestationsEntity;
 /**
  * ClansBattlestations service.
  * ===============================
- *
+ * <p>
  * Service for the ClansBattlestations entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 /**
  * Launcher class.
  * ===============
- *
+ * <p>
  * The starting point of the application.
  *
  * @author Manulaiko <manulaiko@gmail.com>

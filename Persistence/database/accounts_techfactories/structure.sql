@@ -16,7 +16,6 @@ CREATE TABLE `accounts_techfactories`
         COMMENT 'Unlocked slots.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Nanotech factory items.';

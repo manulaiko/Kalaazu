@@ -13,7 +13,7 @@ import java.util.List;
 /**
  * Comapny Controller.
  * ===================
- *
+ * <p>
  * Controller for the `/company` endpoint.
  *
  * @author Manulaiko <manulaiko@gmail.com>

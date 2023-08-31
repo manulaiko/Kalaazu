@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Maps npcs entity.
  * =================
- *
+ * <p>
  * Entity for the `maps_npcs` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

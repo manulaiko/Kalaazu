@@ -8,24 +8,24 @@ import CompanyChoose from "@/views/CompanyChoose.vue";
 Vue.use(VueRouter);
 
 const routes = [
-  {
-    path: "/",
-    name: "external",
-    component: External,
-    children: [
-      { path: "register", name: "register", component: Register },
-      { path: "", name: "login", component: Login }
-    ]
-  },
-  {
-    path: "/CompanyChoose",
-    name: "companyChoose",
-    component: CompanyChoose
-  }
+    {
+        path: "/",
+        name: "external",
+        component: External,
+        children: [
+            {path: "register", name: "register", component: Register},
+            {path: "", name: "login", component: Login}
+        ]
+    },
+    {
+        path: "/CompanyChoose",
+        name: "companyChoose",
+        component: CompanyChoose
+    }
 ];
 
 const router = new VueRouter({
-  routes
+    routes
 });
 
 export default router;

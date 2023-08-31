@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * LevelsUpgrades repository.
  * ==========================
- *
+ * <p>
  * Repository for the LevelsUpgrades entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

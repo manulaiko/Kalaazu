@@ -13,8 +13,7 @@ CREATE TABLE `moderators`
         COMMENT 'Date when the account become a moderator.',
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server moderators.';
 

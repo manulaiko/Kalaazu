@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsTechfactories service.
  * =================================
- *
+ * <p>
  * Service for the AccountsTechfactories entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

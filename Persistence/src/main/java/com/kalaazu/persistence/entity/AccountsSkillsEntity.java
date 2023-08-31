@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Accounts skills entity.
  * =======================
- *
+ * <p>
  * Entity for the `accounts_skills` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

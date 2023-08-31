@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Moderators logs entity.
  * =======================
- *
+ * <p>
  * Entity for the `moderators_logs` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

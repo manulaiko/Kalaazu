@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Clans rankings entity.
  * ======================
- *
+ * <p>
  * Entity for the `clans_rankings` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

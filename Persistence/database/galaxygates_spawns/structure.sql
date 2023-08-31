@@ -12,8 +12,7 @@ CREATE TABLE `galaxygates_spawns`
         COMMENT 'Amount of NPCs to spawn.',
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Stage spawn for each stage.';
 

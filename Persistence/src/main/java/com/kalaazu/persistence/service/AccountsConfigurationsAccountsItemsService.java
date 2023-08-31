@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.AccountsConfigurationsAccountsItemsEntity;
 /**
  * AccountsConfigurationsAccountsItems service.
  * ===============================================
- *
+ * <p>
  * Service for the AccountsConfigurationsAccountsItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -6,7 +6,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Register request.
  * =================
- *
+ * <p>
  * Request body for a register request.
  *
  * @author Manulaiko <manulaiko@gmail.com>

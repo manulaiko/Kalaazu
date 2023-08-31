@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * ClansBattlestationsLogs service.
  * ===================================
- *
+ * <p>
  * Service for the ClansBattlestationsLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

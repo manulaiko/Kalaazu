@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * ClansRanking service.
  * ========================
- *
+ * <p>
  * Service for the ClansRanking entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

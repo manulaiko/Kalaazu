@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * SkilltreeSkills service.
  * ===========================
- *
+ * <p>
  * Service for the SkilltreeSkills entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Techfactory costs entity.
  * =========================
- *
+ * <p>
  * Entity for the `techfactory_costs` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

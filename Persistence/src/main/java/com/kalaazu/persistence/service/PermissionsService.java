@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.PermissionsEntity;
 /**
  * Permissions service.
  * =======================
- *
+ * <p>
  * Service for the Permissions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

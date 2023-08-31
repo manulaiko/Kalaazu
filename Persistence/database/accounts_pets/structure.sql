@@ -22,8 +22,7 @@ CREATE TABLE `accounts_pets`
     `slots_gears_available`      tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s PETs.';
 

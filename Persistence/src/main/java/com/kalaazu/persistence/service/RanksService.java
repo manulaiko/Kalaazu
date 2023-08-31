@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.RanksEntity;
 /**
  * Ranks service.
  * =================
- *
+ * <p>
  * Service for the Ranks entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

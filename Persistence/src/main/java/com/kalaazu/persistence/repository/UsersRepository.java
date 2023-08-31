@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Users repository.
  * =================
- *
+ * <p>
  * Repository for the Users entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>
@@ -18,7 +18,6 @@ public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
      * Returns the user with the provided login info.
      *
      * @param username Login username.
-     *
      * @return Login user.
      */
     UsersEntity findByName(String username);
@@ -28,7 +27,6 @@ public interface UsersRepository extends JpaRepository<UsersEntity, Integer> {
      *
      * @param username Login username.
      * @param email    Login password.
-     *
      * @return Login user.
      */
     UsersEntity findByNameOrEmail(String username, String email);

@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.SkilltreeLevelsEntity;
 /**
  * SkilltreeLevels service.
  * ===========================
- *
+ * <p>
  * Service for the SkilltreeLevels entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

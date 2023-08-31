@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Factions repository.
  * ====================
- *
+ * <p>
  * Repository for the Factions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

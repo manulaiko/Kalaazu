@@ -137,7 +137,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      *
      * @param x The x-component
      * @param y The y-component
-     *
      * @return This vector for chaining
      */
     public Vector2 set(float x, float y) {
@@ -160,7 +159,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      *
      * @param x The x-component of the other vector
      * @param y The y-component of the other vector
-     *
      * @return This vector for chaining
      */
     public Vector2 sub(float x, float y) {
@@ -194,7 +192,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      *
      * @param x The x-component
      * @param y The y-component
-     *
      * @return This vector for chaining
      */
     public Vector2 add(float x, float y) {
@@ -268,7 +265,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     /**
      * @param x The x-component of the other vector
      * @param y The y-component of the other vector
-     *
      * @return the distance between this and the other vector
      */
     public float dst(float x, float y) {
@@ -289,7 +285,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     /**
      * @param x The x-component of the other vector
      * @param y The y-component of the other vector
-     *
      * @return the squared distance between this and the other vector
      */
     public float dst2(float x, float y) {
@@ -363,7 +358,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * Sets this {@code Vector2} to the value represented by the specified string according to the format of {@link #toString()}.
      *
      * @param v the string.
-     *
      * @return this vector for chaining
      */
     public Vector2 fromString(String v) {
@@ -386,7 +380,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * Left-multiplies this vector by the given matrix
      *
      * @param mat the matrix
-     *
      * @return this vector
      */
     public Vector2 mul(Matrix3 mat) {
@@ -402,7 +395,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * Calculates the 2D cross product between this and the given vector.
      *
      * @param v the other vector
-     *
      * @return the cross product
      */
     public float crs(Vector2 v) {
@@ -414,7 +406,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      *
      * @param x the x-coordinate of the other vector
      * @param y the y-coordinate of the other vector
-     *
      * @return the cross product
      */
     public float crs(float x, float y) {
@@ -496,8 +487,8 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      */
     public Vector2 rotateAround(Vector2 reference, float degrees) {
         return this.sub(reference)
-                   .rotate(degrees)
-                   .add(reference);
+                .rotate(degrees)
+                .add(reference);
     }
 
     /**
@@ -526,8 +517,8 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      */
     public Vector2 rotateAroundRad(Vector2 reference, float radians) {
         return this.sub(reference)
-                   .rotateRad(radians)
-                   .add(reference);
+                .rotateRad(radians)
+                .add(reference);
     }
 
     /**
@@ -538,10 +529,10 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         float x = this.x;
         if (dir >= 0) {
             this.x = -y;
-            y      = x;
+            y = x;
         } else {
             this.x = y;
-            y      = -x;
+            y = -x;
         }
         return this;
     }
@@ -592,7 +583,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * Compares this vector with the other vector using MathUtils.FLOAT_ROUNDING_ERROR for fuzzy equality testing
      *
      * @param other other vector to compare
-     *
      * @return true if vector are equal, otherwise false
      */
     public boolean epsilonEquals(final Vector2 other) {
@@ -604,7 +594,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      *
      * @param x x component of the other vector to compare
      * @param y y component of the other vector to compare
-     *
      * @return true if vector are equal, otherwise false
      */
     public boolean epsilonEquals(float x, float y) {

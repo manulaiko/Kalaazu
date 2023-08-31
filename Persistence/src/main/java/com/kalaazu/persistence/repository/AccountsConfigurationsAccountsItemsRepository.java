@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsConfigurationsAccountsItems repository.
  * ===============================================
- *
+ * <p>
  * Repository for the AccountsConfigurationsAccountsItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

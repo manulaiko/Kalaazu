@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Npcs service.
  * ================
- *
+ * <p>
  * Service for the Npcs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

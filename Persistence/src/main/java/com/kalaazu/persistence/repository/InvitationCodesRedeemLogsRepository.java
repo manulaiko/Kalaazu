@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * InvitationCodesRedeemLogs repository.
  * =====================================
- *
+ * <p>
  * Repository for the InvitationCodesRedeemLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

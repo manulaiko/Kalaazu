@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansNewsEntity;
 /**
  * ClansNews service.
  * =====================
- *
+ * <p>
  * Service for the ClansNews entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

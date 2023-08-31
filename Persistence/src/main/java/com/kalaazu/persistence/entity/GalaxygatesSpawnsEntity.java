@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Galaxygates spawns entity.
  * ==========================
- *
+ * <p>
  * Entity for the `galaxygates_spawns` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

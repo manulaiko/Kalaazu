@@ -6,12 +6,12 @@
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts` FOREIGN KEY `accounts_banks_logs_accounts` (`from_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_to_accounts` FOREIGN KEY `accounts_banks_logs_to_accounts` (`to_accounts_id`)
-        REFERENCES `accounts` (`id`);
+    REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts_banks` FOREIGN KEY `accounts_banks_logs_accounts_banks` (`accounts_banks_id`)
-        REFERENCES `accounts_banks` (`id`);
+    REFERENCES `accounts_banks` (`id`);

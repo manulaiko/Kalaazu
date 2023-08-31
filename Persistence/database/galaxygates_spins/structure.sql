@@ -13,8 +13,7 @@ CREATE TABLE `galaxygates_spins`
     `amount`      smallint NOT NULL DEFAULT 1,
 
     CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Spins from the galaxy gate.';
 

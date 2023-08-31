@@ -4,4 +4,4 @@
 
 ALTER TABLE `users`
     ADD CONSTRAINT `users_invitation_codes` FOREIGN KEY `users_invitation_codes` (`invitation_codes_id`)
-        REFERENCES `invitation_codes` (`id`);
+    REFERENCES `invitation_codes` (`id`);

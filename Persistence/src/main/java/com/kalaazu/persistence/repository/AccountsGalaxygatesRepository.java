@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsGalaxygates repository.
  * ===============================
- *
+ * <p>
  * Repository for the AccountsGalaxygates entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

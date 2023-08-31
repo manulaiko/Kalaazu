@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * ServerLogs service.
  * ======================
- *
+ * <p>
  * Service for the ServerLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

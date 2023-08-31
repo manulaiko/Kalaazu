@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansRolesEntity;
 /**
  * ClansRoles service.
  * ======================
- *
+ * <p>
  * Service for the ClansRoles entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

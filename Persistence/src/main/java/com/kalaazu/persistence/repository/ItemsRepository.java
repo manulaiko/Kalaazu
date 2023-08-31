@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Items repository.
  * =================
- *
+ * <p>
  * Repository for the Items entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

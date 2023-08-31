@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Permissions repository.
  * =======================
- *
+ * <p>
  * Repository for the Permissions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

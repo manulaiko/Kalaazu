@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.AccountsSkylabsEntity;
 /**
  * AccountsSkylabs service.
  * ===========================
- *
+ * <p>
  * Service for the AccountsSkylabs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

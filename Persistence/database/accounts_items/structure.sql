@@ -14,8 +14,7 @@ CREATE TABLE `accounts_items`
         COMMENT 'Amount of items bough (for stackable items).',
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items bough by an account.';
 

@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansDiplomaciesEntity;
 /**
  * ClansDiplomacies service.
  * ============================
- *
+ * <p>
  * Service for the ClansDiplomacies entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

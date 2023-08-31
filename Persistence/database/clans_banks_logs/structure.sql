@@ -19,8 +19,7 @@ CREATE TABLE `clans_banks_logs`
         COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logs from clan''s bank.';
 

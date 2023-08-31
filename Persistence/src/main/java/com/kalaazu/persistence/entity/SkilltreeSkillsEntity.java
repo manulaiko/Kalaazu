@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.Collection;
 
 /**
  * Skilltree skills entity.
  * ========================
- *
+ * <p>
  * Entity for the `skilltree_skills` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

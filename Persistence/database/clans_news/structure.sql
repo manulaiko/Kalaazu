@@ -15,8 +15,7 @@ CREATE TABLE `clans_news`
         COMMENT 'News content.',
 
     CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'News of the clan.';
 

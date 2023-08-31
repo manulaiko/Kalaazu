@@ -5,7 +5,7 @@ import lombok.Data;
 /**
  * Account DTO.
  * ============
- *
+ * <p>
  * DTO For the account entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsPets repository.
  * ========================
- *
+ * <p>
  * Repository for the AccountsPets entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

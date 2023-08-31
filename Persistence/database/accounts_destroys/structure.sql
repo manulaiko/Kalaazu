@@ -14,8 +14,7 @@ CREATE TABLE `accounts_destroys`
         COMMENT 'Times this ship has been destroyed',
 
     CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s destroy history.';
 

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Moderators roles permissions.
  * =============================
- *
+ * <p>
  * Entity for the `moderators_roles_permissions` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ModeratorsLogsEntity;
 /**
  * ModeratorsLogs service.
  * ==========================
- *
+ * <p>
  * Service for the ModeratorsLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

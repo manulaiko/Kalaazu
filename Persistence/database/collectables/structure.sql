@@ -12,7 +12,6 @@ CREATE TABLE `collectables`
     `name` varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Map collectables.';

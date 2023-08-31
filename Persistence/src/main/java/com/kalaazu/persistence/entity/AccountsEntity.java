@@ -1,17 +1,17 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.HashSet;
-import org.hibernate.annotations.CreationTimestamp;
 
 /**
  * Accounts entity.
  * ================
- *
+ * <p>
  * Entity for the `accounts` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

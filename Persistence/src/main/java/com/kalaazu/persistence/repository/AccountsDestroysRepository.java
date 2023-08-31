@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsDestroys repository.
  * ============================
- *
+ * <p>
  * Repository for the AccountsDestroys entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * News entity.
  * ============
- *
+ * <p>
  * Entity for the `news` table`
  *
  * @author Manulaiko <manulaiko@gmail.com>

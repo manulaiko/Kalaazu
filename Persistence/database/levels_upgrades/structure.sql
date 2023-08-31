@@ -16,7 +16,6 @@ CREATE TABLE `levels_upgrades`
         COMMENT 'Uridium needed to upgrade to this level with given probability.',
 
     CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the upgrade costs for each level.';

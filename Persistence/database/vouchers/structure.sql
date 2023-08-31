@@ -10,8 +10,7 @@ CREATE TABLE `vouchers`
     `max`  tinyint     NOT NULL DEFAULT 1,
 
     CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Voucher codes.';
 

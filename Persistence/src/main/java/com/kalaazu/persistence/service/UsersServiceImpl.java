@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Users service.
  * =================
- *
+ * <p>
  * Service for the Users entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

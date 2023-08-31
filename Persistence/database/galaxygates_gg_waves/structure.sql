@@ -10,8 +10,7 @@ CREATE TABLE `galaxygates_gg_waves`
     `galaxygates_waves_id` tinyint  NOT NULL,
 
     CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
 

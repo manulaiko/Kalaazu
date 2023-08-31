@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansRankingEntity;
 /**
  * ClansRanking service.
  * ========================
- *
+ * <p>
  * Service for the ClansRanking entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Factions entity.
  * ================
- *
+ * <p>
  * Entity for the `factions` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

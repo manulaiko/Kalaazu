@@ -19,8 +19,7 @@ CREATE TABLE `factions`
         COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s factions.';
 

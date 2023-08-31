@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.AccountsBanksEntity;
 /**
  * AccountsBanks service.
  * =========================
- *
+ * <p>
  * Service for the AccountsBanks entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

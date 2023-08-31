@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.NewsEntity;
 /**
  * News service.
  * ================
- *
+ * <p>
  * Service for the News entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

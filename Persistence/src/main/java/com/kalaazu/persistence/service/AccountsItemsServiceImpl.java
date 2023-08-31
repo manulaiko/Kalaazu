@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsItems service.
  * =========================
- *
+ * <p>
  * Service for the AccountsItems entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

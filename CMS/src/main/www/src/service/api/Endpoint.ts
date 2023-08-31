@@ -10,19 +10,19 @@ import Store from "@/store";
  * @author Manulaiko <manulaiko@gmail.com>
  */
 export default class Endpoint {
-  http: typeof axios;
-  store: typeof Store;
+    http: typeof axios;
+    store: typeof Store;
 
-  /**
-   * Constructor.
-   *
-   * @param http     Axios instance.
-   * @param store    Vue store.
-   * @param endpoint Endpoint path.
-   */
-  constructor(http: typeof axios, store: typeof Store, endpoint: string) {
-    this.http = http;
-    this.store = store;
-    this.http.defaults.baseURL += endpoint;
-  }
+    /**
+     * Constructor.
+     *
+     * @param http     Axios instance.
+     * @param store    Vue store.
+     * @param endpoint Endpoint path.
+     */
+    constructor(http: typeof axios, store: typeof Store, endpoint: string) {
+        this.http = http;
+        this.store = store;
+        this.http.defaults.baseURL += endpoint;
+    }
 }

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Maps stations entity.
  * =====================
- *
+ * <p>
  * Entity for the `maps_stations` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

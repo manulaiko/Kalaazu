@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.GalaxygatesSpawnsEntity;
 /**
  * GalaxygatesSpawns service.
  * =============================
- *
+ * <p>
  * Service for the GalaxygatesSpawns entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

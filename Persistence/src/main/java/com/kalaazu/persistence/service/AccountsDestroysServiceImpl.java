@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsDestroys service.
  * ============================
- *
+ * <p>
  * Service for the AccountsDestroys entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

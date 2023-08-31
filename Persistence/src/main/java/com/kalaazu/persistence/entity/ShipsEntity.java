@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.Collection;
 
 /**
  * Ships entity.
  * =============
- *
+ * <p>
  * Entity for the `ships` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -16,8 +16,7 @@ CREATE TABLE `clans_battlestations_items`
         COMMENT 'Date when the item was equipped.',
 
     CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items equipped in the CBS.';
 

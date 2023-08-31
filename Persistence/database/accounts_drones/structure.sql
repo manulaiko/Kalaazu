@@ -12,8 +12,7 @@ CREATE TABLE `accounts_drones`
     `date`        timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s drones.';
 

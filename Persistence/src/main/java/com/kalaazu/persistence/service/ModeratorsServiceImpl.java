@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Moderators service.
  * ======================
- *
+ * <p>
  * Service for the Moderators entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

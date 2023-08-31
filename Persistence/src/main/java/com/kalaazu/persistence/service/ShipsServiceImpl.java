@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Ships service.
  * =================
- *
+ * <p>
  * Service for the Ships entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

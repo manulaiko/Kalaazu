@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Ranks service.
  * =================
- *
+ * <p>
  * Service for the Ranks entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

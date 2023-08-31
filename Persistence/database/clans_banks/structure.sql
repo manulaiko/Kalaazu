@@ -17,8 +17,7 @@ CREATE TABLE `clans_banks`
         COMMENT 'Tax rate for uridium.',
 
     CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan''s internal bank.';
 

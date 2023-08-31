@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * SkylabModules service.
  * =========================
- *
+ * <p>
  * Service for the SkylabModules entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

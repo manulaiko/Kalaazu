@@ -21,7 +21,6 @@ CREATE TABLE `items`
         COMMENT 'Item bonus',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains server''s items.';

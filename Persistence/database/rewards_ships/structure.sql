@@ -12,8 +12,7 @@ CREATE TABLE `rewards_ships`
         COMMENT 'Reward to award.',
 
     CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 

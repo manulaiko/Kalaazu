@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 /**
  * Response.
  * =========
- *
+ * <p>
  * Base class for all responses.
  *
  * @param T Response data type.
@@ -16,7 +16,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Response<T> {
-    private String kind;
+    private Status status;
     private String message;
-    private T      data;
+    private T data;
+
+    public enum Status {
+        ERROR,
+        OK
+    }
 }

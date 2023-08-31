@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ClansBanksEntity;
 /**
  * ClansBanks service.
  * ======================
- *
+ * <p>
  * Service for the ClansBanks entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

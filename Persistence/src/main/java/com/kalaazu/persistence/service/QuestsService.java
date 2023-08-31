@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.QuestsEntity;
 /**
  * Quests service.
  * ==================
- *
+ * <p>
  * Service for the Quests entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

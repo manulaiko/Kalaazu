@@ -3,7 +3,7 @@ package com.kalaazu.cms.service;
 import com.kalaazu.persistence.entity.*;
 import com.kalaazu.persistence.service.*;
 import com.kalaazu.util.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
@@ -12,48 +12,52 @@ import java.util.Map;
 /**
  * Register service.
  * =================
- *
+ * <p>
  * Provides the logic for user registration.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class RegisterService {
-    @Autowired
-    private UsersService users;
+    private final UsersService users;
+    private final AccountsService accounts;
+    private final LevelsService levels;
+    private final AccountsHangarsService hangars;
+    private final ItemsService items;
+    private final AccountsItemsService accountsItems;
+    private final AccountsShipsService accountsShips;
+    private final ShipsService ships;
+    private final FactionsService factions;
+    private final AccountsConfigurationsService accountsConfigs;
+    private final AccountsConfigurationsAccountsItemsService accountsConfigItems;
+    private final RanksService ranks;
 
-    @Autowired
-    private AccountsService accounts;
+    private HashMap<Short, Integer> getDefaultStartingItems() {
+        var items = new HashMap<Short, Integer>();
 
-    @Autowired
-    private LevelsService levels;
+        // Credits
+        items.put((short) 1, 150_000);
+        // Uridium
+        items.put((short) 2, 10_000);
+        // Jackpot
+        items.put((short) 3, 0);
+        // Exp
+        items.put((short) 4, 0);
+        // Honor
+        items.put((short) 5, 0);
 
-    @Autowired
-    private AccountsHangarsService hangars;
+        // LCB-10
+        items.put((short) 59, 10_000);
+        // R-310
+        items.put((short) 87, 1_000);
 
-    @Autowired
-    private ItemsService items;
-
-    @Autowired
-    private AccountsItemsService accountsItems;
-
-    @Autowired
-    private AccountsShipsService accountsShips;
-
-    @Autowired
-    private ShipsService ships;
-
-    @Autowired
-    private FactionsService factions;
-
-    @Autowired
-    private AccountsConfigurationsService accountsConfigs;
-
-    @Autowired
-    private AccountsConfigurationsAccountsItemsService accountsConfigItems;
-
-    @Autowired
-    private RanksService ranks;
+        // LF-1
+        items.put((short) 121, 1);
+        // REP-1
+        items.put((short) 164, 1);
+        return items;
+    }
 
     /**
      * Performs the user registration.
@@ -61,9 +65,7 @@ public class RegisterService {
      * @param username User name.
      * @param password User password.
      * @param email    User email.
-     *
      * @return Registered account.
-     *
      * @throws Exception If something goes wrong.
      */
     public AccountsEntity register(String username, String password, String email) throws Exception {
@@ -75,12 +77,16 @@ public class RegisterService {
             throw new Exception("All fields are required!");
         }
 
-        var user    = users.register(u, p, e);
+        if (!StringUtils.isEmail(e)) {
+            throw new Exception("Invalid email!");
+        }
+
+        var user = users.register(u, p, e);
         var account = this.createAccount(user);
 
-        var ship    = this.createShip(account);
-        var hangar  = this.createHangar(account, ship);
-        var items   = this.createItems(account);
+        var ship = this.createShip(account);
+        var hangar = this.createHangar(account, ship);
+        var items = this.createItems(account);
         var configs = this.createConfigs(hangar);
 
         this.addItemsToConfig(items, configs);
@@ -124,9 +130,7 @@ public class RegisterService {
      * @param items   Account items.
      * @param configs Account configurations.
      */
-    private void addItemsToConfig(
-            Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs
-    ) {
+    private void addItemsToConfig(Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
         configs.forEach((configId, config) -> items.forEach((itemId, item) -> {
             var configItem = new AccountsConfigurationsAccountsItemsEntity();
             configItem.setAccountsItemsByAccountsItemsId(item);
@@ -137,20 +141,9 @@ public class RegisterService {
             // Update config stats
             var i = item.getItemsByItemsId();
             switch (i.getType()) {
-                case LASER:
-                    config.setDamage(config.getDamage() + i.getBonus());
-
-                    break;
-
-                case SHIELD_GENERATOR:
-                    config.setShield(config.getShield() + i.getBonus());
-
-                    break;
-
-                case SPEED_GENERATOR:
-                    config.setSpeed((short) (config.getSpeed() + i.getBonus()));
-
-                    break;
+                case LASER -> config.setDamage(config.getDamage() + i.getBonus());
+                case SHIELD_GENERATOR -> config.setShield(config.getShield() + i.getBonus());
+                case SPEED_GENERATOR -> config.setSpeed((short) (config.getSpeed() + i.getBonus()));
             }
         }));
     }
@@ -159,7 +152,6 @@ public class RegisterService {
      * Creates the account for the user.
      *
      * @param user User that will own the account.
-     *
      * @return Created account.
      */
     private AccountsEntity createAccount(UsersEntity user) {
@@ -181,29 +173,8 @@ public class RegisterService {
      * @param account Account that will own the items.
      */
     private Map<Short, AccountsItemsEntity> createItems(AccountsEntity account) {
-        var ret   = new HashMap<Short, AccountsItemsEntity>();
-        var items = new HashMap<Short, Integer>();
-
-        // Credits
-        items.put((short) 1, 150_000);
-        // Uridium
-        items.put((short) 2, 10_000);
-        // Jackpot
-        items.put((short) 3, 0);
-        // Exp
-        items.put((short) 4, 0);
-        // Honor
-        items.put((short) 5, 0);
-
-        // LCB-10
-        items.put((short) 59, 10_000);
-        // R-310
-        items.put((short) 87, 1_000);
-
-        // LF-1
-        items.put((short) 121, 1);
-        // REP-1
-        items.put((short) 164, 1);
+        var ret = new HashMap<Short, AccountsItemsEntity>();
+        var items = getDefaultStartingItems();
 
         items.forEach((id, amount) -> {
             var item = new AccountsItemsEntity();
@@ -224,7 +195,6 @@ public class RegisterService {
      * Creates the ship of the account.
      *
      * @param account Account that will own the ship.
-     *
      * @return Created ship.
      */
     private AccountsShipsEntity createShip(AccountsEntity account) {
@@ -246,7 +216,6 @@ public class RegisterService {
      * Creates the account configurations.
      *
      * @param hangar Account hangar that will own the configuration.
-     *
      * @return Created configurations.
      */
     private Map<Integer, AccountsConfigurationsEntity> createConfigs(AccountsHangarsEntity hangar) {
@@ -270,7 +239,6 @@ public class RegisterService {
      *
      * @param account Account that will own the hangar.
      * @param ship    Account ship.
-     *
      * @return Created hangar.
      */
     private AccountsHangarsEntity createHangar(AccountsEntity account, AccountsShipsEntity ship) {

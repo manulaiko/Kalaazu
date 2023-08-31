@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Accounts pets entity.
  * =====================
- *
+ * <p>
  * Entity for the `accounts_pets` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

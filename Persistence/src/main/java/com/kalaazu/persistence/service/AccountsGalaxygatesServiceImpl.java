@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsGalaxygates service.
  * ===============================
- *
+ * <p>
  * Service for the AccountsGalaxygates entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

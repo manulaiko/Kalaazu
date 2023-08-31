@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.MapsStationsEntity;
 /**
  * MapsStations service.
  * ========================
- *
+ * <p>
  * Service for the MapsStations entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

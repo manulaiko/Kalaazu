@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 /**
  * External controller.
  * ====================
- *
+ * <p>
  * Controller for the `/external` endpoint.
  *
  * @author Manulaiko <manulaiko@gmail.com>
@@ -35,12 +35,11 @@ public class ExternalController {
      * Login endpoint.
      *
      * @param body Request body.
-     *
      * @return Response entity.
      */
     @PostMapping("/login")
     public ResponseEntity<Response<LoginResponse>> login(@RequestBody LoginRequest body) {
-        var response = new Response<LoginResponse>("other", "Couldn't perform login!", null);
+        var response = new Response<LoginResponse>(Response.Status.ERROR, "Couldn't perform login!", null);
 
         try {
             var account = this.login.login(body.getUsername(), body.getPassword());
@@ -48,10 +47,10 @@ public class ExternalController {
             var data = new LoginResponse();
             data.setAccount(this.buildAccount(account));
 
-            response.setKind("ok");
+            response.setStatus(Response.Status.OK);
             response.setData(data);
         } catch (Exception e) {
-            response.setKind("other");
+            response.setStatus(Response.Status.ERROR);
             response.setMessage(e.getMessage());
         }
 
@@ -62,12 +61,11 @@ public class ExternalController {
      * Register endpoint.
      *
      * @param body Request body.
-     *
      * @return Response entity.
      */
     @PostMapping("/register")
     public ResponseEntity<Response<LoginResponse>> register(@RequestBody RegisterRequest body) {
-        var response = new Response<LoginResponse>("other", "Couldn't perform register!", null);
+        var response = new Response<LoginResponse>(Response.Status.ERROR, "Couldn't perform register!", null);
 
         try {
             var account = this.register.register(body.getUsername(), body.getPassword(), body.getEmail());
@@ -75,10 +73,10 @@ public class ExternalController {
             var data = new LoginResponse();
             data.setAccount(this.buildAccount(account));
 
-            response.setKind("ok");
+            response.setStatus(Response.Status.OK);
             response.setData(data);
         } catch (Exception e) {
-            response.setKind("other");
+            response.setStatus(Response.Status.ERROR);
             response.setMessage(e.getMessage());
         }
 
@@ -89,7 +87,6 @@ public class ExternalController {
      * Builds the account DTO.
      *
      * @param account Account entity.
-     *
      * @return Account DTO for `account`.
      */
     private Account buildAccount(AccountsEntity account) {
@@ -97,33 +94,24 @@ public class ExternalController {
         this.mapper.map(account, a);
 
         account.getAccountsItems()
-               .forEach(i -> {
-                   if (i.getItemsByItemsId().getType() != ItemType.CURRENCY) {
-                       return;
-                   }
+                .forEach(i -> {
+                    if (i.getItemsByItemsId().getType() != ItemType.CURRENCY) {
+                        return;
+                    }
 
-                   switch (i.getItemsByItemsId().getId()) {
-                       case 1: // Credits
-                           a.setCredits(i.getAmount());
-                           break;
-
-                       case 2: // Uridium
-                           a.setUridium((int) i.getAmount());
-                           break;
-
-                       case 3: // Jackpot
-                           a.setJackpot((int) i.getAmount());
-                           break;
-
-                       case 4: // Experience
-                           a.setExperience(i.getAmount());
-                           break;
-
-                       case 5: // Honor
-                           a.setHonor((int) i.getAmount());
-                           break;
-                   }
-               });
+                    switch (i.getItemsByItemsId().getId()) {
+                        case 1 -> // Credits
+                                a.setCredits(i.getAmount());
+                        case 2 -> // Uridium
+                                a.setUridium((int) i.getAmount());
+                        case 3 -> // Jackpot
+                                a.setJackpot((int) i.getAmount());
+                        case 4 -> // Experience
+                                a.setExperience(i.getAmount());
+                        case 5 -> // Honor
+                                a.setHonor((int) i.getAmount());
+                    }
+                });
 
         return a;
     }

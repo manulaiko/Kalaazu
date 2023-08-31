@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Skylab modules entity.
  * ======================
- *
+ * <p>
  * Entity for the `skylabs_modules` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

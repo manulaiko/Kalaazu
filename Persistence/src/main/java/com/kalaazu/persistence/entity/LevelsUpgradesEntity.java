@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Levels upgrades entity.
  * =======================
- *
+ * <p>
  * Entity for the `levels_upgrades` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

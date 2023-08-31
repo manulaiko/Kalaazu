@@ -8,12 +8,11 @@ CREATE TABLE `maps_stations`
         COMMENT 'Primary Key.',
     `position`    bigint  NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
-    `maps_id`     tinyint NULL     DEFAULT NULL,
-    `factions_id` tinyint NULL     DEFAULT NULL,
+    `maps_id`     tinyint NULL DEFAULT NULL,
+    `factions_id` tinyint NULL DEFAULT NULL,
 
     CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Stations on map.';
 

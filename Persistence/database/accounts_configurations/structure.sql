@@ -18,8 +18,7 @@ CREATE TABLE `accounts_configurations`
         COMMENT 'Damage available in the configuration.',
 
     CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Configurations of the accounts.';
 

@@ -4,7 +4,7 @@ import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.AccountsService;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.util.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.sql.Timestamp;
@@ -14,30 +14,26 @@ import java.util.Date;
 /**
  * Login service.
  * ==============
- *
+ * <p>
  * Provides the logic for user authentication.
  *
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class LoginService {
-    @Autowired
-    private UsersService users;
-
-    @Autowired
-    private AccountsService accounts;
+    private final UsersService users;
+    private final AccountsService accounts;
 
     private Date nextBanExpire = null;
-    private Date now           = null;
+    private Date now = null;
 
     /**
      * Performs the user authentication.
      *
      * @param username User name.
      * @param password Password.
-     *
      * @return Authenticated user's account.
-     *
      * @throws Exception If something goes wrong.
      */
     public AccountsEntity login(String username, String password) throws Exception {
@@ -54,15 +50,15 @@ public class LoginService {
         }
 
 
-        this.now           = Date.from(Instant.now());
+        this.now = Date.from(Instant.now());
         this.nextBanExpire = now;
 
         // Filter banned accounts, get last logged in account.
         var lastUsedAccount = user.getAccounts()
-                                  .stream()
-                                  .filter(this::filterBannedAccounts)
-                                  .min(this::lastLoggedInAccount)
-                                  .orElse(null);
+                .stream()
+                .filter(this::filterBannedAccounts)
+                .min(this::lastLoggedInAccount)
+                .orElse(null);
 
         if (lastUsedAccount == null) {
             throw new Exception("All your accounts are banned until " + this.nextBanExpire);
@@ -79,7 +75,6 @@ public class LoginService {
      * Banned accounts filter.
      *
      * @param account Account to filter.
-     *
      * @return Whether the account is banned or not.
      */
     private boolean filterBannedAccounts(AccountsEntity account) {
@@ -109,11 +104,10 @@ public class LoginService {
      *
      * @param a1 First account to compare.
      * @param a2 Second account to compare.
-     *
      * @return Which account was last logged in.
      */
     private int lastLoggedInAccount(AccountsEntity a1, AccountsEntity a2) {
         return a2.getLastLogin()
-                 .compareTo(a1.getLastLogin());
+                .compareTo(a1.getLastLogin());
     }
 }

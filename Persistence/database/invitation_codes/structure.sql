@@ -12,8 +12,7 @@ CREATE TABLE `invitation_codes`
         COMMENT 'Amount of times the code can be used.',
 
     CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the invitation codes that can be used for registering.';
 

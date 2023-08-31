@@ -12,8 +12,7 @@ CREATE TABLE `moderators_roles_permissions`
         COMMENT 'Enabled value, null = inherited',
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Moderator roles'' permissions';
 

@@ -49,10 +49,10 @@ public final class MathUtils {
     static private final int SIN_BITS = 14; // 16KB. Adjust for accuracy.
     static private final int SIN_MASK = ~(-1 << SIN_BITS);
     static private final int SIN_COUNT = SIN_MASK + 1;
-    static private final float radFull = PI * 2;
-    static private final float degFull = 360;
-    static private final float radToIndex = SIN_COUNT / radFull;
     static private final float degToIndex = SIN_COUNT / degFull;
+    static private final float radFull = PI * 2;
+    static private final float radToIndex = SIN_COUNT / radFull;
+    static private final float degFull = 360;
     static private final int BIG_ENOUGH_INT = 16 * 1024;
     static private final double BIG_ENOUGH_FLOOR = BIG_ENOUGH_INT;
     static private final double CEIL = 0.9999999;
@@ -115,8 +115,8 @@ public final class MathUtils {
             if (x < 0f) {
                 return atan + (
                         y < 0f
-                        ? -PI
-                        : PI
+                                ? -PI
+                                : PI
                 );
             }
 
@@ -125,8 +125,8 @@ public final class MathUtils {
         atan = PI / 2 - z / (z * z + 0.28f);
 
         return y < 0f
-               ? atan - PI
-               : atan;
+                ? atan - PI
+                : atan;
     }
 
     /**
@@ -356,7 +356,6 @@ public final class MathUtils {
      * @param fromRadians start angle in radians
      * @param toRadians   target angle in radians
      * @param progress    interpolation value in the range [0, 1]
-     *
      * @return the interpolated angle in the range [0, PI2[
      */
     public static float lerpAngle(float fromRadians, float toRadians, float progress) {
@@ -372,7 +371,6 @@ public final class MathUtils {
      * @param fromDegrees start angle in degrees
      * @param toDegrees   target angle in degrees
      * @param progress    interpolation value in the range [0, 1]
-     *
      * @return the interpolated angle in the range [0, 360[
      */
     public static float lerpAngleDeg(float fromDegrees, float toDegrees, float progress) {

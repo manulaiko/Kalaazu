@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Levels service.
  * ==================
- *
+ * <p>
  * Service for the Levels entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

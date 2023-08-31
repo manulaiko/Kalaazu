@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Accounts configurations accounts items entity.
  * ==============================================
- *
+ * <p>
  * Entity for the `accounts_configurations_accounts_items` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

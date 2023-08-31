@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Levels entity.
  * ==============
- *
+ * <p>
  * Entity for the `levels` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

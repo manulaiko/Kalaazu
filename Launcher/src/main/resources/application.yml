@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: ${MYSQL_PASSWORD}
+    url: jdbc:mariadb://localhost:3306/kalaazu
+    username: ${MYSQL_USERNAME}
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true

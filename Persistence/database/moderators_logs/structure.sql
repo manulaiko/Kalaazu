@@ -12,8 +12,7 @@ CREATE TABLE `moderators_logs`
     `text`          text         NOT NULL,
 
     CONSTRAINT `moderators_logs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Logged events made by moderators.';
 

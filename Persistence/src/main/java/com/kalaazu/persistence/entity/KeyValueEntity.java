@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Key value entity.
  * =================
- *
+ * <p>
  * Entity for the `key_value` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Skilltree unlocks entity.
  * =========================
- *
+ * <p>
  * Entity for the `skilltree_unlocks` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

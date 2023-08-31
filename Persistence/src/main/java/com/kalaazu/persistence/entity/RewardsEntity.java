@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Rewards entity.
  * ===============
- *
+ * <p>
  * Entity for the `rewards` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

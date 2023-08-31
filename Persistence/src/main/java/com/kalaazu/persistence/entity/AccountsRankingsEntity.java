@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Accounts rankings entity.
  * =========================
- *
+ * <p>
  * Entity for the `accounts_rankings` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

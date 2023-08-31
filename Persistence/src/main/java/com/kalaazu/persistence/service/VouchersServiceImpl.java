@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Vouchers service.
  * ====================
- *
+ * <p>
  * Service for the Vouchers entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

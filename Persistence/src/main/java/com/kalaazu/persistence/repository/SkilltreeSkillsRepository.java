@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * SkilltreeSkills repository.
  * ===========================
- *
+ * <p>
  * Repository for the SkilltreeSkills entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

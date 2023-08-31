@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * ClansRanking repository.
  * ========================
- *
+ * <p>
  * Repository for the ClansRanking entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

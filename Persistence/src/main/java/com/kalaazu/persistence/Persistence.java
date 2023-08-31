@@ -6,17 +6,17 @@ import org.springframework.stereotype.Controller;
 /**
  * Persistence class.
  * ==================
- *
+ * <p>
  * Initializes and connects to the database.
- *
+ * <p>
  * Use the events under the domain `persistence` to communicate
  * with the database and perform certain actions.
- *
+ * <p>
  * See `com.kalaazu.persistence.eventsystem.EventListener` for a list
  * of the available events.
- *
+ * <p>
  * Example:
- *
+ * <p>
  * ```java
  * vertx.eventBus()
  * .send(

@@ -16,8 +16,7 @@ CREATE TABLE `npcs`
     `ai`                tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Server NPCS.';
 

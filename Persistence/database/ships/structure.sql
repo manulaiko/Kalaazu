@@ -28,8 +28,7 @@ CREATE TABLE `ships`
     `gfx`        tinyint  NOT NULL DEFAULT 0,
 
     CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Ships table.';
 

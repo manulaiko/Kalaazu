@@ -1,10 +1,10 @@
 Contents:
 
- - [File Structure](#file_structure)
-   - [Table Structure](#table_structure)
-   - [Initial Dump](#initial_dump)
-   - [Relations](#relations)
- - [Coding Style](#coding_style)
+- [File Structure](#file_structure)
+    - [Table Structure](#table_structure)
+    - [Initial Dump](#initial_dump)
+    - [Relations](#relations)
+- [Coding Style](#coding_style)
 
 <a name="file_structure"></a>
 File Structure
@@ -14,9 +14,9 @@ Each table is located in its folder.
 
 A table is divided in 3 parts:
 
- * Table structure.
- * Initial dump.
- * Relations.
+* Table structure.
+* Initial dump.
+* Relations.
 
 <a name="table_structure"></a>
 Table Structure.

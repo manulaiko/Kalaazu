@@ -20,8 +20,7 @@ CREATE TABLE `techfactory_drones`
         COMMENT 'Factor the price reduces with each new part.',
 
     CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Drones that can be build in the tech factory.';
 

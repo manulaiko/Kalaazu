@@ -3,3 +3,5 @@ include 'Utils'
 include 'Persistence'
 include 'CMS'
 include 'Launcher'
+include 'Server'
+

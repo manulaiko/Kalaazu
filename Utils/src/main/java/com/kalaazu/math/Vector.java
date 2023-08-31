@@ -45,20 +45,17 @@ public interface Vector<T extends Vector<T>> {
      * Limits the length of this vector, based on the desired maximum length.
      *
      * @param limit desired maximum length for this vector
-     *
      * @return this vector for chaining
      */
     T limit(float limit);
 
     /**
      * Limits the length of this vector, based on the desired maximum length squared.
-     * <p />
+     * <p/>
      * This method is slightly faster than limit().
      *
      * @param limit2 squared desired maximum length for this vector
-     *
      * @return this vector for chaining
-     *
      * @see #len2()
      */
     T limit2(float limit2);
@@ -67,20 +64,17 @@ public interface Vector<T extends Vector<T>> {
      * Sets the length of this vector. Does nothing is this vector is zero.
      *
      * @param len desired length for this vector
-     *
      * @return this vector for chaining
      */
     T setLength(float len);
 
     /**
      * Sets the length of this vector, based on the square of the desired length. Does nothing is this vector is zero.
-     * <p />
+     * <p/>
      * This method is slightly faster than setLength().
      *
      * @param len2 desired square of the length for this vector
-     *
      * @return this vector for chaining
-     *
      * @see #len2()
      */
     T setLength2(float len2);
@@ -90,7 +84,6 @@ public interface Vector<T extends Vector<T>> {
      *
      * @param min Min length
      * @param max Max length
-     *
      * @return This vector for chaining
      */
     T clamp(float min, float max);
@@ -99,7 +92,6 @@ public interface Vector<T extends Vector<T>> {
      * Sets this vector from the given vector
      *
      * @param v The vector
-     *
      * @return This vector for chaining
      */
     T set(T v);
@@ -108,7 +100,6 @@ public interface Vector<T extends Vector<T>> {
      * Subtracts the given vector from this vector.
      *
      * @param v The vector
-     *
      * @return This vector for chaining
      */
     T sub(T v);
@@ -124,14 +115,12 @@ public interface Vector<T extends Vector<T>> {
      * Adds the given vector to this vector
      *
      * @param v The vector
-     *
      * @return This vector for chaining
      */
     T add(T v);
 
     /**
      * @param v The other vector
-     *
      * @return The dot product between this and the other vector
      */
     float dot(T v);
@@ -140,7 +129,6 @@ public interface Vector<T extends Vector<T>> {
      * Scales this vector by a scalar
      *
      * @param scalar The scalar
-     *
      * @return This vector for chaining
      */
     T scl(float scalar);
@@ -154,7 +142,6 @@ public interface Vector<T extends Vector<T>> {
 
     /**
      * @param v The other vector
-     *
      * @return the distance between this and the other vector
      */
     float dst(T v);
@@ -164,7 +151,6 @@ public interface Vector<T extends Vector<T>> {
      * comparisons, but not for getting accurate distances, as the return value is the square of the actual distance.
      *
      * @param v The other vector
-     *
      * @return the squared distance between this and the other vector
      */
     float dst2(T v);
@@ -175,7 +161,6 @@ public interface Vector<T extends Vector<T>> {
      *
      * @param target The target vector
      * @param alpha  The interpolation coefficient
-     *
      * @return This vector for chaining.
      */
     T lerp(T target, float alpha);
@@ -187,7 +172,6 @@ public interface Vector<T extends Vector<T>> {
      * @param target       The target vector
      * @param alpha        The interpolation coefficient
      * @param interpolator An Interpolation object describing the used interpolation method
-     *
      * @return This vector for chaining.
      */
     T interpolate(T target, float alpha, Interpolation interpolator);
@@ -260,7 +244,6 @@ public interface Vector<T extends Vector<T>> {
 
     /**
      * @param epsilon a positive small number close to zero
-     *
      * @return Whether this vector is perpendicular with the other vector. True if the dot product is 0.
      */
     boolean isPerpendicular(T other, float epsilon);
@@ -280,7 +263,6 @@ public interface Vector<T extends Vector<T>> {
      *
      * @param other   Vector to compare with.
      * @param epsilon Fuzzy equality epsilon.
-     *
      * @return whether the vectors have fuzzy equality.
      */
     boolean epsilonEquals(T other, float epsilon);

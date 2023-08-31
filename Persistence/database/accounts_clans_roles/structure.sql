@@ -12,8 +12,7 @@ CREATE TABLE `accounts_clans_roles`
         COMMENT 'Role ID.',
 
     CONSTRAINT `accounts_clans_roles_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 

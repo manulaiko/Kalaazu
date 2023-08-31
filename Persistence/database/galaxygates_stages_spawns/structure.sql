@@ -10,8 +10,7 @@ CREATE TABLE `galaxygates_stages_spawns`
     `galaxygates_spawns_id` int NOT NULL,
 
     CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';
 

@@ -10,17 +10,34 @@ export default {
 
 <style lang="sass">
 body
-  background-image: url("/images/bg.jpg")
-  background-size: cover
-  color: whitesmoke
-  overflow: auto
+background-image:
 
-  &::-webkit-scrollbar
-    display: none
+url
+(
+"/images/bg.jpg"
+)
+background-size: cover
+color: whitesmoke
+overflow: auto
+&::-webkit-scrollbar
+display: none
+a
+color: whitesmoke
 
-  a
-    color: whitesmoke !important
+!important
 
-    &:hover
-      background-color: rgba(0,0,0,0.25) !important
+&:hover
+background-color:
+
+rgba
+(
+0
+,
+0
+,
+0
+,
+0.25
+)
+!important
 </style>

@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Galaxygates spins entity.
  * =========================
- *
+ * <p>
  * Entity for the `galaxygates_spins` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

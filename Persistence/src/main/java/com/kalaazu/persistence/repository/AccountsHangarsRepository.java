@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * AccountsHangars repository.
  * ===========================
- *
+ * <p>
  * Repository for the AccountsHangars entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

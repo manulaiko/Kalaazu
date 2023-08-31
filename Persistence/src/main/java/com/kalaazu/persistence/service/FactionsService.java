@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.FactionsEntity;
 /**
  * Factions service.
  * ====================
- *
+ * <p>
  * Service for the Factions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

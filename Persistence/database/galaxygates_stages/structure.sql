@@ -8,12 +8,11 @@ CREATE TABLE `galaxygates_stages`
         COMMENT 'Primary Key.',
     `galaxygates_waves_id` tinyint NOT NULL
         COMMENT 'Wave this stage belongs to',
-    `comment`              text    NULL DEFAULT NULL
+    `comment`              text NULL DEFAULT NULL
         COMMENT 'Just so this isn''t that empty',
 
     CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Spawn stage for each wave.';
 

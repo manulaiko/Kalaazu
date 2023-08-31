@@ -1,15 +1,15 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
 
 /**
  * Clans battlestations entity.
  * ============================
- *
+ * <p>
  * Entity for the `clans_battlestations` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * KeyValue service.
  * ====================
- *
+ * <p>
  * Service for the KeyValue entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

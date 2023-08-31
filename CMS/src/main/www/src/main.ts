@@ -9,11 +9,11 @@ import api from "@/service/api";
 Vue.config.productionTip = false;
 Vue.use(Buefy);
 Vue.use(api, {
-  url: "http://localhost:8080"
+    url: "http://localhost:8080"
 });
 
 new Vue({
-  router,
-  store,
-  render: h => h(App)
+    router,
+    store,
+    render: h => h(App)
 }).$mount("#app");

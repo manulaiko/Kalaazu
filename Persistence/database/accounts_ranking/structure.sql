@@ -22,8 +22,7 @@ CREATE TABLE `accounts_rankings`
         COMMENT 'Amount of times the account has been destroyed by the radiation zone.',
 
     CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account ranking.';
 

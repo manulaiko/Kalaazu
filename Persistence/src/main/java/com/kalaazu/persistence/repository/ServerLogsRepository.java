@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * ServerLogs repository.
  * ======================
- *
+ * <p>
  * Repository for the ServerLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

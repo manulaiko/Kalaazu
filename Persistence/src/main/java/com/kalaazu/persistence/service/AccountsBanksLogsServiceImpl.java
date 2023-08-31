@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsBanksLogs service.
  * =============================
- *
+ * <p>
  * Service for the AccountsBanksLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

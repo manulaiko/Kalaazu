@@ -5,15 +5,15 @@ Package structure
 
 There are 3 main packages:
 
- * `com.kalaazu.persistence`.
- * `com.kalaazu.persistence.eventsystem`.
- * `com.kalaazu.persistence.speedment.database`.
+* `com.kalaazu.persistence`.
+* `com.kalaazu.persistence.eventsystem`.
+* `com.kalaazu.persistence.speedment.database`.
 
 There are 3 public packages that can be accessed by other modules:
 
- * `com.kalaazu.persistence`.
- * `com.kalaazu.persistence.eventsystem.events`.
- * `entities`.
+* `com.kalaazu.persistence`.
+* `com.kalaazu.persistence.eventsystem.events`.
+* `entities`.
 
 Persistence
 -----------

@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Npcs repository.
  * ================
- *
+ * <p>
  * Repository for the Npcs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

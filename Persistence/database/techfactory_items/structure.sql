@@ -24,8 +24,7 @@ CREATE TABLE `techfactory_items`
         COMMENT 'Instant production costs.',
 
     CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Items that can be build in the tech factory.';
 

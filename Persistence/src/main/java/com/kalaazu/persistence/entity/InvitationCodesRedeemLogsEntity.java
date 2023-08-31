@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Invitation codes redeem logs entity.
  * ====================================
- *
+ * <p>
  * Entity for the `invitation_codes_redeem_logs` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

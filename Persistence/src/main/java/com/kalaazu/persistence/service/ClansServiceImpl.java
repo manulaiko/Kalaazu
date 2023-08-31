@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Clans service.
  * =================
- *
+ * <p>
  * Service for the Clans entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

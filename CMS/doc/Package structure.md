@@ -5,15 +5,15 @@ Package structure
 
 There are 4 packages:
 
- * `com.kalaazu.cms`.
- * `com.kalaazu.cms.events`.
- * `com.kalaazu.cms.mvc`.
- * `com.kalaazu.cms.server`.
+* `com.kalaazu.cms`.
+* `com.kalaazu.cms.events`.
+* `com.kalaazu.cms.mvc`.
+* `com.kalaazu.cms.server`.
 
 Two of the are public and can be accessed by other modules:
 
- * `com.kalaazu.cms`.
- * `com.kalaazu.cms.events`.
+* `com.kalaazu.cms`.
+* `com.kalaazu.cms.events`.
 
 CMS
 ===

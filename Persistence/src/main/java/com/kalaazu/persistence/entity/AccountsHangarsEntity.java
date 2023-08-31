@@ -1,8 +1,8 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.HashSet;
@@ -10,7 +10,7 @@ import java.util.HashSet;
 /**
  * Accounts hangars entity.
  * ========================
- *
+ * <p>
  * Entity for the `accounts_hangars` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

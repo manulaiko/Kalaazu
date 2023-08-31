@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * ClansRolesPermissions service.
  * =================================
- *
+ * <p>
  * Service for the ClansRolesPermissions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

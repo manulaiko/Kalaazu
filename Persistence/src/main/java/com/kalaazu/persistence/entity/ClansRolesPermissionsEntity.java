@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Clans roles permissions entity.
  * ===============================
- *
+ * <p>
  * Entity for the `clans_roles_permissions` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

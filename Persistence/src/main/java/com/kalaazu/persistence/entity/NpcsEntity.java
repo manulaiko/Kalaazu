@@ -1,14 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
 
-import javax.persistence.*;
 import java.util.Collection;
 
 /**
  * Npcs entity.
  * ============
- *
+ * <p>
  * Entity for the `npcs` table.
  *
  * @author Manulaiko <manulaiko@gamil.com>

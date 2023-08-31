@@ -17,8 +17,7 @@ CREATE TABLE `accounts_history`
         COMMENT 'Date when the event occurred.',
 
     CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Account''s history events.';
 

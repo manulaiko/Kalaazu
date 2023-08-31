@@ -177,8 +177,8 @@ public abstract class Interpolation {
             }
             return (float) Math.pow((a - 1) * 2, power) / (
                     power % 2 == 0
-                    ? -2
-                    : 2
+                            ? -2
+                            : 2
             ) + 1;
         }
     }
@@ -201,8 +201,8 @@ public abstract class Interpolation {
         public float apply(float a) {
             return (float) Math.pow(a - 1, power) * (
                     power % 2 == 0
-                    ? -1
-                    : 1
+                            ? -1
+                            : 1
             ) + 1;
         }
     }
@@ -215,8 +215,8 @@ public abstract class Interpolation {
         public Exp(float value, float power) {
             this.value = value;
             this.power = power;
-            min        = (float) Math.pow(value, -power);
-            scale      = 1 / (1 - min);
+            min = (float) Math.pow(value, -power);
+            scale = 1 / (1 - min);
         }
 
         public float apply(float a) {
@@ -255,13 +255,13 @@ public abstract class Interpolation {
         final float value, power, scale, bounces;
 
         public Elastic(float value, float power, int bounces, float scale) {
-            this.value   = value;
-            this.power   = power;
-            this.scale   = scale;
+            this.value = value;
+            this.power = power;
+            this.scale = scale;
             this.bounces = bounces * MathUtils.PI * (
                     bounces % 2 == 0
-                    ? 1
-                    : -1
+                            ? 1
+                            : -1
             );
         }
 
@@ -337,7 +337,7 @@ public abstract class Interpolation {
             if (widths.length != heights.length) {
                 throw new IllegalArgumentException("Must be the same number of widths and heights.");
             }
-            this.widths  = widths;
+            this.widths = widths;
             this.heights = heights;
         }
 
@@ -345,8 +345,8 @@ public abstract class Interpolation {
             if (bounces < 2 || bounces > 5) {
                 throw new IllegalArgumentException("bounces cannot be < 2 or > 5: " + bounces);
             }
-            widths     = new float[bounces];
-            heights    = new float[bounces];
+            widths = new float[bounces];
+            heights = new float[bounces];
             heights[0] = 1;
             switch (bounces) {
                 case 2:

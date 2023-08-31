@@ -7,11 +7,11 @@ Here is specified the architecture of the modules and their interactions.
 
 The private server is composed by 4 main modules:
 
- * The emulator.
- * The CMS.
- * The persistence layer.
- * The event system.
- 
+* The emulator.
+* The CMS.
+* The persistence layer.
+* The event system.
+
 The emulator
 ------------
 
@@ -40,9 +40,11 @@ module to update the data.
 The event system
 ----------------
 
-This module provides a scalable architecture on which new modules can be added upon existing others while keeping the integration between all of them.
+This module provides a scalable architecture on which new modules can be added upon existing others while keeping the
+integration between all of them.
 
-The main example is the CMS -> Emulator communication, if the user buys something on the website, the emulator has no apparent way of know what he bough.
+The main example is the CMS -> Emulator communication, if the user buys something on the website, the emulator has no
+apparent way of know what he bough.
 So the common solution would be to send a message from the CMS to the emulator saying what he bough.
 
 The event system would be the pathway to send that message.

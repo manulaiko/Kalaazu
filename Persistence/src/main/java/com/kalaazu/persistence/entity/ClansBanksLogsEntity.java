@@ -1,15 +1,14 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-import lombok.With;
 
-import javax.persistence.*;
 import java.sql.Timestamp;
 
 /**
  * Clans banks logs entity.
  * =========================
- *
+ * <p>
  * Entity for the `clans_banks_logs` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

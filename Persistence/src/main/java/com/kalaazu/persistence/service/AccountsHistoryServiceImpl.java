@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * AccountsHistory service.
  * ===========================
- *
+ * <p>
  * Service for the AccountsHistory entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

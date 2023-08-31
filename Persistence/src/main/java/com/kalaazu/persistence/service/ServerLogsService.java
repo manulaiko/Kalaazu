@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.ServerLogsEntity;
 /**
  * ServerLogs service.
  * ======================
- *
+ * <p>
  * Service for the ServerLogs entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

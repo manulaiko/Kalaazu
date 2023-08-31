@@ -1,21 +1,21 @@
 <template>
   <section class="column is-4 is-offset-4">
     <h3 class="title">Register</h3>
-    <hr class="login-hr" />
+    <hr class="login-hr"/>
     <form>
       <b-field label="Username">
         <b-input v-model="username"></b-input>
       </b-field>
 
       <b-field label="Password">
-        <b-input type="password" password-reveal v-model="password"></b-input>
+        <b-input v-model="password" password-reveal type="password"></b-input>
       </b-field>
 
       <b-field label="Email">
-        <b-input type="email" v-model="email"></b-input>
+        <b-input v-model="email" type="email"></b-input>
       </b-field>
 
-      <b-button type="is-primary" expanded @click="register">
+      <b-button expanded type="is-primary" @click="register">
         Register
       </b-button>
     </form>
@@ -36,7 +36,7 @@ export default {
     /**
      * Performs the register operation.
      */
-    register: function() {
+    register: function () {
       this.$api.external.register(this.username, this.password, this.email);
     }
   }
@@ -45,10 +45,26 @@ export default {
 
 <style lang="sass" scoped>
 section
-  background-color: rgba(255, 255, 255, 0.5)
-  border-radius: 10px
-  padding: 25px
+background-color:
 
-  label
-    color: black
+rgba
+(
+255
+,
+255
+,
+255
+,
+0.5
+)
+border-radius:
+
+10
+px
+padding:
+
+25
+px
+label
+color: black
 </style>

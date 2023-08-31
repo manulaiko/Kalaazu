@@ -1,13 +1,12 @@
 package com.kalaazu.persistence.entity;
 
+import jakarta.persistence.*;
 import lombok.Data;
-
-import javax.persistence.*;
 
 /**
  * Items entity.
  * =============
- *
+ * <p>
  * Entity for the `items` table.
  *
  * @author Manulaiko <manulaiko@gmail.com>

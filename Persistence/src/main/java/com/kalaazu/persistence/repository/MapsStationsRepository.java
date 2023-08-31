@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * MapsStations repository.
  * ========================
- *
+ * <p>
  * Repository for the MapsStations entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

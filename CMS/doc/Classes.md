@@ -5,9 +5,9 @@ Classes
 
 There are 3 main classes:
 
- * `com.kalaazu.cms.CMS`.
- * `com.kalaazu.cms.server.Server`.
- * `com.kalaazu.cms.mvc.Triad`.
+* `com.kalaazu.cms.CMS`.
+* `com.kalaazu.cms.server.Server`.
+* `com.kalaazu.cms.mvc.Triad`.
 
 CMS
 ---
@@ -16,7 +16,7 @@ It's the package facade, it provides the necessary functionality.
 
 The class `com.kalaazu.cms.CMSBuilder` is used to build instances.
 
-It will register the `com.kalaazu.cms.events.Listener` to the event 
+It will register the `com.kalaazu.cms.events.Listener` to the event
 system and start the HTTP server.
 
 Server

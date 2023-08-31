@@ -5,7 +5,7 @@ import com.kalaazu.persistence.entity.GalaxygatesProbabilitiesEntity;
 /**
  * GalaxygatesProbabilities service.
  * ====================================
- *
+ * <p>
  * Service for the GalaxygatesProbabilities entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

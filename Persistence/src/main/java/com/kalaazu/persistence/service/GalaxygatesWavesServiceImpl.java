@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * GalaxygatesWaves service.
  * ============================
- *
+ * <p>
  * Service for the GalaxygatesWaves entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

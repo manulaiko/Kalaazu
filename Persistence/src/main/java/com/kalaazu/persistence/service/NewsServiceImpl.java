@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * News service.
  * ================
- *
+ * <p>
  * Service for the News entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

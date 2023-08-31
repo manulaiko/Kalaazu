@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Factions service.
  * ====================
- *
+ * <p>
  * Service for the Factions entity.
  *
  * @author Manulaiko <manulaiko@gmail.com>

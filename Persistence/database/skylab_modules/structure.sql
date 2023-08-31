@@ -26,8 +26,7 @@ CREATE TABLE `skylab_modules`
         COMMENT 'Energy consumption base.',
 
     CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Different skylab modules.';
 

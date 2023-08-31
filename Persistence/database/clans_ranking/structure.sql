@@ -14,8 +14,7 @@ CREATE TABLE `clans_ranking`
         COMMENT 'Biggest amount of rank points ever achieved.',
 
     CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Clan ranking.';
 

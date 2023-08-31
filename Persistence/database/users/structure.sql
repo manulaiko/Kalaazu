@@ -8,7 +8,7 @@ CREATE TABLE `users`
         COMMENT 'Primary Key.',
     `date`                    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Date when the user registered.',
-    `invitation_codes_id`     smallint     NULL     DEFAULT NULL
+    `invitation_codes_id`     smallint NULL DEFAULT NULL
         COMMENT 'Invitation code used to register',
     `name`                    varchar(255) NOT NULL DEFAULT ''
         COMMENT 'User name.',
@@ -18,14 +18,13 @@ CREATE TABLE `users`
         COMMENT 'User email.',
     `email_verification_code` varchar(32)  NOT NULL DEFAULT ''
         COMMENT 'Email verification code.',
-    `email_verification_date` timestamp    NULL     DEFAULT NULL
+    `email_verification_date` timestamp NULL DEFAULT NULL
         COMMENT 'Date when the user verified its email.',
     `ip`                      varchar(45)  NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'Registration IP.',
 
     CONSTRAINT `users_pk` PRIMARY KEY (`id`)
-)
-    ENGINE InnoDB
+) ENGINE InnoDB
     CHARACTER SET utf8
     COMMENT 'Contains the login information of the registered users.';
 
