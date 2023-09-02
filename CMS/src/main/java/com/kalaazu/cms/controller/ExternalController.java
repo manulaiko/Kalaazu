@@ -48,6 +48,7 @@ public class ExternalController {
             data.setAccount(this.buildAccount(account));
 
             response.setStatus(Response.Status.OK);
+            response.setMessage("Login successful!");
             response.setData(data);
         } catch (Exception e) {
             response.setStatus(Response.Status.ERROR);
@@ -74,6 +75,7 @@ public class ExternalController {
             data.setAccount(this.buildAccount(account));
 
             response.setStatus(Response.Status.OK);
+            response.setMessage("Account created!");
             response.setData(data);
         } catch (Exception e) {
             response.setStatus(Response.Status.ERROR);
