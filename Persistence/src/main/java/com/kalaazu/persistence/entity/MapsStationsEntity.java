@@ -24,11 +24,11 @@ public class MapsStationsEntity {
     @Column(name = "position", nullable = false)
     private long position = 0;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "maps_id", referencedColumnName = "id")
     private MapsEntity mapsByMapsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 }

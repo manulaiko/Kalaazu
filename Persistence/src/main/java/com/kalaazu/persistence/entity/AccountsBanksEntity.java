@@ -38,10 +38,10 @@ public class AccountsBanksEntity {
     @Column(name = "tax_uridium", nullable = false)
     private byte taxUridium = 0;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @OneToMany(mappedBy = "accountsBanksByAccountsBanksId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "accountsBanksByAccountsBanksId", fetch = FetchType.EAGER)
     private Collection<AccountsBanksLogsEntity> accountsBanksLogs;
 }

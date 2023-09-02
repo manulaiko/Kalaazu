@@ -2,12 +2,9 @@
 -- 
 -- @author Manulaiko <manulaiko@gmail.com>
 
-DROP
-DATABASE IF EXISTS `kalaazu`;
-CREATE
-DATABASE `kalaazu`;
-USE
-`kalaazu`;
+DROP DATABASE IF EXISTS `kalaazu`;
+CREATE DATABASE `kalaazu`;
+USE `kalaazu`;
 
 -- Accounts table.
 --
@@ -4205,6 +4202,7 @@ VALUES (286, 'Epsilon Part', 10, 'Epsilon gate part.', 0, 0, 0, 0, 0, 0),
        (289, 'Lambda Part', 10, 'Lambda gate part.', 0, 0, 0, 0, 0, 0),
        (290, 'Hades Part', 10, 'Hades gate part.', 0, 0, 0, 0, 0, 0),
        (291, 'Kuiper Part', 10, 'Kuiper gate part.', 0, 0, 0, 0, 0, 0);
+
 -- Key-Value table.
 --
 -- Contains simple Key -> Value entries.
@@ -9054,6 +9052,7 @@ ALTER TABLE `moderators_logs`
 ALTER TABLE `moderators_roles`
     ADD CONSTRAINT `moderators_roles_moderators_roles` FOREIGN KEY `moderators_roles_moderators_roles` (`moderators_roles_id`)
     REFERENCES `moderators_roles` (`id`);
+
 -- Relations for the `moderators_roles_permissions` table.
 --
 -- A role permission belongs to a moderator.
@@ -9284,3 +9283,4 @@ ALTER TABLE `vouchers_redeem_logs`
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
     REFERENCES `accounts` (`id`);
+

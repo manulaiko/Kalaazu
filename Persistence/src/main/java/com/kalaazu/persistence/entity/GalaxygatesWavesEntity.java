@@ -30,10 +30,10 @@ public class GalaxygatesWavesEntity {
     @Column(name = "npcs", nullable = false)
     private byte npcs = 5;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
 
-    @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId", fetch = FetchType.EAGER)
     private Collection<GalaxygatesStagesEntity> galaxygatesStages;
 }

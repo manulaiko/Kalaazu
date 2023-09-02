@@ -30,10 +30,10 @@ public class ModeratorsRolesEntity {
     @Column(name = "priority", nullable = false)
     private byte priority = 1;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id")
     private ModeratorsRolesEntity moderatorsRolesByModeratorsRolesId;
 
-    @OneToMany(mappedBy = "moderatorsRolesByModeratorsRolesId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "moderatorsRolesByModeratorsRolesId", fetch = FetchType.EAGER)
     private Collection<ModeratorsRolesPermissionsEntity> moderatorsRolesPermissions;
 }

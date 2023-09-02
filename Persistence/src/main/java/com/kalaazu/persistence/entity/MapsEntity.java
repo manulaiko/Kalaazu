@@ -38,16 +38,16 @@ public class MapsEntity {
     @Column(name = "limits", nullable = false)
     private long limits = 89335319769600L;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 
-    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsNpcsEntity> mapsNpcs;
 
-    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsPortalsEntity> mapsPortals;
 
-    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsStationsEntity> mapsStations;
 }

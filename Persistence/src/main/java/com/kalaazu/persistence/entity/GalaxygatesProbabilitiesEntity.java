@@ -29,7 +29,7 @@ public class GalaxygatesProbabilitiesEntity {
     @Column(name = "probability", nullable = false, precision = 2)
     private double probability = 100;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "galaxygates_id", referencedColumnName = "id", nullable = false)
     private GalaxygatesEntity galaxygatesByGalaxygatesId;
 }

@@ -24,7 +24,7 @@ public class GalaxygatesSpawnsEntity {
     @Column(name = "amount", nullable = false)
     private byte amount = 20;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "npcs_id", referencedColumnName = "id", nullable = false)
     private NpcsEntity npcsByNpcsId;
 }

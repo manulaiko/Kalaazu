@@ -30,14 +30,14 @@ public class ClansRolesEntity {
     @Column(name = "priority", nullable = false)
     private byte priority = 1;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 
-    @OneToMany(mappedBy = "clansRolesByClansRolesId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansRolesByClansRolesId", fetch = FetchType.EAGER)
     private Collection<ClansRolesPermissionsEntity> clansRolesPermissions;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "clans_roles_id", referencedColumnName = "id")
     private ClansRolesEntity clansRolesByClansRolesId;
 }

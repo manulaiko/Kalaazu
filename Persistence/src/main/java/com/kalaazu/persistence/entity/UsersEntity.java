@@ -2,7 +2,7 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
-
+import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.HashSet;
@@ -26,6 +26,7 @@ public class UsersEntity {
 
     @Basic
     @Column(name = "date", nullable = false)
+    @CreationTimestamp
     private Timestamp date;
 
     @Basic
@@ -52,11 +53,11 @@ public class UsersEntity {
     @Column(name = "ip", nullable = false, length = 45)
     private String ip = "0.0.0.0";
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id")
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
 
-    @OneToMany(mappedBy = "usersByUsersId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "usersByUsersId", fetch = FetchType.EAGER)
     private Collection<AccountsEntity> accounts = new HashSet<>();
 
     /**

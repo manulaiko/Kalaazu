@@ -2,6 +2,7 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
@@ -24,6 +25,7 @@ public class ClansBanksLogsEntity {
 
     @Basic
     @Column(name = "date", nullable = false)
+    @CreationTimestamp
     private Timestamp date;
 
     @Basic
@@ -40,15 +42,15 @@ public class ClansBanksLogsEntity {
     @Enumerated(EnumType.ORDINAL)
     private CurrencyType currency = CurrencyType.CREDITS;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "clans_banks_id", referencedColumnName = "id", nullable = false)
     private ClansBanksEntity clansBanksByClansBanksId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByToAccountsId;
 }

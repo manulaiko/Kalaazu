@@ -38,7 +38,7 @@ public class AccountsConfigurationsEntity {
     @Column(name = "damage", nullable = false)
     private int damage = 0;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id", nullable = false)
     private AccountsHangarsEntity accountsHangarsByAccountsHangarsId;
 }

@@ -20,19 +20,19 @@ public class AccountsConfigurationsAccountsItemsEntity {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id", nullable = false)
     private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_items_id", referencedColumnName = "id")
     private AccountsItemsEntity accountsItemsByAccountsItemsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_drones_id", referencedColumnName = "id")
     private AccountsDronesEntity accountsDronesByAccountsDronesId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_pets_id", referencedColumnName = "id")
     private AccountsPetsEntity accountsPetsByAccountsPetsId;
 }

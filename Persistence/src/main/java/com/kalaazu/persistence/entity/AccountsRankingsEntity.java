@@ -44,7 +44,7 @@ public class AccountsRankingsEntity {
     @Column(name = "destroyed_radiation", nullable = false)
     private short destroyedRadiation = 0;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 }

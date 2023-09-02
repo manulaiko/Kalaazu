@@ -54,6 +54,6 @@ public class TechfactoryItemsEntity {
     @Column(name = "instant_production", nullable = false)
     private short instantProduction;
 
-    @OneToMany(mappedBy = "techfactoryItemsByTechfactoryItemsId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "techfactoryItemsByTechfactoryItemsId", fetch = FetchType.EAGER)
     private Collection<TechfactoryCostsEntity> techfactoryCosts;
 }

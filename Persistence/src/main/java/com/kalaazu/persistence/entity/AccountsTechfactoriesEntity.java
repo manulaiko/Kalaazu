@@ -32,7 +32,7 @@ public class AccountsTechfactoriesEntity {
     @Column(name = "slots", nullable = false)
     private byte slots = 1;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 }

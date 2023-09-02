@@ -2,6 +2,7 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
@@ -28,13 +29,14 @@ public class AccountsTechfactoryItemsEntity {
 
     @Basic
     @Column(name = "date")
+    @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "techfactory_items_id", referencedColumnName = "id", nullable = false)
     private TechfactoryItemsEntity techfactoryItemsByTechfactoryItemsId;
 }

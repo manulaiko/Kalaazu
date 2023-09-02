@@ -20,15 +20,15 @@ public class AccountsSkillsEntity {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "skilltree_skills_id", referencedColumnName = "id", nullable = false)
     private SkilltreeSkillsEntity skilltreeSkillsBySkilltreeSkillsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "skilltree_levels_id", referencedColumnName = "id", nullable = false)
     private SkilltreeLevelsEntity skilltreeLevelsBySkilltreeLevelsId;
 }

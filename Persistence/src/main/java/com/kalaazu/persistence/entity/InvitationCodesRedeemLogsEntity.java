@@ -2,6 +2,7 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
@@ -28,9 +29,10 @@ public class InvitationCodesRedeemLogsEntity {
 
     @Basic
     @Column(name = "date", nullable = false)
+    @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id", nullable = false)
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
 }

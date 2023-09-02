@@ -79,7 +79,7 @@ public class PolicyServer extends Thread {
 
         @Override
         public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
-            log.info("Received policy server connection!");
+            log.debug("Received policy server connection!");
 
             super.channelRegistered(ctx);
         }
@@ -94,7 +94,7 @@ public class PolicyServer extends Thread {
          */
         @Override
         protected void channelRead0(ChannelHandlerContext ctx, String msg) throws Exception {
-            log.info("Received policy server request! {}", msg);
+            log.debug("Received policy server request! {}", msg);
 
             ctx.channel().writeAndFlush(PolicyServer.POLICY_RESPONSE);
             ctx.channel().close().sync();

@@ -43,32 +43,32 @@ public class ClansEntity {
     @Enumerated(EnumType.ORDINAL)
     private ClanStatus status = ClanStatus.RECRUITING;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<AccountsEntity> accounts;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansBanksEntity> clansBanks;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansBattlestationsEntity> clansBattlestations;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansMessagesEntity> clansMessages;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansNewsEntity> clansNews;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansRankingEntity> clansRankings;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
     private Collection<ClansRankingEntity> clansRanking;
 }

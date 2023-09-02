@@ -2,6 +2,7 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
 
@@ -24,6 +25,7 @@ public class ClansDiplomaciesEntity {
 
     @Basic
     @Column(name = "date", nullable = false)
+    @CreationTimestamp
     private Timestamp date;
 
     @Basic
@@ -40,11 +42,11 @@ public class ClansDiplomaciesEntity {
     @Enumerated(EnumType.ORDINAL)
     private DiplomacyType type = DiplomacyType.WAR;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "from_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByFromClansId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "to_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByToClansId;
 }

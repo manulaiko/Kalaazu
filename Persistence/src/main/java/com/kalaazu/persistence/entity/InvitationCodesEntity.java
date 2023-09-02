@@ -30,6 +30,6 @@ public class InvitationCodesEntity {
     @Column(name = "max", nullable = false)
     private byte max = 1;
 
-    @OneToMany(mappedBy = "invitationCodesByInvitationCodesId", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "invitationCodesByInvitationCodesId", fetch = FetchType.EAGER)
     private Collection<InvitationCodesRedeemLogsEntity> invitationCodesRedeemLogs;
 }
