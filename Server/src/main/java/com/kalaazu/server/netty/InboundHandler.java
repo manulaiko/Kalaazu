@@ -9,6 +9,11 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 /**
+ * Inbound handler.
+ * ================
+ *
+ * Process the incoming channel messages and connections.
+ *
  * @author manulaiko <manulaiko@gmail.com>
  */
 @Slf4j

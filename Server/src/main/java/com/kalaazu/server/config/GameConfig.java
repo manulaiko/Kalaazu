@@ -1,6 +1,6 @@
 package com.kalaazu.server.config;
 
-import com.kalaazu.server.event.SendPacketEvent;
+import com.kalaazu.server.netty.event.SendPacketEvent;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
 import lombok.RequiredArgsConstructor;

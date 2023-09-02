@@ -15,6 +15,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
+ * Socket server.
+ * ==============
+ *
+ * Listens for connections to the game socket server.
+ *
  * @author manulaiko <manulaiko@gmail.com>
  */
 @RequiredArgsConstructor
