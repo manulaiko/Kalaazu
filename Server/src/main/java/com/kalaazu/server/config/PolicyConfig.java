@@ -13,7 +13,7 @@ import org.springframework.messaging.MessageChannel;
 /**
  * Policy config.
  * ==============
- *
+ * <p>
  * Configuration beams for the policy socket server.
  *
  * @author manulaiko <manulaiko@gmail.com>
@@ -40,7 +40,7 @@ public class PolicyConfig {
 
     @Bean
     public TcpInboundGateway policyServerGateway(AbstractServerConnectionFactory policyServerConnectionFactory,
-                                            MessageChannel policyServerChannel) {
+                                                 MessageChannel policyServerChannel) {
         var tcpInboundGateway = new TcpInboundGateway();
         tcpInboundGateway.setConnectionFactory(policyServerConnectionFactory);
         tcpInboundGateway.setRequestChannel(policyServerChannel);

@@ -1,13 +1,8 @@
 package com.kalaazu.server.config;
 
-import com.kalaazu.server.netty.GameSession;
-import io.netty.channel.ChannelId;
 import io.netty.channel.nio.NioEventLoopGroup;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * Server config.
@@ -19,11 +14,6 @@ import java.util.concurrent.ConcurrentHashMap;
  */
 @Configuration
 public class ServerConfig {
-    @Bean
-    public Map<ChannelId, GameSession> gameConnections() {
-        return new ConcurrentHashMap<>();
-    }
-
     @Bean
     public NioEventLoopGroup bossGroup() {
         return new NioEventLoopGroup();

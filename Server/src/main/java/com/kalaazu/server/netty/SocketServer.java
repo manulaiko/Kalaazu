@@ -7,14 +7,11 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LineBasedFrameDecoder;
-import io.netty.handler.codec.string.StringDecoder;
-import io.netty.handler.codec.string.StringEncoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -28,9 +25,8 @@ public class SocketServer extends Thread {
     private final NioEventLoopGroup workerGroup;
     private final InboundHandler inboundHandler;
 
-
     @Value("${app.port.server}")
-    private int port;
+    private int port = 8080;
 
     public void run() {
         log.info("Starting emulator server on port {}...", port);
@@ -44,10 +40,7 @@ public class SocketServer extends Thread {
                         public void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast(
                                     new LineBasedFrameDecoder(1024),
-                                    new StringDecoder(),
                                     new PacketSerializer(),
-                                    new StringEncoder(),
-                                    new PacketDeserializer(),
                                     inboundHandler
                             );
                         }

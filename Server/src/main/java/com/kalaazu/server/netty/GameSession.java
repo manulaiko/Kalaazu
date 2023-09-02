@@ -1,26 +1,14 @@
 package com.kalaazu.server.netty;
 
-import com.kalaazu.server.util.Packet;
-import io.netty.channel.Channel;
+import io.netty.channel.ChannelId;
 import lombok.AllArgsConstructor;
-import lombok.SneakyThrows;
-
-import java.util.List;
+import lombok.Data;
 
 /**
  * @author manulaiko <manulaiko@gmail.com>
  */
 @AllArgsConstructor
+@Data
 public class GameSession {
-    private final Channel channel;
-
-    @SneakyThrows
-    public void send(Packet packet) {
-        channel.writeAndFlush(packet).sync();
-    }
-
-    public void send(List<Packet> packet) {
-        packet.forEach(channel::write);
-        channel.flush();
-    }
+    private final ChannelId channelId;
 }

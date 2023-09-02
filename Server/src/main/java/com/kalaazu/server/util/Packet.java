@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Game packet
  * ===========
- *
+ * <p>
  * Represents a packet sent/received between the game server and the game client.
  *
  * @author manulaiko <manulaiko@gmail.com>
@@ -76,7 +76,7 @@ public class Packet {
 
     /**
      * Jumps index to idx.
-     *
+     * <p>
      * If the given index is bigger than current argument length do nothing.
      *
      * @param idx Index to jump to.
