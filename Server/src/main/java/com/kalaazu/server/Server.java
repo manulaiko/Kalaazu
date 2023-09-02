@@ -1,6 +1,7 @@
 package com.kalaazu.server;
 
-import com.kalaazu.server.netty.SocketServer;
+import com.kalaazu.server.netty.GameServer;
+import com.kalaazu.server.netty.PolicyServer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -12,7 +13,8 @@ import org.springframework.stereotype.Component;
 @Component
 @RequiredArgsConstructor
 public class Server implements ApplicationListener<ApplicationReadyEvent> {
-    private final SocketServer socketServer;
+    private final GameServer gameServer;
+    private final PolicyServer policyServer;
 
     /**
      * Handle an application event.
@@ -21,6 +23,7 @@ public class Server implements ApplicationListener<ApplicationReadyEvent> {
      */
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
-        socketServer.start();
+        gameServer.start();
+        policyServer.start();
     }
 }

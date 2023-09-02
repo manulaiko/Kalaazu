@@ -25,13 +25,13 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 @Slf4j
-public class SocketServer extends Thread {
+public class GameServer extends Thread {
     private final NioEventLoopGroup bossGroup;
     private final NioEventLoopGroup workerGroup;
     private final InboundHandler inboundHandler;
 
     @Value("${app.port.server}")
-    private int port = 8080;
+    private int port;
 
     public void run() {
         log.info("Starting emulator server on port {}...", port);
