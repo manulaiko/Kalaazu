@@ -10,6 +10,8 @@ spring:
     show-sql: true
 
 app:
+  game:
+    printPackets: true
   port:
     server: 8080
     policy: 843

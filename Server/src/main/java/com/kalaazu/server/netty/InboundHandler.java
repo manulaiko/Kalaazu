@@ -27,6 +27,7 @@ public class InboundHandler extends SimpleChannelInboundHandler<Packet> {
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
         // Check for possible IP Bans here.
         var id = ctx.channel().id();
+        log.info("Connection received {}", id);
 
         channelManager.startGameSession(new GameSession(id), ctx.channel());
 
@@ -35,6 +36,7 @@ public class InboundHandler extends SimpleChannelInboundHandler<Packet> {
 
     @Override
     public void channelUnregistered(ChannelHandlerContext ctx) throws Exception {
+        log.info("Connection closed {}", ctx.channel().id());
         channelManager.endGameSession(ctx.channel().id());
 
         super.channelUnregistered(ctx);

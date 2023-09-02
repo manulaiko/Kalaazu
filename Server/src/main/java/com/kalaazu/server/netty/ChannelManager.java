@@ -1,9 +1,6 @@
 package com.kalaazu.server.netty;
 
-import com.kalaazu.server.netty.event.BroadcastPacketEvent;
-import com.kalaazu.server.netty.event.BroadcastPacketsEvent;
-import com.kalaazu.server.netty.event.SendPacketEvent;
-import com.kalaazu.server.netty.event.SendPacketsEvent;
+import com.kalaazu.server.netty.event.*;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
 import io.netty.channel.Channel;
@@ -13,6 +10,7 @@ import io.netty.channel.group.DefaultChannelGroup;
 import io.netty.util.concurrent.GlobalEventExecutor;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Component;
 
@@ -23,7 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 /**
  * Channel manager.
  * ================
- *
+ * <p>
  * Manages the actions related to channels.
  *
  * @author manulaiko <manulaiko@gmail.com>
@@ -35,7 +33,10 @@ public class ChannelManager {
     private final ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
     private final Map<ChannelId, GameSession> sessions = new ConcurrentHashMap<>();
 
-    private final Map<String, Handler> handlers;
+    private final List<Handler> packetHandlers;
+
+    @Value("${app.game.printPackets}")
+    private boolean printPackets;
 
     private void send(ChannelId channelId, Packet packet) {
         var channel = channels.find(channelId);
@@ -72,12 +73,13 @@ public class ChannelManager {
 
     public void endGameSession(ChannelId channelId) {
         sessions.remove(channelId);
+        channels.close(channel -> channel.id().equals(channelId));
     }
 
     /**
      * Process the incoming packet.
      *
-     * @param packet Received packet.
+     * @param packet    Received packet.
      * @param channelId Channel that received the packet.
      */
     public void processPacket(Packet packet, ChannelId channelId) {
@@ -88,9 +90,28 @@ public class ChannelManager {
             return;
         }
 
-        handlers.getOrDefault(packet.readString(), (p, gs) -> log.info("Received packet with no handler: {}", p))
+        if (printPackets) {
+            log.info("Packet received: {}", packet);
+        }
+
+        packetHandlers.stream()
+                .filter(p -> p.canHandle(packet))
+                .findFirst()
+                .orElse(new Handler() {
+                    @Override
+                    public boolean canHandle(Packet packet) {
+                        return true;
+                    }
+
+                    @Override
+                    public void handle(Packet packet, GameSession session) {
+                        log.info("Received packet with no handler: {}", packet);
+                    }
+                })
                 .handle(packet, connection);
     }
+
+    // Event Handlers //
 
     @EventListener
     public void handleSendPacket(SendPacketEvent event) {
@@ -110,5 +131,21 @@ public class ChannelManager {
     @EventListener
     public void handleBroadcastPacket(BroadcastPacketsEvent event) {
         this.send(event.getPackets());
+    }
+
+    @EventListener
+    public void handleEndGameSessionIf(EndGameSessionIfEvent event) {
+        var condition = event.getCondition();
+
+        sessions.entrySet()
+                .stream()
+                .filter(condition::apply)
+                .findFirst()
+                .ifPresent((e) -> endGameSession(e.getKey()));
+    }
+
+    @EventListener
+    public void handleEndGameSession(EndGameSessionEvent event) {
+        this.endGameSession(event.getSession());
     }
 }
