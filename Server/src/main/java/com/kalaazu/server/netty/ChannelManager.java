@@ -41,6 +41,10 @@ public class ChannelManager {
     private void send(ChannelId channelId, Packet packet) {
         var channel = channels.find(channelId);
         if (channel != null) {
+            if (printPackets) {
+                log.info("Packet sent: >>>>> {}", packet);
+            }
+
             channel.writeAndFlush(packet);
         }
     }
@@ -48,8 +52,11 @@ public class ChannelManager {
     private void send(ChannelId channelId, List<Packet> packet) {
         var channel = channels.find(channelId);
         if (channel != null) {
-            packet.forEach(channel::write);
-            channel.flush();
+            if (printPackets) {
+                packet.forEach(p -> log.info("Packet sent: <<<< {}", p));
+            }
+
+            packet.forEach(channel::writeAndFlush);
         }
     }
 
@@ -91,7 +98,7 @@ public class ChannelManager {
         }
 
         if (printPackets) {
-            log.info("Packet received: {}", packet);
+            log.info("Packet received: <<<<< {}", packet);
         }
 
         packetHandlers.stream()

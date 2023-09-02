@@ -351,7 +351,7 @@ public class ServerCommands {
     public static final String SECONDARY_WEAPON_INFO = "3";
     public static final String DESTROY_SHIP = "K";
     public static final String PLAY_PORTAL_ANIMATION = "U";
-    public static final String PORTAL_JUMP = "i";
+    public static final String MAP_INIT = "i";
     public static final String ERROR = "ERR";
     public static final int NO_HITPOINTS = 1;
     public static final int NOT_LOGGED_IN = 2;

@@ -15,12 +15,18 @@ import java.util.List;
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-@NoArgsConstructor
 public class Packet {
     private List<String> arguments = new ArrayList<>();
 
     @Getter
     private int index;
+
+    /**
+     * Server sent packet constructor, initializes the packet with 0
+     */
+    public Packet() {
+        this.write("0");
+    }
 
     public Packet(Object... arguments) {
         this.write(arguments);
