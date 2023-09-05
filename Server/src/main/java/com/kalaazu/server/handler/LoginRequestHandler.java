@@ -7,6 +7,7 @@ import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
 import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
 import com.kalaazu.server.netty.event.SendPacketsEvent;
+import com.kalaazu.server.packet.in.LoginRequest;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
 import com.kalaazu.server.util.ServerCommands;
@@ -31,24 +32,21 @@ import java.util.ArrayList;
 @Component
 @Slf4j
 @RequiredArgsConstructor
-public class LoginRequestHandler implements Handler {
+public class LoginRequestHandler extends Handler<LoginRequest> {
     @Getter
-    private final short id = 10996;
+    private final short id = LoginRequest.ID;
+
+    @Getter
+    private final Class<LoginRequest> clazz = LoginRequest.class;
 
     private final UsersService users;
     private final ApplicationContext ctx;
 
     @Override
-    public void handle(Packet packet, GameSession session) {
-        var instanceId = packet.readInt();
-        instanceId = (instanceId << 8) | (instanceId >> 24);
-
-        var userId = packet.readInt();
-        userId = (userId << 8) | (userId >> 24);
-
-        var factionId = packet.readShort();
-        var sessionId = packet.readString();
-        var version = packet.readString();
+    public void handle(LoginRequest packet, GameSession session) {
+        var userId = packet.getUserId();
+        var sessionId = packet.getSessionId();
+        var factionId = packet.getFactionId();
 
         var loginPackets = new ArrayList<Packet>();
 

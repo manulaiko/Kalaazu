@@ -33,7 +33,7 @@ public class ChannelManager {
     private final ChannelGroup channels = new DefaultChannelGroup(GlobalEventExecutor.INSTANCE);
     private final Map<ChannelId, GameSession> sessions = new ConcurrentHashMap<>();
 
-    private final List<Handler> packetHandlers;
+    private final List<Handler<?>> packetHandlers;
 
     @Value("${app.game.printPackets}")
     private boolean printPackets;
@@ -106,18 +106,10 @@ public class ChannelManager {
         packetHandlers.stream()
                 .filter(p -> p.getId() == packetId)
                 .findFirst()
-                .orElse(new Handler() {
-                    @Override
-                    public short getId() {
-                        return 0;
-                    }
-
-                    @Override
-                    public void handle(Packet packet, GameSession session) {
-                        log.info("Received packet with no handler: {}", packet);
-                    }
-                })
-                .handle(packet, connection);
+                .ifPresentOrElse(
+                        (h) -> h.handle(packet, connection),
+                        () -> log.info("Received packet with no handler: {}", packetId)
+                );
     }
 
     // Event Handlers //
