@@ -2,7 +2,6 @@ package com.kalaazu.server.handler;
 
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.AccountsEntity;
-import com.kalaazu.persistence.entity.AccountsSettingsEntity;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
@@ -19,7 +18,6 @@ import org.springframework.stereotype.Component;
 import java.sql.Timestamp;
 import java.time.Instant;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 /**
  * Login request handler.
@@ -129,7 +127,58 @@ public class LoginRequestHandler implements Handler {
             }
         }
 
-        return new CalculatedItems(exp, hon, cre, uri, jpt, cargo);
+        cargo = prometium + endurium + terbium + prometid + duranium + promerium + seprom + palladium;
+
+        return new CalculatedItems(
+                exp,
+                hon,
+                cre,
+                uri,
+                jpt,
+                prometium,
+                endurium,
+                terbium,
+                prometid,
+                duranium,
+                promerium,
+                xenomit,
+                seprom,
+                palladium,
+                cargo,
+                lbc10,
+                mvb25,
+                mcb50,
+                ucb100,
+                sab50,
+                rsb75,
+                cbo100,
+                job100,
+                r310,
+                plt2026,
+                plt2021,
+                plt3030,
+                dcr250,
+                bdr1211,
+                wizx,
+                pld8,
+                cbr100,
+                eco10,
+                hstrm01,
+                sar01,
+                sar02,
+                ubr100,
+                shg01,
+                shg02,
+                bdr1212,
+                acm01,
+                ddm01,
+                empm01,
+                sabm01,
+                rb02,
+                rbe01,
+                rbe02,
+                sl01
+        );
     }
 
     @Override
@@ -274,7 +323,60 @@ public class LoginRequestHandler implements Handler {
             long cre,
             long uri,
             long jpt,
-            long cargo
+
+            // Cargo
+            long prometium,
+            long endurium,
+            long terbium,
+            long prometid,
+            long duranium,
+            long promerium,
+            long xenomit,
+            long seprom,
+            long palladium,
+
+            long cargo,
+
+            // Ammo
+            long lbc10,
+            long mvb25,
+            long mcb50,
+            long ucb100,
+            long sab50,
+            long rsb75,
+            long cbo100,
+            long job100,
+
+            // Rockets
+            long r310,
+            long plt2026,
+            long plt2021,
+            long plt3030,
+            long dcr250,
+            long bdr1211,
+            long wizx,
+            long pld8,
+
+            // Hellstorm
+            long cbr100,
+            long eco10,
+            long hstrm01,
+            long sar01,
+            long sar02,
+            long ubr100,
+            long shg01,
+            long shg02,
+            long bdr1212,
+
+            // Mines
+            long acm01,
+            long ddm01,
+            long empm01,
+            long sabm01,
+            long rb02,
+            long rbe01,
+            long rbe02,
+            long sl01
     ) {
     }
 }
