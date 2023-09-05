@@ -1,12 +1,12 @@
 package com.kalaazu.server.handler;
 
 import com.kalaazu.math.Vector2;
-import com.kalaazu.persistence.entity.AccountsItemsEntity;
+import com.kalaazu.persistence.entity.AccountsEntity;
+import com.kalaazu.persistence.entity.AccountsSettingsEntity;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
 import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
-import com.kalaazu.server.netty.event.SendPacketEvent;
 import com.kalaazu.server.netty.event.SendPacketsEvent;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
@@ -18,7 +18,8 @@ import org.springframework.stereotype.Component;
 
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.Arrays;
+import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * Login request handler.
@@ -35,6 +36,102 @@ public class LoginRequestHandler implements Handler {
     private final UsersService users;
     private final ApplicationContext ctx;
 
+    private static CalculatedItems getCalculatedItems(AccountsEntity account) {
+        // Stats
+        var exp = 0L;
+        var hon = 0L;
+        var cre = 0L;
+        var uri = 0L;
+        var jpt = 0L;
+
+        // Cargo
+        var prometium = 0L;
+        var endurium = 0L;
+        var terbium = 0L;
+        var prometid = 0L;
+        var duranium = 0L;
+        var promerium = 0L;
+        var xenomit = 0L;
+        var seprom = 0L;
+        var palladium = 0L;
+
+        var cargo = 0L;
+
+        // Ammo
+        var lbc10 = 0L;
+        var mvb25 = 0L;
+        var mcb50 = 0L;
+        var ucb100 = 0L;
+        var sab50 = 0L;
+        var rsb75 = 0L;
+        var cbo100 = 0L;
+        var job100 = 0L;
+
+        var ammo = 0L;
+
+        // Rockets
+        var r310 = 0L;
+        var plt2026 = 0L;
+        var plt2021 = 0L;
+        var plt3030 = 0L;
+        var dcr250 = 0L;
+        var bdr1211 = 0L;
+        var wizx = 0L;
+        var pld8 = 0L;
+
+        var rockets = 0L;
+
+        // Hellstorm
+        var cbr100 = 0L;
+        var eco10 = 0L;
+        var hstrm01 = 0L;
+        var sar01 = 0L;
+        var sar02 = 0L;
+        var ubr100 = 0L;
+        var shg01 = 0L;
+        var shg02 = 0L;
+        var bdr1212 = 0L;
+
+        var hellstorm = 0;
+
+        // Mines
+        var acm01 = 0L;
+        var ddm01 = 0L;
+        var empm01 = 0L;
+        var sabm01 = 0L;
+        var rb02 = 0L;
+        var rbe01 = 0L;
+        var rbe02 = 0L;
+        var sl01 = 0L;
+
+        var mines = 0L;
+
+        for (var item : account.getAccountsItems()) {
+            var i = item.getItemsByItemsId();
+            var amount = item.getAmount();
+
+            switch (i.getId()) {
+                case 1 -> cre = amount;
+                case 2 -> uri = amount;
+                case 3 -> jpt = amount;
+                case 4 -> exp = amount;
+                case 5 -> hon = amount;
+
+                case 236 -> prometium = amount;
+                case 237 -> endurium = amount;
+                case 238 -> terbium = amount;
+                case 239 -> prometid = amount;
+                case 240 -> duranium = amount;
+                case 241 -> xenomit = amount;
+                case 242 -> promerium = amount;
+                case 243 -> seprom = amount;
+                case 244 -> palladium = amount;
+            }
+        }
+
+        return new CalculatedItems(exp, hon, cre, uri, jpt);
+    }
+
     @Override
     public boolean canHandle(Packet packet) {
         return packet.readString().equalsIgnoreCase(ServerCommands.LOGIN_REQUEST);
@@ -44,6 +141,8 @@ public class LoginRequestHandler implements Handler {
     public void handle(Packet packet, GameSession session) {
         var userId = packet.readInt();
         var sessionId = packet.readString();
+
+        var loginPackets = new ArrayList<Packet>();
 
         log.info("Incoming login request from userID {} with sessionID {}", userId, sessionId);
 
@@ -84,24 +183,7 @@ public class LoginRequestHandler implements Handler {
 
         var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
 
-        var exp = 0L;
-        var hon = 0L;
-        var cre = 0L;
-        var uri = 0L;
-        var jpt = 0L;
-
-        for (AccountsItemsEntity item : account.getAccountsItems()) {
-            var i = item.getItemsByItemsId();
-            var amount = item.getAmount();
-
-            switch (i.getId()) {
-                case 1 -> cre = amount;
-                case 2 -> uri = amount;
-                case 3 -> jpt = amount;
-                case 4 -> exp = amount;
-                case 5 -> hon = amount;
-            }
-        }
+        var items = getCalculatedItems(account);
 
         var clan = account.getClansByClansId();
         var clanId = 0;
@@ -121,17 +203,30 @@ public class LoginRequestHandler implements Handler {
 
         var mapId = ship.getMapsByMapsId().getId();
 
-        var heroInit = new Packet();
-        heroInit.write(
+        var settings = account.getAccountsSettings();
+
+        settings.parallelStream()
+                .forEach(s -> loginPackets.add(new Packet(
+                        s.getName().equals("SET") ? ServerCommands.SET_ATTRIBUTE : ServerCommands.CLIENT_SETTING,
+                        s.getName(),
+                        s.getValue()
+                )));
+
+
+        //ID del user|Nombre?|naveID|vel|escudoMin|escudoMax|hpMin|hpMax|cargaMin|cargaMax|pos1|pos2|
+        //mapaID|factionID(empresa?)|clanID|maxLaser|maxMisil|expansion(lookArmas)|premium|experiencia|honor|
+        //nivel|creditos|uridiums|jackpot|rango?|tituloClan|galaxyGatesFin(estrellitas)|Invisibilidad
+
+        var heroInit = new Packet(
                 ServerCommands.HERO_INIT,
                 account.getId(),
                 account.getName(),
                 ship.getGfx(),
                 config.getSpeed(),
-                config.getShield(), // TODO calculate ship current shield
+                ship.getShield(),
                 config.getShield(),
                 ship.getHealth(),
-                ship.getHealth(), // TODO calculate configuration max health
+                config.getHealth(),
                 0, // TODO calculate ship current cargo
                 ship.getShipsByShipsId().getCargo(),
                 position.getX(),
@@ -143,25 +238,41 @@ public class LoginRequestHandler implements Handler {
                 10_000, // TODO calculate account rockets
                 3, // FE
                 premium ? 1 : 0,
-                exp,
-                hon,
+                items.exp(),
+                items.hon(),
                 account.getLevelsByLevelsId().getId(),
-                cre,
-                uri,
-                jpt,
+                items.cre(),
+                items.uri(),
+                items.jpt(),
                 account.getRanksByRanksId().getId(),
                 clanTag,
                 0, // TODO account rings
-                0, // idk,
                 0 // TODO account cloacked
         );
 
-        var mapInit = new Packet();
-        mapInit.write(
+        var mapInit = new Packet(
                 ServerCommands.MAP_INIT,
                 mapId
         );
 
-        ctx.publishEvent(new SendPacketsEvent(session, Arrays.asList(heroInit, mapInit), this));
+        var handshake = new Packet(
+                ServerCommands.CLIENT_SETTING,
+                ServerCommands.MAP_READY_HANDSHAKE
+        );
+
+        loginPackets.add(heroInit);
+        loginPackets.add(mapInit);
+        loginPackets.add(handshake);
+
+        ctx.publishEvent(new SendPacketsEvent(session, loginPackets, this));
+    }
+
+    private record CalculatedItems(
+            long exp,
+            long hon,
+            long cre,
+            long uri,
+            long jpt
+    ) {
     }
 }

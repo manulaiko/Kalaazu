@@ -11,7 +11,9 @@ CREATE TABLE `accounts_configurations`
         COMMENT 'Configuration ID (1 or 2 (or 3)).',
     `name`                varchar(255) NOT NULL DEFAULT '',
     `shield`              int          NOT NULL DEFAULT 0
-        COMMENT 'Shield available in the configuration.',
+        COMMENT 'Max shield calculated in the configuration.',
+    `health`              int          NOT NULL DEFAULT 0
+        COMMENT 'Max health calculated in the configuration.',
     `speed`               smallint     NOT NULL DEFAULT 0
         COMMENT 'Speed available in the configuration.',
     `damage`              int          NOT NULL DEFAULT 0

@@ -119,6 +119,9 @@ public class AccountsEntity {
     private Collection<AccountsRankingsEntity> accountsRankings = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    private Collection<AccountsSettingsEntity> accountsSettings = new HashSet<>();
+
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
     private Collection<AccountsShipsEntity> accountsShips = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
@@ -172,5 +175,15 @@ public class AccountsEntity {
     public void addHangar(AccountsHangarsEntity hangar) {
         this.accountsHangars.add(hangar);
         hangar.setAccountsByAccountsId(this);
+    }
+
+    /**
+     * Adds a setting to the account.
+     *
+     * @param setting Setting to add.
+     */
+    public void addSetting(AccountsSettingsEntity setting) {
+        this.accountsSettings.add(setting);
+        setting.setAccountsByAccountsId(this);
     }
 }

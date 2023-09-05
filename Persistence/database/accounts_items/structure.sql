@@ -24,3 +24,6 @@ CREATE INDEX `accounts_items_accounts_id_idx`
     ON `accounts_items` (`accounts_id`);
 CREATE INDEX `accounts_items_levels_id_idx`
     ON `accounts_items` (`levels_id`);
+
+CREATE UNIQUE INDEX `accounts_items_items_id_accounts_id_idx`
+    ON `accounts_items` (`items_id`, `accounts_id`);

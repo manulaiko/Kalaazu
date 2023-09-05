@@ -29,6 +29,10 @@ public class AccountsShipsEntity {
     private int health = 0;
 
     @Basic
+    @Column(name = "shield", nullable = false)
+    private int shield = 0;
+
+    @Basic
     @Column(name = "nanohull", nullable = false)
     private int nanohull = 0;
 

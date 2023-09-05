@@ -12,9 +12,11 @@ CREATE TABLE `accounts_ships`
     `position`    bigint  NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
     `health`      int     NOT NULL DEFAULT 0
-        COMMENT 'Health points.',
+        COMMENT 'Current health points',
+    `shield`      int     NOT NULL DEFAULT 0
+        COMMENT 'Current shield points',
     `nanohull`    int     NOT NULL DEFAULT 0
-        COMMENT 'Nanohull points.',
+        COMMENT 'Current nanohull points',
     `gfx`         tinyint NOT NULL DEFAULT 0
         COMMENT 'Ship graphic (for WIZ-X).',
 

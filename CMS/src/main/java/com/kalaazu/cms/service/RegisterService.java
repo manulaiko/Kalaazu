@@ -6,7 +6,9 @@ import com.kalaazu.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,13 +29,14 @@ public class RegisterService {
     private final ItemsService items;
     private final AccountsItemsService accountsItems;
     private final AccountsShipsService accountsShips;
+    private final AccountsSettingsService accountsSettings;
     private final ShipsService ships;
     private final FactionsService factions;
     private final AccountsConfigurationsService accountsConfigs;
     private final AccountsConfigurationsAccountsItemsService accountsConfigItems;
     private final RanksService ranks;
 
-    private HashMap<Short, Integer> getDefaultStartingItems() {
+    private Map<Short, Integer> getDefaultStartingItems() {
         var items = new HashMap<Short, Integer>();
 
         // Credits
@@ -57,6 +60,43 @@ public class RegisterService {
         // REP-1
         items.put((short) 164, 1);
         return items;
+    }
+
+    private Map<String, String> getDefaultSettings() {
+        var settings = new HashMap<String, String>();
+
+        settings.put("SET", "1|1|1|1|1|1|1|1|1|1|1|0|0|1|1|0|0|1|1|0|0|1|1|1|1");
+        settings.put("MINIMAP_SCALE", "11");
+        settings.put("DISPLAY_PLAYER_NAMES", "1");
+        settings.put("DISPLAY_CHAT", "1");
+        settings.put("PLAY_MUSIC", "0");
+        settings.put("PLAY_SFX", "0");
+        settings.put("BAR_STATUS", "23,1,24,1,25,1,26,1,27,1");
+        settings.put("WINDOW_SETTINGS,4", "0,444,5,1,1,674,5,1,3,972,676,1,5,10,10,1,10,2,420,1,13,315,212,0,20,2,723,1,23,1059,200,1,24,412,187,0");
+        settings.put("AUTO_REFINEMENT", "1");
+        settings.put("QUICKSLOT_STOP_ATTACK", "1");
+        settings.put("DOUBLECLICK_ATTACK", "1");
+        settings.put("AUTO_START", "0");
+        settings.put("DISPLAY_NOTIFICATIONS", "1");
+        settings.put("SHOW_DRONES", "1");
+        settings.put("DISPLAY_WINDOW_BACKGROUND", "1");
+        settings.put("ALWAYS_DRAGGABLE_WINDOWS", "1");
+        settings.put("PRELOAD_USER_SHIPS", "1");
+        settings.put("QUALITY_PRESETTING", "3");
+        settings.put("QUALITY_CUSTOMIZED", "0");
+        settings.put("QUALITY_BACKGROUND", "3");
+        settings.put("QUALITY_POIZONE", "3");
+        settings.put("QUALITY_SHIP", "3");
+        settings.put("QUALITY_ENGINE", "3");
+        settings.put("QUALITY_COLLECTABLE", "3");
+        settings.put("QUALITY_ATTACK", "3");
+        settings.put("QUALITY_EFFECT", "3");
+        settings.put("QUALITY_EXPLOSION", "3");
+        settings.put("QUICKBAR_SLOT", "3,4,5,6,7,39,11,12,13,57");
+        settings.put("SLOTMENU_POSITION", "313,451");
+        settings.put("SLOTMENU_ORDER", "0");
+
+        return settings;
     }
 
     /**
@@ -88,14 +128,16 @@ public class RegisterService {
         var hangar = this.createHangar(account, ship);
         var items = this.createItems(account);
         var configs = this.createConfigs(hangar);
+        var settings = this.createSettings(account);
 
         this.addItemsToConfig(items, configs);
         this.setActiveConfig(configs.values().iterator().next(), hangar);
         this.setActiveHangar(hangar, account);
 
         account.addShip(ship);
-        items.values().forEach(account::addItem);
+        items.forEach(account::addItem);
         account.addHangar(hangar);
+        settings.forEach(account::addSetting);
 
         return account;
     }
@@ -130,8 +172,8 @@ public class RegisterService {
      * @param items   Account items.
      * @param configs Account configurations.
      */
-    private void addItemsToConfig(Map<Short, AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
-        configs.forEach((configId, config) -> items.forEach((itemId, item) -> {
+    private void addItemsToConfig(List<AccountsItemsEntity> items, Map<Integer, AccountsConfigurationsEntity> configs) {
+        configs.forEach((configId, config) -> items.forEach((item) -> {
             var configItem = new AccountsConfigurationsAccountsItemsEntity();
             configItem.setAccountsItemsByAccountsItemsId(item);
             configItem.setAccountsConfigurationsByAccountsConfigurationsId(config);
@@ -172,8 +214,8 @@ public class RegisterService {
      *
      * @param account Account that will own the items.
      */
-    private Map<Short, AccountsItemsEntity> createItems(AccountsEntity account) {
-        var ret = new HashMap<Short, AccountsItemsEntity>();
+    private List<AccountsItemsEntity> createItems(AccountsEntity account) {
+        var ret = new ArrayList<AccountsItemsEntity>();
         var items = getDefaultStartingItems();
 
         items.forEach((id, amount) -> {
@@ -185,7 +227,31 @@ public class RegisterService {
 
             var i = this.accountsItems.create(item);
 
-            ret.put((short) i.getId(), i);
+            ret.add(i);
+        });
+
+        return ret;
+    }
+
+    /**
+     * Creates the default account settings.
+     *
+     * @param account Account that will own the settings.
+     */
+    private List<AccountsSettingsEntity> createSettings(AccountsEntity account) {
+        var ret = new ArrayList<AccountsSettingsEntity>();
+        var settings = getDefaultSettings();
+
+        settings.forEach((key, value) -> {
+            var set = new AccountsSettingsEntity();
+            set.setType(1);
+            set.setName(key);
+            set.setValue(value);
+            set.setAccountsByAccountsId(account);
+
+            var id = this.accountsSettings.create(set);
+
+            ret.add(id);
         });
 
         return ret;

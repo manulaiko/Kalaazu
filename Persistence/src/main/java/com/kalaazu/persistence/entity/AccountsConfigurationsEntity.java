@@ -27,6 +27,10 @@ public class AccountsConfigurationsEntity {
     private String name = "";
 
     @Basic
+    @Column(name = "health", nullable = false)
+    private int health = 0;
+
+    @Basic
     @Column(name = "shield", nullable = false)
     private int shield = 0;
 

@@ -153,7 +153,9 @@ CREATE TABLE `accounts_configurations`
         COMMENT 'Configuration ID (1 or 2 (or 3)).',
     `name`                varchar(255) NOT NULL DEFAULT '',
     `shield`              int          NOT NULL DEFAULT 0
-        COMMENT 'Shield available in the configuration.',
+        COMMENT 'Max shield calculated in the configuration.',
+    `health`              int          NOT NULL DEFAULT 0
+        COMMENT 'Max health calculated in the configuration.',
     `speed`               smallint     NOT NULL DEFAULT 0
         COMMENT 'Speed available in the configuration.',
     `damage`              int          NOT NULL DEFAULT 0
@@ -353,6 +355,9 @@ CREATE INDEX `accounts_items_accounts_id_idx`
 CREATE INDEX `accounts_items_levels_id_idx`
     ON `accounts_items` (`levels_id`);
 
+CREATE UNIQUE INDEX `accounts_items_items_id_accounts_id_idx`
+    ON `accounts_items` (`items_id`, `accounts_id`);
+
 -- Initial dump for the `accounts_items` table.
 
 -- Account's messages table.
@@ -478,6 +483,31 @@ CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx`
 
 -- Initial dump for the `accounts_rankings` table.
 
+-- Account's settings table.
+--
+-- In game settings.
+--
+CREATE TABLE `accounts_settings`
+(
+    `id`          int       NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `accounts_id` int       NOT NULL,
+    `type`        tinyint   NOT NULL DEFAULT 1
+        COMMENT 'Settings type (1 = window settings, 2 = game settings...)',
+    `name`        varchar(255) NOT NULL
+        COMMENT 'Setting name (SET, MINIMAP_SCALE...)',
+    `value`       varchar(255) NOT NULL,
+
+    CONSTRAINT `accounts_settings_pk` PRIMARY KEY (`id`)
+) ENGINE InnoDB
+    CHARACTER SET utf8
+    COMMENT 'In-game account settings.';
+
+CREATE INDEX `accounts_settings_accounts_id_idx`
+    ON `accounts_settings` (`accounts_id`);
+
+-- Initial dump for the `accounts_settings` table.
+
 -- Account's ships table.
 --
 -- Ships bough by an account.
@@ -492,9 +522,11 @@ CREATE TABLE `accounts_ships`
     `position`    bigint  NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
     `health`      int     NOT NULL DEFAULT 0
-        COMMENT 'Health points.',
+        COMMENT 'Current health points',
+    `shield`      int     NOT NULL DEFAULT 0
+        COMMENT 'Current shield points',
     `nanohull`    int     NOT NULL DEFAULT 0
-        COMMENT 'Nanohull points.',
+        COMMENT 'Current nanohull points',
     `gfx`         tinyint NOT NULL DEFAULT 0
         COMMENT 'Ship graphic (for WIZ-X).',
 
@@ -8618,6 +8650,14 @@ ALTER TABLE `accounts_quests`
 
 ALTER TABLE `accounts_rankings`
     ADD CONSTRAINT `accounts_rankings_accounts` FOREIGN KEY `accounts_rankings_accounts` (`accounts_id`)
+    REFERENCES `accounts` (`id`);
+
+-- Relations for the `accounts_settings` table.
+--
+-- Settings belong to an account
+
+ALTER TABLE `accounts_settings`
+    ADD CONSTRAINT `accounts_settings_accounts` FOREIGN KEY `accounts_settings_accounts` (`accounts_id`)
     REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_ships` table.

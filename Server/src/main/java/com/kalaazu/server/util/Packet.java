@@ -29,6 +29,7 @@ public class Packet {
     }
 
     public Packet(Object... arguments) {
+        this();
         this.write(arguments);
     }
 
