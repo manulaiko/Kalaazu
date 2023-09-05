@@ -1,11 +1,12 @@
 package com.kalaazu.server.util;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.SneakyThrows;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.DataInputStream;
+import java.io.DataOutputStream;
 
 /**
  * Game packet
@@ -16,29 +17,32 @@ import java.util.List;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public class Packet {
-    private List<String> arguments = new ArrayList<>();
+    private DataOutputStream out;
+    private ByteArrayOutputStream baos;
+
+    private DataInputStream in;
 
     @Getter
-    private int index;
+    private int size;
+
+    public Packet(byte[] bytes) {
+        this();
+
+        this.size = bytes.length;
+        this.in = new DataInputStream(new ByteArrayInputStream(bytes));
+    }
 
     /**
      * Server sent packet constructor, initializes the packet with 0
      */
     public Packet() {
-        this.write("0");
+        this.baos = new ByteArrayOutputStream();
+        this.out = new DataOutputStream(this.baos);
     }
 
-    public Packet(Object... arguments) {
-        this();
-        this.write(arguments);
-    }
-
-    public Packet(String argument) {
-        arguments = Arrays.asList(argument.split("\\|"));
-    }
-
+    @SneakyThrows
     public void write(Object argument) {
-        arguments.add(String.valueOf(argument));
+        out.writeChars(String.valueOf(argument));
     }
 
     public void write(Object... argument) {
@@ -47,38 +51,42 @@ public class Packet {
         }
     }
 
+    @SneakyThrows
     public String readString() {
-        return arguments.get(index++);
+        return in.readUTF();
     }
 
+    @SneakyThrows
     public int readInt() {
-        return Integer.parseInt(readString());
+        return in.readInt();
     }
 
+    @SneakyThrows
     public short readShort() {
-        return Short.parseShort(readString());
+        return in.readShort();
     }
 
+    @SneakyThrows
     public long readLong() {
-        return Long.parseLong(readString());
+        return in.readLong();
     }
 
+    @SneakyThrows
     public boolean readBoolean() {
-        var str = readString();
-
-        // Boolean.parseBoolean("1") == false
-        return "true".equalsIgnoreCase(str) || "1".equalsIgnoreCase(str);
+        return in.readBoolean();
     }
 
+    @SneakyThrows
     public byte readByte() {
-        return Byte.parseByte(readString());
+        return in.readByte();
     }
 
     /**
      * Resets the index to the beginning.
      */
+    @SneakyThrows
     public void reset() {
-        index = 0;
+        in.reset();
     }
 
     /**
@@ -88,20 +96,18 @@ public class Packet {
      *
      * @param idx Index to jump to.
      */
+    @SneakyThrows
     public void jump(int idx) {
-        if (idx > arguments.size()) {
-            return;
-        }
-
-        index = idx;
+        in.reset();
+        in.skip(idx);
     }
 
-    public int size() {
-        return arguments.size();
-    }
-
-    @Override
-    public String toString() {
-        return String.join("|", arguments);
+    /**
+     * Returns the written bytes.
+     *
+     * @return written bytes.
+     */
+    public byte[] getBytes() {
+        return this.baos.toByteArray();
     }
 }

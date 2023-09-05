@@ -44,7 +44,6 @@ public class GameServer extends Thread {
                         @Override
                         public void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast(
-                                    new LineBasedFrameDecoder(1024),
                                     new PacketSerializer(),
                                     inboundHandler
                             );

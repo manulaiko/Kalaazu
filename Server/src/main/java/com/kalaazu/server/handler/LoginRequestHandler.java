@@ -10,6 +10,7 @@ import com.kalaazu.server.netty.event.SendPacketsEvent;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
 import com.kalaazu.server.util.ServerCommands;
+import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ApplicationContext;
@@ -31,8 +32,147 @@ import java.util.ArrayList;
 @Slf4j
 @RequiredArgsConstructor
 public class LoginRequestHandler implements Handler {
+    @Getter
+    private final short id = 10996;
+
     private final UsersService users;
     private final ApplicationContext ctx;
+
+    @Override
+    public void handle(Packet packet, GameSession session) {
+        var instanceId = packet.readInt();
+        instanceId = (instanceId << 8) | (instanceId >> 24);
+
+        var userId = packet.readInt();
+        userId = (userId << 8) | (userId >> 24);
+
+        var factionId = packet.readShort();
+        var sessionId = packet.readString();
+        var version = packet.readString();
+
+        var loginPackets = new ArrayList<Packet>();
+
+        log.info("Incoming login request from userID {} with sessionID {}", userId, sessionId);
+
+        var user = users.find(userId);
+        if (user == null) {
+            log.info("Invalid user ID {}", userId);
+
+            return;
+        }
+
+        var account = user.getAccounts()
+                .stream()
+                .filter(a -> a.getSessionId().equalsIgnoreCase(sessionId))
+                .findFirst()
+                .orElse(null);
+
+        if (account == null) {
+            log.info("Invalid session ID {}", sessionId);
+
+            ctx.publishEvent(new EndGameSessionEvent(session, this));
+
+            return;
+        }
+
+        // End previous sessions of this account.
+        ctx.publishEvent(new EndGameSessionIfEvent((s) -> {
+            var acc = s.getValue().getAccount();
+
+            return (acc != null && acc.getId() == account.getId());
+        }, this));
+
+        session.setAccount(account);
+
+        var hangar = account.getAccountsHangarsByAccountsHangarsId();
+        var ship = hangar.getAccountsShipsByAccountsShipsId();
+        var config = hangar.getAccountsConfigurationsByAccountsConfigurationsId();
+        var position = new Vector2(ship.getPosition());
+
+        var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
+
+        var items = getCalculatedItems(account);
+
+        var clan = account.getClansByClansId();
+        var clanId = 0;
+        var clanTag = "";
+
+        if (clan != null) {
+            clanId = clan.getId();
+            clanTag = clan.getTag();
+        }
+
+        var faction = account.getFactionsByFactionsId();
+        if (faction != null) {
+            factionId = faction.getId();
+        }
+
+        var mapId = ship.getMapsByMapsId().getId();
+
+        var settings = account.getAccountsSettings();
+
+/*        settings.parallelStream()
+                .forEach(s -> loginPackets.add(new Packet(
+                        s.getName().equals("SET") ? ServerCommands.SET_ATTRIBUTE : ServerCommands.CLIENT_SETTING,
+                        s.getName(),
+                        s.getValue()
+                )));
+
+
+        //ID del user|Nombre?|naveID|vel|escudoMin|escudoMax|hpMin|hpMax|cargaMin|cargaMax|pos1|pos2|
+        //mapaID|factionID(empresa?)|clanID|maxLaser|maxMisil|expansion(lookArmas)|premium|experiencia|honor|
+        //nivel|creditos|uridiums|jackpot|rango?|tituloClan|galaxyGatesFin(estrellitas)|Invisibilidad
+
+        var heroInit = new Packet(
+                ServerCommands.HERO_INIT,
+                account.getId(),
+                account.getName(),
+                ship.getGfx(),
+                config.getSpeed(),
+                ship.getShield(),
+                config.getShield(),
+                ship.getHealth(),
+                config.getHealth(),
+                items.cargo(), // TODO calculate ship current cargo
+                ship.getShipsByShipsId().getCargo(),
+                position.getX(),
+                position.getY(),
+                mapId,
+                factionId,
+                clanId,
+                ship.getShipsByShipsId().getBatteries(),
+                ship.getShipsByShipsId().getRockets(),
+                3, // Expansion type
+                premium ? 1 : 0,
+                items.exp(),
+                items.hon(),
+                account.getLevelsByLevelsId().getId(),
+                items.cre(),
+                items.uri(),
+                items.jpt(),
+                account.getRanksByRanksId().getId(),
+                clanTag,
+                0, // TODO account rings
+                0, // Unused
+                0 // TODO account cloacked
+        );
+
+        var mapInit = new Packet(
+                ServerCommands.MAP_INIT,
+                mapId
+        );
+
+        var handshake = new Packet(
+                ServerCommands.CLIENT_SETTING,
+                ServerCommands.MAP_READY_HANDSHAKE
+        );
+
+        loginPackets.add(heroInit);
+        loginPackets.add(mapInit);
+        loginPackets.add(handshake);
+
+        ctx.publishEvent(new SendPacketsEvent(session, loginPackets, this));*/
+    }
 
     private static CalculatedItems getCalculatedItems(AccountsEntity account) {
         // Stats
@@ -179,142 +319,6 @@ public class LoginRequestHandler implements Handler {
                 rbe02,
                 sl01
         );
-    }
-
-    @Override
-    public boolean canHandle(Packet packet) {
-        return packet.readString().equalsIgnoreCase(ServerCommands.LOGIN_REQUEST);
-    }
-
-    @Override
-    public void handle(Packet packet, GameSession session) {
-        var userId = packet.readInt();
-        var sessionId = packet.readString();
-
-        var loginPackets = new ArrayList<Packet>();
-
-        log.info("Incoming login request from userID {} with sessionID {}", userId, sessionId);
-
-        var user = users.find(userId);
-        if (user == null) {
-            log.info("Invalid user ID {}", userId);
-
-            return;
-        }
-
-        var account = user.getAccounts()
-                .stream()
-                .filter(a -> a.getSessionId().equalsIgnoreCase(sessionId))
-                .findFirst()
-                .orElse(null);
-
-        if (account == null) {
-            log.info("Invalid session ID {}", sessionId);
-
-            ctx.publishEvent(new EndGameSessionEvent(session, this));
-
-            return;
-        }
-
-        // End previous sessions of this account.
-        ctx.publishEvent(new EndGameSessionIfEvent((s) -> {
-            var acc = s.getValue().getAccount();
-
-            return (acc != null && acc.getId() == account.getId());
-        }, this));
-
-        session.setAccount(account);
-
-        var hangar = account.getAccountsHangarsByAccountsHangarsId();
-        var ship = hangar.getAccountsShipsByAccountsShipsId();
-        var config = hangar.getAccountsConfigurationsByAccountsConfigurationsId();
-        var position = new Vector2(ship.getPosition());
-
-        var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
-
-        var items = getCalculatedItems(account);
-
-        var clan = account.getClansByClansId();
-        var clanId = 0;
-        var clanTag = "";
-
-        if (clan != null) {
-            clanId = clan.getId();
-            clanTag = clan.getTag();
-        }
-
-        var faction = account.getFactionsByFactionsId();
-        var factionId = 0;
-
-        if (faction != null) {
-            factionId = faction.getId();
-        }
-
-        var mapId = ship.getMapsByMapsId().getId();
-
-        var settings = account.getAccountsSettings();
-
-        settings.parallelStream()
-                .forEach(s -> loginPackets.add(new Packet(
-                        s.getName().equals("SET") ? ServerCommands.SET_ATTRIBUTE : ServerCommands.CLIENT_SETTING,
-                        s.getName(),
-                        s.getValue()
-                )));
-
-
-        //ID del user|Nombre?|naveID|vel|escudoMin|escudoMax|hpMin|hpMax|cargaMin|cargaMax|pos1|pos2|
-        //mapaID|factionID(empresa?)|clanID|maxLaser|maxMisil|expansion(lookArmas)|premium|experiencia|honor|
-        //nivel|creditos|uridiums|jackpot|rango?|tituloClan|galaxyGatesFin(estrellitas)|Invisibilidad
-
-        var heroInit = new Packet(
-                ServerCommands.HERO_INIT,
-                account.getId(),
-                account.getName(),
-                ship.getGfx(),
-                config.getSpeed(),
-                ship.getShield(),
-                config.getShield(),
-                ship.getHealth(),
-                config.getHealth(),
-                items.cargo(), // TODO calculate ship current cargo
-                ship.getShipsByShipsId().getCargo(),
-                position.getX(),
-                position.getY(),
-                mapId,
-                factionId,
-                clanId,
-                ship.getShipsByShipsId().getBatteries(),
-                ship.getShipsByShipsId().getRockets(),
-                3, // Expansion type
-                premium ? 1 : 0,
-                items.exp(),
-                items.hon(),
-                account.getLevelsByLevelsId().getId(),
-                items.cre(),
-                items.uri(),
-                items.jpt(),
-                account.getRanksByRanksId().getId(),
-                clanTag,
-                0, // TODO account rings
-                0, // Unused
-                0 // TODO account cloacked
-        );
-
-        var mapInit = new Packet(
-                ServerCommands.MAP_INIT,
-                mapId
-        );
-
-        var handshake = new Packet(
-                ServerCommands.CLIENT_SETTING,
-                ServerCommands.MAP_READY_HANDSHAKE
-        );
-
-        loginPackets.add(heroInit);
-        loginPackets.add(mapInit);
-        loginPackets.add(handshake);
-
-        ctx.publishEvent(new SendPacketsEvent(session, loginPackets, this));
     }
 
     private record CalculatedItems(

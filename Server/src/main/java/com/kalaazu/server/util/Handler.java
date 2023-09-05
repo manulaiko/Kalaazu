@@ -6,7 +6,7 @@ import com.kalaazu.server.netty.GameSession;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public interface Handler {
-    boolean canHandle(Packet packet);
+    short getId();
 
     void handle(Packet packet, GameSession session);
 }

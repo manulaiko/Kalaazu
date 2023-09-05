@@ -97,17 +97,19 @@ public class ChannelManager {
             return;
         }
 
+        var packetId = packet.readShort();
+
         if (printPackets) {
-            log.info("Packet received: <<<<< {}", packet);
+            log.info("Packet received: <<<<< {}", packetId);
         }
 
         packetHandlers.stream()
-                .filter(p -> p.canHandle(packet))
+                .filter(p -> p.getId() == packetId)
                 .findFirst()
                 .orElse(new Handler() {
                     @Override
-                    public boolean canHandle(Packet packet) {
-                        return true;
+                    public short getId() {
+                        return 0;
                     }
 
                     @Override

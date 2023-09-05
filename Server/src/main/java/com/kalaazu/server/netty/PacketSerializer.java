@@ -21,16 +21,16 @@ public class PacketSerializer extends ByteToMessageCodec<Packet> {
 
     @Override
     protected void encode(ChannelHandlerContext ctx, Packet msg, ByteBuf out) {
-        out.writeCharSequence(msg.toString() + "\r\n\u0000", C);
+        out.writeShort(msg.getSize());
+        out.writeBytes(msg.getBytes());
     }
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
-        var str = in.toString(C);
+        var length = in.readShort();
+        var packet = new byte[length];
+        in.readBytes(packet);
 
-        // Force ByteBuf to read the string so next time we read from it, we don't read everything that's been received
-        in.readBytes(str.length());
-
-        out.add(new Packet(str));
+        out.add(new Packet(packet));
     }
 }
