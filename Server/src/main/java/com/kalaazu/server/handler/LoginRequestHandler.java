@@ -129,7 +129,7 @@ public class LoginRequestHandler implements Handler {
             }
         }
 
-        return new CalculatedItems(exp, hon, cre, uri, jpt);
+        return new CalculatedItems(exp, hon, cre, uri, jpt, cargo);
     }
 
     @Override
@@ -227,16 +227,16 @@ public class LoginRequestHandler implements Handler {
                 config.getShield(),
                 ship.getHealth(),
                 config.getHealth(),
-                0, // TODO calculate ship current cargo
+                items.cargo(), // TODO calculate ship current cargo
                 ship.getShipsByShipsId().getCargo(),
                 position.getX(),
                 position.getY(),
                 mapId,
                 factionId,
                 clanId,
-                100_000, // TODO calculate account batteries
-                10_000, // TODO calculate account rockets
-                3, // FE
+                ship.getShipsByShipsId().getBatteries(),
+                ship.getShipsByShipsId().getRockets(),
+                3, // Expansion type
                 premium ? 1 : 0,
                 items.exp(),
                 items.hon(),
@@ -247,6 +247,7 @@ public class LoginRequestHandler implements Handler {
                 account.getRanksByRanksId().getId(),
                 clanTag,
                 0, // TODO account rings
+                0, // Unused
                 0 // TODO account cloacked
         );
 
@@ -272,7 +273,8 @@ public class LoginRequestHandler implements Handler {
             long hon,
             long cre,
             long uri,
-            long jpt
+            long jpt,
+            long cargo
     ) {
     }
 }
