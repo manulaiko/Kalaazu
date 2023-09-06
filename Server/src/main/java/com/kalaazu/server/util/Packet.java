@@ -105,6 +105,16 @@ public class Packet {
         return in.readByte();
     }
 
+    @SneakyThrows
+    public void writeDouble(double d) {
+        out.writeDouble(d);
+    }
+
+    @SneakyThrows
+    public double readDouble() {
+        return in.readDouble();
+    }
+
     /**
      * Resets the index to the beginning.
      */

@@ -1,5 +1,7 @@
 package com.kalaazu.persistence.service;
 
+import com.kalaazu.persistence.entity.ItemCategory;
+import com.kalaazu.persistence.entity.ItemType;
 import com.kalaazu.persistence.entity.ItemsEntity;
 import com.kalaazu.persistence.repository.ItemsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -60,5 +62,11 @@ public class ItemsServiceImpl implements ItemsService {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);
+    }
+
+    @Override
+    public List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type) {
+
+        return this.repository.findAllByCategoryAndType(category, type);
     }
 }

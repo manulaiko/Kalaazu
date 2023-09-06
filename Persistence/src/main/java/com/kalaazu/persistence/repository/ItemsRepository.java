@@ -1,8 +1,12 @@
 package com.kalaazu.persistence.repository;
 
+import com.kalaazu.persistence.entity.ItemCategory;
+import com.kalaazu.persistence.entity.ItemType;
 import com.kalaazu.persistence.entity.ItemsEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Items repository.
@@ -14,4 +18,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface ItemsRepository extends JpaRepository<ItemsEntity, Short> {
+    List<ItemsEntity> findAllByCategoryAndType(ItemCategory category, ItemType type);
 }

@@ -2,8 +2,10 @@ package com.kalaazu.server.service;
 
 import com.google.gson.Gson;
 import com.kalaazu.persistence.entity.AccountsSettingsEntity;
+import com.kalaazu.persistence.service.ItemsService;
 import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.commands.out.MenuBarCommand;
+import com.kalaazu.server.commands.out.SlotBarsCommand;
 import com.kalaazu.server.commands.out.UpdateUserKeybindingsCommand;
 import com.kalaazu.server.commands.out.UpdateUserSettingsCommand;
 import com.kalaazu.server.netty.GameSession;
@@ -25,8 +27,28 @@ import java.util.*;
 @Service
 @RequiredArgsConstructor
 public class GameSettingsService {
+    public static final boolean hideAllWindows = false;
+    public static final int scale = 6;
+    public static final String barState = "24,1|23,1|100,1|25,1|35,0|34,0|39,0|";
+    public static final String gameFeatureBarPosition = "0,0";
+    public static final String gameFeatureBarLayoutType = "0";
+    public static final String genericFeatureBarPosition = "98.3,0";
+    public static final String genericFeatureBarLayoutType = "0";
+    public static final String categoryBarPosition = "50,85";
+    public static final String standartSlotBarPosition = "50,85|0,40";
+    public static final String standartSlotBarLayoutType = "0";
+    public static final String premiumSlotBarPosition = "50,85|0,80";
+    public static final String premiumSlotBarLayoutType = "0";
+    public static final String proActionBarPosition = "50,85|0,120";
+    public static final String proActionBarLayoutType = "0";
+
+    public static final String STANDARD_SLOT_BAR = "standardSlotBar";
+    public static final String PREMIUM_SLOT_BAR = "premiumSlotBar";
+    public static final String PRO_ACTION_BAR = "proActionBar";
+
     private final Gson mapper;
     private final ApplicationContext context;
+    private final ItemsService items;
 
     /**
      * Builds and sends the game settings packets.
@@ -37,6 +59,7 @@ public class GameSettingsService {
     public void sendSettings(Collection<AccountsSettingsEntity> accountsSettings, GameSession session) {
         var keybindings = new ArrayList<UpdateUserKeybindingsCommand.Keybinding>();
         var commands = new HashMap<Integer, OutCommand>();
+        var slotbars = new HashMap<String, List<SlotBarsCommand.ClientUiSlotBarCommand.ClientUiSlotBarItemCommand>>();
 
         accountsSettings.forEach(s -> {
             switch (s.getType()) {
@@ -53,6 +76,8 @@ public class GameSettingsService {
                         commands.put(5, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateGameplaySettingsCommand.class));
                 case 7 ->
                         commands.put(6, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateAudioSettingsCommand.class));
+                case 8 ->
+                        slotbars.computeIfAbsent(s.getName(), (s1) -> new ArrayList<>()).add(mapper.fromJson(s.getValue(), SlotBarsCommand.ClientUiSlotBarCommand.ClientUiSlotBarItemCommand.class));
             }
         });
 
@@ -60,6 +85,7 @@ public class GameSettingsService {
         commandsToSend.add(buildKeybindingSettings(keybindings));
         commandsToSend.add(buildUserSettings(commands));
         commandsToSend.add(buildMenuBar());
+        commandsToSend.add(buildSlotBar(slotbars));
 
         context.publishEvent(new SendCommandsEvent(session, commandsToSend, this));
     }
@@ -113,11 +139,66 @@ public class GameSettingsService {
         return new MenuBarCommand(menuBarCommands);
     }
 
+    private SlotBarsCommand buildSlotBar(HashMap<String, List<SlotBarsCommand.ClientUiSlotBarCommand.ClientUiSlotBarItemCommand>> slotbars) {
+        var slotBars = new ArrayList<SlotBarsCommand.ClientUiSlotBarCommand>();
+        var categories = new ArrayList<SlotBarsCommand.ClientUiSlotBarCategoryCommand>();
+
+        slotBars.add(new SlotBarsCommand.ClientUiSlotBarCommand(
+                standartSlotBarLayoutType,
+                STANDARD_SLOT_BAR,
+                standartSlotBarPosition,
+                slotbars.get(STANDARD_SLOT_BAR),
+                true
+        ));
+        slotBars.add(new SlotBarsCommand.ClientUiSlotBarCommand(
+                premiumSlotBarLayoutType,
+                PREMIUM_SLOT_BAR,
+                premiumSlotBarPosition,
+                slotbars.get(PREMIUM_SLOT_BAR),
+                true
+        ));
+        slotBars.add(new SlotBarsCommand.ClientUiSlotBarCommand(
+                proActionBarLayoutType,
+                PRO_ACTION_BAR,
+                proActionBarPosition,
+                slotbars.get(PRO_ACTION_BAR),
+                true
+        ));
+
+        /*var laserItems = new ArrayList<SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand>();
+
+        var laserAmmo = items.findByCategoryAndType(ItemCategory.AMMUNITION, ItemType.LASER_AMMO);
+        laserAmmo.forEach(i -> {
+            var timer = new SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand.ClientUiSlotBarCategoryItemTimerCommand(
+                    new SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand.ClientUiSlotBarCategoryItemTimerCommand.ClientUiSlotBarCategoryItemTimerStatusCommand(SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand.ClientUiSlotBarCategoryItemTimerCommand.ClientUiSlotBarCategoryItemTimerStatusCommand.COOLDOWN),
+                    i.getLootId(),
+                    false,
+                    0,
+                    i.getCooldown()
+            );
+            laserItems.add(new SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand(
+                    SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand.NONE,
+                    timer,
+                    getItemStatus(i),
+                    1,
+                    getCooldownType(i),
+                    SlotBarsCommand.ClientUiSlotBarCategoryCommand.ClientUiSlotBarCategoryItemCommand.SELECTION
+            ));
+        });*/
+
+
+        return new SlotBarsCommand(
+                categoryBarPosition,
+                slotBars,
+                categories
+        );
+    }
+
     private MenuBarCommand.ClientUiMenuBarCommand buildMenuBar(HashMap<String, String> rightItems, Map<String, Window> defaultWindows, Window defaultWindow, boolean isLeft) {
-        var position = "0,0";
+        var position = gameFeatureBarPosition;
         var type = MenuBarCommand.ClientUiMenuBarCommand.GAME_FEATURE_BAR;
         if (!isLeft) {
-            position = "98.3,0";
+            position = genericFeatureBarPosition;
             type = MenuBarCommand.ClientUiMenuBarCommand.GENERIC_FEATURE_BAR;
         }
 
@@ -157,7 +238,7 @@ public class GameSettingsService {
                 position,
                 type,
                 menuItems,
-                "0"
+                gameFeatureBarLayoutType
         );
     }
 
@@ -182,6 +263,7 @@ public class GameSettingsService {
         return map;
     }
 
+
     private record Window(
             int x,
             int y,
@@ -190,4 +272,5 @@ public class GameSettingsService {
             boolean maximized
     ) {
     }
+
 }

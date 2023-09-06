@@ -25,6 +25,10 @@ public class ItemsEntity {
     private String name = "";
 
     @Basic
+    @Column(name = "loot_id", nullable = false)
+    private String lootId = "";
+
+    @Basic
     @Column(name = "category", nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private ItemCategory category = ItemCategory.CURRENCY;
@@ -41,6 +45,10 @@ public class ItemsEntity {
     @Column(name = "type", nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private ItemType type = ItemType.OTHER;
+
+    @Basic
+    @Column(name = "cooldown", nullable = false)
+    private int cooldown = 1000;
 
     @Basic
     @Column(name = "is_elite", nullable = false)
