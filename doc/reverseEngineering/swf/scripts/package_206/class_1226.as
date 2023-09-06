@@ -1,0 +1,22 @@
+package package_206
+{
+   import package_37.class_170;
+   import package_38.class_949;
+   
+   public class class_1226 extends class_170
+   {
+       
+      
+      public function class_1226()
+      {
+         super();
+      }
+      
+      public static function run(param1:class_949) : void
+      {
+         var _loc2_:int = int(param1.var_450.var_2008);
+         var _loc3_:Vector.<int> = param1.var_2555;
+         var_574.method_6154().method_562().method_1605(_loc2_,_loc3_);
+      }
+   }
+}
