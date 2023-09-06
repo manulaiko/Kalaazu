@@ -1,6 +1,6 @@
 package com.kalaazu.server.netty.event;
 
-import com.kalaazu.server.util.Packet;
+import com.kalaazu.server.commands.OutCommand;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
@@ -13,12 +13,12 @@ import org.springframework.context.ApplicationEvent;
  * @author manulaiko <manulaiko@gmail.com>
  */
 @Getter
-public class BroadcastPacketEvent extends ApplicationEvent {
-    private final Packet packet;
+public class BroadcastCommandEvent extends ApplicationEvent {
+    private final OutCommand command;
 
-    public BroadcastPacketEvent(Packet packet, Object source) {
+    public BroadcastCommandEvent(OutCommand command, Object source) {
         super(source);
 
-        this.packet = packet;
+        this.command = command;
     }
 }

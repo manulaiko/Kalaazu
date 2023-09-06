@@ -1,5 +1,6 @@
 package com.kalaazu.server.netty;
 
+import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.netty.event.*;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
@@ -38,34 +39,58 @@ public class ChannelManager {
     @Value("${app.game.printPackets}")
     private boolean printPackets;
 
-    private void send(ChannelId channelId, Packet packet) {
+    private void send(ChannelId channelId, OutCommand command) {
         var channel = channels.find(channelId);
-        if (channel != null) {
-            if (printPackets) {
-                log.info("Packet sent: >>>>> {}", packet);
-            }
-
-            channel.writeAndFlush(packet);
+        if (channel == null) {
+            return;
         }
+
+        if (printPackets) {
+            log.info("Packet sent: >>>>> {}", command.getId());
+        }
+
+        var p = new Packet();
+        command.write(p);
+
+        channel.writeAndFlush(p);
     }
 
-    private void send(ChannelId channelId, List<Packet> packet) {
+    private void send(ChannelId channelId, List<OutCommand> commands) {
         var channel = channels.find(channelId);
-        if (channel != null) {
-            if (printPackets) {
-                packet.forEach(p -> log.info("Packet sent: <<<< {}", p));
-            }
-
-            packet.forEach(channel::writeAndFlush);
+        if (channel == null) {
+            return;
         }
+
+        if (printPackets) {
+            commands.forEach(p -> log.info("Packet sent: <<<< {}", p.getId()));
+        }
+
+        commands.stream()
+                .map(c -> {
+                    var p = new Packet();
+                    c.write(p);
+
+                    return p;
+                })
+                .forEach(channels::write);
     }
 
-    private void send(Packet packet) {
+    private void send(OutCommand command) {
+        var packet = new Packet();
+        command.write(packet);
+
         channels.writeAndFlush(packet);
     }
 
-    private void send(List<Packet> packet) {
-        packet.forEach(channels::write);
+    private void send(List<OutCommand> packet) {
+        packet.stream()
+                .map(c -> {
+                    var p = new Packet();
+                    c.write(p);
+
+                    return p;
+                })
+                .forEach(channels::write);
         channels.flush();
     }
 
@@ -115,23 +140,23 @@ public class ChannelManager {
     // Event Handlers //
 
     @EventListener
-    public void handleSendPacket(SendPacketEvent event) {
-        this.send(event.getSession().getChannelId(), event.getPacket());
+    public void handleSendPacket(SendCommandEvent event) {
+        this.send(event.getSession().getChannelId(), event.getCommand());
     }
 
     @EventListener
-    public void handleSendPackets(SendPacketsEvent event) {
-        this.send(event.getSession().getChannelId(), event.getPackets());
+    public void handleSendPackets(SendCommandsEvent event) {
+        this.send(event.getSession().getChannelId(), event.getCommands());
     }
 
     @EventListener
-    public void handleBroadcastPacket(BroadcastPacketEvent event) {
-        this.send(event.getPacket());
+    public void handleBroadcastPacket(BroadcastCommandEvent event) {
+        this.send(event.getCommand());
     }
 
     @EventListener
-    public void handleBroadcastPacket(BroadcastPacketsEvent event) {
-        this.send(event.getPackets());
+    public void handleBroadcastPacket(BroadcastCommandsEvent event) {
+        this.send(event.getCommands());
     }
 
     @EventListener
@@ -141,8 +166,8 @@ public class ChannelManager {
         sessions.entrySet()
                 .stream()
                 .filter(condition::apply)
-                .findFirst()
-                .ifPresent((e) -> endGameSession(e.getKey()));
+                .map(Map.Entry::getKey)
+                .forEach(this::endGameSession);
     }
 
     @EventListener

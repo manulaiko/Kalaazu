@@ -1,9 +1,12 @@
 package com.kalaazu.cms.service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kalaazu.persistence.entity.*;
 import com.kalaazu.persistence.service.*;
+import com.kalaazu.service.GameSettingsService;
 import com.kalaazu.util.StringUtils;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -21,6 +24,7 @@ import java.util.Map;
  */
 @Service
 @RequiredArgsConstructor
+@Slf4j
 public class RegisterService {
     private final UsersService users;
     private final AccountsService accounts;
@@ -36,68 +40,9 @@ public class RegisterService {
     private final AccountsConfigurationsAccountsItemsService accountsConfigItems;
     private final RanksService ranks;
 
-    private Map<Short, Integer> getDefaultStartingItems() {
-        var items = new HashMap<Short, Integer>();
-
-        // Credits
-        items.put((short) 1, 150_000);
-        // Uridium
-        items.put((short) 2, 10_000);
-        // Jackpot
-        items.put((short) 3, 0);
-        // Exp
-        items.put((short) 4, 0);
-        // Honor
-        items.put((short) 5, 0);
-
-        // LCB-10
-        items.put((short) 59, 10_000);
-        // R-310
-        items.put((short) 87, 1_000);
-
-        // LF-1
-        items.put((short) 121, 1);
-        // REP-1
-        items.put((short) 164, 1);
-        return items;
-    }
-
-    private Map<String, String> getDefaultSettings() {
-        var settings = new HashMap<String, String>();
-
-        settings.put("SET", "1|1|1|1|1|1|1|1|1|1|1|0|0|1|1|0|0|1|1|0|0|1|1|1|1");
-        settings.put("MINIMAP_SCALE", "11");
-        settings.put("DISPLAY_PLAYER_NAMES", "1");
-        settings.put("DISPLAY_CHAT", "1");
-        settings.put("PLAY_MUSIC", "0");
-        settings.put("PLAY_SFX", "0");
-        settings.put("BAR_STATUS", "23,1,24,1,25,1,26,1,27,1");
-        settings.put("WINDOW_SETTINGS,4", "0,444,5,1,1,674,5,1,3,972,676,1,5,10,10,1,10,2,420,1,13,315,212,0,20,2,723,1,23,1059,200,1,24,412,187,0");
-        settings.put("AUTO_REFINEMENT", "1");
-        settings.put("QUICKSLOT_STOP_ATTACK", "1");
-        settings.put("DOUBLECLICK_ATTACK", "1");
-        settings.put("AUTO_START", "0");
-        settings.put("DISPLAY_NOTIFICATIONS", "1");
-        settings.put("SHOW_DRONES", "1");
-        settings.put("DISPLAY_WINDOW_BACKGROUND", "1");
-        settings.put("ALWAYS_DRAGGABLE_WINDOWS", "1");
-        settings.put("PRELOAD_USER_SHIPS", "1");
-        settings.put("QUALITY_PRESETTING", "3");
-        settings.put("QUALITY_CUSTOMIZED", "0");
-        settings.put("QUALITY_BACKGROUND", "3");
-        settings.put("QUALITY_POIZONE", "3");
-        settings.put("QUALITY_SHIP", "3");
-        settings.put("QUALITY_ENGINE", "3");
-        settings.put("QUALITY_COLLECTABLE", "3");
-        settings.put("QUALITY_ATTACK", "3");
-        settings.put("QUALITY_EFFECT", "3");
-        settings.put("QUALITY_EXPLOSION", "3");
-        settings.put("QUICKBAR_SLOT", "3,4,5,6,7,39,11,12,13,57");
-        settings.put("SLOTMENU_POSITION", "313,451");
-        settings.put("SLOTMENU_ORDER", "0");
-
-        return settings;
-    }
+    private final GameSettingsService gameSettingsService;
+    private final com.kalaazu.service.ItemsService itemsService;
+    private final ObjectMapper mapper;
 
     /**
      * Performs the user registration.
@@ -216,7 +161,7 @@ public class RegisterService {
      */
     private List<AccountsItemsEntity> createItems(AccountsEntity account) {
         var ret = new ArrayList<AccountsItemsEntity>();
-        var items = getDefaultStartingItems();
+        var items = itemsService.getDefaultStartingItems();
 
         items.forEach((id, amount) -> {
             var item = new AccountsItemsEntity();
@@ -240,18 +185,22 @@ public class RegisterService {
      */
     private List<AccountsSettingsEntity> createSettings(AccountsEntity account) {
         var ret = new ArrayList<AccountsSettingsEntity>();
-        var settings = getDefaultSettings();
 
-        settings.forEach((key, value) -> {
-            var set = new AccountsSettingsEntity();
-            set.setType(1);
-            set.setName(key);
-            set.setValue(value);
-            set.setAccountsByAccountsId(account);
+        var keybindings = gameSettingsService.getDefaultKeybindings();
+        keybindings.forEach(k -> {
+            try {
+                var set = new AccountsSettingsEntity();
+                set.setType(1);
+                set.setName("keybinding");
+                set.setValue(mapper.writeValueAsString(k));
+                set.setAccountsByAccountsId(account);
 
-            var id = this.accountsSettings.create(set);
+                var id = this.accountsSettings.create(set);
 
-            ret.add(id);
+                ret.add(id);
+            } catch (Exception e) {
+                log.warn("Couldn't create keybinding!", e);
+            }
         });
 
         return ret;

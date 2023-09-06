@@ -1,6 +1,4 @@
-package com.kalaazu.server.packets;
-
-import com.kalaazu.server.util.Packet;
+package com.kalaazu.server.commands;
 
 /**
  * Command class.
@@ -11,5 +9,5 @@ import com.kalaazu.server.util.Packet;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public abstract class Command {
-    public abstract void read(Packet packet);
+    public abstract short getId();
 }

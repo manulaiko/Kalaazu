@@ -41,14 +41,8 @@ public class Packet {
     }
 
     @SneakyThrows
-    public void write(Object argument) {
-        out.writeChars(String.valueOf(argument));
-    }
-
-    public void write(Object... argument) {
-        for (Object o : argument) {
-            write(o);
-        }
+    public void writeString(String argument) {
+        out.writeUTF(argument);
     }
 
     @SneakyThrows
@@ -57,8 +51,18 @@ public class Packet {
     }
 
     @SneakyThrows
+    public void writeInt(int i) {
+        out.writeInt(i);
+    }
+
+    @SneakyThrows
     public int readInt() {
         return in.readInt();
+    }
+
+    @SneakyThrows
+    public void writeShort(short s) {
+        out.writeShort(s);
     }
 
     @SneakyThrows
@@ -67,13 +71,28 @@ public class Packet {
     }
 
     @SneakyThrows
+    public void writeLong(long l) {
+        out.writeLong(l);
+    }
+
+    @SneakyThrows
     public long readLong() {
         return in.readLong();
     }
 
     @SneakyThrows
+    public void writeBoolean(boolean b) {
+        out.writeBoolean(b);
+    }
+
+    @SneakyThrows
     public boolean readBoolean() {
         return in.readBoolean();
+    }
+
+    @SneakyThrows
+    public void writeByte(byte b) {
+        out.writeByte(b);
     }
 
     @SneakyThrows

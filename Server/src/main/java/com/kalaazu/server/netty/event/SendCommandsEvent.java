@@ -1,7 +1,7 @@
 package com.kalaazu.server.netty.event;
 
+import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.netty.GameSession;
-import com.kalaazu.server.util.Packet;
 import lombok.Getter;
 import org.springframework.context.ApplicationEvent;
 
@@ -16,14 +16,14 @@ import java.util.List;
  * @author manulaiko <manulaiko@gmail.com>
  */
 @Getter
-public class SendPacketsEvent extends ApplicationEvent {
+public class SendCommandsEvent extends ApplicationEvent {
     private final GameSession session;
-    private final List<Packet> packets;
+    private final List<OutCommand> commands;
 
-    public SendPacketsEvent(GameSession session, List<Packet> packets, Object source) {
+    public SendCommandsEvent(GameSession session, List<OutCommand> commands, Object source) {
         super(source);
 
         this.session = session;
-        this.packets = packets;
+        this.commands = commands;
     }
 }

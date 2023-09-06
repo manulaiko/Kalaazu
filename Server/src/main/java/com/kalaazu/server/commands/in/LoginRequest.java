@@ -1,6 +1,6 @@
-package com.kalaazu.server.packet.in;
+package com.kalaazu.server.commands.in;
 
-import com.kalaazu.server.packets.Command;
+import com.kalaazu.server.commands.InCommand;
 import com.kalaazu.server.util.Packet;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -15,9 +15,10 @@ import lombok.EqualsAndHashCode;
  */
 @EqualsAndHashCode(callSuper = true)
 @Data
-public class LoginRequest extends Command {
+public class LoginRequest extends InCommand {
     public static final short ID = 10996;
 
+    private short id = ID;
     private int instanceId;
     private int userId;
     private short factionId;

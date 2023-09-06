@@ -1,7 +1,5 @@
 dependencies {
     implementation project(':Utils')
     implementation project(':Persistence')
-    implementation 'org.springframework.integration:spring-integration-ip'
-    implementation 'org.springframework.boot:spring-boot-starter-integration'
     implementation 'io.netty:netty-all'
 }

@@ -1,18 +1,18 @@
 package com.kalaazu.server.util;
 
+import com.kalaazu.server.commands.InCommand;
 import com.kalaazu.server.netty.GameSession;
-import com.kalaazu.server.packets.Command;
 import lombok.SneakyThrows;
 
 /**
  * Abstract handler.
  * =================
- *
+ * <p>
  * Base class for all packet handlers.
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-public abstract class Handler<T extends Command> {
+public abstract class Handler<T extends InCommand> {
     public abstract short getId();
 
     @SneakyThrows
@@ -25,5 +25,6 @@ public abstract class Handler<T extends Command> {
     }
 
     public abstract void handle(T packet, GameSession session);
+
     public abstract Class<T> getClazz();
 }

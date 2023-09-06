@@ -47,6 +47,7 @@ allprojects {
         annotationProcessor 'org.projectlombok:lombok'
         implementation 'org.reflections:reflections:0.10.2'
         implementation 'org.modelmapper:modelmapper:3.1.0'
+        implementation 'com.google.code.gson:gson:2.10.1'
     }
 
     test {
