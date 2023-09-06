@@ -66,6 +66,11 @@ public class Packet {
     }
 
     @SneakyThrows
+    public void writeShort(int s) {
+        writeShort((short)s);
+    }
+
+    @SneakyThrows
     public short readShort() {
         return in.readShort();
     }

@@ -2,14 +2,20 @@ package com.kalaazu.server.service;
 
 import com.google.gson.Gson;
 import com.kalaazu.persistence.entity.AccountsSettingsEntity;
+import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.commands.out.UpdateUserKeybindingsCommand;
+import com.kalaazu.server.commands.out.UpdateUserSettingsCommand;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.SendCommandEvent;
+import com.kalaazu.server.netty.event.SendCommandsEvent;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * Game Settings service.
@@ -32,21 +38,32 @@ public class GameSettingsService {
      * @param session          Game session.
      */
     public void sendSettings(Collection<AccountsSettingsEntity> accountsSettings, GameSession session) {
-        var settings = accountsSettings.stream()
-                .filter(s -> s.getType() == 1)
-                .map(k -> {
-                    try {
-                        return mapper.fromJson(k.getValue(), UpdateUserKeybindingsCommand.Keybinding.class);
-                    } catch (Exception e) {
-                        return null;
-                    }
-                })
-                .toList();
+        var keybindings = new ArrayList<UpdateUserKeybindingsCommand.Keybinding>();
+        var commands = new HashMap<Integer, OutCommand>();
 
-        var command = new UpdateUserKeybindingsCommand();
-        command.setRemove(false);
-        command.setKeybindings(settings);
+        accountsSettings.forEach(s -> {
+            switch (s.getType()) {
+                case 1 -> keybindings.add(mapper.fromJson(s.getValue(), UpdateUserKeybindingsCommand.Keybinding.class));
+                case 2 -> commands.put(1, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateQualitySettingsCommand.class));
+                case 3 -> commands.put(2, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateDisplaySettingsCommand.class));
+                case 4 -> commands.put(3, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateQuestsSettingsCommand.class));
+                case 5 -> commands.put(4, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateWindowSettingsCommand.class));
+                case 6 -> commands.put(5, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateGameplaySettingsCommand.class));
+                case 7 -> commands.put(6, mapper.fromJson(s.getValue(), UpdateUserSettingsCommand.UpdateAudioSettingsCommand.class));
+            }
+        });
 
-        context.publishEvent(new SendCommandEvent(session, command, this));
+        var updateUserKeybindings = new UpdateUserKeybindingsCommand(false, keybindings);
+
+        var updateUserSettings = new UpdateUserSettingsCommand(
+                (UpdateUserSettingsCommand.UpdateQualitySettingsCommand) commands.get(1),
+                (UpdateUserSettingsCommand.UpdateQuestsSettingsCommand) commands.get(3),
+                (UpdateUserSettingsCommand.UpdateDisplaySettingsCommand) commands.get(2),
+                (UpdateUserSettingsCommand.UpdateWindowSettingsCommand) commands.get(4),
+                (UpdateUserSettingsCommand.UpdateGameplaySettingsCommand) commands.get(5),
+                (UpdateUserSettingsCommand.UpdateAudioSettingsCommand) commands.get(6)
+        );
+
+        context.publishEvent(new SendCommandsEvent(session, Arrays.asList(updateUserKeybindings, updateUserSettings), this));
     }
 }
