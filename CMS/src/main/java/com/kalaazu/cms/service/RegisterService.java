@@ -3,7 +3,7 @@ package com.kalaazu.cms.service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kalaazu.persistence.entity.*;
 import com.kalaazu.persistence.service.*;
-import com.kalaazu.service.GameSettingsService;
+import com.kalaazu.service.DefaultGameSettingsService;
 import com.kalaazu.util.StringUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +40,7 @@ public class RegisterService {
     private final AccountsConfigurationsAccountsItemsService accountsConfigItems;
     private final RanksService ranks;
 
-    private final GameSettingsService gameSettingsService;
+    private final DefaultGameSettingsService defaultGameSettingsService;
     private final com.kalaazu.service.ItemsService itemsService;
     private final ObjectMapper mapper;
 
@@ -186,86 +186,15 @@ public class RegisterService {
     private List<AccountsSettingsEntity> createSettings(AccountsEntity account) {
         var ret = new ArrayList<AccountsSettingsEntity>();
 
-        var keybindings = gameSettingsService.getDefaultKeybindings();
+        var keybindings = defaultGameSettingsService.getKeybindings();
         keybindings.forEach(k -> ret.add(saveSetting(1, k.actionType() + "_" + k.parameter(), account, k)));
 
-        ret.add(saveSetting(2, "quality", account, new QualitySettings(
-                false,
-                3,
-                3,
-                3,
-                true,
-                3,
-                1,
-                1,
-                1,
-                1,
-                1
-        )));
-        ret.add(saveSetting(3, "display", account, new DisplaySettings(
-                false,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                true,
-                false,
-                4,
-                4,
-                4,
-                3,
-                3,
-                4,
-                3,
-                -1,
-                true,
-                true,
-                true
-        )));
-        ret.add(saveSetting(4, "quest", account, new QuestSettings(
-                false,
-                false,
-                false,
-                false,
-                false,
-                false
-        )));
-        ret.add(saveSetting(5, "window", account, new WindowSettings(
-                false,
-                6,
-                "24,1|23,1|100,1|25,1|35,0|34,0|39,0|"
-        )));
-        ret.add(saveSetting(6, "gameplay", account, new GameplaySettings(
-                false,
-                false,
-                true,
-                false,
-                false,
-                true,
-                true,
-                true,
-                true,
-                true
-        )));
-        ret.add(saveSetting(7, "audio", account, new AudioSettings(
-                false,
-                true,
-                100,
-                100,
-                100
-        )));
+        ret.add(saveSetting(2, "quality", account, defaultGameSettingsService.getQualitySettings()));
+        ret.add(saveSetting(3, "display", account, defaultGameSettingsService.getDisplaySettings()));
+        ret.add(saveSetting(4, "quest", account, defaultGameSettingsService.getQuestSettings()));
+        ret.add(saveSetting(5, "window", account, defaultGameSettingsService.getWindowSettings()));
+        ret.add(saveSetting(6, "gameplay", account, defaultGameSettingsService.getGameplaySettings()));
+        ret.add(saveSetting(7, "audio", account, defaultGameSettingsService.getAudioSettings()));
 
         return ret;
     }
@@ -342,95 +271,5 @@ public class RegisterService {
         hangar.setAccountsShipsByAccountsShipsId(ship);
 
         return this.hangars.create(hangar);
-    }
-
-    private record QualitySettings(
-            boolean notSet,
-            int qualityAttack,
-            int qualityBackground,
-            int qualityPresetting,
-            boolean qualityCustomized,
-            int qualityPOIzone,
-            int qualityShip,
-            int qualityEngine,
-            int qualityExplosion,
-            int qualityCollectables,
-            int qualityEffect
-    ) {
-    }
-
-    private record DisplaySettings(
-            boolean notSet,
-            boolean displayPlayerNames,
-            boolean displayResources,
-            boolean showPremiumQuickslotBar,
-            boolean allowAutoQuality,
-            boolean preloadUserShips,
-            boolean displayHitpointBubbles,
-            boolean showNotOwnedItems,
-            boolean displayChat,
-            boolean displayWindowsBackground,
-            boolean displayNotFreeCargoBoxes,
-            boolean dragWindowsAlways,
-            boolean displayNotifications,
-            boolean hoverShips,
-            boolean displayDrones,
-            boolean displayBonusBoxes,
-            boolean displayFreeCargoBoxes,
-
-            boolean var12P,
-            boolean varb3N,
-            int displaySetting3DqualityAntialias,
-            int varp3M,
-            int displaySetting3DqualityEffects,
-            int displaySetting3DqualityLights,
-            int displaySetting3DqualityTextures,
-            int var03r,
-            int displaySetting3DsizeTextures,
-            int displaySetting3DtextureFiltering,
-            boolean proActionBarEnabled,
-            boolean proActionBarKeyboardInputEnabled,
-            boolean proActionBarAutohideEnabled
-    ) {
-    }
-
-    private record QuestSettings(
-            boolean varf1t,
-            boolean varOn,
-            boolean questsLevelOrderDescending,
-            boolean questsAvailableFilter,
-            boolean questsUnavailableFilter,
-            boolean questsCompletedFilter
-    ) {
-    }
-
-    private record WindowSettings(
-            boolean hideAllWindows,
-            int scale,
-            String barState
-    ) {
-    }
-
-    private record GameplaySettings(
-            boolean notSet,
-            boolean autoRefinement,
-            boolean quickSlotStopAttack,
-            boolean autoBoost,
-            boolean autoBuyBootyKeys,
-            boolean doubleClickAttackEnabled,
-            boolean autoChangeAmmo,
-            boolean autoStartEnabled,
-            boolean showBattlerayNotifications,
-            boolean varE3N
-    ) {
-    }
-
-    private record AudioSettings(
-            boolean notSet,
-            boolean playCombatMusic,
-            int voice,
-            int sound,
-            int music
-    ) {
     }
 }
