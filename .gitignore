@@ -19,7 +19,7 @@ build/
 *.iws
 *.iml
 *.ipr
-out/
+*.class
 
 ### NetBeans ###
 /nbproject/private/

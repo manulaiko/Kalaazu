@@ -5,7 +5,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Game settings service.
@@ -156,8 +158,42 @@ public class DefaultGameSettingsService {
         );
     }
 
+    public Map<String, Window> getWindows() {
+        var map = new HashMap<String, Window>();
+        map.put("user", new Window(30, 30, 212, 88, false));
+        map.put("ship", new Window(30, 30, 212, 88, false));
+        map.put("ship_warp", new Window(50, 50, 300, 210, false));
+        map.put("chat", new Window(10, 10, 300, 150, false));
+        map.put("group", new Window(50, 50, 196, 200, false));
+        map.put("minimap", new Window(30, 30, 238, 180, false));
+        map.put("spacemap", new Window(10, 10, 650, 475, false));
+        map.put("log", new Window(30, 30, 240, 150, false));
+        map.put("pet", new Window(50, 50, 260, 130, false));
+        map.put("spaceball", new Window(10, 10, 170, 70, false));
+        map.put("booster", new Window(10, 10, 110, 150, false));
+        map.put("traininggrounds", new Window(10, 10, 320, 320, false));
+        map.put("settings", new Window(50, 50, 400, 470, false));
+        map.put("help", new Window(10, 10, 219, 121, false));
+        map.put("logout", new Window(50, 50, 200, 200, false));
+
+        return map;
+    }
+
+    public Window getDefaultWindow() {
+        return new Window(30, 30, 200, 100, false);
+    }
+
     private Keybinding buildKeybinding(int actionType, int parameter, int key) {
         return new Keybinding((short) actionType, (short) 0, parameter, List.of(key));
+    }
+
+    public record Window(
+            int x,
+            int y,
+            int width,
+            int height,
+            boolean maximized
+    ) {
     }
 
     public record QualitySettings(

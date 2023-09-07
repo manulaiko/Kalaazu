@@ -3,7 +3,7 @@ package com.kalaazu.server.handler;
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
-import com.kalaazu.server.commands.out.ShipInitializationCommand;
+import com.kalaazu.server.commands.out.map.ShipInitializationCommand;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
 import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
@@ -11,7 +11,7 @@ import com.kalaazu.server.commands.in.LoginRequest;
 import com.kalaazu.server.netty.event.SendCommandEvent;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
-import com.kalaazu.server.service.GenericGameSettingsService;
+import com.kalaazu.server.service.GameSettingsService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -42,7 +42,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
 
     private final ApplicationContext ctx;
     private final UsersService users;
-    private final GenericGameSettingsService genericGameSettingsService;
+    private final GameSettingsService gameSettingsService;
 
     private static CalculatedItems getCalculatedItems(AccountsEntity account) {
         // Stats
@@ -231,7 +231,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
     }
 
     private void sendInitialPackets(AccountsEntity account, GameSession session) {
-        genericGameSettingsService.sendSettings(account.getAccountsSettings(), session);
+        gameSettingsService.sendSettings(account.getAccountsSettings(), session);
 
         var hangar = account.getAccountsHangarsByAccountsHangarsId();
         var ship = hangar.getAccountsShipsByAccountsShipsId();
