@@ -3,13 +3,15 @@ package com.kalaazu.server.handler;
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
+import com.kalaazu.server.commands.out.ShipInitializationCommand;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
 import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
 import com.kalaazu.server.commands.in.LoginRequest;
+import com.kalaazu.server.netty.event.SendCommandEvent;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
-import com.kalaazu.server.service.GameSettingsService;
+import com.kalaazu.server.service.GenericGameSettingsService;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -40,7 +42,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
 
     private final ApplicationContext ctx;
     private final UsersService users;
-    private final GameSettingsService gameSettingsService;
+    private final GenericGameSettingsService genericGameSettingsService;
 
     private static CalculatedItems getCalculatedItems(AccountsEntity account) {
         // Stats
@@ -225,7 +227,11 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
 
         session.setAccount(account);
 
-        gameSettingsService.sendSettings(account.getAccountsSettings(), session);
+        this.sendInitialPackets(account, session);
+    }
+
+    private void sendInitialPackets(AccountsEntity account, GameSession session) {
+        genericGameSettingsService.sendSettings(account.getAccountsSettings(), session);
 
         var hangar = account.getAccountsHangarsByAccountsHangarsId();
         var ship = hangar.getAccountsShipsByAccountsShipsId();
@@ -246,6 +252,43 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
         }
 
         var mapId = ship.getMapsByMapsId().getId();
+
+        var shipInitialization = new ShipInitializationCommand(
+                account.getId(),
+                account.getName(),
+                ship.getShipsByShipsId().getItemsByItemsId().getLootId(),
+                config.getSpeed(),
+                ship.getShield(),
+                config.getShield(),
+                ship.getHealth(),
+                config.getHealth(),
+                (int)items.cargo,
+                ship.getShipsByShipsId().getCargo(),
+                ship.getNanohull(),
+                ship.getShipsByShipsId().getHealth(),
+                position.getX(),
+                position.getY(),
+                mapId,
+                account.getFactionsByFactionsId().getId(),
+                clanId,
+                3,
+                premium,
+                items.exp,
+                items.hon,
+                account.getLevelsByLevelsId().getId(),
+                items.cre,
+                items.uri,
+                (int)items.jpt,
+                account.getRanksByRanksId().getId(),
+                clanTag,
+                0, // TODO account rings
+                true,
+                false, // TODO account cloacked
+                true,
+                new ArrayList<>()
+        );
+
+        ctx.publishEvent(new SendCommandEvent(session, shipInitialization, this));
 
 /*        settings.parallelStream()
                 .forEach(s -> loginPackets.add(new Packet(

@@ -106,14 +106,14 @@ public class UpdateUserSettingsCommand extends OutCommand {
 
         private boolean var12P;
         private boolean varb3N;
-        private int displaySetting3DqualityAntialias = 0;
-        private int varp3M = 0;
-        private int displaySetting3DqualityEffects = 0;
-        private int displaySetting3DqualityLights = 0;
-        private int displaySetting3DqualityTextures = 0;
-        private int var03r = 0;
-        private int displaySetting3DsizeTextures = 0;
-        private int displaySetting3DtextureFiltering = 0;
+        private int displaySetting3DqualityAntialias;
+        private int varp3M;
+        private int displaySetting3DqualityEffects;
+        private int displaySetting3DqualityLights;
+        private int displaySetting3DqualityTextures;
+        private int var03r;
+        private int displaySetting3DsizeTextures;
+        private int displaySetting3DtextureFiltering;
         private boolean proActionBarEnabled;
         private boolean proActionBarKeyboardInputEnabled;
         private boolean proActionBarAutohideEnabled;

@@ -4,14 +4,14 @@
 --
 CREATE TABLE `accounts_settings`
 (
-    `id`          int       NOT NULL AUTO_INCREMENT
+    `id`          int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `accounts_id` int       NOT NULL,
-    `type`        tinyint   NOT NULL DEFAULT 1
+    `accounts_id` int          NOT NULL,
+    `type`        tinyint      NOT NULL DEFAULT 1
         COMMENT 'Settings type (1 = window settings, 2 = game settings...)',
     `name`        varchar(255) NOT NULL
         COMMENT 'Setting name (SET, MINIMAP_SCALE...)',
-    `value`       varchar(255) NOT NULL,
+    `value`       text         NOT NULL,
 
     CONSTRAINT `accounts_settings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB

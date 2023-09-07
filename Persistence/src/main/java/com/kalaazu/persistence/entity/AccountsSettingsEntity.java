@@ -29,7 +29,7 @@ public class AccountsSettingsEntity {
     private String name = "";
 
     @Basic
-    @Column(name = "value", nullable = false)
+    @Column(name = "value", nullable = false, length = -1, columnDefinition = "TEXT")
     private String value = "";
 
     @ManyToOne(fetch = FetchType.EAGER)

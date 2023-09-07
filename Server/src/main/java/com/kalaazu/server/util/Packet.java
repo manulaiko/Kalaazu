@@ -115,6 +115,16 @@ public class Packet {
         return in.readDouble();
     }
 
+    @SneakyThrows
+    public void writeFloat(float f) {
+        out.writeFloat(f);
+    }
+
+    @SneakyThrows
+    public double readFloat() {
+        return in.readFloat();
+    }
+
     /**
      * Resets the index to the beginning.
      */

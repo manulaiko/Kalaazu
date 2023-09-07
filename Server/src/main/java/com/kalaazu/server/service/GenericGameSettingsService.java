@@ -26,7 +26,7 @@ import java.util.*;
  */
 @Service
 @RequiredArgsConstructor
-public class GameSettingsService {
+public class GenericGameSettingsService {
     public static final boolean hideAllWindows = false;
     public static final int scale = 6;
     public static final String barState = "24,1|23,1|100,1|25,1|35,0|34,0|39,0|";
@@ -85,7 +85,7 @@ public class GameSettingsService {
         commandsToSend.add(buildKeybindingSettings(keybindings));
         commandsToSend.add(buildUserSettings(commands));
         commandsToSend.add(buildMenuBar());
-        commandsToSend.add(buildSlotBar(slotbars));
+        //commandsToSend.add(buildSlotBar(slotbars));
 
         context.publishEvent(new SendCommandsEvent(session, commandsToSend, this));
     }

@@ -62,7 +62,7 @@ public class ChannelManager {
         }
 
         if (printPackets) {
-            commands.forEach(p -> log.info("Packet sent: <<<< {}", p.getId()));
+            commands.forEach(p -> log.info("Packet sent: >>>>> {}", p.getId()));
         }
 
         commands.stream()
