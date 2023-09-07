@@ -19,4 +19,5 @@ import java.util.List;
 @Repository
 public interface ItemsRepository extends JpaRepository<ItemsEntity, Short> {
     List<ItemsEntity> findAllByCategoryAndType(ItemCategory category, ItemType type);
+    ItemsEntity findByLootId(String lootId);
 }

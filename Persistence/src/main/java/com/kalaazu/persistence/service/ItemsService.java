@@ -16,4 +16,5 @@ import java.util.List;
  */
 public interface ItemsService extends IService<ItemsEntity, Short> {
     List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type);
+    ItemsEntity findByLootId(String lootId);
 }

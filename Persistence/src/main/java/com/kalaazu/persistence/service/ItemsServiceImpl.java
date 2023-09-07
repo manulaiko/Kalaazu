@@ -22,6 +22,16 @@ public class ItemsServiceImpl implements ItemsService {
     @Autowired
     private ItemsRepository repository;
 
+    @Override
+    public List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type) {
+        return this.repository.findAllByCategoryAndType(category, type);
+    }
+
+    @Override
+    public ItemsEntity findByLootId(String lootId) {
+        return this.repository.findByLootId(lootId);
+    }
+
     /**
      * @inheritDoc
      */
@@ -62,11 +72,5 @@ public class ItemsServiceImpl implements ItemsService {
         this.repository.deleteById(id);
 
         return !this.repository.existsById(id);
-    }
-
-    @Override
-    public List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type) {
-
-        return this.repository.findAllByCategoryAndType(category, type);
     }
 }

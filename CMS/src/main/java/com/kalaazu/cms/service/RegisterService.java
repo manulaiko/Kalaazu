@@ -167,7 +167,7 @@ public class RegisterService {
             var item = new AccountsItemsEntity();
             item.setAmount(amount);
             item.setAccountsByAccountsId(account);
-            item.setItemsByItemsId(this.items.find(id));
+            item.setItemsByItemsId(this.items.findByLootId(id));
             item.setLevelsByLevelsId(this.levels.find((byte) 1));
 
             var i = this.accountsItems.create(item);
