@@ -187,7 +187,7 @@ public class RegisterService {
         var ret = new ArrayList<AccountsSettingsEntity>();
 
         var keybindings = gameSettingsService.getDefaultKeybindings();
-        keybindings.forEach(k -> ret.add(saveSetting(1, "keybinding", account, k)));
+        keybindings.forEach(k -> ret.add(saveSetting(1, k.actionType() + "_" + k.parameter(), account, k)));
 
         ret.add(saveSetting(2, "quality", account, new QualitySettings(
                 false,
@@ -424,12 +424,13 @@ public class RegisterService {
             boolean varE3N
     ) {
     }
-    
+
     private record AudioSettings(
             boolean notSet,
             boolean playCombatMusic,
             int voice,
             int sound,
             int music
-    ) {}
+    ) {
+    }
 }

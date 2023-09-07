@@ -6,6 +6,8 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+import io.netty.handler.codec.LengthFieldPrepender;
 import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
@@ -44,6 +46,8 @@ public class GameServer extends Thread {
                         @Override
                         public void initChannel(SocketChannel ch) {
                             ch.pipeline().addLast(
+                                    new LengthFieldPrepender(2),
+                                    new LengthFieldBasedFrameDecoder(Integer.MAX_VALUE, 0, 2),
                                     new PacketSerializer(),
                                     inboundHandler
                             );

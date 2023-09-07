@@ -17,16 +17,19 @@ import java.util.List;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public class PacketSerializer extends ByteToMessageCodec<Packet> {
-    public static final Charset C = Charset.defaultCharset();
-
     @Override
     protected void encode(ChannelHandlerContext ctx, Packet msg, ByteBuf out) {
-        out.writeShort(msg.getSize());
-        out.writeBytes(msg.getBytes());
+        var bytes = msg.getBytes();
+        //out.writeShort(bytes.length);
+        out.writeBytes(bytes);
     }
 
     @Override
     protected void decode(ChannelHandlerContext ctx, ByteBuf in, List<Object> out) {
+        if (in.readableBytes() < 2) {
+            return;
+        }
+
         var length = in.readShort();
         var packet = new byte[length];
         in.readBytes(packet);

@@ -85,7 +85,7 @@ public class GenericGameSettingsService {
         commandsToSend.add(buildKeybindingSettings(keybindings));
         commandsToSend.add(buildUserSettings(commands));
         commandsToSend.add(buildMenuBar());
-        //commandsToSend.add(buildSlotBar(slotbars));
+        commandsToSend.add(buildSlotBar(slotbars));
 
         context.publishEvent(new SendCommandsEvent(session, commandsToSend, this));
     }
@@ -116,7 +116,7 @@ public class GenericGameSettingsService {
 
         leftItems.put("user", "title_user");
         leftItems.put("ship", "title_ship");
-        //leftItems.Add("ship_warp", "ttip_shipWarp_btn");
+        leftItems.put("ship_warp", "ttip_shipWarp_btn");
         leftItems.put("chat", "title_chat");
         leftItems.put("group", "title_group");
         leftItems.put("minimap", "title_map");
@@ -147,21 +147,21 @@ public class GenericGameSettingsService {
                 standartSlotBarLayoutType,
                 STANDARD_SLOT_BAR,
                 standartSlotBarPosition,
-                slotbars.get(STANDARD_SLOT_BAR),
+                slotbars.getOrDefault(STANDARD_SLOT_BAR, new ArrayList<>()),
                 true
         ));
         slotBars.add(new SlotBarsCommand.ClientUiSlotBarCommand(
                 premiumSlotBarLayoutType,
                 PREMIUM_SLOT_BAR,
                 premiumSlotBarPosition,
-                slotbars.get(PREMIUM_SLOT_BAR),
+                slotbars.getOrDefault(PREMIUM_SLOT_BAR, new ArrayList<>()),
                 true
         ));
         slotBars.add(new SlotBarsCommand.ClientUiSlotBarCommand(
                 proActionBarLayoutType,
                 PRO_ACTION_BAR,
                 proActionBarPosition,
-                slotbars.get(PRO_ACTION_BAR),
+                slotbars.getOrDefault(PRO_ACTION_BAR, new ArrayList<>()),
                 true
         ));
 
@@ -194,7 +194,7 @@ public class GenericGameSettingsService {
         );
     }
 
-    private MenuBarCommand.ClientUiMenuBarCommand buildMenuBar(HashMap<String, String> rightItems, Map<String, Window> defaultWindows, Window defaultWindow, boolean isLeft) {
+    private MenuBarCommand.ClientUiMenuBarCommand buildMenuBar(HashMap<String, String> items, Map<String, Window> defaultWindows, Window defaultWindow, boolean isLeft) {
         var position = gameFeatureBarPosition;
         var type = MenuBarCommand.ClientUiMenuBarCommand.GAME_FEATURE_BAR;
         if (!isLeft) {
@@ -204,7 +204,7 @@ public class GenericGameSettingsService {
 
         var menuItems = new ArrayList<MenuBarCommand.ClientUiMenuBarCommand.ClientUiMenuBarItemCommand>();
 
-        rightItems.forEach((k, v) -> {
+        items.forEach((k, v) -> {
             var tooltips = new ArrayList<MenuBarCommand.ClientUiMenuBarCommand.ClientUiMenuBarItemCommand.ClientUiTooltipsCommand.ClientUiTooltipCommand>();
             tooltips.add(new MenuBarCommand.ClientUiMenuBarCommand.ClientUiMenuBarItemCommand.ClientUiTooltipsCommand.ClientUiTooltipCommand(
                     MenuBarCommand.ClientUiMenuBarCommand.ClientUiMenuBarItemCommand.ClientUiTooltipsCommand.ClientUiTooltipCommand.STANDARD,

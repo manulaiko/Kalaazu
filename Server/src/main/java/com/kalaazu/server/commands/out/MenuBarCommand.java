@@ -152,7 +152,7 @@ public class MenuBarCommand extends OutCommand {
                     public static final short STANDARD = 0;
                     public static final short RED = 1;
 
-                    private final short id = 11246;
+                    private final short id = 18572;
 
                     private short color = 0;
                     private ClientUITooltipTextFormatCommand textFormat;
