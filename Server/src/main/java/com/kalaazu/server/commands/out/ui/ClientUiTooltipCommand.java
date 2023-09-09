@@ -23,20 +23,20 @@ public class ClientUiTooltipCommand extends OutCommand {
     private final short id = 18572;
 
     private short color = 0;
-    private ClientUITooltipTextFormatCommand textFormat;
-    private List<ClientUITextReplacementCommand> textReplacements;
+    private ClientUiTooltipTextFormatCommand textFormat;
+    private List<ClientUiTextReplacementCommand> textReplacements;
     private String baseKey = "";
 
     @Override
     public void write(Packet packet) {
         packet.writeShort(id);
 
-        packet.writeShort(31585);
+        packet.writeShort(0);
         packet.writeShort(this.color);
         packet.writeString(this.baseKey);
         textFormat.write(packet);
         packet.writeInt(this.textReplacements.size());
         textReplacements.forEach(t -> t.write(packet));
-        packet.writeShort(30300);
+        packet.writeShort(0);
     }
 }

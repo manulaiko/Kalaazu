@@ -87,6 +87,6 @@ public class VisualModifierCommand extends OutCommand {
         packet.writeBoolean(activated);
         packet.writeInt(attribute >> 3 | attribute << 29);
         packet.writeShort(modifier);
-        packet.writeShort(-18263);
+        packet.writeShort(0);
     }
 }

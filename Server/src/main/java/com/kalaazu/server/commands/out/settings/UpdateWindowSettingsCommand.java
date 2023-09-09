@@ -27,7 +27,7 @@ public class UpdateWindowSettingsCommand extends OutCommand {
         packet.writeString(barState);
         packet.writeInt(scale << 13 | scale >> 19);
         packet.writeBoolean(hideAllWindows);
-        packet.writeShort(-27662);
-        packet.writeShort(15301);
+        packet.writeShort(0);
+        packet.writeShort(0);
     }
 }

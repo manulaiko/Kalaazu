@@ -17,8 +17,6 @@ import lombok.NoArgsConstructor;
 public class UpdateQuestsSettingsCommand extends OutCommand {
     private final short id = 21683;
 
-    private boolean varf1t;
-    private boolean varOn;
     private boolean questsLevelOrderDescending;
     private boolean questsAvailableFilter = true;
     private boolean questsUnavailableFilter;
@@ -31,8 +29,8 @@ public class UpdateQuestsSettingsCommand extends OutCommand {
         packet.writeBoolean(questsAvailableFilter);
         packet.writeBoolean(questsUnavailableFilter);
         packet.writeBoolean(questsCompletedFilter);
-        packet.writeShort(-19304);
-        packet.writeBoolean(varf1t);
-        packet.writeBoolean(varOn);
+        packet.writeShort(0);
+        packet.writeBoolean(false);
+        packet.writeBoolean(false);
     }
 }

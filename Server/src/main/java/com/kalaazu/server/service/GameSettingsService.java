@@ -2,10 +2,13 @@ package com.kalaazu.server.service;
 
 import com.google.gson.Gson;
 import com.kalaazu.persistence.entity.AccountsSettingsEntity;
+import com.kalaazu.persistence.entity.ItemCategory;
+import com.kalaazu.persistence.entity.ItemType;
+import com.kalaazu.persistence.entity.ItemsEntity;
 import com.kalaazu.persistence.service.ItemsService;
 import com.kalaazu.server.commands.OutCommand;
-import com.kalaazu.server.commands.out.ui.*;
 import com.kalaazu.server.commands.out.settings.*;
+import com.kalaazu.server.commands.out.ui.*;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.SendCommandsEvent;
 import com.kalaazu.service.DefaultGameSettingsService;
@@ -50,6 +53,21 @@ public class GameSettingsService {
     private final ItemsService items;
     private final DefaultGameSettingsService defaultGameSettingsService;
 
+    private static ClientUiTooltipCommand buildTooltip(short formatType, String tooltip, String replacementValue, String replacementWildcard) {
+        var textReplacements = new ArrayList<ClientUiTextReplacementCommand>();
+
+        var format = new ClientUiTooltipTextFormatCommand(formatType);
+
+        if (replacementWildcard != null && replacementValue != null) {
+            var typeReplacement = new ClientUiTextReplacementCommand(replacementValue, replacementWildcard, format);
+            textReplacements.add(typeReplacement);
+        }
+
+        var formatLocalized = new ClientUiTooltipTextFormatCommand(ClientUiTooltipTextFormatCommand.LOCALIZED);
+
+        return new ClientUiTooltipCommand(ClientUiTooltipCommand.STANDARD, formatLocalized, textReplacements, tooltip);
+    }
+
     /**
      * Builds and sends the game settings packets.
      *
@@ -64,18 +82,12 @@ public class GameSettingsService {
         accountsSettings.forEach(s -> {
             switch (s.getType()) {
                 case 1 -> keybindings.add(mapper.fromJson(s.getValue(), KeybindingCommand.class));
-                case 2 ->
-                        commands.put(1, mapper.fromJson(s.getValue(), UpdateQualitySettingsCommand.class));
-                case 3 ->
-                        commands.put(2, mapper.fromJson(s.getValue(), UpdateDisplaySettingsCommand.class));
-                case 4 ->
-                        commands.put(3, mapper.fromJson(s.getValue(), UpdateQuestsSettingsCommand.class));
-                case 5 ->
-                        commands.put(4, mapper.fromJson(s.getValue(), UpdateWindowSettingsCommand.class));
-                case 6 ->
-                        commands.put(5, mapper.fromJson(s.getValue(), UpdateGameplaySettingsCommand.class));
-                case 7 ->
-                        commands.put(6, mapper.fromJson(s.getValue(), UpdateAudioSettingsCommand.class));
+                case 2 -> commands.put(1, mapper.fromJson(s.getValue(), UpdateQualitySettingsCommand.class));
+                case 3 -> commands.put(2, mapper.fromJson(s.getValue(), UpdateDisplaySettingsCommand.class));
+                case 4 -> commands.put(3, mapper.fromJson(s.getValue(), UpdateQuestsSettingsCommand.class));
+                case 5 -> commands.put(4, mapper.fromJson(s.getValue(), UpdateWindowSettingsCommand.class));
+                case 6 -> commands.put(5, mapper.fromJson(s.getValue(), UpdateGameplaySettingsCommand.class));
+                case 7 -> commands.put(6, mapper.fromJson(s.getValue(), UpdateAudioSettingsCommand.class));
                 case 8 ->
                         slotbars.computeIfAbsent(s.getName(), (s1) -> new ArrayList<>()).add(mapper.fromJson(s.getValue(), ClientUiSlotBarItemCommand.class));
             }
@@ -140,7 +152,6 @@ public class GameSettingsService {
 
     private SlotBarsCommand buildSlotBar(HashMap<String, List<ClientUiSlotBarItemCommand>> slotbars) {
         var slotBars = new ArrayList<ClientUiSlotBarCommand>();
-        var categories = new ArrayList<ClientUiSlotBarCategoryCommand>();
 
         slotBars.add(new ClientUiSlotBarCommand(
                 standartSlotBarLayoutType,
@@ -167,8 +178,88 @@ public class GameSettingsService {
         return new SlotBarsCommand(
                 categoryBarPosition,
                 slotBars,
-                categories
+                buildSlotBarCategories()
         );
+    }
+
+    private List<ClientUiSlotBarCategoryCommand> buildSlotBarCategories() {
+        var categories = new ArrayList<ClientUiSlotBarCategoryCommand>();
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.LASER_AMMO, "lasers", "ttip_laser"));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.ROCKET, "rockets", "ttip_rocket"));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.HELLSTORM_ROCKET, "rocket_launchers", "ttip_rocket"));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.SPECIAL_AMMO, "special_items", "ttip_explosive"));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.MINE, "mines", "ttip_explosive"));
+
+        return categories;
+    }
+
+    private ClientUiSlotBarCategoryCommand buildCategory(ItemCategory category, ItemType type, String tooltip, String tooltipId) {
+        var categoryItems = new ArrayList<ClientUiSlotBarCategoryItemCommand>();
+
+        var items = this.items.findByCategoryAndType(category, type);
+        items.forEach(l -> categoryItems.add(buildCategoryItem(l, tooltipId)));
+
+        return new ClientUiSlotBarCategoryCommand(categoryItems, tooltip);
+    }
+
+    private ClientUiSlotBarCategoryItemCommand buildCategoryItem(ItemsEntity l, String tooltipId) {
+        var timer = new ClientUiSlotBarCategoryItemTimerCommand(
+                new ClientUiSlotBarCategoryItemTimerStatusCommand(ClientUiSlotBarCategoryItemTimerStatusCommand.READY),
+                l.getLootId(),
+                false,
+                0,
+                l.getCooldown()
+        );
+
+        var itemBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, true, true, false, 0));
+        var slotBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, true, false, false, 0));
+
+        var status = new ClientUiSlotBarCategoryItemStatusCommand(
+                true,
+                0,
+                false,
+                false,
+                0,
+                false,
+                l.getLootId(),
+                true,
+                true,
+                ClientUiSlotBarCategoryItemStatusCommand.BLUE,
+                l.getLootId(),
+                itemBarStatusTooltip,
+                slotBarStatusTooltip
+        );
+
+        return new ClientUiSlotBarCategoryItemCommand(
+                ClientUiSlotBarCategoryItemCommand.NONE,
+                timer,
+                status,
+                new CooldownTypeCommand((short) l.getCooldownType().ordinal()),
+                ClientUiSlotBarCategoryItemCommand.SELECTION
+        );
+    }
+
+    private List<ClientUiTooltipCommand> getStatusTooltip(String lootId, String tooltipId, boolean description, boolean doubleClickToFire, boolean countable, int count) {
+        var tooltips = new ArrayList<ClientUiTooltipCommand>();
+
+        tooltips.add(buildTooltip(ClientUiTooltipTextFormatCommand.const_2514, tooltipId, lootId, "%TYPE%"));
+
+        if (countable) {
+            tooltips.add(buildTooltip(ClientUiTooltipTextFormatCommand.PLAIN, "ttip_count", String.valueOf(count), "%COUNT%"));
+        }
+
+        if (description) {
+            var replacement = new ArrayList<ClientUiTextReplacementCommand>();
+            var format = new ClientUiTooltipTextFormatCommand(ClientUiTooltipTextFormatCommand.const_234);
+
+            tooltips.add(new ClientUiTooltipCommand(ClientUiTooltipCommand.STANDARD, format, replacement, lootId));
+        }
+
+        if (doubleClickToFire) {
+            tooltips.add(buildTooltip(ClientUiTooltipTextFormatCommand.LOCALIZED, "ttip_double_click_to_fire", null, null));
+        }
+
+        return tooltips;
     }
 
     private ClientUiMenuBarCommand buildMenuBar(HashMap<String, String> items, Map<String, DefaultGameSettingsService.Window> defaultWindows, DefaultGameSettingsService.Window defaultWindow, boolean isLeft) {
@@ -185,8 +276,8 @@ public class GameSettingsService {
             var tooltips = new ArrayList<ClientUiTooltipCommand>();
             tooltips.add(new ClientUiTooltipCommand(
                     ClientUiTooltipCommand.STANDARD,
-                    new ClientUITooltipTextFormatCommand(
-                            ClientUITooltipTextFormatCommand.LOCALIZED
+                    new ClientUiTooltipTextFormatCommand(
+                            ClientUiTooltipTextFormatCommand.LOCALIZED
                     ),
                     new ArrayList<>(),
                     v

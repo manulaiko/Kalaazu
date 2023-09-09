@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientUITooltipTextFormatCommand extends OutCommand {
+public class ClientUiTooltipTextFormatCommand extends OutCommand {
     public static final short const_1089 = 3;
     public static final short const_234 = 7;
     public static final short const_1964 = 6;

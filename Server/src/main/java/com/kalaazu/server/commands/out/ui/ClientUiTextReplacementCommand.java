@@ -14,12 +14,12 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ClientUITextReplacementCommand extends OutCommand {
+public class ClientUiTextReplacementCommand extends OutCommand {
     private final short id = 1059;
 
     private String replacement = "";
     private String wildcard = "";
-    private ClientUITooltipTextFormatCommand tooltipTextFormat;
+    private ClientUiTooltipTextFormatCommand tooltipTextFormat;
 
     @Override
     public void write(Packet packet) {
@@ -27,7 +27,7 @@ public class ClientUITextReplacementCommand extends OutCommand {
 
         packet.writeString(this.replacement);
         tooltipTextFormat.write(packet);
-        packet.writeShort(28496);
+        packet.writeShort(0);
         packet.writeString(this.wildcard);
     }
 }

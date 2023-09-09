@@ -18,7 +18,7 @@ public class ClientUiSlotBarCategoryItemTimerCommand extends OutCommand {
     private final short id = 31208;
 
     public ClientUiSlotBarCategoryItemTimerStatusCommand timerState;
-    public String var1474;
+    public String lootId;
     public boolean activatable;
     public double time;
     public double maxTime;
@@ -28,7 +28,7 @@ public class ClientUiSlotBarCategoryItemTimerCommand extends OutCommand {
         packet.writeShort(id);
 
         packet.writeDouble(this.time);
-        packet.writeString(this.var1474);
+        packet.writeString(this.lootId);
         packet.writeBoolean(this.activatable);
         packet.writeDouble(this.maxTime);
         timerState.write(packet);

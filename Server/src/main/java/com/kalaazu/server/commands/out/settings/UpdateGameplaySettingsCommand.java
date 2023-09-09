@@ -26,7 +26,7 @@ public class UpdateGameplaySettingsCommand extends OutCommand {
     private boolean autoChangeAmmo;
     private boolean autoStartEnabled;
     private boolean showBattlerayNotifications;
-    private boolean varE3N;
+    private boolean showLowHpWarn;
 
     public void write(Packet packet) {
         packet.writeShort(id);
@@ -34,13 +34,13 @@ public class UpdateGameplaySettingsCommand extends OutCommand {
         packet.writeBoolean(notSet);
         packet.writeBoolean(autoRefinement);
         packet.writeBoolean(autoChangeAmmo);
-        packet.writeBoolean(varE3N);
+        packet.writeBoolean(showLowHpWarn);
         packet.writeBoolean(autoBuyBootyKeys);
         packet.writeBoolean(autoStartEnabled);
         packet.writeBoolean(quickSlotStopAttack);
         packet.writeBoolean(showBattlerayNotifications);
         packet.writeBoolean(doubleClickAttackEnabled);
-        packet.writeShort(-15038);
+        packet.writeShort(0);
         packet.writeBoolean(autoBoost);
     }
 }

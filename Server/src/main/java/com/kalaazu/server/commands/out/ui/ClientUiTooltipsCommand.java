@@ -27,6 +27,6 @@ public class ClientUiTooltipsCommand extends OutCommand {
 
         packet.writeInt(this.tooltips.size());
         tooltips.forEach(t -> t.write(packet));
-        packet.writeShort(-21605);
+        packet.writeShort(0);
     }
 }

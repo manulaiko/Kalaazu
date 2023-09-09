@@ -70,6 +70,6 @@ public class CooldownTypeCommand extends OutCommand {
         packet.writeShort(id);
 
         packet.writeShort(this.type);
-        packet.writeShort(5387);
+        packet.writeShort(0);
     }
 }

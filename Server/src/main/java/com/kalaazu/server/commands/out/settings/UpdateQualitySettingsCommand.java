@@ -32,7 +32,7 @@ public class UpdateQualitySettingsCommand extends OutCommand {
     @Override
     public void write(Packet packet) {
         packet.writeShort(id);
-        packet.writeShort(15684);
+        packet.writeShort(0);
         packet.writeShort(qualityEffect);
         packet.writeShort(qualityPresetting);
         packet.writeShort(qualityBackground);
@@ -43,7 +43,7 @@ public class UpdateQualitySettingsCommand extends OutCommand {
         packet.writeShort(qualityExplosion);
         packet.writeShort(qualityEngine);
         packet.writeShort(qualityPOIzone);
-        packet.writeShort(8709);
+        packet.writeShort(0);
         packet.writeShort(qualityCollectables);
     }
 }

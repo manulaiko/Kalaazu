@@ -4,22 +4,23 @@
 --
 CREATE TABLE `items`
 (
-    `id`          smallint     NOT NULL AUTO_INCREMENT
+    `id`            smallint     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `name`        varchar(255) NOT NULL DEFAULT '',
-    `loot_id`     varchar(255) NOT NULL DEFAULT '',
-    `category`    tinyint      NOT NULL DEFAULT 0,
-    `description` text         NOT NULL
+    `name`          varchar(255) NOT NULL DEFAULT '',
+    `loot_id`       varchar(255) NOT NULL DEFAULT '',
+    `category`      tinyint      NOT NULL DEFAULT 0,
+    `description`   text         NOT NULL
         COMMENT 'Shop description.',
-    `price`       int          NOT NULL DEFAULT 0,
-    `type`        tinyint      NOT NULL DEFAULT 0,
-    `cooldown`    int          NOT NULL DEFAULT 1000,
-    `is_elite`    boolean      NOT NULL DEFAULT false,
-    `is_event`    boolean      NOT NULL DEFAULT false
+    `price`         int          NOT NULL DEFAULT 0,
+    `type`          tinyint      NOT NULL DEFAULT 0,
+    `cooldown`      int          NOT NULL DEFAULT 1000,
+    `cooldown_type` int          NOT NULL DEFAULT 0,
+    `is_elite`      boolean      NOT NULL DEFAULT false,
+    `is_event`      boolean      NOT NULL DEFAULT false
         COMMENT 'Event item.',
-    `is_buyable`  boolean      NOT NULL DEFAULT true
+    `is_buyable`    boolean      NOT NULL DEFAULT true
         COMMENT 'Buyable in shop',
-    `bonus`       int          NOT NULL DEFAULT 0
+    `bonus`         int          NOT NULL DEFAULT 0
         COMMENT 'Item bonus',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)

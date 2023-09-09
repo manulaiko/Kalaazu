@@ -34,10 +34,10 @@ public class SlotBarsCommand extends OutCommand {
 
         packet.writeInt(slotBars.size());
         slotBars.forEach(s -> s.write(packet));
-        packet.writeShort(-16701);
+        packet.writeShort(0);
         packet.writeInt(categories.size());
         categories.forEach(c -> c.write(packet));
-        packet.writeShort(36649);
+        packet.writeShort(0);
         packet.writeString(position);
     }
 }

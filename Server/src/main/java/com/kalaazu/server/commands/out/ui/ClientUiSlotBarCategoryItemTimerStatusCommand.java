@@ -27,7 +27,7 @@ public class ClientUiSlotBarCategoryItemTimerStatusCommand extends OutCommand {
     public void write(Packet packet) {
         packet.writeShort(id);
 
-        packet.writeShort(637);
+        packet.writeShort(0);
         packet.writeShort(this.status);
     }
 }

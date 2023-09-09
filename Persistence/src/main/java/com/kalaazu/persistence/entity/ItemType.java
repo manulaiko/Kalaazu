@@ -17,7 +17,7 @@ package com.kalaazu.persistence.entity;
  * * 10 = Mine.
  * * 11 = Hellstorm rocket.
  * * 12 = Rocket.
- * * 13 = Special rocket.
+ * * 13 = Special ammo.
  * * 14 = Shield generator.
  * * 15 = Speed generator.
  * * 16 = Laser.
@@ -50,7 +50,7 @@ public enum ItemType {
     MINE,
     HELLSTORM_ROCKET,
     ROCKET,
-    SPECIAL_ROCKET,
+    SPECIAL_AMMO,
     SHIELD_GENERATOR,
     SPEED_GENERATOR,
     LASER,

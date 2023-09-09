@@ -35,14 +35,14 @@ public class UpdateDisplaySettingsCommand extends OutCommand {
     private boolean displayBonusBoxes;
     private boolean displayFreeCargoBoxes;
 
-    private boolean var12P;
-    private boolean varb3N;
+    private boolean showMinimapBackground;
+    private boolean force2D;
     private int displaySetting3DqualityAntialias;
-    private int varp3M;
+    private int qualityBackground;
     private int displaySetting3DqualityEffects;
     private int displaySetting3DqualityLights;
     private int displaySetting3DqualityTextures;
-    private int var03r;
+    private int qualityPoizone;
     private int displaySetting3DsizeTextures;
     private int displaySetting3DtextureFiltering;
     private boolean proActionBarEnabled;
@@ -54,13 +54,13 @@ public class UpdateDisplaySettingsCommand extends OutCommand {
         packet.writeShort(id);
 
         packet.writeInt(displaySetting3DqualityAntialias << 11 | displaySetting3DqualityAntialias >> 21);
-        packet.writeShort(30800);
+        packet.writeShort(0);
         packet.writeBoolean(proActionBarEnabled);
         packet.writeBoolean(proActionBarAutohideEnabled);
-        packet.writeShort(-21589);
+        packet.writeShort(0);
         packet.writeInt(displaySetting3DqualityTextures << 11 | displaySetting3DqualityTextures >> 21);
-        packet.writeBoolean(varb3N);
-        packet.writeInt(var03r << 14 | var03r >> 18);
+        packet.writeBoolean(force2D);
+        packet.writeInt(qualityPoizone << 14 | qualityPoizone >> 18);
         packet.writeBoolean(showNotOwnedItems);
         packet.writeBoolean(displayDrones);
         packet.writeBoolean(displayNotifications);
@@ -72,8 +72,8 @@ public class UpdateDisplaySettingsCommand extends OutCommand {
         packet.writeInt(displaySetting3DsizeTextures >> 12 | displaySetting3DsizeTextures << 20);
         packet.writeBoolean(displayWindowsBackground);
         packet.writeInt(displaySetting3DtextureFiltering >> 16 | displaySetting3DtextureFiltering << 16);
-        packet.writeBoolean(var12P);
-        packet.writeInt(varp3M << 9 | varp3M >> 23);
+        packet.writeBoolean(showMinimapBackground);
+        packet.writeInt(qualityBackground << 9 | qualityBackground >> 23);
         packet.writeInt(displaySetting3DqualityEffects >> 4 | displaySetting3DqualityEffects << 28);
         packet.writeBoolean(displayBonusBoxes);
         packet.writeBoolean(displayFreeCargoBoxes);

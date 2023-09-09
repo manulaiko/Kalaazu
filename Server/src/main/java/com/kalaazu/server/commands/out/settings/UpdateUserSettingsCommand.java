@@ -37,7 +37,7 @@ public class UpdateUserSettingsCommand extends OutCommand {
         displaySettings.write(packet);
         windowSettings.write(packet);
         gameplaySettings.write(packet);
-        packet.writeShort(-23775);
+        packet.writeShort(0);
         audioSettings.write(packet);
     }
 }

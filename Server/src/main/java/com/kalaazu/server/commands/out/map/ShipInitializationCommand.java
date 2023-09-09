@@ -51,9 +51,8 @@ public class ShipInitializationCommand extends OutCommand {
     private byte rankId;
     private String clanTag;
     private int rings;
-    private boolean unknown3;
+    private boolean alive;
     private boolean cloaked;
-    private boolean unknown2;
     private List<VisualModifierCommand> modifiers;
 
     @Override
@@ -62,8 +61,8 @@ public class ShipInitializationCommand extends OutCommand {
 
         packet.writeInt(factionId << 12 | factionId >> 20);
         packet.writeString(shipType);
-        packet.writeBoolean(unknown3);
-        packet.writeShort(-22408);
+        packet.writeBoolean(alive);
+        packet.writeShort(0);
         packet.writeInt(maxCargo >> 16 | maxCargo << 16);
         packet.writeInt(levelId << 9 | levelId >> 23);
         packet.writeInt(maxNanohull >> 14 | maxNanohull << 18);
@@ -93,6 +92,6 @@ public class ShipInitializationCommand extends OutCommand {
         packet.writeInt(modifiers.size());
         modifiers.forEach(m -> m.write(packet));
         packet.writeInt((int)y << 1 | (int)y >> 31);
-        packet.writeBoolean(unknown2);
+        packet.writeBoolean(true);
     }
 }

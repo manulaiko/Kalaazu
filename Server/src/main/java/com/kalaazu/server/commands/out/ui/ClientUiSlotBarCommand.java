@@ -31,11 +31,11 @@ public class ClientUiSlotBarCommand extends OutCommand {
 
         packet.writeBoolean(this.visible);
         packet.writeString(this.position);
-        packet.writeShort(-18790);
+        packet.writeShort(0);
         packet.writeString(this.slotBarId);
         packet.writeInt(this.items.size());
         items.forEach(i -> i.write(packet));
-        packet.writeShort(-4919);
+        packet.writeShort(0);
         packet.writeString(this.layoutId);
     }
 }

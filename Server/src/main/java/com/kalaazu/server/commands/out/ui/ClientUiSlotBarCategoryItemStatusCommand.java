@@ -35,7 +35,7 @@ public class ClientUiSlotBarCategoryItemStatusCommand extends OutCommand {
     public boolean visible = false;
     public boolean activatable = false;
     public short counterStyle = 0;
-    public String var_1474 = "";
+    public String lootId = "";
     public ClientUiTooltipsCommand toolTipItemBar;
     public ClientUiTooltipsCommand toolTipSlotBar;
 
@@ -45,14 +45,14 @@ public class ClientUiSlotBarCategoryItemStatusCommand extends OutCommand {
 
         packet.writeBoolean(this.buyable);
         packet.writeDouble(this.counterValue);
-        packet.writeShort(5539);
+        packet.writeShort(0);
         packet.writeBoolean(this.blocked);
-        packet.writeString(this.var_1474);
+        packet.writeString(this.lootId);
         packet.writeBoolean(this.available);
         packet.writeBoolean(this.activatable);
         packet.writeShort(this.counterStyle);
         toolTipItemBar.write(packet);
-        packet.writeShort(12379);
+        packet.writeShort(0);
         toolTipSlotBar.write(packet);
         packet.writeDouble(this.maxCounterValue);
         packet.writeBoolean(this.selected);

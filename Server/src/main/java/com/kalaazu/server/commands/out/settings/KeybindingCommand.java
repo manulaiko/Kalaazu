@@ -25,7 +25,7 @@ public class KeybindingCommand extends OutCommand {
         packet.writeShort(id);
         packet.writeShort(actionType);
         packet.writeShort(charCode);
-        packet.writeShort(-20216);
+        packet.writeShort(0);
 
         packet.writeInt(keys.size());
         keys.forEach(k -> {

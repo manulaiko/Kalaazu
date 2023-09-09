@@ -27,12 +27,12 @@ public class UpdateAudioSettingsCommand extends OutCommand {
     public void write(Packet packet) {
         packet.writeShort(id);
 
-        packet.writeShort(-4407);
+        packet.writeShort(0);
         packet.writeInt(voice << 9 | voice >> 23);
         packet.writeInt(sound << 7 | sound >> 25);
         packet.writeBoolean(playCombatMusic);
         packet.writeInt(music >> 4 | music << 28);
-        packet.writeShort(-5063);
+        packet.writeShort(0);
         packet.writeBoolean(notSet);
     }
 }

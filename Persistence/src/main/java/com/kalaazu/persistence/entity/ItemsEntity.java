@@ -51,6 +51,11 @@ public class ItemsEntity {
     private int cooldown = 1000;
 
     @Basic
+    @Column(name = "cooldown_type", nullable = false)
+    @Enumerated(EnumType.ORDINAL)
+    private ItemCooldownType cooldownType = ItemCooldownType.NONE;
+
+    @Basic
     @Column(name = "is_elite", nullable = false)
     private boolean isElite = false;
 

@@ -46,7 +46,7 @@ public class UpdateWindowItemCommand extends ClientUiMenuBarItemCommand {
         packet.writeBoolean(this.maximized);
         packet.writeInt(this.width >> 2 | this.width << 30);
         packet.writeString(this.title);
-        packet.writeShort(3358);
+        packet.writeShort(0);
         packet.writeInt(this.y << 14 | this.y >> 18);
         this.helpText.write(packet);
         packet.writeInt(this.x >> 12 | this.x << 20);

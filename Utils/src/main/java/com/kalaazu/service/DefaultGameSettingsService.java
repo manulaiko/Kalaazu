@@ -119,8 +119,6 @@ public class DefaultGameSettingsService {
                 false,
                 false,
                 false,
-                false,
-                false,
                 false
         );
     }
@@ -230,14 +228,14 @@ public class DefaultGameSettingsService {
             boolean displayBonusBoxes,
             boolean displayFreeCargoBoxes,
 
-            boolean var12P,
-            boolean varb3N,
+            boolean showMinimapBackground,
+            boolean force2D,
             int displaySetting3DqualityAntialias,
-            int varp3M,
+            int qualityBackground,
             int displaySetting3DqualityEffects,
             int displaySetting3DqualityLights,
             int displaySetting3DqualityTextures,
-            int var03r,
+            int qualityPoizone,
             int displaySetting3DsizeTextures,
             int displaySetting3DtextureFiltering,
             boolean proActionBarEnabled,
@@ -247,8 +245,6 @@ public class DefaultGameSettingsService {
     }
 
     public record QuestSettings(
-            boolean varf1t,
-            boolean varOn,
             boolean questsLevelOrderDescending,
             boolean questsAvailableFilter,
             boolean questsUnavailableFilter,

@@ -29,7 +29,6 @@ public class ClientUiSlotBarCategoryItemCommand extends OutCommand {
     public short counterType;
     public ClientUiSlotBarCategoryItemTimerCommand timer;
     public ClientUiSlotBarCategoryItemStatusCommand status;
-    public int var586;
     public CooldownTypeCommand cooldownType;
     public short actionStyle;
 
@@ -39,9 +38,9 @@ public class ClientUiSlotBarCategoryItemCommand extends OutCommand {
 
         status.write(packet);
         timer.write(packet);
-        packet.writeShort(13478);
+        packet.writeShort(0);
         cooldownType.write(packet);
-        packet.writeInt(this.var586 >> 3 | this.var586 << 29);
+        packet.writeInt(0);
         packet.writeShort(this.actionStyle);
         packet.writeShort(this.counterType);
     }

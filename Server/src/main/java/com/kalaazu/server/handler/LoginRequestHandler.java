@@ -284,7 +284,6 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 0, // TODO account rings
                 true,
                 false, // TODO account cloacked
-                true,
                 new ArrayList<>()
         );
 
