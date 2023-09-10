@@ -48,12 +48,16 @@ public class ItemsEntity {
 
     @Basic
     @Column(name = "cooldown", nullable = false)
-    private int cooldown = 1000;
+    private short cooldown = 1000;
 
     @Basic
     @Column(name = "cooldown_type", nullable = false)
     @Enumerated(EnumType.ORDINAL)
     private ItemCooldownType cooldownType = ItemCooldownType.NONE;
+
+    @Basic
+    @Column(name = "slotbar_order", nullable = false)
+    private byte slotbarOrder = -1;
 
     @Basic
     @Column(name = "is_elite", nullable = false)

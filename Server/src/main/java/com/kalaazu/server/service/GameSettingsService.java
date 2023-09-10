@@ -187,22 +187,64 @@ public class GameSettingsService {
         categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.LASER_AMMO, "lasers", "ttip_laser"));
         categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.ROCKET, "rockets", "ttip_rocket"));
         categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.HELLSTORM_ROCKET, "rocket_launchers", "ttip_rocket"));
-        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.SPECIAL_AMMO, "special_items", "ttip_explosive"));
-        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.MINE, "mines", "ttip_explosive"));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.SPECIAL_AMMO, "special_items", "ttip_explosive", false));
+        categories.add(buildCategory(ItemCategory.AMMUNITION, ItemType.MINE, "mines", "ttip_explosive", false));
+        categories.add(buildCategory(ItemCategory.EQUIPMENT, ItemType.EXTRA, "cpus", "ttip_cpu", false, false)); // TODO fix tooltips
+        categories.add(buildCategory(ItemCategory.DRONES, ItemType.DRONE_FORMATION, "drone_formations", "ttip_btn_droneFormation_STD", false, false)); // TODO fix tooltips
+        categories.add(buildBuyNowCategory());
+        // TODO technofactory items
+        // TODO Ship abilities
 
         return categories;
     }
 
     private ClientUiSlotBarCategoryCommand buildCategory(ItemCategory category, ItemType type, String tooltip, String tooltipId) {
+        return buildCategory(category, type, tooltip, tooltipId, false);
+    }
+
+    private ClientUiSlotBarCategoryCommand buildCategory(ItemCategory category, ItemType type, String tooltip, String tooltipId, boolean doubleClick) {
+        return buildCategory(category, type, tooltip, tooltipId, doubleClick, true);
+    }
+
+    private ClientUiSlotBarCategoryCommand buildCategory(ItemCategory category, ItemType type, String tooltip, String tooltipId, boolean doubleClick, boolean description) {
         var categoryItems = new ArrayList<ClientUiSlotBarCategoryItemCommand>();
 
         var items = this.items.findByCategoryAndType(category, type);
-        items.forEach(l -> categoryItems.add(buildCategoryItem(l, tooltipId)));
+        items.stream()
+                .sorted(Comparator.comparingInt(ItemsEntity::getSlotbarOrder))
+                .forEach(l -> categoryItems.add(buildCategoryItem(l, tooltipId, description, doubleClick)));
 
         return new ClientUiSlotBarCategoryCommand(categoryItems, tooltip);
     }
 
+    private ClientUiSlotBarCategoryCommand buildBuyNowCategory() {
+        var categoryItems = new ArrayList<ClientUiSlotBarCategoryItemCommand>();
+
+        this.items.findByCategoryAndType(ItemCategory.AMMUNITION, ItemType.LASER_AMMO)
+                .stream()
+                .sorted(Comparator.comparingInt(ItemsEntity::getSlotbarOrder))
+                .forEach(l -> categoryItems.add(buildCategoryItem(l, "ttip_laser")));
+
+
+        this.items.findByCategoryAndType(ItemCategory.AMMUNITION, ItemType.ROCKET)
+                .stream()
+                .sorted(Comparator.comparingInt(ItemsEntity::getSlotbarOrder))
+                .forEach(l -> categoryItems.add(buildCategoryItem(l, "ttip_rocket")));
+
+
+        this.items.findByCategoryAndType(ItemCategory.AMMUNITION, ItemType.HELLSTORM_ROCKET)
+                .stream()
+                .sorted(Comparator.comparingInt(ItemsEntity::getSlotbarOrder))
+                .forEach(l -> categoryItems.add(buildCategoryItem(l, "ttip_rocket")));
+
+        return new ClientUiSlotBarCategoryCommand(categoryItems, "buy_now");
+    }
+
     private ClientUiSlotBarCategoryItemCommand buildCategoryItem(ItemsEntity l, String tooltipId) {
+        return buildCategoryItem(l, tooltipId, true, false);
+    }
+
+    private ClientUiSlotBarCategoryItemCommand buildCategoryItem(ItemsEntity l, String tooltipId, boolean description, boolean doubleClickToFire) {
         var timer = new ClientUiSlotBarCategoryItemTimerCommand(
                 new ClientUiSlotBarCategoryItemTimerStatusCommand(ClientUiSlotBarCategoryItemTimerStatusCommand.READY),
                 l.getLootId(),
@@ -211,8 +253,8 @@ public class GameSettingsService {
                 l.getCooldown()
         );
 
-        var itemBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, true, true, false, 0));
-        var slotBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, true, false, false, 0));
+        var itemBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, description, doubleClickToFire, false, 0));
+        var slotBarStatusTooltip = new ClientUiTooltipsCommand(getStatusTooltip(l.getLootId(), tooltipId, description, doubleClickToFire, false, 0));
 
         var status = new ClientUiSlotBarCategoryItemStatusCommand(
                 true,

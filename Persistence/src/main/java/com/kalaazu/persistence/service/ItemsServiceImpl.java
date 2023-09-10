@@ -24,7 +24,7 @@ public class ItemsServiceImpl implements ItemsService {
 
     @Override
     public List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type) {
-        return this.repository.findAllByCategoryAndType(category, type);
+        return this.repository.findAllByCategoryAndTypeAndSlotbarOrderNot(category, type, (short)-1);
     }
 
     @Override

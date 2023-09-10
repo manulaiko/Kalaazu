@@ -13,14 +13,15 @@ CREATE TABLE `items`
         COMMENT 'Shop description.',
     `price`         int          NOT NULL DEFAULT 0,
     `type`          tinyint      NOT NULL DEFAULT 0,
-    `cooldown`      int          NOT NULL DEFAULT 1000,
-    `cooldown_type` int          NOT NULL DEFAULT 0,
+    `cooldown`      smallint     NOT NULL DEFAULT 1000,
+    `cooldown_type` tinyint      NOT NULL DEFAULT 0,
+    `slotbar_order` tinyint      NOT NULL DEFAULT -1,
     `is_elite`      boolean      NOT NULL DEFAULT false,
     `is_event`      boolean      NOT NULL DEFAULT false
         COMMENT 'Event item.',
     `is_buyable`    boolean      NOT NULL DEFAULT true
         COMMENT 'Buyable in shop',
-    `bonus`         int          NOT NULL DEFAULT 0
+    `bonus`         tinyint      NOT NULL DEFAULT 0
         COMMENT 'Item bonus',
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)

@@ -99,7 +99,7 @@ public class DefaultGameSettingsService {
                 true,
                 true,
                 true,
-                false,
+                true,
                 4,
                 4,
                 4,
@@ -150,9 +150,9 @@ public class DefaultGameSettingsService {
         return new AudioSettings(
                 false,
                 true,
-                100,
-                100,
-                100
+                0,
+                0,
+                0
         );
     }
 

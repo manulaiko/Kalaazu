@@ -193,8 +193,6 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
 
     @Override
     public void handle(LoginRequest packet, GameSession session) {
-        var loginPackets = new ArrayList<Packet>();
-
         log.info("Incoming login request from userID {} with sessionID {}", packet.getUserId(), packet.getSessionId());
 
         var user = users.find(packet.getUserId());
