@@ -3,15 +3,14 @@ package com.kalaazu.server.handler;
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
+import com.kalaazu.server.commands.in.LoginRequest;
 import com.kalaazu.server.commands.out.map.ShipInitializationCommand;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.netty.event.EndGameSessionEvent;
 import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
-import com.kalaazu.server.commands.in.LoginRequest;
 import com.kalaazu.server.netty.event.SendCommandEvent;
-import com.kalaazu.server.util.Handler;
-import com.kalaazu.server.util.Packet;
 import com.kalaazu.server.service.GameSettingsService;
+import com.kalaazu.server.util.Handler;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -260,7 +259,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 config.getShield(),
                 ship.getHealth(),
                 config.getHealth(),
-                (int)items.cargo,
+                (int) items.cargo,
                 ship.getShipsByShipsId().getCargo(),
                 ship.getNanohull(),
                 ship.getShipsByShipsId().getHealth(),
@@ -276,7 +275,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 account.getLevelsByLevelsId().getId(),
                 items.cre,
                 items.uri,
-                (int)items.jpt,
+                (int) items.jpt,
                 account.getRanksByRanksId().getId(),
                 clanTag,
                 0, // TODO account rings

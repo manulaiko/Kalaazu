@@ -158,12 +158,12 @@ public class DefaultGameSettingsService {
 
     public Map<String, Window> getWindows() {
         var map = new HashMap<String, Window>();
-        map.put("user", new Window(30, 30, 212, 88, false));
-        map.put("ship", new Window(30, 30, 212, 88, false));
+        map.put("user", new Window(0, 100, 212, 88, true));
+        map.put("ship", new Window(87, 100, 212, 88, true));
         map.put("ship_warp", new Window(50, 50, 300, 210, false));
-        map.put("chat", new Window(10, 10, 300, 150, false));
-        map.put("group", new Window(50, 50, 196, 200, false));
-        map.put("minimap", new Window(30, 30, 238, 180, false));
+        map.put("chat", new Window(0, 3, 370, 260, true));
+        map.put("group", new Window(100, 30, 196, 200, true));
+        map.put("minimap", new Window(100, 100, 238, 180, true));
         map.put("spacemap", new Window(10, 10, 650, 475, false));
         map.put("log", new Window(30, 30, 240, 150, false));
         map.put("pet", new Window(50, 50, 260, 130, false));
@@ -269,7 +269,7 @@ public class DefaultGameSettingsService {
             boolean autoChangeAmmo,
             boolean autoStartEnabled,
             boolean showBattlerayNotifications,
-            boolean varE3N
+            boolean showLowHpWarn
     ) {
     }
 
