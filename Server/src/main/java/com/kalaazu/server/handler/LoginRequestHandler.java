@@ -233,7 +233,6 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
         var hangar = account.getAccountsHangarsByAccountsHangarsId();
         var ship = hangar.getAccountsShipsByAccountsShipsId();
         var config = hangar.getAccountsConfigurationsByAccountsConfigurationsId();
-        var position = new Vector2(ship.getPosition());
 
         var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
 
@@ -263,8 +262,8 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 ship.getShipsByShipsId().getCargo(),
                 ship.getNanohull(),
                 ship.getShipsByShipsId().getHealth(),
-                position.getX(),
-                position.getY(),
+                ship.getPosition().getX(),
+                ship.getPosition().getY(),
                 mapId,
                 account.getFactionsByFactionsId().getId(),
                 clanId,

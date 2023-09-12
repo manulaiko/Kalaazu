@@ -1,8 +1,11 @@
 package com.kalaazu.persistence.entity;
 
+import com.kalaazu.math.Vector2;
+import com.kalaazu.persistence.Vector2Type;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.Type;
 
 import java.sql.Timestamp;
 import java.util.Collection;
@@ -30,7 +33,8 @@ public class ClansBattlestationsEntity {
 
     @Basic
     @Column(name = "position", nullable = false)
-    private long position = 0;
+    @Type(value = Vector2Type.class)
+    private Vector2 position = new Vector2(0L);
 
     @Basic
     @Column(name = "date")
