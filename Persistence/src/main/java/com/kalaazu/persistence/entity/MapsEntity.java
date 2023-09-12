@@ -54,4 +54,7 @@ public class MapsEntity {
 
     @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsStationsEntity> mapsStations;
+
+    @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
+    private Collection<MapsCollectablesEntity> mapsCollectables;
 }

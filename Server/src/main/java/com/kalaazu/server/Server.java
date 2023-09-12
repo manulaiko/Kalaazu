@@ -2,6 +2,7 @@ package com.kalaazu.server;
 
 import com.kalaazu.server.netty.GameServer;
 import com.kalaazu.server.netty.PolicyServer;
+import com.kalaazu.server.service.MapService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
@@ -16,6 +17,8 @@ public class Server implements ApplicationListener<ApplicationReadyEvent> {
     private final GameServer gameServer;
     private final PolicyServer policyServer;
 
+    private final MapService mapService;
+
     /**
      * Handle an application event.
      *
@@ -23,9 +26,9 @@ public class Server implements ApplicationListener<ApplicationReadyEvent> {
      */
     @Override
     public void onApplicationEvent(ApplicationReadyEvent event) {
+        mapService.initialize();
+
         gameServer.start();
         policyServer.start();
-
-
     }
 }
