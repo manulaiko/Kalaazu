@@ -18,7 +18,7 @@ CREATE TABLE `accounts_history`
 
     CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s history events.';
 
 CREATE UNIQUE INDEX `accounts_history_accounts_id_idx`

@@ -39,10 +39,10 @@ public class GenerateServices {
 
             import ${entityClass};
             import ${repositoryClass};
-            import org.springframework.beans.factory.annotation.Autowired;
             import org.springframework.stereotype.Service;
 
             import java.util.List;
+            import lombok.RequiredArgsConstructor;
 
             /**
              * ${entityName} service.
@@ -53,8 +53,8 @@ public class GenerateServices {
              * @author Manulaiko <manulaiko@gmail.com>
              */
             @Service
+            @RequiredArgsConstructor
             public class ${serviceClassName}Impl implements ${serviceClassName} {
-                @Autowired
                 private ${repositoryClassName} repository;
 
                 /**

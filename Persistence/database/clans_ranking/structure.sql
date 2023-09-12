@@ -15,7 +15,7 @@ CREATE TABLE `clans_ranking`
 
     CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan ranking.';
 
 CREATE UNIQUE INDEX `clans_ranking_accounts_id_idx`

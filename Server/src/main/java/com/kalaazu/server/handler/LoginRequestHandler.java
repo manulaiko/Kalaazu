@@ -1,6 +1,5 @@
 package com.kalaazu.server.handler;
 
-import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.server.commands.in.LoginRequest;

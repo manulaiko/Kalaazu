@@ -21,7 +21,7 @@ CREATE TABLE `accounts_configurations`
 
     CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Configurations of the accounts.';
 
 CREATE INDEX `accounts_configurations_accounts_hangars_id_idx`

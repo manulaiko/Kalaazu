@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.RewardsEntity;
 import com.kalaazu.persistence.repository.RewardsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class RewardsServiceImpl implements RewardsService {
-    @Autowired
-    private RewardsRepository repository;
+    private final RewardsRepository repository;
 
     /**
      * @inheritDoc

@@ -15,5 +15,5 @@ CREATE TABLE `galaxygates_probabilities`
 
     CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Spin probabilities for the galaxy gates.';

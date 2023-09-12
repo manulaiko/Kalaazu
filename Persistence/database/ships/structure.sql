@@ -29,7 +29,7 @@ CREATE TABLE `ships`
 
     CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Ships table.';
 
 CREATE INDEX `ships_items_id_idx`

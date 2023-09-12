@@ -25,5 +25,7 @@ public class Server implements ApplicationListener<ApplicationReadyEvent> {
     public void onApplicationEvent(ApplicationReadyEvent event) {
         gameServer.start();
         policyServer.start();
+
+
     }
 }

@@ -41,8 +41,8 @@ export default {
 <style lang="sass" scoped>
 section
 background-color:
-
 rgba
+
 (
 255
 ,

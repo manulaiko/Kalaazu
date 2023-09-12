@@ -15,7 +15,7 @@ CREATE TABLE `galaxygates_waves`
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Waves of the galaxy gate.';
 
 CREATE INDEX `galaxygates_waves_maps_id_idx`

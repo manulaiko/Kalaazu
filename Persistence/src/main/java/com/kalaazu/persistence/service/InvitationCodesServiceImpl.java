@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.InvitationCodesEntity;
 import com.kalaazu.persistence.repository.InvitationCodesRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class InvitationCodesServiceImpl implements InvitationCodesService {
-    @Autowired
-    private InvitationCodesRepository repository;
+    private final InvitationCodesRepository repository;
 
     /**
      * @inheritDoc

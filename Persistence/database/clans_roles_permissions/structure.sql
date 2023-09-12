@@ -13,7 +13,7 @@ CREATE TABLE `clans_roles_permissions`
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan roles'' permissions';
 
 CREATE INDEX `clans_roles_permissions_clans_roles_id_idx`

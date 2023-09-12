@@ -8,7 +8,7 @@ CREATE TABLE `clans`
         COMMENT 'Primary Key.',
     `accounts_id` int          NOT NULL
         COMMENT 'Owner ID',
-    `factions_id` tinyint NULL DEFAULT NULL
+    `factions_id` tinyint      NULL     DEFAULT NULL
         COMMENT 'Clan affiliation faction.',
     `tag`         varchar(4)   NOT NULL DEFAULT ''
         COMMENT 'Name abbreviation.',
@@ -20,7 +20,7 @@ CREATE TABLE `clans`
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server clans.';
 
 CREATE UNIQUE INDEX `clans_name_idx`

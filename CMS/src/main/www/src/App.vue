@@ -11,8 +11,8 @@ export default {
 <style lang="sass">
 body
 background-image:
-
 url
+
 (
 "/images/bg.jpg"
 )
@@ -28,8 +28,8 @@ color: whitesmoke
 
 &:hover
 background-color:
-
 rgba
+
 (
 0
 ,

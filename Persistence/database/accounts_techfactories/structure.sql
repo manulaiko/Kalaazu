@@ -17,5 +17,5 @@ CREATE TABLE `accounts_techfactories`
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Nanotech factory items.';

@@ -6,12 +6,12 @@
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts` FOREIGN KEY `accounts_hangars_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_ships` FOREIGN KEY `accounts_hangars_accounts_ships` (`accounts_ships_id`)
-    REFERENCES `accounts_ships` (`id`);
+        REFERENCES `accounts_ships` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_configurations` FOREIGN KEY `accounts_hangars_accounts_configurations` (`accounts_configurations_id`)
-    REFERENCES `accounts_configurations` (`id`);
+        REFERENCES `accounts_configurations` (`id`);

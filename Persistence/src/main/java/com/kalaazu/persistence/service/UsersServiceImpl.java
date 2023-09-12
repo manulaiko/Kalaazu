@@ -3,11 +3,9 @@ package com.kalaazu.persistence.service;
 import com.kalaazu.persistence.entity.UsersEntity;
 import com.kalaazu.persistence.repository.UsersRepository;
 import com.kalaazu.util.StringUtils;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.sql.Timestamp;
-import java.time.Instant;
 import java.util.List;
 
 /**
@@ -19,9 +17,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class UsersServiceImpl implements UsersService {
-    @Autowired
-    private UsersRepository repository;
+    private final UsersRepository repository;
 
     /**
      * @inheritDoc

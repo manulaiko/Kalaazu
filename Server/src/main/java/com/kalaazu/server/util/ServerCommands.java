@@ -3,7 +3,7 @@ package com.kalaazu.server.util;
 /**
  * Server commands.
  * ================
- *
+ * <p>
  * Contains the different server commands.
  *
  * @author manulaiko <manulaiko@gmail.com>

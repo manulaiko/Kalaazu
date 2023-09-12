@@ -26,7 +26,7 @@ CREATE TABLE `items`
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s items.';
 
 CREATE INDEX `items_loot_id_idx`

@@ -13,7 +13,7 @@ CREATE TABLE `rewards_ships`
 
     CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_ships_ships_id_idx`

@@ -11,7 +11,7 @@ CREATE TABLE `vouchers`
 
     CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Voucher codes.';
 
 CREATE UNIQUE INDEX `vouchers_code_idx`

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 /**
  * Inbound handler.
  * ================
- *
+ * <p>
  * Process the incoming channel messages and connections.
  *
  * @author manulaiko <manulaiko@gmail.com>

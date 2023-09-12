@@ -6,7 +6,7 @@ CREATE TABLE `quests_conditions`
 (
     `id`                   int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `quests_conditions_id` int NULL DEFAULT NULL
+    `quests_conditions_id` int          NULL     DEFAULT NULL
         COMMENT 'Condition needed to unlock this condition.',
     `quests_id`            smallint     NOT NULL,
     `type`                 tinyint      NOT NULL DEFAULT 0
@@ -15,7 +15,7 @@ CREATE TABLE `quests_conditions`
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Quest''s conditions.';
 
 CREATE INDEX `quests_conditions_quests_conditions_id_idx`

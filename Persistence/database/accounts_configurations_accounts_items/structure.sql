@@ -13,5 +13,5 @@ CREATE TABLE `accounts_configurations_accounts_items`
 
     CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items of the configuration.';

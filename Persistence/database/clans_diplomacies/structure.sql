@@ -12,7 +12,7 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Clan that receives the request.',
     `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Diplomacy creation date.',
-    `expires`       timestamp NULL DEFAULT NULL
+    `expires`       timestamp NULL     DEFAULT NULL
         COMMENT 'Date when the diplomacy expires.',
     `status`        tinyint   NOT NULL DEFAULT 0
         COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
@@ -21,7 +21,7 @@ CREATE TABLE `clans_diplomacies`
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Diplomacy table for clans.';
 
 CREATE INDEX `clans_diplomacies_from_clans_id_idx`

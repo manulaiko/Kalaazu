@@ -20,7 +20,7 @@ CREATE TABLE `factions`
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s factions.';
 
 CREATE UNIQUE INDEX `factions_name_idx`

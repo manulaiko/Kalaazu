@@ -21,6 +21,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.util.random.RandomGenerator;
 
 /**
  * Encapsulates a 2D vector. Allows chaining methods by returning a reference to itself
@@ -37,7 +38,6 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * the x-component of this vector
      */
     private float x;
-
     /**
      * the y-component of this vector
      */
@@ -72,6 +72,31 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2(Long l) {
         this.x = (float) (l >> 32);
         this.y = (float) (l.intValue());
+    }
+
+    /**
+     * Generates a random vector.
+     *
+     * @param limit Generated vector won't be outside this limit.
+     * @return Random vector between (0,0) and limit.
+     */
+    public static Vector2 random(Vector2 limit) {
+        return random(Zero, limit);
+    }
+
+    /**
+     * Generates a random vector.
+     *
+     * @param limit Generated vector won't be outside this limit.
+     * @return Random vector between (0,0) and limit.
+     */
+    public static Vector2 random(Vector2 from, Vector2 limit) {
+        var r = RandomGenerator.getDefault();
+
+        var x = r.nextFloat(from.getX(), limit.getX());
+        var y = r.nextFloat(from.getY(), limit.getY());
+
+        return new Vector2(x, y);
     }
 
     public static float len(float x, float y) {

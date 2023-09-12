@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.AccountsSettingsEntity;
 import com.kalaazu.persistence.repository.AccountsSettingsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class AccountsSettingsServiceImpl implements AccountsSettingsService {
-    @Autowired
-    private AccountsSettingsRepository repository;
+    private final AccountsSettingsRepository repository;
 
     /**
      * @inheritDoc

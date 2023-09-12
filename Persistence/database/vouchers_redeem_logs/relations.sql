@@ -5,8 +5,8 @@
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_vouchers` FOREIGN KEY `vouchers_redeem_logs_vouchers` (`vouchers_id`)
-    REFERENCES `vouchers` (`id`);
+        REFERENCES `vouchers` (`id`);
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);

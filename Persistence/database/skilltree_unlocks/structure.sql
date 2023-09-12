@@ -13,7 +13,7 @@ CREATE TABLE `skilltree_unlocks`
 
     CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Requisites needed to unlock a skill upgrade.';
 
 CREATE INDEX `skilltree_unlocks_upgrade_skilltree_levels_id_idx`

@@ -1,7 +1,6 @@
-package net.bigpoint.darkorbit.fui.components.core.interfaces
-{
-   public interface IDraggable
-   {
-       
-   }
+package net.bigpoint.darkorbit.fui.components.core.interfaces {
+
+public interface IDraggable {
+
+}
 }

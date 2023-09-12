@@ -14,7 +14,7 @@ CREATE TABLE `galaxygates_spins`
 
     CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Spins from the galaxy gate.';
 
 CREATE INDEX `galaxygates_spins_items_id_idx`

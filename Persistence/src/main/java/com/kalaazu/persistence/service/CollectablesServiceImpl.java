@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.CollectablesEntity;
 import com.kalaazu.persistence.repository.CollectablesRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class CollectablesServiceImpl implements CollectablesService {
-    @Autowired
-    private CollectablesRepository repository;
+    private final CollectablesRepository repository;
 
     /**
      * @inheritDoc

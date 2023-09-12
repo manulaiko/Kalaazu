@@ -121,41 +121,32 @@ this.isHeroLoaded = true;
 this.dispatchSpacemapLoaded();
 
 
-
-public function createShip(param1:int, param2:int, param3:int, param4:int, param5:int, param6:String, param7:String, param8:int, param9:int, param10:int, param11:int, param12:int, param13:Boolean, param14:int, param15:Boolean) : Ship
-{
-    var _loc23_:ShipLightDecorator = null;
-    if(!this.map.valid)
-    {
+public function createShip(param1: int, param2: int, param3: int, param4: int, param5: int, param6: String, param7: String, param8: int, param9: int, param10: int, param11: int, param12: int, param13: Boolean, param14: int, param15: Boolean): Ship {
+    var _loc23_: ShipLightDecorator = null;
+    if (!this.map.valid) {
         return null;
     }
-    var _loc16_:MapObject;
-    if((_loc16_ = this.getShip(param2)) != null)
-    {
-        if(_loc16_.shipPattern.getPatternID() == param1)
-        {
+    var _loc16_: MapObject;
+    if ((_loc16_ = this.getShip(param2)) != null) {
+        if (_loc16_.shipPattern.getPatternID() == param1) {
             return _loc16_ as Ship;
         }
-        if(_loc16_.isHeroShip())
-        {
+        if (_loc16_.isHeroShip()) {
             this.removeHeroShip();
-        }
-        else
-        {
-            this.removeOpponentShip(param2,false);
+        } else {
+            this.removeOpponentShip(param2, false);
         }
     }
-    var _loc17_:ShipPattern;
-    if((_loc17_ = PatternManager.shipPatterns[param1]) == null)
-    {
+    var _loc17_: ShipPattern;
+    if ((_loc17_ = PatternManager.shipPatterns[param1]) == null) {
         _loc17_ = PatternManager.shipPatterns[4];
         param6 = "! SHIP TYPE " + param1 + " NOT DEFINED !";
     }
-    var _loc18_:AudibleResourcePattern = PatternManager.enginePatterns[_loc17_.getEngineTypeID()];
-    var _loc19_:EngineSmokePattern = PatternManager.engineSmokePatterns[_loc17_.getEngineSmokeID()];
-    var _loc20_:ResourcePattern = PatternManager.shipGlowPatterns[_loc17_.getGlowID()];
-    var _loc21_:Ship;
-    (_loc21_ = new Ship(this,param2,param6,this.getMap().getMain().screenManager.getLaserLayer())).explodeTypeID = _loc17_.getExplodeTypeID();
+    var _loc18_: AudibleResourcePattern = PatternManager.enginePatterns[_loc17_.getEngineTypeID()];
+    var _loc19_: EngineSmokePattern = PatternManager.engineSmokePatterns[_loc17_.getEngineSmokeID()];
+    var _loc20_: ResourcePattern = PatternManager.shipGlowPatterns[_loc17_.getGlowID()];
+    var _loc21_: Ship;
+    (_loc21_ = new Ship(this, param2, param6, this.getMap().getMain().screenManager.getLaserLayer())).explodeTypeID = _loc17_.getExplodeTypeID();
     _loc21_.setShipPattern(_loc17_);
     _loc21_.setEnginePattern(_loc18_);
     _loc21_.setEngineSmokePattern(_loc19_);
@@ -170,8 +161,7 @@ public function createShip(param1:int, param2:int, param3:int, param4:int, param
     _loc21_.createContainers();
     _loc21_.galaxyGatesFinished = param14;
     _loc21_.setNPC(param15);
-    if(!param15)
-    {
+    if (!param15) {
         _loc21_.isGroupMember = this.map.getMain().getGroupManager().isGroupMember(param2);
     }
     this.ships[int(param2)] = _loc21_;
@@ -179,36 +169,26 @@ public function createShip(param1:int, param2:int, param3:int, param4:int, param
     _loc21_.updateShipClip();
     _loc21_.setExpansionTypeID(param12);
     _loc21_.updateExpansionClip();
-    _loc21_.setClipPosition(param3,param4);
-    if(Settings.qualityEngine == Settings.QUALITY_HIGH)
-    {
+    _loc21_.setClipPosition(param3, param4);
+    if (Settings.qualityEngine == Settings.QUALITY_HIGH) {
         _loc21_.startEngineTimer();
     }
-    var _loc22_:*;
-    if(_loc22_ = param2 == Hero.userID)
-    {
+    var _loc22_: *;
+    if (_loc22_ = param2 == Hero.userID) {
         this.map.getMain().screenManager.hero = _loc21_;
-        if(ScreenManager.cameraLock == ScreenManager.CAMERA_LOCKED_TO_HERO)
-        {
+        if (ScreenManager.cameraLock == ScreenManager.CAMERA_LOCKED_TO_HERO) {
             this.map.getMain().screenManager.getHeroLayer().addChild(_loc21_.getClipContainer());
-        }
-        else
-        {
+        } else {
             this.map.getMain().screenManager.getShipLayer().addChild(_loc21_.getClipContainer());
         }
-    }
-    else
-    {
+    } else {
         this.map.getMain().screenManager.getShipLayer().addChild(_loc21_.getClipContainer());
     }
-    if(param1 == 98)
-    {
+    if (param1 == 98) {
         _loc21_.isPoliceShip = true;
         _loc21_.stopSirenAnimations();
         _loc21_.flashLights();
-    }
-    else if(param1 == 63)
-    {
+    } else if (param1 == 63) {
         _loc23_ = new ShipLightDecorator(_loc21_);
         _loc21_.shipLightDecorator = _loc23_;
         _loc21_.updateStandardVisualShipRotation = _loc23_.updateGraphicRotation;

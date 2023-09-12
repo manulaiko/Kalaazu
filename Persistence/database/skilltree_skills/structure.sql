@@ -23,7 +23,7 @@ CREATE TABLE `skilltree_skills`
 
     CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'The available skills.';
 
 CREATE INDEX `skilltree_skills_name_idx`

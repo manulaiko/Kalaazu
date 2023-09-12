@@ -18,7 +18,7 @@ CREATE TABLE `accounts_banks`
 
     CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s internal bank.';
 
 CREATE UNIQUE INDEX `accounts_banks_accounts_id_idx`

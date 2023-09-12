@@ -2,7 +2,6 @@ package com.kalaazu.persistence;
 
 import com.kalaazu.math.Vector2;
 import lombok.Getter;
-import lombok.experimental.Accessors;
 import org.hibernate.Cache;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
 import org.hibernate.usertype.UserType;
@@ -53,7 +52,7 @@ public class Vector2Type implements UserType<Vector2> {
      */
     @Override
     public void nullSafeSet(PreparedStatement st, Vector2 value, int index, SharedSessionContractImplementor session) throws SQLException {
-        if(value == null) {
+        if (value == null) {
             st.setNull(index, Types.BIGINT);
         } else {
             st.setLong(index, value.toLong());

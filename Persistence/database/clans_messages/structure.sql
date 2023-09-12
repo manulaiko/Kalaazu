@@ -11,7 +11,7 @@ CREATE TABLE `clans_messages`
     `from_accounts_id` int          NOT NULL,
     `from_status`      tinyint      NOT NULL DEFAULT 1
         COMMENT '0 = unread, 1 = read, 2 = deleted.',
-    `to_accounts_id`   int NULL DEFAULT NULL,
+    `to_accounts_id`   int          NULL     DEFAULT NULL,
     `to_status`        tinyint      NOT NULL DEFAULT 0
         COMMENT '0 = unread, 1 = read, 2 = unread.',
     `title`            varchar(255) NOT NULL DEFAULT '',
@@ -20,7 +20,7 @@ CREATE TABLE `clans_messages`
 
     CONSTRAINT `clans_messages` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Messages in the clan.';
 
 CREATE INDEX `clans_messages_clans_id_idx`

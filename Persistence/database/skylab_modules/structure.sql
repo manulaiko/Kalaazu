@@ -27,7 +27,7 @@ CREATE TABLE `skylab_modules`
 
     CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Different skylab modules.';
 
 CREATE INDEX `skylab_modules_name_idx`

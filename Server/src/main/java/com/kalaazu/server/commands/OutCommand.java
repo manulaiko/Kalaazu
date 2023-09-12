@@ -5,7 +5,7 @@ import com.kalaazu.server.util.Packet;
 /**
  * Out Command.
  * ============
- *
+ * <p>
  * Base class for all outgoing game commands.
  *
  * @author manulaiko <manulaiko@gmail.com>

@@ -4,4 +4,4 @@
 
 ALTER TABLE `clans_ranking`
     ADD CONSTRAINT `clans_ranking_clans` FOREIGN KEY `clans_ranking_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);

@@ -14,7 +14,7 @@ CREATE TABLE `moderators`
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server moderators.';
 
 CREATE INDEX `moderators_accounts_id_idx`

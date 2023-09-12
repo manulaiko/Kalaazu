@@ -15,7 +15,7 @@ CREATE TABLE `accounts_items`
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items bough by an account.';
 
 CREATE INDEX `accounts_items_items_id_idx`

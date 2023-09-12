@@ -13,7 +13,7 @@ CREATE TABLE `accounts_drones`
 
     CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s drones.';
 
 CREATE UNIQUE INDEX `accounts_drones_accounts_id_idx`

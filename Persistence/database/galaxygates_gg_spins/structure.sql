@@ -11,7 +11,7 @@ CREATE TABLE `galaxygates_gg_spins`
 
     CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
 
 CREATE INDEX `galaxygates_gg_spins_galaxygates_id_idx`

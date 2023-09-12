@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Ship initialization command.
  * ============================
- *
+ * <p>
  * Contains the user's ship information needed to start the game.
  *
  * @author manulaiko <manulaiko@gmail.com>
@@ -75,7 +75,7 @@ public class ShipInitializationCommand extends OutCommand {
         packet.writeDouble(credits);
         packet.writeInt(nanohull >> 13 | nanohull << 19);
         packet.writeString(username);
-        packet.writeInt((int)x >> 5 | (int)x << 27);
+        packet.writeInt((int) x >> 5 | (int) x << 27);
         packet.writeDouble(experience);
         packet.writeBoolean(premium);
         packet.writeString(clanTag);
@@ -91,7 +91,7 @@ public class ShipInitializationCommand extends OutCommand {
         packet.writeInt(health << 3 | health >> 29);
         packet.writeInt(modifiers.size());
         modifiers.forEach(m -> m.write(packet));
-        packet.writeInt((int)y << 1 | (int)y >> 31);
+        packet.writeInt((int) y << 1 | (int) y >> 31);
         packet.writeBoolean(true);
     }
 }

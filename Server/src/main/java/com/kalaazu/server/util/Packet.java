@@ -67,7 +67,7 @@ public class Packet {
 
     @SneakyThrows
     public void writeShort(int s) {
-        writeShort((short)s);
+        writeShort((short) s);
     }
 
     @SneakyThrows

@@ -19,5 +19,5 @@ CREATE TABLE `skilltree_levels`
 
     CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Levels a skill can reach.';

@@ -17,7 +17,7 @@ CREATE TABLE `npcs`
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server NPCS.';
 
 CREATE INDEX `npcs_name`

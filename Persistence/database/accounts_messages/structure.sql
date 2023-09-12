@@ -18,7 +18,7 @@ CREATE TABLE `accounts_messages`
 
     CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Messaging system.';
 
 CREATE INDEX `accounts_messages_from_accounts_id_idx`

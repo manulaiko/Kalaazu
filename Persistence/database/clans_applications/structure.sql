@@ -15,7 +15,7 @@ CREATE TABLE `clans_applications`
 
     CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account applications to a clan.';
 
 CREATE INDEX `clans_applications_clans_id_idx`

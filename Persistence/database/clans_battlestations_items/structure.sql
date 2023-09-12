@@ -17,7 +17,7 @@ CREATE TABLE `clans_battlestations_items`
 
     CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items equipped in the CBS.';
 
 CREATE INDEX `clans_battlestations_items_clans_battlestations_id_idx`

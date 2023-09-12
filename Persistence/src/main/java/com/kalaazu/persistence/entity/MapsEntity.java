@@ -1,7 +1,10 @@
 package com.kalaazu.persistence.entity;
 
+import com.kalaazu.math.Vector2;
+import com.kalaazu.persistence.Vector2Type;
 import jakarta.persistence.*;
 import lombok.Data;
+import org.hibernate.annotations.Type;
 
 import java.util.Collection;
 
@@ -36,7 +39,8 @@ public class MapsEntity {
 
     @Basic
     @Column(name = "limits", nullable = false)
-    private long limits = 89335319769600L;
+    @Type(value = Vector2Type.class)
+    private Vector2 limits = new Vector2(89335319769600L);
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")

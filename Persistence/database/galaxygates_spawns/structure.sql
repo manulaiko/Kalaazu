@@ -13,7 +13,7 @@ CREATE TABLE `galaxygates_spawns`
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Stage spawn for each stage.';
 
 CREATE INDEX `galaxygates_spawns_npcs_id_idx`

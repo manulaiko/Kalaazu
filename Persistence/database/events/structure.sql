@@ -8,12 +8,12 @@ CREATE TABLE `events`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL,
-    `start_date`  timestamp NULL DEFAULT NULL
+    `start_date`  timestamp    NULL     DEFAULT NULL
         COMMENT 'Event start date.',
-    `end_date`    timestamp NULL DEFAULT NULL
+    `end_date`    timestamp    NULL     DEFAULT NULL
         COMMENT 'Event end date.',
 
     CONSTRAINT `events_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s events.';

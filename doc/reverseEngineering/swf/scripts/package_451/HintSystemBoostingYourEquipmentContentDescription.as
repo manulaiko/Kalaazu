@@ -1,33 +1,32 @@
-package package_451
-{
-   import net.bigpoint.as3toolbox.bplocale.class_88;
-   import package_38.class_595;
-   import package_392.class_2265;
-   import package_392.class_2266;
-   import package_448.class_2514;
-   import package_474.class_2673;
-   
-   public class HintSystemBoostingYourEquipmentContentDescription extends class_2266 implements class_2265
-   {
-      
-      private static const const_40:String = "HintSystemBoostingYourEquipmentContentDescription";
-       
-      
-      public function HintSystemBoostingYourEquipmentContentDescription(param1:String)
-      {
-         super(param1);
-      }
-      
-      override public function method_3751(param1:String = "default") : String
-      {
-         return const_40;
-      }
-      
-      override public function get content() : class_2514
-      {
-         var _loc1_:* = null;
-         if(_content == null)
-         {
+package package_451 {
+
+import net.bigpoint.as3toolbox.bplocale.class_88;
+
+import package_38.class_595;
+
+import package_392.class_2265;
+import package_392.class_2266;
+
+import package_448.class_2514;
+
+import package_474.class_2673;
+
+public class HintSystemBoostingYourEquipmentContentDescription extends class_2266 implements class_2265 {
+
+    private static const const_40: String = "HintSystemBoostingYourEquipmentContentDescription";
+
+
+    public function HintSystemBoostingYourEquipmentContentDescription(param1: String) {
+        super(param1);
+    }
+
+    override public function method_3751(param1: String = "default"): String {
+        return const_40;
+    }
+
+    override public function get content(): class_2514 {
+        var _loc1_: * = null;
+        if (_content == null) {
             _loc1_ = new class_2514();
             _loc1_.title = class_88.getItem("gameentry_hintwindow_title_refineore");
             _loc1_.message = method_6274("gameentry_hintwindow_message_refineore");
@@ -35,13 +34,12 @@ package package_451
             _loc1_.method_6490 = method_2843();
             _loc1_.method_3873 = class_2673;
             _content = _loc1_;
-         }
-         return _content;
-      }
-      
-      override public function get method_108() : int
-      {
-         return 700;
-      }
-   }
+        }
+        return _content;
+    }
+
+    override public function get method_108(): int {
+        return 700;
+    }
+}
 }

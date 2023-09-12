@@ -15,7 +15,7 @@ CREATE TABLE `accounts_quests`
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Quest status of the account.';
 
 CREATE INDEX `accounts_quests_quests_id_idx`

@@ -19,7 +19,7 @@ CREATE TABLE `accounts_galaxygates`
 
     CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s build galaxygates.';
 
 CREATE INDEX `accounts_galaxygates_galaxygates_id_idx`

@@ -15,7 +15,7 @@ CREATE TABLE `vouchers_redeem_logs`
 
     CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the voucher codes.';
 
 CREATE INDEX `vouchers_redeem_logs_vouchers_id_idx`

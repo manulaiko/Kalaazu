@@ -4,4 +4,4 @@
 
 ALTER TABLE `ships`
     ADD CONSTRAINT `ships_items` FOREIGN KEY `ships_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);

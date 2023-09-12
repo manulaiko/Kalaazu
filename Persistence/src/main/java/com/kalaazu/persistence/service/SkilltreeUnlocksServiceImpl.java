@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.SkilltreeUnlocksEntity;
 import com.kalaazu.persistence.repository.SkilltreeUnlocksRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class SkilltreeUnlocksServiceImpl implements SkilltreeUnlocksService {
-    @Autowired
-    private SkilltreeUnlocksRepository repository;
+    private final SkilltreeUnlocksRepository repository;
 
     /**
      * @inheritDoc

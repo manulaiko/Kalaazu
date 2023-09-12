@@ -19,7 +19,7 @@ CREATE TABLE `maps_portals`
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Portals on map.';
 
 CREATE INDEX `maps_portals_levels_id_idx`

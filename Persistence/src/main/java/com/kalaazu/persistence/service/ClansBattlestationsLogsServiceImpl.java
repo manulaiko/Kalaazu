@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.ClansBattlestationsLogsEntity;
 import com.kalaazu.persistence.repository.ClansBattlestationsLogsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,10 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class ClansBattlestationsLogsServiceImpl implements ClansBattlestationsLogsService {
-    @Autowired
-    private ClansBattlestationsLogsRepository repository;
+
+    private final ClansBattlestationsLogsRepository repository;
 
     /**
      * @inheritDoc

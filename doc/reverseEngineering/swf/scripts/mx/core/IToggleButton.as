@@ -1,7 +1,6 @@
-package mx.core
-{
-   public interface IToggleButton
-   {
-       
-   }
+package mx.core {
+
+public interface IToggleButton {
+
+}
 }

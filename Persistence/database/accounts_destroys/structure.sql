@@ -15,7 +15,7 @@ CREATE TABLE `accounts_destroys`
 
     CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s destroy history.';
 
 CREATE UNIQUE INDEX `accounts_destroys_accounts_id_idx`

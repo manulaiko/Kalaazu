@@ -7,7 +7,7 @@ import org.springframework.context.ApplicationEvent;
 /**
  * End game session event.
  * =======================
- *
+ * <p>
  * Ends the given game session.
  *
  * @author manulaiko <manulaiko@gmail.com>

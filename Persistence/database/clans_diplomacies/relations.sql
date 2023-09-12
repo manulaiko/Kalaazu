@@ -5,8 +5,8 @@
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_from_clans` FOREIGN KEY `clans_diplomacies_from_clans` (`from_clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_to_clans` FOREIGN KEY `clans_diplomacies_to_clans` (`to_clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);

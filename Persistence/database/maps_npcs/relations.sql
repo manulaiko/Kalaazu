@@ -5,8 +5,8 @@
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_maps` FOREIGN KEY `maps_npcs_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_npcs` FOREIGN KEY `maps_npcs_npcs` (`npcs_id`)
-    REFERENCES `npcs` (`id`);
+        REFERENCES `npcs` (`id`);

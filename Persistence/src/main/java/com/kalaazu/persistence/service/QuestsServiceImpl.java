@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.QuestsEntity;
 import com.kalaazu.persistence.repository.QuestsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class QuestsServiceImpl implements QuestsService {
-    @Autowired
-    private QuestsRepository repository;
+    private final QuestsRepository repository;
 
     /**
      * @inheritDoc

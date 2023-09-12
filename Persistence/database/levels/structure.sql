@@ -19,7 +19,7 @@ CREATE TABLE `levels`
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s levels.';
 
 CREATE UNIQUE INDEX `levels_account_idx`

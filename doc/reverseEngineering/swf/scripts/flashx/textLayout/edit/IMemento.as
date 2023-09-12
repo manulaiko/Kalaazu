@@ -1,11 +1,10 @@
-package flashx.textLayout.edit
-{
-   public interface IMemento
-   {
-       
-      
-      function undo() : *;
-      
-      function redo() : *;
-   }
+package flashx.textLayout.edit {
+
+public interface IMemento {
+
+
+    function undo(): *;
+
+    function redo(): *;
+}
 }

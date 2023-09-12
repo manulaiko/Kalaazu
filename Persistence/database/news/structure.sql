@@ -14,7 +14,7 @@ CREATE TABLE `news`
 
     CONSTRAINT `news_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server news.';
 
 CREATE INDEX `news_title`

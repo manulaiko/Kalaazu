@@ -20,7 +20,7 @@ CREATE TABLE `clans_banks_logs`
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logs from clan''s bank.';
 
 CREATE INDEX `clans_banks_logs_clans_banks_id_idx`

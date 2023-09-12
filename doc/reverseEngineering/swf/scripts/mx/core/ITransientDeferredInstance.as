@@ -1,9 +1,8 @@
-package mx.core
-{
-   public interface ITransientDeferredInstance extends IDeferredInstance
-   {
-       
-      
-      function reset() : void;
-   }
+package mx.core {
+
+public interface ITransientDeferredInstance extends IDeferredInstance {
+
+
+    function reset(): void;
+}
 }

@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.ClansNewsEntity;
 import com.kalaazu.persistence.repository.ClansNewsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class ClansNewsServiceImpl implements ClansNewsService {
-    @Autowired
-    private ClansNewsRepository repository;
+    private final ClansNewsRepository repository;
 
     /**
      * @inheritDoc

@@ -17,5 +17,5 @@ CREATE TABLE `levels_upgrades`
 
     CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the upgrade costs for each level.';

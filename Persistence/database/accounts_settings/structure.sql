@@ -15,7 +15,7 @@ CREATE TABLE `accounts_settings`
 
     CONSTRAINT `accounts_settings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In-game account settings.';
 
 CREATE INDEX `accounts_settings_accounts_id_idx`

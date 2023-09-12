@@ -25,7 +25,7 @@ CREATE TABLE `techfactory_items`
 
     CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items that can be build in the tech factory.';
 
 CREATE INDEX `techfactory_items_name_idx`

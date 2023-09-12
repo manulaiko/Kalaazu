@@ -13,7 +13,7 @@ CREATE TABLE `clans_battlestations_logs`
 
     CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logs from clan''s battlestations.';
 
 CREATE INDEX `clans_battlestations_logs_clans_battlestations_id_idx`

@@ -1,7 +1,6 @@
-package mx.modules
-{
-   public interface IModule
-   {
-       
-   }
+package mx.modules {
+
+public interface IModule {
+
+}
 }

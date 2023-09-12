@@ -1,6 +1,5 @@
 package com.kalaazu.server.netty.event;
 
-import com.kalaazu.server.handler.LoginRequestHandler;
 import com.kalaazu.server.netty.GameSession;
 import io.netty.channel.ChannelId;
 import lombok.Getter;
@@ -12,7 +11,7 @@ import java.util.function.Function;
 /**
  * End game session if event.
  * ==========================
- *
+ * <p>
  * Ends the game session that matches the condition.
  *
  * @author manulaiko <manulaiko@gmail.com>

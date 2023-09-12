@@ -13,5 +13,5 @@ CREATE TABLE `collectables`
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Map collectables.';

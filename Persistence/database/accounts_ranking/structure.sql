@@ -23,7 +23,7 @@ CREATE TABLE `accounts_rankings`
 
     CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account ranking.';
 
 CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx`

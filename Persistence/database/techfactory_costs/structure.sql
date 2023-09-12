@@ -15,5 +15,5 @@ CREATE TABLE `techfactory_costs`
 
     CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Item production costs.';

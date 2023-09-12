@@ -5,7 +5,7 @@ import java.util.List;
 /**
  * Keybinding model.
  * =================
- *
+ * <p>
  * Represents game settings keybindings.
  *
  * @author manulaiko <manulaiko@gmail.com>

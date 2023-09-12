@@ -10,5 +10,5 @@ CREATE TABLE `key_value`
 
     CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains simple Key -> Value entries.';

@@ -8,7 +8,7 @@ import lombok.EqualsAndHashCode;
 /**
  * Login request packet.
  * =====================
- *
+ * <p>
  * Represents the incoming login request.
  *
  * @author manulaiko <manulaiko@gmail.com>

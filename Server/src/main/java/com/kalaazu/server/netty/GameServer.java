@@ -8,7 +8,6 @@ import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
 import io.netty.handler.codec.LengthFieldPrepender;
-import io.netty.handler.codec.LineBasedFrameDecoder;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
 import lombok.RequiredArgsConstructor;
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Component;
 /**
  * Socket server.
  * ==============
- *
+ * <p>
  * Listens for connections to the game socket server.
  *
  * @author manulaiko <manulaiko@gmail.com>

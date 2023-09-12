@@ -15,7 +15,7 @@ CREATE TABLE `maps_npcs`
 
     CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 
 CREATE INDEX `maps_npcs_maps_id_idx`

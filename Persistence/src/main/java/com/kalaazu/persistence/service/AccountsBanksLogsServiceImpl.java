@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.AccountsBanksLogsEntity;
 import com.kalaazu.persistence.repository.AccountsBanksLogsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class AccountsBanksLogsServiceImpl implements AccountsBanksLogsService {
-    @Autowired
-    private AccountsBanksLogsRepository repository;
+    private final AccountsBanksLogsRepository repository;
 
     /**
      * @inheritDoc

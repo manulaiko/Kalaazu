@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * User Keybindings command.
  * =========================
- *
+ * <p>
  * Command that updates the user's keybindings.
  *
  * @author manulaiko <manulaiko@gmail.com>

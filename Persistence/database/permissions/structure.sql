@@ -11,7 +11,7 @@ CREATE TABLE `permissions`
 
     CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server permissions.';
 
 CREATE INDEX `permissions_name_idx`

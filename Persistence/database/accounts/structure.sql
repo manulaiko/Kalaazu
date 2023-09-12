@@ -12,20 +12,20 @@ CREATE TABLE `accounts`
         COMMENT 'Session ID.',
     `levels_id`           tinyint      NOT NULL DEFAULT 1
         COMMENT 'Current level.',
-    `factions_id`         tinyint NULL DEFAULT NULL
+    `factions_id`         tinyint      NULL     DEFAULT NULL
         COMMENT 'Faction that the account belongs to.',
-    `accounts_hangars_id` int NULL DEFAULT NULL
+    `accounts_hangars_id` int          NULL     DEFAULT NULL
         COMMENT 'Active hangar.',
-    `clans_id`            int NULL DEFAULT NULL,
+    `clans_id`            int          NULL     DEFAULT NULL,
     `ranks_id`            tinyint      NOT NULL DEFAULT 1,
     `name`                varchar(255) NOT NULL
         COMMENT 'In game name.',
-    `ban_date`            timestamp NULL DEFAULT NULL
+    `ban_date`            timestamp    NULL     DEFAULT NULL
         COMMENT 'Ban expiration date.',
-    `premium_date`        timestamp NULL DEFAULT NULL
+    `premium_date`        timestamp    NULL     DEFAULT NULL
         COMMENT 'Premium expiration date.',
     `date`                timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `last_login`          timestamp NULL DEFAULT NULL
+    `last_login`          timestamp    NULL     DEFAULT NULL
         COMMENT 'Last login date.',
     `skill_points_total`  smallint     NOT NULL DEFAULT 0
         COMMENT 'Total skill points available.',
@@ -34,7 +34,7 @@ CREATE TABLE `accounts`
 
     CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In game accounts.';
 
 CREATE UNIQUE INDEX `accounts_session_id_idx`

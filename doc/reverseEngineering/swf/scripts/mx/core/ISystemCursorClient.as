@@ -1,9 +1,8 @@
-package mx.core
-{
-   public interface ISystemCursorClient
-   {
-       
-      
-      function get showSystemCursor() : Boolean;
-   }
+package mx.core {
+
+public interface ISystemCursorClient {
+
+
+    function get showSystemCursor(): Boolean;
+}
 }

@@ -15,5 +15,5 @@ CREATE TABLE `invitation_codes_redeem_logs`
 
     CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the invitation codes.';

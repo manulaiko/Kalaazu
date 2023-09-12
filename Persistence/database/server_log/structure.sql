@@ -13,7 +13,7 @@ CREATE TABLE `server_logs`
 
     CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server fired events.';
 
 CREATE INDEX `server_logs_level_idx`

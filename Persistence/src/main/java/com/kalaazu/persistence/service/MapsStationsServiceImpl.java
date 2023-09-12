@@ -2,7 +2,7 @@ package com.kalaazu.persistence.service;
 
 import com.kalaazu.persistence.entity.MapsStationsEntity;
 import com.kalaazu.persistence.repository.MapsStationsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -16,9 +16,9 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class MapsStationsServiceImpl implements MapsStationsService {
-    @Autowired
-    private MapsStationsRepository repository;
+    private final MapsStationsRepository repository;
 
     /**
      * @inheritDoc

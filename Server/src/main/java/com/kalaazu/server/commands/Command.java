@@ -3,7 +3,7 @@ package com.kalaazu.server.commands;
 /**
  * Command class.
  * ==============
- *
+ * <p>
  * Base class for all game commands.
  *
  * @author manulaiko <manulaiko@gmail.com>

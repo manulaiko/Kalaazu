@@ -13,7 +13,7 @@ CREATE TABLE `moderators_roles_permissions`
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Moderator roles'' permissions';
 
 CREATE INDEX `moderators_roles_permissions_moderators_roles_id_idx`

@@ -16,7 +16,7 @@ CREATE TABLE `clans_news`
 
     CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'News of the clan.';
 
 CREATE INDEX `clans_news_accounts_id_idx`

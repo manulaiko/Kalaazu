@@ -12,5 +12,5 @@ CREATE TABLE `ranks`
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the rank system.';

@@ -4,7 +4,7 @@ import com.kalaazu.persistence.entity.ItemCategory;
 import com.kalaazu.persistence.entity.ItemType;
 import com.kalaazu.persistence.entity.ItemsEntity;
 import com.kalaazu.persistence.repository.ItemsRepository;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,13 +18,13 @@ import java.util.List;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Service
+@RequiredArgsConstructor
 public class ItemsServiceImpl implements ItemsService {
-    @Autowired
-    private ItemsRepository repository;
+    private final ItemsRepository repository;
 
     @Override
     public List<ItemsEntity> findByCategoryAndType(ItemCategory category, ItemType type) {
-        return this.repository.findAllByCategoryAndTypeAndSlotbarOrderNot(category, type, (short)-1);
+        return this.repository.findAllByCategoryAndTypeAndSlotbarOrderNot(category, type, (short) -1);
     }
 
     @Override
