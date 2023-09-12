@@ -20,20 +20,20 @@ CREATE TABLE `accounts`
         COMMENT 'Session ID.',
     `levels_id`           tinyint      NOT NULL DEFAULT 1
         COMMENT 'Current level.',
-    `factions_id`         tinyint NULL DEFAULT NULL
+    `factions_id`         tinyint      NULL     DEFAULT NULL
         COMMENT 'Faction that the account belongs to.',
-    `accounts_hangars_id` int NULL DEFAULT NULL
+    `accounts_hangars_id` int          NULL     DEFAULT NULL
         COMMENT 'Active hangar.',
-    `clans_id`            int NULL DEFAULT NULL,
+    `clans_id`            int          NULL     DEFAULT NULL,
     `ranks_id`            tinyint      NOT NULL DEFAULT 1,
     `name`                varchar(255) NOT NULL
         COMMENT 'In game name.',
-    `ban_date`            timestamp NULL DEFAULT NULL
+    `ban_date`            timestamp    NULL     DEFAULT NULL
         COMMENT 'Ban expiration date.',
-    `premium_date`        timestamp NULL DEFAULT NULL
+    `premium_date`        timestamp    NULL     DEFAULT NULL
         COMMENT 'Premium expiration date.',
     `date`                timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    `last_login`          timestamp NULL DEFAULT NULL
+    `last_login`          timestamp    NULL     DEFAULT NULL
         COMMENT 'Last login date.',
     `skill_points_total`  smallint     NOT NULL DEFAULT 0
         COMMENT 'Total skill points available.',
@@ -42,7 +42,7 @@ CREATE TABLE `accounts`
 
     CONSTRAINT `accounts_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In game accounts.';
 
 CREATE UNIQUE INDEX `accounts_session_id_idx`
@@ -76,7 +76,7 @@ CREATE TABLE `accounts_banks`
 
     CONSTRAINT `accounts_banks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s internal bank.';
 
 CREATE UNIQUE INDEX `accounts_banks_accounts_id_idx`
@@ -101,11 +101,11 @@ CREATE TABLE `accounts_banks_logs`
         COMMENT 'Amount of currency logged.',
     `currency`          tinyint   NOT NULL DEFAULT 0
         COMMENT 'Currency of the amount. 0 = credits, 1 = uridium.',
-    `accounts_banks_id` int NULL DEFAULT NULL,
+    `accounts_banks_id` int       NULL     DEFAULT NULL,
 
     CONSTRAINT `accounts_banks_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logs from account''s bank';
 
 CREATE INDEX `accounts_banks_logs_from_accounts_id_idx`
@@ -130,7 +130,7 @@ CREATE TABLE `accounts_clans_roles`
 
     CONSTRAINT `accounts_clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 
 CREATE INDEX `accounts_clans_roles_accounts_id_idx`
@@ -163,7 +163,7 @@ CREATE TABLE `accounts_configurations`
 
     CONSTRAINT `accounts_configurations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Configurations of the accounts.';
 
 CREATE INDEX `accounts_configurations_accounts_hangars_id_idx`
@@ -186,7 +186,7 @@ CREATE TABLE `accounts_configurations_accounts_items`
 
     CONSTRAINT `accounts_configurations_accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items of the configuration.';
 
 -- Initial dump for the `accounts_configurations_accounts_items` table.
@@ -208,7 +208,7 @@ CREATE TABLE `accounts_destroys`
 
     CONSTRAINT `accounts_destroys_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s destroy history.';
 
 CREATE UNIQUE INDEX `accounts_destroys_accounts_id_idx`
@@ -231,7 +231,7 @@ CREATE TABLE `accounts_drones`
 
     CONSTRAINT `accounts_drones_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s drones.';
 
 CREATE UNIQUE INDEX `accounts_drones_accounts_id_idx`
@@ -260,7 +260,7 @@ CREATE TABLE `accounts_galaxygates`
 
     CONSTRAINT `accounts_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s build galaxygates.';
 
 CREATE INDEX `accounts_galaxygates_galaxygates_id_idx`
@@ -279,18 +279,18 @@ CREATE TABLE `accounts_hangars`
     `id`                         int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `accounts_id`                int          NOT NULL,
-    `accounts_ships_id`          int NULL DEFAULT NULL
+    `accounts_ships_id`          int          NULL     DEFAULT NULL
         COMMENT 'Ship available in the hangar.',
-    `accounts_configurations_id` int NULL DEFAULT NULL
+    `accounts_configurations_id` int          NULL     DEFAULT NULL
         COMMENT 'Equipped configuration.',
     `name`                       varchar(255) NOT NULL DEFAULT 'HANGAR',
-    `priority`                   tinyint NULL DEFAULT -1
+    `priority`                   tinyint      NULL     DEFAULT -1
         COMMENT 'Order priority, null = not ordered.',
     `date`                       timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT `accounts_hangars_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Hangars bough by an account.';
 
 CREATE INDEX `accounts_hangars_accounts_accounts_id_idx`
@@ -320,7 +320,7 @@ CREATE TABLE `accounts_history`
 
     CONSTRAINT `accounts_history_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s history events.';
 
 CREATE UNIQUE INDEX `accounts_history_accounts_id_idx`
@@ -345,7 +345,7 @@ CREATE TABLE `accounts_items`
 
     CONSTRAINT `accounts_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items bough by an account.';
 
 CREATE INDEX `accounts_items_items_id_idx`
@@ -380,7 +380,7 @@ CREATE TABLE `accounts_messages`
 
     CONSTRAINT `accounts_messages_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Messaging system.';
 
 CREATE INDEX `accounts_messages_from_accounts_id_idx`
@@ -415,7 +415,7 @@ CREATE TABLE `accounts_pets`
 
     CONSTRAINT `accounts_pets_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account''s PETs.';
 
 CREATE UNIQUE INDEX `accounts_pets_accounts_id_idx`
@@ -440,7 +440,7 @@ CREATE TABLE `accounts_quests`
 
     CONSTRAINT `accounts_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Quest status of the account.';
 
 CREATE INDEX `accounts_quests_quests_id_idx`
@@ -475,7 +475,7 @@ CREATE TABLE `accounts_rankings`
 
     CONSTRAINT `accounts_rankings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account ranking.';
 
 CREATE UNIQUE INDEX `accounts_ranking_accounts_id_idx`
@@ -500,7 +500,7 @@ CREATE TABLE `accounts_settings`
 
     CONSTRAINT `accounts_settings_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In-game account settings.';
 
 CREATE INDEX `accounts_settings_accounts_id_idx`
@@ -532,7 +532,7 @@ CREATE TABLE `accounts_ships`
 
     CONSTRAINT `accounts_ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Ships bough by an account.';
 
 CREATE INDEX `accounts_ships_accounts_id_idx`
@@ -561,7 +561,7 @@ CREATE TABLE `accounts_skills`
 
     CONSTRAINT `accounts_skills_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Skilltree for the account.';
 
 CREATE INDEX `accounts_skills_accounts_id_idx`
@@ -575,22 +575,22 @@ CREATE INDEX `accounts_skills_accounts_id_idx`
 --
 CREATE TABLE `accounts_skylabs`
 (
-    `id`                int     NOT NULL AUTO_INCREMENT
+    `id`                int       NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `accounts_id`       int     NOT NULL
+    `accounts_id`       int       NOT NULL
         COMMENT 'Account ID.',
-    `skylab_modules_id` tinyint NOT NULL
+    `skylab_modules_id` tinyint   NOT NULL
         COMMENT 'Module ID.',
-    `levels_id`         tinyint NOT NULL DEFAULT 1
+    `levels_id`         tinyint   NOT NULL DEFAULT 1
         COMMENT 'Module level.',
-    `space`             int     NOT NULL DEFAULT 0
+    `space`             int       NOT NULL DEFAULT 0
         COMMENT 'Used space.',
-    `upgrade`           timestamp NULL DEFAULT NULL
+    `upgrade`           timestamp NULL     DEFAULT NULL
         COMMENT 'Date when this module started upgrading.',
 
     CONSTRAINT `accounts_skylabs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Skylab for the accounts.';
 
 CREATE INDEX `accounts_skylabs_accounts_id_idx`
@@ -619,7 +619,7 @@ CREATE TABLE `accounts_techfactories`
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Nanotech factory items.';
 
 -- Initial dump for the `accounts_techfactories` table
@@ -630,20 +630,20 @@ CREATE TABLE `accounts_techfactories`
 --
 CREATE TABLE `accounts_techfactory_items`
 (
-    `id`                   int      NOT NULL AUTO_INCREMENT
+    `id`                   int       NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `accounts_id`          int      NOT NULL
+    `accounts_id`          int       NOT NULL
         COMMENT 'Account ID.',
-    `techfactory_items_id` tinyint  NOT NULL
+    `techfactory_items_id` tinyint   NOT NULL
         COMMENT 'Item ID.',
-    `amount`               smallint NOT NULL DEFAULT 1
+    `amount`               smallint  NOT NULL DEFAULT 1
         COMMENT 'Amount of build items.',
-    `date`                 timestamp NULL DEFAULT NULL
+    `date`                 timestamp NULL     DEFAULT NULL
         COMMENT 'Date when the item started building.',
 
     CONSTRAINT `accounts_techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Techfactory items from account.';
 
 CREATE INDEX `accounts_techfactory_items_accounts_id_idx`
@@ -663,7 +663,7 @@ CREATE TABLE `clans`
         COMMENT 'Primary Key.',
     `accounts_id` int          NOT NULL
         COMMENT 'Owner ID',
-    `factions_id` tinyint NULL DEFAULT NULL
+    `factions_id` tinyint      NULL     DEFAULT NULL
         COMMENT 'Clan affiliation faction.',
     `tag`         varchar(4)   NOT NULL DEFAULT ''
         COMMENT 'Name abbreviation.',
@@ -675,7 +675,7 @@ CREATE TABLE `clans`
 
     CONSTRAINT `clans_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server clans.';
 
 CREATE UNIQUE INDEX `clans_name_idx`
@@ -704,7 +704,7 @@ CREATE TABLE `clans_applications`
 
     CONSTRAINT `clans_applications_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Account applications to a clan.';
 
 CREATE INDEX `clans_applications_clans_id_idx`
@@ -734,7 +734,7 @@ CREATE TABLE `clans_banks`
 
     CONSTRAINT `clans_banks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan''s internal bank.';
 
 CREATE UNIQUE INDEX `clans_bank_clans_id_idx`
@@ -764,7 +764,7 @@ CREATE TABLE `clans_banks_logs`
 
     CONSTRAINT `clans_banks_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logs from clan''s bank.';
 
 CREATE INDEX `clans_banks_logs_clans_banks_id_idx`
@@ -784,19 +784,19 @@ CREATE TABLE `clans_battlestations`
 (
     `id`       tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `clans_id` int NULL DEFAULT NULL
+    `clans_id` int          NULL     DEFAULT NULL
         COMMENT 'Owner of the CBS.',
     `maps_id`  tinyint      NOT NULL
         COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
     `position` bigint       NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
-    `date`     timestamp NULL DEFAULT NULL
+    `date`     timestamp    NULL     DEFAULT NULL
         COMMENT 'Date when the CBS was build.',
 
     CONSTRAINT `clans_battlestations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan CBS.';
 
 CREATE INDEX `clans_battlestations_clans_id_idx`
@@ -847,7 +847,7 @@ CREATE TABLE `clans_battlestations_items`
 
     CONSTRAINT `clans_battlestations_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items equipped in the CBS.';
 
 CREATE INDEX `clans_battlestations_items_clans_battlestations_id_idx`
@@ -872,7 +872,7 @@ CREATE TABLE `clans_battlestations_logs`
 
     CONSTRAINT `clans_battlestations_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logs from clan''s battlestations.';
 
 CREATE INDEX `clans_battlestations_logs_clans_battlestations_id_idx`
@@ -896,7 +896,7 @@ CREATE TABLE `clans_diplomacies`
         COMMENT 'Clan that receives the request.',
     `date`          timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Diplomacy creation date.',
-    `expires`       timestamp NULL DEFAULT NULL
+    `expires`       timestamp NULL     DEFAULT NULL
         COMMENT 'Date when the diplomacy expires.',
     `status`        tinyint   NOT NULL DEFAULT 0
         COMMENT 'Status of the diplomacy. 0 = not accepted, 1 = accepted, 2 = rejected, 3 = over.',
@@ -905,7 +905,7 @@ CREATE TABLE `clans_diplomacies`
 
     CONSTRAINT `clans_diplomacies_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Diplomacy table for clans.';
 
 CREATE INDEX `clans_diplomacies_from_clans_id_idx`
@@ -928,7 +928,7 @@ CREATE TABLE `clans_messages`
     `from_accounts_id` int          NOT NULL,
     `from_status`      tinyint      NOT NULL DEFAULT 1
         COMMENT '0 = unread, 1 = read, 2 = deleted.',
-    `to_accounts_id`   int NULL DEFAULT NULL,
+    `to_accounts_id`   int          NULL     DEFAULT NULL,
     `to_status`        tinyint      NOT NULL DEFAULT 0
         COMMENT '0 = unread, 1 = read, 2 = unread.',
     `title`            varchar(255) NOT NULL DEFAULT '',
@@ -937,7 +937,7 @@ CREATE TABLE `clans_messages`
 
     CONSTRAINT `clans_messages` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Messages in the clan.';
 
 CREATE INDEX `clans_messages_clans_id_idx`
@@ -967,7 +967,7 @@ CREATE TABLE `clans_news`
 
     CONSTRAINT `clans_news_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'News of the clan.';
 
 CREATE INDEX `clans_news_accounts_id_idx`
@@ -994,7 +994,7 @@ CREATE TABLE `clans_ranking`
 
     CONSTRAINT `clans_ranking_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan ranking.';
 
 CREATE UNIQUE INDEX `clans_ranking_accounts_id_idx`
@@ -1012,13 +1012,13 @@ CREATE TABLE `clans_roles`
         COMMENT 'Primary Key.',
     `name`           varchar(255) NOT NULL,
     `clans_id`       int          NOT NULL,
-    `clans_roles_id` int NULL DEFAULT NULL
+    `clans_roles_id` int          NULL     DEFAULT NULL
         COMMENT 'Parent role.',
     `priority`       tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan''s roles.';
 
 CREATE INDEX `clans_roles_clans_id_idx`
@@ -1043,7 +1043,7 @@ CREATE TABLE `clans_roles_permissions`
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Clan roles'' permissions';
 
 CREATE INDEX `clans_roles_permissions_clans_roles_id_idx`
@@ -1068,7 +1068,7 @@ CREATE TABLE `collectables`
 
     CONSTRAINT `collectables_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Map collectables.';
 
 -- Initial dump for the `collectables` table.
@@ -1529,14 +1529,14 @@ CREATE TABLE `events`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT '',
     `description` text         NOT NULL,
-    `start_date`  timestamp NULL DEFAULT NULL
+    `start_date`  timestamp    NULL     DEFAULT NULL
         COMMENT 'Event start date.',
-    `end_date`    timestamp NULL DEFAULT NULL
+    `end_date`    timestamp    NULL     DEFAULT NULL
         COMMENT 'Event end date.',
 
     CONSTRAINT `events_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s events.';
 
 -- Initial dump for the `events` table.
@@ -1564,7 +1564,7 @@ CREATE TABLE `factions`
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s factions.';
 
 CREATE UNIQUE INDEX `factions_name_idx`
@@ -1596,14 +1596,14 @@ CREATE TABLE `galaxygates`
     `id`                   tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `name`                 varchar(255) NOT NULL DEFAULT 'GG-A',
-    `galaxygates_waves_id` tinyint NULL DEFAULT NULL
+    `galaxygates_waves_id` tinyint      NULL     DEFAULT NULL
         COMMENT 'Starting wave.',
     `parts`                tinyint      NOT NULL DEFAULT 0
         COMMENT 'Necessary parts to build the gate.',
 
     CONSTRAINT `galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Galaxy gates from the server.';
 
 -- Initial dump for the `galaxygates` table.
@@ -1633,7 +1633,7 @@ CREATE TABLE `galaxygates_gg_spins`
 
     CONSTRAINT `galaxygates_gg_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_spins.';
 
 CREATE INDEX `galaxygates_gg_spins_galaxygates_id_idx`
@@ -1901,7 +1901,7 @@ CREATE TABLE `galaxygates_gg_waves`
 
     CONSTRAINT `galaxygates_gg_waves_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates and galaxygates_waves.';
 
 CREATE INDEX `galaxygates_gg_waves_galaxygates_id_idx`
@@ -1928,7 +1928,7 @@ CREATE TABLE `galaxygates_probabilities`
 
     CONSTRAINT `galaxygates_probabilities_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Spin probabilities for the galaxy gates.';
 
 -- Initial dump for the `galaxygates_probabilities` table.
@@ -2009,7 +2009,7 @@ CREATE TABLE `galaxygates_spawns`
 
     CONSTRAINT `galaxygates_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Stage spawn for each stage.';
 
 CREATE INDEX `galaxygates_spawns_npcs_id_idx`
@@ -2033,7 +2033,7 @@ CREATE TABLE `galaxygates_spins`
 
     CONSTRAINT `galaxygates_spins_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Spins from the galaxy gate.';
 
 CREATE INDEX `galaxygates_spins_items_id_idx`
@@ -2086,12 +2086,12 @@ CREATE TABLE `galaxygates_stages`
         COMMENT 'Primary Key.',
     `galaxygates_waves_id` tinyint NOT NULL
         COMMENT 'Wave this stage belongs to',
-    `comment`              text NULL DEFAULT NULL
+    `comment`              text    NULL DEFAULT NULL
         COMMENT 'Just so this isn''t that empty',
 
     CONSTRAINT `galaxygates_stages_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Spawn stage for each wave.';
 
 CREATE INDEX `galaxygates_stages_galaxygates_waves_id_idx`
@@ -2112,7 +2112,7 @@ CREATE TABLE `galaxygates_stages_spawns`
 
     CONSTRAINT `galaxygates_stages_spawns_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations for galaxygates_stages and galaxygates_spawns.';
 
 CREATE INDEX `galaxygates_stages_spawns_galaxygates_stages_id_idx`
@@ -2139,7 +2139,7 @@ CREATE TABLE `galaxygates_waves`
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Waves of the galaxy gate.';
 
 CREATE INDEX `galaxygates_waves_maps_id_idx`
@@ -2162,7 +2162,7 @@ CREATE TABLE `invitation_codes`
 
     CONSTRAINT `invitation_codes_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the invitation codes that can be used for registering.';
 
 CREATE UNIQUE INDEX `invitation_codes_id_idx`
@@ -3191,7 +3191,7 @@ CREATE TABLE `invitation_codes_redeem_logs`
 
     CONSTRAINT `invitation_codes_redeem_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the invitation codes.';
 
 -- Initial dump for the `invitation_codes_redeem_logs` table.
@@ -3224,7 +3224,7 @@ CREATE TABLE `items`
 
     CONSTRAINT `items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s items.';
 
 CREATE INDEX `items_loot_id_idx`
@@ -4026,7 +4026,7 @@ CREATE TABLE `key_value`
 
     CONSTRAINT `key_value_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains simple Key -> Value entries.';
 
 -- Initial dump for the `key_value` table.
@@ -4052,7 +4052,7 @@ CREATE TABLE `levels`
 
     CONSTRAINT `levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains server''s levels.';
 
 CREATE UNIQUE INDEX `levels_account_idx`
@@ -4121,7 +4121,7 @@ CREATE TABLE `levels_upgrades`
 
     CONSTRAINT `levels_upgrades` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the upgrade costs for each level.';
 
 -- Initial dump for the `levels_upgrades` table.
@@ -4438,14 +4438,14 @@ CREATE TABLE `maps`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',
-    `factions_id` tinyint NULL DEFAULT NULL,
+    `factions_id` tinyint      NULL     DEFAULT NULL,
     `is_pvp`      boolean      NOT NULL DEFAULT false,
     `is_starter`  boolean      NOT NULL DEFAULT false,
     `limits`      bigint       NOT NULL DEFAULT 89335319769600,
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In game maps.';
 
 CREATE UNIQUE INDEX `maps_name_idx`
@@ -4488,6 +4488,68 @@ VALUES (2, '1-2', 1, false, true, 89335319769600),
        (92, '5-2', NULL, false, false, 89335319769600),
        (93, '5-3', NULL, false, false, 178670639539200);
 
+-- Map's collectables table.
+--
+-- Many to many relation table.
+--
+CREATE TABLE `maps_collectables`
+(
+    `id`              tinyint NOT NULL AUTO_INCREMENT
+        COMMENT 'Primary Key.',
+    `maps_id`         tinyint NOT NULL
+        COMMENT 'Map ID.',
+    `collectables_id` tinyint NOT NULL
+        COMMENT 'collectable ID.',
+    `amount`          tinyint NOT NULL DEFAULT 0
+        COMMENT 'Amount of collectables on map',
+    `from`            bigint  NOT NULL DEFAULT 0
+        COMMENT 'Starting position where the collectable will be spawned',
+    `to`              bigint  NULL     DEFAULT NULL
+        COMMENT 'Ending position where the collectable will be spawned, null = map limit',
+
+    CONSTRAINT `maps_collectables_pk` PRIMARY KEY (`id`)
+) ENGINE InnoDB
+  CHARACTER SET utf8
+    COMMENT 'Many to many relation table.';
+
+CREATE INDEX `maps_collectables_maps_id_idx`
+    ON `maps_collectables` (`maps_id`);
+CREATE INDEX `maps_collectables_collectables_id_idx`
+    ON `maps_collectables` (`collectables_id`);
+
+-- Initial dump for the `maps_collectables` table.
+
+INSERT INTO `maps_collectables` (`id`, `maps_id`, `collectables_id`, `amount`)
+VALUES (1, 1, 1, 100),
+       (2, 2, 1, 100),
+       (3, 3, 1, 100),
+       (4, 4, 1, 100),
+       (5, 5, 1, 100),
+       (6, 6, 1, 100),
+       (7, 7, 1, 100),
+       (8, 8, 1, 100),
+       (9, 9, 1, 100),
+       (10, 10, 1, 100),
+       (11, 11, 1, 100),
+       (12, 12, 1, 100),
+       (13, 13, 1, 100),
+       (14, 14, 1, 100),
+       (15, 15, 1, 100),
+       (16, 16, 1, 100),
+       (17, 17, 1, 100),
+       (18, 18, 1, 100),
+       (19, 19, 1, 100),
+       (20, 20, 1, 100),
+       (21, 21, 1, 100),
+       (22, 22, 1, 100),
+       (23, 23, 1, 100),
+       (24, 24, 1, 100),
+       (25, 25, 1, 100),
+       (26, 26, 1, 100),
+       (27, 27, 1, 100),
+       (28, 28, 1, 100),
+       (52, 52, 1, 10000);
+
 -- Map's NPCs table.
 --
 -- Many to many relation table.
@@ -4505,7 +4567,7 @@ CREATE TABLE `maps_npcs`
 
     CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relation table.';
 
 CREATE INDEX `maps_npcs_maps_id_idx`
@@ -4620,7 +4682,7 @@ CREATE TABLE `maps_portals`
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Portals on map.';
 
 CREATE INDEX `maps_portals_levels_id_idx`
@@ -4749,12 +4811,12 @@ CREATE TABLE `maps_stations`
         COMMENT 'Primary Key.',
     `position`    bigint  NOT NULL DEFAULT 0
         COMMENT 'Position on map.',
-    `maps_id`     tinyint NULL DEFAULT NULL,
-    `factions_id` tinyint NULL DEFAULT NULL,
+    `maps_id`     tinyint NULL     DEFAULT NULL,
+    `factions_id` tinyint NULL     DEFAULT NULL,
 
     CONSTRAINT `maps_stations_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Stations on map.';
 
 CREATE INDEX `maps_stations_factions_id_idx`
@@ -4787,7 +4849,7 @@ CREATE TABLE `moderators`
 
     CONSTRAINT `moderators_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server moderators.';
 
 CREATE INDEX `moderators_accounts_id_idx`
@@ -4812,7 +4874,7 @@ CREATE TABLE `moderators_logs`
 
     CONSTRAINT `moderators_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Logged events made by moderators.';
 
 CREATE INDEX `moderators_logs_moderators_id_idx`
@@ -4831,13 +4893,13 @@ CREATE TABLE `moderators_roles`
     `id`                  tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `name`                varchar(255) NOT NULL,
-    `moderators_roles_id` tinyint NULL DEFAULT NULL
+    `moderators_roles_id` tinyint      NULL     DEFAULT NULL
         COMMENT 'Parent role.',
     `priority`            tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `clans_roles_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Moderator''s roles.';
 
 CREATE INDEX `moderators_roles_name_idx`
@@ -4867,7 +4929,7 @@ CREATE TABLE `moderators_roles_permissions`
 
     CONSTRAINT `clans_roles_permissions` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Moderator roles'' permissions';
 
 CREATE INDEX `moderators_roles_permissions_moderators_roles_id_idx`
@@ -4910,7 +4972,7 @@ CREATE TABLE `news`
 
     CONSTRAINT `news_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server news.';
 
 CREATE INDEX `news_title`
@@ -4939,7 +5001,7 @@ CREATE TABLE `npcs`
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server NPCS.';
 
 CREATE INDEX `npcs_name`
@@ -5045,7 +5107,7 @@ CREATE TABLE `permissions`
 
     CONSTRAINT `permissions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server permissions.';
 
 CREATE INDEX `permissions_name_idx`
@@ -5086,15 +5148,15 @@ CREATE TABLE `quests`
         COMMENT 'Primary Key.',
     `levels_id`   tinyint      NOT NULL DEFAULT 1
         COMMENT 'Level required to unlock this quest.',
-    `quests_id`   smallint NULL DEFAULT NULL
+    `quests_id`   smallint     NULL     DEFAULT NULL
         COMMENT 'Quest required to complete in order to unlock this quest.',
-    `factions_id` tinyint NULL DEFAULT NULL
+    `factions_id` tinyint      NULL     DEFAULT NULL
         COMMENT 'Faction required to unlock this quest.',
     `name`        varchar(255) NOT NULL DEFAULT '',
 
     CONSTRAINT `quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'In game quests.';
 
 CREATE INDEX `quests_name`
@@ -5114,7 +5176,7 @@ CREATE TABLE `quests_conditions`
 (
     `id`                   int          NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `quests_conditions_id` int NULL DEFAULT NULL
+    `quests_conditions_id` int          NULL     DEFAULT NULL
         COMMENT 'Condition needed to unlock this condition.',
     `quests_id`            smallint     NOT NULL,
     `type`                 tinyint      NOT NULL DEFAULT 0
@@ -5123,7 +5185,7 @@ CREATE TABLE `quests_conditions`
 
     CONSTRAINT `quests_conditions_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Quest''s conditions.';
 
 CREATE INDEX `quests_conditions_quests_conditions_id_idx`
@@ -5147,7 +5209,7 @@ CREATE TABLE `ranks`
 
     CONSTRAINT `ranks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the rank system.';
 
 -- Initial dump for the `ranks` table.
@@ -5182,20 +5244,20 @@ VALUES (1, 'Basic Space Pilot', 20.00, 1),
 --
 CREATE TABLE `rewards`
 (
-    `id`          smallint NOT NULL AUTO_INCREMENT
+    `id`          smallint     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `items_id`    smallint NOT NULL
+    `items_id`    smallint     NOT NULL
         COMMENT 'Item to award.',
-    `amount`      int      NOT NULL
+    `amount`      int          NOT NULL
         COMMENT 'Amount of items to award.',
-    `probability` float    NOT NULL DEFAULT 100.00
+    `probability` float        NOT NULL DEFAULT 100.00
         COMMENT 'Probability of awarding this item',
-    `comment`     varchar(255) NULL DEFAULT NULL
+    `comment`     varchar(255) NULL     DEFAULT NULL
         COMMENT 'Comment of the reward.',
 
     CONSTRAINT `rewards_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'All rewards available so there''s no need of JSON.';
 
 CREATE INDEX `rewards_items_id`
@@ -6357,7 +6419,7 @@ CREATE TABLE `rewards_collectables`
 
     CONSTRAINT `rewards_collectables_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_collectables_npcs_id_idx`
@@ -7228,7 +7290,7 @@ CREATE TABLE `rewards_galaxygates`
 
     CONSTRAINT `rewards_galaxygates_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_galaxygates_galaxygates_id_idx`
@@ -7322,7 +7384,7 @@ CREATE TABLE `rewards_npcs`
 
     CONSTRAINT `rewards_npcs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_npcs_npcs_id_idx`
@@ -7547,7 +7609,7 @@ CREATE TABLE `rewards_quests`
 
     CONSTRAINT `rewards_quests_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_quests_quests_id_idx`
@@ -7572,7 +7634,7 @@ CREATE TABLE `rewards_ships`
 
     CONSTRAINT `rewards_ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_ships_ships_id_idx`
@@ -7625,7 +7687,7 @@ CREATE TABLE `rewards_vouchers`
 
     CONSTRAINT `rewards_vouchers_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Many to many relations.';
 
 CREATE INDEX `rewards_vouchers_vouchers_id_idx`
@@ -7650,7 +7712,7 @@ CREATE TABLE `server_logs`
 
     CONSTRAINT `server_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Server fired events.';
 
 CREATE INDEX `server_logs_level_idx`
@@ -7689,7 +7751,7 @@ CREATE TABLE `ships`
 
     CONSTRAINT `ships_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Ships table.';
 
 CREATE INDEX `ships_items_id_idx`
@@ -7736,7 +7798,7 @@ CREATE TABLE `skilltree_levels`
 
     CONSTRAINT `skilltree_levels_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Levels a skill can reach.';
 
 -- Initial dump for the `skilltree_levels` table.
@@ -7766,7 +7828,7 @@ CREATE TABLE `skilltree_skills`
 
     CONSTRAINT `skilltree_skills_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'The available skills.';
 
 CREATE INDEX `skilltree_skills_name_idx`
@@ -7795,7 +7857,7 @@ CREATE TABLE `skilltree_unlocks`
 
     CONSTRAINT `skilltree_unlocks_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Requisites needed to unlock a skill upgrade.';
 
 CREATE INDEX `skilltree_unlocks_upgrade_skilltree_levels_id_idx`
@@ -7834,7 +7896,7 @@ CREATE TABLE `skylab_modules`
 
     CONSTRAINT `skylab_modules` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Different skylab modules.';
 
 CREATE INDEX `skylab_modules_name_idx`
@@ -7972,7 +8034,7 @@ CREATE TABLE `techfactory_costs`
 
     CONSTRAINT `techfactory_costs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Item production costs.';
 
 -- Initial dump for the `techfactory_costs` table.
@@ -8015,7 +8077,7 @@ CREATE TABLE `techfactory_drones`
 
     CONSTRAINT `techfactory_drones_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Drones that can be build in the tech factory.';
 
 CREATE INDEX `techfactory_drones_name_idx`
@@ -8058,7 +8120,7 @@ CREATE TABLE `techfactory_items`
 
     CONSTRAINT `techfactory_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Items that can be build in the tech factory.';
 
 CREATE INDEX `techfactory_items_name_idx`
@@ -8092,14 +8154,14 @@ CREATE TABLE `trade_items`
     `id`          smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `items_id`    smallint NOT NULL,
-    `accounts_id` int NULL DEFAULT NULL,
+    `accounts_id` int      NULL     DEFAULT NULL,
     `price`       int      NOT NULL DEFAULT 0,
     `type`        tinyint  NOT NULL DEFAULT 0
         COMMENT '0 = hourly, 1 = daily, 3 = weekly',
 
     CONSTRAINT `trade_items_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Trade items.';
 
 CREATE INDEX `trade_items_items_id_idx`
@@ -8121,7 +8183,7 @@ CREATE TABLE `users`
         COMMENT 'Primary Key.',
     `date`                    timestamp    NOT NULL DEFAULT CURRENT_TIMESTAMP
         COMMENT 'Date when the user registered.',
-    `invitation_codes_id`     smallint NULL DEFAULT NULL
+    `invitation_codes_id`     smallint     NULL     DEFAULT NULL
         COMMENT 'Invitation code used to register',
     `name`                    varchar(255) NOT NULL DEFAULT ''
         COMMENT 'User name.',
@@ -8131,14 +8193,14 @@ CREATE TABLE `users`
         COMMENT 'User email.',
     `email_verification_code` varchar(32)  NOT NULL DEFAULT ''
         COMMENT 'Email verification code.',
-    `email_verification_date` timestamp NULL DEFAULT NULL
+    `email_verification_date` timestamp    NULL     DEFAULT NULL
         COMMENT 'Date when the user verified its email.',
     `ip`                      varchar(45)  NOT NULL DEFAULT '0.0.0.0'
         COMMENT 'Registration IP.',
 
     CONSTRAINT `users_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the login information of the registered users.';
 
 CREATE UNIQUE INDEX `users_id_idx`
@@ -8163,7 +8225,7 @@ CREATE TABLE `vouchers`
 
     CONSTRAINT `vouchers_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Voucher codes.';
 
 CREATE UNIQUE INDEX `vouchers_code_idx`
@@ -8188,7 +8250,7 @@ CREATE TABLE `vouchers_redeem_logs`
 
     CONSTRAINT `vouchers_redeem_logs_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
-    CHARACTER SET utf8
+  CHARACTER SET utf8
     COMMENT 'Contains the redeem logs for the voucher codes.';
 
 CREATE INDEX `vouchers_redeem_logs_vouchers_id_idx`
@@ -8210,27 +8272,27 @@ CREATE INDEX `vouchers_redeem_logs_accounts_id_idx`
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_clans` FOREIGN KEY `accounts_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_factions` FOREIGN KEY `accounts_factions` (`factions_id`)
-    REFERENCES `factions` (`id`);
+        REFERENCES `factions` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_accounts_hangars` FOREIGN KEY `accounts_accounts_hangars` (`accounts_hangars_id`)
-    REFERENCES `accounts_hangars` (`id`);
+        REFERENCES `accounts_hangars` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_levels` FOREIGN KEY `accounts_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_ranks` FOREIGN KEY `accounts_ranks` (`ranks_id`)
-    REFERENCES `ranks` (`id`);
+        REFERENCES `ranks` (`id`);
 
 ALTER TABLE `accounts`
     ADD CONSTRAINT `accounts_users` FOREIGN KEY `accounts_users` (`users_id`)
-    REFERENCES `users` (`id`);
+        REFERENCES `users` (`id`);
 
 -- Relations for the `accounts_banks` table.
 --
@@ -8238,7 +8300,7 @@ ALTER TABLE `accounts`
 
 ALTER TABLE `accounts_banks`
     ADD CONSTRAINT `accounts_banks_accounts` FOREIGN KEY `accounts_banks_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_banks_logs` table.
 --
@@ -8248,15 +8310,15 @@ ALTER TABLE `accounts_banks`
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts` FOREIGN KEY `accounts_banks_logs_accounts` (`from_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_to_accounts` FOREIGN KEY `accounts_banks_logs_to_accounts` (`to_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_banks_logs`
     ADD CONSTRAINT `accounts_banks_logs_accounts_banks` FOREIGN KEY `accounts_banks_logs_accounts_banks` (`accounts_banks_id`)
-    REFERENCES `accounts_banks` (`id`);
+        REFERENCES `accounts_banks` (`id`);
 
 -- Relations for the `accounts_clans_roles` table.
 --
@@ -8265,11 +8327,11 @@ ALTER TABLE `accounts_banks_logs`
 
 ALTER TABLE `accounts_clans_roles`
     ADD CONSTRAINT `accounts_clans_roles_accounts` FOREIGN KEY `accounts_clans_roles_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_clans_roles`
     ADD CONSTRAINT `accounts_clans_roles_clans_roles` FOREIGN KEY `accounts_clans_roles_clans_roles` (`clans_roles_id`)
-    REFERENCES `clans_roles` (`id`);
+        REFERENCES `clans_roles` (`id`);
 
 -- Relations for the `accounts_configurations` table.
 --
@@ -8277,7 +8339,7 @@ ALTER TABLE `accounts_clans_roles`
 
 ALTER TABLE `accounts_configurations`
     ADD CONSTRAINT `accounts_configurations_accounts_hangars` FOREIGN KEY `accounts_configurations_accounts_hangars` (`accounts_hangars_id`)
-    REFERENCES `accounts_hangars` (`id`);
+        REFERENCES `accounts_hangars` (`id`);
 
 -- Relations for the `accounts_configurations_accounts_items` table.
 --
@@ -8288,19 +8350,19 @@ ALTER TABLE `accounts_configurations`
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_configurations` FOREIGN KEY `accounts_configurations_accounts_items_accounts_configurations` (`accounts_configurations_id`)
-    REFERENCES `accounts_configurations` (`id`);
+        REFERENCES `accounts_configurations` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_items` FOREIGN KEY `accounts_configurations_accounts_items_accounts_items` (`accounts_items_id`)
-    REFERENCES `accounts_items` (`id`);
+        REFERENCES `accounts_items` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_drones` FOREIGN KEY `accounts_configurations_accounts_items_accounts_drones` (`accounts_drones_id`)
-    REFERENCES `accounts_drones` (`id`);
+        REFERENCES `accounts_drones` (`id`);
 
 ALTER TABLE `accounts_configurations_accounts_items`
     ADD CONSTRAINT `accounts_configurations_accounts_items_accounts_pets` FOREIGN KEY `accounts_configurations_accounts_items_accounts_pets` (`accounts_pets_id`)
-    REFERENCES `accounts_pets` (`id`);
+        REFERENCES `accounts_pets` (`id`);
 
 -- Relations for the `accounts_destroys` table.
 --
@@ -8308,11 +8370,11 @@ ALTER TABLE `accounts_configurations_accounts_items`
 
 ALTER TABLE `accounts_destroys`
     ADD CONSTRAINT `accounts_destroys_accounts` FOREIGN KEY `accounts_destroys_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_destroys`
     ADD CONSTRAINT `accounts_destroys_ships` FOREIGN KEY `accounts_destroys_ships` (`ships_id`)
-    REFERENCES `ships` (`id`);
+        REFERENCES `ships` (`id`);
 
 -- Relations for the `accounts_drones` table.
 --
@@ -8321,11 +8383,11 @@ ALTER TABLE `accounts_destroys`
 
 ALTER TABLE `accounts_drones`
     ADD CONSTRAINT `accounts_drones_accounts` FOREIGN KEY `accounts_drones_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_drones`
     ADD CONSTRAINT `accounts_drones_levels` FOREIGN KEY `accounts_drones_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_galaxygates` table.
 --
@@ -8334,11 +8396,11 @@ ALTER TABLE `accounts_drones`
 
 ALTER TABLE `accounts_galaxygates`
     ADD CONSTRAINT `accounts_galaxygates_galaxygates` FOREIGN KEY `accounts_galaxygates_galaxygates` (`galaxygates_id`)
-    REFERENCES `galaxygates` (`id`);
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `accounts_galaxygates`
     ADD CONSTRAINT `accounts_galaxygates_accounts` FOREIGN KEY `accounts_galaxygates_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_hangars` table.
 --
@@ -8348,15 +8410,15 @@ ALTER TABLE `accounts_galaxygates`
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts` FOREIGN KEY `accounts_hangars_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_ships` FOREIGN KEY `accounts_hangars_accounts_ships` (`accounts_ships_id`)
-    REFERENCES `accounts_ships` (`id`);
+        REFERENCES `accounts_ships` (`id`);
 
 ALTER TABLE `accounts_hangars`
     ADD CONSTRAINT `accounts_hangars_accounts_configurations` FOREIGN KEY `accounts_hangars_accounts_configurations` (`accounts_configurations_id`)
-    REFERENCES `accounts_configurations` (`id`);
+        REFERENCES `accounts_configurations` (`id`);
 
 -- Relations for the `accounts_history` table.
 --
@@ -8364,7 +8426,7 @@ ALTER TABLE `accounts_hangars`
 
 ALTER TABLE `accounts_history`
     ADD CONSTRAINT `accounts_history_accounts` FOREIGN KEY `accounts_history_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_items` table.
 --
@@ -8374,15 +8436,15 @@ ALTER TABLE `accounts_history`
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_accounts` FOREIGN KEY `accounts_items_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_items` FOREIGN KEY `accounts_items_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 ALTER TABLE `accounts_items`
     ADD CONSTRAINT `accounts_items_levels` FOREIGN KEY `accounts_items_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_messages` table.
 --
@@ -8391,11 +8453,11 @@ ALTER TABLE `accounts_items`
 
 ALTER TABLE `accounts_messages`
     ADD CONSTRAINT `accounts_messages_to_accounts` FOREIGN KEY `accounts_messages_to_accounts` (`to_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_messages`
     ADD CONSTRAINT `accounts_messages_from_accounts` FOREIGN KEY `accounts_messages_from_accounts` (`from_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_pets` table.
 --
@@ -8404,11 +8466,11 @@ ALTER TABLE `accounts_messages`
 
 ALTER TABLE `accounts_pets`
     ADD CONSTRAINT `accounts_pets_accounts` FOREIGN KEY `accounts_pets_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_pets`
     ADD CONSTRAINT `accounts_pets_levels` FOREIGN KEY `accounts_pets_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_quests` table.
 --
@@ -8417,11 +8479,11 @@ ALTER TABLE `accounts_pets`
 
 ALTER TABLE `accounts_quests`
     ADD CONSTRAINT `accounts_quests_accounts` FOREIGN KEY `accounts_quests_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_quests`
     ADD CONSTRAINT `accounts_quests_quests` FOREIGN KEY `accounts_quests_quests` (`quests_id`)
-    REFERENCES `quests` (`id`);
+        REFERENCES `quests` (`id`);
 
 -- Relations for the `accounts_rankings` table.
 --
@@ -8429,7 +8491,7 @@ ALTER TABLE `accounts_quests`
 
 ALTER TABLE `accounts_rankings`
     ADD CONSTRAINT `accounts_rankings_accounts` FOREIGN KEY `accounts_rankings_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_settings` table.
 --
@@ -8437,7 +8499,7 @@ ALTER TABLE `accounts_rankings`
 
 ALTER TABLE `accounts_settings`
     ADD CONSTRAINT `accounts_settings_accounts` FOREIGN KEY `accounts_settings_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_ships` table.
 --
@@ -8447,15 +8509,15 @@ ALTER TABLE `accounts_settings`
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_accounts` FOREIGN KEY `accounts_ships_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_ships` FOREIGN KEY `accounts_ships_ships` (`ships_id`)
-    REFERENCES `ships` (`id`);
+        REFERENCES `ships` (`id`);
 
 ALTER TABLE `accounts_ships`
     ADD CONSTRAINT `accounts_ships_maps` FOREIGN KEY `accounts_ships_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `accounts_skills` table.
 --
@@ -8465,15 +8527,15 @@ ALTER TABLE `accounts_ships`
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_accounts` FOREIGN KEY `accounts_skills_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_skilltree_skills` FOREIGN KEY `accounts_skills_skilltree_skills` (`skilltree_skills_id`)
-    REFERENCES `skilltree_skills` (`id`);
+        REFERENCES `skilltree_skills` (`id`);
 
 ALTER TABLE `accounts_skills`
     ADD CONSTRAINT `accounts_skills_skilltree_levels` FOREIGN KEY `accounts_skills_skilltree_levels` (`skilltree_levels_id`)
-    REFERENCES `skilltree_levels` (`id`);
+        REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `accounts_skylabs` table.
 --
@@ -8483,15 +8545,15 @@ ALTER TABLE `accounts_skills`
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_accounts` FOREIGN KEY `accounts_skylabs_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_skylab_modules` FOREIGN KEY `accounts_skylabs_skylab_modules` (`skylab_modules_id`)
-    REFERENCES `skylab_modules` (`id`);
+        REFERENCES `skylab_modules` (`id`);
 
 ALTER TABLE `accounts_skylabs`
     ADD CONSTRAINT `accounts_skylabs_levels` FOREIGN KEY `accounts_skylabs_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `accounts_techfactories` table.
 --
@@ -8499,7 +8561,7 @@ ALTER TABLE `accounts_skylabs`
 
 ALTER TABLE `accounts_techfactories`
     ADD CONSTRAINT `accounts_techfactories_accounts` FOREIGN KEY `accounts_techfactories_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `accounts_techfactory_items` table.
 --
@@ -8508,11 +8570,11 @@ ALTER TABLE `accounts_techfactories`
 
 ALTER TABLE `accounts_techfactory_items`
     ADD CONSTRAINT `accounts_techfactory_items_accounts` FOREIGN KEY `accounts_techfactory_items_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `accounts_techfactory_items`
     ADD CONSTRAINT `accounts_techfactory_items_techfactory_items` FOREIGN KEY `accounts_techfactory_items_techfactory_items` (`techfactory_items_id`)
-    REFERENCES `techfactory_items` (`id`);
+        REFERENCES `techfactory_items` (`id`);
 
 -- Relations for the table `clans`.
 --
@@ -8520,11 +8582,11 @@ ALTER TABLE `accounts_techfactory_items`
 
 ALTER TABLE `clans`
     ADD CONSTRAINT `clans_accounts` FOREIGN KEY `clans_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans`
     ADD CONSTRAINT `clans_factions` FOREIGN KEY `clans_factions` (`factions_id`)
-    REFERENCES `factions` (`id`);
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `clans_applications` table.
 --
@@ -8533,11 +8595,11 @@ ALTER TABLE `clans`
 
 ALTER TABLE `clans_applications`
     ADD CONSTRAINT `clans_applications_clans` FOREIGN KEY `clans_applications_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_applications`
     ADD CONSTRAINT `clans_applications_accounts` FOREIGN KEY `clans_applications_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_banks` table.
 --
@@ -8545,7 +8607,7 @@ ALTER TABLE `clans_applications`
 
 ALTER TABLE `clans_banks`
     ADD CONSTRAINT `clans_banks_clans` FOREIGN KEY `clans_banks_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_banks_logs` table.
 --
@@ -8555,15 +8617,15 @@ ALTER TABLE `clans_banks`
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_clans_banks` FOREIGN KEY `clans_banks_logs_clans_banks` (`clans_banks_id`)
-    REFERENCES `clans_banks` (`id`);
+        REFERENCES `clans_banks` (`id`);
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_from_accounts` FOREIGN KEY `clans_banks_logs_from_accounts` (`from_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_banks_logs`
     ADD CONSTRAINT `clans_banks_logs_to_accounts` FOREIGN KEY `clans_banks_logs_to_accounts` (`to_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_battlestations` table.
 --
@@ -8572,11 +8634,11 @@ ALTER TABLE `clans_banks_logs`
 
 ALTER TABLE `clans_battlestations`
     ADD CONSTRAINT `clans_battlestations_clans` FOREIGN KEY `clans_battlestations_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_battlestations`
     ADD CONSTRAINT `clans_battlestations_maps` FOREIGN KEY `clans_battlestations_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `clans_battlestations_items` table.
 --
@@ -8585,11 +8647,11 @@ ALTER TABLE `clans_battlestations`
 
 ALTER TABLE `clans_battlestations_items`
     ADD CONSTRAINT `clans_battlestations_items_clans_battlestations` FOREIGN KEY `clans_battlestations_items_clans_battlestations` (`clans_battlestations_id`)
-    REFERENCES `clans_battlestations` (`id`);
+        REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_items`
     ADD CONSTRAINT `clans_battlestations_items_accounts_items` FOREIGN KEY `clans_battlestations_items_accounts_items` (`accounts_items_id`)
-    REFERENCES `accounts_items` (`id`);
+        REFERENCES `accounts_items` (`id`);
 
 -- Relations for the `clans_battlestations_logs` table.
 --
@@ -8598,11 +8660,11 @@ ALTER TABLE `clans_battlestations_items`
 
 ALTER TABLE `clans_battlestations_logs`
     ADD CONSTRAINT `clans_battlestations_logs_clans_battlestations` FOREIGN KEY `clans_battlestations_logs_clans_battlestations` (`clans_battlestations_id`)
-    REFERENCES `clans_battlestations` (`id`);
+        REFERENCES `clans_battlestations` (`id`);
 
 ALTER TABLE `clans_battlestations_logs`
     ADD CONSTRAINT `clans_battlestations_logs_clans` FOREIGN KEY `clans_battlestations_logs_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_diplomacies` table.
 --
@@ -8611,11 +8673,11 @@ ALTER TABLE `clans_battlestations_logs`
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_from_clans` FOREIGN KEY `clans_diplomacies_from_clans` (`from_clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_diplomacies`
     ADD CONSTRAINT `clans_diplomacies_to_clans` FOREIGN KEY `clans_diplomacies_to_clans` (`to_clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_messages` table.
 --
@@ -8625,15 +8687,15 @@ ALTER TABLE `clans_diplomacies`
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_clans` FOREIGN KEY `clans_messages_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_to_accounts` FOREIGN KEY `clans_messages_to_accounts` (`to_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_messages`
     ADD CONSTRAINT `clans_messages_from_accounts` FOREIGN KEY `clans_messages_from_accounts` (`from_accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for the `clans_news` table.
 --
@@ -8642,11 +8704,11 @@ ALTER TABLE `clans_messages`
 
 ALTER TABLE `clans_news`
     ADD CONSTRAINT `clans_news_accounts` FOREIGN KEY `clans_news_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `clans_news`
     ADD CONSTRAINT `clans_news_clans` FOREIGN KEY `clans_news_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_ranking` table.
 --
@@ -8654,7 +8716,7 @@ ALTER TABLE `clans_news`
 
 ALTER TABLE `clans_ranking`
     ADD CONSTRAINT `clans_ranking_clans` FOREIGN KEY `clans_ranking_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles` table.
 --
@@ -8662,7 +8724,7 @@ ALTER TABLE `clans_ranking`
 
 ALTER TABLE `clans_roles`
     ADD CONSTRAINT `clans_roles_clans` FOREIGN KEY `clans_roles_clans` (`clans_id`)
-    REFERENCES `clans` (`id`);
+        REFERENCES `clans` (`id`);
 
 -- Relations for the `clans_roles_permissions` table.
 --
@@ -8671,11 +8733,11 @@ ALTER TABLE `clans_roles`
 
 ALTER TABLE `clans_roles_permissions`
     ADD CONSTRAINT `clans_roles_permissions_clans_roles` FOREIGN KEY `clans_roles_permissions_clans_roles` (`clans_roles_id`)
-    REFERENCES `clans_roles` (`id`);
+        REFERENCES `clans_roles` (`id`);
 
 ALTER TABLE `clans_roles_permissions`
     ADD CONSTRAINT `clans_roles_permissions_permissions` FOREIGN KEY `clans_roles_permissions_permissions` (`permissions_id`)
-    REFERENCES `permissions` (`id`);
+        REFERENCES `permissions` (`id`);
 
 -- Relations for the `collectables` table.
 
@@ -8689,11 +8751,11 @@ ALTER TABLE `clans_roles_permissions`
 
 ALTER TABLE `factions`
     ADD CONSTRAINT `factions_high_maps` FOREIGN KEY `factions_high_maps` (`high_maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `factions`
     ADD CONSTRAINT `factions_low_maps` FOREIGN KEY `factions_low_maps` (`low_maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `galaxygates` table.
 --
@@ -8701,27 +8763,27 @@ ALTER TABLE `factions`
 
 ALTER TABLE `galaxygates`
     ADD CONSTRAINT `galaxygates_galaxygates_waves` FOREIGN KEY `galaxygates_galaxygates_waves` (`galaxygates_waves_id`)
-    REFERENCES `galaxygates_waves` (`id`);
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_gg_spins` table.
 
 ALTER TABLE `galaxygates_gg_spins`
     ADD CONSTRAINT `galaxygates_gg_spins_galaxygates` FOREIGN KEY `galaxygates_gg_spins_galaxygates` (`galaxygates_id`)
-    REFERENCES `galaxygates` (`id`);
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_spins`
     ADD CONSTRAINT `galaxygates_gg_spins_galaxygates_spins` FOREIGN KEY `galaxygates_gg_spins_galaxygates_spins` (`galaxygates_spins_id`)
-    REFERENCES `galaxygates_spins` (`id`);
+        REFERENCES `galaxygates_spins` (`id`);
 
 -- Relations for the `galaxygates_gg_waves` table.
 
 ALTER TABLE `galaxygates_gg_waves`
     ADD CONSTRAINT `galaxygates_gg_waves_galaxygates` FOREIGN KEY `galaxygates_gg_waves_galaxygates` (`galaxygates_id`)
-    REFERENCES `galaxygates` (`id`);
+        REFERENCES `galaxygates` (`id`);
 
 ALTER TABLE `galaxygates_gg_waves`
     ADD CONSTRAINT `galaxygates_gg_waves_galaxygates_waves` FOREIGN KEY `galaxygates_gg_waves_galaxygates_waves` (`galaxygates_waves_id`)
-    REFERENCES `galaxygates_waves` (`id`);
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_probabilities` table.
 --
@@ -8729,7 +8791,7 @@ ALTER TABLE `galaxygates_gg_waves`
 
 ALTER TABLE `galaxygates_probabilities`
     ADD CONSTRAINT `galaxygates_probabilities_galaxygates` FOREIGN KEY `galaxygates_probabilities_galaxygates` (`galaxygates_id`)
-    REFERENCES `galaxygates` (`id`);
+        REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `galaxygates_spawns` table.
 --
@@ -8737,7 +8799,7 @@ ALTER TABLE `galaxygates_probabilities`
 
 ALTER TABLE `galaxygates_spawns`
     ADD CONSTRAINT `galaxygates_spawns_npcs` FOREIGN KEY `galaxygates_spawns_npcs` (`npcs_id`)
-    REFERENCES `npcs` (`id`);
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `galaxygates_spins` table.
 --
@@ -8745,7 +8807,7 @@ ALTER TABLE `galaxygates_spawns`
 
 ALTER TABLE `galaxygates_spins`
     ADD CONSTRAINT `galaxygates_spins_items` FOREIGN KEY `galaxygates_spins_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 -- Relations for the `galaxygates_stages` table.
 --
@@ -8753,17 +8815,17 @@ ALTER TABLE `galaxygates_spins`
 
 ALTER TABLE `galaxygates_stages`
     ADD CONSTRAINT `galaxygates_stages_galaxygates_waves` FOREIGN KEY `galaxygates_stages_galaxygates_waves` (`galaxygates_waves_id`)
-    REFERENCES `galaxygates_waves` (`id`);
+        REFERENCES `galaxygates_waves` (`id`);
 
 -- Relations for the `galaxygates_stages_spawns` table.
 
 ALTER TABLE `galaxygates_stages_spawns`
     ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_stages` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_stages` (`galaxygates_stages_id`)
-    REFERENCES `galaxygates_stages` (`id`);
+        REFERENCES `galaxygates_stages` (`id`);
 
 ALTER TABLE `galaxygates_stages_spawns`
     ADD CONSTRAINT `galaxygates_stages_spawns_galaxygates_spawns` FOREIGN KEY `galaxygates_stages_spawns_galaxygates_spawns` (`galaxygates_spawns_id`)
-    REFERENCES `galaxygates_spawns` (`id`);
+        REFERENCES `galaxygates_spawns` (`id`);
 
 -- Relations for the `galaxygates_waves` table.
 --
@@ -8771,7 +8833,7 @@ ALTER TABLE `galaxygates_stages_spawns`
 
 ALTER TABLE `galaxygates_waves`
     ADD CONSTRAINT `galaxygates_waves_maps` FOREIGN KEY `galaxygates_spins_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `invitation_codes` table.
 
@@ -8782,7 +8844,7 @@ ALTER TABLE `galaxygates_waves`
 
 ALTER TABLE `invitation_codes_redeem_logs`
     ADD CONSTRAINT `invitation_codes_redeem_logs_invitation_codes` FOREIGN KEY `invitation_codes_redeem_logs_invitation_codes` (`invitation_codes_id`)
-    REFERENCES `invitation_codes` (`id`);
+        REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `items` table.
 
@@ -8794,7 +8856,7 @@ ALTER TABLE `invitation_codes_redeem_logs`
 --
 ALTER TABLE `levels_upgrades`
     ADD CONSTRAINT `levels_upgrades_levels` FOREIGN KEY `levels_upgrades_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 -- Relations for the `maps` table.
 --
@@ -8802,7 +8864,20 @@ ALTER TABLE `levels_upgrades`
 
 ALTER TABLE `maps`
     ADD CONSTRAINT `maps_factions` FOREIGN KEY `maps_factions` (`factions_id`)
-    REFERENCES `factions` (`id`);
+        REFERENCES `factions` (`id`);
+
+-- Relations for the `maps_collectables` table.
+--
+-- A collectable belongs to a map.
+-- A collectable is a collectable.
+
+ALTER TABLE `maps_collectables`
+    ADD CONSTRAINT `maps_collectables_maps` FOREIGN KEY `maps_collectables_maps` (`maps_id`)
+        REFERENCES `maps` (`id`);
+
+ALTER TABLE `maps_collectables`
+    ADD CONSTRAINT `maps_collectables_collectables` FOREIGN KEY `maps_collectables_collectables` (`collectables_id`)
+        REFERENCES `collectables` (`id`);
 
 -- Relations for the `maps_npcs` table.
 --
@@ -8811,11 +8886,11 @@ ALTER TABLE `maps`
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_maps` FOREIGN KEY `maps_npcs_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_npcs`
     ADD CONSTRAINT `maps_npcs_npcs` FOREIGN KEY `maps_npcs_npcs` (`npcs_id`)
-    REFERENCES `npcs` (`id`);
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `maps_portals` table.
 --
@@ -8824,11 +8899,11 @@ ALTER TABLE `maps_npcs`
 
 ALTER TABLE `maps_portals`
     ADD CONSTRAINT `maps_portals_maps` FOREIGN KEY `maps_portals_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_portals`
     ADD CONSTRAINT `maps_portals_target_maps` FOREIGN KEY `maps_portals_to_maps` (`target_maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 -- Relations for the `maps_stations` table.
 --
@@ -8837,11 +8912,11 @@ ALTER TABLE `maps_portals`
 
 ALTER TABLE `maps_stations`
     ADD CONSTRAINT `maps_stations_maps` FOREIGN KEY `maps_stations_maps` (`maps_id`)
-    REFERENCES `maps` (`id`);
+        REFERENCES `maps` (`id`);
 
 ALTER TABLE `maps_stations`
     ADD CONSTRAINT `maps_stations_factions` FOREIGN KEY `maps_stations_factions` (`factions_id`)
-    REFERENCES `factions` (`id`);
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `moderators` table.
 --
@@ -8850,11 +8925,11 @@ ALTER TABLE `maps_stations`
 
 ALTER TABLE `moderators`
     ADD CONSTRAINT `moderators_accounts` FOREIGN KEY `moderators_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 ALTER TABLE `moderators`
     ADD CONSTRAINT `moderators_moderators_roles` FOREIGN KEY `moderators_moderators_roles` (`moderators_roles_id`)
-    REFERENCES `moderators_roles` (`id`);
+        REFERENCES `moderators_roles` (`id`);
 
 -- Relations for the `moderators_logs` table.
 --
@@ -8862,7 +8937,7 @@ ALTER TABLE `moderators`
 
 ALTER TABLE `moderators_logs`
     ADD CONSTRAINT `moderators_logs_moderators` FOREIGN KEY `moderators_logs_moderators` (`moderators_id`)
-    REFERENCES `moderators` (`id`);
+        REFERENCES `moderators` (`id`);
 
 -- Relations for the `moderators_roles` table.
 --
@@ -8870,7 +8945,7 @@ ALTER TABLE `moderators_logs`
 
 ALTER TABLE `moderators_roles`
     ADD CONSTRAINT `moderators_roles_moderators_roles` FOREIGN KEY `moderators_roles_moderators_roles` (`moderators_roles_id`)
-    REFERENCES `moderators_roles` (`id`);
+        REFERENCES `moderators_roles` (`id`);
 
 -- Relations for the `moderators_roles_permissions` table.
 --
@@ -8879,11 +8954,11 @@ ALTER TABLE `moderators_roles`
 
 ALTER TABLE `moderators_roles_permissions`
     ADD CONSTRAINT `moderators_roles_permissions_moderators_roles` FOREIGN KEY `moderators_roles_permissions_moderators_roles` (`moderators_roles_id`)
-    REFERENCES `moderators_roles` (`id`);
+        REFERENCES `moderators_roles` (`id`);
 
 ALTER TABLE `moderators_roles_permissions`
     ADD CONSTRAINT `moderators_roles_permissions_permissions` FOREIGN KEY `moderators_roles_permissions_permissions` (`permissions_id`)
-    REFERENCES `permissions` (`id`);
+        REFERENCES `permissions` (`id`);
 
 -- Relations for the `news` table.
 
@@ -8899,15 +8974,15 @@ ALTER TABLE `moderators_roles_permissions`
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_levels` FOREIGN KEY `quests_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_quests` FOREIGN KEY `quests_quests` (`quests_id`)
-    REFERENCES `quests` (`id`);
+        REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests`
     ADD CONSTRAINT `quests_factions` FOREIGN KEY `quests_factions` (`factions_id`)
-    REFERENCES `factions` (`id`);
+        REFERENCES `factions` (`id`);
 
 -- Relations for the `quests_conditions` table.
 --
@@ -8916,11 +8991,11 @@ ALTER TABLE `quests`
 
 ALTER TABLE `quests_conditions`
     ADD CONSTRAINT `quests_conditions_quests` FOREIGN KEY `quests_conditions_quests` (`quests_id`)
-    REFERENCES `quests` (`id`);
+        REFERENCES `quests` (`id`);
 
 ALTER TABLE `quests_conditions`
     ADD CONSTRAINT `quests_conditions_quests_conditions` FOREIGN KEY `quests_conditions_quests_conditions` (`quests_conditions_id`)
-    REFERENCES `quests_conditions` (`id`);
+        REFERENCES `quests_conditions` (`id`);
 
 -- Relations for the `ranks` table.
 
@@ -8930,7 +9005,7 @@ ALTER TABLE `quests_conditions`
 
 ALTER TABLE `rewards`
     ADD CONSTRAINT `rewards_items` FOREIGN KEY `rewards_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 -- Relations for the `rewards_collectables` table.
 --
@@ -8939,11 +9014,11 @@ ALTER TABLE `rewards`
 
 ALTER TABLE `rewards_collectables`
     ADD CONSTRAINT `rewards_collectables_rewards` FOREIGN KEY `rewards_collectables_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_collectables`
     ADD CONSTRAINT `rewards_collectables_collectables` FOREIGN KEY `rewards_collectables_collectables` (`collectables_id`)
-    REFERENCES `collectables` (`id`);
+        REFERENCES `collectables` (`id`);
 
 -- Relations for the `rewards_galaxygates` table.
 --
@@ -8952,11 +9027,11 @@ ALTER TABLE `rewards_collectables`
 
 ALTER TABLE `rewards_galaxygates`
     ADD CONSTRAINT `rewards_galaxygates_rewards` FOREIGN KEY `rewards_galaxygates_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_galaxygates`
     ADD CONSTRAINT `rewards_galaxygates_galaxygates` FOREIGN KEY `rewards_galaxygates_galaxygates` (`galaxygates_id`)
-    REFERENCES `galaxygates` (`id`);
+        REFERENCES `galaxygates` (`id`);
 
 -- Relations for the `rewards_npcs` table.
 --
@@ -8965,11 +9040,11 @@ ALTER TABLE `rewards_galaxygates`
 
 ALTER TABLE `rewards_npcs`
     ADD CONSTRAINT `rewards_npcs_rewards` FOREIGN KEY `rewards_npcs_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_npcs`
     ADD CONSTRAINT `rewards_npcs_npcs` FOREIGN KEY `rewards_npcs_npcs` (`npcs_id`)
-    REFERENCES `npcs` (`id`);
+        REFERENCES `npcs` (`id`);
 
 -- Relations for the `rewards_quests` table.
 --
@@ -8978,11 +9053,11 @@ ALTER TABLE `rewards_npcs`
 
 ALTER TABLE `rewards_quests`
     ADD CONSTRAINT `rewards_quests_rewards` FOREIGN KEY `rewards_quests_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_quests`
     ADD CONSTRAINT `rewards_quests_quests` FOREIGN KEY `rewards_quests_quests` (`quests_id`)
-    REFERENCES `quests` (`id`);
+        REFERENCES `quests` (`id`);
 
 -- Relations for the `rewards_ships` table.
 --
@@ -8991,11 +9066,11 @@ ALTER TABLE `rewards_quests`
 
 ALTER TABLE `rewards_ships`
     ADD CONSTRAINT `rewards_ships_rewards` FOREIGN KEY `rewards_ships_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_ships`
     ADD CONSTRAINT `rewards_ships_ships` FOREIGN KEY `rewards_ships_ships` (`ships_id`)
-    REFERENCES `ships` (`id`);
+        REFERENCES `ships` (`id`);
 
 -- Relations for the `rewards_vouchers` table.
 --
@@ -9004,11 +9079,11 @@ ALTER TABLE `rewards_ships`
 
 ALTER TABLE `rewards_vouchers`
     ADD CONSTRAINT `rewards_vouchers_rewards` FOREIGN KEY `rewards_vouchers_rewards` (`rewards_id`)
-    REFERENCES `rewards` (`id`);
+        REFERENCES `rewards` (`id`);
 
 ALTER TABLE `rewards_vouchers`
     ADD CONSTRAINT `rewards_vouchers_vouchers` FOREIGN KEY `rewards_vouchers_vouchers` (`vouchers_id`)
-    REFERENCES `vouchers` (`id`);
+        REFERENCES `vouchers` (`id`);
 
 -- Relations for the `server_logs` table.
 
@@ -9018,7 +9093,7 @@ ALTER TABLE `rewards_vouchers`
 
 ALTER TABLE `ships`
     ADD CONSTRAINT `ships_items` FOREIGN KEY `ships_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 -- Relations for the `skilltree_levels` table.
 --
@@ -9027,11 +9102,11 @@ ALTER TABLE `ships`
 
 ALTER TABLE `skilltree_levels`
     ADD CONSTRAINT `skilltree_levels_levels` FOREIGN KEY `skilltree_levels_levels` (`levels_id`)
-    REFERENCES `levels` (`id`);
+        REFERENCES `levels` (`id`);
 
 ALTER TABLE `skilltree_levels`
     ADD CONSTRAINT `skilltree_levels_skills` FOREIGN KEY `skilltree_levels_skills` (`skilltree_skills_id`)
-    REFERENCES `skilltree_skills` (`id`);
+        REFERENCES `skilltree_skills` (`id`);
 
 -- Relations for the `skilltree_skills` table.
 
@@ -9042,11 +9117,11 @@ ALTER TABLE `skilltree_levels`
 
 ALTER TABLE `skilltree_unlocks`
     ADD CONSTRAINT `skilltree_unlocks_upgrade_skilltree_levels` FOREIGN KEY `skilltree_unlocks_upgrade_skilltree_levels` (`upgrade_skilltree_levels_id`)
-    REFERENCES `skilltree_levels` (`id`);
+        REFERENCES `skilltree_levels` (`id`);
 
 ALTER TABLE `skilltree_unlocks`
     ADD CONSTRAINT `skilltree_unlocks_required_skilltree_levels` FOREIGN KEY `skilltree_unlocks_required_skilltree_levels` (`required_skilltree_levels_id`)
-    REFERENCES `skilltree_levels` (`id`);
+        REFERENCES `skilltree_levels` (`id`);
 
 -- Relations for the `skylab_modules` levels.
 
@@ -9057,11 +9132,11 @@ ALTER TABLE `skilltree_unlocks`
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_techfactory_items` FOREIGN KEY `techfactory_costs_techfactory_items` (`techfactory_items_id`)
-    REFERENCES `techfactory_items` (`id`);
+        REFERENCES `techfactory_items` (`id`);
 
 ALTER TABLE `techfactory_costs`
     ADD CONSTRAINT `techfactory_costs_items` FOREIGN KEY `techfactory_costs_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 -- Relations for the `techfactory_drones` table.
 
@@ -9074,11 +9149,11 @@ ALTER TABLE `techfactory_costs`
 
 ALTER TABLE `trade_items`
     ADD CONSTRAINT `trade_items_items` FOREIGN KEY `trade_items_items` (`items_id`)
-    REFERENCES `items` (`id`);
+        REFERENCES `items` (`id`);
 
 ALTER TABLE `trade_items`
     ADD CONSTRAINT `trade_items_accounts` FOREIGN KEY `trade_items_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
+        REFERENCES `accounts` (`id`);
 
 -- Relations for `users` table.
 --
@@ -9086,7 +9161,7 @@ ALTER TABLE `trade_items`
 
 ALTER TABLE `users`
     ADD CONSTRAINT `users_invitation_codes` FOREIGN KEY `users_invitation_codes` (`invitation_codes_id`)
-    REFERENCES `invitation_codes` (`id`);
+        REFERENCES `invitation_codes` (`id`);
 
 -- Relations for the `vouchers` table.
 
@@ -9097,9 +9172,8 @@ ALTER TABLE `users`
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_vouchers` FOREIGN KEY `vouchers_redeem_logs_vouchers` (`vouchers_id`)
-    REFERENCES `vouchers` (`id`);
+        REFERENCES `vouchers` (`id`);
 
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
-    REFERENCES `accounts` (`id`);
-
+        REFERENCES `accounts` (`id`);
