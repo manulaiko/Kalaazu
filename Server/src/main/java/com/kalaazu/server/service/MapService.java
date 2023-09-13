@@ -63,8 +63,10 @@ public class MapService {
         map.getMapsNpcs()
                 .forEach(npc -> {
                     for (int i = 0; i < npc.getAmount(); i++) {
-                        var n = new Npc(npc.getNpcsByNpcsId(), map);
-
+                        var n = ctx.getBean(Npc.class);
+                        n.setMap(map);
+                        n.setNpc(npc.getNpcsByNpcsId());
+                        n.setSpeed(n.getNpc().getSpeed());
                         n.setPosition(Vector2.random(map.getLimits()));
                         n.setId(r.nextInt());
 
@@ -133,7 +135,10 @@ public class MapService {
 
         log.info("Initializing player {}", account.getId());
 
-        var player = new Player(ctx, session, maps.get(map), account.getId());
+        var player = ctx.getBean(Player.class);
+        player.setGameSession(session);
+        player.setMap(maps.get(map));
+        player.setId(account.getId());
         player.setPosition(ship.getPosition());
         player.setSpeed((short) (config.getSpeed() + 1000));
 

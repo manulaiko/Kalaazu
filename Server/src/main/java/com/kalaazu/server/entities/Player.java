@@ -13,6 +13,8 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.UUID;
 
@@ -25,15 +27,13 @@ import java.util.UUID;
  * @author manulaiko <manulaiko@gmail.com>
  */
 @RequiredArgsConstructor
-@Getter
-@Setter
+@Data
+@Component
+@Scope("prototype")
 public class Player implements MovableMapEntity {
     private final ApplicationContext ctx;
 
-    private final GameSession gameSession;
-    private final MapsEntity map;
-    private final int id;
-
+    private int id;
     private Vector2 initialPosition = new Vector2(Vector2.Zero);
     private Vector2 position = new Vector2(Vector2.Zero);
     private Vector2 destination = new Vector2(Vector2.Zero);
@@ -41,6 +41,9 @@ public class Player implements MovableMapEntity {
     private boolean moving;
     private long endMovementTime;
     private int totalMovementTime;
+
+    private GameSession gameSession;
+    private MapsEntity map;
 
     @Override
     public OutCommand getEntityCreationCommand() {

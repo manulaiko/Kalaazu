@@ -11,6 +11,8 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 
@@ -22,23 +24,21 @@ import java.util.ArrayList;
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-@Getter
-@Setter
+@Data
 @RequiredArgsConstructor
+@Component
+@Scope("prototype")
 public class Npc implements MovableMapEntity {
-    private final NpcsEntity npc;
-    private final MapsEntity map;
-
     private int id;
     private Vector2 position = new Vector2(Vector2.Zero);
     private Vector2 destination = new Vector2(Vector2.Zero);
     private boolean moving;
     private long endMovementTime;
     private int totalMovementTime;
+    private short speed;
 
-    public short getSpeed() {
-        return npc.getSpeed();
-    }
+    private NpcsEntity npc;
+    private MapsEntity map;
 
     @Override
     public void move(Vector2 from, Vector2 to) {
