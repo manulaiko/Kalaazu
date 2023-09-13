@@ -1,10 +1,6 @@
 package com.kalaazu.server.handler;
 
-import com.kalaazu.math.Vector2;
 import com.kalaazu.server.commands.in.MoveHero;
-import com.kalaazu.server.commands.out.map.MoveEntityCommand;
-import com.kalaazu.server.entities.Player;
-import com.kalaazu.server.event.BroadcastCommandEvent;
 import com.kalaazu.server.netty.GameSession;
 import com.kalaazu.server.util.Handler;
 import lombok.Data;
@@ -33,6 +29,6 @@ public class MoveHeroHandler extends Handler<MoveHero> {
     public void handle(MoveHero packet, GameSession session) {
         var player = session.getPlayer();
 
-        player.move(packet.getFrom(), packet.getTo());
+        player.startMovement(packet.getFrom(), packet.getTo());
     }
 }

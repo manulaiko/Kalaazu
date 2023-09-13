@@ -4,14 +4,14 @@ import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.persistence.entity.NpcsEntity;
 import com.kalaazu.server.commands.OutCommand;
-import com.kalaazu.server.commands.out.map.MinimapEntityDiplomacyStatusCommand;
 import com.kalaazu.server.commands.out.map.CreateShipCommand;
+import com.kalaazu.server.commands.out.map.MinimapEntityDiplomacyStatusCommand;
 import com.kalaazu.server.commands.out.unknown.class_387;
 import lombok.Data;
-import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 import org.springframework.context.annotation.Scope;
+import org.springframework.scheduling.annotation.Async;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -30,8 +30,9 @@ import java.util.ArrayList;
 @Scope("prototype")
 public class Npc implements MovableMapEntity {
     private int id;
-    private Vector2 position = new Vector2(Vector2.Zero);
-    private Vector2 destination = new Vector2(Vector2.Zero);
+    private Vector2 initialPosition = Vector2.Zero.cpy();
+    private Vector2 position = Vector2.Zero.cpy();
+    private Vector2 destination = Vector2.Zero.cpy();
     private boolean moving;
     private long endMovementTime;
     private int totalMovementTime;
@@ -41,7 +42,13 @@ public class Npc implements MovableMapEntity {
     private MapsEntity map;
 
     @Override
-    public void move(Vector2 from, Vector2 to) {
+    public void startMovement(Vector2 from, Vector2 to) {
+
+    }
+
+    @Async
+    @Scheduled(fixedDelay = 500)
+    public void tick() {
 
     }
 
@@ -55,8 +62,8 @@ public class Npc implements MovableMapEntity {
                 0,
                 MinimapEntityDiplomacyStatusCommand.ENEMY,
                 3,
-                (int)position.getX(),
-                (int)position.getY(),
+                (int) position.getX(),
+                (int) position.getY(),
                 MinimapEntityDiplomacyStatusCommand.ENEMY,
                 String.valueOf(npc.getGfx()),
                 "",
@@ -69,105 +76,5 @@ public class Npc implements MovableMapEntity {
                 new MinimapEntityDiplomacyStatusCommand(MinimapEntityDiplomacyStatusCommand.ENEMY),
                 new class_387(class_387.DEFAULT)
         );
-
-        /*
-        0
-95
-28
-102
-0
-27
-46
-46
-58
-58
-123
-32
-66
-111
-115
-115
-32
-75
-114
-105
-115
-116
-97
-108
-108
-105
-110
-32
-125
-58
-58
-46
-46
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-0
-192
-0
-2
-50
-57
-0
-0
-0
-0
-1
-0
-0
-0
-0
-106
-242
-0
-3
-0
-0
-3
-0
-0
-0
-0
-0
-0
-0
-0
-0
-140
-152
-0
-4
-0
-0
-0
-24
-0
-0
-168
-240
-54
-206
-172
-130
-0
-0
-0
-15
-164
-0
-         */
     }
 }

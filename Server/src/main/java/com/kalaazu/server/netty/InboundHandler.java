@@ -6,6 +6,7 @@ import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
 
 /**
@@ -22,6 +23,7 @@ import org.springframework.stereotype.Component;
 @ChannelHandler.Sharable
 public class InboundHandler extends SimpleChannelInboundHandler<Packet> {
     private final ChannelManager channelManager;
+    private final ApplicationContext applicationContext;
 
     @Override
     public void channelRegistered(ChannelHandlerContext ctx) throws Exception {
@@ -29,7 +31,10 @@ public class InboundHandler extends SimpleChannelInboundHandler<Packet> {
         var id = ctx.channel().id();
         log.info("Connection received {}", id);
 
-        channelManager.startGameSession(new GameSession(id), ctx.channel());
+        var session = applicationContext.getBean(GameSession.class);
+        session.setChannelId(id);
+
+        channelManager.startGameSession(session, ctx.channel());
 
         super.channelRegistered(ctx);
     }

@@ -4,6 +4,8 @@ import org.modelmapper.Converter;
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableAsync;
+import org.springframework.scheduling.annotation.EnableScheduling;
 
 import java.sql.Timestamp;
 
@@ -16,6 +18,8 @@ import java.sql.Timestamp;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @Configuration
+@EnableAsync(proxyTargetClass = true)
+@EnableScheduling
 public class SpringConfig {
     /**
      * Returns the ModelMapper instance.

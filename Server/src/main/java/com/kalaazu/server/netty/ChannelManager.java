@@ -114,6 +114,9 @@ public class ChannelManager {
     }
 
     public void endGameSession(ChannelId channelId) {
+        var session = sessions.get(channelId);
+        session.destroy();
+
         sessions.remove(channelId);
         channels.close(channel -> channel.id().equals(channelId));
     }

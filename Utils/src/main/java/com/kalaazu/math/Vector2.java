@@ -51,7 +51,7 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      */
     public Vector2(Vector2 v) {
         if (v == null) {
-            v = new Vector2(Vector2.Zero);
+            v = Vector2.Zero.cpy();
         }
 
         set(v);
@@ -719,6 +719,13 @@ public class Vector2 implements Serializable, Vector<Vector2> {
 
         x = x - (direction.getX() * step);
         y = y - (direction.getY() * step);
+
+        return this;
+    }
+
+    public Vector2 div(float v) {
+        x /= v;
+        y /= v;
 
         return this;
     }

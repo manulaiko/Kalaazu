@@ -20,6 +20,7 @@ public interface MapEntity {
     int getId();
 
     Vector2 getPosition();
+    void setPosition(Vector2 position);
 
     MapsEntity getMap();
 
