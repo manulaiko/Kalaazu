@@ -33,9 +33,9 @@ public class MoveEntityCommand extends OutCommand {
         var y = (int) destination.getY();
 
         packet.writeShort(0);
-        packet.writeInt(y >>> 13 | y << 19);
-        packet.writeInt(entityId >>> 12 | entityId << 20);
-        packet.writeInt(x >>> 4 | x << 28);
-        packet.writeInt(travelTime >>> 13 | travelTime << 19);
+        packet.writeInt(y >> 13 | y << 19);
+        packet.writeInt(entityId >> 12 | entityId << 20);
+        packet.writeInt(x >> 4 | x << 28);
+        packet.writeInt(travelTime >> 13 | travelTime << 19);
     }
 }

@@ -65,7 +65,7 @@ public class MapService {
                     for (int i = 0; i < npc.getAmount(); i++) {
                         var n = new Npc(npc.getNpcsByNpcsId(), map);
 
-                        n.setPosition(Vector2.random(new Vector2(1000, 1000)));
+                        n.setPosition(Vector2.random(map.getLimits()));
                         n.setId(r.nextInt());
 
                         npcs.add(n);
@@ -82,7 +82,7 @@ public class MapService {
                             to = map.getLimits();
                         }
 
-                        c.setPosition(Vector2.random(new Vector2(1000, 1000)));
+                        c.setPosition(Vector2.random(collectable.getFrom(), to));
                         c.setId(r.nextInt());
 
                         collectables.add(c);
@@ -133,7 +133,7 @@ public class MapService {
 
         log.info("Initializing player {}", account.getId());
 
-        var player = new Player(session, maps.get(map), account.getId());
+        var player = new Player(ctx, session, maps.get(map), account.getId());
         player.setPosition(ship.getPosition());
         player.setSpeed((short) (config.getSpeed() + 1000));
 

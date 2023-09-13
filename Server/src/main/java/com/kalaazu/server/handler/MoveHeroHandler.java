@@ -33,48 +33,6 @@ public class MoveHeroHandler extends Handler<MoveHero> {
     public void handle(MoveHero packet, GameSession session) {
         var player = session.getPlayer();
 
-        var travelTime = calculateTime(player, packet.getTo());
-
-        player.setMoving(true);
-        player.setDestination(packet.getTo());
-        player.setMovementStartTime(System.currentTimeMillis());
-        player.setTotalMovementTime(travelTime);
-
-        var command = new MoveEntityCommand(
-                player.getId(),
-                player.getDestination(),
-                player.getTotalMovementTime()
-        );
-
-        ctx.publishEvent(new BroadcastCommandEvent(command, this));
-    }
-
-    private int calculateTime(Player player, Vector2 destination) {
-        var currentPosition = getCurrentPosition(player);
-
-        return (int) (destination.dst(currentPosition) / player.getSpeed() * 1000);
-    }
-
-    private Vector2 getCurrentPosition(Player player) {
-        if (!player.isMoving()) {
-            return player.getPosition();
-        }
-
-        var currentPosition = new Vector2(player.getPosition());
-
-        var timeElapsed = System.currentTimeMillis() - player.getMovementStartTime();
-
-        if (timeElapsed > player.getTotalMovementTime()) {
-            player.setMoving(false);
-            currentPosition = new Vector2(player.getDestination());
-
-            player.setPosition(currentPosition);
-
-            return currentPosition;
-        }
-
-        var direction = player.getDirection();
-
-        return new Vector2(player.getPosition()).move(direction, timeElapsed, player.getSpeed());
+        player.move(packet.getFrom(), packet.getTo());
     }
 }

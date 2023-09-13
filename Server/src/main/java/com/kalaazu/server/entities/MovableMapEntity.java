@@ -1,6 +1,7 @@
 package com.kalaazu.server.entities;
 
 import com.kalaazu.math.Vector2;
+import com.kalaazu.server.commands.out.map.MoveEntityCommand;
 
 /**
  * Movable map entity.
@@ -22,6 +23,24 @@ public interface MovableMapEntity extends MapEntity {
 
     boolean isMoving();
 
-    long getMovementStartTime();
+    long getEndMovementTime();
     int getTotalMovementTime();
+
+    void move(Vector2 from, Vector2 to);
+
+    default int getMovementDuration() {
+        if (!this.isMoving()) {
+            return 0;
+        }
+
+        return (int) (this.getPosition().dst(this.getDestination()) * 1000 / this.getSpeed());
+    }
+
+    default MoveEntityCommand getMovementCommand() {
+        return new MoveEntityCommand(
+                this.getId(),
+                this.getDestination(),
+                this.getMovementDuration()
+        );
+    }
 }
