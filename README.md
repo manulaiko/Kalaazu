@@ -1,6 +1,3 @@
-For the most update info join the [discord server](https://discord.gg/g9Wca74)
-==============================================================================
-
 Kalaazu
 =======
 *The next generation in DarkOrbit private servers.*
