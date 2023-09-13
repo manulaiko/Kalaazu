@@ -44,15 +44,27 @@ public class AccountsShipsEntity {
     @Column(name = "gfx", nullable = false)
     private byte gfx = 0;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
+
+    @Basic
+    @Column(name= "accounts_id", nullable = false, insertable = false, updatable = false)
+    private int accountsId = 0;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "ships_id", referencedColumnName = "id", nullable = false)
     private ShipsEntity shipsByShipsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "ships_id", nullable = false, insertable = false, updatable = false)
+    private byte shipsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
+
+    @Basic
+    @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
+    private byte mapsId = 0;
 }

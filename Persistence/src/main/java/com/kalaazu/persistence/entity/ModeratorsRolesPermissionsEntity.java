@@ -24,11 +24,19 @@ public class ModeratorsRolesPermissionsEntity {
     @Column(name = "is_enabled")
     private boolean isEnabled;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "moderators_roles_id", referencedColumnName = "id", nullable = false)
     private ModeratorsRolesEntity moderatorsRolesByModeratorsRolesId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "moderators_roles_id", nullable = false, insertable = false, updatable = false)
+    private byte moderatorsRolesId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "permissions_id", referencedColumnName = "id", nullable = false)
     private PermissionsEntity permissions;
+
+    @Basic
+    @Column(name= "permissions_id", nullable = false, insertable = false, updatable = false)
+    private byte permissionsId = 0;
 }

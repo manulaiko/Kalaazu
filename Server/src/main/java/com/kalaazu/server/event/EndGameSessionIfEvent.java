@@ -1,4 +1,4 @@
-package com.kalaazu.server.netty.event;
+package com.kalaazu.server.event;
 
 import com.kalaazu.server.netty.GameSession;
 import io.netty.channel.ChannelId;

@@ -32,11 +32,19 @@ public class ClansBattlestationsLogsEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "clans_id", nullable = false, insertable = false, updatable = false)
+    private int clansId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_battlestations_id", referencedColumnName = "id", nullable = false)
     private ClansBattlestationsEntity clansBattlestationsByClansBattlestationsId;
+
+    @Basic
+    @Column(name= "clans_battlestations_id", nullable = false, insertable = false, updatable = false)
+    private byte clansBattlestationsId = 0;
 }

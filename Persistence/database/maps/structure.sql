@@ -8,7 +8,6 @@ CREATE TABLE `maps`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',
-    `factions_id` tinyint      NULL     DEFAULT NULL,
     `is_pvp`      boolean      NOT NULL DEFAULT false,
     `is_starter`  boolean      NOT NULL DEFAULT false,
     `limits`      bigint       NOT NULL DEFAULT 89335319769600,

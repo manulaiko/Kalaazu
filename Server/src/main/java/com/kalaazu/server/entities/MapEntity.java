@@ -2,6 +2,7 @@ package com.kalaazu.server.entities;
 
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.MapsEntity;
+import com.kalaazu.server.commands.OutCommand;
 
 import java.util.UUID;
 
@@ -16,9 +17,11 @@ import java.util.UUID;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public interface MapEntity {
-    UUID getId();
+    int getId();
 
     Vector2 getPosition();
 
     MapsEntity getMap();
+
+    OutCommand getEntityCreationCommand();
 }

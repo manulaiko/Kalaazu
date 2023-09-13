@@ -20,19 +20,35 @@ public class AccountsConfigurationsAccountsItemsEntity {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id", nullable = false)
     private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_configurations_id", nullable = false, insertable = false, updatable = false)
+    private int accountsConfigurationsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_items_id", referencedColumnName = "id")
     private AccountsItemsEntity accountsItemsByAccountsItemsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_items_id", insertable = false, updatable = false)
+    private Integer accountsItemsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_drones_id", referencedColumnName = "id")
     private AccountsDronesEntity accountsDronesByAccountsDronesId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_drones_id", insertable = false, updatable = false)
+    private Integer accountsDronesId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_pets_id", referencedColumnName = "id")
     private AccountsPetsEntity accountsPetsByAccountsPetsId;
+
+    @Basic
+    @Column(name= "accounts_pets_id", insertable = false, updatable = false)
+    private Integer accountsPetsId = 0;
 }

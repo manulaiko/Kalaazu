@@ -28,11 +28,19 @@ public class MapsStationsEntity {
     @Type(value = Vector2Type.class)
     private Vector2 position = new Vector2(0L);
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id")
     private MapsEntity mapsByMapsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "maps_id", insertable = false, updatable = false)
+    private Byte mapsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
+
+    @Basic
+    @Column(name= "factions_id", insertable = false, updatable = false)
+    private Byte factionsId = 0;
 }

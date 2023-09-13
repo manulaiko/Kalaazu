@@ -44,15 +44,27 @@ public class MapsPortalsEntity {
     @Column(name = "gfx", nullable = false)
     private byte gfx = 1;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
+    private byte mapsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByTargetMapsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "target_maps_id", nullable = false, insertable = false, updatable = false)
+    private byte targetMapsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
+
+    @Basic
+    @Column(name= "levels_id", nullable = false, insertable = false, updatable = false)
+    private byte levelsId = 0;
 }

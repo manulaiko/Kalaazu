@@ -32,7 +32,11 @@ public class InvitationCodesRedeemLogsEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id", nullable = false)
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
+
+    @Basic
+    @Column(name= "invitation_codes_id", nullable = false, insertable = false, updatable = false)
+    private short invitationCodesId = 0;
 }

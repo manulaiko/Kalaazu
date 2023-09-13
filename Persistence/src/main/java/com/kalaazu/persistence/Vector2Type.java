@@ -36,7 +36,12 @@ public class Vector2Type implements UserType<Vector2> {
      */
     @Override
     public Vector2 nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
-        return new Vector2(rs.getLong(position));
+        var l = rs.getLong(position);
+        if (rs.wasNull()) {
+            return null;
+        }
+
+        return new Vector2(l);
     }
 
     /**

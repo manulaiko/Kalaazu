@@ -25,7 +25,7 @@ public class MapsCollectablesEntity {
 
     @Basic
     @Column(name = "amount", nullable = false)
-    private byte amount = 0;
+    private short amount = 0;
 
     @Basic
     @Column(name = "from", nullable = false)
@@ -37,11 +37,19 @@ public class MapsCollectablesEntity {
     @Type(value = Vector2Type.class)
     private Vector2 to = null;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)
     private MapsEntity mapsByMapsId;
+
+    @Basic
+    @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
+    private byte mapsId = 0;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "collectables_id", referencedColumnName = "id", nullable = false)
     private CollectablesEntity collectablesByCollectablesId;
+
+    @Basic
+    @Column(name= "collectables_id", nullable = false, insertable = false, updatable = false)
+    private byte collectablesId = 0;
 }

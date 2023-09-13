@@ -32,11 +32,19 @@ public class ClansBattlestationsItemsEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_battlestations_id", referencedColumnName = "id", nullable = false)
     private ClansBattlestationsEntity clansBattlestationsByClansBattlestationsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "clans_battlestations_id", nullable = false, insertable = false, updatable = false)
+    private byte clansBattlestationsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_items_id", referencedColumnName = "id", nullable = false)
     private AccountsItemsEntity accountsItemsByAccountsItemsId;
+
+    @Basic
+    @Column(name= "accounts_items_id", nullable = false, insertable = false, updatable = false)
+    private int accountsItemsId = 0;
 }

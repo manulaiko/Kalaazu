@@ -54,9 +54,13 @@ public class UsersEntity {
     @Column(name = "ip", nullable = false, length = 45)
     private String ip = "0.0.0.0";
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "invitation_codes_id", referencedColumnName = "id")
     private InvitationCodesEntity invitationCodesByInvitationCodesId;
+
+    @Basic
+    @Column(name = "invitation_codes_id", insertable = false, updatable = false)
+    private Short invitationCodesId = 0;
 
     @OneToMany(mappedBy = "usersByUsersId", fetch = FetchType.EAGER)
     private Collection<AccountsEntity> accounts = new HashSet<>();

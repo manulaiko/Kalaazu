@@ -32,7 +32,11 @@ public class RewardsEntity {
     @Column(name = "comment")
     private String comment;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
+
+    @Basic
+    @Column(name= "items_id", nullable = false, insertable = false, updatable = false)
+    private short itemsId = 0;
 }

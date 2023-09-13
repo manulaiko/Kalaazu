@@ -38,6 +38,6 @@ public class VouchersEntity {
     )
     private Collection<RewardsEntity> rewards;
 
-    @OneToMany(mappedBy = "vouchersByVouchersId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "vouchersByVouchersId", fetch = FetchType.LAZY)
     private Collection<VouchersRedeemLogsEntity> vouchersRedeemLogs;
 }

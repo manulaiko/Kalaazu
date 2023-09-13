@@ -1,7 +1,7 @@
 package com.kalaazu.server.netty;
 
 import com.kalaazu.server.commands.OutCommand;
-import com.kalaazu.server.netty.event.*;
+import com.kalaazu.server.event.*;
 import com.kalaazu.server.util.Handler;
 import com.kalaazu.server.util.Packet;
 import io.netty.channel.Channel;
@@ -72,7 +72,8 @@ public class ChannelManager {
 
                     return p;
                 })
-                .forEach(channels::write);
+                .forEach(channel::write);
+        channel.flush();
     }
 
     private void send(OutCommand command) {

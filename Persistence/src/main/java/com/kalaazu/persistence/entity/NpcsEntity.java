@@ -51,6 +51,10 @@ public class NpcsEntity {
     private byte gfx = 0;
 
     @Basic
+    @Column(name = "ship_type", nullable = false)
+    private String shipType = "";
+
+    @Basic
     @Column(name = "ai", nullable = false)
     private byte ai = 1;
 

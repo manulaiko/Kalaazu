@@ -36,7 +36,11 @@ public class ModeratorsLogsEntity {
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "moderators_id", referencedColumnName = "id", nullable = false)
     private ModeratorsEntity moderatorsByModeratorsId;
+
+    @Basic
+    @Column(name= "moderators_id", nullable = false, insertable = false, updatable = false)
+    private byte moderatorsId = 0;
 }

@@ -38,19 +38,31 @@ public class AccountsHangarsEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
+
+    @Basic
+    @Column(name= "accounts_id", nullable = false, insertable = false, updatable = false)
+    private int accountsId = 0;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_ships_id", referencedColumnName = "id", nullable = false)
     private AccountsShipsEntity accountsShipsByAccountsShipsId;
 
+    @Basic
+    @Column(name= "accounts_ships_id", nullable = false, insertable = false, updatable = false)
+    private int accountsShipsId = 0;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_configurations_id", referencedColumnName = "id")
     private AccountsConfigurationsEntity accountsConfigurationsByAccountsConfigurationsId;
 
-    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId", fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_configurations_id", insertable = false, updatable = false)
+    private Integer accountsConfigurationsId = 0;
+
+    @OneToMany(mappedBy = "accountsHangarsByAccountsHangarsId", fetch = FetchType.LAZY)
     private Collection<AccountsConfigurationsEntity> accountsConfigurations = new HashSet<>();
 
     /**

@@ -10,7 +10,7 @@ import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.commands.out.settings.*;
 import com.kalaazu.server.commands.out.ui.*;
 import com.kalaazu.server.netty.GameSession;
-import com.kalaazu.server.netty.event.SendCommandsEvent;
+import com.kalaazu.server.event.SendCommandsEvent;
 import com.kalaazu.service.DefaultGameSettingsService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.ApplicationContext;

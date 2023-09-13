@@ -4,17 +4,17 @@
 --
 CREATE TABLE `maps_collectables`
 (
-    `id`              tinyint NOT NULL AUTO_INCREMENT
+    `id`              smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id`         tinyint NOT NULL
+    `maps_id`         tinyint  NOT NULL
         COMMENT 'Map ID.',
-    `collectables_id` tinyint NOT NULL
+    `collectables_id` tinyint  NOT NULL
         COMMENT 'collectable ID.',
-    `amount`          tinyint NOT NULL DEFAULT 0
+    `amount`          smallint NOT NULL DEFAULT 0
         COMMENT 'Amount of collectables on map',
-    `from`            bigint  NOT NULL DEFAULT 0
+    `from`            bigint   NOT NULL DEFAULT 0
         COMMENT 'Starting position where the collectable will be spawned',
-    `to`              bigint  NULL     DEFAULT NULL
+    `to`              bigint   NULL     DEFAULT NULL
         COMMENT 'Ending position where the collectable will be spawned, null = map limit',
 
     CONSTRAINT `maps_collectables_pk` PRIMARY KEY (`id`)

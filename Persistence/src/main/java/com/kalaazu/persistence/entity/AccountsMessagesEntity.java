@@ -46,11 +46,19 @@ public class AccountsMessagesEntity {
     @Column(name = "text", nullable = false, length = -1, columnDefinition = "TEXT")
     private String text;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "from_accounts_id", nullable = false, insertable = false, updatable = false)
+    private int fromAccountsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByToAccountsId;
+
+    @Basic
+    @Column(name= "to_accounts_id", nullable = false, insertable = false, updatable = false)
+    private int toAccountsId = 0;
 }

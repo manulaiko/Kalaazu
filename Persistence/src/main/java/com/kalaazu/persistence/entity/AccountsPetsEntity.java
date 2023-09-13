@@ -68,11 +68,19 @@ public class AccountsPetsEntity {
     @Column(name = "slots_gears_available", nullable = false)
     private byte slotsGearsAvailable = 1;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_id", nullable = false, insertable = false, updatable = false)
+    private int accountsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
+
+    @Basic
+    @Column(name= "levels_id", nullable = false, insertable = false, updatable = false)
+    private byte levelsId = 0;
 }

@@ -29,11 +29,19 @@ public class QuestsConditionsEntity {
     @Column(name = "value", nullable = false)
     private String value = "";
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "quests_conditions_id", referencedColumnName = "id")
     private QuestsConditionsEntity questsConditionsByQuestsConditionsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "quests_conditions_id", insertable = false, updatable = false)
+    private Integer questsConditionsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "quests_id", referencedColumnName = "id", nullable = false)
     private QuestsEntity questsByQuestsId;
+
+    @Basic
+    @Column(name= "quests_id", nullable = false, insertable = false, updatable = false)
+    private short questsId = 0;
 }

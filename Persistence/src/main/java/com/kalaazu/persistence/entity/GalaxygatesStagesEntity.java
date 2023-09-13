@@ -26,9 +26,13 @@ public class GalaxygatesStagesEntity {
     @Column(name = "comment", length = -1, columnDefinition = "TEXT")
     private String comment;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "galaxygates_waves_id", referencedColumnName = "id", nullable = false)
     private GalaxygatesWavesEntity galaxygatesWavesByGalaxygatesWavesId;
+
+    @Basic
+    @Column(name= "galaxygates_waves_id", nullable = false, insertable = false, updatable = false)
+    private byte galaxygatesWavesId = 0;
 
     @ManyToMany
     @JoinTable(

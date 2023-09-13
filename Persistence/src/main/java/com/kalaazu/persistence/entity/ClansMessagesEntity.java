@@ -46,15 +46,27 @@ public class ClansMessagesEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "clans_id", nullable = false, insertable = false, updatable = false)
+    private int clansId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByFromAccountsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "from_accounts_id", nullable = false, insertable = false, updatable = false)
+    private int fromAccountsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_accounts_id", referencedColumnName = "id")
     private AccountsEntity accountsByToAccountsId;
+
+    @Basic
+    @Column(name= "to_accounts_id", insertable = false, updatable = false)
+    private Integer toAccountsId = 0;
 }

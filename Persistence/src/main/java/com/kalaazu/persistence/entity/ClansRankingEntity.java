@@ -28,7 +28,11 @@ public class ClansRankingEntity {
     @Column(name = "best_points", nullable = false)
     private int bestPoints = 0;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByClansId;
+
+    @Basic
+    @Column(name= "clans_id", nullable = false, insertable = false, updatable = false)
+    private int clansId = 0;
 }

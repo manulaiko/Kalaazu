@@ -20,15 +20,27 @@ public class AccountsSkillsEntity {
     @Column(name = "id", nullable = false)
     private int id;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_id", nullable = false, insertable = false, updatable = false)
+    private int accountsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skilltree_skills_id", referencedColumnName = "id", nullable = false)
     private SkilltreeSkillsEntity skilltreeSkillsBySkilltreeSkillsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "skilltree_skills_id", nullable = false, insertable = false, updatable = false)
+    private byte skilltreeSkillsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "skilltree_levels_id", referencedColumnName = "id", nullable = false)
     private SkilltreeLevelsEntity skilltreeLevelsBySkilltreeLevelsId;
+
+    @Basic
+    @Column(name= "skilltree_levels_id", nullable = false, insertable = false, updatable = false)
+    private short skilltreeLevelsId = 0;
 }

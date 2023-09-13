@@ -43,32 +43,40 @@ public class ClansEntity {
     @Enumerated(EnumType.ORDINAL)
     private ClanStatus status = ClanStatus.RECRUITING;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "accounts_id", referencedColumnName = "id", nullable = false)
     private AccountsEntity accountsByAccountsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "accounts_id", nullable = false, insertable = false, updatable = false)
+    private int accountsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "factions_id", insertable = false, updatable = false)
+    private Byte factions_id = 0;
+
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<AccountsEntity> accounts;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansBanksEntity> clansBanks;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansBattlestationsEntity> clansBattlestations;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansMessagesEntity> clansMessages;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansNewsEntity> clansNews;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansRankingEntity> clansRankings;
 
-    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansByClansId", fetch = FetchType.LAZY)
     private Collection<ClansRankingEntity> clansRanking;
 }

@@ -4,10 +4,11 @@ import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
 import com.kalaazu.server.commands.in.LoginRequest;
 import com.kalaazu.server.commands.out.map.ShipInitializationCommand;
+import com.kalaazu.server.event.GameSessionStartedEvent;
 import com.kalaazu.server.netty.GameSession;
-import com.kalaazu.server.netty.event.EndGameSessionEvent;
-import com.kalaazu.server.netty.event.EndGameSessionIfEvent;
-import com.kalaazu.server.netty.event.SendCommandEvent;
+import com.kalaazu.server.event.EndGameSessionEvent;
+import com.kalaazu.server.event.EndGameSessionIfEvent;
+import com.kalaazu.server.event.SendCommandEvent;
 import com.kalaazu.server.service.GameSettingsService;
 import com.kalaazu.server.util.Handler;
 import lombok.Getter;
@@ -113,10 +114,10 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
         var mines = 0L;
 
         for (var item : account.getAccountsItems()) {
-            var i = item.getItemsByItemsId();
+            var i = item.getItemsId();
             var amount = item.getAmount();
 
-            switch (i.getId()) {
+            switch (i) {
                 case 1 -> cre = amount;
                 case 2 -> uri = amount;
                 case 3 -> jpt = amount;
@@ -224,6 +225,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
         session.setAccount(account);
 
         this.sendInitialPackets(account, session);
+        ctx.publishEvent(new GameSessionStartedEvent(session, this));
     }
 
     private void sendInitialPackets(AccountsEntity account, GameSession session) {
@@ -232,6 +234,9 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
         var hangar = account.getAccountsHangarsByAccountsHangarsId();
         var ship = hangar.getAccountsShipsByAccountsShipsId();
         var config = hangar.getAccountsConfigurationsByAccountsConfigurationsId();
+
+        session.setShip(ship);
+        session.setMapId(ship.getMapsId());
 
         var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
 
@@ -245,8 +250,6 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
             clanId = clan.getId();
             clanTag = clan.getTag();
         }
-
-        var mapId = ship.getMapsByMapsId().getId();
 
         var shipInitialization = new ShipInitializationCommand(
                 account.getId(),
@@ -263,18 +266,18 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 ship.getShipsByShipsId().getHealth(),
                 ship.getPosition().getX(),
                 ship.getPosition().getY(),
-                mapId,
-                account.getFactionsByFactionsId().getId(),
+                ship.getMapsId(),
+                account.getFactionsId(),
                 clanId,
                 3,
                 premium,
                 items.exp,
                 items.hon,
-                account.getLevelsByLevelsId().getId(),
+                account.getLevelsId(),
                 items.cre,
                 items.uri,
                 (int) items.jpt,
-                account.getRanksByRanksId().getId(),
+                account.getRanksId(),
                 clanTag,
                 0, // TODO account rings
                 true,

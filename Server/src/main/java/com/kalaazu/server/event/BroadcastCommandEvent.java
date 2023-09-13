@@ -1,4 +1,4 @@
-package com.kalaazu.server.netty.event;
+package com.kalaazu.server.event;
 
 import com.kalaazu.server.commands.OutCommand;
 import lombok.Getter;

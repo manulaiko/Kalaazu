@@ -3,15 +3,18 @@ package com.kalaazu.server.service;
 import com.kalaazu.math.Vector2;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.persistence.service.MapsService;
+import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.entities.*;
+import com.kalaazu.server.event.GameSessionStartedEvent;
+import com.kalaazu.server.event.SendCommandsEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedHashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.UUID;
+import java.util.*;
+import java.util.random.RandomGenerator;
 import java.util.stream.Collectors;
 
 /**
@@ -27,14 +30,15 @@ import java.util.stream.Collectors;
 @Slf4j
 public class MapService {
     private final MapsService service;
+    private final ApplicationContext ctx;
 
     private Map<Byte, MapsEntity> maps;
 
-    private Map<Byte, Set<Npc>> npcs;
-    private Map<Byte, Set<Collectable>> collectables;
-    private Map<Byte, Set<Station>> stations;
-    private Map<Byte, Set<Portal>> portals;
-    private Map<Byte, Set<Player>> players;
+    private Map<Byte, Set<Npc>> npcs = new HashMap<>();
+    private Map<Byte, Set<Collectable>> collectables = new HashMap<>();
+    private Map<Byte, Set<Station>> stations = new HashMap<>();
+    private Map<Byte, Set<Portal>> portals = new HashMap<>();
+    private Map<Byte, Set<Player>> players = new HashMap<>();
 
 
     public void initialize() {
@@ -54,13 +58,15 @@ public class MapService {
         var stations = new LinkedHashSet<Station>();
         var portals = new LinkedHashSet<Portal>();
 
+        var r = RandomGenerator.getDefault();
+
         map.getMapsNpcs()
                 .forEach(npc -> {
                     for (int i = 0; i < npc.getAmount(); i++) {
                         var n = new Npc(npc.getNpcsByNpcsId(), map);
 
-                        n.setPosition(Vector2.random(map.getLimits()));
-                        n.setId(UUID.randomUUID());
+                        n.setPosition(Vector2.random(new Vector2(1000, 1000)));
+                        n.setId(r.nextInt());
 
                         npcs.add(n);
                     }
@@ -76,8 +82,8 @@ public class MapService {
                             to = map.getLimits();
                         }
 
-                        c.setPosition(Vector2.random(collectable.getFrom(), to));
-                        c.setId(UUID.randomUUID());
+                        c.setPosition(Vector2.random(new Vector2(1000, 1000)));
+                        c.setId(r.nextInt());
 
                         collectables.add(c);
                     }
@@ -87,7 +93,7 @@ public class MapService {
                 .forEach(station -> {
                     var s = new Station(station, map);
 
-                    s.setId(UUID.randomUUID());
+                    s.setId(r.nextInt());
                     s.setPosition(station.getPosition());
 
                     stations.add(s);
@@ -97,7 +103,7 @@ public class MapService {
                 .forEach(portal -> {
                     var p = new Portal(portal, map);
 
-                    p.setId(UUID.randomUUID());
+                    p.setId(r.nextInt());
                     p.setPosition(portal.getPosition());
 
                     portals.add(p);
@@ -109,5 +115,22 @@ public class MapService {
         this.collectables.put(mapId, collectables);
         this.stations.put(mapId, stations);
         this.portals.put(mapId, portals);
+    }
+
+    @EventListener
+    public void initializePlayer(GameSessionStartedEvent event) {
+        var session = event.getSession();
+        var account = session.getAccount();
+        var map = session.getMapId();
+
+        log.info("Initializing player {}", account.getId());
+
+        var commands = new ArrayList<OutCommand>();
+
+        npcs.getOrDefault(map, new HashSet<>())
+                // TODO filter near entities
+                .forEach(npc -> commands.add(npc.getEntityCreationCommand()));
+
+        ctx.publishEvent(new SendCommandsEvent(session, commands, this));
     }
 }

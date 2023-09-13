@@ -13,6 +13,7 @@ CREATE TABLE `npcs`
     `damage`            int          NOT NULL DEFAULT 0,
     `speed`             smallint     NOT NULL DEFAULT 0,
     `gfx`               tinyint      NOT NULL DEFAULT 0,
+    `ship_type`         varchar(255) NOT NULL DEFAULT '',
     `ai`                tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)

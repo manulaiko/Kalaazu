@@ -42,10 +42,6 @@ public class MapsEntity {
     @Type(value = Vector2Type.class)
     private Vector2 limits = new Vector2(89335319769600L);
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "factions_id", referencedColumnName = "id")
-    private FactionsEntity factionsByFactionsId;
-
     @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsNpcsEntity> mapsNpcs;
 

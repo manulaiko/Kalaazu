@@ -4438,7 +4438,6 @@ CREATE TABLE `maps`
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',
-    `factions_id` tinyint      NULL     DEFAULT NULL,
     `is_pvp`      boolean      NOT NULL DEFAULT false,
     `is_starter`  boolean      NOT NULL DEFAULT false,
     `limits`      bigint       NOT NULL DEFAULT 89335319769600,
@@ -4453,40 +4452,40 @@ CREATE UNIQUE INDEX `maps_name_idx`
 
 -- Initial dump for the `maps` table.
 
-INSERT INTO `maps` (`id`, `name`, `factions_id`, `is_pvp`, `is_starter`, `limits`)
-VALUES (2, '1-2', 1, false, true, 89335319769600),
-       (1, '1-1', 1, false, true, 89335319769600),
-       (3, '1-3', 1, false, false, 89335319769600),
-       (4, '1-4', 1, false, false, 89335319769600),
-       (5, '2-1', 2, false, true, 89335319769600),
-       (6, '2-2', 2, false, true, 89335319769600),
-       (7, '2-3', 2, false, false, 89335319769600),
-       (8, '2-4', 2, false, false, 89335319769600),
-       (9, '3-1', 3, false, true, 89335319769600),
-       (10, '3-2', 3, false, true, 89335319769600),
-       (11, '3-3', 3, false, false, 89335319769600),
-       (12, '3-4', 3, false, false, 89335319769600),
-       (13, '4-1', 1, true, false, 89335319769600),
-       (14, '4-2', 2, true, false, 89335319769600),
-       (15, '4-3', 3, true, false, 89335319769600),
-       (16, '4-4', NULL, true, false, 178670639539200),
-       (17, '1-5', 1, false, false, 89335319769600),
-       (18, '1-6', 1, false, false, 89335319769600),
-       (19, '1-7', 1, false, false, 89335319769600),
-       (20, '1-8', 1, false, false, 89335319769600),
-       (21, '2-5', 2, false, false, 89335319769600),
-       (22, '2-6', 2, false, false, 89335319769600),
-       (23, '2-7', 2, false, false, 89335319769600),
-       (24, '2-8', 2, false, false, 89335319769600),
-       (25, '3-5', 3, false, false, 89335319769600),
-       (26, '3-6', 3, false, false, 89335319769600),
-       (27, '3-7', 3, false, false, 89335319769600),
-       (28, '3-8', 3, false, false, 89335319769600),
-       (29, '4-5', NULL, true, false, 178670639539200),
-       (52, '???', NULL, false, false, 89335319769600),
-       (91, '5-1', NULL, false, false, 178670639539200),
-       (92, '5-2', NULL, false, false, 89335319769600),
-       (93, '5-3', NULL, false, false, 178670639539200);
+INSERT INTO `maps` (`id`, `name`, `is_pvp`, `is_starter`, `limits`)
+VALUES (2, '1-2', false, true, 89335319769600),
+       (1, '1-1', false, true, 89335319769600),
+       (3, '1-3', false, false, 89335319769600),
+       (4, '1-4', false, false, 89335319769600),
+       (5, '2-1', false, true, 89335319769600),
+       (6, '2-2', false, true, 89335319769600),
+       (7, '2-3', false, false, 89335319769600),
+       (8, '2-4', false, false, 89335319769600),
+       (9, '3-1', false, true, 89335319769600),
+       (10, '3-2', false, true, 89335319769600),
+       (11, '3-3', false, false, 89335319769600),
+       (12, '3-4', false, false, 89335319769600),
+       (13, '4-1', true, false, 89335319769600),
+       (14, '4-2', true, false, 89335319769600),
+       (15, '4-3', true, false, 89335319769600),
+       (16, '4-4', true, false, 178670639539200),
+       (17, '1-5', false, false, 89335319769600),
+       (18, '1-6', false, false, 89335319769600),
+       (19, '1-7', false, false, 89335319769600),
+       (20, '1-8', false, false, 89335319769600),
+       (21, '2-5', false, false, 89335319769600),
+       (22, '2-6', false, false, 89335319769600),
+       (23, '2-7', false, false, 89335319769600),
+       (24, '2-8', false, false, 89335319769600),
+       (25, '3-5', false, false, 89335319769600),
+       (26, '3-6', false, false, 89335319769600),
+       (27, '3-7', false, false, 89335319769600),
+       (28, '3-8', false, false, 89335319769600),
+       (29, '4-5', true, false, 178670639539200),
+       (52, '???', false, false, 89335319769600),
+       (91, '5-1', false, false, 178670639539200),
+       (92, '5-2', false, false, 89335319769600),
+       (93, '5-3', false, false, 178670639539200);
 
 -- Map's collectables table.
 --
@@ -4494,17 +4493,17 @@ VALUES (2, '1-2', 1, false, true, 89335319769600),
 --
 CREATE TABLE `maps_collectables`
 (
-    `id`              tinyint NOT NULL AUTO_INCREMENT
+    `id`              smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id`         tinyint NOT NULL
+    `maps_id`         tinyint  NOT NULL
         COMMENT 'Map ID.',
-    `collectables_id` tinyint NOT NULL
+    `collectables_id` tinyint  NOT NULL
         COMMENT 'collectable ID.',
-    `amount`          tinyint NOT NULL DEFAULT 0
+    `amount`          smallint NOT NULL DEFAULT 0
         COMMENT 'Amount of collectables on map',
-    `from`            bigint  NOT NULL DEFAULT 0
+    `from`            bigint   NOT NULL DEFAULT 0
         COMMENT 'Starting position where the collectable will be spawned',
-    `to`              bigint  NULL     DEFAULT NULL
+    `to`              bigint   NULL     DEFAULT NULL
         COMMENT 'Ending position where the collectable will be spawned, null = map limit',
 
     CONSTRAINT `maps_collectables_pk` PRIMARY KEY (`id`)
@@ -4997,6 +4996,7 @@ CREATE TABLE `npcs`
     `damage`            int          NOT NULL DEFAULT 0,
     `speed`             smallint     NOT NULL DEFAULT 0,
     `gfx`               tinyint      NOT NULL DEFAULT 0,
+    `ship_type`         varchar(255) NOT NULL DEFAULT '',
     `ai`                tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `npcs_pk` PRIMARY KEY (`id`)
@@ -5012,87 +5012,87 @@ CREATE INDEX `npcs_gfx`
 -- Initial dump for the `npcs` table.
 
 
-INSERT INTO `npcs` (`id`, `name`, `health`, `shield`, `shield_absorption`, `damage`, `speed`, `gfx`, `ai`)
-VALUES (1, '-=[Streuner]=-', 800, 400, 80, 15, 0, 84, 1),
-       (2, '-=[Lordakia]=-', 2000, 2000, 80, 90, 0, 71, 2),
-       (3, '-=[Saimon]=-', 6000, 3000, 80, 175, 0, 75, 2),
-       (4, '-=[Mordon]=-', 20000, 10000, 80, 350, 0, 73, 2),
-       (5, '-=[Devolarium]=-', 100000, 100000, 80, 1050, 0, 72, 2),
-       (6, '-=[Sibelon]=-', 200000, 200000, 80, 2625, 0, 74, 2),
-       (7, '-=[Sibelonit]=-', 40000, 40000, 80, 875, 0, 76, 2),
-       (8, '-=[Lordakium]=-', 300000, 200000, 80, 3375, 0, 77, 2),
-       (9, '-=[Kristallin]=-', 50000, 40000, 80, 1050, 0, 78, 2),
-       (10, '-=[Kristallon]=-', 400000, 300000, 80, 4375, 0, 79, 1),
-       (11, '-=[Protegit]=-', 50000, 40000, 80, 1312, 0, 81, 2),
-       (12, '-=[Cubikon]=-', 1600000, 1200000, 80, 0, 0, 80, 1),
-       (13, '-=[StreuneR]=-', 20000, 10000, 80, 425, 0, 85, 1),
-       (14, '-=[demaNer]=-', 400000, 300000, 80, 3750, 0, 11, 2),
-       (15, '..::{Boss Streuner}::..', 3200, 1600, 80, 110, 0, 23, 1),
-       (16, '..::{Boss Lordakia}::..', 8000, 8000, 80, 322, 0, 24, 2),
-       (17, '..::{Boss Saimon}::..', 24000, 12000, 80, 660, 0, 25, 2),
-       (18, '..::{Boss Mordon}::..', 80000, 40000, 80, 1400, 0, 31, 2),
-       (19, '..::{Boss Devolarium}::..', 400000, 400000, 80, 4375, 0, 26, 2),
-       (20, '..::{Boss Sibelon}::..', 800000, 800000, 80, 10725, 0, 46, 2),
-       (21, '..::{Boss Sibelonit}::..', 160000, 160000, 80, 3762, 0, 27, 2),
-       (22, '..::{Boss Lordakium}::..', 1200000, 800000, 80, 13000, 0, 28, 1),
-       (23, '..::{Boss Kristallin}::..', 200000, 160000, 80, 4150, 0, 29, 2),
-       (24, '..::{Boss Kristallon}::..', 1600000, 1200000, 80, 17500, 0, 35, 1),
-       (25, '..::{Boss StreuneR}::..', 80000, 40000, 80, 1750, 0, 34, 1),
-       (26, '<-o(Uber Streuner)o->', 6400, 3200, 80, 220, 0, 23, 1),
-       (27, '<-o(Uber Lordakia)o->', 16000, 16000, 80, 644, 0, 24, 2),
-       (28, '<-o(Uber Saimon)o->', 48000, 24000, 80, 1320, 0, 25, 2),
-       (29, '<-o(Uber Mordon)o->', 160000, 80000, 80, 2800, 0, 31, 2),
-       (30, '<-o(Uber Devolarium)o->', 800000, 800000, 80, 8750, 0, 26, 2),
-       (31, '<-o(Uber Sibelon)o->', 1600000, 1600000, 80, 21550, 0, 46, 2),
-       (32, '<-o(Uber Sibelonit)o->', 320000, 320000, 80, 7524, 0, 27, 2),
-       (33, '<-o(Uber Lordakium)o->', 2400000, 1600000, 80, 26000, 0, 28, 1),
-       (34, '<-o(Uber Kristallin)o->', 400000, 320000, 80, 8300, 0, 42, 2),
-       (35, '<-o(Uber Kristallon)o->', 3200000, 2400000, 80, 37500, 0, 45, 1),
-       (36, '<-o(Uber StreuneR)o->', 160000, 80000, 80, 3500, 0, 34, 1),
-       (37, '-=[Interceptor]=-', 60000, 40000, 80, 425, 0, 111, 2),
-       (38, '-=[Barracuda]=-', 180000, 100000, 80, 5250, 0, 112, 2),
-       (39, '-=[Saboteur]=-', 200000, 150000, 80, 3500, 0, 113, 2),
-       (40, '-=[Annihilator]=-', 300000, 200000, 80, 13000, 0, 114, 2),
-       (41, '-=[Battleray]=-', 500000, 400000, 80, 8500, 0, 115, 2),
-       (42, '-=[Corsair]=-', 200000, 120000, 80, 7000, 0, 91, 2),
-       (43, '-=[Outcast]=-', 150000, 80000, 80, 4400, 0, 92, 2),
-       (44, '-=[Marauder]=-', 100000, 60000, 80, 4000, 0, 93, 2),
-       (45, '-=[Vagrant]=-', 40000, 40000, 80, 2200, 0, 94, 2),
-       (46, '-=[Convict]=-', 400000, 200000, 80, 10750, 0, 95, 2),
-       (47, '-=[Hooligan]=-', 250000, 200000, 80, 8000, 0, 96, 2),
-       (48, '-=[Ravager]=-', 300000, 200000, 80, 9500, 0, 97, 2),
-       (49, '-=[Century Falcon]=-', 4000000, 3000000, 80, 22000, 0, 90, 2),
-       (50, '-=[Infernal]=-', 60000, 50000, 80, 475, 0, 100, 2),
-       (51, '-=[Scorcher]=-', 200000, 200000, 80, 1250, 0, 99, 2),
-       (52, '-=[Melter]=-', 1000, 0, 80, 10, 0, 102, 1),
-       (53, '-=[Devourer]=-', 1000, 0, 80, 10, 0, 105, 1),
-       (54, '-=[Emperor Kristallon]=-', 1000, 0, 80, 10, 0, 122, 1),
-       (55, '-=[Emperor Lordakium]=-', 1000, 0, 80, 10, 0, 123, 1),
-       (56, '-=[Emperor Sibelon]=-', 1000, 0, 80, 10, 0, 124, 1),
-       (57, '<=<Icy>=>', 100000, 80000, 80, 750, 0, 103, 2),
-       (58, '-=[Ice Meteoroid]=-', 1600000, 1200000, 80, 0, 0, 101, 2),
-       (59, '-=[Super Ice Metroid]=-', 3200000, 2400000, 80, 0, 0, 33, 1),
-       (60, '<==<Kucurbium>==>', 5000000, 5000000, 80, 22500, 0, 82, 2),
-       (61, '<==<Boss Kucurbium>==>', 20000000, 20000000, 80, 55000, 0, 83, 2),
-       (62, '-=[Minion]=-', 1000, 0, 80, 10, 0, 117, 1),
-       (63, '-=[Hitac 2.0]=-', 1000, 0, 80, 10, 0, 116, 1),
-       (64, '-=[Binarybot]=-', 800000, 1200000, 80, 10000, 0, 104, 2),
-       (65, '-=[Santabot]=-', 1000, 0, 80, 10, 0, 32, 1),
-       (66, '-=[Carnivalbot]=-', 1000, 0, 80, 20, 0, 48, 1),
-       (67, '-=[Refreebot]=-', 1000, 0, 80, 20, 0, 89, 1),
-       (68, '-=[Lordakia]=-', 2000, 2000, 80, 40, 0, 106, 2),
-       (69, '-=[Solarburst]=-', 1000, 0, 80, 10, 0, 107, 1),
-       (70, '-=[Twist]=-', 1000, 0, 80, 10, 0, 119, 1),
-       (71, '..::{Boss Twist}::..', 1000, 0, 80, 10, 0, 118, 1),
-       (72, '-=[Turkey]=-', 1000, 0, 80, 10, 0, 120, 1),
-       (73, '-=[Snowman]=-', 1000, 0, 80, 10, 0, 121, 1),
-       (74, '-=[Mine Car]=-', 1000, 0, 80, 10, 0, 125, 1),
-       (75, '-=[Havok]=-', 50000, 50000, 80, 700, 0, 108, 2),
-       (76, 'UFO', 3200000, 2400000, 80, 122500, 0, 20, 2),
-       (77, 'mini UFO', 400000, 300000, 80, 4500, 0, 21, 2),
-       (78, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 442, 1),
-       (79, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 443, 1),
-       (80, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 444, 1);
+INSERT INTO `npcs` (`id`, `name`, `health`, `shield`, `shield_absorption`, `damage`, `speed`, `gfx`, `ship_type`, `ai`)
+VALUES (1, '-=[Streuner]=-', 800, 400, 80, 15, 0, 84, 'ship84', 1),
+       (2, '-=[Lordakia]=-', 2000, 2000, 80, 90, 0, 71, 'ship71', 2),
+       (3, '-=[Saimon]=-', 6000, 3000, 80, 175, 0, 75, 'ship75', 2),
+       (4, '-=[Mordon]=-', 20000, 10000, 80, 350, 0, 73, 'ship73', 2),
+       (5, '-=[Devolarium]=-', 100000, 100000, 80, 1050, 0, 72, 'ship72', 2),
+       (6, '-=[Sibelon]=-', 200000, 200000, 80, 2625, 0, 74, 'ship74', 2),
+       (7, '-=[Sibelonit]=-', 40000, 40000, 80, 875, 0, 76, 'ship76', 2),
+       (8, '-=[Lordakium]=-', 300000, 200000, 80, 3375, 0, 77, 'ship77', 2),
+       (9, '-=[Kristallin]=-', 50000, 40000, 80, 1050, 0, 78, 'ship78', 2),
+       (10, '-=[Kristallon]=-', 400000, 300000, 80, 4375, 0, 79, 'ship79', 1),
+       (11, '-=[Protegit]=-', 50000, 40000, 80, 1312, 0, 81, 'ship81', 2),
+       (12, '-=[Cubikon]=-', 1600000, 1200000, 80, 0, 0, 80, 'ship80', 1),
+       (13, '-=[StreuneR]=-', 20000, 10000, 80, 425, 0, 85, 'ship85', 1),
+       (14, '-=[demaNer]=-', 400000, 300000, 80, 3750, 0, 11, 'ship11', 2),
+       (15, '..::{Boss Streuner}::..', 3200, 1600, 80, 110, 0, 23, 'ship23', 1),
+       (16, '..::{Boss Lordakia}::..', 8000, 8000, 80, 322, 0, 24, 'ship24', 2),
+       (17, '..::{Boss Saimon}::..', 24000, 12000, 80, 660, 0, 25, 'ship25', 2),
+       (18, '..::{Boss Mordon}::..', 80000, 40000, 80, 1400, 0, 31, 'ship31', 2),
+       (19, '..::{Boss Devolarium}::..', 400000, 400000, 80, 4375, 0, 26, 'ship26', 2),
+       (20, '..::{Boss Sibelon}::..', 800000, 800000, 80, 10725, 0, 46, 'ship46', 2),
+       (21, '..::{Boss Sibelonit}::..', 160000, 160000, 80, 3762, 0, 27, 'ship27', 2),
+       (22, '..::{Boss Lordakium}::..', 1200000, 800000, 80, 13000, 0, 28, 'ship28', 1),
+       (23, '..::{Boss Kristallin}::..', 200000, 160000, 80, 4150, 0, 29, 'ship29', 2),
+       (24, '..::{Boss Kristallon}::..', 1600000, 1200000, 80, 17500, 0, 35, 'ship35', 1),
+       (25, '..::{Boss StreuneR}::..', 80000, 40000, 80, 1750, 0, 34, 'ship34', 1),
+       (26, '<-o(Uber Streuner)o->', 6400, 3200, 80, 220, 0, 23, 'ship23', 1),
+       (27, '<-o(Uber Lordakia)o->', 16000, 16000, 80, 644, 0, 24, 'ship24', 2),
+       (28, '<-o(Uber Saimon)o->', 48000, 24000, 80, 1320, 0, 25, 'ship25', 2),
+       (29, '<-o(Uber Mordon)o->', 160000, 80000, 80, 2800, 0, 31, 'ship31', 2),
+       (30, '<-o(Uber Devolarium)o->', 800000, 800000, 80, 8750, 0, 26, 'ship26', 2),
+       (31, '<-o(Uber Sibelon)o->', 1600000, 1600000, 80, 21550, 0, 46, 'ship46', 2),
+       (32, '<-o(Uber Sibelonit)o->', 320000, 320000, 80, 7524, 0, 27, 'ship27', 2),
+       (33, '<-o(Uber Lordakium)o->', 2400000, 1600000, 80, 26000, 0, 28, 'ship28', 1),
+       (34, '<-o(Uber Kristallin)o->', 400000, 320000, 80, 8300, 0, 42, 'ship42', 2),
+       (35, '<-o(Uber Kristallon)o->', 3200000, 2400000, 80, 37500, 0, 45, 'ship45', 1),
+       (36, '<-o(Uber StreuneR)o->', 160000, 80000, 80, 3500, 0, 34, 'ship34', 1),
+       (37, '-=[Interceptor]=-', 60000, 40000, 80, 425, 0, 111, 'ship111', 2),
+       (38, '-=[Barracuda]=-', 180000, 100000, 80, 5250, 0, 112, 'ship112', 2),
+       (39, '-=[Saboteur]=-', 200000, 150000, 80, 3500, 0, 113, 'ship113', 2),
+       (40, '-=[Annihilator]=-', 300000, 200000, 80, 13000, 0, 114, 'ship114', 2),
+       (41, '-=[Battleray]=-', 500000, 400000, 80, 8500, 0, 115, 'ship115', 2),
+       (42, '-=[Corsair]=-', 200000, 120000, 80, 7000, 0, 91, 'ship91', 2),
+       (43, '-=[Outcast]=-', 150000, 80000, 80, 4400, 0, 92, 'ship92', 2),
+       (44, '-=[Marauder]=-', 100000, 60000, 80, 4000, 0, 93, 'ship93', 2),
+       (45, '-=[Vagrant]=-', 40000, 40000, 80, 2200, 0, 94, 'ship94', 2),
+       (46, '-=[Convict]=-', 400000, 200000, 80, 10750, 0, 95, 'ship95', 2),
+       (47, '-=[Hooligan]=-', 250000, 200000, 80, 8000, 0, 96, 'ship96', 2),
+       (48, '-=[Ravager]=-', 300000, 200000, 80, 9500, 0, 97, 'ship97', 2),
+       (49, '-=[Century Falcon]=-', 4000000, 3000000, 80, 22000, 0, 90, 'ship90', 2),
+       (50, '-=[Infernal]=-', 60000, 50000, 80, 475, 0, 100, 'ship100', 2),
+       (51, '-=[Scorcher]=-', 200000, 200000, 80, 1250, 0, 99, 'ship99', 2),
+       (52, '-=[Melter]=-', 1000, 0, 80, 10, 0, 102, 'ship102', 1),
+       (53, '-=[Devourer]=-', 1000, 0, 80, 10, 0, 105, 'ship105', 1),
+       (54, '-=[Emperor Kristallon]=-', 1000, 0, 80, 10, 0, 122, 'ship122', 1),
+       (55, '-=[Emperor Lordakium]=-', 1000, 0, 80, 10, 0, 123, 'ship123', 1),
+       (56, '-=[Emperor Sibelon]=-', 1000, 0, 80, 10, 0, 124, 'ship124', 1),
+       (57, '<=<Icy>=>', 100000, 80000, 80, 750, 0, 103, 'ship103', 2),
+       (58, '-=[Ice Meteoroid]=-', 1600000, 1200000, 80, 0, 0, 101, 'ship101', 2),
+       (59, '-=[Super Ice Metroid]=-', 3200000, 2400000, 80, 0, 0, 33, 'ship33', 1),
+       (60, '<==<Kucurbium>==>', 5000000, 5000000, 80, 22500, 0, 82, 'ship82', 2),
+       (61, '<==<Boss Kucurbium>==>', 20000000, 20000000, 80, 55000, 0, 83, 'ship83', 2),
+       (62, '-=[Minion]=-', 1000, 0, 80, 10, 0, 117, 'ship117', 1),
+       (63, '-=[Hitac 2.0]=-', 1000, 0, 80, 10, 0, 116, 'ship116', 1),
+       (64, '-=[Binarybot]=-', 800000, 1200000, 80, 10000, 0, 104, 'ship104', 2),
+       (65, '-=[Santabot]=-', 1000, 0, 80, 10, 0, 32, 'ship32', 1),
+       (66, '-=[Carnivalbot]=-', 1000, 0, 80, 20, 0, 48, 'ship48', 1),
+       (67, '-=[Refreebot]=-', 1000, 0, 80, 20, 0, 89, 'ship89', 1),
+       (68, '-=[Lordakia]=-', 2000, 2000, 80, 40, 0, 106, 'ship106', 2),
+       (69, '-=[Solarburst]=-', 1000, 0, 80, 10, 0, 107, 'ship107', 1),
+       (70, '-=[Twist]=-', 1000, 0, 80, 10, 0, 119, 'ship119', 1),
+       (71, '..::{Boss Twist}::..', 1000, 0, 80, 10, 0, 118, 'ship118', 1),
+       (72, '-=[Turkey]=-', 1000, 0, 80, 10, 0, 120, 'ship120', 1),
+       (73, '-=[Snowman]=-', 1000, 0, 80, 10, 0, 121, 'ship121', 1),
+       (74, '-=[Mine Car]=-', 1000, 0, 80, 10, 0, 125, 'ship125', 1),
+       (75, '-=[Havok]=-', 50000, 50000, 80, 700, 0, 108, 'ship108', 2),
+       (76, 'UFO', 3200000, 2400000, 80, 122500, 0, 20, 'ship20', 2),
+       (77, 'mini UFO', 400000, 300000, 80, 4500, 0, 21, 'ship21', 2),
+       (78, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 442, 'ship442', 1),
+       (79, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 443, 'ship443', 1),
+       (80, '-=[Spaceball]=-', 0, 0, 80, 0, 0, 444, 'ship444', 1);
 
 -- Permission's table.
 --
@@ -8860,11 +8860,6 @@ ALTER TABLE `levels_upgrades`
 
 -- Relations for the `maps` table.
 --
--- A map may belong to a faction.
-
-ALTER TABLE `maps`
-    ADD CONSTRAINT `maps_factions` FOREIGN KEY `maps_factions` (`factions_id`)
-        REFERENCES `factions` (`id`);
 
 -- Relations for the `maps_collectables` table.
 --
@@ -9177,3 +9172,4 @@ ALTER TABLE `vouchers_redeem_logs`
 ALTER TABLE `vouchers_redeem_logs`
     ADD CONSTRAINT `vouchers_redeem_logs_accounts` FOREIGN KEY `vouchers_redeem_logs_accounts` (`accounts_id`)
         REFERENCES `accounts` (`id`);
+

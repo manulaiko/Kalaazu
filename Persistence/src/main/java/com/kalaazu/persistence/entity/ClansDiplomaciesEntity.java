@@ -42,11 +42,19 @@ public class ClansDiplomaciesEntity {
     @Enumerated(EnumType.ORDINAL)
     private DiplomacyType type = DiplomacyType.WAR;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "from_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByFromClansId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "from_clans_id", nullable = false, insertable = false, updatable = false)
+    private int fromClansId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "to_clans_id", referencedColumnName = "id", nullable = false)
     private ClansEntity clansByToClansId;
+
+    @Basic
+    @Column(name= "to_clans_id", nullable = false, insertable = false, updatable = false)
+    private int toClansId = 0;
 }

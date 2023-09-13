@@ -41,17 +41,25 @@ public class ClansBattlestationsEntity {
     @CreationTimestamp
     private Timestamp date;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clans_id", referencedColumnName = "id")
     private ClansEntity clansByClansId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "clans_id", insertable = false, updatable = false)
+    private Integer clansId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id")
     private MapsEntity mapsByMapsId;
 
-    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId", fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "maps_id", insertable = false, updatable = false)
+    private Byte mapsId = 0;
+
+    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId", fetch = FetchType.LAZY)
     private Collection<ClansBattlestationsItemsEntity> clansBattlestationsItems;
 
-    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId", fetch = FetchType.LAZY)
     private Collection<ClansBattlestationsLogsEntity> clansBattlestationsLogs;
 }

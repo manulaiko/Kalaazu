@@ -33,7 +33,11 @@ public class GalaxygatesSpinsEntity {
     @Column(name = "amount", nullable = false)
     private short amount = 1;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
+
+    @Basic
+    @Column(name= "items_id", nullable = false, insertable = false, updatable = false)
+    private short itemsId = 0;
 }

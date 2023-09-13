@@ -57,85 +57,109 @@ public class AccountsEntity {
     @Column(name = "skill_points_free", nullable = false)
     private short skillPointsFree = 0;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "users_id", referencedColumnName = "id", nullable = false)
     private UsersEntity usersByUsersId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "users_id", nullable = false, insertable = false, updatable = false)
+    private int usersId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)
     private LevelsEntity levelsByLevelsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "levels_id", nullable = false, insertable = false, updatable = false)
+    private byte levelsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
     private FactionsEntity factionsByFactionsId;
+
+    @Basic
+    @Column(name= "factions_id", insertable = false, updatable = false)
+    private Byte factionsId = 0;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "accounts_hangars_id", referencedColumnName = "id")
     private AccountsHangarsEntity accountsHangarsByAccountsHangarsId;
 
+    @Basic
+    @Column(name= "accounts_hangars_id", insertable = false, updatable = false)
+    private Integer accountsHangarsId = 0;
+
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "clans_id", referencedColumnName = "id")
     private ClansEntity clansByClansId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "clans_id", insertable = false, updatable = false)
+    private Integer clansId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ranks_id", referencedColumnName = "id", nullable = false)
     private RanksEntity ranksByRanksId;
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @Basic
+    @Column(name= "ranks_id", nullable = false, insertable = false, updatable = false)
+    private byte ranksId = 0;
+
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsBanksEntity> accountsBanks = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsDestroysEntity> accountsDestroys = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsDronesEntity> accountsDrones = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsGalaxygatesEntity> accountsGalaxygates = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsHangarsEntity> accountsHangars = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsHistoryEntity> accountsHistories = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
     private Collection<AccountsItemsEntity> accountsItems = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByFromAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByFromAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsMessagesEntity> fromAccountsMessages = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByToAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByToAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsMessagesEntity> toAccountsMessages = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsPetsEntity> accountsPets = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsQuestsEntity> accountsQuests = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsRankingsEntity> accountsRankings = new HashSet<>();
 
     @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
     private Collection<AccountsSettingsEntity> accountsSettings = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsShipsEntity> accountsShips = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsSkillsEntity> accountsSkills = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsSkylabsEntity> accountsSkylabs = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsTechfactoriesEntity> accountsTechfactories = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<AccountsTechfactoryItemsEntity> accountsTechfactoryItems = new HashSet<>();
 
-    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "accountsByAccountsId", fetch = FetchType.LAZY)
     private Collection<ClansApplicationsEntity> clansApplications = new HashSet<>();
 
     @ManyToMany

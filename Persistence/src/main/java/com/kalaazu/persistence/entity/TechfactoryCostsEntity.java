@@ -24,11 +24,19 @@ public class TechfactoryCostsEntity {
     @Column(name = "amount", nullable = false)
     private int amount;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "items_id", referencedColumnName = "id", nullable = false)
     private ItemsEntity itemsByItemsId;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+    @Basic
+    @Column(name = "items_id", nullable = false, insertable = false, updatable = false)
+    private short itemsId = 0;
+
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "techfactory_items_id", referencedColumnName = "id", nullable = false)
     private TechfactoryItemsEntity techfactoryItemsByTechfactoryItemsId;
+
+    @Basic
+    @Column(name = "techfactory_items_id", nullable = false, insertable = false, updatable = false)
+    private byte techfactoryItemsId = 0;
 }
