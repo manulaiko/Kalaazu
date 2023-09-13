@@ -121,15 +121,30 @@ public class MapService {
     public void initializePlayer(GameSessionStartedEvent event) {
         var session = event.getSession();
         var account = session.getAccount();
+        var ship = session.getShip();
+        var config = session.getConfiguration();
         var map = session.getMapId();
 
+        if (!maps.containsKey(map)) {
+            log.info("Invalid map {}!", map);
+
+            return;
+        }
+
         log.info("Initializing player {}", account.getId());
+
+        var player = new Player(session, maps.get(map), account.getId());
+        player.setPosition(ship.getPosition());
+        player.setSpeed((short) (config.getSpeed() + 1000));
+
+        session.setPlayer(player);
 
         var commands = new ArrayList<OutCommand>();
 
         npcs.getOrDefault(map, new HashSet<>())
                 // TODO filter near entities
                 .forEach(npc -> commands.add(npc.getEntityCreationCommand()));
+
 
         ctx.publishEvent(new SendCommandsEvent(session, commands, this));
     }

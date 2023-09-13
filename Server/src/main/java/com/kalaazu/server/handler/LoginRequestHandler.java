@@ -237,6 +237,8 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
 
         session.setShip(ship);
         session.setMapId(ship.getMapsId());
+        session.setHangar(hangar);
+        session.setConfiguration(config);
 
         var premium = account.getPremiumDate() != null && account.getPremiumDate().before(Timestamp.from(Instant.now()));
 

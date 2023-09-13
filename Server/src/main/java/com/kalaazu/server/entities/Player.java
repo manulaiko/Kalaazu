@@ -25,11 +25,14 @@ import java.util.UUID;
 public class Player implements MovableMapEntity {
     private final GameSession gameSession;
     private final MapsEntity map;
+    private final int id;
 
-    private int id;
-    private Vector2 position;
-    private Vector2 destination;
+    private Vector2 position = new Vector2(Vector2.Zero);
+    private Vector2 destination = new Vector2(Vector2.Zero);
     private short speed;
+    private boolean moving;
+    private long movementStartTime;
+    private int totalMovementTime;
 
     @Override
     public OutCommand getEntityCreationCommand() {

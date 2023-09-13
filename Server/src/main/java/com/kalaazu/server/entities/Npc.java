@@ -30,8 +30,11 @@ public class Npc implements MovableMapEntity {
     private final MapsEntity map;
 
     private int id;
-    private Vector2 position;
-    private Vector2 destination;
+    private Vector2 position = new Vector2(Vector2.Zero);
+    private Vector2 destination = new Vector2(Vector2.Zero);
+    private boolean moving;
+    private long movementStartTime;
+    private int totalMovementTime;
 
     public short getSpeed() {
         return npc.getSpeed();

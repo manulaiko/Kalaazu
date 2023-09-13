@@ -14,6 +14,14 @@ import com.kalaazu.math.Vector2;
  */
 public interface MovableMapEntity extends MapEntity {
     Vector2 getDestination();
+    default Vector2 getDirection() {
+        return Vector2.sub(getPosition(), getDestination());
+    }
 
     short getSpeed();
+
+    boolean isMoving();
+
+    long getMovementStartTime();
+    int getTotalMovementTime();
 }

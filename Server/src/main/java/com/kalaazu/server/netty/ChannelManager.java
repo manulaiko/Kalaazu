@@ -46,7 +46,7 @@ public class ChannelManager {
         }
 
         if (printPackets) {
-            log.info("Packet sent: >>>>> {}", command.getId());
+            log.info("Packet sent: >>>>> {}", command);
         }
 
         var p = new Packet();
@@ -62,7 +62,7 @@ public class ChannelManager {
         }
 
         if (printPackets) {
-            commands.forEach(p -> log.info("Packet sent: >>>>> {}", p.getId()));
+            commands.forEach(p -> log.info("Packet sent: >>>>> {}", p));
         }
 
         commands.stream()
@@ -80,6 +80,10 @@ public class ChannelManager {
         var packet = new Packet();
         command.write(packet);
 
+        if (printPackets) {
+            log.info("Packet sent: >>>>> {}", command);
+        }
+
         channels.writeAndFlush(packet);
     }
 
@@ -88,6 +92,11 @@ public class ChannelManager {
                 .map(c -> {
                     var p = new Packet();
                     c.write(p);
+
+
+                    if (printPackets) {
+                        log.info("Packet sent: >>>>> {}", p);
+                    }
 
                     return p;
                 })
@@ -124,10 +133,6 @@ public class ChannelManager {
         }
 
         var packetId = packet.readShort();
-
-        if (printPackets) {
-            log.info("Packet received: <<<<< {}", packetId);
-        }
 
         packetHandlers.stream()
                 .filter(p -> p.getId() == packetId)

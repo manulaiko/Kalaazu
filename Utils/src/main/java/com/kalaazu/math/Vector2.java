@@ -34,6 +34,7 @@ import java.util.random.RandomGenerator;
 public class Vector2 implements Serializable, Vector<Vector2> {
     public final static Vector2 Zero = new Vector2(0, 0);
     private static final long serialVersionUID = 913902788239530931L;
+
     /**
      * the x-component of this vector
      */
@@ -49,6 +50,10 @@ public class Vector2 implements Serializable, Vector<Vector2> {
      * @param v The vector
      */
     public Vector2(Vector2 v) {
+        if (v == null) {
+            v = new Vector2(Vector2.Zero);
+        }
+
         set(v);
     }
 
@@ -97,6 +102,12 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         var y = r.nextFloat(from.getY(), limit.getY());
 
         return new Vector2(x, y);
+    }
+
+    public static Vector2 sub(Vector2 from, Vector2 to) {
+        var ret = new Vector2(from);
+
+        return ret.sub(to);
     }
 
     public static float len(float x, float y) {
@@ -699,6 +710,15 @@ public class Vector2 implements Serializable, Vector<Vector2> {
     public Vector2 setZero() {
         this.x = 0;
         this.y = 0;
+
+        return this;
+    }
+
+    public Vector2 move(Vector2 direction, long time, int speed) {
+        var step = time / speed;
+
+        x = x - (direction.getX() * step);
+        y = y - (direction.getY() * step);
 
         return this;
     }
