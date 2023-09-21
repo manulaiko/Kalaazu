@@ -48,14 +48,14 @@ public class Npc implements MovableMapEntity {
     @Async
     @Scheduled(fixedDelay = 500)
     public void tick() {
-        /*if (this.isMoving()) {
+        if (this.isMoving()) {
             this.movementTick();
         } else if (nextMovementTime == 0) {
-            nextMovementTime = System.currentTimeMillis() + 1000;
+            nextMovementTime = System.currentTimeMillis() + 5000;
         } else if (nextMovementTime >= System.currentTimeMillis()) {
             nextMovementTime = 0;
             move(position, Vector.random(Vector.MARGIN, map.getLimits().margin()));
-        }*/
+        }
     }
 
     @Override

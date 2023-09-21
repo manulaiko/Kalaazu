@@ -4,7 +4,7 @@
 --
 CREATE TABLE `maps`
 (
-    `id`          tinyint      NOT NULL AUTO_INCREMENT
+    `id`          smallint     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
     `name`        varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',

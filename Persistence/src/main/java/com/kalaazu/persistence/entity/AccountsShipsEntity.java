@@ -66,5 +66,5 @@ public class AccountsShipsEntity {
 
     @Basic
     @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
-    private byte mapsId = 0;
+    private short mapsId = 0;
 }

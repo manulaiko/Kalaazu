@@ -11,10 +11,10 @@ CREATE TABLE `factions`
         COMMENT 'Name abbreviation.',
     `description`        text         NOT NULL,
     `is_public`          boolean      NOT NULL DEFAULT true,
-    `low_maps_id`        tinyint      NOT NULL,
+    `low_maps_id`        smallint     NOT NULL,
     `low_maps_position`  bigint       NOT NULL DEFAULT 0
         COMMENT 'Starting position on map.',
-    `high_maps_id`       tinyint      NOT NULL,
+    `high_maps_id`       smallint     NOT NULL,
     `high_maps_position` bigint       NOT NULL DEFAULT 0
         COMMENT 'Starting position on map.',
 

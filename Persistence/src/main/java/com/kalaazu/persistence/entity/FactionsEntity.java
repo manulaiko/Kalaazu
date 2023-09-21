@@ -55,7 +55,7 @@ public class FactionsEntity {
 
     @Basic
     @Column(name= "low_maps_id", nullable = false, insertable = false, updatable = false)
-    private byte lowMapsId = 0;
+    private short lowMapsId = 0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "high_maps_id", nullable = false)
@@ -63,5 +63,5 @@ public class FactionsEntity {
 
     @Basic
     @Column(name= "high_maps_id", nullable = false, insertable = false, updatable = false)
-    private byte highMapsId = 0;
+    private short highMapsId = 0;
 }

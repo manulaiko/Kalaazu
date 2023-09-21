@@ -38,9 +38,6 @@ public class LegacyPacketHandler extends Handler<LegacyCommand> {
         handlers.stream()
                 .filter(h -> h.getId().equalsIgnoreCase(id))
                 .findFirst()
-                .ifPresentOrElse(
-                        h -> h.handle(p, session),
-                        () -> log.info("Received legacy packet with no handler: {}", p)
-                );
+                .ifPresent(h -> h.handle(p, session));
     }
 }

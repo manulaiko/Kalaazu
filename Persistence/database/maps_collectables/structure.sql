@@ -6,7 +6,7 @@ CREATE TABLE `maps_collectables`
 (
     `id`              smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id`         tinyint  NOT NULL
+    `maps_id`         smallint NOT NULL
         COMMENT 'Map ID.',
     `collectables_id` tinyint  NOT NULL
         COMMENT 'collectable ID.',

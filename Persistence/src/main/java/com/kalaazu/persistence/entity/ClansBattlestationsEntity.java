@@ -55,7 +55,7 @@ public class ClansBattlestationsEntity {
 
     @Basic
     @Column(name= "maps_id", insertable = false, updatable = false)
-    private Byte mapsId = 0;
+    private Short mapsId = 0;
 
     @OneToMany(mappedBy = "clansBattlestationsByClansBattlestationsId", fetch = FetchType.LAZY)
     private Collection<ClansBattlestationsItemsEntity> clansBattlestationsItems;

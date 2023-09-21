@@ -37,7 +37,7 @@ public class ShipInitializationCommand extends OutCommand {
     private int maxNanohull;
     private float x;
     private float y;
-    private byte mapId;
+    private short mapId;
     private byte factionId;
     private int clanId;
     private int expansionStage;

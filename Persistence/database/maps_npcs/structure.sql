@@ -4,13 +4,13 @@
 --
 CREATE TABLE `maps_npcs`
 (
-    `id`      tinyint NOT NULL AUTO_INCREMENT
+    `id`      smallint NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id` tinyint NOT NULL
+    `maps_id` smallint NOT NULL
         COMMENT 'Map ID.',
-    `npcs_id` tinyint NOT NULL
+    `npcs_id` tinyint  NOT NULL
         COMMENT 'NPC ID.',
-    `amount`  tinyint NOT NULL DEFAULT 0
+    `amount`  tinyint  NOT NULL DEFAULT 0
         COMMENT 'Amount of NPCs on map',
 
     CONSTRAINT `maps_npcs_pk` PRIMARY KEY (`id`)

@@ -8,7 +8,7 @@ CREATE TABLE `clans_battlestations`
         COMMENT 'Primary Key.',
     `clans_id` int          NULL     DEFAULT NULL
         COMMENT 'Owner of the CBS.',
-    `maps_id`  tinyint      NOT NULL
+    `maps_id`  smallint     NOT NULL
         COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
     `position` bigint       NOT NULL DEFAULT 0

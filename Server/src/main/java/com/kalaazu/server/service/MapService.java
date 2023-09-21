@@ -33,13 +33,13 @@ public class MapService {
     private final MapsService service;
     private final ApplicationContext ctx;
 
-    private Map<Byte, MapsEntity> maps;
+    private Map<Short, MapsEntity> maps;
 
-    private Map<Byte, Set<Npc>> npcs = new HashMap<>();
-    private Map<Byte, Set<Collectable>> collectables = new HashMap<>();
-    private Map<Byte, Set<Station>> stations = new HashMap<>();
-    private Map<Byte, Set<Portal>> portals = new HashMap<>();
-    private Map<Byte, Set<Player>> players = new HashMap<>();
+    private final Map<Short, Set<Npc>> npcs = new HashMap<>();
+    private final Map<Short, Set<Collectable>> collectables = new HashMap<>();
+    private final Map<Short, Set<Station>> stations = new HashMap<>();
+    private final Map<Short, Set<Portal>> portals = new HashMap<>();
+    private final Map<Short, Set<Player>> players = new HashMap<>();
 
 
     public void initialize() {
@@ -51,7 +51,7 @@ public class MapService {
         maps.forEach(this::initializeMap);
     }
 
-    private void initializeMap(Byte mapId, MapsEntity map) {
+    private void initializeMap(Short mapId, MapsEntity map) {
         log.info("Initializing map {}", map.getName());
 
         var npcs = new LinkedHashSet<Npc>();
@@ -67,10 +67,9 @@ public class MapService {
                         var n = ctx.getBean(Npc.class);
                         n.setMap(map);
                         n.setNpc(npc.getNpcsByNpcsId());
-                        //n.setSpeed(n.getNpc().getSpeed());
-                        n.setSpeed((short) 700);
+                        n.setSpeed(n.getNpc().getSpeed());
                         n.setPosition(Vector.random(Vector.MARGIN, map.getLimits().margin()));
-                        n.setId(r.nextInt());
+                        n.setId(r.nextInt(Integer.MAX_VALUE));
 
                         npcs.add(n);
                     }
@@ -154,16 +153,5 @@ public class MapService {
 
 
         ctx.publishEvent(new SendCommandsEvent(session, commands, this));
-    }
-
-    @EventListener
-    public void onPlayerMovementStarted(PlayerMovementStartedEvent event) {
-        var p = event.getPlayer();
-
-        npcs.get(p.getMap().getId())
-                .forEach(n -> n.move(
-                        n.getPosition(),
-                        Vector.random(Vector.MARGIN, n.getMap().getLimits().margin())
-                ));
     }
 }

@@ -23,7 +23,7 @@ public class MapsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
-    private byte id;
+    private short id;
 
     @Basic
     @Column(name = "name", nullable = false)

@@ -36,7 +36,7 @@ public class GalaxygatesWavesEntity {
 
     @Basic
     @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
-    private byte mapsId = 0;
+    private short mapsId = 0;
 
     @OneToMany(mappedBy = "galaxygatesWavesByGalaxygatesWavesId", fetch = FetchType.LAZY)
     private Collection<GalaxygatesStagesEntity> galaxygatesStages;

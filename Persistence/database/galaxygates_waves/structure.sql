@@ -4,13 +4,13 @@
 --
 CREATE TABLE `galaxygates_waves`
 (
-    `id`      tinyint NOT NULL AUTO_INCREMENT
+    `id`      tinyint  NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id` tinyint NOT NULL
+    `maps_id` smallint NOT NULL
         COMMENT 'Map',
-    `seconds` tinyint NOT NULL DEFAULT 120
+    `seconds` tinyint  NOT NULL DEFAULT 120
         COMMENT 'Seconds to wait between stages',
-    `npcs`    tinyint NOT NULL DEFAULT 5
+    `npcs`    tinyint  NOT NULL DEFAULT 5
         COMMENT 'NPCS that the user must destroy to spawn next stage',
 
     CONSTRAINT `galaxygates_waves_pk` PRIMARY KEY (`id`)

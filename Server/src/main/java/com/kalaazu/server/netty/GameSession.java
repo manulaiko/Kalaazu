@@ -40,7 +40,7 @@ public class GameSession implements DisposableBean {
     private AccountsShipsEntity ship;
     private AccountsConfigurationsEntity configuration;
     private AccountsHangarsEntity hangar;
-    private Byte mapId;
+    private Short mapId;
     private Player player;
 
     @Override

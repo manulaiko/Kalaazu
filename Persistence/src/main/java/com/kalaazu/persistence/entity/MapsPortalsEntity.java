@@ -50,7 +50,7 @@ public class MapsPortalsEntity {
 
     @Basic
     @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
-    private byte mapsId = 0;
+    private short mapsId = 0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "target_maps_id", referencedColumnName = "id", nullable = false)
@@ -58,7 +58,7 @@ public class MapsPortalsEntity {
 
     @Basic
     @Column(name= "target_maps_id", nullable = false, insertable = false, updatable = false)
-    private byte targetMapsId = 0;
+    private short targetMapsId = 0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "levels_id", referencedColumnName = "id", nullable = false)

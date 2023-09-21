@@ -43,7 +43,7 @@ public class MapsCollectablesEntity {
 
     @Basic
     @Column(name= "maps_id", nullable = false, insertable = false, updatable = false)
-    private byte mapsId = 0;
+    private short mapsId = 0;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "collectables_id", referencedColumnName = "id", nullable = false)

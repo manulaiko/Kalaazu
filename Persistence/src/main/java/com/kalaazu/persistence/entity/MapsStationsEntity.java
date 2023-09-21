@@ -34,7 +34,7 @@ public class MapsStationsEntity {
 
     @Basic
     @Column(name= "maps_id", insertable = false, updatable = false)
-    private Byte mapsId = 0;
+    private Short mapsId = 0;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "factions_id", referencedColumnName = "id")
