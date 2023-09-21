@@ -2,6 +2,8 @@ package com.kalaazu.server.entities;
 
 import com.kalaazu.math.Vector2;
 import com.kalaazu.server.commands.out.map.MoveEntityCommand;
+import com.kalaazu.server.event.BroadcastCommandEvent;
+import org.springframework.context.ApplicationContext;
 
 /**
  * Movable map entity.
@@ -14,9 +16,13 @@ import com.kalaazu.server.commands.out.map.MoveEntityCommand;
  * @author manulaiko <manulaiko@gmail.com>
  */
 public interface MovableMapEntity extends MapEntity {
+    ApplicationContext getCtx();
+
     Vector2 getDestination();
+    void setDestination(Vector2 v);
 
     Vector2 getInitialPosition();
+    void setInitialPosition(Vector2 v);
 
     short getSpeed();
 
@@ -25,10 +31,20 @@ public interface MovableMapEntity extends MapEntity {
     void setMoving(boolean moving);
 
     long getEndMovementTime();
+    void setEndMovementTime(long l);
 
     int getTotalMovementTime();
 
-    void startMovement(Vector2 from, Vector2 to);
+    default void move(Vector2 from, Vector2 to) {
+        this.setMoving(true);
+
+        this.setInitialPosition(from);
+        this.setPosition(from);
+        this.setDestination(to);
+
+        this.setEndMovementTime(System.currentTimeMillis() + this.getMovementDuration());
+        this.getCtx().publishEvent(new BroadcastCommandEvent(this.getMovementCommand(), this));
+    }
 
     default void movementTick() {
         if (!this.isMoving()) {

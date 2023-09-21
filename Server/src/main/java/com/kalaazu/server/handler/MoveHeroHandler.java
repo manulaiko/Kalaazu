@@ -29,6 +29,6 @@ public class MoveHeroHandler extends Handler<MoveHero> {
     public void handle(MoveHero packet, GameSession session) {
         var player = session.getPlayer();
 
-        player.startMovement(packet.getFrom(), packet.getTo());
+        player.move(packet.getFrom(), packet.getTo());
     }
 }

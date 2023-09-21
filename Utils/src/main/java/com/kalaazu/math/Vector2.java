@@ -136,6 +136,15 @@ public class Vector2 implements Serializable, Vector<Vector2> {
         return x_d * x_d + y_d * y_d;
     }
 
+    public static Vector2 randomRadius(Vector2 center, int radius) {
+        var r = Math.random() * radius;
+        var t = 2 * Math.PI * Math.random();
+        var x = r * Math.cos(t) + center.getX();
+        var y = r * Math.sin(t) + center.getY();
+
+        return new Vector2((float) x, (float) y);
+    }
+
     /**
      * Packs the vector in a long.
      *
