@@ -1,6 +1,6 @@
 package com.kalaazu.persistence.entity;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.Vector2Type;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -30,12 +30,12 @@ public class MapsCollectablesEntity {
     @Basic
     @Column(name = "from", nullable = false)
     @Type(value = Vector2Type.class)
-    private Vector2 from = new Vector2(0L);
+    private Vector from = new Vector(0L);
 
     @Basic
     @Column(name = "to")
     @Type(value = Vector2Type.class)
-    private Vector2 to = null;
+    private Vector to = null;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)

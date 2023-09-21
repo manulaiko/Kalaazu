@@ -1,6 +1,6 @@
 package com.kalaazu.persistence.entity;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.Vector2Type;
 import jakarta.persistence.*;
 import lombok.Data;
@@ -40,7 +40,7 @@ public class MapsEntity {
     @Basic
     @Column(name = "limits", nullable = false)
     @Type(value = Vector2Type.class)
-    private Vector2 limits = new Vector2(89335319769600L);
+    private Vector limits = new Vector(89335319769600L);
 
     @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsNpcsEntity> mapsNpcs;

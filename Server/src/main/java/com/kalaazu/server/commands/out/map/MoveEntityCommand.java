@@ -1,6 +1,6 @@
 package com.kalaazu.server.commands.out.map;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.util.Packet;
 import lombok.AllArgsConstructor;
@@ -22,7 +22,7 @@ public class MoveEntityCommand extends OutCommand {
     private final short id = 29819;
 
     private int entityId;
-    private Vector2 destination;
+    private Vector destination;
     private int travelTime;
 
     @Override

@@ -1,6 +1,6 @@
 package com.kalaazu.persistence;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import lombok.Getter;
 import org.hibernate.Cache;
 import org.hibernate.engine.spi.SharedSessionContractImplementor;
@@ -20,7 +20,7 @@ import java.sql.Types;
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-public class Vector2Type implements UserType<Vector2> {
+public class Vector2Type implements UserType<Vector> {
     @Getter
     private final int sqlType = Types.BIGINT;
 
@@ -35,13 +35,13 @@ public class Vector2Type implements UserType<Vector2> {
      * @param owner
      */
     @Override
-    public Vector2 nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
+    public Vector nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
         var l = rs.getLong(position);
         if (rs.wasNull()) {
             return null;
         }
 
-        return new Vector2(l);
+        return new Vector(l);
     }
 
     /**
@@ -56,7 +56,7 @@ public class Vector2Type implements UserType<Vector2> {
      * @param session
      */
     @Override
-    public void nullSafeSet(PreparedStatement st, Vector2 value, int index, SharedSessionContractImplementor session) throws SQLException {
+    public void nullSafeSet(PreparedStatement st, Vector value, int index, SharedSessionContractImplementor session) throws SQLException {
         if (value == null) {
             st.setNull(index, Types.BIGINT);
         } else {
@@ -83,8 +83,8 @@ public class Vector2Type implements UserType<Vector2> {
      * @return a clone
      */
     @Override
-    public Vector2 deepCopy(Vector2 value) {
-        return new Vector2(value);
+    public Vector deepCopy(Vector value) {
+        return new Vector(value.getX(), value.getY());
     }
 
     /**
@@ -118,7 +118,7 @@ public class Vector2Type implements UserType<Vector2> {
      * @see Cache
      */
     @Override
-    public Serializable disassemble(Vector2 value) {
+    public Serializable disassemble(Vector value) {
         return value.toString();
     }
 
@@ -141,22 +141,22 @@ public class Vector2Type implements UserType<Vector2> {
      * @see Cache
      */
     @Override
-    public Vector2 assemble(Serializable cached, Object owner) {
-        return new Vector2(cached.toString());
+    public Vector assemble(Serializable cached, Object owner) {
+        return new Vector(cached.toString());
     }
 
     @Override
-    public Class<Vector2> returnedClass() {
-        return Vector2.class;
+    public Class<Vector> returnedClass() {
+        return Vector.class;
     }
 
     @Override
-    public boolean equals(Vector2 x, Vector2 y) {
+    public boolean equals(Vector x, Vector y) {
         return x.equals(y);
     }
 
     @Override
-    public int hashCode(Vector2 x) {
+    public int hashCode(Vector x) {
         return x.hashCode();
     }
 }

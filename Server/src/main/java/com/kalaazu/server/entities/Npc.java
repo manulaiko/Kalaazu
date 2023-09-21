@@ -1,6 +1,6 @@
 package com.kalaazu.server.entities;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.persistence.entity.NpcsEntity;
 import com.kalaazu.server.commands.OutCommand;
@@ -33,9 +33,9 @@ public class Npc implements MovableMapEntity {
     private final ApplicationContext ctx;
 
     private int id;
-    private Vector2 initialPosition = Vector2.Zero.cpy();
-    private Vector2 position = Vector2.Zero.cpy();
-    private Vector2 destination = Vector2.Zero.cpy();
+    private Vector initialPosition = Vector.ZERO.cpy();
+    private Vector position = Vector.ZERO.cpy();
+    private Vector destination = Vector.ZERO.cpy();
     private boolean moving;
     private long endMovementTime;
     private long nextMovementTime;
@@ -48,14 +48,14 @@ public class Npc implements MovableMapEntity {
     @Async
     @Scheduled(fixedDelay = 500)
     public void tick() {
-        if (this.isMoving()) {
+        /*if (this.isMoving()) {
             this.movementTick();
         } else if (nextMovementTime == 0) {
             nextMovementTime = System.currentTimeMillis() + 1000;
         } else if (nextMovementTime >= System.currentTimeMillis()) {
             nextMovementTime = 0;
-            move(position, Vector2.randomRadius(position, 2500));
-        }
+            move(position, Vector.random(Vector.MARGIN, map.getLimits().margin()));
+        }*/
     }
 
     @Override
@@ -68,8 +68,8 @@ public class Npc implements MovableMapEntity {
                 0,
                 MinimapEntityDiplomacyStatusCommand.ENEMY,
                 3,
-                (int) position.getX(),
-                (int) position.getY(),
+                position.getX(),
+                position.getY(),
                 MinimapEntityDiplomacyStatusCommand.ENEMY,
                 String.valueOf(npc.getGfx()),
                 "",

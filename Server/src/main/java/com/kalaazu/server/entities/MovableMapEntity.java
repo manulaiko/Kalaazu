@@ -1,6 +1,6 @@
 package com.kalaazu.server.entities;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.server.commands.out.map.MoveEntityCommand;
 import com.kalaazu.server.event.BroadcastCommandEvent;
 import org.springframework.context.ApplicationContext;
@@ -18,11 +18,11 @@ import org.springframework.context.ApplicationContext;
 public interface MovableMapEntity extends MapEntity {
     ApplicationContext getCtx();
 
-    Vector2 getDestination();
-    void setDestination(Vector2 v);
+    Vector getDestination();
+    void setDestination(Vector v);
 
-    Vector2 getInitialPosition();
-    void setInitialPosition(Vector2 v);
+    Vector getInitialPosition();
+    void setInitialPosition(Vector v);
 
     short getSpeed();
 
@@ -35,7 +35,7 @@ public interface MovableMapEntity extends MapEntity {
 
     int getTotalMovementTime();
 
-    default void move(Vector2 from, Vector2 to) {
+    default void move(Vector from, Vector to) {
         this.setMoving(true);
 
         this.setInitialPosition(from);
@@ -59,12 +59,12 @@ public interface MovableMapEntity extends MapEntity {
 
             return;
         }
-        var traveled = Vector2.sub(this.getInitialPosition(), this.getDestination());
+        var traveled = Vector.sub(this.getInitialPosition(), this.getDestination());
 
         traveled.div(getTotalMovementTime())
-                .scl(timeLeft);
+                .scl((int) timeLeft);
 
-        this.setPosition(Vector2.sub(this.getDestination(), traveled));
+        this.setPosition(Vector.sub(this.getDestination(), traveled));
     }
 
     default int getMovementDuration() {

@@ -1,6 +1,6 @@
 package com.kalaazu.server.commands.in;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.server.commands.InCommand;
 import com.kalaazu.server.util.Packet;
 import lombok.Data;
@@ -21,8 +21,8 @@ public class MoveHero extends InCommand {
 
     private final short id = ID;
 
-    private Vector2 from;
-    private Vector2 to;
+    private Vector from;
+    private Vector to;
 
     @Override
     public void read(Packet packet) {
@@ -39,7 +39,7 @@ public class MoveHero extends InCommand {
         targetX = (targetX >>> 4) | (targetX << 28);
         positionY = (positionY << 5) | (positionY >>> 27);
 
-        from = new Vector2(positionX, positionY);
-        to = new Vector2(targetX, targetY);
+        from = new Vector(positionX, positionY);
+        to = new Vector(targetX, targetY);
     }
 }

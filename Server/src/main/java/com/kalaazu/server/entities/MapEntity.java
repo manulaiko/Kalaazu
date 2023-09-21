@@ -1,10 +1,8 @@
 package com.kalaazu.server.entities;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.server.commands.OutCommand;
-
-import java.util.UUID;
 
 /**
  * Map entity.
@@ -19,8 +17,8 @@ import java.util.UUID;
 public interface MapEntity {
     int getId();
 
-    Vector2 getPosition();
-    void setPosition(Vector2 position);
+    Vector getPosition();
+    void setPosition(Vector position);
 
     MapsEntity getMap();
 

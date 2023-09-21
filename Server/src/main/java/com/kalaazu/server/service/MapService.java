@@ -1,11 +1,12 @@
 package com.kalaazu.server.service;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.persistence.service.MapsService;
 import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.entities.*;
 import com.kalaazu.server.event.GameSessionStartedEvent;
+import com.kalaazu.server.event.PlayerMovementStartedEvent;
 import com.kalaazu.server.event.SendCommandsEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -66,8 +67,9 @@ public class MapService {
                         var n = ctx.getBean(Npc.class);
                         n.setMap(map);
                         n.setNpc(npc.getNpcsByNpcsId());
-                        n.setSpeed(n.getNpc().getSpeed());
-                        n.setPosition(Vector2.random(map.getLimits()));
+                        //n.setSpeed(n.getNpc().getSpeed());
+                        n.setSpeed((short) 700);
+                        n.setPosition(Vector.random(Vector.MARGIN, map.getLimits().margin()));
                         n.setId(r.nextInt());
 
                         npcs.add(n);
@@ -84,7 +86,7 @@ public class MapService {
                             to = map.getLimits();
                         }
 
-                        c.setPosition(Vector2.random(collectable.getFrom(), to));
+                        c.setPosition(Vector.random(collectable.getFrom(), to));
                         c.setId(r.nextInt());
 
                         collectables.add(c);
@@ -152,5 +154,16 @@ public class MapService {
 
 
         ctx.publishEvent(new SendCommandsEvent(session, commands, this));
+    }
+
+    @EventListener
+    public void onPlayerMovementStarted(PlayerMovementStartedEvent event) {
+        var p = event.getPlayer();
+
+        npcs.get(p.getMap().getId())
+                .forEach(n -> n.move(
+                        n.getPosition(),
+                        Vector.random(Vector.MARGIN, n.getMap().getLimits().margin())
+                ));
     }
 }

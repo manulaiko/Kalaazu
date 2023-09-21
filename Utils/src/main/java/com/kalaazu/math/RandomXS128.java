@@ -196,9 +196,7 @@ public class RandomXS128 extends Random {
         int n;
         int i = bytes.length;
         while (i != 0) {
-            n = i < 8
-                    ? i
-                    : 8; // min(i, 8);
+            n = Math.min(i, 8); // min(i, 8);
             for (long bits = nextLong(); n-- != 0; bits >>= 8) {
                 bytes[--i] = (byte) bits;
             }

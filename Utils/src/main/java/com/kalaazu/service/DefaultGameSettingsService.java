@@ -161,7 +161,7 @@ public class DefaultGameSettingsService {
         map.put("user", new Window(0, 100, 212, 88, true));
         map.put("ship", new Window(87, 100, 212, 88, true));
         map.put("ship_warp", new Window(50, 50, 300, 210, false));
-        map.put("chat", new Window(0, 3, 370, 260, true));
+        map.put("chat", new Window(0, 6, 370, 260, true));
         map.put("group", new Window(100, 30, 196, 200, true));
         map.put("minimap", new Window(100, 100, 238, 180, true));
         map.put("spacemap", new Window(10, 10, 650, 475, false));

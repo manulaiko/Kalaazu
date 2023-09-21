@@ -1,8 +1,9 @@
 package com.kalaazu.server.entities;
 
-import com.kalaazu.math.Vector2;
+import com.kalaazu.math.Vector;
 import com.kalaazu.persistence.entity.MapsEntity;
 import com.kalaazu.server.commands.OutCommand;
+import com.kalaazu.server.event.PlayerMovementStartedEvent;
 import com.kalaazu.server.netty.GameSession;
 import lombok.Data;
 import lombok.RequiredArgsConstructor;
@@ -30,9 +31,9 @@ public class Player implements MovableMapEntity {
     private final ApplicationContext ctx;
 
     private int id;
-    private Vector2 initialPosition = Vector2.Zero.cpy();
-    private Vector2 position = Vector2.Zero.cpy();
-    private Vector2 destination = Vector2.Zero.cpy();
+    private Vector initialPosition = Vector.ZERO.cpy();
+    private Vector position = Vector.ZERO.cpy();
+    private Vector destination = Vector.ZERO.cpy();
     private short speed;
     private boolean moving;
     private long endMovementTime;
