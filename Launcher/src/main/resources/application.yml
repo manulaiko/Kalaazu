@@ -18,7 +18,7 @@ spring:
 app:
   game:
     packets:
-      printOut: false
+      printOut: true
       printIn: true
 
   port:

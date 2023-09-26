@@ -505,4 +505,5 @@ public class ServerCommands {
     public static final String SET_MARKER = "MARK";
     public static final String REMOVE_MARKERS = "NOMARK";
     public static final String BOOTY_KEYS_UPDATE = "BK";
+    public static final String CONFIGURATION = "CFG";
 }

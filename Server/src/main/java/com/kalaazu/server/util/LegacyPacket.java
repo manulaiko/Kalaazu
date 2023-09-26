@@ -1,5 +1,6 @@
 package com.kalaazu.server.util;
 
+import com.kalaazu.server.commands.out.LegacyCommand;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
@@ -15,7 +16,7 @@ import java.util.List;
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-public class LegacyPacket {
+public class LegacyPacket extends LegacyCommand {
     private List<String> arguments = new ArrayList<>();
 
     @Getter
@@ -98,6 +99,10 @@ public class LegacyPacket {
 
     public int size() {
         return arguments.size();
+    }
+
+    public String getPacket() {
+        return this.toString();
     }
 
     @Override

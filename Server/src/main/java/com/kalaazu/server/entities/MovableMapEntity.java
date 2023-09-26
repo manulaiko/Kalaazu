@@ -43,7 +43,7 @@ public interface MovableMapEntity extends MapEntity {
         this.setDestination(to);
 
         this.setEndMovementTime(System.currentTimeMillis() + this.getMovementDuration());
-        this.getCtx().publishEvent(new BroadcastCommandEvent(this.getMovementCommand(), this));
+        //this.getCtx().publishEvent(new BroadcastCommandEvent(this.getMovementCommand(), this));
     }
 
     default void movementTick() {

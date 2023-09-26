@@ -2,15 +2,19 @@ package com.kalaazu.server.handler;
 
 import com.kalaazu.persistence.entity.AccountsEntity;
 import com.kalaazu.persistence.service.UsersService;
+import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.commands.in.LoginRequest;
 import com.kalaazu.server.commands.out.map.ShipInitializationCommand;
-import com.kalaazu.server.event.GameSessionStartedEvent;
+import com.kalaazu.server.commands.out.player.BeaconCommand;
+import com.kalaazu.server.commands.out.player.SetHealthPointsCommand;
+import com.kalaazu.server.commands.out.player.SetShieldPointsCommand;
+import com.kalaazu.server.commands.out.player.SetSpeedCommand;
+import com.kalaazu.server.event.*;
 import com.kalaazu.server.netty.GameSession;
-import com.kalaazu.server.event.EndGameSessionEvent;
-import com.kalaazu.server.event.EndGameSessionIfEvent;
-import com.kalaazu.server.event.SendCommandEvent;
 import com.kalaazu.server.service.GameSettingsService;
 import com.kalaazu.server.util.Handler;
+import com.kalaazu.server.util.LegacyPacket;
+import com.kalaazu.server.util.ServerCommands;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -231,6 +235,8 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
     private void sendInitialPackets(AccountsEntity account, GameSession session) {
         gameSettingsService.sendSettings(account.getAccountsSettings(), session);
 
+        var commands = new ArrayList<OutCommand>();
+
         var hangar = account.getAccountsHangarsByAccountsHangarsId();
         var ship = hangar.getAccountsShipsByAccountsShipsId();
         var config = hangar.getAccountsConfigurationsByAccountsConfigurationsId();
@@ -253,7 +259,7 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
             clanTag = clan.getTag();
         }
 
-        var shipInitialization = new ShipInitializationCommand(
+        commands.add(new ShipInitializationCommand(
                 account.getId(),
                 account.getName(),
                 ship.getShipsByShipsId().getItemsByItemsId().getLootId(),
@@ -285,9 +291,15 @@ public class LoginRequestHandler extends Handler<LoginRequest> {
                 true,
                 false, // TODO account cloacked
                 new ArrayList<>()
-        );
+        ));
 
-        ctx.publishEvent(new SendCommandEvent(session, shipInitialization, this));
+        commands.add(new LegacyPacket(ServerCommands.SET_STATUS, ServerCommands.CONFIGURATION, config.getConfigurationId()));
+        commands.add(new SetHealthPointsCommand(ship.getHealth(), config.getHealth(), ship.getNanohull(), ship.getShipsByShipsId().getHealth()));
+        commands.add(new SetShieldPointsCommand(ship.getShield(), config.getShield()));
+        commands.add(new SetSpeedCommand(config.getSpeed()));
+        commands.add(new BeaconCommand(1, 1, 1, 1, true, false, false, "equipment_extra_repbot_rep-4", false));
+
+        ctx.publishEvent(new SendCommandsEvent(session, commands, this));
 
 /*        settings.parallelStream()
                 .forEach(s -> loginPackets.add(new Packet(

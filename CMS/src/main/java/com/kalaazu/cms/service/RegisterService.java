@@ -76,6 +76,14 @@ public class RegisterService {
         var settings = this.createSettings(account);
 
         this.addItemsToConfig(items, configs);
+
+        // add base config stats
+        configs.forEach((k, c) -> {
+            var s = ship.getShipsByShipsId();
+            c.setSpeed((short) (c.getSpeed() + s.getSpeed()));
+            c.setHealth(c.getHealth() + s.getHealth());
+        });
+
         this.setActiveConfig(configs.values().iterator().next(), hangar);
         this.setActiveHangar(hangar, account);
 
@@ -247,7 +255,7 @@ public class RegisterService {
 
         for (byte i = 0; i < 2; i++) {
             var config = new AccountsConfigurationsEntity();
-            config.setConfigurationId(i);
+            config.setConfigurationId((byte) (i + 1));
             config.setAccountsHangarsByAccountsHangarsId(hangar);
 
             var c = this.accountsConfigs.create(config);
