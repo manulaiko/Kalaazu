@@ -17,7 +17,10 @@ spring:
 
 app:
   game:
-    printPackets: no
+    packets:
+      printOut: false
+      printIn: true
+
   port:
     server: 8080
     policy: 843

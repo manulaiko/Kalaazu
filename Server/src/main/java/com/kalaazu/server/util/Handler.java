@@ -16,7 +16,7 @@ import org.springframework.beans.factory.annotation.Value;
  */
 @Slf4j
 public abstract class Handler<T extends InCommand> {
-    @Value("${app.game.printPackets}")
+    @Value("${app.game.packets.printIn}")
     private boolean printPackets;
 
     public abstract short getId();

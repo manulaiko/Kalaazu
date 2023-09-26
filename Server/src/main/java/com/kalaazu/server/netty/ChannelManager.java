@@ -36,7 +36,7 @@ public class ChannelManager {
 
     private final List<Handler<?>> packetHandlers;
 
-    @Value("${app.game.printPackets}")
+    @Value("${app.game.packets.printOut}")
     private boolean printPackets;
 
     private void send(ChannelId channelId, OutCommand command) {
