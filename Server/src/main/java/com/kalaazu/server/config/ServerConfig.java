@@ -1,10 +1,10 @@
 package com.kalaazu.server.config;
 
-import io.netty.channel.nio.NioEventLoopGroup;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
+import java.io.Serial;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
@@ -20,6 +20,7 @@ public class ServerConfig {
     @Bean
     public ThreadPoolTaskScheduler taskScheduler() {
         var scheduler = new ThreadPoolTaskScheduler() {
+            @Serial
             private static final long serialVersionUID = -1L;
 
             @Override
@@ -36,15 +37,5 @@ public class ServerConfig {
         scheduler.setRejectedExecutionHandler(new ThreadPoolExecutor.AbortPolicy());
 
         return scheduler;
-    }
-
-    @Bean
-    public NioEventLoopGroup bossGroup() {
-        return new NioEventLoopGroup();
-    }
-
-    @Bean
-    public NioEventLoopGroup workerGroup() {
-        return new NioEventLoopGroup();
     }
 }

@@ -1,7 +1,7 @@
 plugins {
-    id 'org.springframework.boot' version '3.1.3'
-    id 'io.spring.dependency-management' version '1.1.3'
     id 'java'
+    id 'org.springframework.boot' version '3.2.0-M3'
+    id 'io.spring.dependency-management' version '1.1.3'
 }
 
 version = '0.0.1-SNAPSHOT'
@@ -21,10 +21,14 @@ allprojects {
     apply plugin: 'org.springframework.boot'
     apply plugin: 'io.spring.dependency-management'
 
-    sourceCompatibility = 20
+    java {
+        toolchain { languageVersion = JavaLanguageVersion.of(21) }
+    }
+
     group 'com.kalaazu'
 
     repositories {
+        maven { url 'https://repo.spring.io/milestone' }
         mavenCentral()
         mavenLocal()
     }
@@ -35,6 +39,10 @@ allprojects {
 
     jar {
         enabled = true
+    }
+
+    springBoot {
+        mainClass = 'com.kalaazu.Launcher'
     }
 
     dependencies {

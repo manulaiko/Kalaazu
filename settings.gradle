@@ -1,7 +1,13 @@
+pluginManagement {
+    repositories {
+        mavenCentral()
+        maven { url 'https://repo.spring.io/milestone' }
+    }
+}
+
 rootProject.name = 'main'
 include 'Utils'
 include 'Persistence'
 include 'CMS'
 include 'Launcher'
 include 'Server'
-

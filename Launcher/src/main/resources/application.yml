@@ -1,19 +1,22 @@
 spring:
+  threads:
+    virtual:
+      enabled: true
+
   task:
     scheduling:
       pool:
         size: 8
 
   datasource:
-    password: ${MYSQL_PASSWORD}
-    url: jdbc:mariadb://localhost:3306/kalaazu
     username: ${MYSQL_USERNAME}
+    password: ${MYSQL_PASSWORD}
+    url: jdbc:mariadb://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/${MYSQL_DATABASE:kalaazu}
 
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect
     hibernate:
       ddl-auto: update
-    show-sql: true
 
 app:
   game:
@@ -22,9 +25,9 @@ app:
       printIn: true
 
   port:
-    server: 8080
-    policy: 843
-    chat: 8082
+    server: ${GAME_SERVER_PORT:8080}
+    policy: ${POLICY_SERVER_PORT:843}
+    chat: ${CHAT_SERVER_PORT:8082}
 
 server:
-  port: 8081
+  port: ${WEB_SERVER_PORT:8081}

@@ -27,9 +27,10 @@ import org.springframework.stereotype.Component;
 @Component
 @Slf4j
 public class GameServer extends Thread {
-    private final NioEventLoopGroup bossGroup;
-    private final NioEventLoopGroup workerGroup;
     private final InboundHandler inboundHandler;
+
+    private final NioEventLoopGroup bossGroup = new NioEventLoopGroup();
+    private final NioEventLoopGroup workerGroup = new NioEventLoopGroup();
 
     @Value("${app.port.server}")
     private int port;
