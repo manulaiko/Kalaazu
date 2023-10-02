@@ -11,7 +11,7 @@ CREATE TABLE `clans_battlestations`
     `maps_id`  smallint     NOT NULL
         COMMENT 'Map of the CBS.',
     `name`     varchar(255) NOT NULL DEFAULT '',
-    `position` bigint       NOT NULL DEFAULT 0
+    `position` varchar(255) NOT NULL DEFAULT '0,0'
         COMMENT 'Position on map.',
     `date`     timestamp    NULL     DEFAULT NULL
         COMMENT 'Date when the CBS was build.',

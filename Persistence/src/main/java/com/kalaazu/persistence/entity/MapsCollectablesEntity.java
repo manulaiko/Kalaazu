@@ -1,7 +1,9 @@
 package com.kalaazu.persistence.entity;
 
 import com.kalaazu.math.Vector;
-import com.kalaazu.persistence.Vector2Type;
+import com.kalaazu.math.VectorRegion;
+import com.kalaazu.persistence.VectorRegionType;
+import com.kalaazu.persistence.VectorType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -28,14 +30,9 @@ public class MapsCollectablesEntity {
     private short amount = 0;
 
     @Basic
-    @Column(name = "from", nullable = false)
-    @Type(value = Vector2Type.class)
-    private Vector from = new Vector(0L);
-
-    @Basic
-    @Column(name = "to")
-    @Type(value = Vector2Type.class)
-    private Vector to = null;
+    @Column(name = "region", nullable = false)
+    @Type(VectorRegionType.class)
+    private VectorRegion region = new VectorRegion("0,0|20800,12800");
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id", nullable = false)

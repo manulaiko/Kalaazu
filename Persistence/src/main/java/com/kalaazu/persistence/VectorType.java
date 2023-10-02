@@ -13,16 +13,17 @@ import java.sql.SQLException;
 import java.sql.Types;
 
 /**
- * Vector2 Long type.
- * ==================
+ * Vector String type.
+ * ===================
  * <p>
- * Type definition to load long types as Vector2 instances.
+ * Type definition to load string types as Vector instances.
  *
  * @author manulaiko <manulaiko@gmail.com>
  */
-public class Vector2Type implements UserType<Vector> {
-    @Getter
-    private final int sqlType = Types.BIGINT;
+@Getter
+public class VectorType implements UserType<Vector> {
+    private final int sqlType = Types.VARCHAR;
+    private final boolean mutable = false;
 
     /**
      * Read an instance of the Java class mapped by this custom type
@@ -36,12 +37,12 @@ public class Vector2Type implements UserType<Vector> {
      */
     @Override
     public Vector nullSafeGet(ResultSet rs, int position, SharedSessionContractImplementor session, Object owner) throws SQLException {
-        var l = rs.getLong(position);
+        var str = rs.getString(position);
         if (rs.wasNull()) {
             return null;
         }
 
-        return new Vector(l);
+        return new Vector(str);
     }
 
     /**
@@ -58,9 +59,9 @@ public class Vector2Type implements UserType<Vector> {
     @Override
     public void nullSafeSet(PreparedStatement st, Vector value, int index, SharedSessionContractImplementor session) throws SQLException {
         if (value == null) {
-            st.setNull(index, Types.BIGINT);
+            st.setNull(index, Types.VARCHAR);
         } else {
-            st.setLong(index, value.toLong());
+            st.setString(index, value.toString());
         }
     }
 
@@ -85,17 +86,6 @@ public class Vector2Type implements UserType<Vector> {
     @Override
     public Vector deepCopy(Vector value) {
         return new Vector(value.getX(), value.getY());
-    }
-
-    /**
-     * Are instances of the Java class mapped by this custom type
-     * mutable or immutable?
-     *
-     * @return {@code true} if instances are mutable
-     */
-    @Override
-    public boolean isMutable() {
-        return true;
     }
 
     /**

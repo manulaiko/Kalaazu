@@ -756,14 +756,10 @@ public final class Affine2 implements Serializable {
     /**
      * Get the x-y translation component of the matrix.
      *
-     * @param position Output vector.
      * @return Filled position.
      */
-    public Vector getTranslation(Vector position) {
-        position.setX((int) m02);
-        position.setY((int) m12);
-
-        return position;
+    public Vector getTranslation() {
+        return new Vector((int) m02, (int) m12);
     }
 
     /**
@@ -787,11 +783,11 @@ public final class Affine2 implements Serializable {
     /**
      * Applies the affine transformation on a vector.
      */
-    public void applyTo(Vector point) {
+    public Vector applyTo(Vector point) {
         float x = point.getX();
         float y = point.getY();
-        point.setX((int) (m00 * x + m01 * y + m02));
-        point.setY((int) (m10 * x + m11 * y + m12));
+
+        return new Vector((int) (m00 * x + m01 * y + m02), (int) (m10 * x + m11 * y + m12));
     }
 
     @Override

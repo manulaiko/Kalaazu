@@ -1,7 +1,9 @@
 package com.kalaazu.persistence.entity;
 
 import com.kalaazu.math.Vector;
-import com.kalaazu.persistence.Vector2Type;
+import com.kalaazu.math.VectorRegion;
+import com.kalaazu.persistence.VectorRegionType;
+import com.kalaazu.persistence.VectorType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -39,8 +41,8 @@ public class MapsEntity {
 
     @Basic
     @Column(name = "limits", nullable = false)
-    @Type(value = Vector2Type.class)
-    private Vector limits = new Vector(89335319769600L);
+    @Type(value = VectorRegionType.class)
+    private VectorRegion limits = new VectorRegion("0,0|20800,12800");
 
     @OneToMany(mappedBy = "mapsByMapsId", fetch = FetchType.EAGER)
     private Collection<MapsNpcsEntity> mapsNpcs;

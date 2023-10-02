@@ -4,18 +4,16 @@
 --
 CREATE TABLE `maps_collectables`
 (
-    `id`              smallint NOT NULL AUTO_INCREMENT
+    `id`              smallint     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `maps_id`         smallint NOT NULL
+    `maps_id`         smallint     NOT NULL
         COMMENT 'Map ID.',
-    `collectables_id` tinyint  NOT NULL
+    `collectables_id` tinyint      NOT NULL
         COMMENT 'collectable ID.',
-    `amount`          smallint NOT NULL DEFAULT 0
+    `amount`          smallint     NOT NULL DEFAULT 0
         COMMENT 'Amount of collectables on map',
-    `from`            bigint   NOT NULL DEFAULT 0
-        COMMENT 'Starting position where the collectable will be spawned',
-    `to`              bigint   NULL     DEFAULT NULL
-        COMMENT 'Ending position where the collectable will be spawned, null = map limit',
+    `region`          varchar(255) NOT NULL DEFAULT '0,0|20800,12800'
+        COMMENT 'Region where the collectable will be spawned',
 
     CONSTRAINT `maps_collectables_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB

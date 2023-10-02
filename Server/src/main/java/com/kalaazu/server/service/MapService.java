@@ -6,7 +6,6 @@ import com.kalaazu.persistence.service.MapsService;
 import com.kalaazu.server.commands.OutCommand;
 import com.kalaazu.server.entities.*;
 import com.kalaazu.server.event.GameSessionStartedEvent;
-import com.kalaazu.server.event.PlayerMovementStartedEvent;
 import com.kalaazu.server.event.SendCommandsEvent;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -32,15 +31,12 @@ import java.util.stream.Collectors;
 public class MapService {
     private final MapsService service;
     private final ApplicationContext ctx;
-
-    private Map<Short, MapsEntity> maps;
-
     private final Map<Short, Set<Npc>> npcs = new HashMap<>();
     private final Map<Short, Set<Collectable>> collectables = new HashMap<>();
     private final Map<Short, Set<Station>> stations = new HashMap<>();
     private final Map<Short, Set<Portal>> portals = new HashMap<>();
     private final Map<Short, Set<Player>> players = new HashMap<>();
-
+    private Map<Short, MapsEntity> maps;
 
     public void initialize() {
         log.info("Loading maps..");
@@ -68,7 +64,7 @@ public class MapService {
                         n.setMap(map);
                         n.setNpc(npc.getNpcsByNpcsId());
                         n.setSpeed(n.getNpc().getSpeed());
-                        n.setPosition(Vector.random(Vector.MARGIN, map.getLimits().margin()));
+                        n.setPosition(Vector.random(map.getLimits().margin()));
                         n.setId(r.nextInt(Integer.MAX_VALUE));
 
                         npcs.add(n);
@@ -80,12 +76,7 @@ public class MapService {
                     for (int i = 0; i < collectable.getAmount(); i++) {
                         var c = new Collectable(collectable.getCollectablesByCollectablesId(), map);
 
-                        var to = collectable.getTo();
-                        if (to == null) {
-                            to = map.getLimits();
-                        }
-
-                        c.setPosition(Vector.random(collectable.getFrom(), to));
+                        c.setPosition(Vector.random(collectable.getRegion()));
                         c.setId(r.nextInt());
 
                         collectables.add(c);

@@ -54,7 +54,7 @@ public class Npc implements MovableMapEntity {
             nextMovementTime = System.currentTimeMillis() + 5000;
         } else if (nextMovementTime >= System.currentTimeMillis()) {
             nextMovementTime = 0;
-            move(position, Vector.random(Vector.MARGIN, map.getLimits().margin()));
+            move(position, Vector.random(map.getLimits().margin()));
         }
     }
 

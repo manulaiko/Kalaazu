@@ -1,7 +1,9 @@
 package com.kalaazu.persistence.entity;
 
 import com.kalaazu.math.Vector;
-import com.kalaazu.persistence.Vector2Type;
+import com.kalaazu.math.VectorRegion;
+import com.kalaazu.persistence.VectorType;
+import com.kalaazu.persistence.VectorRegionType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -41,13 +43,13 @@ public class FactionsEntity {
 
     @Basic
     @Column(name = "low_maps_position", nullable = false)
-    @Type(value = Vector2Type.class)
-    private Vector lowMapsPosition = new Vector(0L);
+    @Type(value = VectorType.class)
+    private Vector lowMapsPosition = Vector.ZERO;
 
     @Basic
     @Column(name = "high_maps_position", nullable = false)
-    @Type(value = Vector2Type.class)
-    private Vector highMapsPosition = new Vector(0L);
+    @Type(value = VectorType.class)
+    private Vector highMapsPosition = Vector.ZERO;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "low_maps_id", nullable = false)

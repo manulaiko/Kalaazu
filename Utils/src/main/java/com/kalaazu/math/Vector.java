@@ -18,7 +18,6 @@ package com.kalaazu.math;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -30,7 +29,6 @@ import java.util.random.RandomGenerator;
  * @author badlogicgames@gmail.com
  */
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
 public class Vector implements Serializable {
     public static final Vector ZERO = new Vector(0, 0);
@@ -42,11 +40,11 @@ public class Vector implements Serializable {
     /**
      * the x-component of this vector
      */
-    private int x;
+    private final int x;
     /**
      * the y-component of this vector
      */
-    private int y;
+    private final int y;
 
     /**
      * Constructs a vector from its string representation.
@@ -78,6 +76,16 @@ public class Vector implements Serializable {
      */
     public static Vector random(Vector limit) {
         return random(ZERO, limit);
+    }
+
+    /**
+     * Generates a random vector.
+     *
+     * @param limit Generated vector won't be outside this limit.
+     * @return Random vector between (0,0) and limit.
+     */
+    public static Vector random(VectorRegion limit) {
+        return random(limit.getTopLeft(), limit.getBottomRight());
     }
 
     /**
@@ -161,13 +169,6 @@ public class Vector implements Serializable {
 
     public float len2() {
         return x * x + y * y;
-    }
-
-    public Vector set(Vector v) {
-        x = v.x;
-        y = v.y;
-
-        return this;
     }
 
     public Vector sub(Vector v) {
@@ -648,7 +649,11 @@ public class Vector implements Serializable {
         return new Vector(x, y);
     }
 
-    public Vector margin() {
+    public Vector subMargin() {
         return this.sub(MARGIN);
+    }
+
+    public Vector addMargin() {
+        return this.add(MARGIN);
     }
 }

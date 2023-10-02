@@ -27,6 +27,7 @@ public class CompanyController {
      *
      * @return List of public companies.
      */
+    @SuppressWarnings("unchecked")
     @GetMapping
     public ResponseEntity<Response<List<CompanyDTO>>> list() {
         return (ResponseEntity<Response<List<CompanyDTO>>>) ResponseEntity.noContent();

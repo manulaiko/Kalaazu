@@ -12,10 +12,10 @@ CREATE TABLE `factions`
     `description`        text         NOT NULL,
     `is_public`          boolean      NOT NULL DEFAULT true,
     `low_maps_id`        smallint     NOT NULL,
-    `low_maps_position`  bigint       NOT NULL DEFAULT 0
+    `low_maps_position`  varchar(255) NOT NULL DEFAULT '0,0'
         COMMENT 'Starting position on map.',
     `high_maps_id`       smallint     NOT NULL,
-    `high_maps_position` bigint       NOT NULL DEFAULT 0
+    `high_maps_position` varchar(255) NOT NULL DEFAULT '0,0'
         COMMENT 'Starting position on map.',
 
     CONSTRAINT `factions_pk` PRIMARY KEY (`id`)

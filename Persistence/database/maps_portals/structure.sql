@@ -4,18 +4,18 @@
 --
 CREATE TABLE `maps_portals`
 (
-    `id`              tinyint  NOT NULL AUTO_INCREMENT
+    `id`              tinyint      NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `levels_id`       tinyint  NOT NULL DEFAULT 1,
-    `maps_id`         smallint NOT NULL,
-    `position`        bigint   NOT NULL DEFAULT 0
+    `levels_id`       tinyint      NOT NULL DEFAULT 1,
+    `maps_id`         smallint     NOT NULL,
+    `position`        varchar(255) NOT NULL DEFAULT '0,0'
         COMMENT 'Position on map.',
-    `target_maps_id`  smallint NOT NULL,
-    `target_position` bigint   NOT NULL DEFAULT 0
+    `target_maps_id`  smallint     NOT NULL,
+    `target_position` varchar(255) NOT NULL DEFAULT '0,0'
         COMMENT 'Target position.',
-    `is_visible`      boolean  NOT NULL DEFAULT true,
-    `is_working`      boolean  NOT NULL DEFAULT true,
-    `gfx`             tinyint  NOT NULL DEFAULT 1,
+    `is_visible`      boolean      NOT NULL DEFAULT true,
+    `is_working`      boolean      NOT NULL DEFAULT true,
+    `gfx`             tinyint      NOT NULL DEFAULT 1,
 
     CONSTRAINT `maps_portals_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB

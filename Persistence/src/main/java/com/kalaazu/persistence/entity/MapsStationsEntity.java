@@ -1,7 +1,7 @@
 package com.kalaazu.persistence.entity;
 
 import com.kalaazu.math.Vector;
-import com.kalaazu.persistence.Vector2Type;
+import com.kalaazu.persistence.VectorType;
 import jakarta.persistence.*;
 import lombok.Data;
 import org.hibernate.annotations.Type;
@@ -25,8 +25,8 @@ public class MapsStationsEntity {
 
     @Basic
     @Column(name = "position", nullable = false)
-    @Type(value = Vector2Type.class)
-    private Vector position = new Vector(0L);
+    @Type(value = VectorType.class)
+    private Vector position = Vector.ZERO;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "maps_id", referencedColumnName = "id")

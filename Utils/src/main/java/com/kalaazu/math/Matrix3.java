@@ -36,7 +36,7 @@ public class Matrix3 implements Serializable {
     private static final long serialVersionUID = 7907569533774959788L;
     public float[] val = new float[9];
 
-    private float[] tmp = new float[9];
+    private final float[] tmp = new float[9];
 
     public Matrix3() {
         idt();
@@ -582,17 +582,16 @@ public class Matrix3 implements Serializable {
         return val;
     }
 
-    public Vector getTranslation(Vector position) {
-        position.setX((int) val[M02]);
-        position.setY((int) val[M12]);
-        return position;
+    public Vector getTranslation() {
+        return new Vector((int) val[M02], (int) val[M12]);
     }
 
-    public Vector getScale(Vector scale) {
+    public Vector getScale() {
         float[] val = this.val;
-        scale.setX((int) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]));
-        scale.setY((int) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]));
-        return scale;
+        var x = (int) Math.sqrt(val[M00] * val[M00] + val[M01] * val[M01]);
+        var y = ((int) Math.sqrt(val[M10] * val[M10] + val[M11] * val[M11]));
+
+        return new Vector(x, y);
     }
 
     public float getRotation() {

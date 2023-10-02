@@ -4,13 +4,13 @@
 --
 CREATE TABLE `maps`
 (
-    `id`          smallint     NOT NULL AUTO_INCREMENT
+    `id`         smallint     NOT NULL AUTO_INCREMENT
         COMMENT 'Primary Key.',
-    `name`        varchar(255) NOT NULL DEFAULT ''
+    `name`       varchar(255) NOT NULL DEFAULT ''
         COMMENT 'Map name.',
-    `is_pvp`      boolean      NOT NULL DEFAULT false,
-    `is_starter`  boolean      NOT NULL DEFAULT false,
-    `limits`      bigint       NOT NULL DEFAULT 89335319769600,
+    `is_pvp`     boolean      NOT NULL DEFAULT false,
+    `is_starter` boolean      NOT NULL DEFAULT false,
+    `limits`     varchar(255) NOT NULL DEFAULT '0,0|20800,12800',
 
     CONSTRAINT `maps_pk` PRIMARY KEY (`id`)
 ) ENGINE InnoDB
