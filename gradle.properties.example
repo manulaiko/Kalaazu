@@ -1,0 +1,6 @@
+// npmExe=/path/to/npm
+// npmArgs=
+// For nvm in windows, you may want something like:
+// npmExe=C:\\Program Files\\PowerShell\\7\\pwsh.exe
+// npmArgs=-NoProfile -ExecutionPolicy Bypass -File C:\\nvm4w\\nodejs\\npm.ps1
+runCMS=false

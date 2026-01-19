@@ -1,21 +1,53 @@
-task runInstall(type: Exec) {
-    workingDir('src/main/www')
-    commandLine("npm", "install")
+def webDir = layout.projectDirectory.dir("src/main/www")
+def nodeModulesDir = webDir.dir("node_modules")
+
+def npmExe = providers.gradleProperty("npmExe")
+        .orElse(providers.environmentVariable("NPM_EXE"))
+        .orElse("npm")
+        .get()
+
+def npmArgs = providers.gradleProperty("npmArgs")
+        .orElse(providers.environmentVariable("NPM_ARGS"))
+        .orElse("")
+        .get()
+
+def npmBaseCommand = [npmExe] + (npmArgs.trim() ? npmArgs.trim().split("\\s+") as List<String> : [])
+
+tasks.register("runInstall", Exec) {
+    workingDir = webDir.asFile
+
+    onlyIf {
+        runCMS && !nodeModulesDir.asFile.exists()
+    }
+
+    commandLine(npmBaseCommand + ["install"])
+
+    outputs.dir(nodeModulesDir)
 }
 
-task runBuild(type: Exec) {
-    workingDir('src/main/www')
-    commandLine("npm", "run", "build")
+tasks.register("runBuild", Exec) {
+    workingDir = webDir.asFile
+
+    onlyIf { runCMS }
+
+    dependsOn(tasks.named("runInstall"))
+
+    commandLine(npmBaseCommand + ["run", "build"])
 }
 
-//runBuild.dependsOn runInstall
-//compileJava.dependsOn runBuild
+tasks.named("compileJava") {
+    if (runCMS) {
+        dependsOn(tasks.named("runBuild"))
+    }
+}
 
 dependencies {
     implementation project(':Utils')
     implementation project(':Persistence')
     implementation 'org.springframework.boot:spring-boot-starter-web'
     implementation 'org.springframework.boot:spring-boot-starter-websocket'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.session:spring-session-core'
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.1.0'
 }

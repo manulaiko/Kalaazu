@@ -1,5 +1,41 @@
-MYSQL_USERNAME: root
-MYSQL_PASSWORD:
+# Values used by placeholders in application.yml (Spring will resolve ${...} from properties too)
+
+MYSQL_HOST: localhost
+MYSQL_PORT: 43306
+MYSQL_DATABASE: kalaazu
+
+MYSQL_USERNAME: kalaazu_user
+MYSQL_PASSWORD: change_me
+
+AUTO_START: true
+GAME_VERSION: V4
+RENDER_DISTANCE: 24000
+TICK_RATE: 100
+
+GAME_SERVER_PORT: 9090
+WEB_SERVER_PORT: 9091
+CHAT_SERVER_PORT: 9092
+CMS_SERVER_PORT: 9093
+POLICY_SERVER_PORT: 9094
+
+# Database initialization flags
+# Set DB_WIPE=true to drop all tables and recreate from SQL scripts
+# Set DB_INITIALIZE=true to create tables only if DB is empty
+# Set DB_SEED=true to insert initial data from dump.sql files
+DB_WIPE: true
+DB_INITIALIZE: true
+DB_SEED: true
+DB_SCRIPTS_PATH: Persistence/database
+
+# JPA DDL mode: none, validate, update, create, create-drop
+# Use 'none' when using SQL scripts, 'update' for JPA auto-schema
+JPA_DDL_AUTO: none
+
+# Logging configuration
+# Levels: TRACE, DEBUG, INFO, WARN, ERROR
+LOG_PATH: logs
+LOG_LEVEL_ROOT: INFO
+LOG_LEVEL_APP: DEBUG
 
 spring:
   jpa:

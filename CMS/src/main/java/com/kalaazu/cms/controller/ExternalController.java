@@ -10,7 +10,9 @@ import com.kalaazu.util.LoggingCategory;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,6 +28,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping("/external")
+@CrossOrigin(origins = "*")
 @RequiredArgsConstructor
 public class ExternalController implements Logger {
     @Getter
@@ -67,7 +70,7 @@ public class ExternalController implements Logger {
      * @param body Request body.
      * @return Response entity.
      */
-    @PostMapping("/register")
+    @PostMapping(value = "/register", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Response<LoginResponse>> register(@RequestBody RegisterRequest body) {
         var response = new Response<LoginResponse>(Response.Status.ERROR, "Couldn't perform register!", null);
 

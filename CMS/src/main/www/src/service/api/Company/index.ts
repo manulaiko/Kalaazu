@@ -26,7 +26,7 @@ export default class Index extends Endpoint {
      * Loads the companies that the user can join.
      */
     async list(): Promise<CompanyList> {
-        const result = await this.http.post<CompanyList>("/login");
+        const result = await this.http.post<CompanyList>(this.url + "/login");
 
         return result.data;
     }

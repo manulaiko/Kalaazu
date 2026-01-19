@@ -13,13 +13,20 @@ spring:
   jpa:
     database-platform: org.hibernate.dialect.MariaDBDialect
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${JPA_DDL_AUTO:none}
 
   profiles:
     active: dev
 
 app:
   autoStart: ${AUTO_START:true}
+
+  database:
+    wipe: ${DB_WIPE:false}
+    initialize: ${DB_INITIALIZE:false}
+    seed: ${DB_SEED:false}
+    scriptsPath: ${DB_SCRIPTS_PATH:Persistence/database}
+
   game:
     version: ${GAME_VERSION:V4} # Game server version, see com.kalaazu.model.Version
     renderDistance: ${RENDER_DISTANCE:24000}
@@ -32,6 +39,14 @@ app:
     server: ${GAME_SERVER_PORT:8080}
     policy: ${POLICY_SERVER_PORT:843}
     chat: ${CHAT_SERVER_PORT:8082}
+    cms: ${CMS_SERVER_PORT:8083}
 
 server:
   port: ${WEB_SERVER_PORT:8081}
+
+logging:
+  file:
+    path: ${LOG_PATH:logs}
+  level:
+    root: ${LOG_LEVEL_ROOT:INFO}
+    com.kalaazu: ${LOG_LEVEL_APP:INFO}

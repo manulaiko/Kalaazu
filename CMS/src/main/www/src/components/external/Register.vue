@@ -1,7 +1,7 @@
 <template>
   <section class="column is-4 is-offset-4">
     <h3 class="title">Register</h3>
-    <hr class="login-hr"/>
+    <hr class="login-hr" />
     <form>
       <b-field label="Username">
         <b-input v-model="username"></b-input>
@@ -43,28 +43,13 @@ export default {
 };
 </script>
 
-<style lang="sass" scoped>
-section
-background-color:
-rgba
-
-(
-255
-,
-255
-,
-255
-,
-0.5
-)
-border-radius:
-
-10
-px
-padding:
-
-25
-px
-label
-color: black
+<style lang="scss" scoped>
+section {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 25px;
+  label {
+    color: black;
+  }
+}
 </style>

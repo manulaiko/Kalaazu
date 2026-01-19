@@ -2,6 +2,9 @@ package com.kalaazu.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 
 import java.sql.Timestamp;
@@ -20,7 +23,9 @@ import java.util.HashSet;
  */
 @Entity
 @Table(name = "accounts", schema = "kalaazu")
-@Data
+@Getter
+@Setter
+@NoArgsConstructor
 public class AccountsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

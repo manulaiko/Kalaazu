@@ -43,6 +43,7 @@ public class KalaazuConfig {
     private boolean autoStart;
     private GameConfig game;
     private Port port;
+    private DatabaseConfig database;
 
     /**
      * Holds all game-specific configuration properties.
@@ -88,7 +89,39 @@ public class KalaazuConfig {
     @Data
     public static class Port {
         private int server;
-        private int policy;
         private int chat;
+        private int cms;
+        private int policy;
+    }
+
+    /**
+     * Database initialization configuration.
+     *
+     * Controls how the database schema and data are managed on startup.
+     * When enabled, this bypasses JPA's auto-DDL in favor of explicit SQL scripts.
+     */
+    @Data
+    public static class DatabaseConfig {
+        /**
+         * When true, drops all tables and recreates the schema from SQL scripts on startup.
+         */
+        private boolean wipe = false;
+
+        /**
+         * When true, seeds the database with initial data after schema creation.
+         */
+        private boolean seed = false;
+
+        /**
+         * When true, runs the SQL initialization scripts (structure + relations).
+         * This is automatically enabled when wipe is true.
+         */
+        private boolean initialize = false;
+
+        /**
+         * Path to the database scripts directory.
+         * Defaults to "Persistence/database" relative to working directory.
+         */
+        private String scriptsPath = "Persistence/database";
     }
 }

@@ -2,6 +2,7 @@ package com.kalaazu;
 
 import atlantafx.base.theme.PrimerDark;
 import com.kalaazu.event.StartServer;
+import com.kalaazu.persistence.database.DatabaseManager;
 import com.kalaazu.ui.LoadingScreen;
 import com.kalaazu.ui.SceneManager;
 import com.kalaazu.ui.event.ShowMainScreen;
@@ -17,6 +18,8 @@ import lombok.SneakyThrows;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 
 import java.io.IOException;
@@ -31,6 +34,13 @@ import java.util.Arrays;
  * @author Manulaiko <manulaiko@gmail.com>
  */
 @SpringBootApplication
+@ComponentScan(
+        basePackages = "com.kalaazu",
+        excludeFilters = @ComponentScan.Filter(
+                type = FilterType.REGEX,
+                pattern = "com\\.kalaazu\\.cms\\.(?!CMS$).*"
+        )
+)
 public class Launcher extends Application implements Logger {
     @Getter
     private final LoggingCategory category = LoggingCategory.UI;
@@ -55,6 +65,11 @@ public class Launcher extends Application implements Logger {
         info("Init Kalaazu...");
         ctx = new SpringApplicationBuilder(Launcher.class).run();
         instance = this;
+
+        info("Running database initialization...");
+        var dbManager = ctx.getBean(DatabaseManager.class);
+        dbManager.runStartupInitialization();
+
         loadingScreen.close();
     }
 

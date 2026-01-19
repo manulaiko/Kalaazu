@@ -1,91 +1,117 @@
 plugins {
     id 'application'
-    id 'java'
-    id 'org.springframework.boot' version '4.0.0-M2'
-    id 'io.spring.dependency-management' version '1.1.7'
-    id 'org.openjfx.javafxplugin' version '0.1.0'
+
+    id 'org.springframework.boot' version '4.0.0-M2' apply false
+    id 'io.spring.dependency-management' version '1.1.7' apply false
+    id 'org.openjfx.javafxplugin' version '0.1.0' apply false
 }
 
 group = 'com.kalaazu'
 version = '0.0.1-SNAPSHOT'
-mainClassName = 'com.kalaazu.Launcher'
 
-configurations {
-    compileOnly {
-        extendsFrom annotationProcessor
-    }
+ext {
+    ikonliVersion = '12.4.0'
+    atlantaVersion = '2.1.0'
 }
 
-dependencies {
-    implementation project(':Launcher')
+application {
+    mainClass = 'com.kalaazu.Launcher'
+    applicationDefaultJvmArgs = [
+            '--enable-native-access', 'javafx.graphics,javafx.media'
+    ]
 }
 
 allprojects {
-    apply plugin: 'java'
-    apply plugin: 'org.springframework.boot'
-    apply plugin: 'io.spring.dependency-management'
-    apply plugin: 'org.openjfx.javafxplugin'
+    pluginManager.apply('java')
+    pluginManager.apply('org.springframework.boot')
+    pluginManager.apply('io.spring.dependency-management')
+    pluginManager.apply('org.openjfx.javafxplugin')
 
-    java {
-        toolchain { languageVersion = JavaLanguageVersion.of(25) }
-    }
-
-    group 'com.kalaazu'
-
-    javafx {
-        version = '25'
-        modules = ['javafx.controls', 'javafx.fxml']
-    }
-
-    task printClasspath {
-        doLast {
-            println "JavaFX Path:"
-            println sourceSets.main.runtimeClasspath.filter { it.name.contains("javafx") }.asPath
-        }
-    }
+    group = rootProject.group
+    version = rootProject.version
 
     repositories {
         mavenCentral()
         mavenLocal()
     }
 
-    bootJar {
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(25)
+            sourceCompatibility = JavaLanguageVersion.of(25)
+        }
+    }
+
+    configurations {
+        compileOnly {
+            extendsFrom annotationProcessor
+        }
+    }
+
+    javafx {
+        version = '25.0.1'
+        configuration = 'implementation'
+        modules = ['javafx.controls', 'javafx.fxml']
+    }
+
+    tasks.named('jar', Jar).configure {
+        enabled = true
+    }
+    tasks.named('bootJar').configure {
         enabled = false
     }
 
-    jar {
-        enabled = true
+    tasks.withType(Test).configureEach {
+        useJUnitPlatform()
     }
 
+    tasks.register('printClasspath') {
+        group = 'help'
+        description = 'Prints JavaFX jars on the runtime classpath.'
+        doLast {
+            println "JavaFX Path:"
+            println sourceSets.main.runtimeClasspath
+                    .filter { it.name.contains("javafx") }
+                    .asPath
+        }
+    }
 
-    ext {
-        ikonliVersion = '12.4.0'
-        atlantaVersion = '2.1.0'
+    def cmsWebDirAbs = project(":CMS").layout.projectDirectory.dir("src/main/www").asFile.absolutePath
+
+    tasks.withType(JavaExec).configureEach {
+        def npmExeProp = providers.gradleProperty("npmExe").orNull
+        def npmArgsProp = providers.gradleProperty("npmArgs").orNull
+
+        if (npmExeProp != null) environment "NPM_EXE", npmExeProp
+        if (npmArgsProp != null) environment "NPM_ARGS", npmArgsProp
+
+        environment "CMS_WEB_DIR", cmsWebDirAbs
     }
 
     dependencies {
         implementation 'org.springframework.boot:spring-boot-starter'
         implementation 'org.springframework.boot:spring-boot-starter-json'
         implementation 'org.springframework.boot:spring-boot-starter-aop'
+
         testImplementation('org.springframework.boot:spring-boot-starter-test') {
             exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
         }
         testImplementation 'org.springframework.security:spring-security-test'
+
         compileOnly 'org.projectlombok:lombok:1.18.40'
         annotationProcessor 'org.projectlombok:lombok:1.18.40'
+
         implementation 'org.reflections:reflections:0.10.2'
         implementation 'org.modelmapper:modelmapper:3.1.0'
 
         implementation("io.github.mkpaz:atlantafx-base:$atlantaVersion")
         implementation("io.github.mkpaz:atlantafx-styles:$atlantaVersion")
 
-
-        // Ikonli
         implementation("org.kordamp.ikonli:ikonli-javafx:$ikonliVersion")
         implementation("org.kordamp.ikonli:ikonli-feather-pack:$ikonliVersion")
     }
+}
 
-    test {
-        useJUnitPlatform()
-    }
+dependencies {
+    implementation project(':Launcher')
 }
