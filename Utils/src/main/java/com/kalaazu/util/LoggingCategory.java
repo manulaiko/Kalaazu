@@ -39,5 +39,6 @@ public enum LoggingCategory {
     CONFIG,
     SCHEDULER,
     GAME_LOOP,
-    CACHE
+    CACHE,
+    PERSISTENCE
 }

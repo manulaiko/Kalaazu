@@ -1,0 +1,28 @@
+name: ${COMPOSE_PROJECT_NAME:-kalaazu-dev}
+
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: ${COMPOSE_PROJECT_NAME:-kalaazu-dev}-mariadb
+    restart: unless-stopped
+
+    environment:
+      MARIADB_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?set MYSQL_ROOT_PASSWORD in .env}
+      MARIADB_DATABASE: ${MYSQL_DATABASE:-kalaazu}
+      MARIADB_USER: ${MYSQL_USERNAME:-kalaazu}
+      MARIADB_PASSWORD: ${MYSQL_PASSWORD:?set MYSQL_PASSWORD in .env}
+
+    ports:
+      - "${MYSQL_PORT:-43306}:3306"
+
+    volumes:
+      - mariadb_data:/var/lib/mysql
+
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+volumes:
+  mariadb_data:

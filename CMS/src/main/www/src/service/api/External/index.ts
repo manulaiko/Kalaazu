@@ -30,7 +30,7 @@ export default class Index extends Endpoint {
      * @param password Login password.
      */
     async login(username: string, password: string): Promise<void> {
-        const result = await this.http.post<Result>("/login", {
+        const result = await this.http.post<Result>(this.url + "/login", {
             username: username,
             password: password
         });
@@ -46,7 +46,7 @@ export default class Index extends Endpoint {
      * @param email    Register email.
      */
     async register(username: string, password: string, email: string): Promise<void> {
-        const result = await this.http.post<Result>("/register", {
+        const result = await this.http.post<Result>(this.url + "/register", {
             username: username,
             password: password,
             email: email

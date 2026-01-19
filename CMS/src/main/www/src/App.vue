@@ -8,36 +8,20 @@ export default {
 };
 </script>
 
-<style lang="sass">
-body
-background-image:
-url
-
-(
-"/images/bg.jpg"
-)
-background-size: cover
-color: whitesmoke
-overflow: auto
-&::-webkit-scrollbar
-display: none
-a
-color: whitesmoke
-
-!important
-
-&:hover
-background-color:
-rgba
-
-(
-0
-,
-0
-,
-0
-,
-0.25
-)
-!important
+<style lang="scss">
+body {
+  background-image: url("/images/bg.jpg");
+  background-size: cover;
+  color: whitesmoke;
+  overflow: auto;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  a {
+    color: whitesmoke !important;
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.25) !important;
+    }
+  }
+}
 </style>

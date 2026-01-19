@@ -25,6 +25,37 @@ The github repo will be used to host the code and as bug tracker.
 The issues should be concise and explanatories, the discussion about them belongs to *development* so any reply to the
 issue that isn't in *development* is going to be ignored.
 
+For Intellij, you may need to download JavaFx manually and add it to the project libraries.
+https://gluonhq.com/products/javafx/
+Chose the latest version, then extract the zip into ./vendors
+Finally, add the Jar to the project libraries.
+For the running configuration, add the following VM options (you must use absolute paths):
+```bash
+--module-path "[X]:\<path>\Kalaazu\vendors\javafx-sdk-25.0.1\lib" --add-modules javafx.controls,javafx.fxml
+```
+
+This project uses MariaDB. For local development, we provide a Docker Compose file that runs **only the database**, while you run the application from IntelliJ or the CLI.
+
+```bash
+cp .env.example .env
+docker-compose up -d
+```
+
+The CSM modules runs `npm install` and `npm run build` as part of the Gradle build. You can disable by commenting out the `npmInstall` and `npmBuild` tasks in `build.gradle`.
+
+By default, Gradle expects `npm` to be available on your `PATH`.
+
+If Gradle fails with an error like “A problem occurred starting process 'command `npm`'”, set an override command:
+
+- Environment variable: `NPM_CMD`
+- Or Gradle property: `-PnpmCmd=...` (or in `./gradle.properties`)
+
+If you have issues always try to stop the daemon and restart it:
+```bash
+./gradlew --stop
+./gradlew run
+```
+
 Planning
 --------
 

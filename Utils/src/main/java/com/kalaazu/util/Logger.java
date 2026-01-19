@@ -1,6 +1,7 @@
 package com.kalaazu.util;
 
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
 import org.slf4j.helpers.FormattingTuple;
 import org.slf4j.helpers.MessageFormatter;
 import org.springframework.boot.logging.LogLevel;
@@ -165,34 +166,38 @@ public interface Logger {
     }
 
     default void log(LogLevel level, LoggingCategory category, String message, Exception e) {
-        var builder = logger().atInfo();
+        MDC.put("category", category.name());
 
-        // Map Spring LogLevel to SLF4J LoggingEventBuilder
-        switch (level) {
-            case TRACE -> builder = logger().atTrace();
-            case DEBUG -> builder = logger().atDebug();
-            case INFO -> builder = logger().atInfo();
-            case WARN -> builder = logger().atWarn();
-            case ERROR, FATAL -> builder = logger().atError();
-            case OFF -> { /* do nothing, skip logging */
-                return;
+        try {
+            var builder = logger().atInfo();
+
+            switch (level) {
+                case TRACE -> builder = logger().atTrace();
+                case DEBUG -> builder = logger().atDebug();
+                case INFO -> builder = logger().atInfo();
+                case WARN -> builder = logger().atWarn();
+                case ERROR, FATAL -> builder = logger().atError();
+                case OFF -> {
+                    return;
+                }
             }
-        }
 
-        // Add structured (key/value) arguments
-        if (getUserId() != 0) {
-            builder = builder.addKeyValue("userId", getUserId());
-        }
-        if (getMapId() != 0) {
-            builder = builder.addKeyValue("mapId", getMapId());
-        }
-        builder = builder.addKeyValue("category", category);
+            if (getUserId() != 0) {
+                builder = builder.addKeyValue("userId", getUserId());
+            }
+            if (getMapId() != 0) {
+                builder = builder.addKeyValue("mapId", getMapId());
+            }
+            builder = builder.addKeyValue("category", category);
 
-        if (e != null) {
-            builder = builder.setCause(e);
-        }
+            if (e != null) {
+                builder = builder.setCause(e);
+            }
 
-        builder.log(message);
+            builder.log(message);
+        } finally {
+            MDC.remove("category");
+        }
     }
 
     LoggingCategory getCategory();

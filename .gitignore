@@ -31,3 +31,15 @@ build/
 ### VS Code ###
 .vscode/
 /Launcher/src/main/resources/static/
+
+### Vendors ###
+vendors/*
+!vendors/.gitkept
+
+### env ###
+.env
+gradle.properties
+
+### Logs ###
+logs/
+*.log
